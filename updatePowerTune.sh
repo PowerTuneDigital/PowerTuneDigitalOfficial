@@ -13,9 +13,9 @@ if [ -d /home/root ]; then
 		./updateUserDashboards.sh
 		else
 		echo "Create source directory and clone PowerTune Repo"
-		mkdir /home/pi/src
+		mkdir /home/pi/srcofficial
 		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/srcofficial  
-		cd src
+		cd srcofficial
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -54,7 +54,7 @@ if nc -zw5 www.github.com 443; then
 # Get the latest source
 		if [ -d /home/pi/src ]; then
 		echo "Updating to latest source "
-		cd /home/pi/src
+		cd /home/pi/srcofficial
 		git reset --hard
 		git clean -fd
 		git pull
