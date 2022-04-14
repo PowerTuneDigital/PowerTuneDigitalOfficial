@@ -2,7 +2,6 @@
 #include <QtGlobal>
 
 
-
 ioMapData::ioMapData(QObject *parent):
 QObject(parent)
 {
