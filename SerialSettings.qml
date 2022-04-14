@@ -349,15 +349,10 @@ Quick1.TabView {
                             model: ["CAN", "PowerFC", "Consult", "OBD2"]
                             property bool initialized: false
                             onCurrentIndexChanged: {
-                                if (initialized)
-                                    AppSettings.setECU(
-                                                currentIndex)Dashboard.setecu(
-                                                ecuSelect.currentIndex)
+                                if (initialized) AppSettings.setECU( currentIndex ),Dashboard.setecu(ecuSelect.currentIndex);
                             }
                             Component.onCompleted: {
-                                currentIndex = AppSettings.getECU(
-                                            )Dashboard.setecu(
-                                            ecuSelect.currentIndex)initialized = true
+                                currentIndex = AppSettings.getECU(),Dashboard.setecu(ecuSelect.currentIndex),initialized = true;
                             }
                             delegate: ItemDelegate {
                                 width: ecuSelect.width
@@ -681,7 +676,7 @@ Quick1.TabView {
                             font.pixelSize: windowbackround.width / 55
                             text: qsTr("GoPro rec")
                             onCheckedChanged: {
-                                transferSettings.sendSettings()goproRec.rec()
+                               transferSettings.sendSettings(),goproRec.rec()
                             }
                             Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                         }
@@ -889,12 +884,10 @@ Quick1.TabView {
             Item {
                 //Function to automatically connect at Startup , function is called from COmbobox Serialname component.oncompleted
                 id: autoconnect
-                function auto() {
+                function auto()
+                {
                     // if (connectAtStart.checked == true) Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, interfaceSelect.currentIndex, loggerSelect.currentIndex);
-                    if (connectButton.enabled == false)
-                        functconnect.connectfunc(
-                                    )ecuSelect.enabled = falsedisconnectButton.enabled
-                                = true //Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
+                    if (connectButton.enabled == false) functconnect.connectfunc(),ecuSelect.enabled = false,disconnectButton.enabled = true;//Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
                 }
             }
             Item {
@@ -928,25 +921,18 @@ Quick1.TabView {
                 property var recording: 0
 
                 function rec() {
-
-                    if (record.checked == true)
-                        goproRec.recording = 1GoPro.goprorec(
-                                    recording.valueOf())
-                    if (record.checked == false)
-                        goproRec.recording = 0GoPro.goprorec(
-                                    recording.valueOf())
+                    if (record.checked == true) goproRec.recording = 1, GoPro.goprorec(recording.valueOf());
+                    if (record.checked == false) goproRec.recording = 0,GoPro.goprorec(recording.valueOf());
                 }
             }
             Item {
                 //Logger on off function
                 id: logger
                 property var loggeron: 0
-                function datalogger() {
-                    if (loggerswitch.checked == true)
-                        logger.loggeron = 1Logger.startLog(
-                                    logfilenameSelect.text)
-                    if (loggerswitch.checked == false)
-                        logger.loggeron = 0Logger.stopLog()
+                function datalogger()
+                {
+                    if (loggerswitch.checked == true) logger.loggeron = 1, Logger.startLog(logfilenameSelect.text);
+                    if (loggerswitch.checked == false) logger.loggeron = 0,Logger.stopLog();
                 }
             }
             Item {
@@ -1466,7 +1452,7 @@ Quick1.TabView {
                             fourthPageLoader.source = "qrc:/Gauges/SpeedMeasurements.qml"
                         }
                         ;
-                        "Main Dash""GPS""Laptimer""PowerFC Sensors""User Dash 1""User Dash 2""User Dash 3""G-Force""Mediaplayer""Screen Toggle""Drag Timer"
+                        "Main Dash","GPS", "Laptimer", "PowerFC Sensors","User Dash 1","User Dash 2","User Dash 3","G-Force","Mediaplayer","Screen Toggle","Drag Timer"
                     }
                     Component.onCompleted: tabView.currentIndex = 2 // opens the 3rd tab
                 }
@@ -1668,9 +1654,7 @@ Quick1.TabView {
                         text: "14.7"
                         onEditingFinished: Dashboard.setLambdamultiply(
                                                lambdamultiply.text)
-                        Component.onCompleted: Dashboard.setLambdamultiply(
-                                                   lambdamultiply.text)tabView.currentIndex
-                                               = 4 // opens the 5th tab
+                        Component.onCompleted: Dashboard.setLambdamultiply(lambdamultiply.text),tabView.currentIndex = 4; // opens the 5th tab
                     }
                 }
             }
@@ -1728,23 +1712,9 @@ Quick1.TabView {
                         width: warningsettings.width / 5
                         height: warningsettings.height / 15
                         font.pixelSize: warningsettings.width / 55
+                        Component.onCompleted: if (gearcalcselect.checked == true){Dashboard.setgearcalcactivation(1),switchtext.text = "Gear Calulation ON";}else{Dashboard.setgearcalcactivation(0),switchtext.text = "Gear Calulation OFF";}
+                        onCheckedChanged: if (gearcalcselect.checked == true){Dashboard.setgearcalcactivation(1),switchtext.text = "Gear Calulation ON";}else{Dashboard.setgearcalcactivation(0),switchtext.text = "Gear Calulation OFF";}
 
-                        Component.onCompleted: if (gearcalcselect.checked == true) {
-                                                   Dashboard.setgearcalcactivation(
-                                                               1)switchtext.text
-                                                           = "Gear Calulation ON"
-                                               } else {
-                                                   Dashboard.setgearcalcactivation(
-                                                               0)switchtext.text
-                                                           = "Gear Calulation OFF"
-                                               }
-                        onCheckedChanged: if (gearcalcselect.checked == true) {
-                                              Dashboard.setgearcalcactivation(
-                                                          1)switchtext.text = "Gear Calulation ON"
-                                          } else {
-                                              Dashboard.setgearcalcactivation(
-                                                          0)switchtext.text = "Gear Calulation OFF"
-                                          }
                     }
 
                     TextField {
@@ -1999,8 +1969,7 @@ Quick1.TabView {
                     text: "7500"
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     onEditingFinished: Dashboard.setrpmStage4(stage4.text)
-                    Component.onCompleted: Dashboard.setrpmStage4(
-                                               stage4.text)tabView.currentIndex++
+                    Component.onCompleted: Dashboard.setrpmStage4(stage4.text),tabView.currentIndex++;
                 }
             }
         }
