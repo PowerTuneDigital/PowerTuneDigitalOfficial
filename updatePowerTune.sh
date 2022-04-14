@@ -52,7 +52,7 @@ if [ -d /home/root ]; then
 else
 if nc -zw5 www.github.com 443; then
 # Get the latest source
-		if [ -d /home/pi/src ]; then
+		if [ -d /home/pi/srcofficial ]; then
 		echo "Updating to latest source "
 		cd /home/pi/srcofficial
 		git reset --hard
@@ -64,7 +64,7 @@ if nc -zw5 www.github.com 443; then
 		echo "Create source directory and clone PowerTune Repo"
 		mkdir /home/pi/srcofficial
 		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/srcofficial  
-		cd src
+		cd srcsrcofficial
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -90,7 +90,7 @@ if nc -zw5 www.github.com 443; then
 # Compile PowerTune
 		cd /home/pi/building
 		echo "Compiling PowerTune ... go grab a Coffee"
-		/opt/QT5/bin/qmake /home/pi/src
+		/opt/QT5/bin/qmake /home/pi/srcofficial
 		make -j4
 # Check if the PowerTune executable exists in the build folder
 		if [ -f /home/pi/building/PowertuneQMLGui ];then
