@@ -1,7 +1,8 @@
 # PowerTune
+
+[![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/c9pmpYDCXZ)
+
 PowerTune is a Modern Gauge Display for written in QT5.8 and supports the following ECU's:
-
-
 
 #### Additional ECU's supported via Daemon (these are items you can purchase from us)
 * Adaptronic Modular ECU's (Adaptronic CAN Protocol)
