@@ -281,8 +281,8 @@ void GPS::processGPRMC(const QString & line){
     QString bearing = fields[8];
     if (bearing != "")
     {
-        //We update bearing only if we have a valid baering
-        m_dashboard->setgpsbaering(bearing.toDouble());
+        //We update bearing only if we have a valid bearing
+        m_dashboard->setgpsbearing(bearing.toDouble());
     }
 
     double speed = groundspeedknots.toDouble() * 1.852;

@@ -53,7 +53,7 @@ Rectangle {
             copyrightsVisible: false
             gesture.enabled: false
             tilt: 0
-            bearing: Dashboard.gpsbaering
+            bearing: Dashboard.gpsbearing
             color: "black"
 
             // Draw a small red circle for current Vehicle Location
@@ -198,7 +198,7 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
-                text: Dashboard.gpsbaering
+                text: Dashboard.gpsbearing
                 font.pixelSize: 20
                 font.bold: true
                 font.family: "Eurostile"
