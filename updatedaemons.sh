@@ -98,12 +98,12 @@ sudo rm /home/pi/daemons/Testdaemon
 sudo rm /home/pi/daemons/ecoboost
 sudo rm /home/pi/daemons/WolfEMS
 sudo rm /home/pi/daemons/GMCANOBD
-sudo rm /home/pi/genericcan
-sudo rm /home/pi/FTCAN20
-sudo rm /home/pi/Delta
-sudo rm /home/pi/BigNET
-sudo rm /home/pi/R35
-sudo rm /home/pi/Prado
+sudo rm /home/pi/daemons/genericcan
+sudo rm /home/pi/daemons/FTCAN20
+sudo rm /home/pi/daemons/Delta
+sudo rm /home/pi/daemons/BigNET
+sudo rm /home/pi/daemons/R35
+sudo rm /home/pi/daemons/Prado
 
 echo "Updating Daemons"
 cp -r /home/pi/srcofficial/daemons/. /home/pi/daemons/
