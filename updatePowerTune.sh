@@ -3,9 +3,9 @@
 if [ -d /home/root ]; then
 # Get the latest source
 		echo "Yocto detected "
-		if [ -d /home/pi/srcofficial ]; then
+		if [ -d /home/pi/src ]; then
 		echo "Updating to latest source "
-		cd /home/pi/srcofficial
+		cd /home/pi/src
 		git reset --hard
 		git clean -fd
 		git pull
@@ -13,9 +13,9 @@ if [ -d /home/root ]; then
 		./updateUserDashboards.sh
 		else
 		echo "Create source directory and clone PowerTune Repo"
-		mkdir /home/pi/srcofficial
-		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/srcofficial  
-		cd srcofficial
+		mkdir /home/pi/src
+		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src
+		cd src
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -37,7 +37,7 @@ if [ -d /home/root ]; then
 # Compile PowerTune
 		cd /home/pi/build
 		echo "Compiling PowerTune ... go grab a Coffee"
-		qmake /home/pi/srcofficial
+		qmake /home/pi/src
 		make -j4
 # Check if the PowerTune executable exists in the build folder
 		if [ -f /home/pi/build/PowertuneQMLGui ];then
@@ -52,9 +52,9 @@ if [ -d /home/root ]; then
 else
 if nc -zw5 www.github.com 443; then
 # Get the latest source
-		if [ -d /home/pi/srcofficial ]; then
+		if [ -d /home/pi/src ]; then
 		echo "Updating to latest source "
-		cd /home/pi/srcofficial
+		cd /home/pi/src
 		git reset --hard
 		git clean -fd
 		git pull
@@ -62,9 +62,9 @@ if nc -zw5 www.github.com 443; then
 		./updateUserDashboards.sh
 		else
 		echo "Create source directory and clone PowerTune Repo"
-		mkdir /home/pi/srcofficial
-		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/srcofficial  
-		cd srcsrcofficial
+		mkdir /home/pi/src
+		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src  
+		cd src
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -90,7 +90,7 @@ if nc -zw5 www.github.com 443; then
 # Compile PowerTune
 		cd /home/pi/building
 		echo "Compiling PowerTune ... go grab a Coffee"
-		/opt/QT5/bin/qmake /home/pi/srcofficial
+		/opt/QT5/bin/qmake /home/pi/src
 		make -j4
 # Check if the PowerTune executable exists in the build folder
 		if [ -f /home/pi/building/PowertuneQMLGui ];then
