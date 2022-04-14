@@ -269,7 +269,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_gpsSpeed (0)
     , m_gpsVisibleSatelites (0)
     , m_gpsFIXtype ("no connection")
-    , m_gpsbaering (0)
+    , m_gpsbearing (0)
 
 
     //units
@@ -1797,12 +1797,12 @@ void DashBoard::setgpsFIXtype(const QString &gpsFIXtype)
     m_gpsFIXtype = gpsFIXtype;
     emit gpsFIXtypeChanged(gpsFIXtype);
 }
-void DashBoard::setgpsbaering(const qreal &gpsbaering)
+void DashBoard::setgpsbearing(const qreal &gpsbearing)
 {
-    if (m_gpsbaering == gpsbaering)
+    if (m_gpsbearing == gpsbearing)
         return;
-    m_gpsbaering = gpsbaering;
-    emit gpsbaeringChanged(gpsbaering);
+    m_gpsbearing = gpsbearing;
+    emit gpsbearingChanged(gpsbearing);
 }
 
 
@@ -4785,7 +4785,7 @@ qreal DashBoard::gpsLongitude () const { return m_gpsLongitude; }
 double DashBoard::gpsSpeed() const { return m_gpsSpeed; }
 int DashBoard::gpsVisibleSatelites () const { return m_gpsVisibleSatelites; }
 QString DashBoard::gpsFIXtype () const { return m_gpsFIXtype; }
-qreal DashBoard::gpsbaering() const { return m_gpsbaering; }
+qreal DashBoard::gpsbearing() const { return m_gpsbearing; }
 
 
 

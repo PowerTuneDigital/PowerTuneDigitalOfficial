@@ -47,7 +47,7 @@ Rectangle {
             copyrightsVisible : false
             gesture.enabled: false
             tilt: 0
-            bearing: Dashboard.gpsbaering
+            bearing: Dashboard.gpsbearing
             color: "black"
 
 
@@ -166,7 +166,7 @@ Rectangle {
                         font.pixelSize: 20
                         font.bold: true
                         font.family: "Eurostile"}
-                    Text { text: Dashboard.gpsbaering
+                    Text { text: Dashboard.gpsbearing
                         font.pixelSize: 20
                         font.bold: true
                         font.family: "Eurostile"}
