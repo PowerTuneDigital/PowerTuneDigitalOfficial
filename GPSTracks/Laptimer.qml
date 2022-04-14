@@ -490,7 +490,7 @@ IMD
             id: pos
             function poschanged(){
 
-                if (changeview.text == "DRIVER VIEW"){map.center= QtPositioning.coordinate(Dashboard.gpsLatitude,Dashboard.gpsLongitude),map.bearing=Dashboard.gpsbaering,map.tilt=45,map.zoomLevel = 18};
+                if (changeview.text == "DRIVER VIEW"){map.center= QtPositioning.coordinate(Dashboard.gpsLatitude,Dashboard.gpsLongitude),map.bearing=Dashboard.gpsbearing,map.tilt=45,map.zoomLevel = 18};
 
             }
         }
