@@ -20,7 +20,7 @@ jobs:
       - run: git remote update
       - run: git branch -r
       - run: git branch -a
-      - run: git diff $CI_REF_SLUG remote/origin/main --name-only > git_diff.txt
+      - run: git diff $CI_REF_SLUG origin/main --name-only > git_diff.txt
       - name: cpplint_modified_files
         shell: python
         run: |
