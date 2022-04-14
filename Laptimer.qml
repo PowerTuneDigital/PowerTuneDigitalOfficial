@@ -114,7 +114,7 @@ Rectangle {
             copyrightsVisible : false
             gesture.enabled: false
             tilt: 0
-            bearing: Dashboard.gpsbaering
+            bearing: Dashboard.gpsbearing
             color: "black"
 
 
