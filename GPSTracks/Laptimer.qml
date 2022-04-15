@@ -124,7 +124,7 @@ Rectangle {
                     line.color: 'red'
 
                 }
-                
+
                 Component.onCompleted:
                 {
                     var lines = []
@@ -310,30 +310,33 @@ Rectangle {
             Text { text: "GPS FIX type: "
                 font.pixelSize: 15
                 font.bold: true
+                color: "#00ff00"
                 font.family: "Eurostile"}
             Text { text: Dashboard.gpsFIXtype
-                font.pixelSize: 30
+                font.pixelSize: 15
                 font.bold: true
+                color: "#00ff00"
                 font.family: "Eurostile"}
         }
 
-        Rectangle{
-            //hides the overflow from the the ListView
-            anchors.bottom: laptimes.top
-            anchors.right: parent.right
-            width: 400
-            height: 40
-            color: "black"
-            z:100
-        }
 
 Rectangle{
     id :laptimes
+
     anchors.top: grid1.bottom
+    anchors.topMargin: 5
+
     anchors.left: map.right
+    anchors.leftMargin: 5
+
+    anchors.bottom : buttongrid.top
+    anchors.bottomMargin: 5
+
     width: 400
+
     height: 200
-    color: "black"
+
+    color: "grey"
 
     ListModel {
         id: laptimeModel
@@ -370,12 +373,13 @@ Rectangle{
         id: laptimelistview
         width: 400
         height: 200
-        anchors.top: parent.top
-        anchors.bottom: parent.bottom
+        anchors.fill: parent
         model: laptimeModel
         delegate: contactDelegate
         highlight: Rectangle { color: "#505050"; radius: 5}
         focus: false
+        clip: true
+
         addDisplaced: Transition {
             NumberAnimation { properties: "x,y"; duration: 1000 }
         }
