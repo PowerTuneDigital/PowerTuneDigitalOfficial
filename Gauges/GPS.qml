@@ -298,7 +298,7 @@ Rectangle {
                     map.center = QtPositioning.coordinate(
                                 -34.840764,
                                 149.686800),map.zoomLevel = 16,map.tilt
-                            = 0,map.bearing = 0GPS.defineFinishLine(-34.840111,
+                            = 0,map.bearing = 0,GPS.defineFinishLine(-34.840111,
                                                                    149.685229,
                                                                    -34.840172,
                                                                    149.685433)
@@ -315,8 +315,8 @@ Rectangle {
                             trackselect.currentIndex) === "Zwartkops") {
                     map.center = QtPositioning.coordinate(
                                 -25.809960,
-                                28.111175),map.zoomLevel = 16.6map.bearing
-                            = 0map.tilt = 0GPS.defineFinishLine(-25.809477,
+                                28.111175),map.zoomLevel = 16.6,map.bearing
+                            = 0,map.tilt = 0,GPS.defineFinishLine(-25.809477,
                                                                 28.112105,
                                                                 -25.809404,
                                                                 28.112276)
@@ -326,8 +326,8 @@ Rectangle {
                             trackselect.currentIndex) === "Pukekohe Park") {
                     map.center = QtPositioning.coordinate(
                                 -37.215300,
-                                174.919707),map.zoomLevel = 15.6map.tilt
-                            = 0map.bearing = 0GPS.defineFinishLine(-37.215564,
+                                174.919707),map.zoomLevel = 15.6,map.tilt
+                            = 0,map.bearing = 0,GPS.defineFinishLine(-37.215564,
                                                                    174.915710,
                                                                    -37.215510,
                                                                    174.915914)
@@ -336,18 +336,18 @@ Rectangle {
                             trackselect.currentIndex) === "Carrnell Raceway") {
                     map.center = QtPositioning.coordinate(
                                 -28.685079,
-                                151.938694),map.zoomLevel = 17map.tilt = 0,map.bearing = 22
+                                151.938694),map.zoomLevel = 17,map.tilt = 0,map.bearing = 22
                 }
                 if (trackselect.textAt(
                             trackselect.currentIndex) === "Phakisa") {
                     map.center = QtPositioning.coordinate(
                                 -27.904231,
-                                26.713996)map.zoomLevel = 15.6,map.tilt = 0,map.bearing = 22
+                                26.713996),map.zoomLevel = 15.6,map.tilt = 0,map.bearing = 22
                 }
                 if (trackselect.textAt(
                             trackselect.currentIndex) === "Midvaal") {
                     map.center = QtPositioning.coordinate(
-                                -26.612376, 28.059484)map.zoomLevel = 16,map.tilt
+                                -26.612376, 28.059484),map.zoomLevel = 16,map.tilt
                             = 0,map.bearing = 22,GPS.defineFinishLine(-26.613392,
                                                                     28.058586,
                                                                     -26.613509,
@@ -356,7 +356,7 @@ Rectangle {
                 if (trackselect.textAt(trackselect.currentIndex) === "Dezzi") {
                     map.center = QtPositioning.coordinate(
                                 -30.770474,
-                                30.426004),map.zoomLevel = 1,6map.tilt = 0,map.bearing = 22
+                                30.426004),map.zoomLevel = 16,map.tilt = 0,map.bearing = 22
                 }
             }
         }
