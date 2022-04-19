@@ -122,8 +122,8 @@ Rectangle {
                     }
                     property bool initialized: false
                     onCurrentIndexChanged: if (initialized)
-                                                AppSettings.setBaudRate(
-                                                            currentIndex)
+                                               AppSettings.setBaudRate(
+                                                           currentIndex)
                     Component.onCompleted: {
                         currentIndex = AppSettings.getBaudRate()
                         initialized = true
@@ -132,9 +132,8 @@ Rectangle {
                     delegate: ItemDelegate {
                         width: serialName.width
                         text: serialName.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: serialName.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: serialName.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: serialName.font.family
                         font.pixelSize: serialName.font.pixelSize
                         highlighted: serialName.highlightedIndex == index
@@ -159,7 +158,7 @@ Rectangle {
                         text: serialNameGPS.textRole ? (Array.isArray(
                                                             control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
                         font.weight: serialNameGPS.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                     == index ? Font.DemiBold : Font.Normal
                         font.family: serialNameGPS.font.family
                         font.pixelSize: serialNameGPS.font.pixelSize
                         highlighted: serialNameGPS.highlightedIndex == index
@@ -189,9 +188,8 @@ Rectangle {
                     delegate: ItemDelegate {
                         width: unitSelect1.width
                         text: unitSelect1.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: unitSelect1.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect1.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: unitSelect1.font.family
                         font.pixelSize: unitSelect1.font.pixelSize
                         highlighted: unitSelect1.highlightedIndex == index
@@ -221,9 +219,8 @@ Rectangle {
                     delegate: ItemDelegate {
                         width: unitSelect.width
                         text: unitSelect.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: unitSelect.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: unitSelect.font.family
                         font.pixelSize: unitSelect.font.pixelSize
                         highlighted: unitSelect.highlightedIndex == index
@@ -251,9 +248,8 @@ Rectangle {
                     delegate: ItemDelegate {
                         width: unitSelect.width
                         text: unitSelect.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: unitSelect.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: unitSelect.font.family
                         font.pixelSize: unitSelect.font.pixelSize
                         highlighted: unitSelect.highlightedIndex == index
@@ -274,17 +270,17 @@ Rectangle {
                     model: ["CAN", "PowerFC", "Consult", "OBD2"]
                     property bool initialized: false
                     onCurrentIndexChanged: {
-                        if (initialized) AppSettings.setECU( currentIndex ),Dashboard.setecu(ecuSelect.currentIndex);
+                        if (initialized)
+                            AppSettings.setECU(currentIndex), Dashboard.setecu(ecuSelect.currentIndex)
                     }
                     Component.onCompleted: {
-                        currentIndex = AppSettings.getECU(),Dashboard.setecu(ecuSelect.currentIndex),initialized = true;
+                        currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
                     }
                     delegate: ItemDelegate {
                         width: ecuSelect.width
                         text: ecuSelect.textRole ? (Array.isArray(
                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: ecuSelect.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                        font.weight: ecuSelect.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: ecuSelect.font.family
                         font.pixelSize: ecuSelect.font.pixelSize
                         highlighted: ecuSelect.highlightedIndex == index
@@ -305,9 +301,8 @@ Rectangle {
                     delegate: ItemDelegate {
                         width: goProSelect.width
                         text: goProSelect.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: goProSelect.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: goProSelect.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: goProSelect.font.family
                         font.pixelSize: goProSelect.font.pixelSize
                         highlighted: goProSelect.highlightedIndex == index
@@ -327,7 +322,7 @@ Rectangle {
                     placeholderText: qsTr("GoPro Password")
                     //InputMethod:Qt.
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
-                                        | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
+                                      | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
                     Component.onCompleted: {
                         transferSettings.sendSettings()
                     }
@@ -344,7 +339,7 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
-                                        | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
+                                      | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
@@ -373,8 +368,7 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                     readOnly: true
                     text: "0"
-                    Component.onCompleted: Dashboard.setTrip(
-                                                tripmeter.text)
+                    Component.onCompleted: Dashboard.setTrip(tripmeter.text)
                 }
 
                 Text {
@@ -482,6 +476,7 @@ Rectangle {
 
                 //for official raspberry Pi image only !!!!
 
+
                 /*
         Button {
             id: updateButton
@@ -541,8 +536,7 @@ Rectangle {
                         width: smoothrpm.width
                         text: smoothrpm.textRole ? (Array.isArray(
                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: smoothrpm.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                        font.weight: smoothrpm.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: smoothrpm.font.family
                         font.pixelSize: smoothrpm.font.pixelSize
                         highlighted: smoothrpm.highlightedIndex == index
@@ -563,19 +557,16 @@ Rectangle {
                     model: ["OFF", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     property bool initialized: true
                     onCurrentIndexChanged: {
-                        Dashboard.setsmoothspeed(
-                                    smoothspeed.currentIndex)
+                        Dashboard.setsmoothspeed(smoothspeed.currentIndex)
                     }
                     Component.onCompleted: {
-                        Dashboard.setsmoothspeed(
-                                    smoothspeed.currentIndex)
+                        Dashboard.setsmoothspeed(smoothspeed.currentIndex)
                     }
                     delegate: ItemDelegate {
                         width: smoothspeed.width
                         text: smoothspeed.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: smoothspeed.currentIndex
-                                        == index ? Font.DemiBold : Font.Normal
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: smoothspeed.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: smoothspeed.font.family
                         font.pixelSize: smoothspeed.font.pixelSize
                         highlighted: smoothspeed.highlightedIndex == index
@@ -601,7 +592,7 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                     text: qsTr("GoPro rec")
                     onCheckedChanged: {
-                        transferSettings.sendSettings(),goproRec.rec()
+                        transferSettings.sendSettings(), goproRec.rec()
                     }
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
@@ -649,7 +640,7 @@ Rectangle {
                 }
                 Text {
                     text: "      HEX: 0x" + (hexstring + 0x1000).toString(
-                                16).substr(-3).toUpperCase()
+                              16).substr(-3).toUpperCase()
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -684,7 +675,7 @@ Rectangle {
                 }
                 Text {
                     text: "      HEX: 0x" + (hexstring2 + 0x1000).toString(
-                                16).substr(-3).toUpperCase()
+                              16).substr(-3).toUpperCase()
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -703,6 +694,7 @@ Rectangle {
 
             //  anchors.right: windowbackround.right
             //   anchors.bottom: windowbackround.bottom
+
 
             /*                  //Just a spacer for now still need to do it properly
             Text  { text: "";font.pixelSize: windowbackround.width / 55}
@@ -809,10 +801,11 @@ Rectangle {
     Item {
         //Function to automatically connect at Startup , function is called from COmbobox Serialname component.oncompleted
         id: autoconnect
-        function auto()
-        {
+        function auto() {
             // if (connectAtStart.checked == true) Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, interfaceSelect.currentIndex, loggerSelect.currentIndex);
-            if (connectButton.enabled == false) functconnect.connectfunc(),ecuSelect.enabled = false,disconnectButton.enabled = true;//Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
+            if (connectButton.enabled == false)
+                functconnect.connectfunc(), ecuSelect.enabled = false, disconnectButton.enabled = true
+                //Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
         }
     }
     Item {
@@ -846,26 +839,28 @@ Rectangle {
         property var recording: 0
 
         function rec() {
-            if (record.checked == true) goproRec.recording = 1, GoPro.goprorec(recording.valueOf());
-            if (record.checked == false) goproRec.recording = 0,GoPro.goprorec(recording.valueOf());
+            if (record.checked == true)
+                goproRec.recording = 1, GoPro.goprorec(recording.valueOf())
+            if (record.checked == false)
+                goproRec.recording = 0, GoPro.goprorec(recording.valueOf())
         }
     }
     Item {
         //Logger on off function
         id: logger
         property var loggeron: 0
-        function datalogger()
-        {
-            if (loggerswitch.checked == true) logger.loggeron = 1, Logger.startLog(logfilenameSelect.text);
-            if (loggerswitch.checked == false) logger.loggeron = 0,Logger.stopLog();
+        function datalogger() {
+            if (loggerswitch.checked == true)
+                logger.loggeron = 1, Logger.startLog(logfilenameSelect.text)
+            if (loggerswitch.checked == false)
+                logger.loggeron = 0, Logger.stopLog()
         }
     }
     Item {
         //Function to transmit GoPro variant and GoPro Password
         id: transferSettings
         function sendSettings() {
-            GoPro.goProSettings(goProSelect.currentIndex,
-                                goPropass.text)
+            GoPro.goProSettings(goProSelect.currentIndex, goPropass.text)
         }
     }
     Item {
@@ -873,14 +868,12 @@ Rectangle {
         id: functconnect
         function connectfunc() {
             Connect.openConnection(serialName.currentText,
-                                    ecuSelect.currentIndex,
-                                    baseadresstext.text,
-                                    shiftlightbaseadresstext.text)
+                                   ecuSelect.currentIndex, baseadresstext.text,
+                                   shiftlightbaseadresstext.text)
             Connect.setOdometer(odometer.text)
             Connect.setWeight(weight.text)
-            Apexi.calculatorAux(an1V0.text, an2V5.text, an3V0.text,
-                                an4V5.text, unitaux1.text,
-                                unitaux2.text)
+            Apexi.calculatorAux(an1V0.text, an2V5.text, an3V0.text, an4V5.text,
+                                unitaux1.text, unitaux2.text)
             connected = 1
         }
     }

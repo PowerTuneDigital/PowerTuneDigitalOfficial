@@ -35,7 +35,7 @@ Rectangle {
                 tabView.currentIndex = 5
             }
             onEditingFinished: Dashboard.setspeedpercent(
-                                    speedpercent.text / 100)
+                                   speedpercent.text / 100)
         }
     }
 }

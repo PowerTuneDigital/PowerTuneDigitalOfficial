@@ -2,7 +2,6 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
 
-
 Rectangle {
 
     id: senhatselector

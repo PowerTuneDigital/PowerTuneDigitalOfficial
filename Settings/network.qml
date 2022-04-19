@@ -105,7 +105,7 @@ Rectangle {
             delegate: ItemDelegate {
                 width: wifilistbox.width
                 text: wifilistbox.textRole ? (Array.isArray(
-                                                    control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                                                  control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
                 font.weight: wifilistbox.currentIndex == index ? Font.DemiBold : Font.Normal
                 font.family: wifilistbox.font.family
                 font.pixelSize: wifilistbox.font.pixelSize
@@ -178,9 +178,8 @@ Rectangle {
                 Wifiscanner.setwifi(
                             wificountrynames.get(
                                 wificountrycbx.currentIndex).countryname,
-                            wifilistbox.textAt(
-                                wifilistbox.currentIndex), pw1.text,
-                            "placeholder", "placeholder")
+                            wifilistbox.textAt(wifilistbox.currentIndex),
+                            pw1.text, "placeholder", "placeholder")
                 Connect.reboot()
             }
         }
@@ -329,8 +328,7 @@ Rectangle {
             text: downloadManager.downloadFilename
             font.pixelSize: extrarect.width / 55
             visible: false
-            onTextChanged: consoleText.append(
-                                downloadManager.downloadFilename)
+            onTextChanged: consoleText.append(downloadManager.downloadFilename)
         }
 
 

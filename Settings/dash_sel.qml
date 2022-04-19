@@ -1,4 +1,3 @@
-
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
@@ -20,6 +19,7 @@ Rectangle {
             property alias numberofdash: numberofdashes.currentIndex
         }
     }
+
 
     /*
         Rectangle{
@@ -60,9 +60,8 @@ Rectangle {
             delegate: ItemDelegate {
                 width: numberofdashes.width
                 text: numberofdashes.textRole ? (Array.isArray(
-                                                        control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                font.weight: numberofdashes.currentIndex
-                                == index ? Font.DemiBold : Font.Normal
+                                                     control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                font.weight: numberofdashes.currentIndex == index ? Font.DemiBold : Font.Normal
                 font.family: numberofdashes.font.family
                 font.pixelSize: numberofdashes.font.pixelSize
                 highlighted: numberofdashes.highlightedIndex == index

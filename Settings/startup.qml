@@ -63,9 +63,8 @@ Rectangle {
             delegate: ItemDelegate {
                 width: daemonselect.width
                 text: daemonselect.textRole ? (Array.isArray(
-                                                    control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                font.weight: daemonselect.currentIndex
-                                == index ? Font.DemiBold : Font.Normal
+                                                   control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                font.weight: daemonselect.currentIndex == index ? Font.DemiBold : Font.Normal
                 font.family: daemonselect.font.family
                 font.pixelSize: daemonselect.font.pixelSize
                 highlighted: daemonselect.highlightedIndex == index
@@ -87,9 +86,8 @@ Rectangle {
             delegate: ItemDelegate {
                 width: canbitrateselect.width
                 text: canbitrateselect.textRole ? (Array.isArray(
-                                                        control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                font.weight: canbitrateselect.currentIndex
-                                == index ? Font.DemiBold : Font.Normal
+                                                       control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                font.weight: canbitrateselect.currentIndex == index ? Font.DemiBold : Font.Normal
                 font.family: canbitrateselect.font.family
                 font.pixelSize: canbitrateselect.font.pixelSize
                 highlighted: canbitrateselect.highlightedIndex == index
@@ -103,8 +101,7 @@ Rectangle {
             function start() {
                 //if (daemonselect.textAt(daemonselect.currentIndex) == "OBD2"|| daemonselect.textAt(daemonselect.currentIndex) == "AUDI B7"|| daemonselect.textAt(daemonselect.currentIndex) == "BRZ FRS 86"|| daemonselect.textAt(daemonselect.currentIndex) =="Audi B8"|| daemonselect.textAt(daemonselect.currentIndex) == "Barra FG MK1"|| daemonselect.textAt(daemonselect.currentIndex) =="Barra FG MK1 + OBD Polling"||daemonselect.textAt(daemonselect.currentIndex) =="Barra BX "||daemonselect.textAt(daemonselect.currentIndex) =="Barra BX + OBD Polling"||daemonselect.textAt(daemonselect.currentIndex) =="Barra FG2x" || daemonselect.textAt(daemonselect.currentIndex) =="Barra FG2x + OBD Polling"||daemonselect.textAt(daemonselect.currentIndex)== "EVO X Test"||"NISSAN 370Z Test"||daemonselect.textAt(daemonselect.currentIndex) =="GM: LS2-LS7 CAN"||daemonselect.textAt(daemonselect.currentIndex) == "NISSAN 350Z Test")
                 //if (daemonselect.textAt(daemonselect.currentIndex) == "OBD2")
-                switch (daemonselect.textAt(
-                            daemonselect.currentIndex)) {
+                switch (daemonselect.textAt(daemonselect.currentIndex)) {
                 case "OBD2":
                     canbitrateselect.currentIndex = 1 // 500 Kbs
                     break
@@ -176,15 +173,14 @@ Rectangle {
             font.pixelSize: daemons.width / 55
             model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS"]
             onCurrentIndexChanged: Dashboard.setExternalSpeed(
-                                        mainspeedsource.currentIndex) //,console.log("Setting SPeed")
+                                       mainspeedsource.currentIndex) //,console.log("Setting SPeed")
             property bool initialized: false
             Component.onCompleted: tabView.currentIndex = 0
             delegate: ItemDelegate {
                 width: mainspeedsource.width
                 text: mainspeedsource.textRole ? (Array.isArray(
-                                                        control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                font.weight: mainspeedsource.currentIndex
-                                == index ? Font.DemiBold : Font.Normal
+                                                      control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                font.weight: mainspeedsource.currentIndex == index ? Font.DemiBold : Font.Normal
                 font.family: mainspeedsource.font.family
                 font.pixelSize: mainspeedsource.font.pixelSize
                 highlighted: mainspeedsource.highlightedIndex == index

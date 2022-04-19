@@ -95,7 +95,7 @@ Rectangle {
             text: "7500"
             inputMethodHints: Qt.ImhFormattedNumbersOnly
             onEditingFinished: Dashboard.setrpmStage4(stage4.text)
-            Component.onCompleted: Dashboard.setrpmStage4(stage4.text),tabView.currentIndex++;
+            Component.onCompleted: Dashboard.setrpmStage4(stage4.text),tabView.currentIndex++
         }
     }
 }
