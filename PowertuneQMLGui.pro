@@ -3,6 +3,9 @@ TEMPLATE = app
 QT += qml quick serialport serialbus network charts location positioning sensors multimedia widgets
 
 CONFIG += c++11
+
+# QMAKE_LFLAGS += -static
+
 static {
     QT += svg
     QTPLUGIN += qtvirtualkeyboardplugin
