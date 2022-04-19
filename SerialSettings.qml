@@ -83,7 +83,7 @@ Quick1.TabView {
     Quick1.Tab {
         id: dash
         title: "Dash Sel."
-        source: "Settings/dash_sel.qml"
+        source: "Settings/DashSelector.qml"
     }
 
     Quick1.Tab {
