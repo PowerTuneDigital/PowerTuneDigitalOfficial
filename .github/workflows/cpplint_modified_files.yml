@@ -23,7 +23,7 @@ jobs:
       - run: git diff $CI_REF_SLUG origin/main --name-only > git_diff.txt
       - name: cpplint_modified_files
         run: python .github/workflows/lint.py
-      - uses: actions/github-script@v5
+      - uses: actions/github-script@v6
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
