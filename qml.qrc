@@ -2,6 +2,16 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>SerialSettings.qml</file>
+        <file>Settings/main.qml</file>
+        <file>Settings/dash_sel.qml</file>
+        <file>Settings/sensehat.qml</file>
+        <file>Settings/warn_gear.qml</file>
+        <file>Settings/speed.qml</file>
+        <file>Settings/analog.qml</file>
+        <file>Settings/rpm.qml</file>
+        <file>Settings/startup.qml</file>
+        <file>Settings/network.qml</file>
+        <file>Settings/WifiCountryList.qml</file>
         <file>graphics/Tacho_Mitte.png</file>
         <file>Gauges/DashboardGaugeStyle.qml</file>
         <file>Gauges/TachometerStyle.qml</file>
@@ -71,7 +81,6 @@
         <file>Gauges/createPicture.js</file>
         <file>Gauges/Picture.qml</file>
         <file>graphics/slectImage.png</file>
-        <file>WifiCountryList.qml</file>
         <file>AnalogInputs.qml</file>
         <file>Gauges/Statepicture.qml</file>
         <file>Gauges/createStatePicture.js</file>
