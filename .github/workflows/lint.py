@@ -36,8 +36,8 @@ output = "\n".join(output.splitlines()[:10])
 # Save the output to a file.
 with open("cpplint.txt", "w") as out_file:
     # Write the first 10 lines of stderr to the file.
-    out_file.write("Here are the first 10 encountered errors:\n`")
+    out_file.write("Here are the first 10 encountered errors:\n```")
     out_file.write(output)
 
-    out_file.write("\n`\n")
+    out_file.write("\n```\n")
     out_file.write(result.stdout.decode("utf-8"))
