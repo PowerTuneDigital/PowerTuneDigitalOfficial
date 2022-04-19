@@ -2,50 +2,44 @@
 #include <QtGlobal>
 
 
-
 ioMapData::ioMapData(QObject *parent):
 QObject(parent)
 {
 }
 
-QGeoPath ioMapData::loadMapData(QString country, QString trackName)
-{
-    //Automatically determine the platform Windows or Linux to change the paths
+QGeoPath ioMapData::loadMapData(QString country, QString trackName) {
+    // Automatically determine the platform Windows or Linux to change the paths
     //    #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
+            QString path("/home/pi/KTracks/"+ country + "/" + trackName);  // Opens the embeded KML file/txt
     //    #elif _WIN32
     //        QString path (":/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
     //    #else
 
     //    #endif
-    //qDebug() << "LoadKMLData";
+    // qDebug() << "LoadKMLData";
     QList<QString> list;
     QList<QString> spl;
-    //qDebug() << ("Open KML");
-    //Open *.KML/txt file and Serialize the data
+    // qDebug() << ("Open KML");
+    // Open *.KML/txt file and Serialize the data
 
     QFile inputFile(path);
     if (inputFile.open(QIODevice::ReadOnly))
     {
-        //qDebug() <<"Open successful";
+        // qDebug() <<"Open successful";
         QTextStream in(&inputFile);
-        while (!in.atEnd()) // Reads line and puts it in a string + Debug output of the string
+        while (!in.atEnd())  // Reads line and puts it in a string + Debug output of the string
         {
             QString line = in.readLine();
-            //qDebug() << line ;
-            if(line.contains("KML", Qt::CaseInsensitive))
+            // qDebug() << line ;
+            if (line.contains("KML", Qt::CaseInsensitive))
             {
-
-                spl = line.split(QRegExp ("[:]"));
+                spl = line.split(QRegExp("[:]"));
                 spl.removeFirst();
-                list = spl[0].split(QRegExp ("[,]"));
+                list = spl[0].split(QRegExp("[,]"));
                 return parseKML(list);
-
             }
-
         }
         inputFile.close();
-
     }
 }
 
