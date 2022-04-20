@@ -69,6 +69,7 @@ void GPS::clear()
 //function to open serial port
 void GPS::openConnection(const QString &portName,const QString &Baud)
 {   
+    qDebug()<< "RETRY";
     GPSPort = portName;
     //qDebug()<< "GPS Port Name : " + GPSPort;
     initSerialPort();
@@ -78,6 +79,7 @@ void GPS::openConnection(const QString &portName,const QString &Baud)
     m_serialport->setPortName(portName);
 
     m_dashboard->setgpsFIXtype("open with " + Baud );
+     qDebug()<< m_dashboard->gpsFIXtype();
     switch (baudrate)
     {
     case 9600:
@@ -153,6 +155,7 @@ void GPS::closeConnection()
                this, &GPS::handleError);
     disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
     m_serialport->close();
+    initialized = 0;
     m_dashboard->setgpsFIXtype("close serial");
 }
 void GPS::closeConnection1()
@@ -161,7 +164,7 @@ void GPS::closeConnection1()
     disconnect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
-    disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
+   // disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
     m_serialport->close();
     initialized =1;
     m_dashboard->setgpsFIXtype("close serial");
@@ -221,7 +224,7 @@ void GPS::readyToRead()
 
 void GPS::ProcessMessage(QByteArray messageline)
 {
-    m_timeouttimer.stop();
+
     if(messageline.contains("$GNGGA"))
         if (rateset == 0)
         {
@@ -261,10 +264,14 @@ void GPS::ProcessMessage(QByteArray messageline)
 void GPS::handleTimeout()
 {
     //Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
+    qDebug() << "Timeout";
     m_dashboard->setgpsFIXtype("Timeout");
-    setGPSBAUD115();
-    // closeConnection();
-    // openConnection("ttyAMA0","115200");
+   // setGPSBAUD115();
+    closeConnection();
+
+    openConnection(GPSPort,"9600");
+
+    //openConnection("ttyAMA0","9600");
 }
 
 void GPS::processGPRMC(const QString & line){
@@ -304,7 +311,7 @@ void GPS::processGPGGA(const QString & line)
 {
     QStringList fields = line.split(',');
     int fixquality = fields[6].toInt();
-
+    m_timeouttimer.stop();
     switch (fixquality) {
     case 0:
         m_dashboard->setgpsFIXtype("No fix yet");
