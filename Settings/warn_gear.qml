@@ -102,7 +102,10 @@ Rectangle {
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "14.7"
                 onEditingFinished: Dashboard.setLambdamultiply(lambdamultiply.text)
-                Component.onCompleted: Dashboard.setLambdamultiply(lambdamultiply.text)tabView.currentIndex = 4 // opens the 5th tab
+                Component.onCompleted: {
+                    Dashboard.setLambdamultiply(lambdamultiply.text)
+                    tabView.currentIndex = 4 // opens the 5th tab
+                }
             }
         }
     }
@@ -161,14 +164,18 @@ Rectangle {
                 height: warningsettings.height / 15
                 font.pixelSize: warningsettings.width / 55
                 Component.onCompleted: if (gearcalcselect.checked == true) {
-                                           Dashboard.setgearcalcactivation(1)switchtext.text = "Gear Calulation ON"
+                                           Dashboard.setgearcalcactivation(1)
+                                           switchtext.text = "Gear Calulation ON"
                                        } else {
-                                           Dashboard.setgearcalcactivation(0)switchtext.text = "Gear Calulation OFF"
+                                           Dashboard.setgearcalcactivation(0)
+                                           switchtext.text = "Gear Calulation OFF"
                                        }
                 onCheckedChanged: if (gearcalcselect.checked == true) {
-                                      Dashboard.setgearcalcactivation(1)switchtext.text = "Gear Calulation ON"
+                                      Dashboard.setgearcalcactivation(1)
+                                      switchtext.text = "Gear Calulation ON"
                                   } else {
-                                      Dashboard.setgearcalcactivation(0)switchtext.text = "Gear Calulation OFF"
+                                      Dashboard.setgearcalcactivation(0)
+                                      switchtext.text = "Gear Calulation OFF"
                                   }
             }
 
