@@ -75,6 +75,7 @@ Rectangle {
                 //btnScanNetwork.enabled =false;
             }
         }
+        Component.onCompleted: Wifiscanner.initializeWifiscanner() // Workarround to show initial values
         Text {
             text: "WIFI Country :"
             font.pixelSize: extrarect.width / 55
