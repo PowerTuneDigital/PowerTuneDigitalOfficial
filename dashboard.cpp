@@ -410,6 +410,7 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_gearcalc6(0)
     ,  m_gearcalcactivation(0)
     ,  m_ecu(0)
+    , m_CalibrationSelect()
     ,  m_Error("")
     ,  m_autogear("")
     ,  m_ExternalSpeed(0)
@@ -547,6 +548,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_dsettargetslip()
     , m_tractionctlpowerlimit()
     , m_knockallpeak()
+
     , m_knockcorr()
     , m_knocklastcyl()
     , m_totalfueltrim()
@@ -559,7 +561,8 @@ DashBoard::DashBoard(QObject *parent)
     , m_activeboosttable()
     , m_activetunetable()
     , m_genericoutput1()
-    , m_CalibrationSelect()
+    , m_frequencyDIEX1()
+
 {
 
 }
@@ -4632,6 +4635,13 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
         m_genericoutput1 = genericoutput1;
         emit genericoutput1Changed(genericoutput1);
     }
+    void DashBoard::setfrequencyDIEX1(const qreal &frequencyDIEX1)
+    {
+        if(m_frequencyDIEX1 == frequencyDIEX1)
+            return;
+        m_frequencyDIEX1 = frequencyDIEX1;
+        emit frequencyDIEX1Changed(frequencyDIEX1);
+    }
 
 
 // Odometer
@@ -5174,4 +5184,6 @@ qreal DashBoard::egtdiff() const {return m_egtdiff;}
 qreal DashBoard::activeboosttable() const {return m_activeboosttable;}
 qreal DashBoard::activetunetable() const {return m_activetunetable;}
 qreal DashBoard::genericoutput1() const {return m_genericoutput1;}
+qreal DashBoard::frequencyDIEX1() const {return m_frequencyDIEX1;}
+
 

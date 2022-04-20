@@ -138,7 +138,7 @@ void Extender::readyToRead()
            if (frame.frameId() == adress1) {
             // ON / Off Status :
 
-               m_dashboard->setEXDigitalInput1((byte0 & statusmask)>0);				  //Digital Input 0
+                m_dashboard->setEXDigitalInput1((byte0 & statusmask)>0);				  //Digital Input 0
                 m_dashboard->setEXDigitalInput2((byte1 & statusmask)>0);				  //Digital Input 1
                 m_dashboard->setEXDigitalInput3((byte2 & statusmask)>0);	       		  //Digital Input 2
                 m_dashboard->setEXDigitalInput4((byte3 & statusmask)>0);				  //Digital Input 3
@@ -146,17 +146,17 @@ void Extender::readyToRead()
                 m_dashboard->setEXDigitalInput6((byte5 & statusmask)>0);				  //Digital Input 5
                 m_dashboard->setEXDigitalInput7((byte6 & statusmask)>0);				  //Digital Input 6
                 m_dashboard->setEXDigitalInput8((byte7 & statusmask)>0);				  //Digital Input 7
-/*
+
             // Frequency Counter :
 
-                m_dashboard->setEXDigitalInput1((byte0 & frequencymask)*16.6*30);				  //Digital Input 0
-                m_dashboard->setEXDigitalInput2((byte1 & frequencymask)*16.6);				  //Digital Input 1
-                m_dashboard->setEXDigitalInput3((byte2 & frequencymask)*16.6);	       		  //Digital Input 2
-                m_dashboard->setEXDigitalInput4((byte3 & frequencymask)*16.6);				  //Digital Input 3
-                m_dashboard->setEXDigitalInput5((byte4 & frequencymask)*16.6);				  //Digital Input 4
-                m_dashboard->setEXDigitalInput6((byte5 & frequencymask)*16.6);				  //Digital Input 5
-                m_dashboard->setEXDigitalInput7((byte6 & frequencymask)*16.6);				  //Digital Input 6
-                m_dashboard->setEXDigitalInput8((byte7 & frequencymask)*16.6);				  //Digital Input 7
+       //         m_dashboard->setEXDigitalInput1((byte0 & frequencymask)*16.6*30);				  //Digital Input 0
+       //         m_dashboard->setEXDigitalInput2((byte1 & frequencymask)*16.6);				  //Digital Input 1
+       //         m_dashboard->setEXDigitalInput3((byte2 & frequencymask)*16.6);	       		  //Digital Input 2
+       //         m_dashboard->setEXDigitalInput4((byte3 & frequencymask)*16.6);				  //Digital Input 3
+       //         m_dashboard->setEXDigitalInput5((byte4 & frequencymask)*16.6);				  //Digital Input 4
+       //         m_dashboard->setEXDigitalInput6((byte5 & frequencymask)*16.6);				  //Digital Input 5
+       //         m_dashboard->setEXDigitalInput7((byte6 & frequencymask)*16.6);				  //Digital Input 6
+       //         m_dashboard->setEXDigitalInput8((byte7 & frequencymask)*16.6);				  //Digital Input 7
 
 
             //qDebug() << "Frequency :" << ((byte0 & frequencymask)*16.6);
@@ -169,10 +169,10 @@ void Extender::readyToRead()
             test1 = avghz1/10;
             averagehz1.resize(10);
             //qDebug() << "Frequency 10 samples :" << ((avghz1/10)*16.6);
-            m_dashboard->setEXDigitalInput1((avghz1/10)*16.6*30);
+            m_dashboard->setfrequencyDIEX1((avghz1/10)*16.6*30);
             //qDebug() << "Test  :" << test1;
 
-*/
+
 }
         //case 0x402:
         if (frame.frameId() == adress2) {

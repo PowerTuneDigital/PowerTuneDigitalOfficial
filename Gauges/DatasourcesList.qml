@@ -3390,6 +3390,15 @@ ListModel {
         stepsize : "10"
         divisor : "1"
     }
+    ListElement {
+        sourcename:"frequencyDIEX1"
+        defaultsymbol: " "
+        titlename:"EX Digital Frequency 1"
+        decimalpoints : "0"
+        maxvalue : "300"
+        stepsize : "10"
+        divisor : "1"
+    }
 
     //////////
     ListElement {

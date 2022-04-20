@@ -559,6 +559,7 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal activeboosttable READ activeboosttable WRITE setactiveboosttable NOTIFY activeboosttableChanged)
     Q_PROPERTY(qreal activetunetable READ activetunetable WRITE setactivetunetable NOTIFY activetunetableChanged)
     Q_PROPERTY(qreal genericoutput1 READ genericoutput1 WRITE setgenericoutput1 NOTIFY genericoutput1Changed)
+    Q_PROPERTY(qreal frequencyDIEX1 READ frequencyDIEX1 WRITE setfrequencyDIEX1 NOTIFY frequencyDIEX1Changed)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1152,6 +1153,8 @@ class DashBoard : public QObject
     void setactivetunetable(const qreal &activetunetable);
 
     void setgenericoutput1(const qreal &genericoutput1);
+    void setfrequencyDIEX1(const qreal &frequencyDIEX1);
+
 
     qreal Odo() const;
 
@@ -1701,6 +1704,7 @@ class DashBoard : public QObject
     qreal activeboosttable()const;
     qreal activetunetable()const;
     qreal genericoutput1()const;
+    qreal frequencyDIEX1()const;
 
 signals:
 
@@ -2244,6 +2248,8 @@ signals:
     void activeboosttableChanged(qreal activeboosttable);
     void activetunetableChanged(qreal activetunetable);
     void genericoutput1Changed(qreal genericoutput1);
+    void frequencyDIEX1Changed(qreal frequencyDIEX1);
+
 
 private:
     // Odometer
@@ -2795,6 +2801,7 @@ private:
     qreal m_activeboosttable;
     qreal m_activetunetable;
     qreal m_genericoutput1;
+    qreal m_frequencyDIEX1;
 
 };
 
