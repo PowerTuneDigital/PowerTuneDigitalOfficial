@@ -9,12 +9,16 @@ AppSettings::AppSettings(QObject *parent)
 
 
 {
-
+      qDebug() << "Hello World";
 }
 AppSettings::AppSettings(DashBoard *dashboard, QObject *parent)
     : QObject(parent)
     , m_dashboard(dashboard)
 
+{
+}
+
+AppSettings::~AppSettings()
 {
 }
 int AppSettings::getBaudRate()
@@ -168,10 +172,18 @@ void AppSettings::writeAnalogSettings(const qreal &A00,const qreal &A05,const qr
 
 
 }
-void AppSettings::writeRPMSettings()
+void AppSettings::writeRPMSettings(const int &mxrpm,const int &shift1,const int &shift2,const int &shift3,const int &shift4)
 {
-
-
+    setValue("Max RPM",mxrpm);
+    setValue("Shift Light1",shift1);
+    setValue("Shift Light2",shift2);
+    setValue("Shift Light3",shift3);
+    setValue("Shift Light4",shift4);
+    m_dashboard->setmaxRPM(getValue("Max RPM").toInt());
+    m_dashboard->setrpmStage1(getValue("Shift Light1").toInt());
+    m_dashboard->setrpmStage2(getValue("Shift Light2").toInt());
+    m_dashboard->setrpmStage3(getValue("Shift Light3").toInt());
+    m_dashboard->setrpmStage4(getValue("Shift Light4").toInt());
 }
 void AppSettings::writeEXBoardSettings()
 {
@@ -188,6 +200,10 @@ void AppSettings::readandApplySettings()
 
     //Set Analog Input Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
-    //m_dashboard->setVisibledashes(getValue("Number of Dashes").toInt());
+    m_dashboard->setmaxRPM(getValue("Max RPM").toInt());
+    m_dashboard->setrpmStage1(getValue("Shift Light1").toInt());
+    m_dashboard->setrpmStage2(getValue("Shift Light2").toInt());
+    m_dashboard->setrpmStage3(getValue("Shift Light3").toInt());
+    m_dashboard->setrpmStage4(getValue("Shift Light4").toInt());
 }
 

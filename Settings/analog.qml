@@ -34,7 +34,7 @@ Rectangle {
     }
     Component.onCompleted: {
         loadersource()
-        tabView.currentIndex++
+
     }
     Connections {
         target: Dashboard

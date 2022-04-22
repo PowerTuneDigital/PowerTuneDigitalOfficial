@@ -3,16 +3,17 @@
 
 #include <QObject>
 
-class AppSettings;
 class DashBoard;
 
 class AppSettings : public QObject
 {
     Q_OBJECT
-public:
 
+public:
+ ~AppSettings();
     explicit AppSettings(QObject *parent = 0);
     explicit AppSettings(DashBoard *dashboard, QObject *parent = 0);
+
 
     Q_INVOKABLE int getBaudRate();
     Q_INVOKABLE void setBaudRate(const int &arg);
@@ -43,7 +44,7 @@ public:
     Q_INVOKABLE void writeWarnGearSettings();
     Q_INVOKABLE void writeSpeedSettings();
     Q_INVOKABLE void writeAnalogSettings(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105);
-    Q_INVOKABLE void writeRPMSettings();
+    Q_INVOKABLE void writeRPMSettings(const int &mxrpm,const int &shift1,const int &shift2,const int &shift3,const int &shift4);
     Q_INVOKABLE void writeEXBoardSettings();
     Q_INVOKABLE void writeStartupSettings();
     Q_INVOKABLE void readandApplySettings();

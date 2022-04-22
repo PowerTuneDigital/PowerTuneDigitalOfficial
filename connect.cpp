@@ -78,7 +78,7 @@ Connect::Connect(QObject *parent) :
 
     getPorts();
     m_dashBoard = new DashBoard(this);
-    m_appSettings = new AppSettings(this);
+    m_appSettings = new AppSettings(m_dashBoard, this);
     m_gopro = new GoPro(this);
     m_gps = new GPS(m_dashBoard, this);
     m_adaptronicselect= new AdaptronicSelect(m_dashBoard, this);
@@ -122,6 +122,7 @@ Connect::Connect(QObject *parent) :
     engine->rootContext()->setContextProperty("Apexi", m_apexi);
     engine->rootContext()->setContextProperty("Arduino", m_arduino);
     engine->rootContext()->setContextProperty("Wifiscanner", m_wifiscanner);
+
     m_appSettings->readandApplySettings();
 
 
