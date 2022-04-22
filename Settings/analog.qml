@@ -30,7 +30,7 @@ Rectangle {
             pageLoader.source = "qrc:/OBDPIDS.qml"
             regtab.title = "OBD"
         }
-        //else pageLoader.source = "qrc:/AnalogInputs.qml",regtab.title = "Analog";
+        else pageLoader.source = "qrc:/AnalogInputs.qml",regtab.title = "Analog";
     }
     Component.onCompleted: {
         loadersource()

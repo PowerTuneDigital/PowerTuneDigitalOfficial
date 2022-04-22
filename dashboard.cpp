@@ -611,7 +611,6 @@ void DashBoard::setAnalogVal(const qreal &A00,const qreal &A05,const qreal &A10,
     AN105 = A105;
 
 
-    //qDebug()<< "AN75 " <<AN75;
 }
 void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75, const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL)
 {
@@ -3920,6 +3919,7 @@ void DashBoard::setVisibledashes(const int &Visibledashes)
         return;
     m_Visibledashes = Visibledashes;
     emit VisibledashesChanged(Visibledashes);
+    qDebug()<< "Dashboard Visible " << Visibledashes;
 }
 
 void DashBoard::setoilpressurelamp(const int &oilpressurelamp)

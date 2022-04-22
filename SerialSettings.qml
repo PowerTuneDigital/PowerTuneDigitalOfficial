@@ -104,7 +104,7 @@ Quick1.TabView {
     Quick1.Tab {
         id: regtab
         title: "" // Tab index 5
-        visible: false
+        //visible: false
         source: "Settings/analog.qml"
     }
     Quick1.Tab {
@@ -121,7 +121,7 @@ Quick1.TabView {
             ExBoardAnalog {}
             Component.onCompleted: {
 
-                tabView.currentIndex++
+               // tabView.currentIndex++
                 // console.log("switch tab index ")
             }
         }

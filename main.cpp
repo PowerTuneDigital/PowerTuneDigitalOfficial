@@ -14,9 +14,9 @@ int main(int argc, char *argv[])
 {
     qputenv("QT_IM_MODULE", QByteArray("qtvirtualkeyboard"));
     QApplication app(argc, argv);
-    app.setOrganizationName("Power-Tune");
+    app.setOrganizationName("PowerTuneDigital");
     app.setOrganizationDomain("power-tune.org");
-    app.setApplicationName("PowerTune");
+    app.setApplicationName("PowerTune Dash");
 
     QQmlApplicationEngine engine;
     //File system models to show drive letter and Path

@@ -32,7 +32,7 @@ Rectangle {
             inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
             Component.onCompleted: {
                 Dashboard.setspeedpercent(speedpercent.text / 100)
-                tabView.currentIndex = 5
+                //tabView.currentIndex = 5
             }
             onEditingFinished: Dashboard.setspeedpercent(
                                    speedpercent.text / 100)

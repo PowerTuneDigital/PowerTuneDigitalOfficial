@@ -104,7 +104,7 @@ Rectangle {
                 onEditingFinished: Dashboard.setLambdamultiply(lambdamultiply.text)
                 Component.onCompleted: {
                     Dashboard.setLambdamultiply(lambdamultiply.text)
-                    tabView.currentIndex = 4 // opens the 5th tab
+                    // tabView.currentIndex = 4 // opens the 5th tab
                 }
             }
         }

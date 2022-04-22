@@ -175,7 +175,7 @@ Rectangle {
             onCurrentIndexChanged: Dashboard.setExternalSpeed(
                                        mainspeedsource.currentIndex) //,console.log("Setting SPeed")
             property bool initialized: false
-            Component.onCompleted: tabView.currentIndex = 0
+            //Component.onCompleted: tabView.currentIndex = 0
             delegate: ItemDelegate {
                 width: mainspeedsource.width
                 text: mainspeedsource.textRole ? (Array.isArray(
