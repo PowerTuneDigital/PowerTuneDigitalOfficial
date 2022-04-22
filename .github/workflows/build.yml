@@ -1,0 +1,20 @@
+name: Test build
+on: [pull_request]
+jobs:
+  test_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install Qt
+        uses: jurplel/install-qt-action@v2
+        with:
+          version: '5.15.2'
+          host: 'linux'
+          target: 'desktop'
+          modules: 'qtcharts qtvirtualkeyboard'
+      - uses: actions/checkout@v2
+      - run: mkdir build && cd build && qmake .. && make
+      - name: Check file existence
+        id: check_files
+        uses: andstor/file-existence-action@v1
+        with:
+          files: "build/PowertuneQMLGui"
