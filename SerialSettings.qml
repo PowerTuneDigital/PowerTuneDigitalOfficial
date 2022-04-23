@@ -110,6 +110,7 @@ Quick1.TabView {
         id: regtab
         title: "" // Tab index 5
         source: "Settings/analog.qml"
+        Component.onCompleted: setregtabtitle()
     }
     Quick1.Tab {
         title: "RPM"
