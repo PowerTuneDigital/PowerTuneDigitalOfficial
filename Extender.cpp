@@ -34,7 +34,6 @@ Extender::Extender(QObject *parent)
     , m_dashboard(Q_NULLPTR)
 
 {
-
 }
 Extender::Extender(DashBoard *dashboard, QObject *parent)
     : QObject(parent)
@@ -48,9 +47,7 @@ Extender::~Extender()
 
 void Extender::openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID)
 {
-
     canstartadress = ExtenderBaseID;
-    canstartadressrpm =
     adress1 = canstartadress + 1;
     adress2 = canstartadress + 2;
     adress3 = canstartadress + 3;
