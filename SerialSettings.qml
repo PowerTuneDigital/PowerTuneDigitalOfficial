@@ -19,6 +19,13 @@ Quick1.TabView {
     DLM {
         id: downloadManager
     }
+    Connections {
+        target: Dashboard
+        onEcuChanged: {
+            setregtabtitle()
+        }
+    }
+
 
     Rectangle {
         id: keyboardcontainer
@@ -111,13 +118,7 @@ Quick1.TabView {
 
     Quick1.Tab {
         title: "EX Board" // Tab index 6
-        Rectangle {
-            id: exboard
-            anchors.fill: parent
-            color: "grey"
-            ExBoardAnalog {}
-
-        }
+        source: "qrc:/ExBoardAnalog.qml"
     }
 
     Quick1.Tab {
@@ -128,5 +129,20 @@ Quick1.TabView {
     Quick1.Tab {
         title: "Network" // Tab index 9
         source: "Settings/network.qml"
+    }
+
+    function setregtabtitle() {
+        if (Dashboard.ecu == "0") {
+            regtab.title = "Analog"
+        }
+        if (Dashboard.ecu == "1") {
+            regtab.title = "Analog"
+        }
+        if (Dashboard.ecu == "2") {
+            regtab.title = "Consult"
+        }
+        if (Dashboard.ecu == "3") {
+            regtab.title = "OBD"
+        }
     }
 }
