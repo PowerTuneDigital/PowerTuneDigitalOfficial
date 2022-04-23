@@ -59,6 +59,8 @@ void GPS::initSerialPort()
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &GPS::handleError);
     connect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
+    connect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
+
 }
 
 //function for flushing all serial buffers
@@ -152,6 +154,7 @@ void GPS::closeConnection()
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
     disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
+    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
     m_serialport->close();
     m_dashboard->setgpsFIXtype("close serial");
 }
@@ -162,6 +165,7 @@ void GPS::closeConnection1()
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
     disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
+    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
     m_serialport->close();
     initialized =1;
     m_dashboard->setgpsFIXtype("close serial");
@@ -256,12 +260,23 @@ void GPS::ProcessMessage(QByteArray messageline)
 }
 
 void GPS::handleTimeout()
-{
+{;
     //Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
-    m_dashboard->setgpsFIXtype("Timeout");
+    //We will try to reconnect at 115K BAUD and start another timer
+    m_reconnecttimer.start(6000);
     setGPSBAUD115();
-    // closeConnection();
-    // openConnection("ttyAMA0","115200");
+}
+void GPS::handleReconnectTimeout()
+{
+    if(m_dashboard->gpsFIXtype() == "open with 9600" || m_dashboard->gpsFIXtype() == "open with 115200")
+    {
+    closeConnection();
+    openConnection(GPSPort,"9600");
+    m_reconnecttimer.start(6000);
+    }
+    else{
+    m_reconnecttimer.stop();
+    }
 }
 
 void GPS::processGPRMC(const QString & line){
