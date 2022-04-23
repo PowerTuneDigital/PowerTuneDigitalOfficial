@@ -134,9 +134,37 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
 
 }
 
-void AppSettings::writeWarnGearSettings()
+void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
 
+
+
+
+    setValue("waterwarn",waterwarn);
+    setValue("boostwarn",boostwarn);
+    setValue("rpmwarn",rpmwarn);
+    setValue("knockwarn",knockwarn);
+    setValue("gercalactive",gercalactive);
+    setValue("lambdamultiply",lambdamultiply);
+    setValue("valgear1",valgear1);
+    setValue("valgear2",valgear2);
+    setValue("valgear3",valgear3);
+    setValue("valgear4",valgear4);
+    setValue("valgear5",valgear5);
+    setValue("valgear6",valgear6);
+
+    m_dashboard->setwaterwarn(waterwarn);
+    m_dashboard->setboostwarn(boostwarn);
+    m_dashboard->setrpmwarn(rpmwarn);
+    m_dashboard->setknockwarn(knockwarn);
+    m_dashboard->setgearcalcactivation(gercalactive);
+    m_dashboard->setLambdamultiply(lambdamultiply);
+    m_dashboard->setgearcalc1(valgear1);
+    m_dashboard->setgearcalc2(valgear2);
+    m_dashboard->setgearcalc3(valgear3);
+    m_dashboard->setgearcalc4(valgear4);
+    m_dashboard->setgearcalc5(valgear5);
+    m_dashboard->setgearcalc6(valgear6);
 
 }
 void AppSettings::writeSpeedSettings()
@@ -265,6 +293,19 @@ void AppSettings::readandApplySettings()
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
+    m_dashboard->setwaterwarn(getValue("waterwarn").toReal());
+    m_dashboard->setboostwarn(getValue("boostwarn").toReal());
+    m_dashboard->setrpmwarn(getValue("rpmwarn").toReal());
+    m_dashboard->setknockwarn(getValue("knockwarn").toReal());
+    m_dashboard->setgearcalcactivation(getValue("gercalactive").toInt());
+    m_dashboard->setLambdamultiply(getValue("lambdamultiply").toReal());
+    m_dashboard->setgearcalc1(getValue("valgear1").toReal());
+    m_dashboard->setgearcalc2(getValue("valgear2").toReal());
+    m_dashboard->setgearcalc3(getValue("valgear3").toReal());
+    m_dashboard->setgearcalc4(getValue("valgear4").toReal());
+    m_dashboard->setgearcalc5(getValue("valgear5").toReal());
+    m_dashboard->setgearcalc6(getValue("valgear6").toReal());
+
     //Extender.variables(cylindercombobox.textAt(cylindercombobox.currentIndex))
 }
 

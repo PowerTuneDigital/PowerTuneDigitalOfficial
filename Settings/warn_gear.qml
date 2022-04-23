@@ -242,18 +242,7 @@ Rectangle {
     Item {
         id: applysettings
         function start() {
-            Dashboard.setwaterwarn(watertempwarn.text)
-            Dashboard.setboostwarn(boostwarn.text)
-            Dashboard.setrpmwarn(rpmwarn.text)
-            Dashboard.setknockwarn(knockwarn.text)
-            Dashboard.setgearcalcactivation(gercalactive)
-            Dashboard.setLambdamultiply(lambdamultiply.text)
-            Dashboard.setgearcalc1(valgear1.text)
-            Dashboard.setgearcalc2(valgear2.text)
-            Dashboard.setgearcalc3(valgear3.text)
-            Dashboard.setgearcalc4(valgear4.text)
-            Dashboard.setgearcalc5(valgear5.text)
-            Dashboard.setgearcalc6(valgear6.text)
+            AppSettings.writeWarnGearSettings(watertempwarn.text,boostwarn.text,rpmwarn.text,knockwarn.text,gercalactive,lambdamultiply.text,valgear1.text,valgear2.text,valgear3.text,valgear4.text,valgear5.text,valgear6.text)
         }
     }
 }
