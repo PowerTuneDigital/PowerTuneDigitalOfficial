@@ -3919,7 +3919,6 @@ void DashBoard::setVisibledashes(const int &Visibledashes)
         return;
     m_Visibledashes = Visibledashes;
     emit VisibledashesChanged(Visibledashes);
-    qDebug()<< "Dashboard Visible " << Visibledashes;
 }
 
 void DashBoard::setoilpressurelamp(const int &oilpressurelamp)

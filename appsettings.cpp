@@ -130,7 +130,7 @@ void AppSettings::writeMainSettings()
 void AppSettings::writeSelectedDashSettings(int numberofdashes)
 {
      setValue("Number of Dashes",numberofdashes);
-     qDebug()<< "SAVED DASH" << getValue("Number of Dashes");
+     //This value is not yet used
 
 }
 
@@ -189,33 +189,32 @@ void AppSettings::writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,con
 {
 
 
-         setValue("EXA00",EXA00);
-         setValue("EXA05",EXA05);
-         setValue("EXA10",EXA10);
-         setValue("EXA15",EXA15);
-         setValue("EXA20",EXA20);
-         setValue("EXA25",EXA25);
-         setValue("EXA30",EXA30);
-         setValue("EXA35",EXA35);
-         setValue("EXA40",EXA40);
-         setValue("EXA45",EXA45);
-         setValue("EXA50",EXA50);
-         setValue("EXA55",EXA55);
-         setValue("EXA60",EXA60);
-         setValue("EXA65",EXA65);
-         setValue("EXA70",EXA70);
-         setValue("EXA75",EXA75);
-         setValue("steinhartcalc0on",steinhartcalc0on);
-         setValue("steinhartcalc1on",steinhartcalc1on);
-         setValue("steinhartcalc2on",steinhartcalc2on);
-         setValue("AN0R3VAL",AN0R3VAL);
-         setValue("AN0R4VAL",AN0R4VAL);
-         setValue("AN1R3VAL",AN1R3VAL);
-         setValue("AN1R4VAL",AN1R4VAL);
-         setValue("AN2R3VAL",AN2R3VAL);
-         setValue("AN2R4VAL",AN2R4VAL);
-
-         m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
+     setValue("EXA00",EXA00);
+     setValue("EXA05",EXA05);
+     setValue("EXA10",EXA10);
+     setValue("EXA15",EXA15);
+     setValue("EXA20",EXA20);
+     setValue("EXA25",EXA25);
+     setValue("EXA30",EXA30);
+     setValue("EXA35",EXA35);
+     setValue("EXA40",EXA40);
+     setValue("EXA45",EXA45);
+     setValue("EXA50",EXA50);
+     setValue("EXA55",EXA55);
+     setValue("EXA60",EXA60);
+     setValue("EXA65",EXA65);
+     setValue("EXA70",EXA70);
+     setValue("EXA75",EXA75);
+     setValue("steinhartcalc0on",steinhartcalc0on);
+     setValue("steinhartcalc1on",steinhartcalc1on);
+     setValue("steinhartcalc2on",steinhartcalc2on);
+     setValue("AN0R3VAL",AN0R3VAL);
+     setValue("AN0R4VAL",AN0R4VAL);
+     setValue("AN1R3VAL",AN1R3VAL);
+     setValue("AN1R4VAL",AN1R4VAL);
+     setValue("AN2R3VAL",AN2R3VAL);
+     setValue("AN2R4VAL",AN2R4VAL);
+     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
 
 
 }
@@ -244,8 +243,6 @@ void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const
     setValue("R21",R21);
     setValue("R22",R22);
     setValue("R23",R23);
-
-
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
 
 
@@ -268,6 +265,6 @@ void AppSettings::readandApplySettings()
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
-    Extender.variables(cylindercombobox.textAt(cylindercombobox.currentIndex))
+    //Extender.variables(cylindercombobox.textAt(cylindercombobox.currentIndex))
 }
 

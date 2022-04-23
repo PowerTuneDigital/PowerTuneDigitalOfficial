@@ -88,12 +88,10 @@ Quick1.TabView {
 
     Quick1.Tab {
         title: "Sensehat" // Tab index 2
-        //Sensehat Sensors
         source: "Settings/sensehat.qml"
     }
     Quick1.Tab {
         title: "Warn / Gear" // Tab index 3
-        //Warning Settings by Craig Shoesmith
         source: "Settings/warn_gear.qml"
     }
     Quick1.Tab {
@@ -104,7 +102,6 @@ Quick1.TabView {
     Quick1.Tab {
         id: regtab
         title: "" // Tab index 5
-        //visible: false
         source: "Settings/analog.qml"
     }
     Quick1.Tab {
@@ -119,11 +116,7 @@ Quick1.TabView {
             anchors.fill: parent
             color: "grey"
             ExBoardAnalog {}
-            Component.onCompleted: {
 
-               // tabView.currentIndex++
-                // console.log("switch tab index ")
-            }
         }
     }
 
@@ -131,7 +124,7 @@ Quick1.TabView {
         title: "Startup" // Tab index 8
         source: "Settings/startup.qml"
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////
+
     Quick1.Tab {
         title: "Network" // Tab index 9
         source: "Settings/network.qml"
