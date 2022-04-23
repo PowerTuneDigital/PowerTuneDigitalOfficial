@@ -123,6 +123,21 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
      //To be implemented later
 
 }
+void AppSettings::writeMainSettings()
+{
+
+    //PowerTuneQML.setValue("serial/stopbits", arg);
+    //PowerTunesettings.beginGroup("MainWindow");
+    //PowerTunesettings.setValue("size", size());
+    //PowerTunesettings.setValue("pos", pos());
+    //PowerTunesettings.endGroup();
+}
+void AppSettings::writeSelectedDashSettings(int numberofdashes)
+{
+     setValue("Number of Dashes",numberofdashes);
+     //This value is not yet used
+
+}
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn",waterwarn);
@@ -179,7 +194,9 @@ void AppSettings::writeAnalogSettings(const qreal &A00,const qreal &A05,const qr
     setValue("AN95",A95);
     setValue("AN100",A100);
     setValue("AN105",A105);
+    //Apply changed Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
+
 }
 void AppSettings::writeRPMSettings(const int &mxrpm,const int &shift1,const int &shift2,const int &shift3,const int &shift4)
 {
@@ -262,6 +279,10 @@ void AppSettings::writeStartupSettings(const int &ExternalSpeed)
 }
 void AppSettings::readandApplySettings()
 {
+}
+void AppSettings::readandApplySettings()
+{
+    //Set Analog Input Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
     m_dashboard->setmaxRPM(getValue("Max RPM").toInt());
     m_dashboard->setrpmStage1(getValue("Shift Light1").toInt());
