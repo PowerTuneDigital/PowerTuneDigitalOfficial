@@ -199,7 +199,7 @@ void GPS::ProcessMessage(QByteArray messageline)
         }
     if(messageline.startsWith("$GPGGA"))
     {
-        if (initialized = 1)
+        if (initialized == 1)
         {
             m_timeouttimer.stop();
         }
