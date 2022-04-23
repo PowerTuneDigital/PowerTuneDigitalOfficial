@@ -68,7 +68,7 @@ void GPS::clear()
 }
 //function to open serial port
 void GPS::openConnection(const QString &portName,const QString &Baud)
-{
+{   
     GPSPort = portName;
     //qDebug()<< "GPS Port Name : " + GPSPort;
     initSerialPort();
@@ -178,7 +178,7 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 }
 
 void GPS::readyToRead()
-{
+{    
 
     QByteArray rawData = m_serialport->readAll();          // read data from serial port
     //qDebug()<< "chunk " << rawData;
@@ -518,7 +518,7 @@ void GPS::checknewLap()
                 Laps++;
                 m_dashboard->setcurrentLap(Laps);
             }
-        }
+        }    
     }
     previousintercept = currentintercept;
     previousintercept2 = currentintercept2;
