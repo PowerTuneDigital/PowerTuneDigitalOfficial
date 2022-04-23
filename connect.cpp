@@ -104,8 +104,6 @@ Connect::Connect(QObject *parent) :
     // QFileSystemModel requires root path
     fileModel->setRootPath(mPath);
 
-
-
     QQmlApplicationEngine *engine = dynamic_cast<QQmlApplicationEngine*>( parent );
     if (engine == Q_NULLPTR)
         return;
@@ -122,11 +120,7 @@ Connect::Connect(QObject *parent) :
     engine->rootContext()->setContextProperty("Apexi", m_apexi);
     engine->rootContext()->setContextProperty("Arduino", m_arduino);
     engine->rootContext()->setContextProperty("Wifiscanner", m_wifiscanner);
-
     m_appSettings->readandApplySettings();
-
-
-
 }
 
 
@@ -166,11 +160,9 @@ void Connect::setfilename3(const QString &file3)
 }
 void Connect::setrpm(const int &dash1,const int &dash2,const int &dash3)
 {
-    //qDebug()<<"rpm source" << dash1<< dash2<< dash3;
     m_dashBoard->setrpmstyle1(dash1);
     m_dashBoard->setrpmstyle2(dash2);
     m_dashBoard->setrpmstyle3(dash3);
-
 }
 void Connect::checkifraspberrypi()
 {

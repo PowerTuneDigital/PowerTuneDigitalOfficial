@@ -70,7 +70,6 @@ void GPS::clear()
 void GPS::openConnection(const QString &portName,const QString &Baud)
 {
     GPSPort = portName;
-    //qDebug()<< "GPS Port Name : " + GPSPort;
     initSerialPort();
     m_timeouttimer.start(5000);
     m_dashboard->setgpsFIXtype("open Serial " + portName);
@@ -121,7 +120,6 @@ void GPS::removeNMEAmsg()
     m_serialport->waitForBytesWritten(4000);
     m_serialport->write(QByteArray::fromHex("B56206010800F008000000000000075B")); //ZDA_Off
     m_serialport->waitForBytesWritten(4000);
-
 }
 void GPS::setGPSBAUD115()
 {
@@ -144,7 +142,6 @@ void GPS::setGPSOnly()
     // Switch on GPS only
     m_serialport->write(QByteArray::fromHex("B562063E2C0000201005000810000100010101010300000001010308100000000101050003000000010106080E00000001010CD1")); //GPS Only
     m_serialport->waitForBytesWritten(4000);
-
 }
 void GPS::closeConnection()
 {
@@ -166,7 +163,6 @@ void GPS::closeConnection1()
     initialized =1;
     m_dashboard->setgpsFIXtype("close serial");
     openConnection(GPSPort,"115200");
-
 }
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
@@ -179,47 +175,21 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 
 void GPS::readyToRead()
 {
-
     QByteArray rawData = m_serialport->readAll();          // read data from serial port
-    //qDebug()<< "chunk " << rawData;
     line.append(rawData);
     while (line.contains("\r\n"))
     {
         int end = line.indexOf("\r\n") + 2;
         QByteArray message = line;
-        //qDebug()<< "line raw" << line;
         message.remove(end, line.length());
-        //qDebug()<< "Processed Message" << message;
         line.remove(0,end);
-        //qDebug()<< "line new" << line;
         ProcessMessage(message);
     }
-
-/*
-    for (int i=0; i < rawData.size(); i++)
-    {
-       //line << rawData[i];
-       line.append(rawData);
-       if (line.size() >= 2 && line[line.size()-2] == '\r' && line[line.size()-1] == '\n')
-       {
-          qDebug()<< "line " << line;
-          //emit(line);
-          line.clear();
-       }
-    }
-*/
-    /*
-    if(this->m_serialport->canReadLine()){
-        QByteArray line = m_serialport->readLine();
-        if(line.startsWith("$GPRMC"))
-            processGPRMC(line);
-        m_timeouttimer.stop();
-        */
 }
 
 void GPS::ProcessMessage(QByteArray messageline)
 {
-    m_timeouttimer.stop();
+
     if(messageline.contains("$GNGGA"))
         if (rateset == 0)
         {
@@ -229,6 +199,10 @@ void GPS::ProcessMessage(QByteArray messageline)
         }
     if(messageline.startsWith("$GPGGA"))
     {
+        if (initialized == 1)
+        {
+            m_timeouttimer.stop();
+        }
         processGPGGA(messageline);
 
     }
@@ -245,7 +219,6 @@ void GPS::ProcessMessage(QByteArray messageline)
     */
     if (messageline.contains(ACK10HZ))
     {
-        //qDebug() << "ACK 10Hz" <<messageline.toHex();
         m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
         removeNMEAmsg();
@@ -259,9 +232,9 @@ void GPS::handleTimeout()
 {
     //Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     m_dashboard->setgpsFIXtype("Timeout");
-    setGPSBAUD115();
-    // closeConnection();
-    // openConnection("ttyAMA0","115200");
+    //setGPSBAUD115();
+    closeConnection();
+    openConnection("ttyAMA0","9600");
 }
 
 void GPS::processGPRMC(const QString & line){

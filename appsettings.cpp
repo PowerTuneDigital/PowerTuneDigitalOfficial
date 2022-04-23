@@ -74,7 +74,6 @@ void AppSettings::setFlowControl(const int &arg)
 int AppSettings::getECU()
 {
     return getValue("serial/ECU").toInt();
-
 }
 
 void AppSettings::setECU(const int &arg)
@@ -85,7 +84,6 @@ void AppSettings::setECU(const int &arg)
 int AppSettings::getInterface()
 {
     return getValue("serial/Interface").toInt();
-
 }
 
 void AppSettings::setInterface(const int &arg)
@@ -115,8 +113,16 @@ QVariant AppSettings::getValue(const QString &key)
     QSettings settings("PowerTuneQML", "PowerTuneDash", this);
     return settings.value(key);
 }
-// Saving
+void AppSettings::writeMainSettings()
+{
+    //To be implemented later
+}
+void AppSettings::writeSelectedDashSettings(int numberofdashes)
+{
+     setValue("Number of Dashes",numberofdashes);
+     //To be implemented later
 
+}
 void AppSettings::writeMainSettings()
 {
 
@@ -126,14 +132,12 @@ void AppSettings::writeMainSettings()
     //PowerTunesettings.setValue("pos", pos());
     //PowerTunesettings.endGroup();
 }
-
 void AppSettings::writeSelectedDashSettings(int numberofdashes)
 {
      setValue("Number of Dashes",numberofdashes);
      //This value is not yet used
 
 }
-
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn",waterwarn);
@@ -148,7 +152,6 @@ void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boos
     setValue("valgear4",valgear4);
     setValue("valgear5",valgear5);
     setValue("valgear6",valgear6);
-
     m_dashboard->setwaterwarn(waterwarn);
     m_dashboard->setboostwarn(boostwarn);
     m_dashboard->setrpmwarn(rpmwarn);
@@ -161,7 +164,6 @@ void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boos
     m_dashboard->setgearcalc4(valgear4);
     m_dashboard->setgearcalc5(valgear5);
     m_dashboard->setgearcalc6(valgear6);
-
 }
 void AppSettings::writeSpeedSettings(const qreal &Speedcorrection)
 {
@@ -194,7 +196,6 @@ void AppSettings::writeAnalogSettings(const qreal &A00,const qreal &A05,const qr
     setValue("AN105",A105);
     //Apply changed Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
-
 
 }
 void AppSettings::writeRPMSettings(const int &mxrpm,const int &shift1,const int &shift2,const int &shift3,const int &shift4)
@@ -238,15 +239,12 @@ void AppSettings::writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,con
     setValue("AN2R3VAL",AN2R3VAL);
     setValue("AN2R4VAL",AN2R4VAL);
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
-
-
 }
 void AppSettings::writeEXAN7dampingSettings(const int &AN7damping)
 {
     setValue("AN7Damping",AN7damping);
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
 }
-
 void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23)
 {
     setValue("T01",T01);
@@ -268,24 +266,22 @@ void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const
     setValue("R22",R22);
     setValue("R23",R23);
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
-
-
 }
 void AppSettings::writeCylinderSettings(const qreal &Cylinders)
 {
     setValue("Cylinders",Cylinders);
     m_dashboard->setCylinders(Cylinders);
-
 }
 void AppSettings::writeStartupSettings(const int &ExternalSpeed)
 {
     setValue("ExternalSpeed",ExternalSpeed);
     m_dashboard->setExternalSpeed(ExternalSpeed);
-
 }
 void AppSettings::readandApplySettings()
 {
-
+}
+void AppSettings::readandApplySettings()
+{
     //Set Analog Input Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
     m_dashboard->setmaxRPM(getValue("Max RPM").toInt());
