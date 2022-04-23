@@ -106,13 +106,13 @@ void AppSettings::setLogging(const int &arg)
 
 void AppSettings::setValue(const QString &key, const QVariant &value)
 {
-    QSettings settings("PowerTuneQML", "PowerTuneQMLGUI", this);
+    QSettings settings("PowerTuneQML", "PowerTuneDash", this);
     settings.setValue(key, value);
 }
 
 QVariant AppSettings::getValue(const QString &key)
 {
-    QSettings settings("PowerTuneQML", "PowerTuneQMLGUI", this);
+    QSettings settings("PowerTuneQML", "PowerTuneDash", this);
     return settings.value(key);
 }
 // Saving
