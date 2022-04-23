@@ -123,21 +123,7 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
      //To be implemented later
 
 }
-void AppSettings::writeMainSettings()
-{
 
-    //PowerTuneQML.setValue("serial/stopbits", arg);
-    //PowerTunesettings.beginGroup("MainWindow");
-    //PowerTunesettings.setValue("size", size());
-    //PowerTunesettings.setValue("pos", pos());
-    //PowerTunesettings.endGroup();
-}
-void AppSettings::writeSelectedDashSettings(int numberofdashes)
-{
-     setValue("Number of Dashes",numberofdashes);
-     //This value is not yet used
-
-}
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn",waterwarn);
@@ -277,9 +263,7 @@ void AppSettings::writeStartupSettings(const int &ExternalSpeed)
     setValue("ExternalSpeed",ExternalSpeed);
     m_dashboard->setExternalSpeed(ExternalSpeed);
 }
-void AppSettings::readandApplySettings()
-{
-}
+
 void AppSettings::readandApplySettings()
 {
     //Set Analog Input Settings
