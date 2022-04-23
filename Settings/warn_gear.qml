@@ -7,7 +7,7 @@ Rectangle {
     id: warningsettings
     anchors.fill: parent
     color: "black"
-
+    property int gercalactive
     Item {
         id: warnettings
         Settings {
@@ -23,7 +23,7 @@ Rectangle {
             property alias gearval4: valgear4.text
             property alias gearval5: valgear5.text
             property alias gearval6: valgear6.text
-            property int gercalactive
+
         }
 
         Grid {

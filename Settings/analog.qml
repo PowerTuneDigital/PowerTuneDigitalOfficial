@@ -16,11 +16,9 @@ Rectangle {
     function loadersource() {
         if (Dashboard.ecu == "0") {
             pageLoader.source = "qrc:/AnalogInputs.qml"
-
         }
         if (Dashboard.ecu == "1") {
             pageLoader.source = "qrc:/AnalogInputs.qml"
-
         }
         if (Dashboard.ecu == "2") {
             pageLoader.source = "qrc:/ConsultRegs.qml"

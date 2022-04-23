@@ -77,7 +77,6 @@ Rectangle {
                     }
                     ;
                 }
-                Component.onCompleted: tabView.currentIndex = 3 // opens the 4th tab
             }
         }
     }

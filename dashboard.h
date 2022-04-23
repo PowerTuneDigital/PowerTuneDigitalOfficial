@@ -10,7 +10,7 @@ class DashBoard : public QObject
 
     // Odometer
     Q_PROPERTY(qreal Odo READ Odo WRITE setOdo NOTIFY odoChanged)
-
+    Q_PROPERTY(qreal Cylinders READ Cylinders WRITE setCylinders NOTIFY CylindersChanged)
     //Tripmeter
     Q_PROPERTY(qreal Trip READ Trip WRITE setTrip NOTIFY tripChanged)
     // Advanced Info
@@ -598,6 +598,7 @@ class DashBoard : public QObject
     long double C2;
     // Odometer
     void setOdo(const qreal &Odo);
+    void setCylinders(const qreal &Cylinders);
     //Tripmeter
     Q_INVOKABLE void setTrip(const qreal &Trip);
     Q_INVOKABLE void setAnalogVal(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105);
@@ -1157,6 +1158,7 @@ class DashBoard : public QObject
 
 
     qreal Odo() const;
+    qreal Cylinders() const;
 
     //Tripmeter
 
@@ -1710,6 +1712,8 @@ signals:
 
     //Odometer
     void odoChanged(qreal Odo);
+    void CylindersChanged(qreal Cylinders);
+
     //Tripmeter
     void tripChanged(qreal Trip);
     // Advanced Info
@@ -2255,6 +2259,7 @@ private:
     // Odometer
 
     qreal m_Odo;
+    qreal m_Cylinders;
 
     // Tripmeter
 

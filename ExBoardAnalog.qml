@@ -336,7 +336,7 @@ Rectangle {
             AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text)
             if(rpmcheckbox.checked == true)
             {
-                Extender.variables(cylindercombobox.textAt(cylindercombobox.currentIndex))
+                AppSettings.writeCylinderSettings(cylindercombobox.textAt(cylindercombobox.currentIndex))
             }
 
             }

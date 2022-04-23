@@ -83,6 +83,7 @@ DashBoard::DashBoard(QObject *parent)
     : QObject(parent)
 
     , m_Odo(0)
+    , m_Cylinders(0)
     , m_Trip(0)
     , m_rpm(0)
     , m_Intakepress(0)
@@ -575,6 +576,13 @@ void DashBoard::setOdo(const qreal &Odo)
         return;
     m_Odo = Odo;
     emit odoChanged(Odo);
+}
+void DashBoard::setCylinders(const qreal &Cylinders)
+{
+    if (m_Cylinders == Cylinders)
+        return;
+    m_Cylinders = Cylinders;
+    emit CylindersChanged(Cylinders);
 }
 
 // Tripmeter
@@ -4645,6 +4653,7 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
 
 // Odometer
 qreal DashBoard::Odo() const { return m_Odo; }
+qreal DashBoard::Cylinders() const { return m_Cylinders; }
 
 // Tripmeter
 qreal DashBoard::Trip() const { return m_Trip; }
