@@ -121,6 +121,7 @@ Rectangle {
             currentIndex: -1
             onCurrentIndexChanged: {
                 adremove()
+                AppSettings.writeSelectedDashSettings(numberofdashes.currentIndex + 1)
             }
 
             delegate: ItemDelegate {
@@ -159,5 +160,6 @@ Rectangle {
         anchors.left: dash3.right
         index: 4
         linkedLoader: fourthPageLoader
+        Component.onCompleted: tabView.currentIndex = 0 //switch back to main tab
     }
 }

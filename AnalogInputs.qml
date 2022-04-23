@@ -302,8 +302,7 @@ Rectangle {
             id: inputs
             function setInputs()
             {
-            Dashboard.setAnalogVal(an00.text,an05.text,an10.text,an15.text,an20.text,an25.text,an30.text,an35.text,an40.text,an45.text,an50.text,an55.text,an60.text,an65.text,an70.text,an75.text,an80.text,an85.text,an90.text,an95.text,an100.text,an105.text)
-            //console.log("Setting inputs")
+            AppSettings.writeAnalogSettings(an00.text,an05.text,an10.text,an15.text,an20.text,an25.text,an30.text,an35.text,an40.text,an45.text,an50.text,an55.text,an60.text,an65.text,an70.text,an75.text,an80.text,an85.text,an90.text,an95.text,an100.text,an105.text)
             }
         }
     }

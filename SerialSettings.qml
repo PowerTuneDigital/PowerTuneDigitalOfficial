@@ -19,6 +19,13 @@ Quick1.TabView {
     DLM {
         id: downloadManager
     }
+    Connections {
+        target: Dashboard
+        onEcuChanged: {
+            setregtabtitle()
+        }
+    }
+
 
     Rectangle {
         id: keyboardcontainer
@@ -88,12 +95,10 @@ Quick1.TabView {
 
     Quick1.Tab {
         title: "Sensehat" // Tab index 2
-        //Sensehat Sensors
         source: "Settings/sensehat.qml"
     }
     Quick1.Tab {
         title: "Warn / Gear" // Tab index 3
-        //Warning Settings by Craig Shoesmith
         source: "Settings/warn_gear.qml"
     }
     Quick1.Tab {
@@ -104,7 +109,6 @@ Quick1.TabView {
     Quick1.Tab {
         id: regtab
         title: "" // Tab index 5
-        visible: false
         source: "Settings/analog.qml"
     }
     Quick1.Tab {
@@ -114,26 +118,31 @@ Quick1.TabView {
 
     Quick1.Tab {
         title: "EX Board" // Tab index 6
-        Rectangle {
-            id: exboard
-            anchors.fill: parent
-            color: "grey"
-            ExBoardAnalog {}
-            Component.onCompleted: {
-
-                tabView.currentIndex++
-                // console.log("switch tab index ")
-            }
-        }
+        source: "qrc:/ExBoardAnalog.qml"
     }
 
     Quick1.Tab {
         title: "Startup" // Tab index 8
         source: "Settings/startup.qml"
     }
-    /////////////////////////////////////////////////////////////////////////////////////////////
+
     Quick1.Tab {
         title: "Network" // Tab index 9
         source: "Settings/network.qml"
+    }
+
+    function setregtabtitle() {
+        if (Dashboard.ecu == "0") {
+            regtab.title = "Analog"
+        }
+        if (Dashboard.ecu == "1") {
+            regtab.title = "Analog"
+        }
+        if (Dashboard.ecu == "2") {
+            regtab.title = "Consult"
+        }
+        if (Dashboard.ecu == "3") {
+            regtab.title = "OBD"
+        }
     }
 }
