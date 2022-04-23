@@ -23,6 +23,7 @@ Rectangle {
             property alias gearval4: valgear4.text
             property alias gearval5: valgear5.text
             property alias gearval6: valgear6.text
+            property int gercalactive
         }
 
         Grid {
@@ -62,8 +63,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 text: "110"
                 inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
-                onEditingFinished: Dashboard.setwaterwarn(watertempwarn.text)
-                Component.onCompleted: Dashboard.setwaterwarn(watertempwarn.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: boostwarn
@@ -72,8 +72,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "0.9"
-                onEditingFinished: Dashboard.setboostwarn(boostwarn.text)
-                Component.onCompleted: Dashboard.setboostwarn(boostwarn.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: rpmwarn
@@ -82,8 +81,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "10000"
-                onEditingFinished: Dashboard.setrpmwarn(rpmwarn.text)
-                Component.onCompleted: Dashboard.setrpmwarn(rpmwarn.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: knockwarn
@@ -92,7 +90,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "80"
-                onEditingFinished: Dashboard.setknockwarn(knockwarn.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: lambdamultiply
@@ -101,14 +99,12 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "14.7"
-                onEditingFinished: Dashboard.setLambdamultiply(lambdamultiply.text)
-                Component.onCompleted: {
-                    Dashboard.setLambdamultiply(lambdamultiply.text)
-                    // tabView.currentIndex = 4 // opens the 5th tab
+                onEditingFinished: applysettings.start()
+
                 }
             }
         }
-    }
+
     Rectangle {
         id: gearsettings
         width: parent.width
@@ -164,17 +160,22 @@ Rectangle {
                 height: warningsettings.height / 15
                 font.pixelSize: warningsettings.width / 55
                 Component.onCompleted: if (gearcalcselect.checked == true) {
-                                           Dashboard.setgearcalcactivation(1)
+                                           gercalactive = 1
+                                           applysettings.start()
                                            switchtext.text = "Gear Calulation ON"
                                        } else {
-                                           Dashboard.setgearcalcactivation(0)
+                                           gercalactive = 0
+                                           applysettings.start()
                                            switchtext.text = "Gear Calulation OFF"
                                        }
+
                 onCheckedChanged: if (gearcalcselect.checked == true) {
-                                      Dashboard.setgearcalcactivation(1)
+                                      gercalactive = 1
+                                      applysettings.start()
                                       switchtext.text = "Gear Calulation ON"
                                   } else {
-                                      Dashboard.setgearcalcactivation(0)
+                                      gercalactive = 0
+                                      applysettings.start()
                                       switchtext.text = "Gear Calulation OFF"
                                   }
             }
@@ -186,8 +187,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "120"
-                onEditingFinished: Dashboard.setgearcalc1(valgear1.text)
-                Component.onCompleted: Dashboard.setgearcalc1(valgear1.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: valgear2
@@ -196,8 +196,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "74"
-                onEditingFinished: Dashboard.setgearcalc2(valgear2.text)
-                Component.onCompleted: Dashboard.setgearcalc2(valgear2.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: valgear3
@@ -206,8 +205,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "54"
-                onEditingFinished: Dashboard.setgearcalc3(valgear3.text)
-                Component.onCompleted: Dashboard.setgearcalc3(valgear3.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: valgear4
@@ -216,8 +214,7 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "37"
-                onEditingFinished: Dashboard.setgearcalc4(valgear4.text)
-                Component.onCompleted: Dashboard.setgearcalc4(valgear4.text)
+                onEditingFinished: applysettings.start()
             }
             TextField {
                 id: valgear5
@@ -226,8 +223,8 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: "28"
-                onEditingFinished: Dashboard.setgearcalc5(valgear5.text)
-                Component.onCompleted: Dashboard.setgearcalc5(valgear5.text)
+                onEditingFinished: applysettings.start()
+
             }
             TextField {
                 id: valgear6
@@ -236,9 +233,27 @@ Rectangle {
                 font.pixelSize: warningsettings.width / 55
                 inputMethodHints: Qt.ImhFormattedNumbersOnly
                 text: ""
-                onEditingFinished: Dashboard.setgearcalc6(valgear6.text)
-                Component.onCompleted: Dashboard.setgearcalc6(valgear6.text)
+                onEditingFinished: applysettings.start()
+                Component.onCompleted: applysettings.start()
             }
+        }
+
+    }
+    Item {
+        id: applysettings
+        function start() {
+            Dashboard.setwaterwarn(watertempwarn.text)
+            Dashboard.setboostwarn(boostwarn.text)
+            Dashboard.setrpmwarn(rpmwarn.text)
+            Dashboard.setknockwarn(knockwarn.text)
+            Dashboard.setgearcalcactivation(gercalactive)
+            Dashboard.setLambdamultiply(lambdamultiply.text)
+            Dashboard.setgearcalc1(valgear1.text)
+            Dashboard.setgearcalc2(valgear2.text)
+            Dashboard.setgearcalc3(valgear3.text)
+            Dashboard.setgearcalc4(valgear4.text)
+            Dashboard.setgearcalc5(valgear5.text)
+            Dashboard.setgearcalc6(valgear6.text)
         }
     }
 }
