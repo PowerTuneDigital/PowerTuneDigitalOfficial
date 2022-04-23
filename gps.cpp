@@ -268,7 +268,7 @@ void GPS::handleTimeout()
 }
 void GPS::handleReconnectTimeout()
 {
-    if(m_dashboard->gpsFIXtype() == "open with 9600" || "open with Baud115200")
+    if(m_dashboard->gpsFIXtype() == "open with 9600" || m_dashboard->gpsFIXtype() == "open with 115200")
     {
     closeConnection();
     openConnection(GPSPort,"9600");
