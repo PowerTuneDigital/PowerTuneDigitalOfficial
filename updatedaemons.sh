@@ -104,6 +104,17 @@ sudo rm /home/pi/daemons/Delta
 sudo rm /home/pi/daemons/BigNET
 sudo rm /home/pi/daemons/R35
 sudo rm /home/pi/daemons/Prado
+sudo rm /home/pi/daemons/ECVOXCAN
+sudo rm /home/pi/daemons/Emerald
+sudo rm /home/pi/daemons/Hondata
+sudo rm /home/pi/daemons/HondataS300
+sudo rm /home/pi/daemons/LifeRacing
+sudo rm /home/pi/daemons/ME13
+sudo rm /home/pi/daemons/NeuroBasic
+sudo rm /home/pi/daemons/PTDCAND
+sudo rm /home/pi/daemons/RX8
+sudo rm /home/pi/daemons/WRX2016
+sudo rm /home/pi/daemons/BigNETLamda
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
