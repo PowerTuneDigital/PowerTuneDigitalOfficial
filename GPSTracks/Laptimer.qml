@@ -3,7 +3,6 @@ import QtLocation 5.9
 import QtPositioning 5.9
 import QtQuick.Controls 2.2
 import QtQuick.Controls.Styles 1.4
-
 import QtQuick.Layouts 1.0
 import QtQuick.XmlListModel 2.0
 import IMD 1.0
@@ -25,11 +24,8 @@ Rectangle {
     property real  linex2;
     property real  liney2;
 
-
     function restartCounter()  {
-
         mapItem.startTime = 0;
-
     }
 
 
@@ -49,10 +45,8 @@ Rectangle {
         running: false;
         repeat: true;
         onTriggered: {
-
             mapItem.timeChanged()
             time.text = new Date(mapItem.msecondsElapsed*100).toLocaleTimeString(Qt.locale(),"mm" + ":" + "ss" + "." + "zzz")
-
         }
     }
 
@@ -122,9 +116,7 @@ Rectangle {
                     id:finishline2
                     line.width: 6
                     line.color: 'red'
-
                 }
-
                 Component.onCompleted:
                 {
                     var lines = []
@@ -133,9 +125,7 @@ Rectangle {
                         lines[i] = geopath.coordinateAt(i)
                     }
                     trackLine.path = lines
-
                 }
-
             // Draw a small red circle for current Vehicle Location
             MapQuickItem {
                 id: marker
@@ -158,7 +148,6 @@ Rectangle {
             height: 30
             anchors.left: map.right
             font.pixelSize: 20
-           // model: ["Current Position","Australia","Germany","Japan","New Zealand","Malaysia","South Africa","USA"]
 
             delegate: ItemDelegate {
                 width: countryselect.width
@@ -169,6 +158,9 @@ Rectangle {
                 highlighted: countryselect.highlightedIndex == index
                 hoverEnabled: countryselect.hoverEnabled
             }
+            onActivated: {
+                           AppSettings.writeCountrySettings(textAt(countryselect.currentIndex))
+                         }
             onCurrentIndexChanged: changecountry.change()
             Component.onCompleted: {
                 var countrylist = []
@@ -177,6 +169,14 @@ Rectangle {
                     countrylist[i] = mapIO.getCountries()[i];
                 }
                 countryselect.model = countrylist;
+                if (find(Dashboard.CBXCountrysave) !== -1)
+                {
+                countryselect.currentIndex =  find(Dashboard.CBXCountrysave)
+                }
+                else
+                {
+                trackselect.currentIndex = 0
+                }
                 }
         }
         ComboBox {
@@ -195,24 +195,21 @@ Rectangle {
                 hoverEnabled: trackselect.hoverEnabled
             }
             onCurrentIndexChanged: changetrack.change()
-            onModelChanged: changetrack.change()//needed if when the Country is changed
+            onModelChanged: {
+                            changetrack.change()//needed if when the Country is changed
+                            if (find(Dashboard.CBXTracksave) !== -1)
+                            {
+                            trackselect.currentIndex =  find(Dashboard.CBXTracksave)
+                            }
+                            else
+                            {
+                            trackselect.currentIndex = 0
+                            }
+                            }
+            onActivated: {
+                           AppSettings.writeTrackSettings(textAt(trackselect.currentIndex))
+                         }
         }
-        /*
-        ComboBox {
-            id: cbxzoom
-            //visible: false
-            model:["12","13","14","15","16","17","18","19","20"]
-            width: 170
-            height: 30
-            anchors.right: stop.left
-             anchors.bottom: parent.bottom
-             anchors.margins: 20
-            font.pixelSize: 20
-            onCurrentIndexChanged: {
-                        map.zoomLevel = cbxzoom.textAt(cbxzoom.currentIndex)
-                        }
-        }*/
-
         Grid {
             id:buttongrid
             rows: 1
@@ -242,7 +239,6 @@ Rectangle {
                     map.zoomLevel = 18;
                 }
                 changeview.text == "TOP VIEW" ? changeview.text = "DRIVER VIEW" : changeview.text = "TOP VIEW";
-
                 changeview.text == "DRIVER VIEW" ? changeview.text = "DRIVER VIEW" : changeview.text = "TOP VIEW";
             }
         }
@@ -283,18 +279,6 @@ Rectangle {
                 font.bold: true
                 color : "orangered"
                 font.family: "Eurostile"}
-            /*
-            Text { text: "Last Lap:"
-                font.pixelSize: 15
-                font.bold: true
-                color : "white"
-                font.family: "Eurostile"}
-            Text { text: Dashboard.laptime
-                font.pixelSize: 30
-                font.bold: true
-                color : "white"
-                font.family: "Eurostile"}
-            */
             Text { text: "Best Lap: "
                 font.pixelSize: 15
                 font.bold: true
@@ -305,8 +289,6 @@ Rectangle {
                 font.bold: true
                 color: "#00ff00"
                 font.family: "Eurostile"}
-
-
             Text { text: "GPS FIX type: "
                 font.pixelSize: 15
                 font.bold: true
@@ -318,26 +300,18 @@ Rectangle {
                 color: "#00ff00"
                 font.family: "Eurostile"}
         }
-
-
 Rectangle{
     id :laptimes
 
     anchors.top: grid1.bottom
     anchors.topMargin: 5
-
     anchors.left: map.right
     anchors.leftMargin: 5
-
     anchors.bottom : buttongrid.top
     anchors.bottomMargin: 5
-
     width: 400
-
     height: 200
-
     color: "grey"
-
     ListModel {
         id: laptimeModel
     }
@@ -384,32 +358,15 @@ Rectangle{
             NumberAnimation { properties: "x,y"; duration: 1000 }
         }
     }
-
-
 }
 IMD
 {
     id:mapIO
 }
-
-
         Item
         {
             id: changecountry
             function change(){
-
-               /* if (countryselect.textAt(countryselect.currentIndex) == "Current Position"){trackselect.model = ["Tilt 0", "Tilt 45"],map.center= QtPositioning.coordinate(-25.804219,28.300091)};
-                //if (countryselect.textAt(countryselect.currentIndex) == "Current Position"){trackselect.model = ["Tilt 0", "Tilt 45"],map.center= QtPositioning.coordinate(Dashboard.gpsLatitude,Dashboard.gpsLongitude)};
-                if (countryselect.textAt(countryselect.currentIndex) == "Australia"){trackselect.model = ["Barbagallo Raceway","Carrnell Raceway","Collie Motorplex","Lakeside Raceway","Luddenham Raceway","Queensland Raceway","Wakefield Park"]};
-                if (countryselect.textAt(countryselect.currentIndex) == "Germany"){trackselect.model = ["Hockenheim","Nürburgring"]};
-                if (countryselect.textAt(countryselect.currentIndex) == "New Zealand"){trackselect.model = ["Pukekohe Park"]};
-                if (countryselect.textAt(countryselect.currentIndex) == "Malaysia"){trackselect.model = ["Sepang"]};
-
-                if (countryselect.textAt(countryselect.currentIndex) == "South Africa"){trackselect.model = ["Dezzi","Midvaal","Phakisa","Redstar","Zwartkops"]};
-                //if (countryselect.textAt(countryselect.currentIndex) == "United Kingdom"){trackselect.model = ["Silverstone"]};
-                if (countryselect.textAt(countryselect.currentIndex) == "USA"){trackselect.model = ["Buttonwillow"]};*/
-                //if (countryselect.textAt(countryselect.currentIndex) == "Australia"){trackselect.model =[ mapIO.getTracks("Australia")];}
-
                     var lines = []
                     var l2 = mapIO.getTracks(countryselect.textAt(countryselect.currentIndex));
                     for(var i=0;i<mapIO.getTrackCount(countryselect.textAt(countryselect.currentIndex));i++)
@@ -417,10 +374,6 @@ IMD
                         lines[i] = mapIO.getTracks(countryselect.textAt(countryselect.currentIndex))[i];
                     }
                     trackselect.model = lines;
-
-
-                console.log(countryselect.textAt(countryselect.currentIndex))
-                //changetrack.change()
             }
         }
         Item
@@ -428,48 +381,26 @@ IMD
             id: changetrack
             function change()
             {
-                /*
-
-                if (trackselect.textAt(trackselect.currentIndex) == "Utah Motorsport Park"){map.center= QtPositioning.coordinate(40.579618,-112.3805621,398),map.zoomLevel = 15.1 ,map.bearing  = 90,map.tilt = 0};
-                if (trackselect.textAt(trackselect.currentIndex) == "Midvaal"){map.center= QtPositioning.coordinate(-26.612376, 28.059484),map.zoomLevel = 16,map.tilt = 0,map.bearing  = 22,Gps.defineFinishLine(-26.613392, 28.058586,-26.613509,28.058717,1)}
-                if (trackselect.textAt(trackselect.currentIndex) == "Dezzi"){map.center= QtPositioning.coordinate(-30.770474, 30.426004),map.zoomLevel = 16,map.tilt = 0,map.bearing  = 22}
-
-
-
-*/
                 if(mapIO.getTrackExists(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex)))
                 {
-                    //console.log("getcentreqml");
-                    //console.log(mapIO.getCenter(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex)) + " Position 0");
-
                     map.center=QtPositioning.coordinate(parseFloat(mapIO.getCenter(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[0]),parseFloat(mapIO.getCenter(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[1]));
                     map.zoomLevel = mapIO.getZOOMLEVEL(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex));
                     map.tilt = 0;
                     map.bearing = 0;
                     map.fitViewportToVisibleMapItems();
                     changeview.text = "TOP VIEW";
-                   // console.log("Map Items " + mapOverlay.mapItems )
-
 
                     linex1 = mapIO.getStartFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[0];
                     liney1 = mapIO.getStartFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[1];
                     linex2 = mapIO.getStartFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[2];
                     liney2 = mapIO.getStartFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[3];
                     //TODO fill in DefineFinishLine
-
-
                     Gps.defineFinishLine(linex1,liney1,linex2,liney2);
-                  //
-                    //console.log(mapIO.getStartFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[0]);
-                    //var lines = []
                     trackLine.setPath( mapIO.loadMapData(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex)));
                     startline.path = [
                                 { latitude: linex1, longitude: liney1 },
                                 { latitude: linex2, longitude: liney2},
                                        ]
-                    //console.log("Tracklinepath " +trackLine.path);
-                    //console.log(lines);
-
                     if(mapIO.getExistsSecondFinish(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex)))
                     {
 
@@ -477,7 +408,6 @@ IMD
                         var liney21 = mapIO.getSecondFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[1];
                         var linex22 = mapIO.getSecondFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[2];
                         var liney22 = mapIO.getSecondFinishLine(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex))[3];
-                        //var direction2 = mapIO.getSecondFinishDirection(countryselect.textAt(countryselect.currentIndex),trackselect.textAt(trackselect.currentIndex));
                         Gps.defineFinishLine2(linex21,liney21,linex22,liney22);
                         finishline2.path = [
                                     { latitude: linex21, longitude: liney21 },
@@ -487,15 +417,12 @@ IMD
                 }
             }
         }
-
         Item
         {
             //Needed to permanently update the Map Center if Current Position view is selected
             id: pos
             function poschanged(){
-
                 if (changeview.text == "DRIVER VIEW"){map.center= QtPositioning.coordinate(Dashboard.gpsLatitude,Dashboard.gpsLongitude),map.bearing=Dashboard.gpsbearing,map.tilt=45,map.zoomLevel = 18};
-
             }
         }
     }

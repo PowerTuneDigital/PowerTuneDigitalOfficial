@@ -1739,8 +1739,23 @@ void DashBoard::setEthernetStat(const QString &EthernetStat)
     emit EthernetStatChanged(EthernetStat);
 }
 
-// GPS
+void DashBoard::setCBXCountrysave(const QString &CBXCountrysave)
+{
+    if (m_CBXCountrysave == CBXCountrysave)
+        return;
+    m_CBXCountrysave = CBXCountrysave;
+    emit CBXCountrysaveChanged(CBXCountrysave);
+}
 
+void DashBoard::setCBXTracksave(const QString &CBXTracksave)
+{
+    if (m_CBXTracksave == CBXTracksave)
+        return;
+    m_CBXTracksave = CBXTracksave;
+    emit CBXTracksaveChanged(CBXTracksave);
+}
+
+// GPS
 
 void DashBoard::setgpsTime (const QString &gpsTime)
 {
@@ -4791,8 +4806,8 @@ QString DashBoard::RunStat() const { return m_RunStat; }
 QString DashBoard::WifiStat() const { return m_WifiStat; }
 QString DashBoard::EthernetStat() const { return m_EthernetStat; }
 
-
-
+QString DashBoard::CBXCountrysave() const { return m_CBXCountrysave; }
+QString DashBoard::CBXTracksave() const { return m_CBXTracksave; }
 
 //GPS
 

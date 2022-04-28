@@ -17,28 +17,20 @@ public:
 
     Q_INVOKABLE int getBaudRate();
     Q_INVOKABLE void setBaudRate(const int &arg);
-
     Q_INVOKABLE int getParity();
     Q_INVOKABLE void setParity(const int &arg);
-
     Q_INVOKABLE int getDataBits();
     Q_INVOKABLE void setDataBits(const int &arg);
-
     Q_INVOKABLE int getStopBits();
     Q_INVOKABLE void setStopBits(const int &arg);
-
     Q_INVOKABLE int getFlowControl();
     Q_INVOKABLE void setFlowControl(const int &arg);
-
     Q_INVOKABLE int getECU();
     Q_INVOKABLE void setECU(const int &arg);
-
     Q_INVOKABLE int getInterface();
     Q_INVOKABLE void setInterface(const int &arg);
-
     Q_INVOKABLE int getLogging();
     Q_INVOKABLE void setLogging(const int &arg);
-
     Q_INVOKABLE void writeMainSettings();
     Q_INVOKABLE void writeSelectedDashSettings(int numberofdashes);
     Q_INVOKABLE void writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6);
@@ -49,6 +41,8 @@ public:
     Q_INVOKABLE void writeEXAN7dampingSettings(const int &AN7damping);
     Q_INVOKABLE void writeSteinhartSettings(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23);
     Q_INVOKABLE void writeCylinderSettings(const qreal &Cylinders);
+    Q_INVOKABLE void writeCountrySettings(const QString &Country);
+    Q_INVOKABLE void writeTrackSettings(const QString &Track);
     Q_INVOKABLE void writeStartupSettings(const int &ExternalSpeed);
     Q_INVOKABLE void readandApplySettings();
 
