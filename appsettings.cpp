@@ -258,6 +258,19 @@ void AppSettings::writeCylinderSettings(const qreal &Cylinders)
     setValue("Cylinders",Cylinders);
     m_dashboard->setCylinders(Cylinders);
 }
+
+void AppSettings::writeCountrySettings(const QString &Country)
+{
+    setValue("Country",Country);
+    m_dashboard->setCBXCountrysave(Country);
+    qDebug() << "Country" <<getValue("Country").toString();
+}
+void AppSettings::writeTrackSettings(const QString &Track)
+{
+    setValue("Track",Track);
+    m_dashboard->setCBXTracksave(Track);
+
+}
 void AppSettings::writeStartupSettings(const int &ExternalSpeed)
 {
     setValue("ExternalSpeed",ExternalSpeed);
@@ -291,5 +304,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setsmootexAnalogInput7(getValue("Speedcorrection").toReal());
     m_dashboard->setCylinders(getValue("Cylinders").toReal());
     m_dashboard->setExternalSpeed(getValue("ExternalSpeed").toInt());
+    m_dashboard->setCBXCountrysave(getValue("Country").toString());
+    m_dashboard->setCBXTracksave(getValue("Track").toString());
 }
 
