@@ -149,6 +149,9 @@ class DashBoard : public QObject
     Q_PROPERTY(QString WifiStat READ WifiStat WRITE setWifiStat NOTIFY WifiStatChanged)
     Q_PROPERTY(QString EthernetStat READ EthernetStat WRITE setEthernetStat NOTIFY EthernetStatChanged)
 
+    Q_PROPERTY(QString CBXCountrysave READ CBXCountrysave WRITE setCBXCountrysave NOTIFY CBXCountrysaveChanged)
+    Q_PROPERTY(QString CBXTracksave READ CBXTracksave WRITE setCBXTracksave NOTIFY CBXTracksaveChanged)
+
     //Adaptronic extra
 
     Q_PROPERTY(qreal MAP READ MAP WRITE setMAP NOTIFY mAPChanged)
@@ -744,6 +747,8 @@ class DashBoard : public QObject
     void setWifiStat(const QString &WifiStat);
     void setEthernetStat(const QString &EthernetStat);
 
+    void setCBXCountrysave(const QString &CBXCountrysave);
+    void setCBXTracksave(const QString &CBXTracksave);
 
     // GPS
 
@@ -1302,6 +1307,9 @@ class DashBoard : public QObject
     QString WifiStat() const;
     QString EthernetStat() const;
 
+    QString CBXCountrysave() const;
+    QString CBXTracksave() const;
+
     // GPS
 
     QString gpsTime() const;
@@ -1854,6 +1862,8 @@ signals:
     void WifiStatChanged(QString WifiStat);
     void EthernetStatChanged(QString EthernetStat);
 
+    void CBXCountrysaveChanged(QString CBXCountrysave);
+    void CBXTracksaveChanged(QString CBXTracksave);
 
     // GPS
 
@@ -2405,6 +2415,9 @@ private:
     QString m_RunStat;
     QString m_WifiStat;
     QString m_EthernetStat;
+
+    QString m_CBXCountrysave;
+    QString m_CBXTracksave;
 
     //Adaptronic extra
 
