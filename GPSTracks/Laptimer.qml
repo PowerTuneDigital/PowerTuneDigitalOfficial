@@ -169,7 +169,14 @@ Rectangle {
                     countrylist[i] = mapIO.getCountries()[i];
                 }
                 countryselect.model = countrylist;
+                if (find(Dashboard.CBXCountrysave) !== -1)
+                {
                 countryselect.currentIndex =  find(Dashboard.CBXCountrysave)
+                }
+                else
+                {
+                trackselect.currentIndex = 0
+                }
                 }
         }
         ComboBox {
