@@ -1,8 +1,9 @@
-#ifndef GPS_H
-#define GPS_H
-#include "serialport.h"
+#ifndef GPS_H_
+#define GPS_H_
 #include <QElapsedTimer>
 #include <QTimer>
+
+#include "serialport.h"
 
 class DashBoard;
 class Serialport;
@@ -11,14 +12,14 @@ class GPS : public QObject
 {
     Q_OBJECT
 
-public:
+ public:
     explicit GPS(QObject *parent = 0);
     explicit GPS(DashBoard *dashboard, QObject *parent = 0);
-    Q_INVOKABLE void defineFinishLine(const qreal & Y1,const qreal & X1,const qreal & Y2,const qreal & X2);
-    Q_INVOKABLE void defineFinishLine2(const qreal & Y1,const qreal & X1,const qreal & Y2,const qreal & X2);
+    Q_INVOKABLE void defineFinishLine(const qreal & Y1, const qreal & X1, const qreal & Y2, const qreal & X2);
+    Q_INVOKABLE void defineFinishLine2(const qreal & Y1, const qreal & X1, const qreal & Y2, const qreal & X2);
     Q_INVOKABLE void resetLaptimer();
 
-private:
+ private:
     DashBoard *m_dashboard;
     SerialPort *m_serialport;
     QByteArray  m_readData;
@@ -36,9 +37,9 @@ private:
 
 
 
-public slots:
-    //void delaytimer();
-    void openConnection(const QString &portName,const QString &Baud);
+ public slots:
+    // void delaytimer();
+    void openConnection(const QString &portName, const QString &Baud);
     void ProcessMessage(QByteArray messageline);
     void removeNMEAmsg();
     void setGPSBAUD115();
@@ -48,75 +49,14 @@ public slots:
     void closeConnection1();
     void clear();
 
-private slots:
+ private slots:
     void readyToRead();
     void handleTimeout();
     void handleReconnectTimeout();
     void handleError(QSerialPort::SerialPortError error);
     void initSerialPort();
-signals:
+ signals:
     void sig_linecrossed();
-
 };
 
-#endif // GPS_H
-
-
-/*
-#ifndef GPS_H
-#define GPS_H
-#define _USE_MATH_DEFINES
-
-#include <QDebug>
-#include <vector>
-#include <QDesktopServices>
-#include <QUrl>
-#include <cmath>
-#include <map>
-#include <QSerialPort>
-#include <QSerialPortInfo>
-#include <QQueue>
-#include <QObject>
-
-
-class DashBoard;
-
-class GPS : public QObject
-{
-
-    Q_OBJECT
-
-
-
-
-
-public:
-    explicit GPS(QObject *parent = 0);
-    explicit GPS(DashBoard *dashboard, QObject *parent = 0);
-
-
-public slots:
-    void startGPScom(const QString &portName,const int &baud);
-    void stopGPScom();
-
-signals:
-    void portStatusChange(const bool &portStatus);
-    void rmcUpde(const QString & rmcList);
-private slots:
-    void readLine();
-    void printUpdate(const QString & update);
-    void initSerialPort();
-
-
-private:
-    DashBoard *m_dashboard;
-    QString convertToDecimal(const QString & coord, const QString & dir);
-    void processLine(const QString &line);
-
-    QSerialPort *com;
-    QByteArray serialData;
-    QString serialBuffer;
-};
-
-#endif // GPS_H
-*/
+#endif  // GPS_H_
