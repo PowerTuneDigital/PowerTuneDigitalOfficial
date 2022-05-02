@@ -306,7 +306,6 @@ void GPS::processGPGGA(const QString & line)
     QStringList fields = line.split(',');
     int fixquality = fields[6].toInt();
     hdop = fields[8].toFloat();
-    //qDebug()<< "HDOP " << hdop;
     switch (fixquality) {
     case 0:
         m_dashboard->setgpsFIXtype("No fix yet");
