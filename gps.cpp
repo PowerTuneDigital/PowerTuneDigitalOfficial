@@ -288,7 +288,7 @@ void GPS::processGPRMC(const QString & line) {
     QString decLat = convertToDecimal(latitude, latDirection);
     QString decLon = convertToDecimal(longitude, lonDirection);
 
-    if ((m_dashboard->gpsFIXtype() == "GPS only") ||(m_dashboard->gpsFIXtype() == "DGPS") )
+    if ((m_dashboard->gpsFIXtype() == "GPS only") || (m_dashboard->gpsFIXtype() == "DGPS") )
     {
     m_dashboard->setgpsLatitude(decLat.toDouble());
     m_dashboard->setgpsLongitude(decLon.toDouble());
@@ -470,7 +470,7 @@ void GPS::checknewLap()
         }
 
 
-        if ((((m_dashboard->gpsLongitude() <= start2lineX2 && m_dashboard->gpsLongitude() >= start2lineX1 ))||((m_dashboard->gpsLatitude() <= start2lineY2 && m_dashboard->gpsLatitude() >= start2lineY1 ))) || (((m_dashboard->gpsLongitude() <= start2lineX1 && m_dashboard->gpsLongitude() >= start2lineX2 ))||((m_dashboard->gpsLatitude() <= start2lineY1 && m_dashboard->gpsLatitude() >= start2lineY2 ))))
+        if ((((m_dashboard->gpsLongitude() <= start2lineX2 && m_dashboard->gpsLongitude() >= start2lineX1 )) || ((m_dashboard->gpsLatitude() <= start2lineY2 && m_dashboard->gpsLatitude() >= start2lineY1 ))) || (((m_dashboard->gpsLongitude() <= start2lineX1 && m_dashboard->gpsLongitude() >= start2lineX2 )) || ((m_dashboard->gpsLatitude() <= start2lineY1 && m_dashboard->gpsLatitude() >= start2lineY2 ))))
         {
             if (m_timer.isValid() == true) {
                 QTime y(0, 0);
