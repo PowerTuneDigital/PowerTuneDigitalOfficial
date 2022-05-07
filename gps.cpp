@@ -216,34 +216,40 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-    if (messageline.contains("$GNGGA")) {
-        if (rateset == 0)
-        {
-            // Use only GPS
-            setGPS10HZ();
-            rateset = 1;
-        }
-    }
-    if (messageline.startsWith("$GPGGA")) {
-        processGPGGA(messageline);
-    }
-    if (messageline.startsWith("$GPRMC")) {
-        // qDebug()<< "GPRMC";
-        processGPRMC(messageline);
-    }
-        /*
-    if(messageline.startsWith("$GPVTG"))
-    {
-        processGPVTG(messageline);
-    }
-    */
+
+    // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
-        // qDebug() << "ACK 10Hz" <<messageline.toHex();
+        qDebug() << "ACK 10Hz" <<messageline.toHex();
         m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
         removeNMEAmsg();
         setGPSBAUD115();
+        return;
     }
+
+    // Then we check if the message looks like a valid NMEA message
+    if (!messageline.startsWith("$G")) {
+        qDebug() << "Not a NMEA message" << messageline.toHex();
+        return;
+    }
+
+    // Then we process the message
+    if (messageline.mid(3, 3) == "GGA") {
+        // Check if we have already set the refresh rate
+        if (rateset == 0) {
+            setGPS10HZ();
+        }
+        processGPGGA(messageline);
+    }
+    if (messageline.mid(3, 3) == "RMC") {
+        processGPRMC(messageline);
+    }
+    /*
+    if(messageline.mid(3,3) == "VTG")
+    {
+        processGPVTG(messageline);
+    }
+    */
 }
 
 void GPS::handleTimeout()
