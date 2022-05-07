@@ -12,13 +12,14 @@ ApplicationWindow {
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
-
+/*
     Connections{
             target: Dashboard
             onBrigtnessChanged: {
             brightness.value = Dashboard.Brightness
             }
     }
+*/
     Item {
         id: name
         Component.onCompleted: Connect.checkifraspberrypi()
@@ -164,10 +165,9 @@ ApplicationWindow {
             stepSize: 5
             from: 20
             to: 255
-            //visible: Dashboard.screen
             value: Dashboard.Brightness
+            onMoved: Connect.setSreenbrightness(brightness.value);
             //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
-            onPositionChanged: Connect.setSreenbrightness(brightness.value);
         }
     }
     }
