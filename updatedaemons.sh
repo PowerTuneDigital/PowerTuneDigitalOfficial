@@ -45,6 +45,7 @@ sudo pkill EMSCAN
 sudo pkill WRX2012
 sudo pkill Testdaemon
 sudo pkill ecoboost
+sudo pkill Emerald
 sudo pkill WolfEMS
 sudo pkill GMCANOBD
 sudo pkill genericcan
