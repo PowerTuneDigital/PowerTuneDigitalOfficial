@@ -731,6 +731,7 @@ void Connect::daemonstartup(const int &daemon)
     QString daemonstart;
     switch (daemon)
     {
+
     case 0:
         daemonstart = "";
         break;
@@ -838,6 +839,7 @@ void Connect::daemonstartup(const int &daemon)
         break;
     case 35:
         daemonstart = "./Emerald";
+        break;
     case 36:
         daemonstart = "./WolfEMS";
         break;
