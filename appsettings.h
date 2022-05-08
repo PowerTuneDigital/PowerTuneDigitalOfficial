@@ -43,6 +43,7 @@ public:
     Q_INVOKABLE void writeCylinderSettings(const qreal &Cylinders);
     Q_INVOKABLE void writeCountrySettings(const QString &Country);
     Q_INVOKABLE void writeTrackSettings(const QString &Track);
+    Q_INVOKABLE void writebrightnessettings(const int &Brightness);
     Q_INVOKABLE void writeStartupSettings(const int &ExternalSpeed);
     Q_INVOKABLE void readandApplySettings();
 

@@ -270,6 +270,14 @@ void AppSettings::writeTrackSettings(const QString &Track)
     m_dashboard->setCBXTracksave(Track);
 
 }
+
+void AppSettings::writebrightnessettings(const int &Brightness)
+{
+    setValue("Brightness", Brightness);
+    m_dashboard->setBrightness(Brightness);
+
+}
+
 void AppSettings::writeStartupSettings(const int &ExternalSpeed)
 {
     setValue("ExternalSpeed", ExternalSpeed);
@@ -305,5 +313,6 @@ void AppSettings::readandApplySettings()
     m_dashboard->setExternalSpeed(getValue("ExternalSpeed").toInt());
     m_dashboard->setCBXCountrysave(getValue("Country").toString());
     m_dashboard->setCBXTracksave(getValue("Track").toString());
+    m_dashboard->setBrightness(getValue("Brightness").toInt());
 }
 
