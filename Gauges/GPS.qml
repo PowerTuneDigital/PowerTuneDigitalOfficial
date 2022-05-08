@@ -210,7 +210,7 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
-                text: Dashboard.gpsHDOP
+                text: (Dashboard.gpsHDOP).toFixed(2)
                 font.pixelSize: 20
                 font.bold: true
                 font.family: "Eurostile"
