@@ -19,6 +19,7 @@ ApplicationWindow {
             brightness.value = Dashboard.Brightness
             }
     }
+
     Item {
         id: name
         Component.onCompleted: Connect.checkifraspberrypi()
@@ -164,10 +165,12 @@ ApplicationWindow {
             stepSize: 5
             from: 20
             to: 255
-            //visible: Dashboard.screen
             value: Dashboard.Brightness
+            onValueChanged: {
+                     Connect.setSreenbrightness(brightness.value);
+                     AppSettings.writebrightnessettings(brightness.value);
+                     }
             //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
-            onPositionChanged: Connect.setSreenbrightness(brightness.value);
         }
     }
     }
