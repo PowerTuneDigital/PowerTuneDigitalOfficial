@@ -271,6 +271,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_gpsVisibleSatelites (0)
     , m_gpsFIXtype ("no connection")
     , m_gpsbearing (0)
+    , m_gpsHDOP (0)
 
 
     //units
@@ -1830,6 +1831,13 @@ void DashBoard::setgpsbearing(const qreal &gpsbearing)
     emit gpsbearingChanged(gpsbearing);
 }
 
+void DashBoard::setgpsHDOP(const qreal &gpsHDOP)
+{
+    if (m_gpsHDOP == gpsHDOP)
+        return;
+    m_gpsHDOP = gpsHDOP;
+    emit gpsHDOPChanged(gpsHDOP);
+}
 
 // Units
 void DashBoard::setunits (const QString &units)
@@ -4819,8 +4827,7 @@ double DashBoard::gpsSpeed() const { return m_gpsSpeed; }
 int DashBoard::gpsVisibleSatelites () const { return m_gpsVisibleSatelites; }
 QString DashBoard::gpsFIXtype () const { return m_gpsFIXtype; }
 qreal DashBoard::gpsbearing() const { return m_gpsbearing; }
-
-
+qreal DashBoard::gpsHDOP() const { return m_gpsHDOP; }
 
 //units
 QString DashBoard::units() const { return m_units; }
