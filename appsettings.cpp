@@ -1,6 +1,6 @@
-#include "appsettings.h"
 #include <QSettings>
 #include <QDebug>
+#include "appsettings.h"
 #include "dashboard.h"
 
 AppSettings::AppSettings(QObject *parent)
@@ -94,7 +94,6 @@ void AppSettings::setInterface(const int &arg)
 int AppSettings::getLogging()
 {
     return getValue("serial/Logging").toInt();
-
 }
 
 void AppSettings::setLogging(const int &arg)
@@ -121,7 +120,6 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
 {
      setValue("Number of Dashes", numberofdashes);
      // To be implemented later
-
 }
 
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
