@@ -161,7 +161,7 @@ Rectangle {
             height: daemons.height / 15
             font.pixelSize: daemons.width / 55
             model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS"]
-            onCurrentIndexChanged: Dashboard.setExternalSpeed(
+            onCurrentIndexChanged: AppSettings.writeStartupSettings(
                                        mainspeedsource.currentIndex) //,console.log("Setting SPeed")
             property bool initialized: false
             //Component.onCompleted: tabView.currentIndex = 0
