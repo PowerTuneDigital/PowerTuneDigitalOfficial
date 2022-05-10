@@ -298,7 +298,7 @@ void GPS::processGPRMC(const QString & line) {
     {
     m_dashboard->setgpsLatitude(decLat.toDouble());
     m_dashboard->setgpsLongitude(decLon.toDouble());
-    if ((hdop >= 20) || (speed >= 20))           // This avoids that the GPS speed fluctuates when standing and hdop is low
+    if ((hdop >= 5))           // This avoids that the GPS speed fluctuates when standing and hdop is low
        {
        m_dashboard->setgpsSpeed(qRound(speed));  // round speed to the nearest integer
        }
