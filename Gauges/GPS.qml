@@ -113,7 +113,7 @@ Rectangle {
             onCurrentIndexChanged: changetrack.change()
         }
         Grid {
-            rows: 8
+            rows: 10
             columns: 2
             spacing: 5
             anchors.left: map.right
@@ -204,6 +204,18 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
+                text: "GPS HDOP: "
+                font.pixelSize: 20
+                font.bold: true
+                font.family: "Eurostile"
+            }
+            Text {
+                text: (Dashboard.gpsHDOP).toFixed(2)
+                font.pixelSize: 20
+                font.bold: true
+                font.family: "Eurostile"
+            }
+            Text {
                 text: "GPS FIX type: "
                 font.pixelSize: 20
                 font.bold: true
@@ -215,6 +227,7 @@ Rectangle {
                 font.bold: true
                 font.family: "Eurostile"
             }
+
         }
 
         Item {
