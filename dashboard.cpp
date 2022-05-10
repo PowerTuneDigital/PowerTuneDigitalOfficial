@@ -4,9 +4,6 @@
 #include <QVector>
 #include "math.h"
 
-////
-
-
 
 QVector<int>averageSpeed(0);
 QVector<int>averageRPM(0);
@@ -271,6 +268,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_gpsVisibleSatelites (0)
     , m_gpsFIXtype ("no connection")
     , m_gpsbearing (0)
+    , m_gpsHDOP (0)
 
 
     //units
@@ -798,7 +796,7 @@ void DashBoard::setIntakepress(const qreal &Intakepress)
     {m_Intakepress = Intakepress;}
     if (m_pressureunits == "imperial")
     {m_Intakepress = Intakepress * 0.145038;}
-    emit intakepressChanged(Intakepress);    
+    emit intakepressChanged(Intakepress);
     return;
 }
 
@@ -1830,6 +1828,13 @@ void DashBoard::setgpsbearing(const qreal &gpsbearing)
     emit gpsbearingChanged(gpsbearing);
 }
 
+void DashBoard::setgpsHDOP(const qreal &gpsHDOP)
+{
+    if (m_gpsHDOP == gpsHDOP)
+        return;
+    m_gpsHDOP = gpsHDOP;
+    emit gpsHDOPChanged(gpsHDOP);
+}
 
 // Units
 void DashBoard::setunits (const QString &units)
@@ -3623,7 +3628,6 @@ void DashBoard::setEXAnalogInput0(const qreal &EXAnalogInput0)
   * Is our Sensor thats connected to 5V and PIN 24
   * R2 is fixed
   * R3 is user Selectable ( 100 /1000 Ohm or no resistor)
-
                   |  Vin (+5V)
                   |
                  | |
@@ -3647,7 +3651,6 @@ void DashBoard::setEXAnalogInput0(const qreal &EXAnalogInput0)
                 -----   GND
                  ---
                   -
-
 We already know the Values of Rw and R3 as well as Vin , now we need to calculate the Resistance of the sensor R1
 */
     //Calculate the resistance of a potential NTC at the Analog Input Whereby input voltage is 5V
@@ -4819,8 +4822,7 @@ double DashBoard::gpsSpeed() const { return m_gpsSpeed; }
 int DashBoard::gpsVisibleSatelites () const { return m_gpsVisibleSatelites; }
 QString DashBoard::gpsFIXtype () const { return m_gpsFIXtype; }
 qreal DashBoard::gpsbearing() const { return m_gpsbearing; }
-
-
+qreal DashBoard::gpsHDOP() const { return m_gpsHDOP; }
 
 //units
 QString DashBoard::units() const { return m_units; }
@@ -5208,5 +5210,3 @@ qreal DashBoard::activeboosttable() const {return m_activeboosttable;}
 qreal DashBoard::activetunetable() const {return m_activetunetable;}
 qreal DashBoard::genericoutput1() const {return m_genericoutput1;}
 qreal DashBoard::frequencyDIEX1() const {return m_frequencyDIEX1;}
-
-

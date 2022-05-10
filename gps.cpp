@@ -11,6 +11,7 @@ int initialized = 0;
 int rateset = 0;
 int raterequ = 0;
 int baudrate;
+float hdop;
 QString GPSPort;
 QTime fastestlap(0, 0);
 QByteArray ACK10HZ = QByteArray::fromHex("b562050102000608");
@@ -297,7 +298,10 @@ void GPS::processGPRMC(const QString & line) {
     {
     m_dashboard->setgpsLatitude(decLat.toDouble());
     m_dashboard->setgpsLongitude(decLon.toDouble());
-    m_dashboard->setgpsSpeed(qRound(speed));  // round speed to the nearest integer
+    if ((hdop >= 20) || (speed >= 15))           // This avoids that the GPS speed fluctuates when standing and hdop is low
+       {
+       m_dashboard->setgpsSpeed(qRound(speed));  // round speed to the nearest integer
+       }
     checknewLap();
     }
     m_dashboard->setgpsTime(time);
@@ -307,6 +311,8 @@ void GPS::processGPGGA(const QString & line)
 {
     QStringList fields = line.split(',');
     int fixquality = fields[6].toInt();
+    hdop = fields[8].toFloat();
+    m_dashboard->setgpsHDOP(hdop);
 
     switch (fixquality) {
     case 0:

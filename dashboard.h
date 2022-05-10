@@ -215,6 +215,7 @@ class DashBoard : public QObject
     Q_PROPERTY(int gpsVisibleSatelites READ gpsVisibleSatelites WRITE setgpsVisibleSatelites NOTIFY gpsVisibleSatelitesChanged)
     Q_PROPERTY(QString gpsFIXtype READ gpsFIXtype  WRITE setgpsFIXtype  NOTIFY gpsFIXtypeChanged)
     Q_PROPERTY(qreal gpsbearing READ gpsbearing WRITE setgpsbearing NOTIFY gpsbearingChanged)
+    Q_PROPERTY(qreal gpsHDOP READ gpsHDOP WRITE setgpsHDOP NOTIFY gpsHDOPChanged)
 
     //Units ( metric /imperial select
     Q_PROPERTY(QString units READ units WRITE setunits NOTIFY unitsChanged)
@@ -760,6 +761,7 @@ class DashBoard : public QObject
     void setgpsVisibleSatelites(const int &gpsVisibleSatelites);
     void setgpsFIXtype(const QString &gpsFIXtype);
     void setgpsbearing(const qreal &gpsbearing);
+    void setgpsHDOP(const qreal &gpsHDOP);
 
     // Units
     void setunits(const QString &units);
@@ -1320,6 +1322,7 @@ class DashBoard : public QObject
     int gpsVisibleSatelites() const;
     QString gpsFIXtype() const;
     qreal gpsbearing() const;
+    qreal gpsHDOP() const;
 
     //units
     QString units() const;
@@ -1875,6 +1878,7 @@ signals:
     void gpsVisibleSatelitesChanged(int gpsVisibleSatelites);
     void gpsFIXtypeChanged(QString gpsFIXtype);
     void gpsbearingChanged(qreal gpsbearing);
+    void gpsHDOPChanged(qreal gpsHDOP);
 
     // units
 
@@ -2425,7 +2429,7 @@ private:
     qreal m_PANVAC;
     qreal m_MAP2;
     qreal m_AUXT;
-    qreal m_AFR;  
+    qreal m_AFR;
     qreal m_AFRLEFTBANKTARGET;
     qreal m_AFRRIGHTBANKTARGET;
     //
@@ -2481,6 +2485,7 @@ private:
     int m_gpsVisibleSatelites;
     QString m_gpsFIXtype;
     qreal m_gpsbearing;
+    qreal m_gpsHDOP;
 
     //Units
 
