@@ -9,7 +9,6 @@ AppSettings::AppSettings(QObject *parent)
 
 
 {
-      qDebug() << "Hello World";
 }
 AppSettings::AppSettings(DashBoard *dashboard, QObject *parent)
     : QObject(parent)
