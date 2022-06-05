@@ -150,7 +150,7 @@ void Extender::readyToRead()
 
 
             //qDebug() << "Frequency :" << ((byte0 & frequencymask)*16.6);
-/*
+
             averagehz1.removeFirst();
             averagehz1.append((byte0 & frequencymask));
             //qDebug() << "Vector HZ " << averagehz1;
@@ -161,7 +161,6 @@ void Extender::readyToRead()
             //qDebug() << "Frequency 10 samples :" << ((avghz1/10)*16.6);
             m_dashboard->setfrequencyDIEX1((avghz1/10)*16.6*30);
             //qDebug() << "Test  :" << test1;
-*/
 
 }
         //case 0x402:
