@@ -122,12 +122,87 @@ void Extender::readyToRead()
         int byte6 =  splitpayload[6] ;
         int byte7 =  splitpayload[7] ;
 
-        //switch(frame.frameId()) {
-
-        //case adress1:
+        //Wheel Turtle Tire Temperature monitor
+        /*
+        if(wheelturtle ==1)
+        {
+            switch (frame.frameId())
+            {
+            case 1216:  //LF_Tyre: 8 TP_Wheel_Turtle
+                 m_dashboard->setEXDigitalInput1(byte0-50);				  //LF_Tyre_Temp_01
+                 m_dashboard->setEXDigitalInput1(byte1-50);				  //LF_Tyre_Temp_02
+                 m_dashboard->setEXDigitalInput1(byte2-50);				  //LF_Tyre_Temp_03
+                 m_dashboard->setEXDigitalInput1(byte3-50);				  //LF_Tyre_Temp_04
+                 m_dashboard->setEXDigitalInput1(byte4-50);				  //LF_Tyre_Temp_05
+                 m_dashboard->setEXDigitalInput1(byte5-50);				  //LF_Tyre_Temp_06
+                 m_dashboard->setEXDigitalInput1(byte6-50);				  //LF_Tyre_Temp_07
+                 m_dashboard->setEXDigitalInput1(byte7-50);				  //LF_Tyre_Temp_08
+                break;
+            case 1220:  //RF_Tyre: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //RF_Tyre_Temp_01
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //RF_Tyre_Temp_02
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //RF_Tyre_Temp_03
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //RF_Tyre_Temp_04
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //RF_Tyre_Temp_05
+                m_dashboard->setEXDigitalInput1(byte5-50);				  //RF_Tyre_Temp_06
+                m_dashboard->setEXDigitalInput1(byte6-50);				  //RF_Tyre_Temp_07
+                m_dashboard->setEXDigitalInput1(byte7-50);				  //RF_Tyre_Temp_08
+                break;
+            case 1224:  //LR_Tyre: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //LR_Tyre_Temp_01
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //LR_Tyre_Temp_02
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //LR_Tyre_Temp_03
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //LR_Tyre_Temp_04
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //LR_Tyre_Temp_05
+                m_dashboard->setEXDigitalInput1(byte5-50);				  //LR_Tyre_Temp_06
+                m_dashboard->setEXDigitalInput1(byte6-50);				  //LR_Tyre_Temp_07
+                m_dashboard->setEXDigitalInput1(byte7-50);				  //LR_Tyre_Temp_08
+                break;
+            case 1228:  //RR_Tyre: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //RR_Tyre_Temp_01
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //RR_Tyre_Temp_02
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //RR_Tyre_Temp_03
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //RR_Tyre_Temp_04
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //RR_Tyre_Temp_05
+                m_dashboard->setEXDigitalInput1(byte5-50);				  //RR_Tyre_Temp_06
+                m_dashboard->setEXDigitalInput1(byte6-50);				  //RR_Tyre_Temp_07
+                m_dashboard->setEXDigitalInput1(byte7-50);				  //RR_Tyre_Temp_08
+                break;
+            case 1232:  //LF_DistColour: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //LF_Distance
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //LF_Colour_R
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //LF_Colour_G
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //LF_Colour_B
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //LF_Colour_Alpha
+                break;
+            case 1233:  //RF_DistColour: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //RF_Distance
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //RF_Colour_R
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //RF_Colour_G
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //RF_Colour_B
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //RF_Colour_Alpha
+                break;
+            case 1234:  //LR_DistColour: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //LR_Distance
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //LR_Colour_R
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //LR_Colour_G
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //LR_Colour_B
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //LR_Colour_Alpha
+                break;
+            case 1235:  //RR_DistColour: 8 TP_Wheel_Turtle
+                m_dashboard->setEXDigitalInput1(byte0-50);				  //RR_Distance
+                m_dashboard->setEXDigitalInput1(byte1-50);				  //RR_Colour_R
+                m_dashboard->setEXDigitalInput1(byte2-50);				  //RR_Colour_G
+                m_dashboard->setEXDigitalInput1(byte3-50);				  //RR_Colour_B
+                m_dashboard->setEXDigitalInput1(byte4-50);				  //RR_Colour_Alpha
+                break;
+            default:
+                break;
+            }
+        }
+        */
            if (frame.frameId() == adress1) {
             // ON / Off Status :
-
                 m_dashboard->setEXDigitalInput1((byte0 & statusmask)>0);				  //Digital Input 0
                 m_dashboard->setEXDigitalInput2((byte1 & statusmask)>0);				  //Digital Input 1
                 m_dashboard->setEXDigitalInput3((byte2 & statusmask)>0);	       		  //Digital Input 2
@@ -136,9 +211,7 @@ void Extender::readyToRead()
                 m_dashboard->setEXDigitalInput6((byte5 & statusmask)>0);				  //Digital Input 5
                 m_dashboard->setEXDigitalInput7((byte6 & statusmask)>0);				  //Digital Input 6
                 m_dashboard->setEXDigitalInput8((byte7 & statusmask)>0);				  //Digital Input 7
-
-            // Frequency Counter :
-
+       // Frequency Counter :
        //         m_dashboard->setEXDigitalInput1((byte0 & frequencymask)*16.6*30);				  //Digital Input 0
        //         m_dashboard->setEXDigitalInput2((byte1 & frequencymask)*16.6);				  //Digital Input 1
        //         m_dashboard->setEXDigitalInput3((byte2 & frequencymask)*16.6);	       		  //Digital Input 2
@@ -148,47 +221,31 @@ void Extender::readyToRead()
        //         m_dashboard->setEXDigitalInput7((byte6 & frequencymask)*16.6);				  //Digital Input 6
        //         m_dashboard->setEXDigitalInput8((byte7 & frequencymask)*16.6);				  //Digital Input 7
 
-
-            //qDebug() << "Frequency :" << ((byte0 & frequencymask)*16.6);
-
             averagehz1.removeFirst();
             averagehz1.append((byte0 & frequencymask));
-            //qDebug() << "Vector HZ " << averagehz1;
             avghz1 = 0;
             for (int i = 0; i <= 10-1; i++){avghz1+= averagehz1[i];}
             test1 = avghz1/10;
             averagehz1.resize(10);
-            //qDebug() << "Frequency 10 samples :" << ((avghz1/10)*16.6);
             m_dashboard->setfrequencyDIEX1((avghz1/10)*16.6*30);
-            //qDebug() << "Test  :" << test1;
+           }
 
-
-}
-        //case 0x402:
         if (frame.frameId() == adress2) {
                 m_dashboard->setEXAnalogInput0(pkgpayload[0]*0.001);								  //Analog 0
                 m_dashboard->setEXAnalogInput1(pkgpayload[1]*0.001);						  	  	  //Analog 1
                 m_dashboard->setEXAnalogInput2(pkgpayload[2]*0.001);         					      //Analog 2
                 m_dashboard->setEXAnalogInput3(pkgpayload[3]*0.001);						  	      //Analog 3
-          //  break;
         }
-        //case 0x403:
         if (frame.frameId() == adress3) {
                 m_dashboard->setEXAnalogInput4(pkgpayload[0]*0.001);								  //Analog 4
                 m_dashboard->setEXAnalogInput5(pkgpayload[1]*0.001);						      	  //Analog 5
                 m_dashboard->setEXAnalogInput6(pkgpayload[2]*0.001);         				  		  //Analog 6
                 m_dashboard->setEXAnalogInput7(pkgpayload[3]*0.001);						          //Analog 7
-        //break;
         }
         if (frame.frameId() == adress5 && (m_dashboard->Cylinders() / 2) != 0) {
-                m_dashboard->setrpm(qRound((pkgpayload[0]*4) / (m_dashboard->Cylinders() / 2)));                               //RPM
-
-        //break;
+                m_dashboard->setrpm(qRound((pkgpayload[0]*4) / (m_dashboard->Cylinders() / 2)));      //RPM
         }
 
-       // default:
-       // break;
-       // }
     }
 }
 

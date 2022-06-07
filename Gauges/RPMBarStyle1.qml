@@ -5,12 +5,14 @@ import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.1
 import QtQuick.Extras 1.4
-
+import QtQml 2.15
+import com.powertune 1.0
 
 Item {
   anchors.fill:parent
   property  var unit : Dashboard.speedunits;
   Component.onCompleted: {units.unitadjust();}
+
 
 Rectangle{
 id: gaugebackround
@@ -18,6 +20,12 @@ height: parent.height /2.2
 width: parent.width
 color: "darkgrey"
 
+}
+Connections {
+    target: Dashboard
+    onspeedunitsChanged: {
+        units.unitadjust()
+    }
 }
   Gauge {
       id: gauge

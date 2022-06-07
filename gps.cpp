@@ -75,11 +75,10 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
     // qDebug()<< "GPS Port Name : " + GPSPort;
     initSerialPort();
     m_timeouttimer.start(5000);
-    m_dashboard->setgpsFIXtype("open Serial " + portName);
     baudrate = Baud.toInt();
-    m_serialport->setPortName(portName);
+    m_serialport->setPortName(GPSPort);
 
-    m_dashboard->setgpsFIXtype("open with " + Baud);
+    m_dashboard->setgpsFIXtype(GPSPort + "@" + Baud);
     switch (baudrate)
     {
     case 9600:
@@ -234,6 +233,8 @@ void GPS::ProcessMessage(QByteArray messageline)
         return;
     }
 
+
+    logNMEA(messageline);
     // Then we process the message
     if (messageline.mid(3, 3) == "GGA") {
         // Check if we have already set the refresh rate
@@ -251,6 +252,19 @@ void GPS::ProcessMessage(QByteArray messageline)
         processGPVTG(messageline);
     }
     */
+}
+
+void GPS::logNMEA(const QString & line){
+    // Check if a log file for today already exists
+    QString logfile = QString("%1/%2.nmea").arg("/home/pi").arg(QDate::currentDate().toString("yyyyMMdd"));
+    QFile file(logfile);
+    if (!file.open(QIODevice::Append)) {
+        qDebug() << "Could not open log file" << logfile;
+        return;
+    }
+    QTextStream out(&file);
+    out << line;
+    file.close();
 }
 
 void GPS::handleTimeout()

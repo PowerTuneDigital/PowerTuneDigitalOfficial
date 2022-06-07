@@ -55,6 +55,8 @@ class GPS : public QObject
     void handleReconnectTimeout();
     void handleError(QSerialPort::SerialPortError error);
     void initSerialPort();
+    void logNMEA(const QString & line);
+
  signals:
     void sig_linecrossed();
 };
