@@ -2962,7 +2962,10 @@ void DashBoard::settargetbstlelkpa(const qreal &targetbstlelkpa)
 {
     if (m_targetbstlelkpa == targetbstlelkpa)
         return;
-    m_targetbstlelkpa = targetbstlelkpa;
+    if (m_pressureunits == "metric")
+    {m_targetbstlelkpa = targetbstlelkpa;}
+    if (m_pressureunits == "imperial")
+    {m_targetbstlelkpa = targetbstlelkpa * 0.145038;}
     emit targetbstlelkpaChanged(targetbstlelkpa);
 }
 void DashBoard::settimeddutyout1(const qreal &timeddutyout1)

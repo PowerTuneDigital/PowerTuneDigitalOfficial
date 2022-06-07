@@ -1786,23 +1786,47 @@ ListModel {
         stepsize : "30"
         divisor : "1"
     }
-    /*
+
     ListElement {
         sourcename:"Inj"
     }
     ListElement {
         sourcename:"Inj1"
+        defaultsymbol: "%"
+        titlename:"Inj. Duty 1"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
     }
     ListElement {
         sourcename:"Inj2"
+        defaultsymbol: "%"
+        titlename:"Inj. Duty 2"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
     }
     ListElement {
         sourcename:"Inj3"
+        defaultsymbol: "%"
+        titlename:"Inj. Duty 3"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
     }
     ListElement {
         sourcename:"Inj4"
+        defaultsymbol: "%"
+        titlename:"Inj. Duty 4"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
     }
-    */
+
     ListElement {
         sourcename:"InjDuty"
         defaultsymbol: "%"
