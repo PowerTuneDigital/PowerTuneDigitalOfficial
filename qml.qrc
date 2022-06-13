@@ -121,5 +121,6 @@
         <file>KTracks/Australia/The Bend International Circuit.txt</file>
         <file>KTracks/Australia/The Bend West Circuit.txt</file>
         <file>ExBoardAnalog.qml</file>
+        <file>Gauges/TyreMonitor.qml</file>
     </qresource>
 </RCC>

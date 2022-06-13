@@ -565,6 +565,41 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal genericoutput1 READ genericoutput1 WRITE setgenericoutput1 NOTIFY genericoutput1Changed)
     Q_PROPERTY(qreal frequencyDIEX1 READ frequencyDIEX1 WRITE setfrequencyDIEX1 NOTIFY frequencyDIEX1Changed)
 
+    Q_PROPERTY(qreal LF_Tyre_Temp_01 READ LF_Tyre_Temp_01 WRITE setLF_Tyre_Temp_01 NOTIFY LF_Tyre_Temp_01Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_02 READ LF_Tyre_Temp_02 WRITE setLF_Tyre_Temp_02 NOTIFY LF_Tyre_Temp_02Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_03 READ LF_Tyre_Temp_03 WRITE setLF_Tyre_Temp_03 NOTIFY LF_Tyre_Temp_03Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_04 READ LF_Tyre_Temp_04 WRITE setLF_Tyre_Temp_04 NOTIFY LF_Tyre_Temp_04Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_05 READ LF_Tyre_Temp_05 WRITE setLF_Tyre_Temp_05 NOTIFY LF_Tyre_Temp_05Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_06 READ LF_Tyre_Temp_06 WRITE setLF_Tyre_Temp_06 NOTIFY LF_Tyre_Temp_06Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_07 READ LF_Tyre_Temp_07 WRITE setLF_Tyre_Temp_07 NOTIFY LF_Tyre_Temp_07Changed)
+    Q_PROPERTY(qreal LF_Tyre_Temp_08 READ LF_Tyre_Temp_08 WRITE setLF_Tyre_Temp_08 NOTIFY LF_Tyre_Temp_08Changed)
+
+    Q_PROPERTY(qreal RF_Tyre_Temp_01 READ RF_Tyre_Temp_01 WRITE setRF_Tyre_Temp_01 NOTIFY RF_Tyre_Temp_01Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_02 READ RF_Tyre_Temp_02 WRITE setRF_Tyre_Temp_02 NOTIFY RF_Tyre_Temp_02Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_03 READ RF_Tyre_Temp_03 WRITE setRF_Tyre_Temp_03 NOTIFY RF_Tyre_Temp_03Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_04 READ RF_Tyre_Temp_04 WRITE setRF_Tyre_Temp_04 NOTIFY RF_Tyre_Temp_04Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_05 READ RF_Tyre_Temp_05 WRITE setRF_Tyre_Temp_05 NOTIFY RF_Tyre_Temp_05Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_06 READ RF_Tyre_Temp_06 WRITE setRF_Tyre_Temp_06 NOTIFY RF_Tyre_Temp_06Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_07 READ RF_Tyre_Temp_07 WRITE setRF_Tyre_Temp_07 NOTIFY RF_Tyre_Temp_07Changed)
+    Q_PROPERTY(qreal RF_Tyre_Temp_08 READ RF_Tyre_Temp_08 WRITE setRF_Tyre_Temp_08 NOTIFY RF_Tyre_Temp_08Changed)
+
+    Q_PROPERTY(qreal LR_Tyre_Temp_01 READ LR_Tyre_Temp_01 WRITE setLR_Tyre_Temp_01 NOTIFY LR_Tyre_Temp_01Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_02 READ LR_Tyre_Temp_02 WRITE setLR_Tyre_Temp_02 NOTIFY LR_Tyre_Temp_02Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_03 READ LR_Tyre_Temp_03 WRITE setLR_Tyre_Temp_03 NOTIFY LR_Tyre_Temp_03Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_04 READ LR_Tyre_Temp_04 WRITE setLR_Tyre_Temp_04 NOTIFY LR_Tyre_Temp_04Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_05 READ LR_Tyre_Temp_05 WRITE setLR_Tyre_Temp_05 NOTIFY LR_Tyre_Temp_05Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_06 READ LR_Tyre_Temp_06 WRITE setLR_Tyre_Temp_06 NOTIFY LR_Tyre_Temp_06Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_07 READ LR_Tyre_Temp_07 WRITE setLR_Tyre_Temp_07 NOTIFY LR_Tyre_Temp_07Changed)
+    Q_PROPERTY(qreal LR_Tyre_Temp_08 READ LR_Tyre_Temp_08 WRITE setLR_Tyre_Temp_08 NOTIFY LR_Tyre_Temp_08Changed)
+
+    Q_PROPERTY(qreal RR_Tyre_Temp_01 READ RR_Tyre_Temp_01 WRITE setRR_Tyre_Temp_01 NOTIFY RR_Tyre_Temp_01Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_02 READ RR_Tyre_Temp_02 WRITE setRR_Tyre_Temp_02 NOTIFY RR_Tyre_Temp_02Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_03 READ RR_Tyre_Temp_03 WRITE setRR_Tyre_Temp_03 NOTIFY RR_Tyre_Temp_03Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_04 READ RR_Tyre_Temp_04 WRITE setRR_Tyre_Temp_04 NOTIFY RR_Tyre_Temp_04Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_05 READ RR_Tyre_Temp_05 WRITE setRR_Tyre_Temp_05 NOTIFY RR_Tyre_Temp_05Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_06 READ RR_Tyre_Temp_06 WRITE setRR_Tyre_Temp_06 NOTIFY RR_Tyre_Temp_06Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_07 READ RR_Tyre_Temp_07 WRITE setRR_Tyre_Temp_07 NOTIFY RR_Tyre_Temp_07Changed)
+    Q_PROPERTY(qreal RR_Tyre_Temp_08 READ RR_Tyre_Temp_08 WRITE setRR_Tyre_Temp_08 NOTIFY RR_Tyre_Temp_08Changed)
     public:
     DashBoard(QObject *parent = 0);
     //Steinhart Hart
@@ -1163,6 +1198,38 @@ class DashBoard : public QObject
     void setgenericoutput1(const qreal &genericoutput1);
     void setfrequencyDIEX1(const qreal &frequencyDIEX1);
 
+    void setLF_Tyre_Temp_01(const qreal &LF_Tyre_Temp_01);
+    void setLF_Tyre_Temp_02(const qreal &LF_Tyre_Temp_02);
+    void setLF_Tyre_Temp_03(const qreal &LF_Tyre_Temp_03);
+    void setLF_Tyre_Temp_04(const qreal &LF_Tyre_Temp_04);
+    void setLF_Tyre_Temp_05(const qreal &LF_Tyre_Temp_05);
+    void setLF_Tyre_Temp_06(const qreal &LF_Tyre_Temp_06);
+    void setLF_Tyre_Temp_07(const qreal &LF_Tyre_Temp_07);
+    void setLF_Tyre_Temp_08(const qreal &LF_Tyre_Temp_08);
+    void setRF_Tyre_Temp_01(const qreal &RF_Tyre_Temp_01);
+    void setRF_Tyre_Temp_02(const qreal &RF_Tyre_Temp_02);
+    void setRF_Tyre_Temp_03(const qreal &RF_Tyre_Temp_03);
+    void setRF_Tyre_Temp_04(const qreal &RF_Tyre_Temp_04);
+    void setRF_Tyre_Temp_05(const qreal &RF_Tyre_Temp_05);
+    void setRF_Tyre_Temp_06(const qreal &RF_Tyre_Temp_06);
+    void setRF_Tyre_Temp_07(const qreal &RF_Tyre_Temp_07);
+    void setRF_Tyre_Temp_08(const qreal &RF_Tyre_Temp_08);
+    void setLR_Tyre_Temp_01(const qreal &LR_Tyre_Temp_01);
+    void setLR_Tyre_Temp_02(const qreal &LR_Tyre_Temp_02);
+    void setLR_Tyre_Temp_03(const qreal &LR_Tyre_Temp_03);
+    void setLR_Tyre_Temp_04(const qreal &LR_Tyre_Temp_04);
+    void setLR_Tyre_Temp_05(const qreal &LR_Tyre_Temp_05);
+    void setLR_Tyre_Temp_06(const qreal &LR_Tyre_Temp_06);
+    void setLR_Tyre_Temp_07(const qreal &LR_Tyre_Temp_07);
+    void setLR_Tyre_Temp_08(const qreal &LR_Tyre_Temp_08);
+    void setRR_Tyre_Temp_01(const qreal &RR_Tyre_Temp_01);
+    void setRR_Tyre_Temp_02(const qreal &RR_Tyre_Temp_02);
+    void setRR_Tyre_Temp_03(const qreal &RR_Tyre_Temp_03);
+    void setRR_Tyre_Temp_04(const qreal &RR_Tyre_Temp_04);
+    void setRR_Tyre_Temp_05(const qreal &RR_Tyre_Temp_05);
+    void setRR_Tyre_Temp_06(const qreal &RR_Tyre_Temp_06);
+    void setRR_Tyre_Temp_07(const qreal &RR_Tyre_Temp_07);
+    void setRR_Tyre_Temp_08(const qreal &RR_Tyre_Temp_08);
 
     qreal Odo() const;
     qreal Cylinders() const;
@@ -1719,6 +1786,38 @@ class DashBoard : public QObject
     qreal genericoutput1()const;
     qreal frequencyDIEX1()const;
 
+    qreal LF_Tyre_Temp_01()const;
+    qreal LF_Tyre_Temp_02()const;
+    qreal LF_Tyre_Temp_03()const;
+    qreal LF_Tyre_Temp_04()const;
+    qreal LF_Tyre_Temp_05()const;
+    qreal LF_Tyre_Temp_06()const;
+    qreal LF_Tyre_Temp_07()const;
+    qreal LF_Tyre_Temp_08()const;
+    qreal RF_Tyre_Temp_01()const;
+    qreal RF_Tyre_Temp_02()const;
+    qreal RF_Tyre_Temp_03()const;
+    qreal RF_Tyre_Temp_04()const;
+    qreal RF_Tyre_Temp_05()const;
+    qreal RF_Tyre_Temp_06()const;
+    qreal RF_Tyre_Temp_07()const;
+    qreal RF_Tyre_Temp_08()const;
+    qreal LR_Tyre_Temp_01()const;
+    qreal LR_Tyre_Temp_02()const;
+    qreal LR_Tyre_Temp_03()const;
+    qreal LR_Tyre_Temp_04()const;
+    qreal LR_Tyre_Temp_05()const;
+    qreal LR_Tyre_Temp_06()const;
+    qreal LR_Tyre_Temp_07()const;
+    qreal LR_Tyre_Temp_08()const;
+    qreal RR_Tyre_Temp_01()const;
+    qreal RR_Tyre_Temp_02()const;
+    qreal RR_Tyre_Temp_03()const;
+    qreal RR_Tyre_Temp_04()const;
+    qreal RR_Tyre_Temp_05()const;
+    qreal RR_Tyre_Temp_06()const;
+    qreal RR_Tyre_Temp_07()const;
+    qreal RR_Tyre_Temp_08()const;
 signals:
 
     //Odometer
@@ -2268,7 +2367,38 @@ signals:
     void genericoutput1Changed(qreal genericoutput1);
     void frequencyDIEX1Changed(qreal frequencyDIEX1);
 
-
+    void LF_Tyre_Temp_01Changed(qreal LF_Tyre_Temp_01);
+    void LF_Tyre_Temp_02Changed(qreal LF_Tyre_Temp_02);
+    void LF_Tyre_Temp_03Changed(qreal LF_Tyre_Temp_03);
+    void LF_Tyre_Temp_04Changed(qreal LF_Tyre_Temp_04);
+    void LF_Tyre_Temp_05Changed(qreal LF_Tyre_Temp_05);
+    void LF_Tyre_Temp_06Changed(qreal LF_Tyre_Temp_06);
+    void LF_Tyre_Temp_07Changed(qreal LF_Tyre_Temp_07);
+    void LF_Tyre_Temp_08Changed(qreal LF_Tyre_Temp_08);
+    void RF_Tyre_Temp_01Changed(qreal RF_Tyre_Temp_01);
+    void RF_Tyre_Temp_02Changed(qreal RF_Tyre_Temp_02);
+    void RF_Tyre_Temp_03Changed(qreal RF_Tyre_Temp_03);
+    void RF_Tyre_Temp_04Changed(qreal RF_Tyre_Temp_04);
+    void RF_Tyre_Temp_05Changed(qreal RF_Tyre_Temp_05);
+    void RF_Tyre_Temp_06Changed(qreal RF_Tyre_Temp_06);
+    void RF_Tyre_Temp_07Changed(qreal RF_Tyre_Temp_07);
+    void RF_Tyre_Temp_08Changed(qreal RF_Tyre_Temp_08);
+    void LR_Tyre_Temp_01Changed(qreal LR_Tyre_Temp_01);
+    void LR_Tyre_Temp_02Changed(qreal LR_Tyre_Temp_02);
+    void LR_Tyre_Temp_03Changed(qreal LR_Tyre_Temp_03);
+    void LR_Tyre_Temp_04Changed(qreal LR_Tyre_Temp_04);
+    void LR_Tyre_Temp_05Changed(qreal LR_Tyre_Temp_05);
+    void LR_Tyre_Temp_06Changed(qreal LR_Tyre_Temp_06);
+    void LR_Tyre_Temp_07Changed(qreal LR_Tyre_Temp_07);
+    void LR_Tyre_Temp_08Changed(qreal LR_Tyre_Temp_08);
+    void RR_Tyre_Temp_01Changed(qreal RR_Tyre_Temp_01);
+    void RR_Tyre_Temp_02Changed(qreal RR_Tyre_Temp_02);
+    void RR_Tyre_Temp_03Changed(qreal RR_Tyre_Temp_03);
+    void RR_Tyre_Temp_04Changed(qreal RR_Tyre_Temp_04);
+    void RR_Tyre_Temp_05Changed(qreal RR_Tyre_Temp_05);
+    void RR_Tyre_Temp_06Changed(qreal RR_Tyre_Temp_06);
+    void RR_Tyre_Temp_07Changed(qreal RR_Tyre_Temp_07);
+    void RR_Tyre_Temp_08Changed(qreal RR_Tyre_Temp_08);
 private:
     // Odometer
 
@@ -2826,6 +2956,38 @@ private:
     qreal m_genericoutput1;
     qreal m_frequencyDIEX1;
 
+    qreal m_LF_Tyre_Temp_01;
+    qreal m_LF_Tyre_Temp_02;
+    qreal m_LF_Tyre_Temp_03;
+    qreal m_LF_Tyre_Temp_04;
+    qreal m_LF_Tyre_Temp_05;
+    qreal m_LF_Tyre_Temp_06;
+    qreal m_LF_Tyre_Temp_07;
+    qreal m_LF_Tyre_Temp_08;
+    qreal m_RF_Tyre_Temp_01;
+    qreal m_RF_Tyre_Temp_02;
+    qreal m_RF_Tyre_Temp_03;
+    qreal m_RF_Tyre_Temp_04;
+    qreal m_RF_Tyre_Temp_05;
+    qreal m_RF_Tyre_Temp_06;
+    qreal m_RF_Tyre_Temp_07;
+    qreal m_RF_Tyre_Temp_08;
+    qreal m_LR_Tyre_Temp_01;
+    qreal m_LR_Tyre_Temp_02;
+    qreal m_LR_Tyre_Temp_03;
+    qreal m_LR_Tyre_Temp_04;
+    qreal m_LR_Tyre_Temp_05;
+    qreal m_LR_Tyre_Temp_06;
+    qreal m_LR_Tyre_Temp_07;
+    qreal m_LR_Tyre_Temp_08;
+    qreal m_RR_Tyre_Temp_01;
+    qreal m_RR_Tyre_Temp_02;
+    qreal m_RR_Tyre_Temp_03;
+    qreal m_RR_Tyre_Temp_04;
+    qreal m_RR_Tyre_Temp_05;
+    qreal m_RR_Tyre_Temp_06;
+    qreal m_RR_Tyre_Temp_07;
+    qreal m_RR_Tyre_Temp_08;
 };
 
 #endif // DASHBOARD_H
