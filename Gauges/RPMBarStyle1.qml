@@ -21,12 +21,7 @@ width: parent.width
 color: "darkgrey"
 
 }
-Connections {
-    target: Dashboard
-    onspeedunitsChanged: {
-        units.unitadjust()
-    }
-}
+
   Gauge {
       id: gauge
       height: parent.height
