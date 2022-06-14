@@ -562,6 +562,39 @@ DashBoard::DashBoard(QObject *parent)
     , m_genericoutput1()
     , m_frequencyDIEX1()
 
+    , m_LF_Tyre_Temp_01()
+    , m_LF_Tyre_Temp_02()
+    , m_LF_Tyre_Temp_03()
+    , m_LF_Tyre_Temp_04()
+    , m_LF_Tyre_Temp_05()
+    , m_LF_Tyre_Temp_06()
+    , m_LF_Tyre_Temp_07()
+    , m_LF_Tyre_Temp_08()
+    , m_RF_Tyre_Temp_01()
+    , m_RF_Tyre_Temp_02()
+    , m_RF_Tyre_Temp_03()
+    , m_RF_Tyre_Temp_04()
+    , m_RF_Tyre_Temp_05()
+    , m_RF_Tyre_Temp_06()
+    , m_RF_Tyre_Temp_07()
+    , m_RF_Tyre_Temp_08()
+    , m_LR_Tyre_Temp_01(80)
+    , m_LR_Tyre_Temp_02()
+    , m_LR_Tyre_Temp_03()
+    , m_LR_Tyre_Temp_04()
+    , m_LR_Tyre_Temp_05()
+    , m_LR_Tyre_Temp_06()
+    , m_LR_Tyre_Temp_07()
+    , m_LR_Tyre_Temp_08()
+    , m_RR_Tyre_Temp_01()
+    , m_RR_Tyre_Temp_02()
+    , m_RR_Tyre_Temp_03()
+    , m_RR_Tyre_Temp_04()
+    , m_RR_Tyre_Temp_05()
+    , m_RR_Tyre_Temp_06()
+    , m_RR_Tyre_Temp_07()
+    , m_RR_Tyre_Temp_08()
+
 {
 
 }
@@ -4671,6 +4704,326 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
         emit frequencyDIEX1Changed(frequencyDIEX1);
     }
 
+    void DashBoard::setLF_Tyre_Temp_01(const qreal &LF_Tyre_Temp_01)
+        {
+            if(m_LF_Tyre_Temp_01 == LF_Tyre_Temp_01)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_01 = LF_Tyre_Temp_01;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_01 = LF_Tyre_Temp_01 * 1.8 + 32;}
+            emit LF_Tyre_Temp_01Changed(LF_Tyre_Temp_01);
+        }
+        void DashBoard::setLF_Tyre_Temp_02(const qreal &LF_Tyre_Temp_02)
+        {
+            if(m_LF_Tyre_Temp_02 == LF_Tyre_Temp_02)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_02 = LF_Tyre_Temp_02;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_02 = LF_Tyre_Temp_02 * 1.8 + 32;}
+            emit LF_Tyre_Temp_02Changed(LF_Tyre_Temp_02);
+        }
+        void DashBoard::setLF_Tyre_Temp_03(const qreal &LF_Tyre_Temp_03)
+        {
+            if(m_LF_Tyre_Temp_03 == LF_Tyre_Temp_03)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_03 = LF_Tyre_Temp_03;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_03 = LF_Tyre_Temp_03 * 1.8 + 32;}
+            emit LF_Tyre_Temp_01Changed(LF_Tyre_Temp_03);
+        }
+        void DashBoard::setLF_Tyre_Temp_04(const qreal &LF_Tyre_Temp_04)
+        {
+            if(m_LF_Tyre_Temp_04 == LF_Tyre_Temp_04)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_04 = LF_Tyre_Temp_04;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_04 = LF_Tyre_Temp_04 * 1.8 + 32;}
+            emit LF_Tyre_Temp_04Changed(LF_Tyre_Temp_04);
+        }
+        void DashBoard::setLF_Tyre_Temp_05(const qreal &LF_Tyre_Temp_05)
+        {
+            if(m_LF_Tyre_Temp_05 == LF_Tyre_Temp_05)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_05 = LF_Tyre_Temp_05;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_05 = LF_Tyre_Temp_05 * 1.8 + 32;}
+            emit LF_Tyre_Temp_05Changed(LF_Tyre_Temp_05);
+        }
+            void DashBoard::setLF_Tyre_Temp_06(const qreal &LF_Tyre_Temp_06)
+        {
+            if(m_LF_Tyre_Temp_06 == LF_Tyre_Temp_06)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_06 = LF_Tyre_Temp_06;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_06 = LF_Tyre_Temp_06 * 1.8 + 32;}
+            emit LF_Tyre_Temp_06Changed(LF_Tyre_Temp_06);
+        }
+        void DashBoard::setLF_Tyre_Temp_07(const qreal &LF_Tyre_Temp_07)
+        {
+            if(m_LF_Tyre_Temp_07 == LF_Tyre_Temp_07)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_07 = LF_Tyre_Temp_07;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_07 = LF_Tyre_Temp_07 * 1.8 + 32;}
+            emit LF_Tyre_Temp_07Changed(LF_Tyre_Temp_07);
+        }
+        void DashBoard::setLF_Tyre_Temp_08(const qreal &LF_Tyre_Temp_08)
+        {
+            if(m_LF_Tyre_Temp_08 == LF_Tyre_Temp_08)
+                return;
+        if (m_units == "metric")
+        {m_LF_Tyre_Temp_08 = LF_Tyre_Temp_08;}
+        if (m_units == "imperial")
+        {m_LF_Tyre_Temp_08 = LF_Tyre_Temp_08 * 1.8 + 32;}
+            emit LF_Tyre_Temp_08Changed(LF_Tyre_Temp_08);
+        }
+        void DashBoard::setRF_Tyre_Temp_01(const qreal &RF_Tyre_Temp_01)
+        {
+            if(m_RF_Tyre_Temp_01 == RF_Tyre_Temp_01)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_01 = RF_Tyre_Temp_01;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_01 = RF_Tyre_Temp_01 * 1.8 + 32;}
+            emit RF_Tyre_Temp_01Changed(RF_Tyre_Temp_01);
+        }
+        void DashBoard::setRF_Tyre_Temp_02(const qreal &RF_Tyre_Temp_02)
+        {
+            if(m_RF_Tyre_Temp_02 == RF_Tyre_Temp_02)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_02 = RF_Tyre_Temp_02;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_02 = RF_Tyre_Temp_02 * 1.8 + 32;}
+            emit RF_Tyre_Temp_02Changed(RF_Tyre_Temp_02);
+        }
+        void DashBoard::setRF_Tyre_Temp_03(const qreal &RF_Tyre_Temp_03)
+        {
+            if(m_RF_Tyre_Temp_03 == RF_Tyre_Temp_03)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_03 = RF_Tyre_Temp_03;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_03 = RF_Tyre_Temp_03 * 1.8 + 32;}
+            emit RF_Tyre_Temp_03Changed(RF_Tyre_Temp_03);
+        }
+        void DashBoard::setRF_Tyre_Temp_04(const qreal &RF_Tyre_Temp_04)
+        {
+            if(m_RF_Tyre_Temp_04 == RF_Tyre_Temp_04)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_04 = RF_Tyre_Temp_04;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_04 = RF_Tyre_Temp_04 * 1.8 + 32;}
+            emit RF_Tyre_Temp_04Changed(RF_Tyre_Temp_04);
+        }
+        void DashBoard::setRF_Tyre_Temp_05(const qreal &RF_Tyre_Temp_05)
+        {
+            if(m_RF_Tyre_Temp_05 == RF_Tyre_Temp_05)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_05 = RF_Tyre_Temp_05;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_05 = RF_Tyre_Temp_05 * 1.8 + 32;}
+            emit RF_Tyre_Temp_05Changed(RF_Tyre_Temp_05);
+        }
+            void DashBoard::setRF_Tyre_Temp_06(const qreal &RF_Tyre_Temp_06)
+        {
+            if(m_RF_Tyre_Temp_06 == RF_Tyre_Temp_06)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_06 = RF_Tyre_Temp_06;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_06 = RF_Tyre_Temp_06 * 1.8 + 32;}
+            emit RF_Tyre_Temp_06Changed(RF_Tyre_Temp_06);
+        }
+        void DashBoard::setRF_Tyre_Temp_07(const qreal &RF_Tyre_Temp_07)
+        {
+            if(m_RF_Tyre_Temp_07 == RF_Tyre_Temp_07)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_07 = RF_Tyre_Temp_07;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_07 = RF_Tyre_Temp_07 * 1.8 + 32;}
+            emit RF_Tyre_Temp_07Changed(RF_Tyre_Temp_07);
+        }
+        void DashBoard::setRF_Tyre_Temp_08(const qreal &RF_Tyre_Temp_08)
+        {
+            if(m_RF_Tyre_Temp_08 == RF_Tyre_Temp_08)
+                return;
+        if (m_units == "metric")
+        {m_RF_Tyre_Temp_08 = RF_Tyre_Temp_08;}
+        if (m_units == "imperial")
+        {m_RF_Tyre_Temp_08 = RF_Tyre_Temp_08 * 1.8 + 32;}
+            emit RF_Tyre_Temp_08Changed(RF_Tyre_Temp_08);
+        }
+        void DashBoard::setLR_Tyre_Temp_01(const qreal &LR_Tyre_Temp_01)
+        {
+            if(m_LR_Tyre_Temp_01 == LR_Tyre_Temp_01)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_01 = LR_Tyre_Temp_01;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_01 = LR_Tyre_Temp_01 * 1.8 + 32;}
+            emit LR_Tyre_Temp_01Changed(LR_Tyre_Temp_01);
+        }
+        void DashBoard::setLR_Tyre_Temp_02(const qreal &LR_Tyre_Temp_02)
+        {
+            if(m_LR_Tyre_Temp_02 == LR_Tyre_Temp_02)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_02 = LR_Tyre_Temp_02;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_02 = LR_Tyre_Temp_02 * 1.8 + 32;}
+            emit LR_Tyre_Temp_02Changed(LR_Tyre_Temp_02);
+        }
+        void DashBoard::setLR_Tyre_Temp_03(const qreal &LR_Tyre_Temp_03)
+        {
+            if(m_LR_Tyre_Temp_03 == LR_Tyre_Temp_03)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_03 = LR_Tyre_Temp_03;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_03 = LR_Tyre_Temp_03 * 1.8 + 32;}
+            emit LR_Tyre_Temp_03Changed(LR_Tyre_Temp_03);
+        }
+        void DashBoard::setLR_Tyre_Temp_04(const qreal &LR_Tyre_Temp_04)
+        {
+            if(m_LR_Tyre_Temp_04 == LR_Tyre_Temp_04)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_04 = LR_Tyre_Temp_04;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_04 = LR_Tyre_Temp_04 * 1.8 + 32;}
+            emit LR_Tyre_Temp_04Changed(LR_Tyre_Temp_04);
+        }
+        void DashBoard::setLR_Tyre_Temp_05(const qreal &LR_Tyre_Temp_05)
+        {
+            if(m_LR_Tyre_Temp_05 == LR_Tyre_Temp_05)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_05 = LR_Tyre_Temp_05;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_05 = LR_Tyre_Temp_05 * 1.8 + 32;}
+            emit LR_Tyre_Temp_05Changed(LR_Tyre_Temp_05);
+        }
+            void DashBoard::setLR_Tyre_Temp_06(const qreal &LR_Tyre_Temp_06)
+        {
+            if(m_LR_Tyre_Temp_06 == LR_Tyre_Temp_06)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_06 = LR_Tyre_Temp_06;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_06 = LR_Tyre_Temp_06 * 1.8 + 32;}
+            emit LR_Tyre_Temp_06Changed(LR_Tyre_Temp_06);
+        }
+        void DashBoard::setLR_Tyre_Temp_07(const qreal &LR_Tyre_Temp_07)
+        {
+            if(m_LR_Tyre_Temp_07 == LR_Tyre_Temp_07)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_07 = LR_Tyre_Temp_07;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_07 = LR_Tyre_Temp_07 * 1.8 + 32;}
+            emit LR_Tyre_Temp_07Changed(LR_Tyre_Temp_07);
+        }
+        void DashBoard::setLR_Tyre_Temp_08(const qreal &LR_Tyre_Temp_08)
+        {
+            if(m_LR_Tyre_Temp_08 == LR_Tyre_Temp_08)
+                return;
+        if (m_units == "metric")
+        {m_LR_Tyre_Temp_08 = LR_Tyre_Temp_08;}
+        if (m_units == "imperial")
+        {m_LR_Tyre_Temp_08 = LR_Tyre_Temp_08 * 1.8 + 32;}
+            emit LR_Tyre_Temp_08Changed(LR_Tyre_Temp_08);
+        }
+        void DashBoard::setRR_Tyre_Temp_01(const qreal &RR_Tyre_Temp_01)
+        {
+            if(m_RR_Tyre_Temp_01 == RR_Tyre_Temp_01)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_01 = RR_Tyre_Temp_01;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_01 = RR_Tyre_Temp_01 * 1.8 + 32;}
+            emit RR_Tyre_Temp_01Changed(RR_Tyre_Temp_01);
+        }
+        void DashBoard::setRR_Tyre_Temp_02(const qreal &RR_Tyre_Temp_02)
+        {
+            if(m_RR_Tyre_Temp_02 == RR_Tyre_Temp_02)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_02 = RR_Tyre_Temp_02;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_02 = RR_Tyre_Temp_02 * 1.8 + 32;}
+            emit RR_Tyre_Temp_02Changed(RR_Tyre_Temp_02);
+        }
+        void DashBoard::setRR_Tyre_Temp_03(const qreal &RR_Tyre_Temp_03)
+        {
+            if(m_RR_Tyre_Temp_03 == RR_Tyre_Temp_03)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_03 = RR_Tyre_Temp_03;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_03 = RR_Tyre_Temp_03 * 1.8 + 32;}
+            emit RR_Tyre_Temp_03Changed(RR_Tyre_Temp_03);
+        }
+        void DashBoard::setRR_Tyre_Temp_04(const qreal &RR_Tyre_Temp_04)
+        {
+            if(m_RR_Tyre_Temp_04 == RR_Tyre_Temp_04)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_04 = RR_Tyre_Temp_04;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_04 = RR_Tyre_Temp_04 * 1.8 + 32;}
+            emit RR_Tyre_Temp_04Changed(RR_Tyre_Temp_04);
+        }
+        void DashBoard::setRR_Tyre_Temp_05(const qreal &RR_Tyre_Temp_05)
+        {
+            if(m_RR_Tyre_Temp_05 == RR_Tyre_Temp_05)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_05 = RR_Tyre_Temp_05;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_05 = RR_Tyre_Temp_05 * 1.8 + 32;}
+            emit RR_Tyre_Temp_05Changed(RR_Tyre_Temp_05);
+        }
+            void DashBoard::setRR_Tyre_Temp_06(const qreal &RR_Tyre_Temp_06)
+        {
+            if(m_RR_Tyre_Temp_06 == RR_Tyre_Temp_06)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_06 = RR_Tyre_Temp_06;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_06 = RR_Tyre_Temp_06 * 1.8 + 32;}
+            emit RR_Tyre_Temp_06Changed(RR_Tyre_Temp_06);
+        }
+        void DashBoard::setRR_Tyre_Temp_07(const qreal &RR_Tyre_Temp_07)
+        {
+            if(m_RR_Tyre_Temp_07 == RR_Tyre_Temp_07)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_07 = RR_Tyre_Temp_07;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_07 = RR_Tyre_Temp_07 * 1.8 + 32;}
+            emit RR_Tyre_Temp_07Changed(RR_Tyre_Temp_07);
+        }
+        void DashBoard::setRR_Tyre_Temp_08(const qreal &RR_Tyre_Temp_08)
+        {
+            if(m_RR_Tyre_Temp_08 == RR_Tyre_Temp_08)
+                return;
+        if (m_units == "metric")
+        {m_RR_Tyre_Temp_08 = RR_Tyre_Temp_08;}
+        if (m_units == "imperial")
+        {m_RR_Tyre_Temp_08 = RR_Tyre_Temp_08 * 1.8 + 32;}
+            emit RR_Tyre_Temp_08Changed(RR_Tyre_Temp_08);
+        }
 
 // Odometer
 qreal DashBoard::Odo() const { return m_Odo; }
@@ -5213,3 +5566,36 @@ qreal DashBoard::activeboosttable() const {return m_activeboosttable;}
 qreal DashBoard::activetunetable() const {return m_activetunetable;}
 qreal DashBoard::genericoutput1() const {return m_genericoutput1;}
 qreal DashBoard::frequencyDIEX1() const {return m_frequencyDIEX1;}
+
+qreal DashBoard::LF_Tyre_Temp_01() const {return m_LF_Tyre_Temp_01;}
+qreal DashBoard::LF_Tyre_Temp_02() const {return m_LF_Tyre_Temp_02;}
+qreal DashBoard::LF_Tyre_Temp_03() const {return m_LF_Tyre_Temp_03;}
+qreal DashBoard::LF_Tyre_Temp_04() const {return m_LF_Tyre_Temp_04;}
+qreal DashBoard::LF_Tyre_Temp_05() const {return m_LF_Tyre_Temp_05;}
+qreal DashBoard::LF_Tyre_Temp_06() const {return m_LF_Tyre_Temp_06;}
+qreal DashBoard::LF_Tyre_Temp_07() const {return m_LF_Tyre_Temp_07;}
+qreal DashBoard::LF_Tyre_Temp_08() const {return m_LF_Tyre_Temp_08;}
+qreal DashBoard::RF_Tyre_Temp_01() const {return m_RF_Tyre_Temp_01;}
+qreal DashBoard::RF_Tyre_Temp_02() const {return m_RF_Tyre_Temp_02;}
+qreal DashBoard::RF_Tyre_Temp_03() const {return m_RF_Tyre_Temp_03;}
+qreal DashBoard::RF_Tyre_Temp_04() const {return m_RF_Tyre_Temp_04;}
+qreal DashBoard::RF_Tyre_Temp_05() const {return m_RF_Tyre_Temp_05;}
+qreal DashBoard::RF_Tyre_Temp_06() const {return m_RF_Tyre_Temp_06;}
+qreal DashBoard::RF_Tyre_Temp_07() const {return m_RF_Tyre_Temp_07;}
+qreal DashBoard::RF_Tyre_Temp_08() const {return m_RF_Tyre_Temp_08;}
+qreal DashBoard::LR_Tyre_Temp_01() const {return m_LR_Tyre_Temp_01;}
+qreal DashBoard::LR_Tyre_Temp_02() const {return m_LR_Tyre_Temp_02;}
+qreal DashBoard::LR_Tyre_Temp_03() const {return m_LR_Tyre_Temp_03;}
+qreal DashBoard::LR_Tyre_Temp_04() const {return m_LR_Tyre_Temp_04;}
+qreal DashBoard::LR_Tyre_Temp_05() const {return m_LR_Tyre_Temp_05;}
+qreal DashBoard::LR_Tyre_Temp_06() const {return m_LR_Tyre_Temp_06;}
+qreal DashBoard::LR_Tyre_Temp_07() const {return m_LR_Tyre_Temp_07;}
+qreal DashBoard::LR_Tyre_Temp_08() const {return m_LR_Tyre_Temp_08;}
+qreal DashBoard::RR_Tyre_Temp_01() const {return m_RR_Tyre_Temp_01;}
+qreal DashBoard::RR_Tyre_Temp_02() const {return m_RR_Tyre_Temp_02;}
+qreal DashBoard::RR_Tyre_Temp_03() const {return m_RR_Tyre_Temp_03;}
+qreal DashBoard::RR_Tyre_Temp_04() const {return m_RR_Tyre_Temp_04;}
+qreal DashBoard::RR_Tyre_Temp_05() const {return m_RR_Tyre_Temp_05;}
+qreal DashBoard::RR_Tyre_Temp_06() const {return m_RR_Tyre_Temp_06;}
+qreal DashBoard::RR_Tyre_Temp_07() const {return m_RR_Tyre_Temp_07;}
+qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
