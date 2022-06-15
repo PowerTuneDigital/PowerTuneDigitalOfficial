@@ -221,7 +221,7 @@ void Extender::readyToRead()
             for (int i = 0; i <= 10-1; i++){avghz1+= averagehz1[i];}
             test1 = avghz1/10;
             averagehz1.resize(10);
-            m_dashboard->setfrequencyDIEX1(((avghz1/10)*16.6*60)/m_dashboard->RPMFrequencyDividerDi1());
+            m_dashboard->setfrequencyDIEX1(qRound((avghz1/10)*16.6*60)/m_dashboard->RPMFrequencyDividerDi1());
            }
 
         if (frame.frameId() == adress2) {
