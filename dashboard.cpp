@@ -594,6 +594,8 @@ DashBoard::DashBoard(QObject *parent)
     , m_RR_Tyre_Temp_06()
     , m_RR_Tyre_Temp_07()
     , m_RR_Tyre_Temp_08()
+    , m_RPMFrequencyDividerDi1()
+    , m_DI1RPMEnabled()
 
 {
 
@@ -818,7 +820,11 @@ void DashBoard::setrpm(const qreal &rpm)
         for (int i = 0; i <= m_smoothrpm-1; i++){avgrpm+= averageRPM[i];}
         m_rpm = avgrpm/m_smoothrpm;
     }
-    emit rpmChanged(rpm);
+    if (m_DI1RPMEnabled != 1)
+    {
+        emit rpmChanged(rpm);
+    }
+
 }
 
 void DashBoard::setIntakepress(const qreal &Intakepress)
@@ -4702,6 +4708,9 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             return;
         m_frequencyDIEX1 = frequencyDIEX1;
         emit frequencyDIEX1Changed(frequencyDIEX1);
+        if (m_DI1RPMEnabled == 1){
+        emit rpmChanged(frequencyDIEX1);
+        }
     }
 
     void DashBoard::setLF_Tyre_Temp_01(const qreal &LF_Tyre_Temp_01)
@@ -5023,6 +5032,23 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
         if (m_units == "imperial")
         {m_RR_Tyre_Temp_08 = RR_Tyre_Temp_08 * 1.8 + 32;}
             emit RR_Tyre_Temp_08Changed(RR_Tyre_Temp_08);
+        }
+
+        void DashBoard::setRPMFrequencyDividerDi1(const int &RPMFrequencyDividerDi1)
+        {
+            if(m_RPMFrequencyDividerDi1 == RPMFrequencyDividerDi1)
+                return;
+        m_RPMFrequencyDividerDi1 = RPMFrequencyDividerDi1;
+
+            emit RPMFrequencyDividerDi1Changed(RPMFrequencyDividerDi1);
+        }
+        void DashBoard::setDI1RPMEnabled(const int &DI1RPMEnabled)
+        {
+            if(m_DI1RPMEnabled == DI1RPMEnabled)
+                return;
+        m_DI1RPMEnabled = DI1RPMEnabled;
+
+            emit DI1RPMEnabledChanged(DI1RPMEnabled);
         }
 
 // Odometer
@@ -5599,3 +5625,5 @@ qreal DashBoard::RR_Tyre_Temp_05() const {return m_RR_Tyre_Temp_05;}
 qreal DashBoard::RR_Tyre_Temp_06() const {return m_RR_Tyre_Temp_06;}
 qreal DashBoard::RR_Tyre_Temp_07() const {return m_RR_Tyre_Temp_07;}
 qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
+int DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
+int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
