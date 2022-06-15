@@ -809,6 +809,8 @@ void DashBoard::setrpm(const qreal &rpm)
 {
     if (m_rpm == rpm)
         return;
+    if (m_DI1RPMEnabled == 0)
+    {
     m_rpm = rpm;
 
     //Smoothing
@@ -820,8 +822,6 @@ void DashBoard::setrpm(const qreal &rpm)
         for (int i = 0; i <= m_smoothrpm-1; i++){avgrpm+= averageRPM[i];}
         m_rpm = avgrpm/m_smoothrpm;
     }
-    if (m_DI1RPMEnabled == 0)
-    {
         emit rpmChanged(rpm);
     }
 
@@ -4708,8 +4708,10 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             return;
         m_frequencyDIEX1 = frequencyDIEX1;
         emit frequencyDIEX1Changed(frequencyDIEX1);
+
         if (m_DI1RPMEnabled == 1)
         {
+        m_rpm = frequencyDIEX1;
         emit rpmChanged(frequencyDIEX1);
         }
     }
