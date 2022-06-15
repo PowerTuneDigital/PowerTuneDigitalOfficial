@@ -595,7 +595,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_RR_Tyre_Temp_07()
     , m_RR_Tyre_Temp_08()
     , m_RPMFrequencyDividerDi1()
-    , m_DI1RPMEnabled()
+    , m_DI1RPMEnabled(0)
 
 {
 
@@ -820,7 +820,7 @@ void DashBoard::setrpm(const qreal &rpm)
         for (int i = 0; i <= m_smoothrpm-1; i++){avgrpm+= averageRPM[i];}
         m_rpm = avgrpm/m_smoothrpm;
     }
-    if (m_DI1RPMEnabled != 1)
+    if (m_DI1RPMEnabled == 0)
     {
         emit rpmChanged(rpm);
     }
@@ -4708,7 +4708,8 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             return;
         m_frequencyDIEX1 = frequencyDIEX1;
         emit frequencyDIEX1Changed(frequencyDIEX1);
-        if (m_DI1RPMEnabled == 1){
+        if (m_DI1RPMEnabled == 1)
+        {
         emit rpmChanged(frequencyDIEX1);
         }
     }

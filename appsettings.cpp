@@ -287,6 +287,7 @@ void AppSettings::writeRPMFrequencySettings(const int &Divider,const int &DI1isR
     setValue("DI1RPMEnabled", DI1isRPM);
     m_dashboard->setRPMFrequencyDividerDi1(Divider);
     m_dashboard->setDI1RPMEnabled(DI1isRPM);
+
 }
 
 void AppSettings::readandApplySettings()
@@ -321,5 +322,6 @@ void AppSettings::readandApplySettings()
     m_dashboard->setBrightness(getValue("Brightness").toInt());
     m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toInt());
     m_dashboard->setDI1RPMEnabled(getValue("DI1RPMEnabled").toInt());
+
 }
 
