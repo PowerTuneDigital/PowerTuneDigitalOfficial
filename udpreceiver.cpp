@@ -1301,6 +1301,7 @@ void udpreceiver::processPendingDatagrams()
             m_dashboard->setCalibrationSelect(Value);
             break;
         case 999:
+            m_dashboard->setfrequencyDIEX1(Value);
             break;
         default:
             break;

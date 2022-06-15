@@ -8,7 +8,7 @@ Rectangle {
     anchors.fill: parent
     color: "grey"
     id: main
-
+    property double rpmfrequencydivider
     Item {
         id:exsave
         Settings {
@@ -39,7 +39,9 @@ Rectangle {
             property alias checkan2100save  : checkan2100.checkState
             property alias checkan21Ksave   : checkan21k.checkState
             property alias rpmcheckboxsave  : rpmcheckbox.checkState
+            property alias di1RPMsave  : enablefrequencydi1rpm.checkState
             property alias cylindercomboboxsave : cylindercombobox.currentIndex
+            property alias cylindercomboboxDi1save : cylindercomboboxDi1.currentIndex
             property alias t10save : t10.text
             property alias r10save : r10.text
             property alias t20save : t20.text
@@ -59,9 +61,6 @@ Rectangle {
             property alias t32save : t32.text
             property alias r32save : r32.text
             property alias an7dampingfactorsave : an7dampingfactor.text
-
-
-
         }
     }
 
@@ -338,7 +337,62 @@ Rectangle {
             {
                 AppSettings.writeCylinderSettings(cylindercombobox.textAt(cylindercombobox.currentIndex))
             }
-
+            AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,enablefrequencydi1rpm.checked)
+            }
+        }
+        Item {
+            id: cylindercalcrpmdi1
+            function cylindercalcrpmdi1()
+            {
+            switch (cylindercomboboxDi1.currentIndex)
+            {
+            case 0: //1cyl
+            {
+                rpmfrequencydivider = 0.5;
+                break;
+            }
+            case 1: //2cyl
+            {
+                rpmfrequencydivider = 1;
+                break;
+            }
+            case 2: //3cyl
+            {
+                rpmfrequencydivider = 1.5;
+                break;
+            }
+            case 3: //4cyl
+            {
+                rpmfrequencydivider = 2;
+                break;
+            }
+            case 4: //5cyl
+            {
+                rpmfrequencydivider = 2.5;
+                break;
+            }
+            case 5: //6cyl
+            {
+                rpmfrequencydivider = 3;
+                break;
+            }
+            case 6: //8cyl
+            {
+                rpmfrequencydivider = 4;
+                break;
+            }
+            case 7: //10cyl
+            {
+                rpmfrequencydivider = 5;
+                break;
+            }
+            case 8: //12cyl
+            {
+                rpmfrequencydivider = 6;
+                break;
+            }
+            }
+            inputs.setInputs()
             }
         }
     }
@@ -354,7 +408,7 @@ Rectangle {
         anchors.leftMargin: 20
         anchors.top: parent.top
         anchors.topMargin: 40
-        rows:4
+        rows:7
         columns: 9
         spacing: 5
         Text { text: "Temp. In"
@@ -627,6 +681,51 @@ Rectangle {
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
+
+    Text { text: "Di1 RPM"
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: "Cylinders"
+         color:  { (enablefrequencydi1rpm.checked == true) ? "white" : "transparent"; }
+        font.pixelSize: main.width / 55;}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: " "
+        font.pixelSize: main.width / 55;color:"white"}
+    CheckBox {
+        id: enablefrequencydi1rpm
+        width: main.width / 14
+        height: main.height /15
+        onCheckStateChanged: inputs.setInputs();
+        }
+    ComboBox {
+        id: cylindercomboboxDi1
+        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
+        width: main.width / 14
+        height: main.height /15
+        font.pixelSize: main.width / 90;
+        model:["1","2","3","4","5","6","8","10","12"]
+        onCurrentIndexChanged: cylindercalcrpmdi1.cylindercalcrpmdi1();
+        delegate: ItemDelegate {
+            width: cylindercomboboxDi1.width
+            text: cylindercomboboxDi1.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+            font.weight: cylindercomboboxDi1.currentIndex == index ? Font.DemiBold : Font.Normal
+            font.family: cylindercomboboxDi1.font.family
+            font.pixelSize: cylindercomboboxDi1.font.pixelSize
+            highlighted: cylindercomboboxDi1.highlightedIndex == index
+            hoverEnabled: cylindercomboboxDi1.hoverEnabled
+        }
+        }
+
     }
     Component.onCompleted: {
 

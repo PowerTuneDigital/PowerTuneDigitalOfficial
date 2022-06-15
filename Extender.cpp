@@ -213,14 +213,15 @@ void Extender::readyToRead()
                 m_dashboard->setEXDigitalInput7((byte6 & statusmask)>0);				  //Digital Input 6
                 m_dashboard->setEXDigitalInput8((byte7 & statusmask)>0);				  //Digital Input 7
        // Frequency Counter :
-
+              //  m_dashboard->setRPMFrequencyDividerDi1(Divider);
+              //  m_dashboard->setDI1RPMEnabled(DI1isRPM);
             averagehz1.removeFirst();
             averagehz1.append((byte0 & frequencymask));
             avghz1 = 0;
             for (int i = 0; i <= 10-1; i++){avghz1+= averagehz1[i];}
             test1 = avghz1/10;
             averagehz1.resize(10);
-            m_dashboard->setfrequencyDIEX1((avghz1/10)*16.6*60);
+            m_dashboard->setfrequencyDIEX1(qRound((avghz1/10)*16.6*60)/m_dashboard->RPMFrequencyDividerDi1());
            }
 
         if (frame.frameId() == adress2) {

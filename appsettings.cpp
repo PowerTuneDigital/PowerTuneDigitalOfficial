@@ -281,6 +281,15 @@ void AppSettings::writeStartupSettings(const int &ExternalSpeed)
     m_dashboard->setExternalSpeed(ExternalSpeed);
 }
 
+void AppSettings::writeRPMFrequencySettings(const int &Divider,const int &DI1isRPM)
+{
+    setValue("RPMFrequencyDivider", Divider);
+    setValue("DI1RPMEnabled", DI1isRPM);
+    m_dashboard->setRPMFrequencyDividerDi1(Divider);
+    m_dashboard->setDI1RPMEnabled(DI1isRPM);
+
+}
+
 void AppSettings::readandApplySettings()
 {
     //Set Analog Input Settings
@@ -311,5 +320,8 @@ void AppSettings::readandApplySettings()
     m_dashboard->setCBXCountrysave(getValue("Country").toString());
     m_dashboard->setCBXTracksave(getValue("Track").toString());
     m_dashboard->setBrightness(getValue("Brightness").toInt());
+    m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toInt());
+    m_dashboard->setDI1RPMEnabled(getValue("DI1RPMEnabled").toInt());
+
 }
 
