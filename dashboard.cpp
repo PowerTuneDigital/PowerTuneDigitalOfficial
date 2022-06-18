@@ -594,7 +594,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_RR_Tyre_Temp_06()
     , m_RR_Tyre_Temp_07()
     , m_RR_Tyre_Temp_08()
-    , m_RPMFrequencyDividerDi1()
+    , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
 
 {
