@@ -215,6 +215,7 @@ void Extender::readyToRead()
        // Frequency Counter :
               //  m_dashboard->setRPMFrequencyDividerDi1(Divider);
               //  m_dashboard->setDI1RPMEnabled(DI1isRPM);
+            /*
             averagehz1.removeFirst();
             averagehz1.append((byte0 & frequencymask));
             avghz1 = 0;
@@ -222,6 +223,7 @@ void Extender::readyToRead()
             test1 = avghz1/10;
             averagehz1.resize(10);
             m_dashboard->setfrequencyDIEX1(qRound((avghz1/10)*16.6*60)/m_dashboard->RPMFrequencyDividerDi1());
+            */
            }
 
         if (frame.frameId() == adress2) {
