@@ -213,7 +213,7 @@ void Extender::readyToRead()
                 m_dashboard->setEXDigitalInput7((byte6 & statusmask)>0);				  //Digital Input 6
                 m_dashboard->setEXDigitalInput8((byte7 & statusmask)>0);				  //Digital Input 7
        // Frequency Counter :
-          if (m_dashboard->DI1RPMEnabled() ==1)
+          if (m_dashboard->RPMFrequencyDividerDi1() >=1)
             {
             averagehz1.removeFirst();
             averagehz1.append((byte0 & frequencymask));
