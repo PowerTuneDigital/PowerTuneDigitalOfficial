@@ -870,12 +870,12 @@ void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QStr
 
     {
         QTextStream stream( &file );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
     QString filename2="/home/pi/UserDashboards/UserDashApexi.txt";
@@ -884,12 +884,12 @@ void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QStr
 
     {
         QTextStream stream( &file2 );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
 

@@ -144,7 +144,7 @@ void WifiScanner::setwifi(const QString &country,const QString &ssid1,const QStr
                        // << "ssid="<< "\"" << ssid2 << "\"" << "\r\n"
                        // << "psk=" << "\"" << psk2 << "\"" << "\r\n"
                        // << "}" << "\r\n"
-                    << endl;
+                    << Qt::endl;
             file.close();
         }
         else
@@ -163,7 +163,7 @@ void WifiScanner::setwifi(const QString &country,const QString &ssid1,const QStr
                    // << "ssid="<< "\"" << ssid2 << "\"" << "\r\n"
                    // << "psk=" << "\"" << psk2 << "\"" << "\r\n"
                    // << "}" << "\r\n"
-                << endl;
+                << Qt::endl;
         file.close();
         }
     }
