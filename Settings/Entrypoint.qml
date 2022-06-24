@@ -10,25 +10,7 @@ import "qrc:/Gauges/"
 import DLM 1.0
 import QtQuick.VirtualKeyboard 2.1
 
-
-
-
-
 Rectangle{
-    color: "#5a5454"
-    property int lastdashamount
-    anchors.fill: parent
-
-
-    DLM {
-        id: downloadManager
-    }
-    Connections {
-        target: Dashboard
-        onEcuChanged: {
-            setregtabtitle()
-        }
-    }
 
     ListView {
         id: listView
@@ -45,10 +27,7 @@ Rectangle{
                 title: "Dash Sel."
                 source: "Settings/DashSelector.qml"
             }
-            ListElement {
-                title: "GPS"
-                source: "Settings/GPS.qml"
-            }
+
             ListElement {
                 title: "Sensehat" // Tab index 2
                 source: "Settings/sensehat.qml"
@@ -86,36 +65,22 @@ Rectangle{
                 source: "Settings/network.qml"
             }
 
-            ListElement {
-                title: "Version and updates" // Tab index 9
-                source: "Settings/version.qml"
-            }
         }
         delegate: Item {
             x: 5
-            width: parent.width - 5
+            width: 80
             height: 40
-            Button {
-                // color: "#ccc1c1"
-                anchors.fill: parent
-                text: title
-                anchors.verticalCenter: parent.verticalCenter
-                onClicked: {
-                    loader.source = source
+            Row {
+                id: row1
+                spacing: 10
+
+                Text {
+                    text: title
+                    anchors.verticalCenter: parent.verticalCenter
+                    font.bold: true
                 }
             }
         }
 
     }
-
-    Loader {
-        id: loader
-        // anchors.fill: parent
-        anchors.left : listView.right
-        anchors.right: parent.right
-        anchors.leftMargin: 5
-
-        height: 480
-    }
-
 }

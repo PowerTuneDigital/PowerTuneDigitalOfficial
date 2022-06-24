@@ -160,6 +160,6 @@ Rectangle {
         anchors.left: dash3.right
         index: 4
         linkedLoader: fourthPageLoader
-        Component.onCompleted: tabView.currentIndex = 0 //switch back to main tab
+        // Component.onCompleted: tabView.currentIndex = 0 //switch back to main tab
     }
 }

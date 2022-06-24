@@ -2,7 +2,9 @@
     <qresource prefix="/">
         <file>main.qml</file>
         <file>SerialSettings.qml</file>
+        <file>Settings/Entrypoint.qml</file>
         <file>Settings/main.qml</file>
+        <file>Settings/GPS.qml</file>
         <file>Settings/DashSelector.qml</file>
         <file>Settings/sensehat.qml</file>
         <file>Settings/warn_gear.qml</file>
@@ -13,6 +15,7 @@
         <file>Settings/network.qml</file>
         <file>Settings/WifiCountryList.qml</file>
         <file>Settings/DashSelectorWidget.qml</file>
+        <file>Settings/version.qml</file>
         <file>graphics/Tacho_Mitte.png</file>
         <file>Gauges/DashboardGaugeStyle.qml</file>
         <file>Gauges/TachometerStyle.qml</file>

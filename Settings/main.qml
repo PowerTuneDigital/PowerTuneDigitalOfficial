@@ -14,38 +14,7 @@ Rectangle {
     property int hexstring2
     Item {
         id: powerTuneSettings
-        Settings {
-            //property alias brightnessselect: brightness.value
-            // property alias connectAtStartUp: connectAtStart.checked
-            property alias connectECUAtStartup: connectButton.enabled
-            property alias connectGPSAtStartup: connectButtonGPS.enabled
-            //property alias gpsswitch: gpsswitch.checked
-            property alias serialPortName: serialName.currentText
-            property alias gpsPortName: serialNameGPS.currentText
-            property alias gpsPortNameindex: serialNameGPS.currentIndex
-            //property alias gpsBaud: serialGPSBaud.currentText
-            //property alias gpsBaudindex: serialGPSBaud.currentIndex
-            property alias ecuType: ecuSelect.currentText
-            property alias auxunit1: unitaux1.text
-            property alias aux1: an1V0.text
-            property alias aux2: an2V5.text
-            property alias auxunit2: unitaux2.text
-            property alias aux3: an3V0.text
-            property alias aux4: an4V5.text
-            property alias goProVariant: goProSelect.currentIndex
-            property alias password: goPropass.text
-            property alias vehicleweight: weight.text
-            property alias unitSelector1: unitSelect1.currentIndex
-            property alias unitSelector: unitSelect.currentIndex
-            property alias unitSelector2: unitSelect2.currentIndex
-            property alias odometervalue: odometer.text
-            property alias tripmetervalue: tripmeter.text
-            //property alias protocol : protocol.currentIndex
-            property alias smoothingrpm: smoothrpm.currentIndex
-            property alias smoothingspeed: smoothspeed.currentIndex
-            property alias extendercanbase: baseadresstext.text
-            property alias shiftlightcanbase: shiftlightbaseadresstext.text
-        }
+
         SoundEffect {
             id: warnsound
             source: "qrc:/Sounds/alarm.wav"
@@ -140,31 +109,7 @@ Rectangle {
                         hoverEnabled: serialName.hoverEnabled
                     }
                 }
-                Text {
-                    text: "GPS Port: "
-                    font.pixelSize: windowbackround.width / 55
-                    color: "white"
-                    //visible: { (gpsswitch.checked == true ) ? true:false; }
-                }
-                ComboBox {
-                    id: serialNameGPS
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    model: Connect.portsNames
-                    // visible: { (gpsswitch.checked == true ) ? true:false; }
-                    delegate: ItemDelegate {
-                        width: serialNameGPS.width
-                        text: serialNameGPS.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: serialNameGPS.currentIndex
-                                     == index ? Font.DemiBold : Font.Normal
-                        font.family: serialNameGPS.font.family
-                        font.pixelSize: serialNameGPS.font.pixelSize
-                        highlighted: serialNameGPS.highlightedIndex == index
-                        hoverEnabled: serialNameGPS.hoverEnabled
-                    }
-                }
+
                 Text {
                     text: "Speed units:"
                     font.pixelSize: windowbackround.width / 55
@@ -433,35 +378,7 @@ Rectangle {
                         functdisconnect.disconnectfunc()
                     }
                 }
-                Button {
-                    id: connectButtonGPS
-                    text: "GPS Connect"
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    Component.onCompleted: autoconnectGPS.auto()
-                    onClicked: {
 
-                        //console.log("clicked GPS")
-                        connectButtonGPS.enabled = false
-                        disconnectButtonGPS.enabled = true
-                        autoconnectGPS.auto()
-                        //console.log("gps disconnect enabled")
-                    }
-                }
-                Button {
-                    id: disconnectButtonGPS
-                    text: "GPS Disconnect"
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    enabled: false
-                    onClicked: {
-                        connectButtonGPS.enabled = true
-                        disconnectButtonGPS.enabled = false
-                        Gps.closeConnection()
-                    }
-                }
 
                 Button {
                     id: resettrip
@@ -808,6 +725,7 @@ Rectangle {
                 //Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
         }
     }
+    /*
     Item {
         //Function to connect and disconnect GPS
         id: autoconnectGPS
@@ -822,6 +740,7 @@ Rectangle {
             //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
         }
     }
+    */
     Item {
         id: changeweighttext
         function changetext() {
