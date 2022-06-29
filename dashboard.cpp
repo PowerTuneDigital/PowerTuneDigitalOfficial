@@ -5037,7 +5037,7 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             emit RR_Tyre_Temp_08Changed(RR_Tyre_Temp_08);
         }
 
-        void DashBoard::setRPMFrequencyDividerDi1(const int &RPMFrequencyDividerDi1)
+        void DashBoard::setRPMFrequencyDividerDi1(const qreal &RPMFrequencyDividerDi1)
         {
             if(m_RPMFrequencyDividerDi1 == RPMFrequencyDividerDi1)
                 return;
@@ -5628,5 +5628,5 @@ qreal DashBoard::RR_Tyre_Temp_05() const {return m_RR_Tyre_Temp_05;}
 qreal DashBoard::RR_Tyre_Temp_06() const {return m_RR_Tyre_Temp_06;}
 qreal DashBoard::RR_Tyre_Temp_07() const {return m_RR_Tyre_Temp_07;}
 qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
-int DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
+qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}

@@ -348,47 +348,47 @@ Rectangle {
             {
             case 0: //1cyl
             {
-                rpmfrequencydivider = 0.5;
+                rpmfrequencydivider = 0.25;//0.5;
                 break;
             }
             case 1: //2cyl
             {
-                rpmfrequencydivider = 1;
+                rpmfrequencydivider = 0.5;//1;
                 break;
             }
             case 2: //3cyl
             {
-                rpmfrequencydivider = 1.5;
+                rpmfrequencydivider = 0.75//1.5;
                 break;
             }
             case 3: //4cyl
             {
-                rpmfrequencydivider = 2;
+                rpmfrequencydivider = 1;//2;
                 break;
             }
             case 4: //5cyl
             {
-                rpmfrequencydivider = 2.5;
+                rpmfrequencydivider = 1.25//2.5;
                 break;
             }
             case 5: //6cyl
             {
-                rpmfrequencydivider = 3;
+                rpmfrequencydivider = 1.5;//3;
                 break;
             }
             case 6: //8cyl
             {
-                rpmfrequencydivider = 4;
+                rpmfrequencydivider = 2;//4;
                 break;
             }
             case 7: //10cyl
             {
-                rpmfrequencydivider = 5;
+                rpmfrequencydivider = 2.5;//5;
                 break;
             }
             case 8: //12cyl
             {
-                rpmfrequencydivider = 6;
+                rpmfrequencydivider = 3;//6;
                 break;
             }
             }

@@ -320,7 +320,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setCBXCountrysave(getValue("Country").toString());
     m_dashboard->setCBXTracksave(getValue("Track").toString());
     m_dashboard->setBrightness(getValue("Brightness").toInt());
-    m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toInt());
+    m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toReal());
     m_dashboard->setDI1RPMEnabled(getValue("DI1RPMEnabled").toInt());
 
 }

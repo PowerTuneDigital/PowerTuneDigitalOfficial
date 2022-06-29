@@ -600,7 +600,7 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal RR_Tyre_Temp_06 READ RR_Tyre_Temp_06 WRITE setRR_Tyre_Temp_06 NOTIFY RR_Tyre_Temp_06Changed)
     Q_PROPERTY(qreal RR_Tyre_Temp_07 READ RR_Tyre_Temp_07 WRITE setRR_Tyre_Temp_07 NOTIFY RR_Tyre_Temp_07Changed)
     Q_PROPERTY(qreal RR_Tyre_Temp_08 READ RR_Tyre_Temp_08 WRITE setRR_Tyre_Temp_08 NOTIFY RR_Tyre_Temp_08Changed)
-    Q_PROPERTY(int RPMFrequencyDividerDi1 READ RPMFrequencyDividerDi1 WRITE setRPMFrequencyDividerDi1 NOTIFY RPMFrequencyDividerDi1Changed)
+    Q_PROPERTY(qreal RPMFrequencyDividerDi1 READ RPMFrequencyDividerDi1 WRITE setRPMFrequencyDividerDi1 NOTIFY RPMFrequencyDividerDi1Changed)
     Q_PROPERTY(int DI1RPMEnabled READ DI1RPMEnabled WRITE setDI1RPMEnabled NOTIFY DI1RPMEnabledChanged)
 
 
@@ -1234,7 +1234,7 @@ class DashBoard : public QObject
     void setRR_Tyre_Temp_06(const qreal &RR_Tyre_Temp_06);
     void setRR_Tyre_Temp_07(const qreal &RR_Tyre_Temp_07);
     void setRR_Tyre_Temp_08(const qreal &RR_Tyre_Temp_08);
-    void setRPMFrequencyDividerDi1(const int &RPMFrequencyDividerDi1);
+    void setRPMFrequencyDividerDi1(const qreal &RPMFrequencyDividerDi1);
     void setDI1RPMEnabled(const int &DI1RPMEnabled);
 
     qreal Odo() const;
@@ -1824,7 +1824,7 @@ class DashBoard : public QObject
     qreal RR_Tyre_Temp_06()const;
     qreal RR_Tyre_Temp_07()const;
     qreal RR_Tyre_Temp_08()const;
-    int RPMFrequencyDividerDi1()const;
+    qreal RPMFrequencyDividerDi1()const;
     int DI1RPMEnabled()const;
 
 signals:
@@ -2408,7 +2408,7 @@ signals:
     void RR_Tyre_Temp_06Changed(qreal RR_Tyre_Temp_06);
     void RR_Tyre_Temp_07Changed(qreal RR_Tyre_Temp_07);
     void RR_Tyre_Temp_08Changed(qreal RR_Tyre_Temp_08);
-    void RPMFrequencyDividerDi1Changed(int RPMFrequencyDividerDi1);
+    void RPMFrequencyDividerDi1Changed(qreal RPMFrequencyDividerDi1);
     void DI1RPMEnabledChanged(int DI1RPMEnabled);
 
 private:
@@ -3000,7 +3000,7 @@ private:
     qreal m_RR_Tyre_Temp_06;
     qreal m_RR_Tyre_Temp_07;
     qreal m_RR_Tyre_Temp_08;
-    int m_RPMFrequencyDividerDi1;
+    qreal m_RPMFrequencyDividerDi1;
     int m_DI1RPMEnabled;
 
 };
