@@ -3928,7 +3928,7 @@ void DashBoard::setEXAnalogInput5(const qreal &EXAnalogInput5)
     emit EXAnalogInput5Changed(EXAnalogInput5);
     if (EXsteinhart5 == 0)
     {
-    setEXAnalogCalc5(((EXAN55-EXAN50)*0.2)*EXAnalogInput3+EXAN50);
+    setEXAnalogCalc5(((EXAN55-EXAN50)*0.2)*EXAnalogInput5+EXAN50);
     }
     //Calculate the resistance of a potential NTC at the Analog Input Whereby input voltage is 5V and R1 = 1000 Ohm
     else
