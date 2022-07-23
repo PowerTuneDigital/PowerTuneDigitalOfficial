@@ -188,6 +188,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
+            enabled: checkan3ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
@@ -198,6 +199,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
+            enabled: checkan3ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
@@ -210,6 +212,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
+            enabled: checkan4ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
@@ -220,6 +223,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
+            enabled: checkan4ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
@@ -232,6 +236,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
+            enabled: checkan5ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
@@ -242,6 +247,7 @@ Rectangle {
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
+            enabled: checkan5ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
 
