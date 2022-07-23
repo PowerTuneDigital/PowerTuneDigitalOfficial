@@ -1,6 +1,5 @@
 #include "Apexi.h"
-#include "dashboard.h"
-#include "connect.h"
+
 #include <QTime>
 #include <QTimer>
 #include <QDebug>
@@ -9,6 +8,8 @@
 #include <QFile>
 #include <QTextStream>
 
+#include "dashboard.h"
+#include "connect.h"
 
 
 QByteArray rawmessagedata;
@@ -28,12 +29,12 @@ int Model = 0;
 int Logging =3;
 int Loggerstat;
 
-float auxval1; // an1-2 v0
-float auxval2; // an1-2 v5
-float auxval3; // an3-4 v0
-float auxval4; // an3-4 v5
+float auxval1;  // an1-2 v0
+float auxval2;  // an1-2 v5
+float auxval3;  // an3-4 v0
+float auxval4;  // an3-4 v5
 
-int requestIndex = 0; //ID for requested data type Power FC
+int requestIndex = 0;  //ID for requested data type Power FC
 int expectedbytes;
 int Bytes;
 int Protocol = 0;
@@ -86,7 +87,7 @@ void Apexi::initSerialPort()
     }
   */
     m_serialport = new SerialPort(this);
-    connect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
+    connect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &Apexi::handleError);
     connect(m_serialport, &QSerialPort::bytesWritten, this, &Apexi::handleBytesWritten);
@@ -96,7 +97,7 @@ void Apexi::initSerialPort()
 
 //function for flushing all serial buffers
 void Apexi::clear()
-  
+
 {
     m_serialport->clear();
 }
@@ -105,7 +106,7 @@ void Apexi::clear()
 //function to open serial port
 void Apexi::openConnection(const QString &portName)
 {
-    qDebug()<<"open Apexi";
+    qDebug() << "open Apexi";
     port = portName;
     initSerialPort();
     m_serialport->setPortName(port);
@@ -113,8 +114,8 @@ void Apexi::openConnection(const QString &portName)
     m_serialport->setParity(QSerialPort::NoParity);
     m_serialport->setDataBits(QSerialPort::Data8);
     m_serialport->setStopBits(QSerialPort::OneStop);
-    m_serialport->setFlowControl(QSerialPort::NoFlowControl);;
-    
+    m_serialport->setFlowControl(QSerialPort::NoFlowControl);
+
     if(m_serialport->open(QIODevice::ReadWrite) == false)
     {
         m_dashboard->setSerialStat(m_serialport->errorString());
@@ -126,12 +127,12 @@ void Apexi::openConnection(const QString &portName)
         requestIndex = 0;
         Apexi::sendRequest(requestIndex);
     }
-    
-    
+
+
 }
 void Apexi::closeConnection()
 {
-    disconnect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
+    disconnect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &Apexi::handleError);
     disconnect(m_serialport, &QSerialPort::bytesWritten, this, &Apexi::handleBytesWritten);
@@ -147,7 +148,7 @@ void Apexi::handleTimeout()
     m_dashboard->setTimeoutStat(QString("Is Timeout : Y"));
     m_timer.stop();
     m_serialport->close();
-    if(m_serialport->open(QIODevice::ReadWrite) == false)
+    if (m_serialport->open(QIODevice::ReadWrite) == false)
     {
         m_dashboard->setSerialStat(m_serialport->errorString());
     }
@@ -155,10 +156,10 @@ void Apexi::handleTimeout()
     {
         m_dashboard->setSerialStat(QString("Connected to Serialport"));
     }
-    
+
     requestIndex = 2;
     m_readData.clear();
-    
+
     Apexi::sendRequest(requestIndex);
 }
 
@@ -173,7 +174,7 @@ void Apexi::handleError(QSerialPort::SerialPortError serialPortError)
         out << "Serial Error " << (m_serialport->errorString()) <<endl;
         mFile.close();
         m_dashboard->setSerialStat(m_serialport->errorString());
-        
+
     }
 }
 
@@ -182,8 +183,8 @@ void Apexi::handleError(QSerialPort::SerialPortError serialPortError)
 void Apexi::readyToRead()
 {
     m_readData = m_serialport->readAll();
-  /*  
-  //Test enable raw message log 
+  /*
+  //Test enable raw message log
     QString fileName = "RawMessage.txt";
     QFile mFile(fileName);
     if(!mFile.open(QFile::Append | QFile::Text)){
@@ -201,13 +202,13 @@ void Apexi::readyToRead()
 
 void Apexi::apexiECU(const QByteArray &buffer)
 {
-    
+
     m_buffer.append(buffer);
     QByteArray startpattern = m_writeData.left(1);
     QByteArrayMatcher startmatcher(startpattern);
-    
+
     int pos = 0;
-    while((pos = startmatcher.indexIn(m_buffer, pos)) != -1)
+    while (pos = startmatcher.indexIn(m_buffer, pos) != -1)
     {
         m_dashboard->setRunStat(m_buffer.toHex());
         if (pos !=0)
@@ -218,19 +219,19 @@ void Apexi::apexiECU(const QByteArray &buffer)
                 m_buffer.remove(expectedbytes,m_buffer.length() );
             }
         }
-        
+
         if (pos == 0 )
         {
             break;
         }
-        
-        
+
+
     }
-    
+
     if (m_buffer.length() == expectedbytes)
     {
         m_dashboard->setTimeoutStat(QString("Is Timeout : N"));
-        
+
         m_apexiMsg =  m_buffer;
         m_buffer.clear();
         m_timer.stop();
@@ -248,13 +249,13 @@ void Apexi::apexiECU(const QByteArray &buffer)
 
 void Apexi::readData(QByteArray rawmessagedata)
 {
-    
+
     if( rawmessagedata.length() )
     {
         //Power FC Decode
         quint8 requesttype = rawmessagedata[0];
-        
-        
+
+
         switch (requesttype) {
         case ID::Advance:
             Apexi::decodeAdv(rawmessagedata);
@@ -296,7 +297,7 @@ void Apexi::readData(QByteArray rawmessagedata)
 
             }
             break;
-            
+
             /*
         case ID::Version:
             Apexi::decodeVersion(rawmessagedata);
@@ -305,13 +306,13 @@ void Apexi::readData(QByteArray rawmessagedata)
         default:
             break;
         }
-        
-        
-        
+
+
+
     }
     rawmessagedata.clear();
-    
-    
+
+
 }
 
 void Apexi::handleBytesWritten(qint64 bytes)
@@ -328,13 +329,13 @@ void Apexi::writeRequestPFC(QByteArray p_request)
     m_writeData = p_request;
     qint64 bytesWritten = m_serialport->write(p_request);
    // m_dashboard->setSerialStat(QString("Sending Request " + p_request.toHex()));
-    
+
     if (bytesWritten == -1) {
         m_dashboard->setSerialStat(m_serialport->errorString());
     } else if (bytesWritten != m_writeData.size()) {
         m_dashboard->setSerialStat(m_serialport->errorString());
     }
-    
+
 }
 
 //Power FC requests
@@ -343,9 +344,9 @@ void Apexi::sendRequest(int requestIndex)
 {
     if (Protocol == 0){
         switch (requestIndex){
-        
-        
-        
+
+
+
         //New Apexi Structure
         case 0:
             //Init Platform (This returns the Platform String )
@@ -368,7 +369,7 @@ void Apexi::sendRequest(int requestIndex)
             Apexi::writeRequestPFC(QByteArray::fromHex("F0020D"));
             expectedbytes = 33;
             break;
-            
+
         case 4:
             //Apexi::getMapIndices();
             Apexi::writeRequestPFC(QByteArray::fromHex("DB0222"));
@@ -405,14 +406,14 @@ void Apexi::sendRequest(int requestIndex)
             Apexi::writeRequestPFC(QByteArray::fromHex("690294"));
             expectedbytes = 83;
             break;
-            
+
             // Live Data
         case 2:
             //Apexi::getAdvData();
             Apexi::writeRequestPFC(QByteArray::fromHex("F0020D"));
             expectedbytes = 33;
             break;
-            
+
         case 3:
             //Apexi::getMapIndices();
             Apexi::writeRequestPFC(QByteArray::fromHex("680295"));
@@ -432,12 +433,12 @@ void Apexi::sendRequest(int requestIndex)
             //Apexi::getAux();
             Apexi::writeRequestPFC(QByteArray::fromHex("0002FD"));
             expectedbytes = 7;
-            
+
             break;
         }
     }
-    
-    m_timer.start(700); //Set timout to 700 mseconds 
+
+    m_timer.start(700); //Set timout to 700 mseconds
 }
 
 
@@ -459,11 +460,11 @@ void Apexi::Auxcalc (const QString &unitaux1,const qreal &an1V0,const qreal &an2
 
 void Apexi::decodeAdv(QByteArray rawmessagedata)
 {
-    
+
     fc_adv_info_t* info=reinterpret_cast<fc_adv_info_t*>(rawmessagedata.data());
     if (Model == 1)
     {
-        
+
         packageADV[0] = info->RPM + add[0];
         packageADV[1] = info->Intakepress;
         packageADV[2] = info->PressureV * 0.001; //value in V
@@ -486,7 +487,7 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         packageADV[19] = info->na1;
         packageADV[20] = info->Secinjpulse * 0.001;
         packageADV[21] = info->na2;
-        
+
         m_dashboard->setrpm(packageADV[0]);
         m_dashboard->setIntakepress(packageADV[1]);
         m_dashboard->setPressureV(packageADV[2]);
@@ -509,14 +510,14 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         m_dashboard->setna1(packageADV[19]);
         m_dashboard->setSecinjpulse(packageADV[20]);
         m_dashboard->setna2(packageADV[21]);
-        
-        
+
+
         //    //qDebug() << "Time passed since last call"<< startTime.msecsTo(QTime::currentTime());
         //odometer += ((startTime.msecsTo(QTime::currentTime())) * ((packageADV[16]) / 3600000)); // Odometer
         //m_dashboard->setOdo(odometer);
         // startTime.restart();
-        
-        
+
+
     }
     // Nissan and Subaru
     if (Model == 2)
@@ -524,7 +525,7 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
 
 
         fc_adv_info_t2* info=reinterpret_cast<fc_adv_info_t2*>(rawmessagedata.data());
-        
+
         packageADV2[0] = info->RPM;
         packageADV2[1] = info->EngLoad;
         packageADV2[2] = info->MAF1V *0.001;
@@ -556,7 +557,7 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         packageADV2[16] = info->O2volt *0.005;
         packageADV2[17] = info->O2volt_2 *0.005;
         packageADV2[18] = info->ThrottleV *0.001;
-        
+
         m_dashboard->setrpm(packageADV2[0]);
         m_dashboard->setEngLoad(packageADV2[1]);
         m_dashboard->setMAF1V(packageADV2[2]);
@@ -578,7 +579,7 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         m_dashboard->setO2volt_2(packageADV2[17]);
         m_dashboard->setThrottleV((packageADV2[18]*100));
         m_dashboard->setTPS((packageADV2[18]*100)/4.38);
-        
+
     }
     //Toyota
     if (Model == 3)
@@ -610,7 +611,7 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         packageADV3[12] = info->Knock3;
         packageADV3[13] = info->BatteryV3 *0.1;
         packageADV3[14] = info->Speed3;
-        
+
         // packageADV3[14] *= speed_correction;
         //previousSpeed_kph[buf_currentIndex] = packageADV[14];
         //        packageADV3[15] = mul[15] * info->Iscvduty + add[15];
@@ -620,8 +621,8 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         packageADV3[19] = mul[19] * info->na13 + add[19];
         packageADV3[20] = 0;
         packageADV3[21] = 0;
-        
-        
+
+
         m_dashboard->setrpm(packageADV3[0]);
         m_dashboard->setIntakepress(packageADV3[1]);
         m_dashboard->setPressureV(packageADV3[2]);
@@ -636,17 +637,17 @@ void Apexi::decodeAdv(QByteArray rawmessagedata)
         m_dashboard->setKnock(packageADV3[12]);
         m_dashboard->setBatteryV(packageADV3[13]);
         m_dashboard->setSpeed(packageADV3[14]);
-        
-        
+
+
     }
-    
+
 }
 
 
 void Apexi::decodeSensor(QByteArray rawmessagedata)
 {
     fc_sens_info_t* info=reinterpret_cast<fc_sens_info_t*>(rawmessagedata.data());
-    
+
     packageSens[0] = info->sens1 * 0.01;
     packageSens[1] = info->sens2 * 0.01;
     packageSens[2] = info->sens3 * 0.01;
@@ -655,12 +656,12 @@ void Apexi::decodeSensor(QByteArray rawmessagedata)
     packageSens[5] = info->sens6 * 0.01;
     packageSens[6] = info->sens7 * 0.01;
     packageSens[7] = info->sens8 * 0.01;
-    
+
     QBitArray flagArray(16);
     for (int i=0; i<16; i++)
         flagArray.setBit(i, info->flags>>i & 1);
-    
-    
+
+
     m_dashboard->setsens1(packageSens[0]);
     m_dashboard->setsens2(packageSens[1]);
     m_dashboard->setsens3(packageSens[2]);
@@ -669,7 +670,7 @@ void Apexi::decodeSensor(QByteArray rawmessagedata)
     m_dashboard->setsens6(packageSens[5]);
     m_dashboard->setsens7(packageSens[6]);
     m_dashboard->setsens8(packageSens[7]);
-    
+
     //Bit Flags for Sensors
     m_dashboard->setFlag1(flagArray[0]);
     m_dashboard->setFlag2(flagArray[1]);
@@ -687,47 +688,47 @@ void Apexi::decodeSensor(QByteArray rawmessagedata)
     m_dashboard->setFlag14(flagArray[13]);
     m_dashboard->setFlag15(flagArray[14]);
     m_dashboard->setFlag16(flagArray[15]);
-    
-    
+
+
 }
 
 void Apexi::decodeAux(QByteArray rawmessagedata)
 {
     fc_aux_info_t* info=reinterpret_cast<fc_aux_info_t*>(rawmessagedata.data());
-    
-    
+
+
     packageAux[0] = mul[29] * info->AN1 + add[29];
     packageAux[1] = mul[29] * info->AN2 + add[29];
     packageAux[2] = mul[29] * info->AN3 + add[29];
     packageAux[3] = mul[29] * info->AN4 + add[29];
-    
-    //qDebug()<< "AN1" << packageAux[0] ;
-    //qDebug()<< "AN2" << packageAux[1] ;
-    //qDebug()<< "AN3" << packageAux[2] ;
-    //qDebug()<< "AN4" << packageAux[3] ;
-    //Analog1
+
+    // qDebug()<< "AN1" << packageAux[0] ;
+    // qDebug()<< "AN2" << packageAux[1] ;
+    // qDebug()<< "AN3" << packageAux[2] ;
+    // qDebug()<< "AN4" << packageAux[3] ;
+    // Analog1
     AN1AN2calc = (((((auxval2-auxval1)*0.2) * (packageAux[0] - packageAux[1]))) + auxval1);
     AN3AN4calc = ((((auxval4-auxval3)*0.2) * (packageAux[2] - packageAux[3])) + auxval3);
     m_dashboard->setauxcalc1(AN1AN2calc);
     m_dashboard->setauxcalc2(AN3AN4calc);
     //qDebug()<< "AN1-AN2" << AN1AN2calc ;
     //qDebug()<< "AN1-AN2" << AN3AN4calc ;
-    
+
 }
 
 
 void Apexi::decodeMap(QByteArray rawmessagedata)
 {
-    fc_map_info_t* info=reinterpret_cast<fc_map_info_t*>(rawmessagedata.data());
-    
+    fc_map_info_t* info = reinterpret_cast<fc_map_info_t*>(rawmessagedata.data());
+
     packageMap[0] = mul[0] * info->Map_N + add[0];
     packageMap[1] = mul[0] * info->Map_P + add[0];
-    
+
 }
 void Apexi::decodeBasic(QByteArray rawmessagedata)
 {
-    fc_Basic_info_t* info=reinterpret_cast<fc_Basic_info_t*>(rawmessagedata.data());
-    
+    fc_Basic_info_t* info = reinterpret_cast<fc_Basic_info_t*>(rawmessagedata.data());
+
     qreal Boost;
     int checkboost = (unsigned char)rawmessagedata[13];
     packageBasic[0] = mul[15] * info->Basic_Injduty + add[0];
@@ -772,11 +773,11 @@ void Apexi::decodeBasic(QByteArray rawmessagedata)
     QTextStream out(&mFile);
     out << rawmessagedata.toHex() <<endl;
     mFile.close();
-*/    
+*/
 }
 
 /*
-  
+
 void Apexi::decodeVersion(QByteArray rawmessagedata)
 {
     //    ui->lineVersion->setText (QString(rawmessagedata).mid(2,5));
@@ -789,7 +790,7 @@ void Apexi::decodeInit(QByteArray rawmessagedata)
     if (Modelname == "13B1    " || Modelname == "13B-REW " || Modelname == "13B-REW2" || Modelname == "13B-REW3" || Modelname == "13BT1PRO" || Modelname == "13BR1PRO" || Modelname == "13BR2PRO" || Modelname == "13BR3PRO")
     {
         Model =1;
-    }   
+    }
     //Nissan
     if (Modelname == "NISSAN-L" || Modelname == "CA18DET " || Modelname == "SR20DE1 " || Modelname == "SR20DE2 " || Modelname == "SR20DE3 " || Modelname == "SR20DE4 " || Modelname == "SR20DET1" || Modelname == "SR20DET2" || Modelname == "SR20DET3" || Modelname == "SR20DET4" || Modelname == "SR20DET5" || Modelname == "SR20DET6" || Modelname == "SR20T1-D" || Modelname == "SR20T2-D" || Modelname == "SR20T5-D" ||Modelname == "RB20DET " || Modelname == "RB25DET " || Modelname == "RB25DET2" || Modelname == "RB26DETT" || Modelname == "VG30DETT" || Modelname == "CA181PRO" || Modelname == "SR2N1PRO" || Modelname == "SR2N2PRO" || Modelname == "SR2N3PRO" || Modelname == "SR2N4PRO" || Modelname == "SR201PRO" || Modelname == "SR202PRO" || Modelname == "SR203PRO" || Modelname == "SR204PRO" || Modelname == "SR205PRO" || Modelname == "SR206PRO" || Modelname == "RB201PRO" || Modelname == "RB251PRO" || Modelname == "RB252PRO" || Modelname == "RB261PRO" || Modelname == "RB262PRO" || Modelname == "RB26Pro " || Modelname == "RB26PRO " || Modelname == "RB26PRO1" || Modelname == "RB25PRO2" || Modelname == "CA18T1-D" || Modelname == "SR20T1-D" || Modelname == "SR20T2-D" || Modelname == "SR20T3-D" || Modelname == "SR20T4-D" || Modelname == "SR20T5-D" || Modelname == "RB26_1-D" || Modelname == "RB26_2-D" || Modelname == "VG30TT-D")
     {
@@ -814,39 +815,39 @@ void Apexi::decodeInit(QByteArray rawmessagedata)
     if (Modelname == "4G63    " || Modelname == "4G63-US " || Modelname == "4G63-3  " || Modelname == "4G63-5  " || Modelname == "4G63-6  " || Modelname == "4G63-7  " ||  Modelname == "4G63D_US" || Modelname == "4G63-D  " || Modelname == "4G63-D3 " || Modelname == "4G63-D4 " || Modelname == "4G63-D5 " || Modelname == "4G63-D6 " || Modelname == "4G63-D7 ")
     {
         Model =3;
-    }    
+    }
     m_dashboard->setPlatform(QString(rawmessagedata).mid(2,8) + QString::number(Model));
 }
 
 void Apexi::decodeSensorStrings(QByteArray rawmessagedata)
 {
-    
-    m_dashboard->setSensorString1 (QString(rawmessagedata).mid(2,4));
-    m_dashboard->setSensorString2 (QString(rawmessagedata).mid(6,4));
-    m_dashboard->setSensorString3 (QString(rawmessagedata).mid(10,4));
-    m_dashboard->setSensorString4 (QString(rawmessagedata).mid(14,4));
-    m_dashboard->setSensorString5 (QString(rawmessagedata).mid(18,4));
-    m_dashboard->setSensorString6 (QString(rawmessagedata).mid(22,4));
-    m_dashboard->setSensorString7 (QString(rawmessagedata).mid(26,4));
-    m_dashboard->setSensorString8 (QString(rawmessagedata).mid(30,4));
-    
-    
-    m_dashboard->setFlagString1 (QString(rawmessagedata).mid(34,3));
-    m_dashboard->setFlagString2 (QString(rawmessagedata).mid(37,3));
-    m_dashboard->setFlagString3 (QString(rawmessagedata).mid(40,3));
-    m_dashboard->setFlagString4 (QString(rawmessagedata).mid(43,3));
-    m_dashboard->setFlagString5 (QString(rawmessagedata).mid(46,3));
-    m_dashboard->setFlagString6 (QString(rawmessagedata).mid(49,3));
-    m_dashboard->setFlagString7 (QString(rawmessagedata).mid(52,3));
-    m_dashboard->setFlagString8 (QString(rawmessagedata).mid(55,3));
-    m_dashboard->setFlagString9 (QString(rawmessagedata).mid(58,3));
-    m_dashboard->setFlagString10 (QString(rawmessagedata).mid(61,3));
-    m_dashboard->setFlagString11 (QString(rawmessagedata).mid(64,3));
-    m_dashboard->setFlagString12 (QString(rawmessagedata).mid(67,3));
-    m_dashboard->setFlagString13 (QString(rawmessagedata).mid(70,3));
-    m_dashboard->setFlagString14 (QString(rawmessagedata).mid(73,3));
-    m_dashboard->setFlagString15 (QString(rawmessagedata).mid(76,3));
-    m_dashboard->setFlagString16 (QString(rawmessagedata).mid(79,3));
+
+    m_dashboard->setSensorString1(QString(rawmessagedata).mid(2, 4));
+    m_dashboard->setSensorString2(QString(rawmessagedata).mid(6, 4));
+    m_dashboard->setSensorString3(QString(rawmessagedata).mid(10, 4));
+    m_dashboard->setSensorString4(QString(rawmessagedata).mid(14, 4));
+    m_dashboard->setSensorString5(QString(rawmessagedata).mid(18, 4));
+    m_dashboard->setSensorString6(QString(rawmessagedata).mid(22, 4));
+    m_dashboard->setSensorString7(QString(rawmessagedata).mid(26, 4));
+    m_dashboard->setSensorString8(QString(rawmessagedata).mid(30, 4));
+
+
+    m_dashboard->setFlagString1(QString(rawmessagedata).mid(34, 3));
+    m_dashboard->setFlagString2(QString(rawmessagedata).mid(37, 3));
+    m_dashboard->setFlagString3(QString(rawmessagedata).mid(40, 3));
+    m_dashboard->setFlagString4(QString(rawmessagedata).mid(43, 3));
+    m_dashboard->setFlagString5(QString(rawmessagedata).mid(46, 3));
+    m_dashboard->setFlagString6(QString(rawmessagedata).mid(49, 3));
+    m_dashboard->setFlagString7(QString(rawmessagedata).mid(52, 3));
+    m_dashboard->setFlagString8(QString(rawmessagedata).mid(55, 3));
+    m_dashboard->setFlagString9(QString(rawmessagedata).mid(58, 3));
+    m_dashboard->setFlagString10(QString(rawmessagedata).mid(61, 3));
+    m_dashboard->setFlagString11(QString(rawmessagedata).mid(64, 3));
+    m_dashboard->setFlagString12(QString(rawmessagedata).mid(67, 3));
+    m_dashboard->setFlagString13(QString(rawmessagedata).mid(70, 3));
+    m_dashboard->setFlagString14(QString(rawmessagedata).mid(73, 3));
+    m_dashboard->setFlagString15(QString(rawmessagedata).mid(76, 3));
+    m_dashboard->setFlagString16(QString(rawmessagedata).mid(79, 3));
 }
 
 void Apexi::calculatorAux(float aux1min,float aux2max,float aux3min,float aux4max,QString Auxunit1,QString Auxunit2)
@@ -857,39 +858,37 @@ void Apexi::calculatorAux(float aux1min,float aux2max,float aux3min,float aux4ma
     auxval4 = aux4max;
     Auxname1 = Auxunit1;
     Auxname2 = Auxunit2;
-    qDebug() << Auxunit1<<auxval1 <<auxval2 <<Auxunit2 << auxval3<<auxval4;
+    qDebug() << Auxunit1 << auxval1 << auxval2 << Auxunit2 << auxval3 << auxval4;
 }
 
 void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QString &gauge3,const QString &gauge4,const QString &gauge5,const QString &gauge6)
 {
 //Creates the dashboard file for the Apexi Dash
 
-    QString filename="UserDashApexi.txt";
-    QFile file( filename );
-    if ( file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text) )
-
+    QString filename = "UserDashApexi.txt";
+    QFile file(filename);
+    if (file.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text))
     {
-        QTextStream stream( &file );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        QTextStream stream(&file);
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
-    QString filename2="/home/pi/UserDashboards/UserDashApexi.txt";
-    QFile file2( filename2 );
-    if ( file2.open(QIODevice::ReadWrite  | QIODevice::Truncate | QIODevice::Text) )
-
+    QString filename2 = "/home/pi/UserDashboards/UserDashApexi.txt";
+    QFile file2(filename2);
+    if (file2.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text))
     {
-        QTextStream stream( &file2 );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        QTextStream stream(&file2);
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
 

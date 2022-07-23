@@ -142,7 +142,7 @@ void Connect::saveDashtoFile(const QString &filename,const QString &dashstring)
     if ( file.open(QIODevice::ReadWrite) )
     {
         QTextStream stream( &file );
-        stream << fixformat << endl;
+        stream << fixformat << Qt::endl;
     }
     file.close();
 }
@@ -905,21 +905,21 @@ void Connect::daemonstartup(const int &daemon)
         mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
         QTextStream out(&mFile);
         out << "#!/bin/sh"
-            << endl
+            << Qt::endl
             << "sudo ifdown can0"
-            << endl
+            << Qt::endl
             << "sudo ifup can0"
-            << endl
+            << Qt::endl
             << "#PLMS Consult Cable drivers"
-            << endl
+            << Qt::endl
             << "sudo modprobe ftdi_sio"
-            << endl
+            << Qt::endl
             << "sudo sh -c 'echo \"0403 c7d9\" > /sys/bus/usb-serial/drivers/ftdi_sio/new_id'"
-            << endl
+            << Qt::endl
             << "cd /home/pi/daemons"
-            << endl
+            << Qt::endl
             << daemonstart
-            << endl;
+            << Qt::endl;
         mFile.close();
 
 
@@ -956,23 +956,23 @@ void Connect::canbitratesetup(const int &cansetting)
     {
         QTextStream out(&mFile);
         out << "# interfaces(5) file used by ifup(8) and ifdown(8)"
-            << endl
+            << Qt::endl
             << "# Please note that this file is written to be used with dhcpcd"
-            << endl
+            << Qt::endl
             << "# For static IP, consult /etc/dhcpcd.conf and 'man dhcpcd.conf'"
-            << endl
+            << Qt::endl
             << "# Include files from /etc/network/interfaces.d:"
-            << endl
+            << Qt::endl
             << "source-directory /etc/network/interfaces.d"
-            << endl
+            << Qt::endl
             << "#Automatically start CAN Interface"
-            << endl
+            << Qt::endl
             << "auto can0"
-            << endl
+            << Qt::endl
             << "iface can0 can static"
-            << endl
+            << Qt::endl
             << "bitrate " << canbitrate
-            << endl;
+            << Qt::endl;
     }
     else
     {
@@ -980,49 +980,49 @@ void Connect::canbitratesetup(const int &cansetting)
 
         QTextStream out(&mFile);
         out << "#!/bin/sh"
-            << endl
+            << Qt::endl
             << "# /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)"
-            << endl
+            << Qt::endl
             <<"# The loopback interface"
-              << endl
+              << Qt::endl
             <<"auto lo"
-             << endl
+             << Qt::endl
             <<"iface lo inet loopback"
-            << endl
+            << Qt::endl
             <<"# Wireless interfaces"
-            << endl
+            << Qt::endl
             << "auto wlan0"
-            << endl
+            << Qt::endl
             <<"    iface wlan0 inet dhcp"
-            << endl
+            << Qt::endl
             <<"    wireless_mode managed"
-            << endl
+            << Qt::endl
             << "   wireless_essid any"
-            << endl
+            << Qt::endl
             << "   wpa-driver wext"
-            << endl
+            << Qt::endl
             <<"    wpa-conf /etc/wpa_supplicant.conf"
-            << endl
+            << Qt::endl
             <<"    iface atml0 inet dhcp"
-            << endl
+            << Qt::endl
             <<"# Wired or wireless interfaces"
-            << endl
+            << Qt::endl
             <<"auto eth0"
-            << endl
+            << Qt::endl
             <<"    iface eth0 inet dhcp"
-            << endl
+            << Qt::endl
             <<"# Automatically start CAN Interface"
-            << endl
+            << Qt::endl
             <<"    auto can0"
-            << endl
+            << Qt::endl
             <<"   iface can0 inet manual"
-            << endl
+            << Qt::endl
             <<"    pre-up /sbin/ip link set can0 type can bitrate "<< canbitrate
-            << endl
+            << Qt::endl
             <<"    up /sbin/ifconfig can0 up"
-            << endl
+            << Qt::endl
             <<"    down /sbin/ifconfig can0 down"
-            << endl;
+            << Qt::endl;
 
     }
 
