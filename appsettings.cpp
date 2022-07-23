@@ -193,8 +193,9 @@ void AppSettings::writeRPMSettings(const int &mxrpm,const int &shift1,const int 
     m_dashboard->setrpmStage3(getValue("Shift Light3").toInt());
     m_dashboard->setrpmStage4(getValue("Shift Light4").toInt());
 }
-void AppSettings::writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75,const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL)
+void AppSettings::writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75,const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on,const int &steinhartcalc3on, const int &steinhartcalc4on, const int &steinhartcalc5on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL,const int &AN3R3VAL,const int &AN3R4VAL,const int &AN4R3VAL,const int &AN4R4VAL,const int &AN5R3VAL,const int &AN5R4VAL)
 {
+
     setValue("EXA00", EXA00);
     setValue("EXA05", EXA05);
     setValue("EXA10", EXA10);
@@ -214,12 +215,22 @@ void AppSettings::writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,con
     setValue("steinhartcalc0on", steinhartcalc0on);
     setValue("steinhartcalc1on", steinhartcalc1on);
     setValue("steinhartcalc2on", steinhartcalc2on);
+    setValue("steinhartcalc3on", steinhartcalc3on);
+    setValue("steinhartcalc4on", steinhartcalc4on);
+    setValue("steinhartcalc5on", steinhartcalc5on);
     setValue("AN0R3VAL", AN0R3VAL);
     setValue("AN0R4VAL", AN0R4VAL);
     setValue("AN1R3VAL", AN1R3VAL);
     setValue("AN1R4VAL", AN1R4VAL);
     setValue("AN2R3VAL", AN2R3VAL);
     setValue("AN2R4VAL", AN2R4VAL);
+    setValue("AN3R3VAL", AN3R3VAL);
+    setValue("AN3R4VAL", AN3R4VAL);
+    setValue("AN4R3VAL", AN4R3VAL);
+    setValue("AN4R4VAL", AN4R4VAL);
+    setValue("AN5R3VAL", AN5R3VAL);
+    setValue("AN5R4VAL", AN5R4VAL);
+
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
 }
 void AppSettings::writeEXAN7dampingSettings(const int &AN7damping)
@@ -227,8 +238,9 @@ void AppSettings::writeEXAN7dampingSettings(const int &AN7damping)
     setValue("AN7Damping",AN7damping);
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
 }
-void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23)
+void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23, const qreal &T31,const qreal &T32,const qreal &T33,const qreal &R31,const qreal &R32,const qreal &R33, const qreal &T41,const qreal &T42,const qreal &T43,const qreal &R41,const qreal &R42,const qreal &R43, const qreal &T51,const qreal &T52,const qreal &T53,const qreal &R51,const qreal &R52,const qreal &R53)
 {
+
     setValue("T01", T01);
     setValue("T02", T02);
     setValue("T03", T03);
@@ -246,8 +258,29 @@ void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const
     setValue("T23", T23);
     setValue("R21", R21);
     setValue("R22", R22);
-    setValue("R23", R23);
-    m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
+    setValue("R23", R23);    
+    setValue("T31", T31);
+    setValue("T32", T32);
+    setValue("T33", T33);
+    setValue("R31", R31);
+    setValue("R32", R32);
+    setValue("R33", R33);
+    setValue("T41", T41);
+    setValue("T42", T42);
+    setValue("T43", T43);
+    setValue("R41", R41);
+    setValue("R42", R42);
+    setValue("R43", R43);
+    setValue("T51", T51);
+    setValue("T52", T52);
+    setValue("T53", T53);
+    setValue("R51", R51);
+    setValue("R52", R52);
+    setValue("R53", R53);
+
+
+    // Still need to add the last 3 Calc values
+    m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal(),getValue("T31").toReal(),getValue("T32").toReal(),getValue("T33").toReal(),getValue("R31").toReal(),getValue("R32").toReal(),getValue("R33").toReal(),getValue("T41").toReal(),getValue("T42").toReal(),getValue("T43").toReal(),getValue("R41").toReal(),getValue("R42").toReal(),getValue("R43").toReal(),getValue("T51").toReal(),getValue("T52").toReal(),getValue("T53").toReal(),getValue("R51").toReal(),getValue("R52").toReal(),getValue("R53").toReal());
 }
 void AppSettings::writeCylinderSettings(const qreal &Cylinders)
 {
@@ -301,7 +334,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setrpmStage4(getValue("Shift Light4").toInt());
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt());
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
-    m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal());
+    m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal(),getValue("T31").toReal(),getValue("T32").toReal(),getValue("T33").toReal(),getValue("R31").toReal(),getValue("R32").toReal(),getValue("R33").toReal(),getValue("T41").toReal(),getValue("T42").toReal(),getValue("T43").toReal(),getValue("R41").toReal(),getValue("R42").toReal(),getValue("R43").toReal(),getValue("T51").toReal(),getValue("T52").toReal(),getValue("T53").toReal(),getValue("R51").toReal(),getValue("R52").toReal(),getValue("R53").toReal());
     m_dashboard->setwaterwarn(getValue("waterwarn").toReal());
     m_dashboard->setboostwarn(getValue("boostwarn").toReal());
     m_dashboard->setrpmwarn(getValue("rpmwarn").toReal());
@@ -314,7 +347,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setgearcalc4(getValue("valgear4").toReal());
     m_dashboard->setgearcalc5(getValue("valgear5").toReal());
     m_dashboard->setgearcalc6(getValue("valgear6").toReal());
-    m_dashboard->setsmootexAnalogInput7(getValue("Speedcorrection").toReal());
+    //m_dashboard->setsmootexAnalogInput7(getValue("Speedcorrection").toReal());
     m_dashboard->setCylinders(getValue("Cylinders").toReal());
     m_dashboard->setExternalSpeed(getValue("ExternalSpeed").toInt());
     m_dashboard->setCBXCountrysave(getValue("Country").toString());

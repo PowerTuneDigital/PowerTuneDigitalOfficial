@@ -23,6 +23,9 @@ qreal AN2R4 = 0;
 qreal Rtotalexan0; // Resistance of all internal Resistors of the EX Board for AN0
 qreal Rtotalexan1; // Resistance of all internal Resistors of the EX Board for AN1
 qreal Rtotalexan2; // Resistance of all internal Resistors of the EX Board for AN2
+qreal Rtotalexan3; // Resistance of all internal Resistors of the EX Board for AN3
+qreal Rtotalexan4; // Resistance of all internal Resistors of the EX Board for AN4
+qreal Rtotalexan5; // Resistance of all internal Resistors of the EX Board for AN5
 qreal AN00;
 qreal AN05;
 qreal AN10;
@@ -68,7 +71,9 @@ qreal ResistanceEXAN2;
 int EXsteinhart0; //Flag to use Steinhart/hart for Analog input 0
 int EXsteinhart1; //Flag to use Steinhart/hart for Analog input 1
 int EXsteinhart2; //Flag to use Steinhart/hart for Analog input 2
-
+int EXsteinhart3; //Flag to use Steinhart/hart for Analog input 3
+int EXsteinhart4; //Flag to use Steinhart/hart for Analog input 4
+int EXsteinhart5; //Flag to use Steinhart/hart for Analog input 5
 
 qreal lamdamultiplicator = 1;
 int brightness;
@@ -653,7 +658,7 @@ void DashBoard::setAnalogVal(const qreal &A00,const qreal &A05,const qreal &A10,
 
 
 }
-void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75, const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL)
+void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75, const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on, const int &steinhartcalc3on, const int &steinhartcalc4on, const int &steinhartcalc5on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL,const int &AN3R3VAL,const int &AN3R4VAL,const int &AN4R3VAL,const int &AN4R4VAL,const int &AN4R3VAL,const int &AN4R4VAL)
 {
 
     EXAN00 = EXA00;
@@ -675,6 +680,9 @@ void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal
     EXsteinhart0 = steinhartcalc0on;
     EXsteinhart1 = steinhartcalc1on;
     EXsteinhart2 = steinhartcalc2on;
+    EXsteinhart3 = steinhartcalc3on;
+    EXsteinhart4 = steinhartcalc4on;
+    EXsteinhart5 = steinhartcalc5on;
 
     // Calculating the Boad internal resistance of the Voltage divider
     // EX Analog 0
@@ -729,7 +737,59 @@ void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal
       Rtotalexan2 = R2;
     }
 
+    // EX Analog 3
+    if (AN3R3VAL !=0 && AN3R4VAL !=0)
+    {
+      Rtotalexan3 = 1/((1/R2)+(1/R3)+(1/R4));
+    }
+    if (AN3R3VAL ==0 && AN3R4VAL !=0)
+    {
+      Rtotalexan3 =  (R2*R4)/(R2+R4);
+    }
+    if (AN3R3VAL !=0 && AN3R4VAL ==0)
+    {
+      Rtotalexan3 =  (R2*R3)/(R2+R3);
+    }
+    if (AN3R3VAL ==0 && AN3R4VAL ==0)
+    {
+      Rtotalexan3 = R2;
+    }
 
+    // EX Analog 4
+    if (AN4R3VAL !=0 && AN4R4VAL !=0)
+    {
+      Rtotalexan4 = 1/((1/R2)+(1/R3)+(1/R4));
+    }
+    if (AN4R3VAL ==0 && AN4R4VAL !=0)
+    {
+      Rtotalexan4 =  (R2*R4)/(R2+R4);
+    }
+    if (AN4R3VAL !=0 && AN4R4VAL ==0)
+    {
+      Rtotalexan4 =  (R2*R3)/(R2+R3);
+    }
+    if (AN4R3VAL ==0 && AN4R4VAL ==0)
+    {
+      Rtotalexan4 = R2;
+    }
+
+    // EX Analog 5
+    if (AN5R3VAL !=0 && AN5R4VAL !=0)
+    {
+      Rtotalexan5 = 1/((1/R2)+(1/R3)+(1/R4));
+    }
+    if (AN5R3VAL ==0 && AN5R4VAL !=0)
+    {
+      Rtotalexan5 =  (R2*R4)/(R2+R4);
+    }
+    if (AN5R3VAL !=0 && AN5R4VAL ==0)
+    {
+      Rtotalexan5 =  (R2*R3)/(R2+R3);
+    }
+    if (AN5R3VAL ==0 && AN5R4VAL ==0)
+    {
+      Rtotalexan5 = R2;
+    }
 /*
     qDebug() <<"///////////////////////////////////////////////////////////// :" ;
     qDebug() <<AN0R3VAL<<AN0R4VAL<<AN1R3VAL<<AN1R4VAL<<AN2R3VAL<<AN2R4VAL ;
@@ -741,13 +801,14 @@ void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal
 
 }
 
-void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23)
+void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23,const qreal &T31,const qreal &T32,const qreal &T33,const qreal &R31,const qreal &R32,const qreal &R33,const qreal &T41,const qreal &T42,const qreal &T43,const qreal &R41,const qreal &R42,const qreal &R43,const qreal &T51,const qreal &T52,const qreal &T53,const qreal &R51,const qreal &R52,const qreal &R53)
 {
     //qDebug() <<"Values :" <<T01 << R01 << T02 <<R02 <<T03 << R03 << T11 << R11 << T12 <<R12 <<T13 << R13 << T21 << R21 << T22 <<R22 <<T23 << R23;
     //EX Analog 0 Calculation
     long double L01 = log(R01); //Logrythm of Resistance 1
     long double L02 = log(R02); //Logrythm of Resistance 2
     long double L03 = log(R03); //Logrythm of Resistance 3
+
 
     //Convert Temperature from CELCIUS to Kelvin and get factor
     long double Y01 = 1/(T01+273.15);
@@ -801,8 +862,63 @@ void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &
     C2 = ((V23 - V22)/(L23-L22))*(pow((L21+L22+L22),-1));
     B2 = (V23-C2*(pow(L21,2)+L22*L22+pow(L22,2)));
     A2 = Y21 -(B2+pow(L21,2)*C2)*L21;
-    //
 
+    //EX Analog 3 Calculation
+    long double L31 = log(R31); //Logrythm of Resistance 1
+    long double L32 = log(R32); //Logrythm of Resistance 2
+    long double L33 = log(R33); //Logrythm of Resistance 3
+
+    //Convert Temperature from CELCIUS to Kelvin and get factor
+    long double Y31 = 1/(T31+273.15);
+    long double Y32 = 1/(T32+273.15);
+    long double Y33 = 1/(T33+273.15);
+
+    //Coefficent of L and Y
+    long double V32 = (Y32-Y31)/(L32-L31);
+    long double V33 = (Y33-Y31)/(L33-L31);
+
+    //Coefficent Calculations
+    C3 = ((V33 - V32)/(L33-L32))*(pow((L31+L32+L32),-1));
+    B3 = (V33-C3*(pow(L31,2)+L32*L22+pow(L32,2)));
+    A3 = Y31 -(B3+pow(L31,2)*C3)*L31;
+
+    //EX Analog 4 Calculation
+    long double L41 = log(R41); //Logrythm of Resistance 1
+    long double L42 = log(R42); //Logrythm of Resistance 2
+    long double L43 = log(R43); //Logrythm of Resistance 3
+
+    //Convert Temperature from CELCIUS to Kelvin and get factor
+    long double Y41 = 1/(T41+273.15);
+    long double Y42 = 1/(T42+273.15);
+    long double Y43 = 1/(T43+273.15);
+
+    //Coefficent of L and Y
+    long double V42 = (Y42-Y41)/(L42-L41);
+    long double V43 = (Y43-Y41)/(L43-L41);
+
+    //Coefficent Calculations
+    C4 = ((V43 - V42)/(L43-L42))*(pow((L41+L42+L42),-1));
+    B4 = (V43-C4*(pow(L41,2)+L42*L42+pow(L42,2)));
+    A4 = Y41 -(B4+pow(L41,2)*C4)*L41;
+
+    //EX Analog 5 Calculation
+    long double L51 = log(R51); //Logrythm of Resistance 1
+    long double L52 = log(R52); //Logrythm of Resistance 2
+    long double L53 = log(R53); //Logrythm of Resistance 3
+
+    //Convert Temperature from CELCIUS to Kelvin and get factor
+    long double Y51 = 1/(T51+273.15);
+    long double Y52 = 1/(T52+273.15);
+    long double Y53 = 1/(T53+273.15);
+
+    //Coefficent of L and Y
+    long double V52 = (Y52-Y51)/(L52-L51);
+    long double V53 = (Y53-Y51)/(L53-L51);
+
+    //Coefficent Calculations
+    C5 = ((V53 - V52)/(L53-L52))*(pow((L51+L52+L52),-1));
+    B5 = (V53-C5*(pow(L51,2)+L52*L22+pow(L52,2)));
+    A5 = Y51 -(B5+pow(L51,2)*C5)*L51;
 }
 // Advanced Info FD3S
 void DashBoard::setrpm(const qreal &rpm)

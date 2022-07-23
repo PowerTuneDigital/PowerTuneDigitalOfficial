@@ -32,12 +32,21 @@ Rectangle {
             property alias checkan0ntcsave  : checkan0ntc.checkState
             property alias checkan1ntcsave  : checkan1ntc.checkState
             property alias checkan2ntcsave  : checkan2ntc.checkState
+            property alias checkan3ntcsave  : checkan3ntc.checkState
+            property alias checkan4ntcsave  : checkan4ntc.checkState
+            property alias checkan5ntcsave  : checkan5ntc.checkState
             property alias checkan0100save  : checkan0100.checkState
             property alias checkan01Ksave   : checkan01k.checkState
             property alias checkan1100save  : checkan1100.checkState
             property alias checkan11Ksave   : checkan11k.checkState
             property alias checkan2100save  : checkan2100.checkState
-            property alias checkan21Ksave   : checkan21k.checkState
+            property alias checkan21Ksave   : checkan21k.checkState           
+            property alias checkan3100save  : checkan3100.checkState
+            property alias checkan31Ksave   : checkan31k.checkState
+            property alias checkan4100save  : checkan4100.checkState
+            property alias checkan41Ksave   : checkan41k.checkState
+            property alias checkan5100save  : checkan5100.checkState
+            property alias checkan51Ksave   : checkan51k.checkState
             property alias rpmcheckboxsave  : rpmcheckbox.checkState
             property alias di1RPMsave  : enablefrequencydi1rpm.checkState
             property alias cylindercomboboxsave : cylindercombobox.currentIndex
@@ -59,7 +68,25 @@ Rectangle {
             property alias t22save : t22.text
             property alias r22save : r22.text
             property alias t32save : t32.text
-            property alias r32save : r32.text
+            property alias r32save : r32.text     
+            property alias t13save : t13.text
+            property alias r13save : r13.text
+            property alias t23save : t23.text
+            property alias r23save : r23.text
+            property alias t33save : t33.text
+            property alias r33save : r33.text
+            property alias t14save : t14.text
+            property alias r14save : r14.text
+            property alias t24save : t24.text
+            property alias r24save : r24.text
+            property alias t34save : t34.text
+            property alias r34save : r34.text
+            property alias t15save : t15.text
+            property alias r15save : r15.text
+            property alias t25save : t25.text
+            property alias r25save : r25.text
+            property alias t35save : t35.text
+            property alias r35save : r35.text
             property alias an7dampingfactorsave : an7dampingfactor.text
         }
     }
@@ -331,9 +358,10 @@ Rectangle {
             function setInputs()
             {
             AppSettings.writeEXAN7dampingSettings(an7dampingfactor.text);
-            AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState)
-            AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text)
+            AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan3ntc.checkState,checkan4ntc.checkState,checkan5ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState,checkan3100.checkState,checkan31k.checkState,checkan4100.checkState,checkan41k.checkState,checkan5100.checkState,checkan51k.checkState)
+            AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text,t13.text,t23.text,t33.text,r13.text,r23.text,r33.text,t14.text,t24.text,t34.text,r14.text,r24.text,r34.text,t15.text,t25.text,t35.text,r15.text,r25.text,r35.text)
             if(rpmcheckbox.checked == true)
+
             {
                 AppSettings.writeCylinderSettings(cylindercombobox.textAt(cylindercombobox.currentIndex))
             }
@@ -408,7 +436,7 @@ Rectangle {
         anchors.leftMargin: 20
         anchors.top: parent.top
         anchors.topMargin: 40
-        rows:7
+        rows:10
         columns: 9
         spacing: 5
         Text { text: "Temp. In"
@@ -681,6 +709,262 @@ Rectangle {
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
+
+        CheckBox {
+            id: checkan3ntc
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        TextField {
+            id: t13
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "-20"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r13
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "14600"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t23
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "20"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r23
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "2200"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t33
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "80"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r33
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "290"
+            enabled: checkan3ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        CheckBox {
+            id: checkan3100
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        CheckBox {
+            id: checkan31k
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+
+        CheckBox {
+            id: checkan4ntc
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        TextField {
+            id: t14
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "-20"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r14
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "14600"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t24
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "20"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r24
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "2200"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t34
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "80"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r34
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "290"
+            enabled: checkan4ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        CheckBox {
+            id: checkan4100
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        CheckBox {
+            id: checkan41k
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+//
+        CheckBox {
+            id: checkan5ntc
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        TextField {
+            id: t15
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "-20"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r15
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "14600"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t25
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "20"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r25
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "2200"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: t35
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "80"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        TextField {
+            id: r35
+            width: main.width / 14
+            height: main.height /15
+            font.pixelSize: main.width / 55
+            //text: "290"
+            enabled: checkan5ntc.checked == true ? true : false
+            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            onEditingFinished: inputs.setInputs()
+
+        }
+        CheckBox {
+            id: checkan5100
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        CheckBox {
+            id: checkan51k
+            width: main.width / 14
+            height: main.height /15
+            onCheckStateChanged: inputs.setInputs();
+            }
+        //
 
     Text { text: "Di1 RPM"
         font.pixelSize: main.width / 55;color:"white"}

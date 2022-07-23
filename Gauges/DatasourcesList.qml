@@ -671,7 +671,7 @@ ListModel {
     ListElement {
         sourcename:"BoostDuty"
         defaultsymbol: "%"
-        titlename:"Boos Duty"
+        titlename:"Boost Duty"
         decimalpoints : "0"
         maxvalue : "100"
         stepsize : "20"
@@ -726,7 +726,7 @@ ListModel {
     ListElement {
         sourcename:"brakepress"
         defaultsymbol: "kPa"
-        titlename:"Brake Pres."
+        titlename:"njDuty"
         decimalpoints : "0"
         maxvalue : "300"
         stepsize : "100"
