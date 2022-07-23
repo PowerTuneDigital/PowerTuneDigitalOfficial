@@ -344,7 +344,6 @@ void AppSettings::readandApplySettings()
     m_dashboard->setgearcalc4(getValue("valgear4").toReal());
     m_dashboard->setgearcalc5(getValue("valgear5").toReal());
     m_dashboard->setgearcalc6(getValue("valgear6").toReal());
-    //m_dashboard->setsmootexAnalogInput7(getValue("Speedcorrection").toReal());
     m_dashboard->setCylinders(getValue("Cylinders").toReal());
     m_dashboard->setExternalSpeed(getValue("ExternalSpeed").toInt());
     m_dashboard->setCBXCountrysave(getValue("Country").toString());

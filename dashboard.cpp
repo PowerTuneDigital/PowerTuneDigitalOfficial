@@ -68,6 +68,9 @@ qreal EXAN75;
 qreal ResistanceEXAN0;
 qreal ResistanceEXAN1;
 qreal ResistanceEXAN2;
+qreal ResistanceEXAN3;
+qreal ResistanceEXAN4;
+qreal ResistanceEXAN5;
 int EXsteinhart0; //Flag to use Steinhart/hart for Analog input 0
 int EXsteinhart1; //Flag to use Steinhart/hart for Analog input 1
 int EXsteinhart2; //Flag to use Steinhart/hart for Analog input 2
@@ -3879,7 +3882,21 @@ void DashBoard::setEXAnalogInput3(const qreal &EXAnalogInput3)
         return;
     m_EXAnalogInput3 = EXAnalogInput3;
     emit EXAnalogInput3Changed(EXAnalogInput3);
+    if (EXsteinhart3 == 0)
+    {
     setEXAnalogCalc3(((EXAN35-EXAN30)*0.2)*EXAnalogInput3+EXAN30);
+    }
+    //Calculate the resistance of a potential NTC at the Analog Input Whereby input voltage is 5V and R1 = 1000 Ohm
+    else
+    {
+
+    ResistanceEXAN3 = (Rtotalexan3 *(5-EXAnalogInput3))/EXAnalogInput3; // Calculating the Resistance of the Sensor R1
+    qreal tempK = 1/(A3+(B3*log(ResistanceEXAN3)) + C3* pow(log(ResistanceEXAN3),3))-273.15;
+    if (m_units == "metric")
+    { setEXAnalogCalc3(tempK);}
+    if (m_units == "imperial")
+    {setEXAnalogCalc3(tempK * 1.8 + 32);}
+    }
 }
 void DashBoard::setEXAnalogInput4(const qreal &EXAnalogInput4)
 {
@@ -3887,7 +3904,21 @@ void DashBoard::setEXAnalogInput4(const qreal &EXAnalogInput4)
         return;
     m_EXAnalogInput4 = EXAnalogInput4;
     emit EXAnalogInput4Changed(EXAnalogInput4);
+    if (EXsteinhart4 == 0)
+    {
     setEXAnalogCalc4(((EXAN45-EXAN40)*0.2)*EXAnalogInput4+EXAN40);
+    }
+    //Calculate the resistance of a potential NTC at the Analog Input Whereby input voltage is 5V and R1 = 1000 Ohm
+    else
+    {
+
+    ResistanceEXAN4 = (Rtotalexan4 *(5-EXAnalogInput4))/EXAnalogInput4; // Calculating the Resistance of the Sensor R1
+    qreal tempK = 1/(A4+(B4*log(ResistanceEXAN4)) + C4* pow(log(ResistanceEXAN4),3))-273.15;
+    if (m_units == "metric")
+    { setEXAnalogCalc4(tempK);}
+    if (m_units == "imperial")
+    {setEXAnalogCalc4(tempK * 1.8 + 32);}
+    }
 }
 void DashBoard::setEXAnalogInput5(const qreal &EXAnalogInput5)
 {
@@ -3895,7 +3926,21 @@ void DashBoard::setEXAnalogInput5(const qreal &EXAnalogInput5)
         return;
     m_EXAnalogInput5 = EXAnalogInput5;
     emit EXAnalogInput5Changed(EXAnalogInput5);
-    setEXAnalogCalc5(((EXAN55-EXAN50)*0.2)*EXAnalogInput5+EXAN50);
+    if (EXsteinhart5 == 0)
+    {
+    setEXAnalogCalc5(((EXAN55-EXAN50)*0.2)*EXAnalogInput3+EXAN50);
+    }
+    //Calculate the resistance of a potential NTC at the Analog Input Whereby input voltage is 5V and R1 = 1000 Ohm
+    else
+    {
+
+    ResistanceEXAN5 = (Rtotalexan5 *(5-EXAnalogInput5))/EXAnalogInput5; // Calculating the Resistance of the Sensor R1
+    qreal tempK = 1/(A5+(B5*log(ResistanceEXAN5)) + C5* pow(log(ResistanceEXAN5),3))-273.15;
+    if (m_units == "metric")
+    { setEXAnalogCalc5(tempK);}
+    if (m_units == "imperial")
+    {setEXAnalogCalc5(tempK * 1.8 + 32);}
+    }
 }
 void DashBoard::setEXAnalogInput6(const qreal &EXAnalogInput6)
 {
