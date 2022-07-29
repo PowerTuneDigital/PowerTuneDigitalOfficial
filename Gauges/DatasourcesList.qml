@@ -1799,6 +1799,16 @@ ListModel {
         stepsize : "20"
         divisor : "1"
     }
+
+    ListElement {
+        sourcename:"InjAngle"
+        defaultsymbol: "°"
+        titlename:"Inj. Angle"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
+    }
     ListElement {
         sourcename:"Inj2"
         defaultsymbol: "%"
