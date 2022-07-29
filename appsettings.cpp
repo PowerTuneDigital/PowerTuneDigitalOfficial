@@ -151,7 +151,7 @@ void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boos
 void AppSettings::writeSpeedSettings(const qreal &Speedcorrection)
 {
     setValue("Speedcorrection",Speedcorrection);
-    //m_dashboard->setsmootexAnalogInput7(getValue("Speedcorrection").toReal());
+    m_dashboard->setspeedpercent(getValue("Speedcorrection").toReal());
 }
 void AppSettings::writeAnalogSettings(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105)
 {
@@ -352,6 +352,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setBrightness(getValue("Brightness").toInt());
     m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toReal());
     m_dashboard->setDI1RPMEnabled(getValue("DI1RPMEnabled").toInt());
-
+    m_dashboard->setspeedpercent(getValue("Speedcorrection").toReal());
+    qDebug() << "ExternalSpeed" <<getValue("ExternalSpeed").toString();
 }
 

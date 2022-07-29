@@ -1956,10 +1956,11 @@ void DashBoard::setgpsSpeed(const double &gpsSpeed)
     if (m_speedunits == "imperial")
     {m_speed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
 
-    emit gpsSpeedChanged(gpsSpeed);
+    emit gpsSpeedChanged(m_speed);
 
     if (m_ExternalSpeed == 5){
-    emit speedChanged(gpsSpeed);
+
+    emit speedChanged(m_speed);
     }
 }
 
@@ -2285,7 +2286,7 @@ void DashBoard::setSVSS(const qreal &SVSS)
     { m_SVSS= SVSS;}
     if (m_speedunits == "imperial")
     {m_SVSS = qRound(SVSS * 0.621371);}
-    emit sVSSChanged(SVSS);
+    emit sVSSChanged(m_SVSS);
 }
 
 void DashBoard::setInj1(const qreal &Inj1)

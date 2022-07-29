@@ -894,6 +894,9 @@ void Connect::daemonstartup(const int &daemon)
     case 53:
         daemonstart = "./NeuroBasic";
         break;
+    case 54:
+        daemonstart = "./GR_Yaris";
+        break;
     }
 
     ///////
