@@ -57,6 +57,7 @@ sudo pkill Prado
 sudo pkill ProEFI
 sudo pkill TeslaSDU
 sudo pkill DTAFast
+sudo pkill GR_Yaris
 echo "Removing previous Versions"
 
 sudo rm /home/pi/daemons/ProEFI
@@ -116,6 +117,7 @@ sudo rm /home/pi/daemons/PTDCAND
 sudo rm /home/pi/daemons/RX8
 sudo rm /home/pi/daemons/WRX2016
 sudo rm /home/pi/daemons/BigNETLamda
+sudo rm /home/pi/daemons/GR_Yaris
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
