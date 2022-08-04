@@ -5,8 +5,8 @@ RUN uname -a
 RUN apt update
 RUN apt install -y --no-install-recommends \
     qtdeclarative5-dev libqt5serialport5-dev libqt5serialbus5-dev libqt5charts5-dev \
-    qtlocation5-dev qtpositioning5-dev libqt5sensors5-dev qtmultimedia5-dev qtvirtualkeyboard-plugin 
-    
+    qtlocation5-dev qtpositioning5-dev libqt5sensors5-dev qtmultimedia5-dev qtvirtualkeyboard-plugin
+
 RUN apt install -y --no-install-recommends \
     qml-module-qtquick-controls qml-module-qtquick-controls2 qml-module-qtquick-virtualkeyboard \
     qml-module-qtsensors qml-module-qt-labs-settings  qml-module-qtmultimedia \
@@ -20,4 +20,4 @@ ADD . /src
 RUN mkdir /src/build/
 WORKDIR /src/build/
 RUN qmake ..
-RUN make -j2
+RUN make -j8
