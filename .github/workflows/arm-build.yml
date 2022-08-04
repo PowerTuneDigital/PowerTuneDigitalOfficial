@@ -13,18 +13,8 @@ jobs:
     steps:    
     - name: Checkout the code       
       uses: actions/checkout@v1              
-    - name: Set up Docker Buildx      
-      uses: crazy-max/ghaction-docker-buildx@v1      
-      with:       
-        buildx-version: latest          
-    - name: Prepare      
-      if: success()      
-      id: prepare      
-      run: |        
-        echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}       
-        echo ::set-output name=docker_image::${DOCKER_IMAGE}       
-        echo ::set-output name=buildx-version::${GITHUB_RUN_NUMBER}       
-    - name: Run Buildx (push image)      
+ 
+    - name: Build test image
       if: success()      
       run: |        
         docker build \
