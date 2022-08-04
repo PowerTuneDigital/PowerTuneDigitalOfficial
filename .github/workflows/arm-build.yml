@@ -1,9 +1,5 @@
 name: Test builds on armv7
 
-on:  
-  push:    
-    branches: [ gh-builds ]
-
 jobs:   
   build:    
     runs-on: ubuntu-20.04    
@@ -45,3 +41,12 @@ jobs:
       uses: actions/upload-artifact@v3                                                                                
       with:                                                                                                           
         path: ./PowertuneQMLGui
+    - name: Pull request artifacts
+      if: ${{ github.event_name == 'pull_request' }}
+      uses: gavv/pull-request-artifacts@v1.0.0
+      with:
+        commit: ${{ github.event.pull_request.head.sha }}
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        artifacts-branch: artifacts
+        artifacts: |
+          ./PowertuneQMLGui
