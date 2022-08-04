@@ -8,7 +8,27 @@ jobs:
   build:    
     runs-on: ubuntu-20.04    
     env:      
+      DOCKER_IMAGE: "powertune"
       DOCKER_TARGET_PLATFORM: linux/arm/v7 
     steps:    
-    - name: Test the docker image
-      run: docker run --rm -t arm32v7/debian uname -m
+    - name: Checkout the code       
+      uses: actions/checkout@v1              
+    - name: Set up Docker Buildx      
+      uses: crazy-max/ghaction-docker-buildx@v1      
+      with:       
+        buildx-version: latest          
+    - name: Prepare      
+      if: success()      
+      id: prepare      
+      run: |        
+        echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}       
+        echo ::set-output name=docker_image::${DOCKER_IMAGE}       
+        echo ::set-output name=buildx-version::${GITHUB_RUN_NUMBER}       
+    - name: Run Buildx (push image)      
+      if: success()      
+      run: |        
+        docker buildx build \
+        --platform ${{ steps.prepare.outputs.docker_platform }} \
+        --tag ${{ steps.prepare.outputs.docker_image }}:latest \
+        --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.buildx-version }} \
+        --push .github/workflows/
