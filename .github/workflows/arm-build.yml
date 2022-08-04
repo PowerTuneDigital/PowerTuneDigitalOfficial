@@ -1,5 +1,8 @@
 name: Test builds on armv7
 
+on:  
+  push:
+
 jobs:   
   build:    
     runs-on: ubuntu-20.04    
