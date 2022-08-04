@@ -1,0 +1,14 @@
+name: Test builds on armv7
+
+on:  
+  push:    
+    branches: [ gh-builds ]
+
+jobs:   
+  build:    
+    runs-on: ubuntu-20.04    
+    env:      
+      DOCKER_TARGET_PLATFORM: linux/arm/v7 
+    steps:    
+    - name: Test the docker image
+      run: docker run --rm -t arm32v7/debian uname -m
