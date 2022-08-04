@@ -28,7 +28,7 @@ jobs:
       id: copy_dockerfile
       run: |
         cp .github/workflows/Dockerfile .
-    - name: Run Buildx (push image)      
+    - name: Run Buildx (test build)
       if: success()      
       run: |        
         docker build \
@@ -36,3 +36,12 @@ jobs:
         --tag ${{ steps.prepare.outputs.docker_image }}:latest \
         --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.buildx-version }} \
         .
+    - name: Extract the binary from the docker image
+      if: success()      
+      run: |        
+        docker run -ti --name PowerTune ${{ steps.prepare.outputs.docker_image }}:latest md5sum /src/build/PowertuneQMLGui
+        docker cp PowerTune:/src/build/PowertuneQMLGui .
+    - name: Archive armv7 binary
+      uses: actions/upload-artifact@v3                                                                                
+      with:                                                                                                           
+        path: ./PowertuneQMLGui
