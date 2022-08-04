@@ -13,10 +13,26 @@ jobs:
     steps:    
     - name: Checkout the code       
       uses: actions/checkout@v1              
- 
-    - name: Build test image
+    - name: Set up Docker Buildx      
+      uses: crazy-max/ghaction-docker-buildx@v1      
+      with:       
+        buildx-version: latest          
+    - name: Prepare      
+      if: success()      
+      id: prepare      
+      run: |        
+        echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}       
+        echo ::set-output name=docker_image::${DOCKER_IMAGE}       
+        echo ::set-output name=buildx-version::${GITHUB_RUN_NUMBER}       
+    - name: Copy GH action dockerfile to the root folder
+      id: copy_dockerfile
+      run: |
+        cp .github/workflows/Dockerfile .
+    - name: Run Buildx (push image)      
       if: success()      
       run: |        
         docker build \
-        --platform ${{ env.DOCKER_TARGET_PLATFORM }} \
-        .github/workflows/
+        --platform ${{ steps.prepare.outputs.docker_platform }} \
+        --tag ${{ steps.prepare.outputs.docker_image }}:latest \
+        --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.buildx-version }} \
+        .
