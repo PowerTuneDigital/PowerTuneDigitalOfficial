@@ -9,7 +9,6 @@ if [ -d /home/root ]; then
 		git reset --hard
 		git clean -fd
 		git pull
-		./fixcan.sh
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		else
@@ -17,7 +16,6 @@ if [ -d /home/root ]; then
 		mkdir /home/pi/src
 		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src
 		cd src
-		./fixcan.sh
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -60,6 +58,7 @@ if nc -zw5 www.github.com 443; then
 		git reset --hard
 		git clean -fd
 		git pull
+		./fixcan.sh
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		else
@@ -67,6 +66,7 @@ if nc -zw5 www.github.com 443; then
 		mkdir /home/pi/src
 		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src  
 		cd src
+		./fixcan.sh
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
