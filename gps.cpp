@@ -233,8 +233,10 @@ void GPS::ProcessMessage(QByteArray messageline)
         return;
     }
 
-
+    if (m_dashboard->NMEAlog() ==1 )
+    {
     logNMEA(messageline);
+    }
     // Then we process the message
     if (messageline.mid(3, 3) == "GGA") {
         // Check if we have already set the refresh rate

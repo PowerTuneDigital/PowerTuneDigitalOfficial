@@ -1846,6 +1846,16 @@ ListModel {
         stepsize : "20"
         divisor : "1"
     }
+
+    ListElement {
+        sourcename:"InjDuty2"
+        defaultsymbol: "%"
+        titlename:"Inj. Duty sec"
+        decimalpoints : "0"
+        maxvalue : "100"
+        stepsize : "20"
+        divisor : "1"
+    }
     ListElement {
         sourcename:"injms"
         defaultsymbol: "ms"
