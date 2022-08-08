@@ -212,7 +212,7 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal gpsAltitude READ gpsAltitude WRITE setgpsAltitude NOTIFY gpsAltitudeChanged)
     Q_PROPERTY(qreal gpsLatitude READ gpsLatitude WRITE setgpsLatitude NOTIFY gpsLatitudeChanged)
     Q_PROPERTY(qreal gpsLongitude READ gpsLongitude WRITE setgpsLongitude NOTIFY gpsLongitudeChanged)
-    Q_PROPERTY(double gpsSpeed READ gpsSpeed WRITE setgpsSpeed NOTIFY gpsSpeedChanged)
+    Q_PROPERTY(qreal gpsSpeed READ gpsSpeed WRITE setgpsSpeed NOTIFY gpsSpeedChanged)
     Q_PROPERTY(int gpsVisibleSatelites READ gpsVisibleSatelites WRITE setgpsVisibleSatelites NOTIFY gpsVisibleSatelitesChanged)
     Q_PROPERTY(QString gpsFIXtype READ gpsFIXtype  WRITE setgpsFIXtype  NOTIFY gpsFIXtypeChanged)
     Q_PROPERTY(qreal gpsbearing READ gpsbearing WRITE setgpsbearing NOTIFY gpsbearingChanged)
@@ -832,7 +832,7 @@ class DashBoard : public QObject
     void setgpsAltitude(const qreal &gpsAltitude);
     void setgpsLatitude(const qreal &gpsLatitude);
     void setgpsLongitude(const qreal &gpsLongitude);
-    void setgpsSpeed(const double &gpsSpeed);
+    void setgpsSpeed(const qreal &gpsSpeed);
     void setgpsVisibleSatelites(const int &gpsVisibleSatelites);
     void setgpsFIXtype(const QString &gpsFIXtype);
     void setgpsbearing(const qreal &gpsbearing);
@@ -1427,7 +1427,7 @@ class DashBoard : public QObject
     qreal gpsAltitude() const;
     qreal gpsLatitude() const;
     qreal gpsLongitude() const;
-    double gpsSpeed() const;
+    qreal gpsSpeed() const;
     int gpsVisibleSatelites() const;
     QString gpsFIXtype() const;
     qreal gpsbearing() const;
@@ -2020,7 +2020,7 @@ signals:
     void gpsAltitudeChanged(qreal gpsAltitude);
     void gpsLatitudeChanged(qreal gpsLatitude);
     void gpsLongitudeChanged(qreal gpsLongitude);
-    void gpsSpeedChanged(double gpsSpeed);
+    void gpsSpeedChanged(qreal gpsSpeed);
     void gpsVisibleSatelitesChanged(int gpsVisibleSatelites);
     void gpsFIXtypeChanged(QString gpsFIXtype);
     void gpsbearingChanged(qreal gpsbearing);
@@ -2661,7 +2661,7 @@ private:
     qreal m_gpsAltitude;
     qreal m_gpsLatitude;
     qreal m_gpsLongitude;
-    double m_gpsSpeed;
+    qreal m_gpsSpeed;
     int m_gpsVisibleSatelites;
     QString m_gpsFIXtype;
     qreal m_gpsbearing;
