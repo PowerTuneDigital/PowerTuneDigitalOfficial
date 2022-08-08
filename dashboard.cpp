@@ -640,7 +640,6 @@ void DashBoard::setNMEAlog(const int &NMEAlog)
     if (m_NMEAlog == NMEAlog)
         return;
     m_NMEAlog = NMEAlog;
-   qDebug() << "NMEA LOG " <<m_NMEAlog ;
     emit NMEAlogChanged(NMEAlog);
 }
 
@@ -1110,7 +1109,7 @@ void DashBoard::setSpeed(const qreal &speed)
     }
 if (m_ExternalSpeed == 0){
     emit speedChanged(m_speed);
-}
+    }
 }
 
 void DashBoard::setIscvduty(const qreal &Iscvduty)
@@ -1962,15 +1961,12 @@ void DashBoard::setgpsSpeed(const double &gpsSpeed)
     m_gpsSpeed = gpsSpeed;
 
     if (m_speedunits == "metric")
-    {m_speed = qRound(gpsSpeed * m_speedpercent);}
+    {m_gpsSpeed = qRound(gpsSpeed * m_speedpercent);}
     if (m_speedunits == "imperial")
-    {m_speed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
-
-    emit gpsSpeedChanged(m_speed);
-
-    if (m_ExternalSpeed == 5){
-
-    emit speedChanged(m_speed);
+    {m_gpsSpeed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
+    emit gpsSpeedChanged(m_gpsSpeed);
+    if (m_ExternalSpeed == 5){ 
+    emit speedChanged(m_gpsSpeed);
     }
 }
 
