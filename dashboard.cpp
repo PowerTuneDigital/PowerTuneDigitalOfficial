@@ -90,6 +90,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_Odo(0)
     , m_Cylinders(0)
     , m_Trip(0)
+    , m_NMEAlog(0)
     , m_rpm(0)
     , m_Intakepress(0)
     , m_PressureV(0)
@@ -634,6 +635,14 @@ void DashBoard::setTrip(const qreal &Trip)
     m_Trip = Trip;
     emit tripChanged(Trip);
 }
+void DashBoard::setNMEAlog(const int &NMEAlog)
+{
+    if (m_NMEAlog == NMEAlog)
+        return;
+    m_NMEAlog = NMEAlog;
+    emit NMEAlogChanged(NMEAlog);
+}
+
 void DashBoard::setAnalogVal(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105)
 {
     AN00 = A00;
@@ -1100,7 +1109,7 @@ void DashBoard::setSpeed(const qreal &speed)
     }
 if (m_ExternalSpeed == 0){
     emit speedChanged(m_speed);
-}
+    }
 }
 
 void DashBoard::setIscvduty(const qreal &Iscvduty)
@@ -1952,14 +1961,12 @@ void DashBoard::setgpsSpeed(const double &gpsSpeed)
     m_gpsSpeed = gpsSpeed;
 
     if (m_speedunits == "metric")
-    {m_speed = qRound(gpsSpeed * m_speedpercent);}
+    {m_gpsSpeed = qRound(gpsSpeed * m_speedpercent);}
     if (m_speedunits == "imperial")
-    {m_speed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
-
-    emit gpsSpeedChanged(m_speed);
-
+    {m_gpsSpeed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
+    emit gpsSpeedChanged(m_gpsSpeed);
+    m_speed =m_gpsSpeed;
     if (m_ExternalSpeed == 5){
-
     emit speedChanged(m_speed);
     }
 }
@@ -5222,6 +5229,7 @@ qreal DashBoard::Cylinders() const { return m_Cylinders; }
 
 // Tripmeter
 qreal DashBoard::Trip() const { return m_Trip; }
+int DashBoard::NMEAlog() const { return m_NMEAlog; }
 
 // Advanced Info
 qreal DashBoard::rpm() const { return m_rpm; }
