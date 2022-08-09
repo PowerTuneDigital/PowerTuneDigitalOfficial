@@ -1954,7 +1954,7 @@ void DashBoard::setgpsLongitude(const qreal &gpsLongitude)
     emit gpsLongitudeChanged(gpsLongitude);
 }
 
-void DashBoard::setgpsSpeed(const qreal &gpsSpeed)
+void DashBoard::setgpsSpeed(const double &gpsSpeed)
 {
     if (m_gpsSpeed == gpsSpeed)
         return;
@@ -1965,8 +1965,9 @@ void DashBoard::setgpsSpeed(const qreal &gpsSpeed)
     if (m_speedunits == "imperial")
     {m_gpsSpeed = qRound((gpsSpeed * 0.621371) * m_speedpercent);}
     emit gpsSpeedChanged(m_gpsSpeed);
-    if (m_ExternalSpeed == 5){ 
-    emit speedChanged(m_gpsSpeed);
+    m_speed =m_gpsSpeed;
+    if (m_ExternalSpeed == 5){
+    emit speedChanged(m_speed);
     }
 }
 
@@ -5372,7 +5373,7 @@ QString DashBoard::gpsTime() const { return m_gpsTime; }
 qreal DashBoard::gpsAltitude() const { return m_gpsAltitude; }
 qreal DashBoard::gpsLatitude() const { return m_gpsLatitude; }
 qreal DashBoard::gpsLongitude () const { return m_gpsLongitude; }
-qreal DashBoard::gpsSpeed() const { return m_gpsSpeed; }
+double DashBoard::gpsSpeed() const { return m_gpsSpeed; }
 int DashBoard::gpsVisibleSatelites () const { return m_gpsVisibleSatelites; }
 QString DashBoard::gpsFIXtype () const { return m_gpsFIXtype; }
 qreal DashBoard::gpsbearing() const { return m_gpsbearing; }
