@@ -293,10 +293,10 @@ void GPS::processGPRMC(const QString & line) {
     QString time = fields[1];
     time.insert(2, ":");
     time.insert(5, ":");
-    QString latitude = fields[3];
-    QString latDirection = fields[4];
-    QString longitude = fields[5];
-    QString lonDirection = fields[6];
+
+    float decLat = convertToFloat(fields[3], fields[4]);
+    float decLon = convertToFloat(fields[5], fields[6]);
+
     QString groundspeedknots = fields[7];
     QString bearing = fields[8];
     if (bearing != "")
@@ -307,8 +307,6 @@ void GPS::processGPRMC(const QString & line) {
 
     double speed = groundspeedknots.toDouble() * 1.852;
 
-    float decLat = convertToFloat(latitude, latDirection);
-    float decLon = convertToFloat(longitude, lonDirection);
 
     if ((m_dashboard->gpsFIXtype() == "GPS only") ||(m_dashboard->gpsFIXtype() == "DGPS") )
     {
@@ -344,12 +342,9 @@ void GPS::processGPGGA(const QString & line)
         m_dashboard->setgpsFIXtype("No fix yet");
         break;
     }
-    QString latitude = fields[2];
-    QString latDirection = fields[3];
-    QString longitude = fields[4];
-    QString lonDirection = fields[5];
-    float decLat = convertToFloat(latitude, latDirection);
-    float decLon = convertToFloat(longitude, lonDirection);
+
+    float decLat = convertToFloat(fields[2], fields[3]);
+    float decLon = convertToFloat(fields[4], fields[5]);
 
     QString satelitesinview = fields[7];
     QString altitude = fields[9];
