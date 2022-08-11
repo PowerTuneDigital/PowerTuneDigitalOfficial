@@ -127,7 +127,9 @@ void GPS::setGPSBAUD115()
     m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
-    closeConnection1();
+    closeConnection();
+    initialized = 1;
+    openConnection(GPSPort, "115200");
 }
 void GPS::setGPS10HZ()
 {
@@ -151,19 +153,6 @@ void GPS::closeConnection()
     disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
     m_serialport->close();
     m_dashboard->setgpsFIXtype("close serial");
-}
-void GPS::closeConnection1()
-{
-    m_dashboard->setgpsFIXtype("close connection");
-    disconnect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
-    disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
-               this, &GPS::handleError);
-    disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
-    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
-    m_serialport->close();
-    initialized = 1;
-    m_dashboard->setgpsFIXtype("close serial");
-    openConnection(GPSPort, "115200");
 }
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
