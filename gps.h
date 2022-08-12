@@ -46,7 +46,6 @@ class GPS : public QObject
     void setGPS10HZ();
     void setGPSOnly();
     void closeConnection();
-    void closeConnection1();
     void clear();
 
  private slots:
