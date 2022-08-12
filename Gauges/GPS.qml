@@ -162,7 +162,7 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
-                text: Dashboard.gpsLatitude
+                text: Dashboard.gpsLatitude.toFixed(6)
                 font.pixelSize: 20
                 font.bold: true
                 font.family: "Eurostile"
@@ -174,7 +174,7 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
-                text: Dashboard.gpsLongitude
+                text: Dashboard.gpsLongitude.toFixed(6)
                 font.pixelSize: 20
                 font.bold: true
                 font.family: "Eurostile"
