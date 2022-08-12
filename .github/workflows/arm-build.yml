@@ -1,48 +1,50 @@
 name: Test builds on armv7
 
-on:  
+on:
   push:
+  pull_request:
+    types: [opened, reopened, synchronize]
 
-jobs:   
-  build:    
-    runs-on: ubuntu-20.04    
-    env:      
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    env:
       DOCKER_IMAGE: "powertune"
-      DOCKER_TARGET_PLATFORM: linux/arm/v7 
-    steps:    
-    - name: Checkout the code       
-      uses: actions/checkout@v1              
-    - name: Set up Docker Buildx      
-      uses: crazy-max/ghaction-docker-buildx@v1      
-      with:       
-        buildx-version: latest          
-    - name: Prepare      
-      if: success()      
-      id: prepare      
-      run: |        
-        echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}       
-        echo ::set-output name=docker_image::${DOCKER_IMAGE}       
-        echo ::set-output name=buildx-version::${GITHUB_RUN_NUMBER}       
+      DOCKER_TARGET_PLATFORM: linux/arm/v7
+    steps:
+    - name: Checkout the code
+      uses: actions/checkout@v1
+    - name: Set up Docker Buildx
+      uses: crazy-max/ghaction-docker-buildx@v1
+      with:
+        buildx-version: latest
+    - name: Prepare
+      if: success()
+      id: prepare
+      run: |
+        echo ::set-output name=docker_platform::${DOCKER_TARGET_PLATFORM}
+        echo ::set-output name=docker_image::${DOCKER_IMAGE}
+        echo ::set-output name=buildx-version::${GITHUB_RUN_NUMBER}
     - name: Copy GH action dockerfile to the root folder
       id: copy_dockerfile
       run: |
         cp .github/workflows/Dockerfile .
     - name: Run Buildx (test build)
-      if: success()      
-      run: |        
+      if: success()
+      run: |
         docker build \
         --platform ${{ steps.prepare.outputs.docker_platform }} \
         --tag ${{ steps.prepare.outputs.docker_image }}:latest \
         --tag ${{ steps.prepare.outputs.docker_image }}:${{ steps.prepare.outputs.buildx-version }} \
         .
     - name: Extract the binary from the docker image
-      if: success()      
-      run: |        
+      if: success()
+      run: |
         docker run -t --name PowerTune ${{ steps.prepare.outputs.docker_image }}:latest md5sum /src/build/PowertuneQMLGui
         docker cp PowerTune:/src/build/PowertuneQMLGui .
     - name: Archive armv7 binary
-      uses: actions/upload-artifact@v3                                                                                
-      with:                                                                                                           
+      uses: actions/upload-artifact@v3
+      with:
         path: ./PowertuneQMLGui
     - name: Pull request artifacts
       if: ${{ github.event_name == 'pull_request' }}
