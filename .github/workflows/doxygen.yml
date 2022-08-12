@@ -10,6 +10,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Build doxygen documentation
-        uses: mattnotmitt/doxygen-action@v1.9.4
+        uses: mattnotmitt/doxygen-action@v1.9.2
         with:
             additional-packages: font-fira-code
