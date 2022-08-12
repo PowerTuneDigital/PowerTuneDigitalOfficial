@@ -1,0 +1,86 @@
+\hypertarget{Extender_8h_source}{}\doxysection{Extender.\+h}
+\mbox{\hyperlink{Extender_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{comment}{/*}}
+\DoxyCodeLine{2 \textcolor{comment}{ * Copyright (C) 2016 Markus Ippy, Bastian Gschrey, Jan}}
+\DoxyCodeLine{3 \textcolor{comment}{ *}}
+\DoxyCodeLine{4 \textcolor{comment}{ * Digital Gauges for Apexi Power FC for RX7 on Raspberry Pi}}
+\DoxyCodeLine{5 \textcolor{comment}{ *}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * This software comes under the GPL (GNU Public License)}}
+\DoxyCodeLine{8 \textcolor{comment}{ * You may freely copy,distribute etc. this as long as the source code}}
+\DoxyCodeLine{9 \textcolor{comment}{ * is made available for FREE.}}
+\DoxyCodeLine{10 \textcolor{comment}{ *}}
+\DoxyCodeLine{11 \textcolor{comment}{ * No warranty is made or implied. You use this program at your own risk.}}
+\DoxyCodeLine{12 \textcolor{comment}{}}
+\DoxyCodeLine{13 \textcolor{comment}{  \(\backslash\)file Extender.h}}
+\DoxyCodeLine{14 \textcolor{comment}{  \(\backslash\)brief request and receive messages from Adaptronic Modular via CANBUS (socketcan}}
+\DoxyCodeLine{15 \textcolor{comment}{  \(\backslash\)author Bastian Gschrey \& Markus Ippy}}
+\DoxyCodeLine{16 \textcolor{comment}{ */}}
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18 \textcolor{preprocessor}{\#ifndef Extender\_H}}
+\DoxyCodeLine{19 \textcolor{preprocessor}{\#define Extender\_H}}
+\DoxyCodeLine{20 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{21 \textcolor{preprocessor}{\#include <QCanBus>}}
+\DoxyCodeLine{22 \textcolor{preprocessor}{\#include <QCanBusDevice>}}
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <QCanBusFrame>}}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 }
+\DoxyCodeLine{26 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{class }\mbox{\hyperlink{classExtender}{Extender}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{29 \{}
+\DoxyCodeLine{30     Q\_OBJECT}
+\DoxyCodeLine{31 \textcolor{keyword}{public}:}
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33     \textcolor{keyword}{explicit} \mbox{\hyperlink{classExtender_a913f11391fcca8128e1df74463b8b208}{Extender}}(QObject *parent = 0);}
+\DoxyCodeLine{34     \textcolor{keyword}{explicit} \mbox{\hyperlink{classExtender_a913f11391fcca8128e1df74463b8b208}{Extender}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{35     \mbox{\hyperlink{classExtender_a2875494fe0b49318f13ad88a85caf41a}{\string~Extender}}();}
+\DoxyCodeLine{36 }
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{39     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExtender_a290c0ffb772638ad4658eac0b0b5931e}{openCAN}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&ExtenderBaseID,\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&RPMCANBaseID);}
+\DoxyCodeLine{40     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExtender_a91c1b61923744481d7ee80dbd52b98c3}{closeConnection}}();}
+\DoxyCodeLine{41 \textcolor{keyword}{public}:}
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{keyword}{private}:}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46     QCanBusDevice *\mbox{\hyperlink{classExtender_a4778f5137a22e3aacb6c0325acaeabad}{m\_canDevice}};}
+\DoxyCodeLine{47     \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classExtender_a439c5b25a03272b70a604dee64050ae0}{m\_dashboard}};}
+\DoxyCodeLine{48     \textcolor{keywordtype}{double} \mbox{\hyperlink{classExtender_a963a4affdf70f6774898ed5e3453eee4}{pkgpayload}}[8];}
+\DoxyCodeLine{49     \textcolor{keyword}{struct }\mbox{\hyperlink{structExtender_1_1payload}{payload}}\{}
+\DoxyCodeLine{50        quint16 \mbox{\hyperlink{structExtender_1_1payload_acedf40ab8769ab6443566a1168648b7a}{CH1}};}
+\DoxyCodeLine{51        quint16 \mbox{\hyperlink{structExtender_1_1payload_af112caf6ec202ea4d4f3ab7c7fce667e}{CH2}};}
+\DoxyCodeLine{52        quint16 \mbox{\hyperlink{structExtender_1_1payload_aae2b9c32fd9ed14fa0be0691f3d31eb8}{CH3}};}
+\DoxyCodeLine{53        quint16 \mbox{\hyperlink{structExtender_1_1payload_a5e47fe1404ad45024e9499ef63d65c66}{CH4}};}
+\DoxyCodeLine{54        \mbox{\hyperlink{structExtender_1_1payload}{payload}} \mbox{\hyperlink{structExtender_1_1payload_a31177c490a193911a2a368c0ae895249}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{55     \};}
+\DoxyCodeLine{56     \textcolor{keywordtype}{double} \mbox{\hyperlink{classExtender_a38f99658f54b5d414d2ccb6877bce88c}{pkgpayload1}}[8];}
+\DoxyCodeLine{57     \textcolor{keyword}{struct }\mbox{\hyperlink{structExtender_1_1payload1}{payload1}}\{}
+\DoxyCodeLine{58        quint8 \mbox{\hyperlink{structExtender_1_1payload1_ae1fc70f28fd152cf7b6a4aad194c5b72}{CH10}};}
+\DoxyCodeLine{59        quint8 \mbox{\hyperlink{structExtender_1_1payload1_a68737e98528b216d20a6af779f81fd2a}{CH11}};}
+\DoxyCodeLine{60        quint8 \mbox{\hyperlink{structExtender_1_1payload1_ae4451d7e9d9645590bf80f2b64138466}{CH12}};}
+\DoxyCodeLine{61        quint8 \mbox{\hyperlink{structExtender_1_1payload1_a551f7974136903b8d364f037a94bf7a0}{CH13}};}
+\DoxyCodeLine{62        quint8 \mbox{\hyperlink{structExtender_1_1payload1_aa8b7903ba35c9128b48ced24a607e1c0}{CH14}};}
+\DoxyCodeLine{63        quint8 \mbox{\hyperlink{structExtender_1_1payload1_a396fbd15a539af7664a864878b9c01bb}{CH15}};}
+\DoxyCodeLine{64        quint8 \mbox{\hyperlink{structExtender_1_1payload1_a555c66ce2a077aeaebd7e78704056db0}{CH16}};}
+\DoxyCodeLine{65        quint8 \mbox{\hyperlink{structExtender_1_1payload1_acd12a5fb17d782bd7220535803493056}{CH17}};}
+\DoxyCodeLine{66        \mbox{\hyperlink{structExtender_1_1payload1}{payload1}} \mbox{\hyperlink{structExtender_1_1payload1_a7e66fb8040c473991f48402237f2df14}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{67     \};}
+\DoxyCodeLine{68     \textcolor{keywordtype}{int}         \mbox{\hyperlink{classExtender_a9dffcb88cef097f2efd4cef92f9347cc}{m\_units}};}
+\DoxyCodeLine{69 }
+\DoxyCodeLine{70 }
+\DoxyCodeLine{71 signals:}
+\DoxyCodeLine{72 }
+\DoxyCodeLine{73 }
+\DoxyCodeLine{74 }
+\DoxyCodeLine{75 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{76     \textcolor{keywordtype}{void} \mbox{\hyperlink{classExtender_ab1ef1d1764fa63ca790092c338272466}{readyToRead}}();}
+\DoxyCodeLine{77 }
+\DoxyCodeLine{78 }
+\DoxyCodeLine{79 \};}
+\DoxyCodeLine{80 }
+\DoxyCodeLine{81 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// Extender\_H}}
+
+\end{DoxyCode}

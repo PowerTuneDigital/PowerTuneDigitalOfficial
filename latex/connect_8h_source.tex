@@ -1,0 +1,147 @@
+\hypertarget{connect_8h_source}{}\doxysection{connect.\+h}
+\mbox{\hyperlink{connect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CONNECT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CONNECT\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{comment}{/*}}
+\DoxyCodeLine{5 \textcolor{comment}{ * Copyright (C) 2016 Markus Ippy, Bastian Gschrey, Jan}}
+\DoxyCodeLine{6 \textcolor{comment}{ *}}
+\DoxyCodeLine{7 \textcolor{comment}{ * Digital Gauges for Apexi Power FC for RX7 on Raspberry Pi}}
+\DoxyCodeLine{8 \textcolor{comment}{ *}}
+\DoxyCodeLine{9 \textcolor{comment}{ *}}
+\DoxyCodeLine{10 \textcolor{comment}{ * This software comes under the GPL (GNU Public License)}}
+\DoxyCodeLine{11 \textcolor{comment}{ * You may freely copy,distribute etc. this as long as the source code}}
+\DoxyCodeLine{12 \textcolor{comment}{ * is made available for FREE.}}
+\DoxyCodeLine{13 \textcolor{comment}{ *}}
+\DoxyCodeLine{14 \textcolor{comment}{ * No warranty is made or implied. You use this program at your own risk.}}
+\DoxyCodeLine{15 \textcolor{comment}{ */}}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{comment}{/*}}
+\DoxyCodeLine{18 \textcolor{comment}{  \(\backslash\)file serial.h}}
+\DoxyCodeLine{19 \textcolor{comment}{  \(\backslash\)}}
+\DoxyCodeLine{20 \textcolor{comment}{  \(\backslash\)author Bastian Gschrey \& Markus Ippy}}
+\DoxyCodeLine{21 \textcolor{comment}{ */}}
+\DoxyCodeLine{22 }
+\DoxyCodeLine{23 \textcolor{preprocessor}{\#include <QtSerialPort/QSerialPort>}}
+\DoxyCodeLine{24 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{25 \textcolor{preprocessor}{\#include <QModbusDataUnit>}}
+\DoxyCodeLine{26 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{27 \textcolor{preprocessor}{\#include <QProcess>}}
+\DoxyCodeLine{28 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{calculations_8h}{calculations.h}}"{}}}
+\DoxyCodeLine{29 \textcolor{preprocessor}{\#include <QFileSystemModel>}}
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 \textcolor{keyword}{class }\mbox{\hyperlink{classSerialPort}{SerialPort}};}
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classSensors}{Sensors}};}
+\DoxyCodeLine{34 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{35 \textcolor{keyword}{class }\mbox{\hyperlink{classAdaptronicSelect}{AdaptronicSelect}};}
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classApexi}{Apexi}};}
+\DoxyCodeLine{37 \textcolor{keyword}{class }\mbox{\hyperlink{classdatalogger}{datalogger}};}
+\DoxyCodeLine{38 \textcolor{keyword}{class }\mbox{\hyperlink{classcalculations}{calculations}};}
+\DoxyCodeLine{39 \textcolor{keyword}{class }\mbox{\hyperlink{classAppSettings}{AppSettings}};}
+\DoxyCodeLine{40 \textcolor{keyword}{class }\mbox{\hyperlink{classGoPro}{GoPro}};}
+\DoxyCodeLine{41 \textcolor{keyword}{class }\mbox{\hyperlink{classGPS}{GPS}};}
+\DoxyCodeLine{42 \textcolor{keyword}{class }\mbox{\hyperlink{classudpreceiver}{udpreceiver}};}
+\DoxyCodeLine{43 \textcolor{keyword}{class }\mbox{\hyperlink{classArduino}{Arduino}};}
+\DoxyCodeLine{44 \textcolor{keyword}{class }\mbox{\hyperlink{classWifiScanner}{WifiScanner}};}
+\DoxyCodeLine{45 \textcolor{keyword}{class }\mbox{\hyperlink{classExtender}{Extender}};}
+\DoxyCodeLine{46 }
+\DoxyCodeLine{47 \textcolor{keyword}{class }\mbox{\hyperlink{classConnect}{Connect}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{48 \{}
+\DoxyCodeLine{49     Q\_OBJECT}
+\DoxyCodeLine{50     Q\_PROPERTY(QStringList \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}} READ \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}} WRITE \mbox{\hyperlink{classConnect_a25f30cf3256dea7159e8f82d8b4cb625}{setPortsNames}} NOTIFY \mbox{\hyperlink{classConnect_aa27afa2282ef11920ac8478a38a3ff75}{sig\_portsNamesChanged}})}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52 \textcolor{keyword}{public}:}
+\DoxyCodeLine{53     \mbox{\hyperlink{classConnect_afb94d6b498a514a024a5b3d7700c91a8}{\string~Connect}}();}
+\DoxyCodeLine{54     \textcolor{keyword}{explicit} \mbox{\hyperlink{classConnect_a2e3bdc883e226b286ee2ea851bf5f551}{Connect}}(QObject *parent = 0);}
+\DoxyCodeLine{55     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a48e3bc67948597e69272b593e984fa1c}{saveDashtoFile}}(\textcolor{keyword}{const} QString \&filename,\textcolor{keyword}{const} QString \&dashstring);}
+\DoxyCodeLine{56     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a01851ff0778d737a1427091c0e81060c}{setfilename1}}(\textcolor{keyword}{const} QString \&file1);}
+\DoxyCodeLine{57     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aa955a4c3c406ef4ef07035de4953735f}{setfilename2}}(\textcolor{keyword}{const} QString \&file2);}
+\DoxyCodeLine{58     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a40dd5bc54a0439d0a8e741f8e8357421}{setfilename3}}(\textcolor{keyword}{const} QString \&file3);}
+\DoxyCodeLine{59     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a0febec74eec09ab27157ec29a8aab7d0}{checkifraspberrypi}}();}
+\DoxyCodeLine{60     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aaab2955daa941006a2ff5086e686f5a5}{readavailabledashfiles}}();}
+\DoxyCodeLine{61     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aaa2e9ff5c14a533b78a358e7161b82e9}{readavailablebackrounds}}();}
+\DoxyCodeLine{62     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a117635c7f4f1a69ec3573fc6dad7d946}{setrpm}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&dash1,\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&dash2,\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&dash3);}
+\DoxyCodeLine{63     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_ad4ad530ddfe623fbe6519d0acd4dd3dc}{readMaindashsetup}}();}
+\DoxyCodeLine{64     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a2e893e6128b65c59fb81d0e497d5a4dd}{readdashsetup3}}();}
+\DoxyCodeLine{65     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a7ca76a8bbbfd24fb63b0b8dd55f88c3c}{readdashsetup2}}();}
+\DoxyCodeLine{66     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a0dd5d85438ae9a093f1a62a663638b2a}{readdashsetup1}}();}
+\DoxyCodeLine{67     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a2149a215e59ac03e6a6d09c49c60bccb}{setSreenbrightness}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\mbox{\hyperlink{dashboard_8cpp_aa7ab72a18faba1d13601a9209ff2dcf8}{brightness}});}
+\DoxyCodeLine{68     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a4cda7f150a3c3bc7b3e04232ebef93d0}{setSpeedUnits}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&units1);}
+\DoxyCodeLine{69     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a3dcce73cf65b05dc5634ef3ba1fc42ba}{setUnits}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&units);}
+\DoxyCodeLine{70     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_ab3bd9cd0e44474a6284ace4467830512}{setPressUnits}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&units2);}
+\DoxyCodeLine{71     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a4d433198d5e4e5ce613eeda91ac99f99}{setWeight}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&\mbox{\hyperlink{calculations_8cpp_aa01147b1f07072d246c76dc85d69df7c}{weight}});}
+\DoxyCodeLine{72     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_ab2f2af88f427c4a717f6abfd54f9b9df}{setOdometer}}(\textcolor{keyword}{const} qreal \&Odometer);}
+\DoxyCodeLine{73     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aae1687c312a4c59bb91b541eee208826}{qmlTreeviewclicked}}(\textcolor{keyword}{const} QModelIndex \&index);}
+\DoxyCodeLine{74     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a563415715bc8612947284dfda28cd2f2}{clear}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{75     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aba35bf4d550910fdaf9239d7779ae6d4}{checkReg}}();}
+\DoxyCodeLine{76     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aa72c59cc6d02d07b8b6e29dc282e6dca}{checkOBDReg}}();}
+\DoxyCodeLine{77     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a50f2fde88497c58505b58246ccbac7d7}{LiveReqMsgOBD}}(\textcolor{keyword}{const} QString \&obdpids);}
+\DoxyCodeLine{78     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a195944d87886231c43325cd6dbc99fcd}{daemonstartup}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&daemon);}
+\DoxyCodeLine{79     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_ac3e14b65488af0f04cc707dc8b981cee}{canbitratesetup}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&cansetting);}
+\DoxyCodeLine{80     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a332577727804102b4db2886b3da86978}{LiveReqMsg}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val1, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val2, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val3, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val4, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val5, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val6, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val7, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val8, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val9, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val10, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val11, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val12, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val13, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val14, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val15, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val16, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val17, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val18, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val19, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val20, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val21, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val22, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val23, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val24, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val25, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val26, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val27, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val28, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val29, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val30, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val31, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val32, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val33, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val34, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val35, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val36, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val37, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val38, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val39, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val40, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val41, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val42, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val43, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val44, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&val45);}
+\DoxyCodeLine{81     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a0d674157f4d7442c535837dadd8cf5f1}{openConnection}}(\textcolor{keyword}{const} QString \&portName, \textcolor{keyword}{const} \textcolor{keywordtype}{int} \&ecuSelect,\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&canbase,\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&rpmcanbase);}
+\DoxyCodeLine{82     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_abb89a14af2e2b3f6d466c5abfc95cff0}{closeConnection}}();}
+\DoxyCodeLine{83     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a9b55e94397cb075144482504186f2f38}{update}}();}
+\DoxyCodeLine{84     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a063e2d295a906d264f8fce37b7b17120}{changefolderpermission}}();}
+\DoxyCodeLine{85     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aae1ad29dcc3f5d0e8965605ed7056852}{shutdown}}();}
+\DoxyCodeLine{86     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a0f5218e670acd714fdf7e901569f59d1}{reboot}}();}
+\DoxyCodeLine{87     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a007913214a43c9b5d4d8c70bcf55b953}{turnscreen}}();}
+\DoxyCodeLine{88     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a8aa2f2923cf9a4c65ff2f483e80f6b3c}{candump}}();}
+\DoxyCodeLine{89     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a3e6574f386278349587cfefef7e06655}{minicom}}();}
+\DoxyCodeLine{90     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a1fe66e98366345cc87303cad8e31f782}{RequestLicence}}();}
+\DoxyCodeLine{91     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a948dc7665fc1f05bbbc7169a74833a2b}{restartDaemon}}();}
+\DoxyCodeLine{92 }
+\DoxyCodeLine{93 }
+\DoxyCodeLine{94 \textcolor{keyword}{public}:}
+\DoxyCodeLine{95 }
+\DoxyCodeLine{96     QStringList \mbox{\hyperlink{classConnect_a66f245898ce3be5b2059e1d7cb4979c7}{portsNames}}()\textcolor{keyword}{ const }\{ \textcolor{keywordflow}{return} \mbox{\hyperlink{classConnect_a5cb523239cf7faff460c3af365445bd5}{m\_portsNames}}; \}}
+\DoxyCodeLine{97 }
+\DoxyCodeLine{98 \textcolor{keyword}{private}:}
+\DoxyCodeLine{99     \mbox{\hyperlink{classSerialPort}{SerialPort}} *\mbox{\hyperlink{classConnect_a0f6d98c678043db885164ab47e3c219c}{m\_serialport}};}
+\DoxyCodeLine{100     \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classConnect_ac81afae9681f11fcb14510e45aeab78d}{m\_dashBoard}};}
+\DoxyCodeLine{101     \mbox{\hyperlink{classAppSettings}{AppSettings}} *\mbox{\hyperlink{classConnect_a32517d5946391e17577515a8a74dbae4}{m\_appSettings}};}
+\DoxyCodeLine{102     \mbox{\hyperlink{classGoPro}{GoPro}} *\mbox{\hyperlink{classConnect_a8e22ba4847396d54be96e8158293cd46}{m\_gopro}};}
+\DoxyCodeLine{103     \mbox{\hyperlink{classGPS}{GPS}} *\mbox{\hyperlink{classConnect_a4ff03b11006d22aabfd2c3c604132973}{m\_gps}};}
+\DoxyCodeLine{104     \mbox{\hyperlink{classudpreceiver}{udpreceiver}} *\mbox{\hyperlink{classConnect_a263363b8af805b042846093109262a28}{m\_udpreceiver}};}
+\DoxyCodeLine{105     \mbox{\hyperlink{classAdaptronicSelect}{AdaptronicSelect}} *\mbox{\hyperlink{classConnect_ab3ccb66b755b71f475b3295aee21e38f}{m\_adaptronicselect}};}
+\DoxyCodeLine{106     \mbox{\hyperlink{classApexi}{Apexi}} *\mbox{\hyperlink{classConnect_a12260e51ccfad20947adc97c5c16f360}{m\_apexi}};}
+\DoxyCodeLine{107     \mbox{\hyperlink{classSensors}{Sensors}} *\mbox{\hyperlink{classConnect_a1eb7088a53892bf466b970dddba7fd59}{m\_sensors}};}
+\DoxyCodeLine{108     \mbox{\hyperlink{classdatalogger}{datalogger}} *\mbox{\hyperlink{classConnect_aaa9d29dc326ed9e984f6d7f8f1166053}{m\_datalogger}};}
+\DoxyCodeLine{109     \mbox{\hyperlink{classcalculations}{calculations}} *\mbox{\hyperlink{classConnect_a4c8b3779e4e8d25ad702353729987bad}{m\_calculations}};}
+\DoxyCodeLine{110     QStringList \mbox{\hyperlink{classConnect_a5cb523239cf7faff460c3af365445bd5}{m\_portsNames}};}
+\DoxyCodeLine{111     QStringList *\mbox{\hyperlink{classConnect_a4da6c3ee7750e606f569ef4565488e28}{m\_ecuList}};}
+\DoxyCodeLine{112     QProcess \mbox{\hyperlink{classConnect_a26103e6fa22363257dd3ae82acb6f6cd}{process}};}
+\DoxyCodeLine{113     QFileSystemModel *\mbox{\hyperlink{classConnect_a04bc9eb497926122390c8ac9d930449b}{dirModel}};}
+\DoxyCodeLine{114     QFileSystemModel *\mbox{\hyperlink{classConnect_ac13819b3427756197151ebcc01ceea63}{fileModel}};}
+\DoxyCodeLine{115     \mbox{\hyperlink{classArduino}{Arduino}} *\mbox{\hyperlink{classConnect_abf9fe3f2908ec354fc9e12aed42c8718}{m\_arduino}};}
+\DoxyCodeLine{116     \mbox{\hyperlink{classWifiScanner}{WifiScanner}} *\mbox{\hyperlink{classConnect_a45cb522aac49ac210a0ee069b453cee9}{m\_wifiscanner}};}
+\DoxyCodeLine{117     \mbox{\hyperlink{classExtender}{Extender}} *\mbox{\hyperlink{classConnect_aad593c7aa4ec92155c9e69be979f524a}{m\_extender}};}
+\DoxyCodeLine{118 }
+\DoxyCodeLine{119 }
+\DoxyCodeLine{120 }
+\DoxyCodeLine{121 }
+\DoxyCodeLine{122 signals:}
+\DoxyCodeLine{123     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_aa27afa2282ef11920ac8478a38a3ff75}{sig\_portsNamesChanged}}(QStringList \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}});}
+\DoxyCodeLine{124 }
+\DoxyCodeLine{125 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{126     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a5e7ca7fdedaf70d3df154058841244b9}{updatefinished}}(\textcolor{keywordtype}{int} exitCode, QProcess::ExitStatus exitStatus);}
+\DoxyCodeLine{127     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a939986dfa3302b44b2eab08eca340989}{getPorts}}();}
+\DoxyCodeLine{128     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a25f30cf3256dea7159e8f82d8b4cb625}{setPortsNames}}(QStringList \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}})}
+\DoxyCodeLine{129     \{}
+\DoxyCodeLine{130         \textcolor{keywordflow}{if} (\mbox{\hyperlink{classConnect_a5cb523239cf7faff460c3af365445bd5}{m\_portsNames}} == \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}})}
+\DoxyCodeLine{131             \textcolor{keywordflow}{return};}
+\DoxyCodeLine{132 }
+\DoxyCodeLine{133         \mbox{\hyperlink{classConnect_a5cb523239cf7faff460c3af365445bd5}{m\_portsNames}} = \mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}};}
+\DoxyCodeLine{134         emit \mbox{\hyperlink{classConnect_aa27afa2282ef11920ac8478a38a3ff75}{sig\_portsNamesChanged}}(\mbox{\hyperlink{classConnect_a4d67c3de3559030acdaf241a6643bf51}{portsNames}});}
+\DoxyCodeLine{135     \}}
+\DoxyCodeLine{136     \textcolor{keywordtype}{void} \mbox{\hyperlink{classConnect_a93361b4ddf0b2aa27b1b847c57d98265}{processOutput}}();}
+\DoxyCodeLine{137 }
+\DoxyCodeLine{138 \};}
+\DoxyCodeLine{139 }
+\DoxyCodeLine{140 }
+\DoxyCodeLine{141 }
+\DoxyCodeLine{142 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CONNECT\_H}}
+
+\end{DoxyCode}

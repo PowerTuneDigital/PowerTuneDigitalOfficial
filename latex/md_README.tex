@@ -1,0 +1,584 @@
+\href{https://discord.gg/c9pmpYDCXZ}{\texttt{ }}
+
+Power\+Tune is a Modern Gauge Display for written in QT5.\+8 and supports the following ECU\textquotesingle{}s\+:\hypertarget{md_README_autotoc_md1}{}\doxysubsubsection{Additional ECU\textquotesingle{}s supported via Daemon (these are items you can purchase from us)}\label{md_README_autotoc_md1}
+
+\begin{DoxyItemize}
+\item Adaptronic Modular ECU\textquotesingle{}s (Adaptronic CAN Protocol)
+\item Haltech CAN V2 Protocol comapatible ECU\textquotesingle{}s
+\item Microtech CAN Protocol comapatible ECU\textquotesingle{}s (LT9c,LT10c,LT15c)
+\item Link G4 with CAN BUS ( via Haltech or Microtech Protocol)
+\item VIPEC with CAN BUS ( via Haltech or Microtech Protocol)
+\item Nissan Consult I
+\item Holley EFI (CANBUS)
+\item \mbox{\hyperlink{classOBD}{OBD}} II (Serial ELM327 Cable only)
+\item GT86 BRZ FRS (CANBUS)
+\end{DoxyItemize}
+
+Testet Platforms \+:
+
+Ubuntu 17.\+04 Windows 10 (CANBUS only on LINUX) Raspbian Jessie 2017-\/04-\/10 Raspbian Stretch\hypertarget{md_README_autotoc_md2}{}\doxysubsubsection{Implemented Power\+FC variants\+:}\label{md_README_autotoc_md2}
+\hypertarget{md_README_autotoc_md3}{}\doxysubsubsection{Mazda \+:}\label{md_README_autotoc_md3}
+
+\begin{DoxyItemize}
+\item \char`\"{}13\+B1    \char`\"{}
+\item \char`\"{}13\+B-\/\+REW \char`\"{}
+\item \char`\"{}13\+B-\/\+REW2\char`\"{}
+\item \char`\"{}13\+B-\/\+REW3\char`\"{}
+\item \char`\"{}13\+BT1\+PRO\char`\"{}
+\item \char`\"{}13\+BR1\+PRO\char`\"{}
+\item \char`\"{}13\+BR2\+PRO\char`\"{}
+\item \char`\"{}13\+BR3\+PRO\char`\"{}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md4}{}\doxysubsubsection{Nissan Power FC Variants}\label{md_README_autotoc_md4}
+
+\begin{DoxyItemize}
+\item \char`\"{}\+NISSAN-\/\+L\char`\"{}
+\item \char`\"{}\+CA18\+DET \char`\"{}
+\item \char`\"{}\+SR20\+DE1 \char`\"{}
+\item \char`\"{}\+SR20\+DE2 \char`\"{}
+\item \char`\"{}\+SR20\+DE3 \char`\"{}
+\item \char`\"{}\+SR20\+DE4 \char`\"{}
+\item \char`\"{}\+SR20\+DET1\char`\"{}
+\item \char`\"{}\+SR20\+DET2\char`\"{}
+\item \char`\"{}\+SR20\+DET3\char`\"{}
+\item \char`\"{}\+SR20\+DET4\char`\"{}
+\item \char`\"{}\+SR20\+DET5\char`\"{}
+\item \char`\"{}\+SR20\+DET6\char`\"{}
+\item \char`\"{}\+RB20\+DET \char`\"{}
+\item \char`\"{}\+RB25\+DET \char`\"{}
+\item \char`\"{}\+RB25\+DET2\char`\"{}
+\item \char`\"{}\+RB26\+DETT\char`\"{}
+\item \char`\"{}\+VG30\+DETT\char`\"{}
+\item \char`\"{}\+CA181\+PRO\char`\"{}
+\item \char`\"{}\+SR2\+N1\+PRO\char`\"{}
+\item \char`\"{}\+SR2\+N2\+PRO\char`\"{}
+\item \char`\"{}\+SR2\+N3\+PRO\char`\"{}
+\item \char`\"{}\+SR2\+N4\+PRO\char`\"{}
+\item \char`\"{}\+SR201\+PRO\char`\"{}
+\item \char`\"{}\+SR202\+PRO\char`\"{}
+\item \char`\"{}\+SR203\+PRO\char`\"{}
+\item \char`\"{}\+SR204\+PRO\char`\"{}
+\item \char`\"{}\+SR205\+PRO\char`\"{}
+\item \char`\"{}\+SR206\+PRO\char`\"{}
+\item \char`\"{}\+RB201\+PRO\char`\"{}
+\item \char`\"{}\+RB251\+PRO\char`\"{}
+\item \char`\"{}\+RB252\+PRO\char`\"{}
+\item \char`\"{}\+RB261\+PRO\char`\"{}
+\item \char`\"{}\+RB262\+PRO\char`\"{}
+\item \char`\"{}\+RB26\+Pro \char`\"{}
+\item \char`\"{}\+RB26\+PRO \char`\"{}
+\item \char`\"{}\+RB26\+PRO1\char`\"{}
+\item \char`\"{}\+RB25\+PRO2\char`\"{}
+\item \char`\"{}\+CA18\+T1-\/\+D\char`\"{}
+\item \char`\"{}\+SR20\+T1-\/\+D\char`\"{}
+\item \char`\"{}\+SR20\+T2-\/\+D\char`\"{}
+\item \char`\"{}\+SR20\+T3-\/\+D\char`\"{}
+\item \char`\"{}\+SR20\+T4-\/\+D\char`\"{}
+\item \char`\"{}\+SR20\+T5-\/\+D\char`\"{}
+\item \char`\"{}\+RB26\+\_\+1-\/\+D\char`\"{}
+\item \char`\"{}\+RB26\+\_\+2-\/\+D\char`\"{}
+\item \char`\"{}\+VG30\+TT-\/\+D\char`\"{}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md5}{}\doxysubsubsection{Toyota Power FC Variants}\label{md_README_autotoc_md5}
+
+\begin{DoxyItemize}
+\item \char`\"{}\+TOYOTA-\/\+L\char`\"{}
+\item \char`\"{}1\+ZZ-\/\+FE  \char`\"{}
+\item \char`\"{}1\+ZZ-\/\+FET \char`\"{}
+\item \char`\"{}2\+ZZ-\/\+GE  \char`\"{}
+\item \char`\"{}3\+S-\/\+GE   \char`\"{}
+\item \char`\"{}3\+SGET   \char`\"{}
+\item \char`\"{}1\+JZ-\/\+GTE \char`\"{}
+\item \char`\"{}1\+JZGT-\/\+AT\char`\"{}
+\item \char`\"{}4\+A-\/\+G1   \char`\"{}
+\item \char`\"{}4\+A-\/\+G2   \char`\"{}
+\item \char`\"{}1\+JGT1\+PRO\char`\"{}
+\item \char`\"{}\+TOYOTA-\/\+D\char`\"{}
+\item \char`\"{}4\+A-\/\+GE   \char`\"{}
+\item \char`\"{}4\+A-\/\+GE1  \char`\"{}
+\item \char`\"{}4\+A-\/\+GE2  \char`\"{}
+\item \char`\"{}4\+A-\/\+GE3  \char`\"{}
+\item \char`\"{}4\+AGE1-\/\+TH\char`\"{}
+\item \char`\"{}4\+AGE2-\/\+TH\char`\"{}
+\item \char`\"{}4\+AGE3-\/\+TH\char`\"{}
+\item \char`\"{}4\+E-\/\+FTE1 \char`\"{}
+\item \char`\"{}4\+E-\/\+FTE2 \char`\"{}
+\item \char`\"{}1\+JZGT-\/\+D \char`\"{}
+\item \char`\"{}3\+S-\/\+GE1  \char`\"{}
+\item \char`\"{}3\+S-\/\+GE2  \char`\"{}
+\item \char`\"{}3\+S-\/\+GTE  \char`\"{}
+\item \char`\"{}3\+S-\/\+GTE2 \char`\"{}
+\item \char`\"{}3\+S-\/\+GTE3 \char`\"{}
+\item \char`\"{}1\+JZ-\/\+GTE2\char`\"{}
+\item \char`\"{}1\+JZ-\/\+GTE3\char`\"{}
+\item \char`\"{}2\+JZ-\/\+GTE1\char`\"{}
+\item \char`\"{}2\+JZ-\/\+GTE2\char`\"{}
+\item \char`\"{}4\+AGE1\+PRO\char`\"{}
+\item \char`\"{}4\+AGE2\+PRO\char`\"{}
+\item \char`\"{}4\+AGE3\+PRO\char`\"{}
+\item \char`\"{}4\+EFT1\+PRO\char`\"{}
+\item \char`\"{}4\+EFT2\+PRO\char`\"{}
+\item \char`\"{}3\+SGE1\+PRO\char`\"{}
+\item \char`\"{}3\+SGT1\+PRO\char`\"{}
+\item \char`\"{}3\+SGT2\+PRO\char`\"{}
+\item \char`\"{}3\+SGT3\+PRO\char`\"{}
+\item \char`\"{}1\+JGT2\+PRO\char`\"{}
+\item \char`\"{}1\+JGT3\+PRO\char`\"{}
+\item \char`\"{}2\+JGT1\+PRO\char`\"{}
+\item \char`\"{}2\+JGT2\+PRO\char`\"{}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md6}{}\doxysubsubsection{Mitsubishi  Power FC Variants}\label{md_README_autotoc_md6}
+
+\begin{DoxyItemize}
+\item \char`\"{}4\+G63    \char`\"{}
+\item \char`\"{}4\+G63-\/\+US \char`\"{}
+\item \char`\"{}4\+G63-\/3  \char`\"{}
+\item \char`\"{}4\+G63-\/5  \char`\"{}
+\item \char`\"{}4\+G63-\/6  \char`\"{}
+\item \char`\"{}4\+G63-\/7  \char`\"{}
+\item \char`\"{}4\+G63\+D\+\_\+\+US\char`\"{}
+\item \char`\"{}4\+G63-\/\+D  \char`\"{}
+\item \char`\"{}4\+G63-\/\+D3 \char`\"{}
+\item \char`\"{}4\+G63-\/\+D4 \char`\"{}
+\item \char`\"{}4\+G63-\/\+D5 \char`\"{}
+\item \char`\"{}4\+G63-\/\+D6 \char`\"{}
+\item \char`\"{}4\+G63-\/\+D7 \char`\"{}
+\end{DoxyItemize}\hypertarget{md_README_autotoc_md7}{}\doxysubsubsection{Honda Power FC Variants}\label{md_README_autotoc_md7}
+
+\begin{DoxyItemize}
+\item \char`\"{}\+D15\+B    \char`\"{}
+\item \char`\"{}\+B16\+A1   \char`\"{}
+\item \char`\"{}\+B16\+A-\/\+US \char`\"{}
+\item \char`\"{}\+B16\+A2   \char`\"{}
+\item \char`\"{}\+B16\+A1-\/\+TH\char`\"{}
+\item \char`\"{}\+B16\+B    \char`\"{}
+\item \char`\"{}\+B16\+B2   \char`\"{}
+\item \char`\"{}\+B16\+BT   \char`\"{}
+\item \char`\"{}\+B16\+B1-\/\+TH\char`\"{}
+\item \char`\"{}\+B16\+B2-\/\+TH\char`\"{}
+\item \char`\"{}\+B18\+C    \char`\"{}
+\item \char`\"{}\+B18\+C-\/\+US \char`\"{}
+\item \char`\"{}\+B18\+C2   \char`\"{}
+\item \char`\"{}\+B18\+CT   \char`\"{}
+\item \char`\"{}\+B18\+C1-\/\+TH\char`\"{}
+\item \char`\"{}\+B16\+A1\+PRO\char`\"{}
+\item \char`\"{}\+B16\+A2\+PRO\char`\"{}
+\item \char`\"{}\+B16\+B1\+PRO\char`\"{}
+\item \char`\"{}\+B16\+B2\+PRO\char`\"{}
+\item \char`\"{}\+B18\+C1\+PRO\char`\"{}
+\item \char`\"{}\+H22\+A    \char`\"{}
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \mbox{\hyperlink{classApexi}{Apexi}} PFC \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ FC Hako\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ FC Datalogit\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \mbox{\hyperlink{classApexi}{Apexi}} PFC \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ FC Hako\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ FC Datalogit\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endhead
+Mazda RX7 FD3S     &\PBS\centering (13B-\/\+REW)     &\PBS\centering $<$big$>${\bfseries{✓}}       &\PBS\centering &\PBS\centering Markus Ippy    \\\cline{1-5}
+Toyota MR2   &\PBS\centering (3S-\/\+GTE3)      &\PBS\centering $<$big$>${\bfseries{✓}}       &\PBS\centering &\PBS\centering Tolis Kofoglou    \\\cline{1-5}
+Toyota MR2   &\PBS\centering (3S-\/\+GTE )      &\PBS\centering       &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Juan Pena    \\\cline{1-5}
+Nissan Skyline R33 GTST ENR33   &\PBS\centering (RB25\+DETT)    &\PBS\centering     &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Michael Kwaaitaal    \\\cline{1-5}
+Nissan Skyline R32 GT-\/R BNR32   &\PBS\centering (RB26\+DETT)    &\PBS\centering     &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Alpheus Booth    \\\cline{1-5}
+Toyota Soarer   &\PBS\centering (1JZ-\/\+GTE3)    &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering     &\PBS\centering Kieron Sandhu    \\\cline{1-5}
+      &\PBS\centering (SR20\+DET1)    &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering     &\PBS\centering Damian James Holmes   \\\cline{1-5}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md8}{}\doxysubsubsection{Adaptronic Variants \+:}\label{md_README_autotoc_md8}
+
+\begin{DoxyItemize}
+\item Adaptronic Select series\+:
+\item All variants
+\item Adaptronic Modular series \+:
+\item All variants
+\end{DoxyItemize}
+
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles Adaptronic\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles Adaptronic\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endhead
+Mazda RX7 FD3S     &\PBS\centering (13B-\/\+REW) \+Select Plugin S8$\ast$   &\PBS\centering Serial   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Bastian Gschrey    \\\cline{1-5}
+Mazda RX7 FD3S     &\PBS\centering (13B-\/\+REW) Modular      &\PBS\centering CAN (PICAN2)   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Bastian Gschrey   \\\cline{1-5}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md9}{}\doxysubsubsection{Nissan Consult \+:}\label{md_README_autotoc_md9}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Soon to be tested \+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variant\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Soon to be tested \+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Variant\+:       }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endhead
+Nissan Silvia S14   &\PBS\centering (SR20\+DET1)     &\PBS\centering Nistune   &\PBS\centering &\PBS\centering \\\cline{1-5}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md10}{}\doxysubsubsection{Haltech V2 Protocol\+:}\label{md_README_autotoc_md10}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endhead
+Mazda RX7 FD3S     &\PBS\centering Haltech Elite 2000     &\PBS\centering CAN (PICAN2)   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Bastian Gschrey    \\\cline{1-5}
+Mazda RX7 FD3S     &\PBS\centering Adaptronic Modular     &\PBS\centering CAN (PICAN2)   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Bastian Gschrey   \\\cline{1-5}
+\end{longtabu}
+\hypertarget{md_README_autotoc_md11}{}\doxysubsubsection{Microtech CAN Protocol\+:}\label{md_README_autotoc_md11}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{5}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Tested Vehicles \+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ ECU Variant\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Interface\+:     }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Confirmed by \+:    }\\\cline{1-5}
+\endhead
+?    &\PBS\centering LINK G4     &\PBS\centering CAN (PICAN2)   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Damian Holmes    \\\cline{1-5}
+Mazda RX7 FD3S   &\PBS\centering Microtech LT9c     &\PBS\centering CAN (Modtronix im1   &\PBS\centering $<$big$>${\bfseries{✓}}     &\PBS\centering Jaques Hanekom   \\\cline{1-5}
+\end{longtabu}
+
+
+Implemented Features \+:
+
+
+\begin{DoxyItemize}
+\item Remote control \mbox{\hyperlink{classGoPro}{Go\+Pro}} Recording on off
+\item Logging to CSV file
+\item Differential Aux input Settings for Power FC
+\item \mbox{\hyperlink{classGPS}{GPS}} for NMEA 0183 compliant devices via Serial (Tested with BU-\/353\+S4 \mbox{\hyperlink{classGPS}{GPS}} Mouse)
+\item Switching between metric and Imperial values
+\end{DoxyItemize}
+
+$<$big$>${\itshape Build a Raspberry Pi image with Buildroot\+:}$<$/big$>$
+
+This was tested on Ubuntu 17.\+04
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ git clone https://github.com/MarkusIppy/buildroot.git}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ cd buildroot}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ make powertune\_rpi3\_defconfig}
+
+\end{DoxyCode}
+
+
+If you use another screen than the official pi Screen , edit the following file
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ nano /buildroot/board/powertune/rpi3/rootfs/profile.d/qt5-\/env.sh}
+
+\end{DoxyCode}
+
+
+Press \char`\"{}\+Ctrl+x\char`\"{} when you finished modifing the file and plress \char`\"{}y\char`\"{} to save
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ make}
+
+\end{DoxyCode}
+
+
+This will download all required sourcecode into a seperate folder called \char`\"{}dl\char`\"{} Once the compilation has finished it will create a pi image called \char`\"{}powertune.\+img\char`\"{} in the folder /buildroot/output/images
+
+Flash the image to your SD card ( you can user Etcher or do it via command Line ) Etcher can be downloaded her \href{https://etcher.io/}{\texttt{ https\+://etcher.\+io/}}
+
+The image currently has a boot time of approx 17 seconds until Power\+Tune is starting ( i am still working on optimization )
+
+About the image \+: The username and password are \+:
+
+user\+: pi pw\+: raspberry
+
+Not all linux commands are supported and there is no need to use sudo
+
+Should you wish to use Wlan \+:
+
+
+\begin{DoxyItemize}
+\item quit Power\+Tune
+\item Log in with user and password from above
+\item Switch to root user {\ttfamily \$ sudo su root}
+\item Type the following\+:
+\end{DoxyItemize}
+
+{\ttfamily \$ wpa\+\_\+passphrase \char`\"{}\+Your\+SSIDHere\char`\"{} \char`\"{}\+Your\+Password\+Here\char`\"{} \texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} /etc/wpa\+\_\+supplicant/wpa\+\_\+supplicant.conf}
+
+
+\begin{DoxyItemize}
+\item Replace your WLAN SSID and Password Above
+\end{DoxyItemize}
+
+{\itshape Pro-\/tip\+: edit the file and delete the line\+: \#psk=Your\+Password\+Here}
+
+{\ttfamily \$ reboot}
+
+Now your pi will always log into WLAN at boot
+
+$<$big$>${\itshape Build your own Debian Stretch image\+:}$<$/big$>$
+
+On a fresh Debian Stretch image build QT5.\+8 I made some scripts here \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{https://github.com/MarkusIppy/QT5.x-\/raspbian-\/stretch}
+
+\end{DoxyCode}
+
+
+Now download the sourcecode for Power\+Tune 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ git clone https://github.com/BastianGschrey/PowerTune.git}
+
+\end{DoxyCode}
+ Your source code is now available in /home/pi/\+Power\+Tune
+
+Now creade a directory where we compile and start Power\+Tune from \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo mkdir /opt/PowerTune}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo chown pi:pi /opt/PowerTune}
+
+\end{DoxyCode}
+
+
+Compile Power\+Tune\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ cd /opt/PowerTune}
+
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ qmake /home/pi/PowerTune/PowerTuneQMLGui.pro}
+
+\end{DoxyCode}
+ 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ make -\/j4}
+
+\end{DoxyCode}
+ now Power\+Tune is installed in /opt/\+Power\+Tune
+
+Create a start script for Power\+Tune \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo nano /home/pi/startPowerTune.sh}
+
+\end{DoxyCode}
+ Insert the following text into start\+Power\+Tune.\+sh
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{export QT\_QPA\_EGLFS\_PHYSICAL\_WIDTH=155}
+\DoxyCodeLine{export QT\_QPA\_EGLFS\_PHYSICAL\_HEIGHT=86}
+\DoxyCodeLine{/opt/PowerTune/PowerTuneQMLGui}
+
+\end{DoxyCode}
+ save the file by pressing \char`\"{}ctrl\char`\"{}+\char`\"{}x\char`\"{} and then press \char`\"{}y\char`\"{}
+
+Make the script executable \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo chmod +x /home/pi/startPowerTune.sh }
+
+\end{DoxyCode}
+
+
+Test the script 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ ./startPowerTune.sh}
+
+\end{DoxyCode}
+
+
+Now we can build ourselfs a update script for Power\+Tune 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo nano /home/pi/update.sh}
+
+\end{DoxyCode}
+ Insert the following into the file 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{cd /home/pi/PowerTune}
+\DoxyCodeLine{git pull}
+\DoxyCodeLine{cd /opt/PowerTune}
+\DoxyCodeLine{qmake /home/pi/PowerTune/PowerTuneQMLGui.pro}
+\DoxyCodeLine{make -\/j4}
+
+\end{DoxyCode}
+ save the file by pressing \char`\"{}ctrl\char`\"{}+\char`\"{}x\char`\"{} and then press \char`\"{}y\char`\"{}
+
+Make the script executable \+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo chmod +x /home/pi/update.sh }
+
+\end{DoxyCode}
+
+
+Making Power\+Tune Autostart at Boot
+
+Create a sercive to launch the start\+Power\+Tune.\+sh script at boot
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo nano /etc/systemd/system/PowerTune.service}
+
+\end{DoxyCode}
+
+
+Insert the following text into Power\+Tune.\+service
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Unit]}
+\DoxyCodeLine{}
+\DoxyCodeLine{Description=PowerTune}
+\DoxyCodeLine{}
+\DoxyCodeLine{[Service]}
+\DoxyCodeLine{}
+\DoxyCodeLine{Type=simple}
+\DoxyCodeLine{}
+\DoxyCodeLine{ExecStart=/home/pi/startPowerTune.sh}
+\DoxyCodeLine{}
+\DoxyCodeLine{[Install]}
+\DoxyCodeLine{}
+\DoxyCodeLine{WantedBy=multi-\/user.target}
+
+\end{DoxyCode}
+
+
+Test if the script works\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo systemctl start PowerTune.service}
+
+\end{DoxyCode}
+ If Power\+Tune is launching, quit Power\+Tune
+
+Now enable the script
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo systemctl enable PowerTune.service}
+
+\end{DoxyCode}
+
+
+Reboot your pi and you should see Power\+Tune starting at boot
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo reboot}
+
+\end{DoxyCode}
+
+
+12.\+Launch a custom video at boot with OMXPlayer
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo nano /etc/systemd/system/bootsplash.service}
+
+\end{DoxyCode}
+
+
+Copy the following content into the file and save it ( this example assumes you have a video called \char`\"{}bootvideo.\+mp4\char`\"{} in the folder\+: \char`\"{}/home/pi/\char`\"{} \+:
+
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{[Unit]}
+\DoxyCodeLine{Description=BootSplash}
+\DoxyCodeLine{DefaultDependencies=no}
+\DoxyCodeLine{After=local-\/fs.target}
+\DoxyCodeLine{Before=basic.target}
+\DoxyCodeLine{}
+\DoxyCodeLine{[Service]}
+\DoxyCodeLine{Type=simple}
+\DoxyCodeLine{ExecStart=/usr/bin/omxplayer -\/b /home/pi/bootvideo.mp4}
+\DoxyCodeLine{}
+\DoxyCodeLine{[Install]}
+\DoxyCodeLine{WantedBy=getty.target}
+
+\end{DoxyCode}
+
+
+Test if the script works\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo systemctl start bootsplash.service}
+
+\end{DoxyCode}
+ If the video is playing , then enable the script\+: 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo systemctl enable bootsplash.service}
+
+\end{DoxyCode}
+ Reboot your pi and you should see your video at boot 
+\begin{DoxyCode}{0}
+\DoxyCodeLine{\$ sudo reboot}
+
+\end{DoxyCode}
+\hypertarget{md_README_autotoc_md12}{}\doxysubsubsection{if you want to create your own Dashboards here are the possible Sensors ( not every car supports every Sensor)\+:}\label{md_README_autotoc_md12}
+\tabulinesep=1mm
+\begin{longtabu}spread 0pt [c]{*{2}{|X[-1]}|}
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ QML Sensor Inputs\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endfirsthead
+\hline
+\endfoot
+\hline
+\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ QML Sensor Inputs\+:   }&\PBS\centering \cellcolor{\tableheadbgcolor}\textbf{ Description    }\\\cline{1-2}
+\endhead
+Dashboard.\+revs   &\PBS\centering RPM    \\\cline{1-2}
+\multicolumn{2}{|l|}{Dashboard.\+Intakepress    }\\\cline{1-2}
+Dashboard.\+PressureV   &\PBS\centering MAP Sensor Voltage    \\\cline{1-2}
+Dashboard.\+ThrottleV   &\PBS\centering Throttle Voltage    \\\cline{1-2}
+\multicolumn{2}{|l|}{Dashboard.\+Primaryinp    }\\\cline{1-2}
+\multicolumn{2}{|l|}{Dashboard.\+Fuelc    }\\\cline{1-2}
+Dashboard.\+Leadingign   &\PBS\centering Leading ignition degree    \\\cline{1-2}
+Dashboard.\+Trailingign   &\PBS\centering Trailing ignition degree    \\\cline{1-2}
+Dashboard.\+Fueltemp   &\PBS\centering Fueltemp    \\\cline{1-2}
+Dashboard.\+Moilp   &\PBS\centering Oil pump    \\\cline{1-2}
+Dashboard.\+Boosttp   &\PBS\centering Precontrol Duty \%    \\\cline{1-2}
+Dashboard.\+Boostwg   &\PBS\centering Wastegate Duty \%    \\\cline{1-2}
+Dashboard.\+Watertemp   &\PBS\centering Water temperature    \\\cline{1-2}
+Dashboard.\+Intaketemp   &\PBS\centering Intake temperature    \\\cline{1-2}
+Dashboard.\+Knock   &\PBS\centering Knock    \\\cline{1-2}
+Dashboard.\+BatteryV   &\PBS\centering Battery Voltage    \\\cline{1-2}
+Dashboard.\+speed   &\PBS\centering Vehicle Speed    \\\cline{1-2}
+Dashboard.\+Iscvduty   &\PBS\centering \\\cline{1-2}
+Dashboard.\+O2volt   &\PBS\centering O2 Sensor Voltage    \\\cline{1-2}
+Dashboard.\+O2volt\+\_\+2   &\PBS\centering O2 Sensor2 Voltage    \\\cline{1-2}
+Dashboard.\+Secinjpulse   &\PBS\centering Secondary injector pulse width    \\\cline{1-2}
+Dashboard.\+Inj\+Duty   &\PBS\centering Injector duty \%    \\\cline{1-2}
+Dashboard.\+pim   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Eng\+Load   &\PBS\centering Engine Load \%    \\\cline{1-2}
+Dashboard.\+MAF1V   &\PBS\centering MAF 1 voltage    \\\cline{1-2}
+Dashboard.\+MAF2V   &\PBS\centering MAF 2 voltage    \\\cline{1-2}
+Dashboard.\+injms   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Inj   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Ign   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Dwell   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Boost\+Pres   &\PBS\centering \\\cline{1-2}
+Dashboard.\+Boost\+Duty   &\PBS\centering \\\cline{1-2}
+Dashboard.\+MAFactivity   &\PBS\centering \\\cline{1-2}
+\end{longtabu}

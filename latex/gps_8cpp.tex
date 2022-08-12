@@ -1,0 +1,301 @@
+\hypertarget{gps_8cpp}{}\doxysection{gps.\+cpp File Reference}
+\label{gps_8cpp}\index{gps.cpp@{gps.cpp}}
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QByte\+Array\+Matcher$>$}\newline
+{\ttfamily \#include $<$QTime$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include \char`\"{}gps.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dashboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}connect.\+h\char`\"{}}\newline
+Include dependency graph for gps.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gps_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QTime \mbox{\hyperlink{gps_8cpp_a356f47852da8a45bf4dd9944e08b7d3e}{fastestlap}} (0, 0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{gps_8cpp_ad06983e7f6e71b233ea7ff3dee1952f2}{initialized}} = 0
+\item 
+int \mbox{\hyperlink{gps_8cpp_ae5957802dbf34bb75fd1a15d60de4c8f}{rateset}} = 0
+\item 
+int \mbox{\hyperlink{gps_8cpp_af37b94e6eb5e313632fdfa0c498a60fa}{raterequ}} = 0
+\item 
+int \mbox{\hyperlink{gps_8cpp_acc64b53c6036b7b11d4ae688994f0b56}{baudrate}}
+\item 
+float \mbox{\hyperlink{gps_8cpp_a8c3e6d0a80cec3520fd65b477f420415}{hdop}}
+\item 
+QString \mbox{\hyperlink{gps_8cpp_a8e6c1425eb7613bc921a1cc3e531b784}{GPSPort}}
+\item 
+QByte\+Array \mbox{\hyperlink{gps_8cpp_a20839086fc136a3395fb0f28c264097d}{ACK10\+HZ}} = QByte\+Array\+::from\+Hex(\char`\"{}b562050102000608\char`\"{})
+\item 
+QByte\+Array \mbox{\hyperlink{gps_8cpp_a7f1b48d3421f655bb2b28d79710bb533}{NACK10\+HZ}} = QByte\+Array\+::from\+Hex(\char`\"{}050002\char`\"{})
+\item 
+QByte\+Array \mbox{\hyperlink{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}{line}}
+\item 
+int \mbox{\hyperlink{gps_8cpp_a93b6c78808d228b36f4d13a38e5f6c3b}{Laps}} = 0
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a7b99c1bc2803e163d820b36c93ecaa9d}{startline\+X1}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_afbfa7749226d598f3aaa9fc1f424eca4}{startline\+X2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a896ed07c221eb27110e65706bcdef5f2}{startline\+Y1}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_adf88f451151458040b3cae30e499fcf9}{startline\+Y2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a771dbbd0a90510faf39080d7bdcec278}{start2line\+X1}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a4b1caa655264c32f8b589dc6ead9a873}{start2line\+X2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_ad1d4ac64865bafef3a5d797109de3189}{start2line\+Y1}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a9201a6d4405ccb54b2e88b1f7b554fe0}{start2line\+Y2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a4a4f82249bdda8cc2c1d2fc27052d1cc}{m}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a9388ae92c0c4d31e315149349f46712d}{b}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a92ee56bd0cce258e77e7bfb82b5f2e03}{m2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_aaadcd6462fa6a1c02e329068ce3f88d8}{b2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a379e664713f5b57920af0ffb22860963}{interrim}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_aa434348418f1b405c3d51f5d4e430b88}{intercept}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a7ba70c2224ea30be651fbae1cf3762e2}{currentintercept}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_ad98fa12bd1e61ff01e177f29cb73a536}{currentintercept2}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a00656503d68fc811f610e15ee45d30d3}{previousintercept}}
+\item 
+qreal \mbox{\hyperlink{gps_8cpp_a25757d29f7dd6085dc36b524da5aa69f}{previousintercept2}}
+\item 
+int \mbox{\hyperlink{gps_8cpp_a990ac387592fa6142081e15e78c60295}{linedirection}}
+\item 
+int \mbox{\hyperlink{gps_8cpp_a8189a9c05a4a61cc202cab83e46b0a6c}{line2direction}} = 2
+\item 
+int \mbox{\hyperlink{gps_8cpp_a20808b3a2b2e52b7c5e4987d87cfac8d}{zeroslope}}
+\item 
+int \mbox{\hyperlink{gps_8cpp_a1f98234ccfe67cf6a53cd8304b05c689}{zeroslope2}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{gps_8cpp_a356f47852da8a45bf4dd9944e08b7d3e}\label{gps_8cpp_a356f47852da8a45bf4dd9944e08b7d3e}} 
+\index{gps.cpp@{gps.cpp}!fastestlap@{fastestlap}}
+\index{fastestlap@{fastestlap}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{fastestlap()}{fastestlap()}}
+{\footnotesize\ttfamily QTime fastestlap (\begin{DoxyParamCaption}\item[{0}]{,  }\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{gps_8cpp_a356f47852da8a45bf4dd9944e08b7d3e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{gps_8cpp_a20839086fc136a3395fb0f28c264097d}\label{gps_8cpp_a20839086fc136a3395fb0f28c264097d}} 
+\index{gps.cpp@{gps.cpp}!ACK10HZ@{ACK10HZ}}
+\index{ACK10HZ@{ACK10HZ}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{ACK10HZ}{ACK10HZ}}
+{\footnotesize\ttfamily QByte\+Array ACK10\+HZ = QByte\+Array\+::from\+Hex(\char`\"{}b562050102000608\char`\"{})}
+
+\mbox{\Hypertarget{gps_8cpp_a9388ae92c0c4d31e315149349f46712d}\label{gps_8cpp_a9388ae92c0c4d31e315149349f46712d}} 
+\index{gps.cpp@{gps.cpp}!b@{b}}
+\index{b@{b}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{b}{b}}
+{\footnotesize\ttfamily qreal b}
+
+\mbox{\Hypertarget{gps_8cpp_aaadcd6462fa6a1c02e329068ce3f88d8}\label{gps_8cpp_aaadcd6462fa6a1c02e329068ce3f88d8}} 
+\index{gps.cpp@{gps.cpp}!b2@{b2}}
+\index{b2@{b2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{b2}{b2}}
+{\footnotesize\ttfamily qreal b2}
+
+\mbox{\Hypertarget{gps_8cpp_acc64b53c6036b7b11d4ae688994f0b56}\label{gps_8cpp_acc64b53c6036b7b11d4ae688994f0b56}} 
+\index{gps.cpp@{gps.cpp}!baudrate@{baudrate}}
+\index{baudrate@{baudrate}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{baudrate}{baudrate}}
+{\footnotesize\ttfamily int baudrate}
+
+\mbox{\Hypertarget{gps_8cpp_a7ba70c2224ea30be651fbae1cf3762e2}\label{gps_8cpp_a7ba70c2224ea30be651fbae1cf3762e2}} 
+\index{gps.cpp@{gps.cpp}!currentintercept@{currentintercept}}
+\index{currentintercept@{currentintercept}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{currentintercept}{currentintercept}}
+{\footnotesize\ttfamily qreal currentintercept}
+
+\mbox{\Hypertarget{gps_8cpp_ad98fa12bd1e61ff01e177f29cb73a536}\label{gps_8cpp_ad98fa12bd1e61ff01e177f29cb73a536}} 
+\index{gps.cpp@{gps.cpp}!currentintercept2@{currentintercept2}}
+\index{currentintercept2@{currentintercept2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{currentintercept2}{currentintercept2}}
+{\footnotesize\ttfamily qreal currentintercept2}
+
+\mbox{\Hypertarget{gps_8cpp_a8e6c1425eb7613bc921a1cc3e531b784}\label{gps_8cpp_a8e6c1425eb7613bc921a1cc3e531b784}} 
+\index{gps.cpp@{gps.cpp}!GPSPort@{GPSPort}}
+\index{GPSPort@{GPSPort}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{GPSPort}{GPSPort}}
+{\footnotesize\ttfamily QString GPSPort}
+
+\mbox{\Hypertarget{gps_8cpp_a8c3e6d0a80cec3520fd65b477f420415}\label{gps_8cpp_a8c3e6d0a80cec3520fd65b477f420415}} 
+\index{gps.cpp@{gps.cpp}!hdop@{hdop}}
+\index{hdop@{hdop}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{hdop}{hdop}}
+{\footnotesize\ttfamily float hdop}
+
+\mbox{\Hypertarget{gps_8cpp_ad06983e7f6e71b233ea7ff3dee1952f2}\label{gps_8cpp_ad06983e7f6e71b233ea7ff3dee1952f2}} 
+\index{gps.cpp@{gps.cpp}!initialized@{initialized}}
+\index{initialized@{initialized}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{initialized}{initialized}}
+{\footnotesize\ttfamily int initialized = 0}
+
+\mbox{\Hypertarget{gps_8cpp_aa434348418f1b405c3d51f5d4e430b88}\label{gps_8cpp_aa434348418f1b405c3d51f5d4e430b88}} 
+\index{gps.cpp@{gps.cpp}!intercept@{intercept}}
+\index{intercept@{intercept}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{intercept}{intercept}}
+{\footnotesize\ttfamily qreal intercept}
+
+\mbox{\Hypertarget{gps_8cpp_a379e664713f5b57920af0ffb22860963}\label{gps_8cpp_a379e664713f5b57920af0ffb22860963}} 
+\index{gps.cpp@{gps.cpp}!interrim@{interrim}}
+\index{interrim@{interrim}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{interrim}{interrim}}
+{\footnotesize\ttfamily qreal interrim}
+
+\mbox{\Hypertarget{gps_8cpp_a93b6c78808d228b36f4d13a38e5f6c3b}\label{gps_8cpp_a93b6c78808d228b36f4d13a38e5f6c3b}} 
+\index{gps.cpp@{gps.cpp}!Laps@{Laps}}
+\index{Laps@{Laps}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{Laps}{Laps}}
+{\footnotesize\ttfamily int Laps = 0}
+
+\mbox{\Hypertarget{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}\label{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}} 
+\index{gps.cpp@{gps.cpp}!line@{line}}
+\index{line@{line}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{line}{line}}
+{\footnotesize\ttfamily QByte\+Array line}
+
+\mbox{\Hypertarget{gps_8cpp_a8189a9c05a4a61cc202cab83e46b0a6c}\label{gps_8cpp_a8189a9c05a4a61cc202cab83e46b0a6c}} 
+\index{gps.cpp@{gps.cpp}!line2direction@{line2direction}}
+\index{line2direction@{line2direction}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{line2direction}{line2direction}}
+{\footnotesize\ttfamily int line2direction = 2}
+
+\mbox{\Hypertarget{gps_8cpp_a990ac387592fa6142081e15e78c60295}\label{gps_8cpp_a990ac387592fa6142081e15e78c60295}} 
+\index{gps.cpp@{gps.cpp}!linedirection@{linedirection}}
+\index{linedirection@{linedirection}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{linedirection}{linedirection}}
+{\footnotesize\ttfamily int linedirection}
+
+\mbox{\Hypertarget{gps_8cpp_a4a4f82249bdda8cc2c1d2fc27052d1cc}\label{gps_8cpp_a4a4f82249bdda8cc2c1d2fc27052d1cc}} 
+\index{gps.cpp@{gps.cpp}!m@{m}}
+\index{m@{m}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{m}{m}}
+{\footnotesize\ttfamily qreal m}
+
+\mbox{\Hypertarget{gps_8cpp_a92ee56bd0cce258e77e7bfb82b5f2e03}\label{gps_8cpp_a92ee56bd0cce258e77e7bfb82b5f2e03}} 
+\index{gps.cpp@{gps.cpp}!m2@{m2}}
+\index{m2@{m2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{m2}{m2}}
+{\footnotesize\ttfamily qreal m2}
+
+\mbox{\Hypertarget{gps_8cpp_a7f1b48d3421f655bb2b28d79710bb533}\label{gps_8cpp_a7f1b48d3421f655bb2b28d79710bb533}} 
+\index{gps.cpp@{gps.cpp}!NACK10HZ@{NACK10HZ}}
+\index{NACK10HZ@{NACK10HZ}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{NACK10HZ}{NACK10HZ}}
+{\footnotesize\ttfamily QByte\+Array NACK10\+HZ = QByte\+Array\+::from\+Hex(\char`\"{}050002\char`\"{})}
+
+\mbox{\Hypertarget{gps_8cpp_a00656503d68fc811f610e15ee45d30d3}\label{gps_8cpp_a00656503d68fc811f610e15ee45d30d3}} 
+\index{gps.cpp@{gps.cpp}!previousintercept@{previousintercept}}
+\index{previousintercept@{previousintercept}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{previousintercept}{previousintercept}}
+{\footnotesize\ttfamily qreal previousintercept}
+
+\mbox{\Hypertarget{gps_8cpp_a25757d29f7dd6085dc36b524da5aa69f}\label{gps_8cpp_a25757d29f7dd6085dc36b524da5aa69f}} 
+\index{gps.cpp@{gps.cpp}!previousintercept2@{previousintercept2}}
+\index{previousintercept2@{previousintercept2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{previousintercept2}{previousintercept2}}
+{\footnotesize\ttfamily qreal previousintercept2}
+
+\mbox{\Hypertarget{gps_8cpp_af37b94e6eb5e313632fdfa0c498a60fa}\label{gps_8cpp_af37b94e6eb5e313632fdfa0c498a60fa}} 
+\index{gps.cpp@{gps.cpp}!raterequ@{raterequ}}
+\index{raterequ@{raterequ}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{raterequ}{raterequ}}
+{\footnotesize\ttfamily int raterequ = 0}
+
+\mbox{\Hypertarget{gps_8cpp_ae5957802dbf34bb75fd1a15d60de4c8f}\label{gps_8cpp_ae5957802dbf34bb75fd1a15d60de4c8f}} 
+\index{gps.cpp@{gps.cpp}!rateset@{rateset}}
+\index{rateset@{rateset}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{rateset}{rateset}}
+{\footnotesize\ttfamily int rateset = 0}
+
+\mbox{\Hypertarget{gps_8cpp_a771dbbd0a90510faf39080d7bdcec278}\label{gps_8cpp_a771dbbd0a90510faf39080d7bdcec278}} 
+\index{gps.cpp@{gps.cpp}!start2lineX1@{start2lineX1}}
+\index{start2lineX1@{start2lineX1}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{start2lineX1}{start2lineX1}}
+{\footnotesize\ttfamily qreal start2line\+X1}
+
+\mbox{\Hypertarget{gps_8cpp_a4b1caa655264c32f8b589dc6ead9a873}\label{gps_8cpp_a4b1caa655264c32f8b589dc6ead9a873}} 
+\index{gps.cpp@{gps.cpp}!start2lineX2@{start2lineX2}}
+\index{start2lineX2@{start2lineX2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{start2lineX2}{start2lineX2}}
+{\footnotesize\ttfamily qreal start2line\+X2}
+
+\mbox{\Hypertarget{gps_8cpp_ad1d4ac64865bafef3a5d797109de3189}\label{gps_8cpp_ad1d4ac64865bafef3a5d797109de3189}} 
+\index{gps.cpp@{gps.cpp}!start2lineY1@{start2lineY1}}
+\index{start2lineY1@{start2lineY1}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{start2lineY1}{start2lineY1}}
+{\footnotesize\ttfamily qreal start2line\+Y1}
+
+\mbox{\Hypertarget{gps_8cpp_a9201a6d4405ccb54b2e88b1f7b554fe0}\label{gps_8cpp_a9201a6d4405ccb54b2e88b1f7b554fe0}} 
+\index{gps.cpp@{gps.cpp}!start2lineY2@{start2lineY2}}
+\index{start2lineY2@{start2lineY2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{start2lineY2}{start2lineY2}}
+{\footnotesize\ttfamily qreal start2line\+Y2}
+
+\mbox{\Hypertarget{gps_8cpp_a7b99c1bc2803e163d820b36c93ecaa9d}\label{gps_8cpp_a7b99c1bc2803e163d820b36c93ecaa9d}} 
+\index{gps.cpp@{gps.cpp}!startlineX1@{startlineX1}}
+\index{startlineX1@{startlineX1}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{startlineX1}{startlineX1}}
+{\footnotesize\ttfamily qreal startline\+X1}
+
+\mbox{\Hypertarget{gps_8cpp_afbfa7749226d598f3aaa9fc1f424eca4}\label{gps_8cpp_afbfa7749226d598f3aaa9fc1f424eca4}} 
+\index{gps.cpp@{gps.cpp}!startlineX2@{startlineX2}}
+\index{startlineX2@{startlineX2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{startlineX2}{startlineX2}}
+{\footnotesize\ttfamily qreal startline\+X2}
+
+\mbox{\Hypertarget{gps_8cpp_a896ed07c221eb27110e65706bcdef5f2}\label{gps_8cpp_a896ed07c221eb27110e65706bcdef5f2}} 
+\index{gps.cpp@{gps.cpp}!startlineY1@{startlineY1}}
+\index{startlineY1@{startlineY1}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{startlineY1}{startlineY1}}
+{\footnotesize\ttfamily qreal startline\+Y1}
+
+\mbox{\Hypertarget{gps_8cpp_adf88f451151458040b3cae30e499fcf9}\label{gps_8cpp_adf88f451151458040b3cae30e499fcf9}} 
+\index{gps.cpp@{gps.cpp}!startlineY2@{startlineY2}}
+\index{startlineY2@{startlineY2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{startlineY2}{startlineY2}}
+{\footnotesize\ttfamily qreal startline\+Y2}
+
+\mbox{\Hypertarget{gps_8cpp_a20808b3a2b2e52b7c5e4987d87cfac8d}\label{gps_8cpp_a20808b3a2b2e52b7c5e4987d87cfac8d}} 
+\index{gps.cpp@{gps.cpp}!zeroslope@{zeroslope}}
+\index{zeroslope@{zeroslope}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{zeroslope}{zeroslope}}
+{\footnotesize\ttfamily int zeroslope}
+
+\mbox{\Hypertarget{gps_8cpp_a1f98234ccfe67cf6a53cd8304b05c689}\label{gps_8cpp_a1f98234ccfe67cf6a53cd8304b05c689}} 
+\index{gps.cpp@{gps.cpp}!zeroslope2@{zeroslope2}}
+\index{zeroslope2@{zeroslope2}!gps.cpp@{gps.cpp}}
+\doxysubsubsection{\texorpdfstring{zeroslope2}{zeroslope2}}
+{\footnotesize\ttfamily int zeroslope2}
+

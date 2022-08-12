@@ -1,0 +1,370 @@
+\hypertarget{classSensors}{}\doxysection{Sensors Class Reference}
+\label{classSensors}\index{Sensors@{Sensors}}
+
+
+{\ttfamily \#include $<$sensors.\+h$>$}
+
+
+
+Inheritance diagram for Sensors\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{classSensors__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Sensors\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=198pt]{classSensors__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSensors_acb26d258f3240378a2d2a0a4410a3787}{update\+Compass}} ()
+\item 
+void \mbox{\hyperlink{classSensors_af639095cc58e6f8e57aa05a1f87dabf8}{update\+Accel}} ()
+\item 
+void \mbox{\hyperlink{classSensors_a0e0a9f2fcc92e0f5141cad6703c3182f}{update\+Gyro}} ()
+\item 
+void \mbox{\hyperlink{classSensors_adb6f4fd62d639855f2aaf2e30b1c39a6}{update\+Ambient\+Sens}} ()
+\item 
+void \mbox{\hyperlink{classSensors_a14168832030867ac04576b319a08288e}{update\+Pressure\+Sens}} ()
+\item 
+void \mbox{\hyperlink{classSensors_a1924cb8692834d02ebfda23353ae44ef}{error}} (int)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSensors_aa49684733f34b1ffb60aacce2725e0af}{Sensors}} (QObject $\ast$parent=0)
+\item 
+\mbox{\hyperlink{classSensors_aad06af04b0ebde099f803fce043bce56}{Sensors}} (\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$dashboard, QObject $\ast$parent=0)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classSensors_a7c89a1a4def2dfe8cf86f0de8886763b}{Comp}} ()
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classSensors_af458816f0cb92c82d585fa8d0d2ec291}{Accel}} ()
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classSensors_a323c2c40148fc1d93938aeb637cceaf4}{Gyro}} ()
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classSensors_a6aa29c53e6d5e889322de3c1b4f0dcd6}{Temperature}} ()
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classSensors_ad8a31a21867c762706a418d34814e678}{Pressure}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$ \mbox{\hyperlink{classSensors_a14f5ba3f9fd80c581fda6c87fc4387b8}{m\+\_\+dashboard}}
+\item 
+QCompass $\ast$ \mbox{\hyperlink{classSensors_a3e274d99a080138f6d54516b1a22d7bb}{Compass}}
+\item 
+QAccelerometer $\ast$ \mbox{\hyperlink{classSensors_af0c1d7b0ce7d95153f0a5f4d531f4d21}{Accelerometer}}
+\item 
+QGyroscope $\ast$ \mbox{\hyperlink{classSensors_a6f5b00378eb689d1604d762de3f939a7}{Gyroscope}}
+\item 
+QAmbient\+Temperature\+Sensor $\ast$ \mbox{\hyperlink{classSensors_aee00cdee8317cafc2519a89680250e09}{Ambient\+Temperature\+Sensor}}
+\item 
+QPressure\+Sensor $\ast$ \mbox{\hyperlink{classSensors_a51e443cdd7185b3f7cddf3ff5ce6d9d3}{Pressure\+Sensor}}
+\item 
+QCompass\+Reading $\ast$ \mbox{\hyperlink{classSensors_a386c98f966d0c5038c6d34b1d6089c29}{compass\+\_\+reading}}
+\item 
+QAccelerometer\+Reading $\ast$ \mbox{\hyperlink{classSensors_ab1299c499f1d82f4b05fdf1f0b69a48b}{accel\+\_\+reading}}
+\item 
+QGyroscope\+Reading $\ast$ \mbox{\hyperlink{classSensors_a4fba57c3472007b8c2823ae8938219ad}{gyro\+\_\+reading}}
+\item 
+QAmbient\+Temperature\+Reading $\ast$ \mbox{\hyperlink{classSensors_a232ce9a6518485cdbde3a56998a2ad09}{temp\+\_\+reading}}
+\item 
+QPressure\+Reading $\ast$ \mbox{\hyperlink{classSensors_a2732216a3ae5df68e9ea443294b579c2}{press\+\_\+reading}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSensors_aa49684733f34b1ffb60aacce2725e0af}\label{classSensors_aa49684733f34b1ffb60aacce2725e0af}} 
+\index{Sensors@{Sensors}!Sensors@{Sensors}}
+\index{Sensors@{Sensors}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Sensors()}{Sensors()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Sensors\+::\+Sensors (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classSensors_aad06af04b0ebde099f803fce043bce56}\label{classSensors_aad06af04b0ebde099f803fce043bce56}} 
+\index{Sensors@{Sensors}!Sensors@{Sensors}}
+\index{Sensors@{Sensors}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Sensors()}{Sensors()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Sensors\+::\+Sensors (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$}]{dashboard,  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSensors_af458816f0cb92c82d585fa8d0d2ec291}\label{classSensors_af458816f0cb92c82d585fa8d0d2ec291}} 
+\index{Sensors@{Sensors}!Accel@{Accel}}
+\index{Accel@{Accel}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Accel()}{Accel()}}
+{\footnotesize\ttfamily void Sensors\+::\+Accel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_af458816f0cb92c82d585fa8d0d2ec291_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a7c89a1a4def2dfe8cf86f0de8886763b}\label{classSensors_a7c89a1a4def2dfe8cf86f0de8886763b}} 
+\index{Sensors@{Sensors}!Comp@{Comp}}
+\index{Comp@{Comp}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Comp()}{Comp()}}
+{\footnotesize\ttfamily void Sensors\+::\+Comp (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_a7c89a1a4def2dfe8cf86f0de8886763b_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a1924cb8692834d02ebfda23353ae44ef}\label{classSensors_a1924cb8692834d02ebfda23353ae44ef}} 
+\index{Sensors@{Sensors}!error@{error}}
+\index{error@{error}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{error}{error}}
+{\footnotesize\ttfamily void Sensors\+::error (\begin{DoxyParamCaption}\item[{int}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{classSensors_a1924cb8692834d02ebfda23353ae44ef_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a323c2c40148fc1d93938aeb637cceaf4}\label{classSensors_a323c2c40148fc1d93938aeb637cceaf4}} 
+\index{Sensors@{Sensors}!Gyro@{Gyro}}
+\index{Gyro@{Gyro}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Gyro()}{Gyro()}}
+{\footnotesize\ttfamily void Sensors\+::\+Gyro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_a323c2c40148fc1d93938aeb637cceaf4_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_ad8a31a21867c762706a418d34814e678}\label{classSensors_ad8a31a21867c762706a418d34814e678}} 
+\index{Sensors@{Sensors}!Pressure@{Pressure}}
+\index{Pressure@{Pressure}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Pressure()}{Pressure()}}
+{\footnotesize\ttfamily void Sensors\+::\+Pressure (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_ad8a31a21867c762706a418d34814e678_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a6aa29c53e6d5e889322de3c1b4f0dcd6}\label{classSensors_a6aa29c53e6d5e889322de3c1b4f0dcd6}} 
+\index{Sensors@{Sensors}!Temperature@{Temperature}}
+\index{Temperature@{Temperature}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Temperature()}{Temperature()}}
+{\footnotesize\ttfamily void Sensors\+::\+Temperature (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_a6aa29c53e6d5e889322de3c1b4f0dcd6_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_af639095cc58e6f8e57aa05a1f87dabf8}\label{classSensors_af639095cc58e6f8e57aa05a1f87dabf8}} 
+\index{Sensors@{Sensors}!updateAccel@{updateAccel}}
+\index{updateAccel@{updateAccel}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{updateAccel}{updateAccel}}
+{\footnotesize\ttfamily void Sensors\+::update\+Accel (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=337pt]{classSensors_af639095cc58e6f8e57aa05a1f87dabf8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{classSensors_af639095cc58e6f8e57aa05a1f87dabf8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_adb6f4fd62d639855f2aaf2e30b1c39a6}\label{classSensors_adb6f4fd62d639855f2aaf2e30b1c39a6}} 
+\index{Sensors@{Sensors}!updateAmbientSens@{updateAmbientSens}}
+\index{updateAmbientSens@{updateAmbientSens}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{updateAmbientSens}{updateAmbientSens}}
+{\footnotesize\ttfamily void Sensors\+::update\+Ambient\+Sens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_adb6f4fd62d639855f2aaf2e30b1c39a6_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_adb6f4fd62d639855f2aaf2e30b1c39a6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_acb26d258f3240378a2d2a0a4410a3787}\label{classSensors_acb26d258f3240378a2d2a0a4410a3787}} 
+\index{Sensors@{Sensors}!updateCompass@{updateCompass}}
+\index{updateCompass@{updateCompass}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{updateCompass}{updateCompass}}
+{\footnotesize\ttfamily void Sensors\+::update\+Compass (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_acb26d258f3240378a2d2a0a4410a3787_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{classSensors_acb26d258f3240378a2d2a0a4410a3787_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a0e0a9f2fcc92e0f5141cad6703c3182f}\label{classSensors_a0e0a9f2fcc92e0f5141cad6703c3182f}} 
+\index{Sensors@{Sensors}!updateGyro@{updateGyro}}
+\index{updateGyro@{updateGyro}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{updateGyro}{updateGyro}}
+{\footnotesize\ttfamily void Sensors\+::update\+Gyro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{classSensors_a0e0a9f2fcc92e0f5141cad6703c3182f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classSensors_a0e0a9f2fcc92e0f5141cad6703c3182f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classSensors_a14168832030867ac04576b319a08288e}\label{classSensors_a14168832030867ac04576b319a08288e}} 
+\index{Sensors@{Sensors}!updatePressureSens@{updatePressureSens}}
+\index{updatePressureSens@{updatePressureSens}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{updatePressureSens}{updatePressureSens}}
+{\footnotesize\ttfamily void Sensors\+::update\+Pressure\+Sens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_a14168832030867ac04576b319a08288e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classSensors_a14168832030867ac04576b319a08288e_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classSensors_ab1299c499f1d82f4b05fdf1f0b69a48b}\label{classSensors_ab1299c499f1d82f4b05fdf1f0b69a48b}} 
+\index{Sensors@{Sensors}!accel\_reading@{accel\_reading}}
+\index{accel\_reading@{accel\_reading}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{accel\_reading}{accel\_reading}}
+{\footnotesize\ttfamily QAccelerometer\+Reading$\ast$ Sensors\+::accel\+\_\+reading\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_af0c1d7b0ce7d95153f0a5f4d531f4d21}\label{classSensors_af0c1d7b0ce7d95153f0a5f4d531f4d21}} 
+\index{Sensors@{Sensors}!Accelerometer@{Accelerometer}}
+\index{Accelerometer@{Accelerometer}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Accelerometer}{Accelerometer}}
+{\footnotesize\ttfamily QAccelerometer$\ast$ Sensors\+::\+Accelerometer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_aee00cdee8317cafc2519a89680250e09}\label{classSensors_aee00cdee8317cafc2519a89680250e09}} 
+\index{Sensors@{Sensors}!AmbientTemperatureSensor@{AmbientTemperatureSensor}}
+\index{AmbientTemperatureSensor@{AmbientTemperatureSensor}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{AmbientTemperatureSensor}{AmbientTemperatureSensor}}
+{\footnotesize\ttfamily QAmbient\+Temperature\+Sensor$\ast$ Sensors\+::\+Ambient\+Temperature\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a3e274d99a080138f6d54516b1a22d7bb}\label{classSensors_a3e274d99a080138f6d54516b1a22d7bb}} 
+\index{Sensors@{Sensors}!Compass@{Compass}}
+\index{Compass@{Compass}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Compass}{Compass}}
+{\footnotesize\ttfamily QCompass$\ast$ Sensors\+::\+Compass\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a386c98f966d0c5038c6d34b1d6089c29}\label{classSensors_a386c98f966d0c5038c6d34b1d6089c29}} 
+\index{Sensors@{Sensors}!compass\_reading@{compass\_reading}}
+\index{compass\_reading@{compass\_reading}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{compass\_reading}{compass\_reading}}
+{\footnotesize\ttfamily QCompass\+Reading$\ast$ Sensors\+::compass\+\_\+reading\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a4fba57c3472007b8c2823ae8938219ad}\label{classSensors_a4fba57c3472007b8c2823ae8938219ad}} 
+\index{Sensors@{Sensors}!gyro\_reading@{gyro\_reading}}
+\index{gyro\_reading@{gyro\_reading}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{gyro\_reading}{gyro\_reading}}
+{\footnotesize\ttfamily QGyroscope\+Reading$\ast$ Sensors\+::gyro\+\_\+reading\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a6f5b00378eb689d1604d762de3f939a7}\label{classSensors_a6f5b00378eb689d1604d762de3f939a7}} 
+\index{Sensors@{Sensors}!Gyroscope@{Gyroscope}}
+\index{Gyroscope@{Gyroscope}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{Gyroscope}{Gyroscope}}
+{\footnotesize\ttfamily QGyroscope$\ast$ Sensors\+::\+Gyroscope\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a14f5ba3f9fd80c581fda6c87fc4387b8}\label{classSensors_a14f5ba3f9fd80c581fda6c87fc4387b8}} 
+\index{Sensors@{Sensors}!m\_dashboard@{m\_dashboard}}
+\index{m\_dashboard@{m\_dashboard}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{m\_dashboard}{m\_dashboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDashBoard}{Dash\+Board}}$\ast$ Sensors\+::m\+\_\+dashboard\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a2732216a3ae5df68e9ea443294b579c2}\label{classSensors_a2732216a3ae5df68e9ea443294b579c2}} 
+\index{Sensors@{Sensors}!press\_reading@{press\_reading}}
+\index{press\_reading@{press\_reading}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{press\_reading}{press\_reading}}
+{\footnotesize\ttfamily QPressure\+Reading$\ast$ Sensors\+::press\+\_\+reading\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a51e443cdd7185b3f7cddf3ff5ce6d9d3}\label{classSensors_a51e443cdd7185b3f7cddf3ff5ce6d9d3}} 
+\index{Sensors@{Sensors}!PressureSensor@{PressureSensor}}
+\index{PressureSensor@{PressureSensor}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{PressureSensor}{PressureSensor}}
+{\footnotesize\ttfamily QPressure\+Sensor$\ast$ Sensors\+::\+Pressure\+Sensor\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classSensors_a232ce9a6518485cdbde3a56998a2ad09}\label{classSensors_a232ce9a6518485cdbde3a56998a2ad09}} 
+\index{Sensors@{Sensors}!temp\_reading@{temp\_reading}}
+\index{temp\_reading@{temp\_reading}!Sensors@{Sensors}}
+\doxysubsubsection{\texorpdfstring{temp\_reading}{temp\_reading}}
+{\footnotesize\ttfamily QAmbient\+Temperature\+Reading$\ast$ Sensors\+::temp\+\_\+reading\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{sensors_8h}{sensors.\+h}}\item 
+\mbox{\hyperlink{sensors_8cpp}{sensors.\+cpp}}\end{DoxyCompactItemize}

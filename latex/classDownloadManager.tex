@@ -1,0 +1,444 @@
+\hypertarget{classDownloadManager}{}\doxysection{Download\+Manager Class Reference}
+\label{classDownloadManager}\index{DownloadManager@{DownloadManager}}
+
+
+{\ttfamily \#include $<$downloadmanager.\+h$>$}
+
+
+
+Inheritance diagram for Download\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=177pt]{classDownloadManager__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Download\+Manager\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=230pt]{classDownloadManager__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDownloadManager_a740f81253ac9b6448998956db00c810f}{finished}} ()
+\item 
+void \mbox{\hyperlink{classDownloadManager_afb8daae55d60188b225b8a4b60d1dba5}{download\+Status\+Changed}} (QString \mbox{\hyperlink{classDownloadManager_aca505a1aa70cea6150c33943dfea97b5}{download\+Status}})
+\item 
+void \mbox{\hyperlink{classDownloadManager_ab2b58d78d9774b856529bc821cd527d6}{download\+Filename\+Changed}} (QString \mbox{\hyperlink{classDownloadManager_a13208b8d128159c08a1de4ac826c11c6}{download\+Filename}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDownloadManager_a655c570e812e86c7a2b9476dd830d136}{Download\+Manager}} (QObject $\ast$parent=nullptr)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classDownloadManager_afa2ecdfa2483d265db87682234f817e5}{append}} (const QUrl \&url)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classDownloadManager_a1173f56ecfa7598b3cd12e30b9dd470c}{append}} (const QString\+List \&urls)
+\item 
+void \mbox{\hyperlink{classDownloadManager_afe821e6eac5970b806896d1eb5abea30}{set\+Download\+Status}} (const QString \&\mbox{\hyperlink{classDownloadManager_aca505a1aa70cea6150c33943dfea97b5}{download\+Status}})
+\item 
+QString \mbox{\hyperlink{classDownloadManager_ae70a646ed7a86c02e610714eb2f37cdf}{download\+Status}} () const
+\item 
+void \mbox{\hyperlink{classDownloadManager_a3b2f0bf89f97c8c61836376328c0208d}{set\+Download\+Filename}} (const QString \&\mbox{\hyperlink{classDownloadManager_a13208b8d128159c08a1de4ac826c11c6}{download\+Filename}})
+\item 
+QString \mbox{\hyperlink{classDownloadManager_a8b7a5391bd998b9e83449fbf5307979f}{download\+Filename}} () const
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static QString \mbox{\hyperlink{classDownloadManager_a40a2bd7e138955b1accb75841c8dfd69}{save\+File\+Name}} (const QUrl \&url)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classDownloadManager_ae29838d156667434527c2032bb4d7225}{m\+\_\+download\+Status}}
+\item 
+QString \mbox{\hyperlink{classDownloadManager_a442e1f28f3a8483f616a7394eb9f1908}{m\+\_\+download\+Filename}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classDownloadManager_aca505a1aa70cea6150c33943dfea97b5}{download\+Status}}
+\item 
+QString \mbox{\hyperlink{classDownloadManager_a13208b8d128159c08a1de4ac826c11c6}{download\+Filename}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classDownloadManager_a5b2dc25fef54a4e61b48aa2c64854450}{start\+Next\+Download}} ()
+\item 
+void \mbox{\hyperlink{classDownloadManager_ac8c0eab33303a6ce3dcfddf1795cee0c}{download\+Progress}} (qint64 bytes\+Received, qint64 bytes\+Total)
+\item 
+void \mbox{\hyperlink{classDownloadManager_a3db45b9d3b58f6e6cf7c75a263fb85ce}{download\+Finished}} ()
+\item 
+void \mbox{\hyperlink{classDownloadManager_a5658efb355cf64437bf0c206e6ee0c63}{download\+Ready\+Read}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classDownloadManager_a9f39dbbaf6b7fe76261158273a4220ff}{is\+Http\+Redirect}} () const
+\item 
+void \mbox{\hyperlink{classDownloadManager_ad61fdaf56f156496613a587a873e06ff}{report\+Redirect}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QNetwork\+Access\+Manager \mbox{\hyperlink{classDownloadManager_a62a748fa77a6ebbab0f3f75ac810c5e9}{manager}}
+\item 
+QQueue$<$ QUrl $>$ \mbox{\hyperlink{classDownloadManager_a1571a49b71acde0ea527a7dba1ee9afe}{download\+Queue}}
+\item 
+QNetwork\+Reply $\ast$ \mbox{\hyperlink{classDownloadManager_a2593b6dcc95d5254bfb9fee4dd024c2c}{current\+Download}} = nullptr
+\item 
+QFile \mbox{\hyperlink{classDownloadManager_a1d47f0b394ba68ccb5c94db0353a7e22}{output}}
+\item 
+QElapsed\+Timer \mbox{\hyperlink{classDownloadManager_a54a8e7c2e44f91192872091cfa43012c}{download\+Timer}}
+\item 
+\mbox{\hyperlink{classTextProgressBar}{Text\+Progress\+Bar}} \mbox{\hyperlink{classDownloadManager_a06e7107c834db4c7b7d5f16dbdd9ef7b}{progress\+Bar}}
+\item 
+int \mbox{\hyperlink{classDownloadManager_a4a26042d71a3cfff830523de794e4534}{downloaded\+Count}} = 0
+\item 
+int \mbox{\hyperlink{classDownloadManager_a7eb288a1b2be986eb749945946e14c90}{total\+Count}} = 0
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classDownloadManager_a655c570e812e86c7a2b9476dd830d136}\label{classDownloadManager_a655c570e812e86c7a2b9476dd830d136}} 
+\index{DownloadManager@{DownloadManager}!DownloadManager@{DownloadManager}}
+\index{DownloadManager@{DownloadManager}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{DownloadManager()}{DownloadManager()}}
+{\footnotesize\ttfamily Download\+Manager\+::\+Download\+Manager (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classDownloadManager_a1173f56ecfa7598b3cd12e30b9dd470c}\label{classDownloadManager_a1173f56ecfa7598b3cd12e30b9dd470c}} 
+\index{DownloadManager@{DownloadManager}!append@{append}}
+\index{append@{append}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Download\+Manager\+::append (\begin{DoxyParamCaption}\item[{const QString\+List \&}]{urls }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a1173f56ecfa7598b3cd12e30b9dd470c_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_afa2ecdfa2483d265db87682234f817e5}\label{classDownloadManager_afa2ecdfa2483d265db87682234f817e5}} 
+\index{DownloadManager@{DownloadManager}!append@{append}}
+\index{append@{append}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{append()}{append()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Download\+Manager\+::append (\begin{DoxyParamCaption}\item[{const QUrl \&}]{url }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_afa2ecdfa2483d265db87682234f817e5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_afa2ecdfa2483d265db87682234f817e5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a8b7a5391bd998b9e83449fbf5307979f}\label{classDownloadManager_a8b7a5391bd998b9e83449fbf5307979f}} 
+\index{DownloadManager@{DownloadManager}!downloadFilename@{downloadFilename}}
+\index{downloadFilename@{downloadFilename}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadFilename()}{downloadFilename()}}
+{\footnotesize\ttfamily QString Download\+Manager\+::download\+Filename (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDownloadManager_ab2b58d78d9774b856529bc821cd527d6}\label{classDownloadManager_ab2b58d78d9774b856529bc821cd527d6}} 
+\index{DownloadManager@{DownloadManager}!downloadFilenameChanged@{downloadFilenameChanged}}
+\index{downloadFilenameChanged@{downloadFilenameChanged}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadFilenameChanged}{downloadFilenameChanged}}
+{\footnotesize\ttfamily void Download\+Manager\+::download\+Filename\+Changed (\begin{DoxyParamCaption}\item[{QString}]{download\+Filename }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_ab2b58d78d9774b856529bc821cd527d6_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a3db45b9d3b58f6e6cf7c75a263fb85ce}\label{classDownloadManager_a3db45b9d3b58f6e6cf7c75a263fb85ce}} 
+\index{DownloadManager@{DownloadManager}!downloadFinished@{downloadFinished}}
+\index{downloadFinished@{downloadFinished}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadFinished}{downloadFinished}}
+{\footnotesize\ttfamily void Download\+Manager\+::download\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a3db45b9d3b58f6e6cf7c75a263fb85ce_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a3db45b9d3b58f6e6cf7c75a263fb85ce_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_ac8c0eab33303a6ce3dcfddf1795cee0c}\label{classDownloadManager_ac8c0eab33303a6ce3dcfddf1795cee0c}} 
+\index{DownloadManager@{DownloadManager}!downloadProgress@{downloadProgress}}
+\index{downloadProgress@{downloadProgress}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadProgress}{downloadProgress}}
+{\footnotesize\ttfamily void Download\+Manager\+::download\+Progress (\begin{DoxyParamCaption}\item[{qint64}]{bytes\+Received,  }\item[{qint64}]{bytes\+Total }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_ac8c0eab33303a6ce3dcfddf1795cee0c_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_ac8c0eab33303a6ce3dcfddf1795cee0c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a5658efb355cf64437bf0c206e6ee0c63}\label{classDownloadManager_a5658efb355cf64437bf0c206e6ee0c63}} 
+\index{DownloadManager@{DownloadManager}!downloadReadyRead@{downloadReadyRead}}
+\index{downloadReadyRead@{downloadReadyRead}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadReadyRead}{downloadReadyRead}}
+{\footnotesize\ttfamily void Download\+Manager\+::download\+Ready\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a5658efb355cf64437bf0c206e6ee0c63_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_ae70a646ed7a86c02e610714eb2f37cdf}\label{classDownloadManager_ae70a646ed7a86c02e610714eb2f37cdf}} 
+\index{DownloadManager@{DownloadManager}!downloadStatus@{downloadStatus}}
+\index{downloadStatus@{downloadStatus}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadStatus()}{downloadStatus()}}
+{\footnotesize\ttfamily QString Download\+Manager\+::download\+Status (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+\mbox{\Hypertarget{classDownloadManager_afb8daae55d60188b225b8a4b60d1dba5}\label{classDownloadManager_afb8daae55d60188b225b8a4b60d1dba5}} 
+\index{DownloadManager@{DownloadManager}!downloadStatusChanged@{downloadStatusChanged}}
+\index{downloadStatusChanged@{downloadStatusChanged}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadStatusChanged}{downloadStatusChanged}}
+{\footnotesize\ttfamily void Download\+Manager\+::download\+Status\+Changed (\begin{DoxyParamCaption}\item[{QString}]{download\+Status }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_afb8daae55d60188b225b8a4b60d1dba5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a740f81253ac9b6448998956db00c810f}\label{classDownloadManager_a740f81253ac9b6448998956db00c810f}} 
+\index{DownloadManager@{DownloadManager}!finished@{finished}}
+\index{finished@{finished}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{finished}{finished}}
+{\footnotesize\ttfamily void Download\+Manager\+::finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a740f81253ac9b6448998956db00c810f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a9f39dbbaf6b7fe76261158273a4220ff}\label{classDownloadManager_a9f39dbbaf6b7fe76261158273a4220ff}} 
+\index{DownloadManager@{DownloadManager}!isHttpRedirect@{isHttpRedirect}}
+\index{isHttpRedirect@{isHttpRedirect}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{isHttpRedirect()}{isHttpRedirect()}}
+{\footnotesize\ttfamily bool Download\+Manager\+::is\+Http\+Redirect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a9f39dbbaf6b7fe76261158273a4220ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_ad61fdaf56f156496613a587a873e06ff}\label{classDownloadManager_ad61fdaf56f156496613a587a873e06ff}} 
+\index{DownloadManager@{DownloadManager}!reportRedirect@{reportRedirect}}
+\index{reportRedirect@{reportRedirect}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{reportRedirect()}{reportRedirect()}}
+{\footnotesize\ttfamily void Download\+Manager\+::report\+Redirect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_ad61fdaf56f156496613a587a873e06ff_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a40a2bd7e138955b1accb75841c8dfd69}\label{classDownloadManager_a40a2bd7e138955b1accb75841c8dfd69}} 
+\index{DownloadManager@{DownloadManager}!saveFileName@{saveFileName}}
+\index{saveFileName@{saveFileName}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{saveFileName()}{saveFileName()}}
+{\footnotesize\ttfamily QString Download\+Manager\+::save\+File\+Name (\begin{DoxyParamCaption}\item[{const QUrl \&}]{url }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a40a2bd7e138955b1accb75841c8dfd69_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a3b2f0bf89f97c8c61836376328c0208d}\label{classDownloadManager_a3b2f0bf89f97c8c61836376328c0208d}} 
+\index{DownloadManager@{DownloadManager}!setDownloadFilename@{setDownloadFilename}}
+\index{setDownloadFilename@{setDownloadFilename}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{setDownloadFilename()}{setDownloadFilename()}}
+{\footnotesize\ttfamily void Download\+Manager\+::set\+Download\+Filename (\begin{DoxyParamCaption}\item[{const QString \&}]{download\+Filename }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a3b2f0bf89f97c8c61836376328c0208d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_afe821e6eac5970b806896d1eb5abea30}\label{classDownloadManager_afe821e6eac5970b806896d1eb5abea30}} 
+\index{DownloadManager@{DownloadManager}!setDownloadStatus@{setDownloadStatus}}
+\index{setDownloadStatus@{setDownloadStatus}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{setDownloadStatus()}{setDownloadStatus()}}
+{\footnotesize\ttfamily void Download\+Manager\+::set\+Download\+Status (\begin{DoxyParamCaption}\item[{const QString \&}]{download\+Status }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_afe821e6eac5970b806896d1eb5abea30_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classDownloadManager_a5b2dc25fef54a4e61b48aa2c64854450}\label{classDownloadManager_a5b2dc25fef54a4e61b48aa2c64854450}} 
+\index{DownloadManager@{DownloadManager}!startNextDownload@{startNextDownload}}
+\index{startNextDownload@{startNextDownload}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{startNextDownload}{startNextDownload}}
+{\footnotesize\ttfamily void Download\+Manager\+::start\+Next\+Download (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a5b2dc25fef54a4e61b48aa2c64854450_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classDownloadManager_a5b2dc25fef54a4e61b48aa2c64854450_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classDownloadManager_a2593b6dcc95d5254bfb9fee4dd024c2c}\label{classDownloadManager_a2593b6dcc95d5254bfb9fee4dd024c2c}} 
+\index{DownloadManager@{DownloadManager}!currentDownload@{currentDownload}}
+\index{currentDownload@{currentDownload}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{currentDownload}{currentDownload}}
+{\footnotesize\ttfamily QNetwork\+Reply$\ast$ Download\+Manager\+::current\+Download = nullptr\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a4a26042d71a3cfff830523de794e4534}\label{classDownloadManager_a4a26042d71a3cfff830523de794e4534}} 
+\index{DownloadManager@{DownloadManager}!downloadedCount@{downloadedCount}}
+\index{downloadedCount@{downloadedCount}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadedCount}{downloadedCount}}
+{\footnotesize\ttfamily int Download\+Manager\+::downloaded\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a1571a49b71acde0ea527a7dba1ee9afe}\label{classDownloadManager_a1571a49b71acde0ea527a7dba1ee9afe}} 
+\index{DownloadManager@{DownloadManager}!downloadQueue@{downloadQueue}}
+\index{downloadQueue@{downloadQueue}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadQueue}{downloadQueue}}
+{\footnotesize\ttfamily QQueue$<$QUrl$>$ Download\+Manager\+::download\+Queue\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a54a8e7c2e44f91192872091cfa43012c}\label{classDownloadManager_a54a8e7c2e44f91192872091cfa43012c}} 
+\index{DownloadManager@{DownloadManager}!downloadTimer@{downloadTimer}}
+\index{downloadTimer@{downloadTimer}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadTimer}{downloadTimer}}
+{\footnotesize\ttfamily QElapsed\+Timer Download\+Manager\+::download\+Timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a442e1f28f3a8483f616a7394eb9f1908}\label{classDownloadManager_a442e1f28f3a8483f616a7394eb9f1908}} 
+\index{DownloadManager@{DownloadManager}!m\_downloadFilename@{m\_downloadFilename}}
+\index{m\_downloadFilename@{m\_downloadFilename}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{m\_downloadFilename}{m\_downloadFilename}}
+{\footnotesize\ttfamily QString Download\+Manager\+::m\+\_\+download\+Filename}
+
+\mbox{\Hypertarget{classDownloadManager_ae29838d156667434527c2032bb4d7225}\label{classDownloadManager_ae29838d156667434527c2032bb4d7225}} 
+\index{DownloadManager@{DownloadManager}!m\_downloadStatus@{m\_downloadStatus}}
+\index{m\_downloadStatus@{m\_downloadStatus}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{m\_downloadStatus}{m\_downloadStatus}}
+{\footnotesize\ttfamily QString Download\+Manager\+::m\+\_\+download\+Status}
+
+\mbox{\Hypertarget{classDownloadManager_a62a748fa77a6ebbab0f3f75ac810c5e9}\label{classDownloadManager_a62a748fa77a6ebbab0f3f75ac810c5e9}} 
+\index{DownloadManager@{DownloadManager}!manager@{manager}}
+\index{manager@{manager}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{manager}{manager}}
+{\footnotesize\ttfamily QNetwork\+Access\+Manager Download\+Manager\+::manager\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a1d47f0b394ba68ccb5c94db0353a7e22}\label{classDownloadManager_a1d47f0b394ba68ccb5c94db0353a7e22}} 
+\index{DownloadManager@{DownloadManager}!output@{output}}
+\index{output@{output}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{output}{output}}
+{\footnotesize\ttfamily QFile Download\+Manager\+::output\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a06e7107c834db4c7b7d5f16dbdd9ef7b}\label{classDownloadManager_a06e7107c834db4c7b7d5f16dbdd9ef7b}} 
+\index{DownloadManager@{DownloadManager}!progressBar@{progressBar}}
+\index{progressBar@{progressBar}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{progressBar}{progressBar}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classTextProgressBar}{Text\+Progress\+Bar}} Download\+Manager\+::progress\+Bar\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classDownloadManager_a7eb288a1b2be986eb749945946e14c90}\label{classDownloadManager_a7eb288a1b2be986eb749945946e14c90}} 
+\index{DownloadManager@{DownloadManager}!totalCount@{totalCount}}
+\index{totalCount@{totalCount}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{totalCount}{totalCount}}
+{\footnotesize\ttfamily int Download\+Manager\+::total\+Count = 0\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Property Documentation}
+\mbox{\Hypertarget{classDownloadManager_a13208b8d128159c08a1de4ac826c11c6}\label{classDownloadManager_a13208b8d128159c08a1de4ac826c11c6}} 
+\index{DownloadManager@{DownloadManager}!downloadFilename@{downloadFilename}}
+\index{downloadFilename@{downloadFilename}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadFilename}{downloadFilename}}
+{\footnotesize\ttfamily QString Download\+Manager\+::download\+Filename\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+\mbox{\Hypertarget{classDownloadManager_aca505a1aa70cea6150c33943dfea97b5}\label{classDownloadManager_aca505a1aa70cea6150c33943dfea97b5}} 
+\index{DownloadManager@{DownloadManager}!downloadStatus@{downloadStatus}}
+\index{downloadStatus@{downloadStatus}!DownloadManager@{DownloadManager}}
+\doxysubsubsection{\texorpdfstring{downloadStatus}{downloadStatus}}
+{\footnotesize\ttfamily QString Download\+Manager\+::download\+Status\hspace{0.3cm}{\ttfamily [read]}, {\ttfamily [write]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{downloadmanager_8h}{downloadmanager.\+h}}\item 
+\mbox{\hyperlink{downloadmanager_8cpp}{downloadmanager.\+cpp}}\end{DoxyCompactItemize}

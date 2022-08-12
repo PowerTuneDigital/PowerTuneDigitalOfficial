@@ -1,0 +1,805 @@
+\hypertarget{classApexi}{}\doxysection{Apexi Class Reference}
+\label{classApexi}\index{Apexi@{Apexi}}
+
+
+{\ttfamily \#include $<$Apexi.\+h$>$}
+
+
+
+Inheritance diagram for Apexi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{classApexi__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Apexi\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classApexi__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__adv__info__t}{fc\+\_\+adv\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2}{fc\+\_\+adv\+\_\+info\+\_\+t2}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3}{fc\+\_\+adv\+\_\+info\+\_\+t3}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t}{fc\+\_\+aux2\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__aux__info__t}{fc\+\_\+aux\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t}{fc\+\_\+\+Basic\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t}{fc\+\_\+\+Boost\+Cont\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t}{fc\+\_\+\+Fuel\+Base\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t}{fc\+\_\+\+Fuel\+Injectors\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__fullFuelBase__info__t}{fc\+\_\+full\+Fuel\+Base\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t}{fc\+\_\+\+Inj\+Overlap\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t}{fc\+\_\+\+Inj\+Pri\+Lagvs\+Batt\+V\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t}{fc\+\_\+\+Inj\+Sc\+Lagvs\+Batt\+V\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__map__info__t}{fc\+\_\+map\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t}{fc\+\_\+\+Rev\+Idle\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__sens__info__t}{fc\+\_\+sens\+\_\+info\+\_\+t}}
+\item 
+struct \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t}{fc\+\_\+\+Turbo\+Trans\+\_\+info\+\_\+t}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classApexi_abe3bf6800fce8a4c713a08c14474d625}{ready\+To\+Read}} ()
+\item 
+void \mbox{\hyperlink{classApexi_a9c813630d2b2a70b7e098ae10220103e}{handle\+Timeout}} ()
+\item 
+void \mbox{\hyperlink{classApexi_a8a8a56251df881cc9eb49f1f20332fda}{handle\+Bytes\+Written}} (qint64 bytes)
+\item 
+void \mbox{\hyperlink{classApexi_a6c775f27e878959c047bb9c252064cfe}{handle\+Error}} (QSerial\+Port\+::\+Serial\+Port\+Error error)
+\item 
+void \mbox{\hyperlink{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb}{init\+Serial\+Port}} ()
+\item 
+void \mbox{\hyperlink{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3}{open\+Connection}} (const QString \&port\+Name)
+\item 
+void \mbox{\hyperlink{classApexi_a669124cabae4ada616e650e582c068da}{close\+Connection}} ()
+\item 
+void \mbox{\hyperlink{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4}{retryconnect}} ()
+\item 
+void \mbox{\hyperlink{classApexi_afd83573b4a9dc42abf1f9204b0f9b47d}{clear}} ()
+\item 
+void \mbox{\hyperlink{classApexi_a4cb1314ab5ca5175aa227ed178148f40}{apexi\+ECU}} (const QByte\+Array \&buffer)
+\item 
+void \mbox{\hyperlink{classApexi_a9ed7e794f2566b72a448e341233985eb}{send\+Request}} (int \mbox{\hyperlink{Apexi_8cpp_a807106db33ac183e122814d4a254353c}{request\+Index}})
+\item 
+void \mbox{\hyperlink{classApexi_af312531b1dbc60175016a82881203f18}{write\+Request\+PFC}} (QByte\+Array)
+\item 
+void \mbox{\hyperlink{classApexi_a4e7b389e8d3e283a12733ab4f8492be3}{read\+Data}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_a3ecd8445700ab9532fc051325f66d03d}{decode\+Adv}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_a6ce2b40858fc637448d1f6dc27e10a70}{decode\+Sensor}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_af82382a1e22fdac04180f1734d59461f}{decode\+Aux}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_a8434798529c3e79a33445e2ba626d8a2}{decode\+Map}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf}{decode\+Basic}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_aaa77337f30dd52330c1070ce161eea83}{decode\+Init}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_a45f8db235553ca011083224aec6b3892}{decode\+Sensor\+Strings}} (QByte\+Array \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}})
+\item 
+void \mbox{\hyperlink{classApexi_a31ba55d59a08104995b5efad9deda277}{calculator\+Aux}} (float aux1min, float aux2max, float aux3min, float aux4max, QString Auxunit1, QString Auxunit2)
+\end{DoxyCompactItemize}
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classApexi_a7d165539c39fe017fc5b2d219e7dc7ea}{sig\+\_\+adaptronic\+Read\+Finished}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApexi_accbe67b5637fc8b96bc3bb02fa2c3eaf}{Apexi}} (QObject $\ast$parent=0)
+\item 
+\mbox{\hyperlink{classApexi_aaf8ce7cb8bb5f5a7592ce9e84987683a}{Apexi}} (\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$dashboard, QObject $\ast$parent=0)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classApexi_a242116e8b33bab893bd506edbc228cfa}{Set\+Protocol}} (const int \&protocolselect)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classApexi_ac87e6660438b97f793a0b6c2fda6e295}{Auxcalc}} (const QString \&unitaux1, const qreal \&an1\+V0, const qreal \&an2\+V5, const QString \&unitaux2, const qreal \&an3\+V0, const qreal \&an4\+V5)
+\item 
+Q\+\_\+\+INVOKABLE void \mbox{\hyperlink{classApexi_a190e3079e22d645f5a2865da74feda7c}{write\+Dashfile}} (const QString \&gauge1, const QString \&gauge2, const QString \&gauge3, const QString \&gauge4, const QString \&gauge5, const QString \&gauge6)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classApexi_a0fa26bfd4d318724a7c211ec809d257e}{run}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+double \mbox{\hyperlink{classApexi_abd5984b41305a2d8186116b1e4ce80eb}{package\+ADV}} \mbox{[}33\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a0b4e71625415c4cc5c6ed4e73ddc33f2}{package\+ADV2}} \mbox{[}33\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a186107070fc51eedd49f75ebf8c05216}{package\+ADV3}} \mbox{[}33\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a35f88bde345a007d625575b0c4abd494}{package\+Sens}} \mbox{[}20\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_afe66b5de3141bd64b054d642bfe3fcd6}{package\+Map}} \mbox{[}2\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a796254e5640f310914bec5c220c53012}{package\+Aux}} \mbox{[}4\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_afd1c314896cce07b11fdb9cf42fb4c55}{package\+Aux2}} \mbox{[}8\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a8eab51ea1ab3c410718180c0027cb83e}{package\+Basic}} \mbox{[}22\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a9d6345f9a8a9f93774cf84cd6932c34a}{package\+Rev\+Idle}} \mbox{[}16\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_aebf0c4feac657ae267b0bd9a34a5fc5b}{package\+Turbo\+Trans}} \mbox{[}12\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_ad21954910d5675917664af74c6f9a1c9}{package\+Boost\+Control}} \mbox{[}12\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a15981f3dd32e14a284762c44b5c24271}{package\+Inj\+Overlap}} \mbox{[}12\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a9dc6703f05e7c7270c04d3fc61404d93}{package\+Inj\+Pri\+Lagvs\+BattV}} \mbox{[}12\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_ae4db0f92b7812722e438b8f288af2e2c}{package\+Inj\+Sc\+Lagvs\+BattV}} \mbox{[}12\mbox{]}
+\item 
+double \mbox{\hyperlink{classApexi_a420c3ef7e59f4b1d380739b0dbf7cf88}{package\+Fuel\+Injectors}} \mbox{[}26\mbox{]}
+\item 
+\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$ \mbox{\hyperlink{classApexi_a0855cd7fda07f53102f31c2145d5d4c3}{m\+\_\+dashboard}}
+\item 
+\mbox{\hyperlink{classSerialPort}{Serial\+Port}} $\ast$ \mbox{\hyperlink{classApexi_ab02f8638a4b1c0d34c2f2e31f52cfcac}{m\+\_\+serialport}}
+\item 
+qint64 \mbox{\hyperlink{classApexi_ae2d8ac8ed5ed6db34e32bb42f843dbe9}{m\+\_\+bytes\+Written}}
+\item 
+QByte\+Array \mbox{\hyperlink{classApexi_a1b99aea3799500703a73d1c392b7464e}{m\+\_\+read\+Data}}
+\item 
+QTimer \mbox{\hyperlink{classApexi_a74faf8d54f8a63a3243b5e1cfc2efa61}{m\+\_\+timer}}
+\item 
+QByte\+Array \mbox{\hyperlink{classApexi_a1db3c3fdc885d348cb99b3dab0b2f94e}{m\+\_\+buffer}}
+\item 
+QByte\+Array \mbox{\hyperlink{classApexi_a014e0d12e9c110003e9401e35efddcd8}{m\+\_\+apexi\+Msg}}
+\item 
+QByte\+Array \mbox{\hyperlink{classApexi_a76ab1b154839b1ac82782806ea9e20ba}{m\+\_\+write\+Data}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classApexi_accbe67b5637fc8b96bc3bb02fa2c3eaf}\label{classApexi_accbe67b5637fc8b96bc3bb02fa2c3eaf}} 
+\index{Apexi@{Apexi}!Apexi@{Apexi}}
+\index{Apexi@{Apexi}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{Apexi()}{Apexi()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Apexi\+::\+Apexi (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classApexi_aaf8ce7cb8bb5f5a7592ce9e84987683a}\label{classApexi_aaf8ce7cb8bb5f5a7592ce9e84987683a}} 
+\index{Apexi@{Apexi}!Apexi@{Apexi}}
+\index{Apexi@{Apexi}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{Apexi()}{Apexi()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Apexi\+::\+Apexi (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$}]{dashboard,  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classApexi_a4cb1314ab5ca5175aa227ed178148f40}\label{classApexi_a4cb1314ab5ca5175aa227ed178148f40}} 
+\index{Apexi@{Apexi}!apexiECU@{apexiECU}}
+\index{apexiECU@{apexiECU}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{apexiECU}{apexiECU}}
+{\footnotesize\ttfamily void Apexi\+::apexi\+ECU (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a4cb1314ab5ca5175aa227ed178148f40_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a4cb1314ab5ca5175aa227ed178148f40_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_ac87e6660438b97f793a0b6c2fda6e295}\label{classApexi_ac87e6660438b97f793a0b6c2fda6e295}} 
+\index{Apexi@{Apexi}!Auxcalc@{Auxcalc}}
+\index{Auxcalc@{Auxcalc}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{Auxcalc()}{Auxcalc()}}
+{\footnotesize\ttfamily void Apexi\+::\+Auxcalc (\begin{DoxyParamCaption}\item[{const QString \&}]{unitaux1,  }\item[{const qreal \&}]{an1\+V0,  }\item[{const qreal \&}]{an2\+V5,  }\item[{const QString \&}]{unitaux2,  }\item[{const qreal \&}]{an3\+V0,  }\item[{const qreal \&}]{an4\+V5 }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classApexi_ac87e6660438b97f793a0b6c2fda6e295_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a31ba55d59a08104995b5efad9deda277}\label{classApexi_a31ba55d59a08104995b5efad9deda277}} 
+\index{Apexi@{Apexi}!calculatorAux@{calculatorAux}}
+\index{calculatorAux@{calculatorAux}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{calculatorAux}{calculatorAux}}
+{\footnotesize\ttfamily void Apexi\+::calculator\+Aux (\begin{DoxyParamCaption}\item[{float}]{aux1min,  }\item[{float}]{aux2max,  }\item[{float}]{aux3min,  }\item[{float}]{aux4max,  }\item[{QString}]{Auxunit1,  }\item[{QString}]{Auxunit2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{classApexi_a31ba55d59a08104995b5efad9deda277_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_afd83573b4a9dc42abf1f9204b0f9b47d}\label{classApexi_afd83573b4a9dc42abf1f9204b0f9b47d}} 
+\index{Apexi@{Apexi}!clear@{clear}}
+\index{clear@{clear}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{clear}{clear}}
+{\footnotesize\ttfamily void Apexi\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classApexi_a669124cabae4ada616e650e582c068da}\label{classApexi_a669124cabae4ada616e650e582c068da}} 
+\index{Apexi@{Apexi}!closeConnection@{closeConnection}}
+\index{closeConnection@{closeConnection}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{closeConnection}{closeConnection}}
+{\footnotesize\ttfamily void Apexi\+::close\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a669124cabae4ada616e650e582c068da_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a669124cabae4ada616e650e582c068da_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a3ecd8445700ab9532fc051325f66d03d}\label{classApexi_a3ecd8445700ab9532fc051325f66d03d}} 
+\index{Apexi@{Apexi}!decodeAdv@{decodeAdv}}
+\index{decodeAdv@{decodeAdv}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeAdv}{decodeAdv}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Adv (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classApexi_a3ecd8445700ab9532fc051325f66d03d_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a3ecd8445700ab9532fc051325f66d03d_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_af82382a1e22fdac04180f1734d59461f}\label{classApexi_af82382a1e22fdac04180f1734d59461f}} 
+\index{Apexi@{Apexi}!decodeAux@{decodeAux}}
+\index{decodeAux@{decodeAux}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeAux}{decodeAux}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Aux (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{classApexi_af82382a1e22fdac04180f1734d59461f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af82382a1e22fdac04180f1734d59461f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf}\label{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf}} 
+\index{Apexi@{Apexi}!decodeBasic@{decodeBasic}}
+\index{decodeBasic@{decodeBasic}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeBasic}{decodeBasic}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Basic (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_aaa77337f30dd52330c1070ce161eea83}\label{classApexi_aaa77337f30dd52330c1070ce161eea83}} 
+\index{Apexi@{Apexi}!decodeInit@{decodeInit}}
+\index{decodeInit@{decodeInit}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeInit}{decodeInit}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Init (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=325pt]{classApexi_aaa77337f30dd52330c1070ce161eea83_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_aaa77337f30dd52330c1070ce161eea83_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a8434798529c3e79a33445e2ba626d8a2}\label{classApexi_a8434798529c3e79a33445e2ba626d8a2}} 
+\index{Apexi@{Apexi}!decodeMap@{decodeMap}}
+\index{decodeMap@{decodeMap}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeMap}{decodeMap}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Map (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a8434798529c3e79a33445e2ba626d8a2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a6ce2b40858fc637448d1f6dc27e10a70}\label{classApexi_a6ce2b40858fc637448d1f6dc27e10a70}} 
+\index{Apexi@{Apexi}!decodeSensor@{decodeSensor}}
+\index{decodeSensor@{decodeSensor}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeSensor}{decodeSensor}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Sensor (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classApexi_a6ce2b40858fc637448d1f6dc27e10a70_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a6ce2b40858fc637448d1f6dc27e10a70_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a45f8db235553ca011083224aec6b3892}\label{classApexi_a45f8db235553ca011083224aec6b3892}} 
+\index{Apexi@{Apexi}!decodeSensorStrings@{decodeSensorStrings}}
+\index{decodeSensorStrings@{decodeSensorStrings}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{decodeSensorStrings}{decodeSensorStrings}}
+{\footnotesize\ttfamily void Apexi\+::decode\+Sensor\+Strings (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classApexi_a45f8db235553ca011083224aec6b3892_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a45f8db235553ca011083224aec6b3892_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a8a8a56251df881cc9eb49f1f20332fda}\label{classApexi_a8a8a56251df881cc9eb49f1f20332fda}} 
+\index{Apexi@{Apexi}!handleBytesWritten@{handleBytesWritten}}
+\index{handleBytesWritten@{handleBytesWritten}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{handleBytesWritten}{handleBytesWritten}}
+{\footnotesize\ttfamily void Apexi\+::handle\+Bytes\+Written (\begin{DoxyParamCaption}\item[{qint64}]{bytes }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a8a8a56251df881cc9eb49f1f20332fda_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a6c775f27e878959c047bb9c252064cfe}\label{classApexi_a6c775f27e878959c047bb9c252064cfe}} 
+\index{Apexi@{Apexi}!handleError@{handleError}}
+\index{handleError@{handleError}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{handleError}{handleError}}
+{\footnotesize\ttfamily void Apexi\+::handle\+Error (\begin{DoxyParamCaption}\item[{QSerial\+Port\+::\+Serial\+Port\+Error}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{classApexi_a6c775f27e878959c047bb9c252064cfe_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a6c775f27e878959c047bb9c252064cfe_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a9c813630d2b2a70b7e098ae10220103e}\label{classApexi_a9c813630d2b2a70b7e098ae10220103e}} 
+\index{Apexi@{Apexi}!handleTimeout@{handleTimeout}}
+\index{handleTimeout@{handleTimeout}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{handleTimeout}{handleTimeout}}
+{\footnotesize\ttfamily void Apexi\+::handle\+Timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a9c813630d2b2a70b7e098ae10220103e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a9c813630d2b2a70b7e098ae10220103e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb}\label{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb}} 
+\index{Apexi@{Apexi}!initSerialPort@{initSerialPort}}
+\index{initSerialPort@{initSerialPort}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{initSerialPort}{initSerialPort}}
+{\footnotesize\ttfamily void Apexi\+::init\+Serial\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3}\label{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3}} 
+\index{Apexi@{Apexi}!openConnection@{openConnection}}
+\index{openConnection@{openConnection}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{openConnection}{openConnection}}
+{\footnotesize\ttfamily void Apexi\+::open\+Connection (\begin{DoxyParamCaption}\item[{const QString \&}]{port\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a4e7b389e8d3e283a12733ab4f8492be3}\label{classApexi_a4e7b389e8d3e283a12733ab4f8492be3}} 
+\index{Apexi@{Apexi}!readData@{readData}}
+\index{readData@{readData}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{readData}{readData}}
+{\footnotesize\ttfamily void Apexi\+::read\+Data (\begin{DoxyParamCaption}\item[{QByte\+Array}]{rawmessagedata }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{classApexi_a4e7b389e8d3e283a12733ab4f8492be3_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a4e7b389e8d3e283a12733ab4f8492be3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_abe3bf6800fce8a4c713a08c14474d625}\label{classApexi_abe3bf6800fce8a4c713a08c14474d625}} 
+\index{Apexi@{Apexi}!readyToRead@{readyToRead}}
+\index{readyToRead@{readyToRead}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{readyToRead}{readyToRead}}
+{\footnotesize\ttfamily void Apexi\+::ready\+To\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_abe3bf6800fce8a4c713a08c14474d625_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_abe3bf6800fce8a4c713a08c14474d625_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4}\label{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4}} 
+\index{Apexi@{Apexi}!retryconnect@{retryconnect}}
+\index{retryconnect@{retryconnect}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{retryconnect}{retryconnect}}
+{\footnotesize\ttfamily void Apexi\+::retryconnect (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a0fa26bfd4d318724a7c211ec809d257e}\label{classApexi_a0fa26bfd4d318724a7c211ec809d257e}} 
+\index{Apexi@{Apexi}!run@{run}}
+\index{run@{run}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void Apexi\+::run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a9ed7e794f2566b72a448e341233985eb}\label{classApexi_a9ed7e794f2566b72a448e341233985eb}} 
+\index{Apexi@{Apexi}!sendRequest@{sendRequest}}
+\index{sendRequest@{sendRequest}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{sendRequest}{sendRequest}}
+{\footnotesize\ttfamily void Apexi\+::send\+Request (\begin{DoxyParamCaption}\item[{int}]{request\+Index }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a9ed7e794f2566b72a448e341233985eb_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_a9ed7e794f2566b72a448e341233985eb_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classApexi_a242116e8b33bab893bd506edbc228cfa}\label{classApexi_a242116e8b33bab893bd506edbc228cfa}} 
+\index{Apexi@{Apexi}!SetProtocol@{SetProtocol}}
+\index{SetProtocol@{SetProtocol}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{SetProtocol()}{SetProtocol()}}
+{\footnotesize\ttfamily void Apexi\+::\+Set\+Protocol (\begin{DoxyParamCaption}\item[{const int \&}]{protocolselect }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classApexi_a7d165539c39fe017fc5b2d219e7dc7ea}\label{classApexi_a7d165539c39fe017fc5b2d219e7dc7ea}} 
+\index{Apexi@{Apexi}!sig\_adaptronicReadFinished@{sig\_adaptronicReadFinished}}
+\index{sig\_adaptronicReadFinished@{sig\_adaptronicReadFinished}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{sig\_adaptronicReadFinished}{sig\_adaptronicReadFinished}}
+{\footnotesize\ttfamily void Apexi\+::sig\+\_\+adaptronic\+Read\+Finished (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\mbox{\Hypertarget{classApexi_a190e3079e22d645f5a2865da74feda7c}\label{classApexi_a190e3079e22d645f5a2865da74feda7c}} 
+\index{Apexi@{Apexi}!writeDashfile@{writeDashfile}}
+\index{writeDashfile@{writeDashfile}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{writeDashfile()}{writeDashfile()}}
+{\footnotesize\ttfamily void Apexi\+::write\+Dashfile (\begin{DoxyParamCaption}\item[{const QString \&}]{gauge1,  }\item[{const QString \&}]{gauge2,  }\item[{const QString \&}]{gauge3,  }\item[{const QString \&}]{gauge4,  }\item[{const QString \&}]{gauge5,  }\item[{const QString \&}]{gauge6 }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classApexi_af312531b1dbc60175016a82881203f18}\label{classApexi_af312531b1dbc60175016a82881203f18}} 
+\index{Apexi@{Apexi}!writeRequestPFC@{writeRequestPFC}}
+\index{writeRequestPFC@{writeRequestPFC}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{writeRequestPFC}{writeRequestPFC}}
+{\footnotesize\ttfamily void Apexi\+::write\+Request\+PFC (\begin{DoxyParamCaption}\item[{QByte\+Array}]{p\+\_\+request }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af312531b1dbc60175016a82881203f18_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classApexi_af312531b1dbc60175016a82881203f18_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classApexi_a014e0d12e9c110003e9401e35efddcd8}\label{classApexi_a014e0d12e9c110003e9401e35efddcd8}} 
+\index{Apexi@{Apexi}!m\_apexiMsg@{m\_apexiMsg}}
+\index{m\_apexiMsg@{m\_apexiMsg}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_apexiMsg}{m\_apexiMsg}}
+{\footnotesize\ttfamily QByte\+Array Apexi\+::m\+\_\+apexi\+Msg\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a1db3c3fdc885d348cb99b3dab0b2f94e}\label{classApexi_a1db3c3fdc885d348cb99b3dab0b2f94e}} 
+\index{Apexi@{Apexi}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily QByte\+Array Apexi\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_ae2d8ac8ed5ed6db34e32bb42f843dbe9}\label{classApexi_ae2d8ac8ed5ed6db34e32bb42f843dbe9}} 
+\index{Apexi@{Apexi}!m\_bytesWritten@{m\_bytesWritten}}
+\index{m\_bytesWritten@{m\_bytesWritten}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_bytesWritten}{m\_bytesWritten}}
+{\footnotesize\ttfamily qint64 Apexi\+::m\+\_\+bytes\+Written\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a0855cd7fda07f53102f31c2145d5d4c3}\label{classApexi_a0855cd7fda07f53102f31c2145d5d4c3}} 
+\index{Apexi@{Apexi}!m\_dashboard@{m\_dashboard}}
+\index{m\_dashboard@{m\_dashboard}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_dashboard}{m\_dashboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDashBoard}{Dash\+Board}}$\ast$ Apexi\+::m\+\_\+dashboard\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a1b99aea3799500703a73d1c392b7464e}\label{classApexi_a1b99aea3799500703a73d1c392b7464e}} 
+\index{Apexi@{Apexi}!m\_readData@{m\_readData}}
+\index{m\_readData@{m\_readData}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_readData}{m\_readData}}
+{\footnotesize\ttfamily QByte\+Array Apexi\+::m\+\_\+read\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_ab02f8638a4b1c0d34c2f2e31f52cfcac}\label{classApexi_ab02f8638a4b1c0d34c2f2e31f52cfcac}} 
+\index{Apexi@{Apexi}!m\_serialport@{m\_serialport}}
+\index{m\_serialport@{m\_serialport}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_serialport}{m\_serialport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSerialPort}{Serial\+Port}}$\ast$ Apexi\+::m\+\_\+serialport\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a74faf8d54f8a63a3243b5e1cfc2efa61}\label{classApexi_a74faf8d54f8a63a3243b5e1cfc2efa61}} 
+\index{Apexi@{Apexi}!m\_timer@{m\_timer}}
+\index{m\_timer@{m\_timer}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_timer}{m\_timer}}
+{\footnotesize\ttfamily QTimer Apexi\+::m\+\_\+timer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a76ab1b154839b1ac82782806ea9e20ba}\label{classApexi_a76ab1b154839b1ac82782806ea9e20ba}} 
+\index{Apexi@{Apexi}!m\_writeData@{m\_writeData}}
+\index{m\_writeData@{m\_writeData}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{m\_writeData}{m\_writeData}}
+{\footnotesize\ttfamily QByte\+Array Apexi\+::m\+\_\+write\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_abd5984b41305a2d8186116b1e4ce80eb}\label{classApexi_abd5984b41305a2d8186116b1e4ce80eb}} 
+\index{Apexi@{Apexi}!packageADV@{packageADV}}
+\index{packageADV@{packageADV}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageADV}{packageADV}}
+{\footnotesize\ttfamily double Apexi\+::package\+ADV\mbox{[}33\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a0b4e71625415c4cc5c6ed4e73ddc33f2}\label{classApexi_a0b4e71625415c4cc5c6ed4e73ddc33f2}} 
+\index{Apexi@{Apexi}!packageADV2@{packageADV2}}
+\index{packageADV2@{packageADV2}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageADV2}{packageADV2}}
+{\footnotesize\ttfamily double Apexi\+::package\+ADV2\mbox{[}33\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a186107070fc51eedd49f75ebf8c05216}\label{classApexi_a186107070fc51eedd49f75ebf8c05216}} 
+\index{Apexi@{Apexi}!packageADV3@{packageADV3}}
+\index{packageADV3@{packageADV3}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageADV3}{packageADV3}}
+{\footnotesize\ttfamily double Apexi\+::package\+ADV3\mbox{[}33\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a796254e5640f310914bec5c220c53012}\label{classApexi_a796254e5640f310914bec5c220c53012}} 
+\index{Apexi@{Apexi}!packageAux@{packageAux}}
+\index{packageAux@{packageAux}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageAux}{packageAux}}
+{\footnotesize\ttfamily double Apexi\+::package\+Aux\mbox{[}4\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_afd1c314896cce07b11fdb9cf42fb4c55}\label{classApexi_afd1c314896cce07b11fdb9cf42fb4c55}} 
+\index{Apexi@{Apexi}!packageAux2@{packageAux2}}
+\index{packageAux2@{packageAux2}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageAux2}{packageAux2}}
+{\footnotesize\ttfamily double Apexi\+::package\+Aux2\mbox{[}8\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a8eab51ea1ab3c410718180c0027cb83e}\label{classApexi_a8eab51ea1ab3c410718180c0027cb83e}} 
+\index{Apexi@{Apexi}!packageBasic@{packageBasic}}
+\index{packageBasic@{packageBasic}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageBasic}{packageBasic}}
+{\footnotesize\ttfamily double Apexi\+::package\+Basic\mbox{[}22\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_ad21954910d5675917664af74c6f9a1c9}\label{classApexi_ad21954910d5675917664af74c6f9a1c9}} 
+\index{Apexi@{Apexi}!packageBoostControl@{packageBoostControl}}
+\index{packageBoostControl@{packageBoostControl}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageBoostControl}{packageBoostControl}}
+{\footnotesize\ttfamily double Apexi\+::package\+Boost\+Control\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a420c3ef7e59f4b1d380739b0dbf7cf88}\label{classApexi_a420c3ef7e59f4b1d380739b0dbf7cf88}} 
+\index{Apexi@{Apexi}!packageFuelInjectors@{packageFuelInjectors}}
+\index{packageFuelInjectors@{packageFuelInjectors}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageFuelInjectors}{packageFuelInjectors}}
+{\footnotesize\ttfamily double Apexi\+::package\+Fuel\+Injectors\mbox{[}26\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a15981f3dd32e14a284762c44b5c24271}\label{classApexi_a15981f3dd32e14a284762c44b5c24271}} 
+\index{Apexi@{Apexi}!packageInjOverlap@{packageInjOverlap}}
+\index{packageInjOverlap@{packageInjOverlap}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageInjOverlap}{packageInjOverlap}}
+{\footnotesize\ttfamily double Apexi\+::package\+Inj\+Overlap\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a9dc6703f05e7c7270c04d3fc61404d93}\label{classApexi_a9dc6703f05e7c7270c04d3fc61404d93}} 
+\index{Apexi@{Apexi}!packageInjPriLagvsBattV@{packageInjPriLagvsBattV}}
+\index{packageInjPriLagvsBattV@{packageInjPriLagvsBattV}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageInjPriLagvsBattV}{packageInjPriLagvsBattV}}
+{\footnotesize\ttfamily double Apexi\+::package\+Inj\+Pri\+Lagvs\+BattV\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_ae4db0f92b7812722e438b8f288af2e2c}\label{classApexi_ae4db0f92b7812722e438b8f288af2e2c}} 
+\index{Apexi@{Apexi}!packageInjScLagvsBattV@{packageInjScLagvsBattV}}
+\index{packageInjScLagvsBattV@{packageInjScLagvsBattV}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageInjScLagvsBattV}{packageInjScLagvsBattV}}
+{\footnotesize\ttfamily double Apexi\+::package\+Inj\+Sc\+Lagvs\+BattV\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_afe66b5de3141bd64b054d642bfe3fcd6}\label{classApexi_afe66b5de3141bd64b054d642bfe3fcd6}} 
+\index{Apexi@{Apexi}!packageMap@{packageMap}}
+\index{packageMap@{packageMap}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageMap}{packageMap}}
+{\footnotesize\ttfamily double Apexi\+::package\+Map\mbox{[}2\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a9d6345f9a8a9f93774cf84cd6932c34a}\label{classApexi_a9d6345f9a8a9f93774cf84cd6932c34a}} 
+\index{Apexi@{Apexi}!packageRevIdle@{packageRevIdle}}
+\index{packageRevIdle@{packageRevIdle}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageRevIdle}{packageRevIdle}}
+{\footnotesize\ttfamily double Apexi\+::package\+Rev\+Idle\mbox{[}16\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_a35f88bde345a007d625575b0c4abd494}\label{classApexi_a35f88bde345a007d625575b0c4abd494}} 
+\index{Apexi@{Apexi}!packageSens@{packageSens}}
+\index{packageSens@{packageSens}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageSens}{packageSens}}
+{\footnotesize\ttfamily double Apexi\+::package\+Sens\mbox{[}20\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classApexi_aebf0c4feac657ae267b0bd9a34a5fc5b}\label{classApexi_aebf0c4feac657ae267b0bd9a34a5fc5b}} 
+\index{Apexi@{Apexi}!packageTurboTrans@{packageTurboTrans}}
+\index{packageTurboTrans@{packageTurboTrans}!Apexi@{Apexi}}
+\doxysubsubsection{\texorpdfstring{packageTurboTrans}{packageTurboTrans}}
+{\footnotesize\ttfamily double Apexi\+::package\+Turbo\+Trans\mbox{[}12\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{Apexi_8h}{Apexi.\+h}}\item 
+\mbox{\hyperlink{Apexi_8cpp}{Apexi.\+cpp}}\end{DoxyCompactItemize}

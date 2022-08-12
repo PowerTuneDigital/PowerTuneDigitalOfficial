@@ -1,0 +1,49 @@
+\hypertarget{calculations_8h_source}{}\doxysection{calculations.\+h}
+\mbox{\hyperlink{calculations_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef CALCULATIONS\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define CALCULATIONS\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QThread>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QTime>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{class }\mbox{\hyperlink{classcalculations}{calculations}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{11 \{}
+\DoxyCodeLine{12     Q\_OBJECT}
+\DoxyCodeLine{13 }
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15 \textcolor{keyword}{public}:}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 }
+\DoxyCodeLine{18     \textcolor{keyword}{explicit} \mbox{\hyperlink{classcalculations_a177cc54807d0ba2389c0d1770c928c9b}{calculations}}(QObject *parent = 0);}
+\DoxyCodeLine{19     \textcolor{keyword}{explicit} \mbox{\hyperlink{classcalculations_a177cc54807d0ba2389c0d1770c928c9b}{calculations}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{20 }
+\DoxyCodeLine{21 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{22     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a49fa430d57eede992776361c46299fe9}{startdragtimer}}();}
+\DoxyCodeLine{23     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a8e8255be932ea0f0c84304f757cdf1d7}{startreactiontimer}}();}
+\DoxyCodeLine{24     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a692cec2d27e0aefd3d6aee8384e9d4eb}{qmlrealtime}}();}
+\DoxyCodeLine{25     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_adf907331066a3ce952015277ebd7eae8}{stopreactiontimer}}();}
+\DoxyCodeLine{26     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a1bc9adf4b1a25f0843e6e51cfb9d2321}{calculatereactiontime}}();}
+\DoxyCodeLine{27     \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a3153c50c226f6960fdcf1daa998eba35}{calculate}}();}
+\DoxyCodeLine{28     \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a62003ff4c935b799de90cef1cce4b7b7}{start}}();}
+\DoxyCodeLine{29     \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a5503879233aabef13b79e4e0af7ae1f2}{stop}}();}
+\DoxyCodeLine{30     \textcolor{keywordtype}{void} \mbox{\hyperlink{classcalculations_a525161538875c2fc72483e364ee923dc}{resettrip}}();}
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 }
+\DoxyCodeLine{34 \textcolor{keyword}{private}:}
+\DoxyCodeLine{35     \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classcalculations_ad7b803846765ec95acd9b66ca47ca4f6}{m\_dashboard}};}
+\DoxyCodeLine{36     QTimer      \mbox{\hyperlink{classcalculations_a340349f6d95125c0ae433a0f324e4389}{m\_updatetimer}};}
+\DoxyCodeLine{37     QTimer      \mbox{\hyperlink{classcalculations_aca735b422ce840e2013eb8efb79d07cb}{m\_reactiontimer}};}
+\DoxyCodeLine{38     QTimer      \mbox{\hyperlink{classcalculations_a83015b7ea8e708398babeb5628f31fcd}{m\_dynotimer}};}
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40 \};}
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 }
+\DoxyCodeLine{44 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// CALCULATIONS\_H}}
+
+\end{DoxyCode}

@@ -1,0 +1,8 @@
+<map id="Sensors::Gyro" name="Sensors::Gyro">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,108,57"/>
+<area shape="rect" id="node2" href="$classSensors.html#a1924cb8692834d02ebfda23353ae44ef" title=" " alt="" coords="176,5,279,32"/>
+<area shape="rect" id="node3" href="$classSensors.html#a0e0a9f2fcc92e0f5141cad6703c3182f" title=" " alt="" coords="156,56,299,83"/>
+<area shape="rect" id="node4" href="$classDashBoard.html#ab7161b17c742e7b851d49af35bf890a9" title=" " alt="" coords="347,5,487,32"/>
+<area shape="rect" id="node5" href="$classDashBoard.html#afedac94ea1c8e4ee0cf1ab500bd93ee8" title=" " alt="" coords="347,56,487,83"/>
+<area shape="rect" id="node6" href="$classDashBoard.html#a30d3488953509f88a603354c3a9acc6f" title=" " alt="" coords="347,107,487,133"/>
+</map>

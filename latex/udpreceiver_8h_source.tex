@@ -1,0 +1,36 @@
+\hypertarget{udpreceiver_8h_source}{}\doxysection{udpreceiver.\+h}
+\mbox{\hyperlink{udpreceiver_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef UDPRECEIVER\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define UDPRECEIVER\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{keyword}{class }\mbox{\hyperlink{classudpreceiver}{udpreceiver}};}
+\DoxyCodeLine{6 \textcolor{keyword}{class }QUdpSocket;}
+\DoxyCodeLine{7 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 \textcolor{keyword}{class }\mbox{\hyperlink{classudpreceiver}{udpreceiver}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{10 \{}
+\DoxyCodeLine{11     Q\_OBJECT}
+\DoxyCodeLine{12 }
+\DoxyCodeLine{13 \textcolor{keyword}{public}:}
+\DoxyCodeLine{14     \textcolor{keyword}{explicit} \mbox{\hyperlink{classudpreceiver_a8c994eb6d86e3fb20d9fcc996fbc48ee}{udpreceiver}}(QObject *parent = 0);}
+\DoxyCodeLine{15      \textcolor{keyword}{explicit} \mbox{\hyperlink{classudpreceiver_a8c994eb6d86e3fb20d9fcc996fbc48ee}{udpreceiver}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{16 }
+\DoxyCodeLine{17 \textcolor{keyword}{private}:}
+\DoxyCodeLine{18      \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classudpreceiver_aedd17c5f3e9c48926a892424a80e7654}{m\_dashboard}};}
+\DoxyCodeLine{19      QUdpSocket *\mbox{\hyperlink{classudpreceiver_ab57aaf131fad20ec96e256c5a4c9d911}{udpSocket}} = \textcolor{keyword}{nullptr};}
+\DoxyCodeLine{20      \textcolor{keywordtype}{int}         \mbox{\hyperlink{classudpreceiver_a2784a7466ce0a044a359eee8c585e1a7}{m\_units}};}
+\DoxyCodeLine{21 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{22      \textcolor{keywordtype}{void} \mbox{\hyperlink{classudpreceiver_a725cf4f5cf798fd5baed7eee2e6dd5f2}{processPendingDatagrams}}();}
+\DoxyCodeLine{23      \textcolor{keywordtype}{void} \mbox{\hyperlink{classudpreceiver_a2d7852b9e4be87d9a3ce960d8a7eb9aa}{startreceiver}}();}
+\DoxyCodeLine{24      \textcolor{keywordtype}{void} \mbox{\hyperlink{classudpreceiver_a97192696edf96c4be382dbe35c9a222f}{closeConnection}}();}
+\DoxyCodeLine{25 signals:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \};}
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// UDPRECEIVER\_H}}
+
+\end{DoxyCode}

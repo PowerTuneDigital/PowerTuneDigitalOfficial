@@ -1,0 +1,635 @@
+\hypertarget{dashboard_8cpp}{}\doxysection{dashboard.\+cpp File Reference}
+\label{dashboard_8cpp}\index{dashboard.cpp@{dashboard.cpp}}
+{\ttfamily \#include $<$dashboard.\+h$>$}\newline
+{\ttfamily \#include $<$QString\+List$>$}\newline
+{\ttfamily \#include $<$QDebug$>$}\newline
+{\ttfamily \#include $<$QVector$>$}\newline
+{\ttfamily \#include \char`\"{}math.\+h\char`\"{}}\newline
+Include dependency graph for dashboard.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dashboard_8cpp__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+QVector$<$ int $>$ \mbox{\hyperlink{dashboard_8cpp_abd6f714e98c152d7700b007c54201c76}{average\+Speed}} (0)
+\item 
+QVector$<$ int $>$ \mbox{\hyperlink{dashboard_8cpp_abaed07c489b38d23644263ae435338d4}{average\+RPM}} (0)
+\item 
+QVector$<$ qreal $>$ \mbox{\hyperlink{dashboard_8cpp_a2751a06c2fa6c8388f2d37d5d26453f3}{averageexanaloginput7}} (0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a047c11e4455631d3cbd4c291646caf7d}{avgspeed}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a357a8e30f5b783176fbab6fc1fe56681}{avgrpm}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a22eef2037c527cd7ea524946cccfe76f}{avgexanaloginput7}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a3dc2b3a79119c08cab6c2c198492a404}{R2}} = 1430
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aafa2a0e3bef70ccc2f550b461392b2ff}{R3}} = 100
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_af14928c3783967b275eb31ec6cafaef0}{R4}} = 1000
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a6df74314669ea272b5f96140fb5bfb3e}{AN0\+R3}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aea52fa96cbe4d6223a1cbc235e6bf06b}{AN1\+R3}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a3da9dac6537863c152e4fc22d6b972db}{AN2\+R3}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a4d49f912eb9decdf52ed58790c514dc6}{AN0\+R4}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a3dd7ca9146e72e9820f237eed4b29747}{AN1\+R4}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a0e6edd9d02b4e7d7ef1dd6c6f5385543}{AN2\+R4}} = 0
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a1f1353f0c20372aed69e00f514b8702c}{Rtotalexan0}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a07ba9e9385396074151909855fe9e053}{Rtotalexan1}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a85f92e5f3c3c9f5dbed5783911326398}{Rtotalexan2}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a5eb1211a1129f14f0e6ed1dae7c1af6a}{Rtotalexan3}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a14f716c89002fd58fddc52d8a8fd0e05}{Rtotalexan4}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a5276c2cf2504430a093b79eb864597e3}{Rtotalexan5}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a0464a426a4210ca9682ab204b77eb3fe}{AN00}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a8c4c0ce901768d33079844e1d4f93ea4}{AN05}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a2d3cef63d2ce838538c8728d8c4f600f}{AN10}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a7fda3a8bd3ede6b7525b1f113eda6f47}{AN15}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_acd791cecc73c88f70043485bb51adfa6}{AN20}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a23d86ddcb5afb9645710f588827939ed}{AN25}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a3d7b2964ac9126ea02afeb4420bada5e}{AN30}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aa52d9027244a97b000ac09241e8d7322}{AN35}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_ab1e5587efa56a140b4bc4b4c0d941816}{AN40}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a25f1ef987ea45de35af0035ab0a9386f}{AN45}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a03ccae41d6370ea3c582bc278702cc33}{AN50}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a6de1b51e12dd3ece18a47aa4eec626c7}{AN55}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a1d5c2633dc1af02bf3fe18730426b9db}{AN60}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a4ce6f614138a5a6990a6ca2735bf1de4}{AN65}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a63b5a87d469de45a9671acaaa9a28d98}{AN70}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_adc1e575096f483e24e853be069313203}{AN75}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aa13b8eff441887185042d1d1fbfb3023}{AN80}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a0521e3db97448c3944e21a10264fc355}{AN85}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a115a4937724205d613ad7f07b87f0560}{AN90}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a83b5db46c7aab7bdedadd0f5300a37b7}{AN95}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a16eba0395592b3aeb30b3e3ec2a163b2}{AN100}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a05e92745847c2555e2e639c7735adb70}{AN105}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a2ba5648f3168374b1a47bbf2b2b5a8f5}{EXAN00}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a6ab30f1e8d381e23d869eb28ae6addc1}{EXAN05}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a2093bef895f1939fcd8903144fc934a4}{EXAN10}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a0bcf3968acd04afdf9b62d04d2204572}{EXAN15}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a8043886d4ed80b9ef6f45b9f775eb186}{EXAN20}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a71b45a3e0c2243da65f7e59ee01ae45b}{EXAN25}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_acb316412ff3e8e98ef201d29055eb1ff}{EXAN30}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_acc20b58122cf1e70b1310d62cdf83d63}{EXAN35}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a2a9b7cc3e92b0b5d064466d2f346777f}{EXAN40}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aa313b1bbdc20c3d8b1f006dc66be0c7e}{EXAN45}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_ae5c3d30681d93d4068196da92d45ca52}{EXAN50}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a12b1b563db130c652a23f43de47df7a4}{EXAN55}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a85ec16a5f7b8a0a8d6e3576728a21669}{EXAN60}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a11e9a81fcaae3729caf12b52b687fb50}{EXAN65}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a1e2f3dd649174aed024c3ae6ef627492}{EXAN70}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a5416a85f92c017ae4ecd63a6259b5296}{EXAN75}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_ae6d24f4990ca234f3ae802140879b988}{Resistance\+EXAN0}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a5c06a0be2f01a238cd22d4ad7923998d}{Resistance\+EXAN1}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_abf2b31130e9d79443016f62379376c22}{Resistance\+EXAN2}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_aa9500e1917e3c996a9df854bddccf9bc}{Resistance\+EXAN3}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a08734f6da0682f888ce34c7d823463fe}{Resistance\+EXAN4}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_abacd789dbe4229cd12e6efd1522f3b9e}{Resistance\+EXAN5}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a551449bb951b21f90d258bc1ff74c486}{EXsteinhart0}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a3516a618462d62c391a1b7b5be465f2a}{EXsteinhart1}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_af0427d0fb0bfba316456fa4a1b152f64}{EXsteinhart2}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a5698b9fd963665fa2c2c8ee9102539d8}{EXsteinhart3}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_a32c941d44b479969a81e174604e8db8e}{EXsteinhart4}}
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_ab817a15c320f3d0f8edc33f64b262875}{EXsteinhart5}}
+\item 
+qreal \mbox{\hyperlink{dashboard_8cpp_a76983bfbd14dfe28d0f6b934fc34e6d4}{lamdamultiplicator}} = 1
+\item 
+int \mbox{\hyperlink{dashboard_8cpp_aa7ab72a18faba1d13601a9209ff2dcf8}{brightness}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dashboard_8cpp_a2751a06c2fa6c8388f2d37d5d26453f3}\label{dashboard_8cpp_a2751a06c2fa6c8388f2d37d5d26453f3}} 
+\index{dashboard.cpp@{dashboard.cpp}!averageexanaloginput7@{averageexanaloginput7}}
+\index{averageexanaloginput7@{averageexanaloginput7}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{averageexanaloginput7()}{averageexanaloginput7()}}
+{\footnotesize\ttfamily QVector$<$ qreal $>$ averageexanaloginput7 (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dashboard_8cpp_a2751a06c2fa6c8388f2d37d5d26453f3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dashboard_8cpp_abaed07c489b38d23644263ae435338d4}\label{dashboard_8cpp_abaed07c489b38d23644263ae435338d4}} 
+\index{dashboard.cpp@{dashboard.cpp}!averageRPM@{averageRPM}}
+\index{averageRPM@{averageRPM}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{averageRPM()}{averageRPM()}}
+{\footnotesize\ttfamily QVector$<$ int $>$ average\+RPM (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dashboard_8cpp_abaed07c489b38d23644263ae435338d4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{dashboard_8cpp_abd6f714e98c152d7700b007c54201c76}\label{dashboard_8cpp_abd6f714e98c152d7700b007c54201c76}} 
+\index{dashboard.cpp@{dashboard.cpp}!averageSpeed@{averageSpeed}}
+\index{averageSpeed@{averageSpeed}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{averageSpeed()}{averageSpeed()}}
+{\footnotesize\ttfamily QVector$<$ int $>$ average\+Speed (\begin{DoxyParamCaption}\item[{0}]{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dashboard_8cpp_abd6f714e98c152d7700b007c54201c76_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{dashboard_8cpp_a0464a426a4210ca9682ab204b77eb3fe}\label{dashboard_8cpp_a0464a426a4210ca9682ab204b77eb3fe}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN00@{AN00}}
+\index{AN00@{AN00}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN00}{AN00}}
+{\footnotesize\ttfamily qreal AN00}
+
+\mbox{\Hypertarget{dashboard_8cpp_a8c4c0ce901768d33079844e1d4f93ea4}\label{dashboard_8cpp_a8c4c0ce901768d33079844e1d4f93ea4}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN05@{AN05}}
+\index{AN05@{AN05}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN05}{AN05}}
+{\footnotesize\ttfamily qreal AN05}
+
+\mbox{\Hypertarget{dashboard_8cpp_a6df74314669ea272b5f96140fb5bfb3e}\label{dashboard_8cpp_a6df74314669ea272b5f96140fb5bfb3e}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN0R3@{AN0R3}}
+\index{AN0R3@{AN0R3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN0R3}{AN0R3}}
+{\footnotesize\ttfamily qreal AN0\+R3 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a4d49f912eb9decdf52ed58790c514dc6}\label{dashboard_8cpp_a4d49f912eb9decdf52ed58790c514dc6}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN0R4@{AN0R4}}
+\index{AN0R4@{AN0R4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN0R4}{AN0R4}}
+{\footnotesize\ttfamily qreal AN0\+R4 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a2d3cef63d2ce838538c8728d8c4f600f}\label{dashboard_8cpp_a2d3cef63d2ce838538c8728d8c4f600f}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN10@{AN10}}
+\index{AN10@{AN10}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN10}{AN10}}
+{\footnotesize\ttfamily qreal AN10}
+
+\mbox{\Hypertarget{dashboard_8cpp_a16eba0395592b3aeb30b3e3ec2a163b2}\label{dashboard_8cpp_a16eba0395592b3aeb30b3e3ec2a163b2}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN100@{AN100}}
+\index{AN100@{AN100}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN100}{AN100}}
+{\footnotesize\ttfamily qreal AN100}
+
+\mbox{\Hypertarget{dashboard_8cpp_a05e92745847c2555e2e639c7735adb70}\label{dashboard_8cpp_a05e92745847c2555e2e639c7735adb70}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN105@{AN105}}
+\index{AN105@{AN105}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN105}{AN105}}
+{\footnotesize\ttfamily qreal AN105}
+
+\mbox{\Hypertarget{dashboard_8cpp_a7fda3a8bd3ede6b7525b1f113eda6f47}\label{dashboard_8cpp_a7fda3a8bd3ede6b7525b1f113eda6f47}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN15@{AN15}}
+\index{AN15@{AN15}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN15}{AN15}}
+{\footnotesize\ttfamily qreal AN15}
+
+\mbox{\Hypertarget{dashboard_8cpp_aea52fa96cbe4d6223a1cbc235e6bf06b}\label{dashboard_8cpp_aea52fa96cbe4d6223a1cbc235e6bf06b}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN1R3@{AN1R3}}
+\index{AN1R3@{AN1R3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN1R3}{AN1R3}}
+{\footnotesize\ttfamily qreal AN1\+R3 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a3dd7ca9146e72e9820f237eed4b29747}\label{dashboard_8cpp_a3dd7ca9146e72e9820f237eed4b29747}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN1R4@{AN1R4}}
+\index{AN1R4@{AN1R4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN1R4}{AN1R4}}
+{\footnotesize\ttfamily qreal AN1\+R4 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_acd791cecc73c88f70043485bb51adfa6}\label{dashboard_8cpp_acd791cecc73c88f70043485bb51adfa6}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN20@{AN20}}
+\index{AN20@{AN20}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN20}{AN20}}
+{\footnotesize\ttfamily qreal AN20}
+
+\mbox{\Hypertarget{dashboard_8cpp_a23d86ddcb5afb9645710f588827939ed}\label{dashboard_8cpp_a23d86ddcb5afb9645710f588827939ed}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN25@{AN25}}
+\index{AN25@{AN25}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN25}{AN25}}
+{\footnotesize\ttfamily qreal AN25}
+
+\mbox{\Hypertarget{dashboard_8cpp_a3da9dac6537863c152e4fc22d6b972db}\label{dashboard_8cpp_a3da9dac6537863c152e4fc22d6b972db}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN2R3@{AN2R3}}
+\index{AN2R3@{AN2R3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN2R3}{AN2R3}}
+{\footnotesize\ttfamily qreal AN2\+R3 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a0e6edd9d02b4e7d7ef1dd6c6f5385543}\label{dashboard_8cpp_a0e6edd9d02b4e7d7ef1dd6c6f5385543}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN2R4@{AN2R4}}
+\index{AN2R4@{AN2R4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN2R4}{AN2R4}}
+{\footnotesize\ttfamily qreal AN2\+R4 = 0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a3d7b2964ac9126ea02afeb4420bada5e}\label{dashboard_8cpp_a3d7b2964ac9126ea02afeb4420bada5e}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN30@{AN30}}
+\index{AN30@{AN30}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN30}{AN30}}
+{\footnotesize\ttfamily qreal AN30}
+
+\mbox{\Hypertarget{dashboard_8cpp_aa52d9027244a97b000ac09241e8d7322}\label{dashboard_8cpp_aa52d9027244a97b000ac09241e8d7322}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN35@{AN35}}
+\index{AN35@{AN35}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN35}{AN35}}
+{\footnotesize\ttfamily qreal AN35}
+
+\mbox{\Hypertarget{dashboard_8cpp_ab1e5587efa56a140b4bc4b4c0d941816}\label{dashboard_8cpp_ab1e5587efa56a140b4bc4b4c0d941816}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN40@{AN40}}
+\index{AN40@{AN40}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN40}{AN40}}
+{\footnotesize\ttfamily qreal AN40}
+
+\mbox{\Hypertarget{dashboard_8cpp_a25f1ef987ea45de35af0035ab0a9386f}\label{dashboard_8cpp_a25f1ef987ea45de35af0035ab0a9386f}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN45@{AN45}}
+\index{AN45@{AN45}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN45}{AN45}}
+{\footnotesize\ttfamily qreal AN45}
+
+\mbox{\Hypertarget{dashboard_8cpp_a03ccae41d6370ea3c582bc278702cc33}\label{dashboard_8cpp_a03ccae41d6370ea3c582bc278702cc33}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN50@{AN50}}
+\index{AN50@{AN50}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN50}{AN50}}
+{\footnotesize\ttfamily qreal AN50}
+
+\mbox{\Hypertarget{dashboard_8cpp_a6de1b51e12dd3ece18a47aa4eec626c7}\label{dashboard_8cpp_a6de1b51e12dd3ece18a47aa4eec626c7}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN55@{AN55}}
+\index{AN55@{AN55}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN55}{AN55}}
+{\footnotesize\ttfamily qreal AN55}
+
+\mbox{\Hypertarget{dashboard_8cpp_a1d5c2633dc1af02bf3fe18730426b9db}\label{dashboard_8cpp_a1d5c2633dc1af02bf3fe18730426b9db}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN60@{AN60}}
+\index{AN60@{AN60}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN60}{AN60}}
+{\footnotesize\ttfamily qreal AN60}
+
+\mbox{\Hypertarget{dashboard_8cpp_a4ce6f614138a5a6990a6ca2735bf1de4}\label{dashboard_8cpp_a4ce6f614138a5a6990a6ca2735bf1de4}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN65@{AN65}}
+\index{AN65@{AN65}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN65}{AN65}}
+{\footnotesize\ttfamily qreal AN65}
+
+\mbox{\Hypertarget{dashboard_8cpp_a63b5a87d469de45a9671acaaa9a28d98}\label{dashboard_8cpp_a63b5a87d469de45a9671acaaa9a28d98}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN70@{AN70}}
+\index{AN70@{AN70}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN70}{AN70}}
+{\footnotesize\ttfamily qreal AN70}
+
+\mbox{\Hypertarget{dashboard_8cpp_adc1e575096f483e24e853be069313203}\label{dashboard_8cpp_adc1e575096f483e24e853be069313203}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN75@{AN75}}
+\index{AN75@{AN75}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN75}{AN75}}
+{\footnotesize\ttfamily qreal AN75}
+
+\mbox{\Hypertarget{dashboard_8cpp_aa13b8eff441887185042d1d1fbfb3023}\label{dashboard_8cpp_aa13b8eff441887185042d1d1fbfb3023}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN80@{AN80}}
+\index{AN80@{AN80}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN80}{AN80}}
+{\footnotesize\ttfamily qreal AN80}
+
+\mbox{\Hypertarget{dashboard_8cpp_a0521e3db97448c3944e21a10264fc355}\label{dashboard_8cpp_a0521e3db97448c3944e21a10264fc355}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN85@{AN85}}
+\index{AN85@{AN85}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN85}{AN85}}
+{\footnotesize\ttfamily qreal AN85}
+
+\mbox{\Hypertarget{dashboard_8cpp_a115a4937724205d613ad7f07b87f0560}\label{dashboard_8cpp_a115a4937724205d613ad7f07b87f0560}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN90@{AN90}}
+\index{AN90@{AN90}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN90}{AN90}}
+{\footnotesize\ttfamily qreal AN90}
+
+\mbox{\Hypertarget{dashboard_8cpp_a83b5db46c7aab7bdedadd0f5300a37b7}\label{dashboard_8cpp_a83b5db46c7aab7bdedadd0f5300a37b7}} 
+\index{dashboard.cpp@{dashboard.cpp}!AN95@{AN95}}
+\index{AN95@{AN95}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{AN95}{AN95}}
+{\footnotesize\ttfamily qreal AN95}
+
+\mbox{\Hypertarget{dashboard_8cpp_a22eef2037c527cd7ea524946cccfe76f}\label{dashboard_8cpp_a22eef2037c527cd7ea524946cccfe76f}} 
+\index{dashboard.cpp@{dashboard.cpp}!avgexanaloginput7@{avgexanaloginput7}}
+\index{avgexanaloginput7@{avgexanaloginput7}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{avgexanaloginput7}{avgexanaloginput7}}
+{\footnotesize\ttfamily qreal avgexanaloginput7}
+
+\mbox{\Hypertarget{dashboard_8cpp_a357a8e30f5b783176fbab6fc1fe56681}\label{dashboard_8cpp_a357a8e30f5b783176fbab6fc1fe56681}} 
+\index{dashboard.cpp@{dashboard.cpp}!avgrpm@{avgrpm}}
+\index{avgrpm@{avgrpm}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{avgrpm}{avgrpm}}
+{\footnotesize\ttfamily int avgrpm}
+
+\mbox{\Hypertarget{dashboard_8cpp_a047c11e4455631d3cbd4c291646caf7d}\label{dashboard_8cpp_a047c11e4455631d3cbd4c291646caf7d}} 
+\index{dashboard.cpp@{dashboard.cpp}!avgspeed@{avgspeed}}
+\index{avgspeed@{avgspeed}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{avgspeed}{avgspeed}}
+{\footnotesize\ttfamily int avgspeed}
+
+\mbox{\Hypertarget{dashboard_8cpp_aa7ab72a18faba1d13601a9209ff2dcf8}\label{dashboard_8cpp_aa7ab72a18faba1d13601a9209ff2dcf8}} 
+\index{dashboard.cpp@{dashboard.cpp}!brightness@{brightness}}
+\index{brightness@{brightness}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{brightness}{brightness}}
+{\footnotesize\ttfamily int brightness}
+
+\mbox{\Hypertarget{dashboard_8cpp_a2ba5648f3168374b1a47bbf2b2b5a8f5}\label{dashboard_8cpp_a2ba5648f3168374b1a47bbf2b2b5a8f5}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN00@{EXAN00}}
+\index{EXAN00@{EXAN00}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN00}{EXAN00}}
+{\footnotesize\ttfamily qreal EXAN00}
+
+\mbox{\Hypertarget{dashboard_8cpp_a6ab30f1e8d381e23d869eb28ae6addc1}\label{dashboard_8cpp_a6ab30f1e8d381e23d869eb28ae6addc1}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN05@{EXAN05}}
+\index{EXAN05@{EXAN05}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN05}{EXAN05}}
+{\footnotesize\ttfamily qreal EXAN05}
+
+\mbox{\Hypertarget{dashboard_8cpp_a2093bef895f1939fcd8903144fc934a4}\label{dashboard_8cpp_a2093bef895f1939fcd8903144fc934a4}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN10@{EXAN10}}
+\index{EXAN10@{EXAN10}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN10}{EXAN10}}
+{\footnotesize\ttfamily qreal EXAN10}
+
+\mbox{\Hypertarget{dashboard_8cpp_a0bcf3968acd04afdf9b62d04d2204572}\label{dashboard_8cpp_a0bcf3968acd04afdf9b62d04d2204572}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN15@{EXAN15}}
+\index{EXAN15@{EXAN15}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN15}{EXAN15}}
+{\footnotesize\ttfamily qreal EXAN15}
+
+\mbox{\Hypertarget{dashboard_8cpp_a8043886d4ed80b9ef6f45b9f775eb186}\label{dashboard_8cpp_a8043886d4ed80b9ef6f45b9f775eb186}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN20@{EXAN20}}
+\index{EXAN20@{EXAN20}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN20}{EXAN20}}
+{\footnotesize\ttfamily qreal EXAN20}
+
+\mbox{\Hypertarget{dashboard_8cpp_a71b45a3e0c2243da65f7e59ee01ae45b}\label{dashboard_8cpp_a71b45a3e0c2243da65f7e59ee01ae45b}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN25@{EXAN25}}
+\index{EXAN25@{EXAN25}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN25}{EXAN25}}
+{\footnotesize\ttfamily qreal EXAN25}
+
+\mbox{\Hypertarget{dashboard_8cpp_acb316412ff3e8e98ef201d29055eb1ff}\label{dashboard_8cpp_acb316412ff3e8e98ef201d29055eb1ff}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN30@{EXAN30}}
+\index{EXAN30@{EXAN30}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN30}{EXAN30}}
+{\footnotesize\ttfamily qreal EXAN30}
+
+\mbox{\Hypertarget{dashboard_8cpp_acc20b58122cf1e70b1310d62cdf83d63}\label{dashboard_8cpp_acc20b58122cf1e70b1310d62cdf83d63}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN35@{EXAN35}}
+\index{EXAN35@{EXAN35}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN35}{EXAN35}}
+{\footnotesize\ttfamily qreal EXAN35}
+
+\mbox{\Hypertarget{dashboard_8cpp_a2a9b7cc3e92b0b5d064466d2f346777f}\label{dashboard_8cpp_a2a9b7cc3e92b0b5d064466d2f346777f}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN40@{EXAN40}}
+\index{EXAN40@{EXAN40}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN40}{EXAN40}}
+{\footnotesize\ttfamily qreal EXAN40}
+
+\mbox{\Hypertarget{dashboard_8cpp_aa313b1bbdc20c3d8b1f006dc66be0c7e}\label{dashboard_8cpp_aa313b1bbdc20c3d8b1f006dc66be0c7e}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN45@{EXAN45}}
+\index{EXAN45@{EXAN45}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN45}{EXAN45}}
+{\footnotesize\ttfamily qreal EXAN45}
+
+\mbox{\Hypertarget{dashboard_8cpp_ae5c3d30681d93d4068196da92d45ca52}\label{dashboard_8cpp_ae5c3d30681d93d4068196da92d45ca52}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN50@{EXAN50}}
+\index{EXAN50@{EXAN50}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN50}{EXAN50}}
+{\footnotesize\ttfamily qreal EXAN50}
+
+\mbox{\Hypertarget{dashboard_8cpp_a12b1b563db130c652a23f43de47df7a4}\label{dashboard_8cpp_a12b1b563db130c652a23f43de47df7a4}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN55@{EXAN55}}
+\index{EXAN55@{EXAN55}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN55}{EXAN55}}
+{\footnotesize\ttfamily qreal EXAN55}
+
+\mbox{\Hypertarget{dashboard_8cpp_a85ec16a5f7b8a0a8d6e3576728a21669}\label{dashboard_8cpp_a85ec16a5f7b8a0a8d6e3576728a21669}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN60@{EXAN60}}
+\index{EXAN60@{EXAN60}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN60}{EXAN60}}
+{\footnotesize\ttfamily qreal EXAN60}
+
+\mbox{\Hypertarget{dashboard_8cpp_a11e9a81fcaae3729caf12b52b687fb50}\label{dashboard_8cpp_a11e9a81fcaae3729caf12b52b687fb50}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN65@{EXAN65}}
+\index{EXAN65@{EXAN65}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN65}{EXAN65}}
+{\footnotesize\ttfamily qreal EXAN65}
+
+\mbox{\Hypertarget{dashboard_8cpp_a1e2f3dd649174aed024c3ae6ef627492}\label{dashboard_8cpp_a1e2f3dd649174aed024c3ae6ef627492}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN70@{EXAN70}}
+\index{EXAN70@{EXAN70}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN70}{EXAN70}}
+{\footnotesize\ttfamily qreal EXAN70}
+
+\mbox{\Hypertarget{dashboard_8cpp_a5416a85f92c017ae4ecd63a6259b5296}\label{dashboard_8cpp_a5416a85f92c017ae4ecd63a6259b5296}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXAN75@{EXAN75}}
+\index{EXAN75@{EXAN75}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXAN75}{EXAN75}}
+{\footnotesize\ttfamily qreal EXAN75}
+
+\mbox{\Hypertarget{dashboard_8cpp_a551449bb951b21f90d258bc1ff74c486}\label{dashboard_8cpp_a551449bb951b21f90d258bc1ff74c486}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart0@{EXsteinhart0}}
+\index{EXsteinhart0@{EXsteinhart0}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart0}{EXsteinhart0}}
+{\footnotesize\ttfamily int EXsteinhart0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a3516a618462d62c391a1b7b5be465f2a}\label{dashboard_8cpp_a3516a618462d62c391a1b7b5be465f2a}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart1@{EXsteinhart1}}
+\index{EXsteinhart1@{EXsteinhart1}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart1}{EXsteinhart1}}
+{\footnotesize\ttfamily int EXsteinhart1}
+
+\mbox{\Hypertarget{dashboard_8cpp_af0427d0fb0bfba316456fa4a1b152f64}\label{dashboard_8cpp_af0427d0fb0bfba316456fa4a1b152f64}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart2@{EXsteinhart2}}
+\index{EXsteinhart2@{EXsteinhart2}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart2}{EXsteinhart2}}
+{\footnotesize\ttfamily int EXsteinhart2}
+
+\mbox{\Hypertarget{dashboard_8cpp_a5698b9fd963665fa2c2c8ee9102539d8}\label{dashboard_8cpp_a5698b9fd963665fa2c2c8ee9102539d8}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart3@{EXsteinhart3}}
+\index{EXsteinhart3@{EXsteinhart3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart3}{EXsteinhart3}}
+{\footnotesize\ttfamily int EXsteinhart3}
+
+\mbox{\Hypertarget{dashboard_8cpp_a32c941d44b479969a81e174604e8db8e}\label{dashboard_8cpp_a32c941d44b479969a81e174604e8db8e}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart4@{EXsteinhart4}}
+\index{EXsteinhart4@{EXsteinhart4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart4}{EXsteinhart4}}
+{\footnotesize\ttfamily int EXsteinhart4}
+
+\mbox{\Hypertarget{dashboard_8cpp_ab817a15c320f3d0f8edc33f64b262875}\label{dashboard_8cpp_ab817a15c320f3d0f8edc33f64b262875}} 
+\index{dashboard.cpp@{dashboard.cpp}!EXsteinhart5@{EXsteinhart5}}
+\index{EXsteinhart5@{EXsteinhart5}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{EXsteinhart5}{EXsteinhart5}}
+{\footnotesize\ttfamily int EXsteinhart5}
+
+\mbox{\Hypertarget{dashboard_8cpp_a76983bfbd14dfe28d0f6b934fc34e6d4}\label{dashboard_8cpp_a76983bfbd14dfe28d0f6b934fc34e6d4}} 
+\index{dashboard.cpp@{dashboard.cpp}!lamdamultiplicator@{lamdamultiplicator}}
+\index{lamdamultiplicator@{lamdamultiplicator}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{lamdamultiplicator}{lamdamultiplicator}}
+{\footnotesize\ttfamily qreal lamdamultiplicator = 1}
+
+\mbox{\Hypertarget{dashboard_8cpp_a3dc2b3a79119c08cab6c2c198492a404}\label{dashboard_8cpp_a3dc2b3a79119c08cab6c2c198492a404}} 
+\index{dashboard.cpp@{dashboard.cpp}!R2@{R2}}
+\index{R2@{R2}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{R2}{R2}}
+{\footnotesize\ttfamily qreal R2 = 1430}
+
+\mbox{\Hypertarget{dashboard_8cpp_aafa2a0e3bef70ccc2f550b461392b2ff}\label{dashboard_8cpp_aafa2a0e3bef70ccc2f550b461392b2ff}} 
+\index{dashboard.cpp@{dashboard.cpp}!R3@{R3}}
+\index{R3@{R3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{R3}{R3}}
+{\footnotesize\ttfamily qreal R3 = 100}
+
+\mbox{\Hypertarget{dashboard_8cpp_af14928c3783967b275eb31ec6cafaef0}\label{dashboard_8cpp_af14928c3783967b275eb31ec6cafaef0}} 
+\index{dashboard.cpp@{dashboard.cpp}!R4@{R4}}
+\index{R4@{R4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{R4}{R4}}
+{\footnotesize\ttfamily qreal R4 = 1000}
+
+\mbox{\Hypertarget{dashboard_8cpp_ae6d24f4990ca234f3ae802140879b988}\label{dashboard_8cpp_ae6d24f4990ca234f3ae802140879b988}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN0@{ResistanceEXAN0}}
+\index{ResistanceEXAN0@{ResistanceEXAN0}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN0}{ResistanceEXAN0}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a5c06a0be2f01a238cd22d4ad7923998d}\label{dashboard_8cpp_a5c06a0be2f01a238cd22d4ad7923998d}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN1@{ResistanceEXAN1}}
+\index{ResistanceEXAN1@{ResistanceEXAN1}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN1}{ResistanceEXAN1}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN1}
+
+\mbox{\Hypertarget{dashboard_8cpp_abf2b31130e9d79443016f62379376c22}\label{dashboard_8cpp_abf2b31130e9d79443016f62379376c22}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN2@{ResistanceEXAN2}}
+\index{ResistanceEXAN2@{ResistanceEXAN2}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN2}{ResistanceEXAN2}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN2}
+
+\mbox{\Hypertarget{dashboard_8cpp_aa9500e1917e3c996a9df854bddccf9bc}\label{dashboard_8cpp_aa9500e1917e3c996a9df854bddccf9bc}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN3@{ResistanceEXAN3}}
+\index{ResistanceEXAN3@{ResistanceEXAN3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN3}{ResistanceEXAN3}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN3}
+
+\mbox{\Hypertarget{dashboard_8cpp_a08734f6da0682f888ce34c7d823463fe}\label{dashboard_8cpp_a08734f6da0682f888ce34c7d823463fe}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN4@{ResistanceEXAN4}}
+\index{ResistanceEXAN4@{ResistanceEXAN4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN4}{ResistanceEXAN4}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN4}
+
+\mbox{\Hypertarget{dashboard_8cpp_abacd789dbe4229cd12e6efd1522f3b9e}\label{dashboard_8cpp_abacd789dbe4229cd12e6efd1522f3b9e}} 
+\index{dashboard.cpp@{dashboard.cpp}!ResistanceEXAN5@{ResistanceEXAN5}}
+\index{ResistanceEXAN5@{ResistanceEXAN5}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{ResistanceEXAN5}{ResistanceEXAN5}}
+{\footnotesize\ttfamily qreal Resistance\+EXAN5}
+
+\mbox{\Hypertarget{dashboard_8cpp_a1f1353f0c20372aed69e00f514b8702c}\label{dashboard_8cpp_a1f1353f0c20372aed69e00f514b8702c}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan0@{Rtotalexan0}}
+\index{Rtotalexan0@{Rtotalexan0}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan0}{Rtotalexan0}}
+{\footnotesize\ttfamily qreal Rtotalexan0}
+
+\mbox{\Hypertarget{dashboard_8cpp_a07ba9e9385396074151909855fe9e053}\label{dashboard_8cpp_a07ba9e9385396074151909855fe9e053}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan1@{Rtotalexan1}}
+\index{Rtotalexan1@{Rtotalexan1}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan1}{Rtotalexan1}}
+{\footnotesize\ttfamily qreal Rtotalexan1}
+
+\mbox{\Hypertarget{dashboard_8cpp_a85f92e5f3c3c9f5dbed5783911326398}\label{dashboard_8cpp_a85f92e5f3c3c9f5dbed5783911326398}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan2@{Rtotalexan2}}
+\index{Rtotalexan2@{Rtotalexan2}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan2}{Rtotalexan2}}
+{\footnotesize\ttfamily qreal Rtotalexan2}
+
+\mbox{\Hypertarget{dashboard_8cpp_a5eb1211a1129f14f0e6ed1dae7c1af6a}\label{dashboard_8cpp_a5eb1211a1129f14f0e6ed1dae7c1af6a}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan3@{Rtotalexan3}}
+\index{Rtotalexan3@{Rtotalexan3}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan3}{Rtotalexan3}}
+{\footnotesize\ttfamily qreal Rtotalexan3}
+
+\mbox{\Hypertarget{dashboard_8cpp_a14f716c89002fd58fddc52d8a8fd0e05}\label{dashboard_8cpp_a14f716c89002fd58fddc52d8a8fd0e05}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan4@{Rtotalexan4}}
+\index{Rtotalexan4@{Rtotalexan4}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan4}{Rtotalexan4}}
+{\footnotesize\ttfamily qreal Rtotalexan4}
+
+\mbox{\Hypertarget{dashboard_8cpp_a5276c2cf2504430a093b79eb864597e3}\label{dashboard_8cpp_a5276c2cf2504430a093b79eb864597e3}} 
+\index{dashboard.cpp@{dashboard.cpp}!Rtotalexan5@{Rtotalexan5}}
+\index{Rtotalexan5@{Rtotalexan5}!dashboard.cpp@{dashboard.cpp}}
+\doxysubsubsection{\texorpdfstring{Rtotalexan5}{Rtotalexan5}}
+{\footnotesize\ttfamily qreal Rtotalexan5}
+

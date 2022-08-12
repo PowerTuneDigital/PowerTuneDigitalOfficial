@@ -1,0 +1,69 @@
+\hypertarget{gps_8h_source}{}\doxysection{gps.\+h}
+\mbox{\hyperlink{gps_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef GPS\_H\_}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define GPS\_H\_}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QElapsedTimer>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{5 }
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{serialport_8h}{serialport.h}}"{}}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{9 \textcolor{keyword}{class }Serialport;}
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classGPS}{GPS}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{12 \{}
+\DoxyCodeLine{13     Q\_OBJECT}
+\DoxyCodeLine{14 }
+\DoxyCodeLine{15  \textcolor{keyword}{public}:}
+\DoxyCodeLine{16     \textcolor{keyword}{explicit} \mbox{\hyperlink{classGPS_a943ada2e82eff535244ca814681c06ec}{GPS}}(QObject *parent = 0);}
+\DoxyCodeLine{17     \textcolor{keyword}{explicit} \mbox{\hyperlink{classGPS_a943ada2e82eff535244ca814681c06ec}{GPS}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{18     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_abd7e76b49565df87b2c4df06c7a1f617}{defineFinishLine}}(\textcolor{keyword}{const} qreal \& Y1, \textcolor{keyword}{const} qreal \& X1, \textcolor{keyword}{const} qreal \& Y2, \textcolor{keyword}{const} qreal \& X2);}
+\DoxyCodeLine{19     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a82609c99cca33d75fab703383809a5a8}{defineFinishLine2}}(\textcolor{keyword}{const} qreal \& Y1, \textcolor{keyword}{const} qreal \& X1, \textcolor{keyword}{const} qreal \& Y2, \textcolor{keyword}{const} qreal \& X2);}
+\DoxyCodeLine{20     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a38a75c100a2181b2071746bae3482baf}{resetLaptimer}}();}
+\DoxyCodeLine{21 }
+\DoxyCodeLine{22  \textcolor{keyword}{private}:}
+\DoxyCodeLine{23     \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classGPS_ab6d605f767f469d8c6ac3774a9a12d8f}{m\_dashboard}};}
+\DoxyCodeLine{24     \mbox{\hyperlink{classSerialPort}{SerialPort}} *\mbox{\hyperlink{classGPS_aed66f708933e5b34d9ce3a3e2663c9e1}{m\_serialport}};}
+\DoxyCodeLine{25     QByteArray  \mbox{\hyperlink{classGPS_a23edc8f4828c939c15634b15dbc24c6d}{m\_readData}};}
+\DoxyCodeLine{26     QByteArray  \mbox{\hyperlink{classGPS_ad32f505eb5beeb2623a40f9fcb6b821e}{m\_buffer}};}
+\DoxyCodeLine{27     QElapsedTimer \mbox{\hyperlink{classGPS_a0b1f0e8bfab4cec56b6d3b1f7beb8f5c}{m\_timer}};}
+\DoxyCodeLine{28     QTimer \mbox{\hyperlink{classGPS_ada0b3759120948ad31c488aa09e91586}{m\_timeouttimer}};}
+\DoxyCodeLine{29     QTimer \mbox{\hyperlink{classGPS_aabf65ab527f50abadc0fee71fb804323}{m\_reconnecttimer}};}
+\DoxyCodeLine{30     QString \mbox{\hyperlink{classGPS_a75bada3072c3235ae1d076d5ce002175}{convertToDecimal}}(\textcolor{keyword}{const} QString \& coord, \textcolor{keyword}{const} QString \& dir);}
+\DoxyCodeLine{31     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a9f0cacdc6f30465399f19ccb19edde1a}{processGPRMC}}(\textcolor{keyword}{const} QString \&\mbox{\hyperlink{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}{line}});}
+\DoxyCodeLine{32     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a99a4fdce30945102e36963f9c4857897}{checklinecrossed}}();}
+\DoxyCodeLine{33     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a8c2b1a9ede6dac291028ad01b8dc5183}{linecrossed}}();}
+\DoxyCodeLine{34     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a6fbf5e49f6a05b056835666f2e1cb830}{processGPGGA}}(\textcolor{keyword}{const} QString \&\mbox{\hyperlink{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}{line}});}
+\DoxyCodeLine{35     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_ab02b5a90774d6ce9b43720494b2e0acc}{processGPVTG}}(\textcolor{keyword}{const} QString \& \mbox{\hyperlink{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}{line}});}
+\DoxyCodeLine{36     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a894018a07e73bdc11af81f5db97f6b28}{checknewLap}}();}
+\DoxyCodeLine{37 }
+\DoxyCodeLine{38 }
+\DoxyCodeLine{39 }
+\DoxyCodeLine{40  \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{41     \textcolor{comment}{// void delaytimer();}}
+\DoxyCodeLine{42     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a51eaea2422dd980ea0a6d28f12a136de}{openConnection}}(\textcolor{keyword}{const} QString \&portName, \textcolor{keyword}{const} QString \&Baud);}
+\DoxyCodeLine{43     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a217097ae4a846c621f001a5aa1f4fb4f}{ProcessMessage}}(QByteArray messageline);}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a125284d30c7901ba52ed190e519bc3b2}{removeNMEAmsg}}();}
+\DoxyCodeLine{45     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_abd750ada6a7b976f72761ce16246ccf6}{setGPSBAUD115}}();}
+\DoxyCodeLine{46     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a052c61711107964bbde54f86edb110ff}{setGPS10HZ}}();}
+\DoxyCodeLine{47     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_aeae2cbce7d09b6441ebd1b788dac12b7}{setGPSOnly}}();}
+\DoxyCodeLine{48     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_ae4568ef4d5107c96c1af68d1abd33559}{closeConnection}}();}
+\DoxyCodeLine{49     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a8775edfa08840ffb2647e0e5ba031fe5}{closeConnection1}}();}
+\DoxyCodeLine{50     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a83f916a50e9aad32ead86dedf6d736f5}{clear}}();}
+\DoxyCodeLine{51 }
+\DoxyCodeLine{52  \textcolor{keyword}{private} slots:}
+\DoxyCodeLine{53     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_aa0928d156961a54bf06d9b5210d85561}{readyToRead}}();}
+\DoxyCodeLine{54     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a1b1c89214229f5dc8ff7e2fa9cbcad35}{handleTimeout}}();}
+\DoxyCodeLine{55     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_aaf69fb801bbce2ea70041e68fe0ec19a}{handleReconnectTimeout}}();}
+\DoxyCodeLine{56     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a14c64eb8a4939f8f734b93ef3a21bb19}{handleError}}(QSerialPort::SerialPortError error);}
+\DoxyCodeLine{57     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_ac2a7572afb184df9c14ae913f17306bf}{initSerialPort}}();}
+\DoxyCodeLine{58     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_a20f1883fa42ff859903a07444ac15628}{logNMEA}}(\textcolor{keyword}{const} QString \& \mbox{\hyperlink{gps_8cpp_a3539f46fd6960dad172e3fcbae5f4801}{line}});}
+\DoxyCodeLine{59 }
+\DoxyCodeLine{60  signals:}
+\DoxyCodeLine{61     \textcolor{keywordtype}{void} \mbox{\hyperlink{classGPS_afcea96ba960b7829386ec73b21e0feb8}{sig\_linecrossed}}();}
+\DoxyCodeLine{62 \};}
+\DoxyCodeLine{63 }
+\DoxyCodeLine{64 \textcolor{preprocessor}{\#endif  }\textcolor{comment}{// GPS\_H\_}}
+
+\end{DoxyCode}

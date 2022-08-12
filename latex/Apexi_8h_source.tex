@@ -1,0 +1,419 @@
+\hypertarget{Apexi_8h_source}{}\doxysection{Apexi.\+h}
+\mbox{\hyperlink{Apexi_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef APEXI\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define APEXI\_H}}
+\DoxyCodeLine{3 }
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include "{}\mbox{\hyperlink{serialport_8h}{serialport.h}}"{}}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QTimer>}}
+\DoxyCodeLine{7 \textcolor{preprocessor}{\#include <QThread>}}
+\DoxyCodeLine{8 }
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 \textcolor{keyword}{namespace }\mbox{\hyperlink{namespaceID}{ID}} \{}
+\DoxyCodeLine{11 \textcolor{keyword}{enum} \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6}{ENUM}} \{}
+\DoxyCodeLine{12     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a4a6a76a540c2165a592932385ebcbfc8}{Advance}}=0xF0,}
+\DoxyCodeLine{13     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6ac36b65f44fb95f4eb0a936137f7ba19a}{MapIndex}}=0xDB,}
+\DoxyCodeLine{14     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a801f4b7e973007ab9fdc56d8d9e91dea}{SensorData}}=0xDE,}
+\DoxyCodeLine{15     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6afd77d3ce266e4c238824ca175171545d}{SensorStrings}}=0xDD,}
+\DoxyCodeLine{16     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a621dc05a106fafaeaaad40fb2b33d582}{BasicData}}=0xDA,}
+\DoxyCodeLine{17     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6acbbc95e564ca83e2df17eddba6bc81c3}{Init}}=0xF3,}
+\DoxyCodeLine{18     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a36829ae2c4ff7b08db6598721eb8f396}{Version}}=0xF5,}
+\DoxyCodeLine{19     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a0bd7e7d6f1a636cbe1e08960cfc599d8}{AuxData}}=0x00,}
+\DoxyCodeLine{20     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6ad2958c77fcf055e768f1e2cb60a6c39d}{OldMapIndex}}=0x68,}
+\DoxyCodeLine{21     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a4cf6be80714af7cbad9851d469c60476}{OldSensorData}}=0x6A,}
+\DoxyCodeLine{22     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6acc76f2141233657e4c3ee7853ee57ed7}{OldBasicData}}=0x66,}
+\DoxyCodeLine{23     \mbox{\hyperlink{namespaceID_a6b237e4fc2ab75e39d908cacaff9afc6a1918e50b49e1e5c6ce3dd1feeaa9e8ff}{OldSensorStrings}}=0x69}
+\DoxyCodeLine{24 \};}
+\DoxyCodeLine{25 \}}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 }
+\DoxyCodeLine{29 }
+\DoxyCodeLine{30 }
+\DoxyCodeLine{31 }
+\DoxyCodeLine{32 }
+\DoxyCodeLine{33 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{34 \textcolor{keyword}{class }Serialport;}
+\DoxyCodeLine{35 }
+\DoxyCodeLine{36 \textcolor{keyword}{class }\mbox{\hyperlink{classApexi}{Apexi}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{37 \{}
+\DoxyCodeLine{38     Q\_OBJECT}
+\DoxyCodeLine{39     }
+\DoxyCodeLine{40 \textcolor{keyword}{private}:}
+\DoxyCodeLine{41     \textcolor{comment}{//FD3S Definition}}
+\DoxyCodeLine{42 \textcolor{preprocessor}{\#define FC\_INFO\_MUL     \{1, 0.0001, 1, 1, 1.0/256, 1.0/256, 1, 1, 1, 212.0/256, 0.4, 0.4, 1, 1, 1, 0.1, 1, 0.1, 0.02, 1, 1.0/256, 1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 5.0/255, 5.0/255, 5.0/255, 5.0/255, 0.01, 0.001, 0.019, 40, 0.05, 0.004 , 256, -\/0.00390625, 1.0/128,100\}}}
+\DoxyCodeLine{43 \textcolor{preprocessor}{\#define FC\_INFO\_ADD     \{0,-\/1.0332, 0, 0, 0, 0, -\/25, -\/25, -\/80, 0, 0, 0, -\/80, -\/80, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -\/128\}}}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a0fa26bfd4d318724a7c211ec809d257e}{run}}();}
+\DoxyCodeLine{45     }
+\DoxyCodeLine{46     }
+\DoxyCodeLine{47     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_abd5984b41305a2d8186116b1e4ce80eb}{packageADV}}[33];}
+\DoxyCodeLine{48     }
+\DoxyCodeLine{49     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__adv__info__t}{fc\_adv\_info\_t}}\{}
+\DoxyCodeLine{50         }
+\DoxyCodeLine{51         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_ad73670e8d07171b323fe1a939b56da83}{requesttype}};}
+\DoxyCodeLine{52         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_aa3934b64526df0e4cf266c556a053e84}{RPM}};}
+\DoxyCodeLine{53         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_ad9e1b3ffa32b232018c8f4812cd944bc}{Intakepress}};}
+\DoxyCodeLine{54         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a07dbeeeee8d3e5d403089b5a94b66d42}{PressureV}};}
+\DoxyCodeLine{55         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a4d0e2a4f41e39f17044270e444f8c19a}{ThrottleV}};}
+\DoxyCodeLine{56         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_abc4a6845d86b1ac455680b506cad0d57}{Primaryinp}};}
+\DoxyCodeLine{57         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a24afbb275f2ad445a5ff524a0691bff5}{Fuelc}};}
+\DoxyCodeLine{58         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_afb56ddd0be4980b31fb09aa3801a9a59}{Leadingign}};}
+\DoxyCodeLine{59         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_abc047c7934d349cca7043e285eeba5fa}{Trailingign}};}
+\DoxyCodeLine{60         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_af7da790a225a588c438af82ca5ab9144}{Fueltemp}};}
+\DoxyCodeLine{61         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_ab460c92d1e2a14742774da82025c7d59}{Moilp}};}
+\DoxyCodeLine{62         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a9801d48886e0900f26845f40dd5baf4f}{Boosttp}};}
+\DoxyCodeLine{63         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a7b69d1b1b3c27c00d324b384b3eb8db4}{Boostwg}};}
+\DoxyCodeLine{64         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_adab9adc8fbcbd6ebd29202d6f4712c6d}{Watertemp}};}
+\DoxyCodeLine{65         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a808df690dbadf14defdc03219aeba44c}{Intaketemp}};}
+\DoxyCodeLine{66         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a49cef5a8fc30c061051831bf7b2d19f2}{Knock}};}
+\DoxyCodeLine{67         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a1f5c5c4e40777a43e968fc792f216ca6}{BatteryV}};}
+\DoxyCodeLine{68         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_acadc709d714d376c28d4f8e007df490a}{Speed}};}
+\DoxyCodeLine{69         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a689840adc5988573189593024bb666a3}{Iscvduty}};}
+\DoxyCodeLine{70         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a5ac56fb537763d5549eef0727c97da33}{O2volt}};}
+\DoxyCodeLine{71         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_af1eb2aee54feca09631c4d203a0ead8c}{na1}};}
+\DoxyCodeLine{72         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a769475006532f507588a73bdbb9f1b68}{Secinjpulse}};}
+\DoxyCodeLine{73         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a5b8b11d452cbcf5f9bc8287554ef8d57}{na2}};}
+\DoxyCodeLine{74         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a618abf4a95d0c43e09c8650cea2858e4}{checksum}};}
+\DoxyCodeLine{75         \mbox{\hyperlink{structApexi_1_1fc__adv__info__t}{fc\_adv\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__adv__info__t_a33bcdda28a3d858cd49ab234ad44339a}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{76     \};}
+\DoxyCodeLine{77     }
+\DoxyCodeLine{78     }
+\DoxyCodeLine{79     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a0b4e71625415c4cc5c6ed4e73ddc33f2}{packageADV2}}[33];}
+\DoxyCodeLine{80     }
+\DoxyCodeLine{81     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__adv__info__t2}{fc\_adv\_info\_t2}}\{}
+\DoxyCodeLine{82         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a1f001509945a1abb72813b6078d5499d}{requesttype}};}
+\DoxyCodeLine{83         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a4f35ee2f75419dc8574aba38d7300330}{RPM}};}
+\DoxyCodeLine{84         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a0d754ceb239aded116f77bb59b8b636a}{EngLoad}};}
+\DoxyCodeLine{85         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a2d9b950878ac542aa9922dc97ae07270}{MAF1V}};}
+\DoxyCodeLine{86         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_aa32d3a431fa004dbcbc4d06e2a68d1d7}{MAF2V}};}
+\DoxyCodeLine{87         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a4ce736837cdf64f8b42e3579844aeb08}{injms}};}
+\DoxyCodeLine{88         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_aeae60345525aed5aaf34aa912a8f7c98}{Inj}};}
+\DoxyCodeLine{89         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a803b61cdfad19195d28ed3a7db7d7d1b}{Ign}};}
+\DoxyCodeLine{90         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_ac618539a33076b3503e3cb87e7ec9b4b}{Dwell}};}
+\DoxyCodeLine{91         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a1d7fa98dbce0df029b1ecf1d029fbd19}{BoostPres}};}
+\DoxyCodeLine{92         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a215afce02847452584446f8a4fa15ec9}{BoostDuty}};}
+\DoxyCodeLine{93         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a8c46d0195837dc3c9801b9726844411d}{Watertemp}};}
+\DoxyCodeLine{94         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a2bd01f36e42ca19bd4ee455b8e316f8b}{Intaketemp}};}
+\DoxyCodeLine{95         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_ad745a866becb0aa0b0240fac02c37ba4}{Knock}};}
+\DoxyCodeLine{96         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a2dc703d431c65c6857975c8ec95164f7}{BatteryV}};}
+\DoxyCodeLine{97         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_aa3c048846fdc5534ec8aaf33f9104417}{Speed}};}
+\DoxyCodeLine{98         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a7ac40a1e11b058256cd42449d42ca69c}{MAFactivity}};}
+\DoxyCodeLine{99         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a2f5235418a729821bb7ab935120fc487}{O2volt}};}
+\DoxyCodeLine{100         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a062c547b3692c5e383aac91312cdce19}{O2volt\_2}};}
+\DoxyCodeLine{101         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a6f46f678c2368be754a437f7e7aedada}{ThrottleV}};}
+\DoxyCodeLine{102         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a456acbbad161174bb92237d22909a49a}{checksum}};}
+\DoxyCodeLine{103         }
+\DoxyCodeLine{104         \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2}{fc\_adv\_info\_t2}} \mbox{\hyperlink{structApexi_1_1fc__adv__info__t2_a4cbc35db70b0a2bb20436f25c5aca3b4}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{105     \};}
+\DoxyCodeLine{106     }
+\DoxyCodeLine{107     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a186107070fc51eedd49f75ebf8c05216}{packageADV3}}[33];}
+\DoxyCodeLine{108     }
+\DoxyCodeLine{109     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__adv__info__t3}{fc\_adv\_info\_t3}}\{}
+\DoxyCodeLine{110         }
+\DoxyCodeLine{111         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_ad558316777c8e32972ae234f5e1c3a3b}{requesttype}};}
+\DoxyCodeLine{112         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a853879f71ba2da6796b1fa9e089d203e}{RPM3}};}
+\DoxyCodeLine{113         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_ad94b859406e7ff5ccef19ce6c7bc058d}{Intakepress3}};}
+\DoxyCodeLine{114         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_ae5bae0e281a76e64683cee957c9291bf}{PressureV3}};}
+\DoxyCodeLine{115         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a6d70deeb503312018a703074c0c1ba38}{ThrottleV3}};}
+\DoxyCodeLine{116         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_af5c7887cb39c6201a66a1437b51824d6}{Primaryinp3}};}
+\DoxyCodeLine{117         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a296ae3db6e3aa644990a4bbf524d4892}{Fuelc3}};}
+\DoxyCodeLine{118         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a470db71fde69861483cbf1c2b7213f79}{Ign3}};}
+\DoxyCodeLine{119         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a58de4f8e6f6f19abf952d895c4cba78b}{Dwell3}};}
+\DoxyCodeLine{120         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_ad9fb2d1191ffc7c99e0105abf1740683}{BoostPres3}};}
+\DoxyCodeLine{121         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a7bff6974ee9750e6a071c345ed8e6a87}{BoostDuty3}};}
+\DoxyCodeLine{122         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a4960bc068cc90821349b1bcde1a79dd9}{Watertemp3}};}
+\DoxyCodeLine{123         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a3d48fccc2d550c6357ff299bc2c79f71}{Intaketemp3}};}
+\DoxyCodeLine{124         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a1ee89ee7a38f8e1830fac751929d0398}{Knock3}};}
+\DoxyCodeLine{125         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a785d65f454cad2fc54526f6812a6ad7c}{BatteryV3}};}
+\DoxyCodeLine{126         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a341221fdbf68ff8166b553035cba9dbf}{Speed3}};}
+\DoxyCodeLine{127         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a704b2b239a2c4d28357662fd921c1c5b}{MAFactivity3}};}
+\DoxyCodeLine{128         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a33ace2a0319499361f43b9f639b93788}{O2volt3}};}
+\DoxyCodeLine{129         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a1ec446aa8a67018cd7e6b61cd0524b91}{O2volt\_23}};}
+\DoxyCodeLine{130         quint16 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a8b455acb539ca888f7e3e2f2e8582a0d}{na23}};}
+\DoxyCodeLine{131         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a74104d54bfc7c74e2e23114a3f41515c}{na13}};}
+\DoxyCodeLine{132         quint8 \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_ad3e4c365096c0261e695cb8c253213a4}{checksum}};}
+\DoxyCodeLine{133         \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3}{fc\_adv\_info\_t3}} \mbox{\hyperlink{structApexi_1_1fc__adv__info__t3_a7162a29b8e5ff5ef90344c6d32f32e75}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{134         }
+\DoxyCodeLine{135     \};}
+\DoxyCodeLine{136     }
+\DoxyCodeLine{137     }
+\DoxyCodeLine{138     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a35f88bde345a007d625575b0c4abd494}{packageSens}}[20];}
+\DoxyCodeLine{139     }
+\DoxyCodeLine{140     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__sens__info__t}{fc\_sens\_info\_t}}\{}
+\DoxyCodeLine{141         }
+\DoxyCodeLine{142         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a7c8189c762dc7413d3eb031f9e582b5a}{requesttype}};}
+\DoxyCodeLine{143         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a69e58ad66605854214634ee1b361feff}{sens1}};}
+\DoxyCodeLine{144         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a68e787fef394ee280aae57f9d1a30d4a}{sens2}};}
+\DoxyCodeLine{145         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_abdd474fd38756eff250b11b3c5e629c2}{sens3}};}
+\DoxyCodeLine{146         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a362fa3dc6c4d8364814497417a4d616c}{sens4}};}
+\DoxyCodeLine{147         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_ae26a8a4743ec9ee0125ecfe39e0da3b1}{sens5}};}
+\DoxyCodeLine{148         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a4e5d085bdcb6016f2cd8a1aa85e8d373}{sens6}};}
+\DoxyCodeLine{149         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a23e70c4b258388234a7883d082b55585}{sens7}};}
+\DoxyCodeLine{150         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a02026e6cafde271b441626becfc49ffd}{sens8}};}
+\DoxyCodeLine{151         quint16 \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_ab718cdf9c8b1f36edc483a647390fd15}{flags}};}
+\DoxyCodeLine{152         quint8  \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a855f23951aa18b459e2cd1b4ec52055c}{checksum}};}
+\DoxyCodeLine{153         }
+\DoxyCodeLine{154         \mbox{\hyperlink{structApexi_1_1fc__sens__info__t}{fc\_sens\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__sens__info__t_a9df3264fbdf929020cc475b6797ac6b2}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{155         }
+\DoxyCodeLine{156     \};}
+\DoxyCodeLine{157     }
+\DoxyCodeLine{158     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_afe66b5de3141bd64b054d642bfe3fcd6}{packageMap}}[2];}
+\DoxyCodeLine{159     }
+\DoxyCodeLine{160     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__map__info__t}{fc\_map\_info\_t}}\{}
+\DoxyCodeLine{161         }
+\DoxyCodeLine{162         quint16 \mbox{\hyperlink{structApexi_1_1fc__map__info__t_a7daa9334d76f41bd87dbf2484b4608ea}{requesttype}};}
+\DoxyCodeLine{163         quint8 \mbox{\hyperlink{structApexi_1_1fc__map__info__t_a1b7ac32eaa395f260bbb04d26b685ab9}{Map\_N}};}
+\DoxyCodeLine{164         quint8 \mbox{\hyperlink{structApexi_1_1fc__map__info__t_ab0fadbe791f9f1cd6734810b90970c09}{Map\_P}};}
+\DoxyCodeLine{165         quint8 \mbox{\hyperlink{structApexi_1_1fc__map__info__t_ab11641824d5e7337eb38d7d7ee7d28b4}{checksum}};}
+\DoxyCodeLine{166         }
+\DoxyCodeLine{167         \mbox{\hyperlink{structApexi_1_1fc__map__info__t}{fc\_map\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__map__info__t_a4398ee0ee9553c4d887025175b15ce3c}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{168     \};}
+\DoxyCodeLine{169     }
+\DoxyCodeLine{170     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a796254e5640f310914bec5c220c53012}{packageAux}}[4];}
+\DoxyCodeLine{171     }
+\DoxyCodeLine{172     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__aux__info__t}{fc\_aux\_info\_t}}\{}
+\DoxyCodeLine{173         }
+\DoxyCodeLine{174         quint16 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_a84abc58a9cfb1918067f03765aec128c}{requesttype}};}
+\DoxyCodeLine{175         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_a346982d977b78716c9da744823aad2ce}{AN1}};}
+\DoxyCodeLine{176         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_a0dc36d4a378b06cee0c50e48eac7ae02}{AN2}};}
+\DoxyCodeLine{177         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_afa433b365c035f78bc18df2cf1ade10b}{AN3}};}
+\DoxyCodeLine{178         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_a2114cfc0269a24366d25254d8a06fdbd}{AN4}};}
+\DoxyCodeLine{179         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_a81a9360a4c4b5a7f4ada8cad9d3804e5}{checksum}};}
+\DoxyCodeLine{180         }
+\DoxyCodeLine{181         \mbox{\hyperlink{structApexi_1_1fc__aux__info__t}{fc\_aux\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__aux__info__t_aeaed9c9984c540b7e5e97f6788dc51c0}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{182     \};}
+\DoxyCodeLine{183     }
+\DoxyCodeLine{184     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_afd1c314896cce07b11fdb9cf42fb4c55}{packageAux2}}[8];}
+\DoxyCodeLine{185     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__aux2__info__t}{fc\_aux2\_info\_t}}\{}
+\DoxyCodeLine{186         }
+\DoxyCodeLine{187         quint16 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a7382faf3703bf87c5a84e921925051a3}{requesttype}};}
+\DoxyCodeLine{188         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a727438b588e7a24118952e9b9c835904}{AN1}};}
+\DoxyCodeLine{189         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a092af2e5282b374f59d9b19d86464312}{AN2}};}
+\DoxyCodeLine{190         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a5bad1974e8dc6e4df3d4f092e4d8223f}{AN3}};}
+\DoxyCodeLine{191         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a09b4753ceb66b590fe41ddf9df48f4d5}{AN4}};}
+\DoxyCodeLine{192         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a6de0035ae662ba31f57e9865c0b550d4}{AN5}};}
+\DoxyCodeLine{193         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a8ef79072c76588180f0f38b911455899}{AN6}};}
+\DoxyCodeLine{194         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_aafee754a2aa9eba4860cb398f41c434b}{AN7}};}
+\DoxyCodeLine{195         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_ac5271c3ab8009721eb0bd2bf081fe067}{AN8}};}
+\DoxyCodeLine{196         quint8 \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a7f47cea288dccfc358727d237835f54c}{checksum}};}
+\DoxyCodeLine{197         }
+\DoxyCodeLine{198         \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t}{fc\_aux2\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__aux2__info__t_a24f5576ff81a250abdfac97dda21b3e5}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{199     \};}
+\DoxyCodeLine{200     }
+\DoxyCodeLine{201     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a8eab51ea1ab3c410718180c0027cb83e}{packageBasic}}[22];}
+\DoxyCodeLine{202     }
+\DoxyCodeLine{203     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__Basic__info__t}{fc\_Basic\_info\_t}}\{}
+\DoxyCodeLine{204         }
+\DoxyCodeLine{205         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a84ca5fe310782ea2f7e5892d177e9460}{requesttype}};}
+\DoxyCodeLine{206         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_aeeece527bec230eb96bbde4b76e06d9a}{Basic\_Injduty}};}
+\DoxyCodeLine{207         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a282bc43500866fd8ac3723e0efcb0e55}{Basic\_IGL}};}
+\DoxyCodeLine{208         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_add11555e4e478169c3ae982d5b2fe41e}{Basic\_IGT}};}
+\DoxyCodeLine{209         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a7251f68dc8a7eaf57940d9465ae66a01}{Basic\_RPM}};}
+\DoxyCodeLine{210         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a9d578f2c0d3173cdceaaff6d03a13202}{Basic\_KPH}};}
+\DoxyCodeLine{211         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_af0c3b9d8ed0e030a5b139027d2867d02}{Basic\_Boost}};}
+\DoxyCodeLine{212         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a1b378fb938fd024bf25a2921b40673a4}{Basic\_Knock}};}
+\DoxyCodeLine{213         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a06357ad14bc9a0a460e03d57fc329028}{Basic\_Watert}};}
+\DoxyCodeLine{214         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a85887ae7110da6a883b3d48564397914}{Basic\_Airt}};}
+\DoxyCodeLine{215         quint16 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a387f4b28f7d436d13c1c8258b4eca1e3}{Basic\_BattV}};}
+\DoxyCodeLine{216         quint8 \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_acac6f3aa97e5490af4098bc8b0eaf560}{checksum}};}
+\DoxyCodeLine{217         }
+\DoxyCodeLine{218         \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t}{fc\_Basic\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__Basic__info__t_a0668b5d2d75258d0853522f1e1310c2a}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{219     \};}
+\DoxyCodeLine{220     }
+\DoxyCodeLine{221     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a9d6345f9a8a9f93774cf84cd6932c34a}{packageRevIdle}}[16];}
+\DoxyCodeLine{222     }
+\DoxyCodeLine{223     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t}{fc\_RevIdle\_info\_t}}\{}
+\DoxyCodeLine{224         }
+\DoxyCodeLine{225         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a2f74fd3ecbdd917bc96933cd8a40dcff}{requesttype}};}
+\DoxyCodeLine{226         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_ac3a46d8a042fdb7a67b7b93b7559b23f}{RevLIM}};}
+\DoxyCodeLine{227         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_aad2f3456c43a8bce5567828a414c2abf}{FCAE}};}
+\DoxyCodeLine{228         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a41bb6e198079363233b7475c195c7bde}{FCEL}};}
+\DoxyCodeLine{229         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_aecf80eb39fd23426fbc1c508c45a3092}{FCAC}};}
+\DoxyCodeLine{230         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a9ecd741f9a619895cc12a2c25e616d22}{IdleAE}};}
+\DoxyCodeLine{231         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a5f70da1c3131870659405960124705fc}{IdleEL}};}
+\DoxyCodeLine{232         quint16 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a4635d48c8b2798f407adbedf201126e3}{IdleAC}};}
+\DoxyCodeLine{233         quint8 \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_a76b08319ef09c50948d3b709c58e733d}{checksum}};}
+\DoxyCodeLine{234         }
+\DoxyCodeLine{235         \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t}{fc\_RevIdle\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__RevIdle__info__t_abb1b141be9f148b693929891fcd97a88}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{236     \};}
+\DoxyCodeLine{237     }
+\DoxyCodeLine{238     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_aebf0c4feac657ae267b0bd9a34a5fc5b}{packageTurboTrans}}[12];}
+\DoxyCodeLine{239     }
+\DoxyCodeLine{240     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t}{fc\_TurboTrans\_info\_t}}\{}
+\DoxyCodeLine{241         }
+\DoxyCodeLine{242         quint16 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a307ef92597b1567d64382be40fcbf73e}{requesttype}};}
+\DoxyCodeLine{243         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a7c60a37b7073966a5ee583ae3b1be7f2}{TPS01}};}
+\DoxyCodeLine{244         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a481d62d60aaa2bb31dd46a2a44d4d49b}{TPS02}};}
+\DoxyCodeLine{245         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a397e6dff86e221e7d24ea64dfb8f5b91}{TPS03}};}
+\DoxyCodeLine{246         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a15aba98607c89d738dd066d2f453c253}{LowRPM1}};}
+\DoxyCodeLine{247         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a1167f3dd97803da3c166b175c0df01af}{LowRPM2}};}
+\DoxyCodeLine{248         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a77be711674f82c1902aea914744acfa5}{LowRPM3}};}
+\DoxyCodeLine{249         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a3bb81afd4cc7783b3de0a927482f1e4a}{HighRPM1}};}
+\DoxyCodeLine{250         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_aa234ec9a134b063a33b130b1ba727f23}{HighRPM2}};}
+\DoxyCodeLine{251         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a3e2af63ce3c0b2763d5b05d0d560bb7a}{HighRPM3}};}
+\DoxyCodeLine{252         quint8 \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_ab9e56d70f1fd2623decf4b5c43456141}{checksum}};}
+\DoxyCodeLine{253         }
+\DoxyCodeLine{254         \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t}{fc\_TurboTrans\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__TurboTrans__info__t_a0511a145bc932d666ffc2187acbf0117}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{255     \};}
+\DoxyCodeLine{256     }
+\DoxyCodeLine{257     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_ad21954910d5675917664af74c6f9a1c9}{packageBoostControl}}[12];}
+\DoxyCodeLine{258     }
+\DoxyCodeLine{259     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t}{fc\_BoostCont\_info\_t}}\{}
+\DoxyCodeLine{260         }
+\DoxyCodeLine{261         quint16 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a4fd1db66d0d862321034e181556fa104}{requesttype}};}
+\DoxyCodeLine{262         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a12001e812e8da373381ce9c30c4846c6}{Setting1}};}
+\DoxyCodeLine{263         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ac631640e6e3fd32f255f2b026ae0335f}{Setting2}};}
+\DoxyCodeLine{264         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ada8fd0f17633a91bce8d9497a0b188f2}{Setting3}};}
+\DoxyCodeLine{265         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ac1ba26defb7b2851fc98fce23d999489}{BoostPrimary1}};}
+\DoxyCodeLine{266         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a5ee16a37774c7934d747d455029105da}{BoostSecondary1}};}
+\DoxyCodeLine{267         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ae099e0007869ac8ef06583169a9b0005}{BoostPrimary2}};}
+\DoxyCodeLine{268         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_adf462821daee9681ab51895a3c7792c5}{BoostSecondary2}};}
+\DoxyCodeLine{269         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a5239376a85a218df77a096094b91ef4a}{DutyPrimary1}};}
+\DoxyCodeLine{270         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a00f05a9d73f6d9e7cc831272afa84634}{DutySecondary1}};}
+\DoxyCodeLine{271         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ad01eefb839e727ca3fae1c33226120bd}{DutyPrimary2}};}
+\DoxyCodeLine{272         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a2e08432c1d1bdf9c49ed0c78e7654ab0}{DutySecondary2}};}
+\DoxyCodeLine{273         quint8 \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_ad8c04d3afad6127976c9d6b3c9968cfa}{checksum}};}
+\DoxyCodeLine{274         }
+\DoxyCodeLine{275         \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t}{fc\_BoostCont\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__BoostCont__info__t_a50ee7a1fe8c2c612fecb4230e8a7115c}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{276     \};}
+\DoxyCodeLine{277     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a15981f3dd32e14a284762c44b5c24271}{packageInjOverlap}}[12];}
+\DoxyCodeLine{278     }
+\DoxyCodeLine{279     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t}{fc\_InjOverlap\_info\_t}}\{}
+\DoxyCodeLine{280         }
+\DoxyCodeLine{281         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_ac9c46eea19e49993795c4e2044d1c89d}{requesttype}};}
+\DoxyCodeLine{282         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_ac54a54b311811dc1cd689800843f0fda}{InjOvBoost1}};}
+\DoxyCodeLine{283         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_a37177c370b9178f71b7118ff7caefa70}{lineInjOvSet1}};}
+\DoxyCodeLine{284         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_a7d832bc48cae67d4d27d3599c3dac9ba}{InjOvBoost2}};}
+\DoxyCodeLine{285         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_ad451a3431b0d0aa604247bbd8a9e6d14}{lineInjOvSet2}};}
+\DoxyCodeLine{286         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_ab2b65b6f8a35def7e0192a1b427c8aec}{InjOvBoost3}};}
+\DoxyCodeLine{287         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_a3830ecd5d34a9d8355a373aef4d5e483}{lineInjOvSet3}};}
+\DoxyCodeLine{288         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_a0af74541cf74d40cfb4458e62bfacd45}{checksum}};}
+\DoxyCodeLine{289         \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t}{fc\_InjOverlap\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__InjOverlap__info__t_a1ba0b8dd3597ce4b70132f60bdba2981}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{290     \};}
+\DoxyCodeLine{291     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a9dc6703f05e7c7270c04d3fc61404d93}{packageInjPriLagvsBattV}}[12];}
+\DoxyCodeLine{292     }
+\DoxyCodeLine{293     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t}{fc\_InjPriLagvsBattV\_info\_t}}\{}
+\DoxyCodeLine{294         }
+\DoxyCodeLine{295         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_afff97e3d2fc430f2b766d686c1ca2b6e}{requesttype}};}
+\DoxyCodeLine{296         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_a8636854fe0d0777478924d3e801fe0df}{InjPriLag16V}};}
+\DoxyCodeLine{297         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_a6109b26941c004e8c026d872f81f0e1a}{InjPriLag14V}};}
+\DoxyCodeLine{298         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_a28fc17b61c73bd3c2690ae7d5189cbe8}{InjPriLag12V}};}
+\DoxyCodeLine{299         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_aab8638f02f8a780e1dbd8094bfaf1b73}{InjPriLag10V}};}
+\DoxyCodeLine{300         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_af8d515a5ce58788bf1f32c9fb0b83b48}{InjPriLag8V}};}
+\DoxyCodeLine{301         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_a14cbbdfa8c65906dde8c27752e8b1f2b}{InjPriLag6V}};}
+\DoxyCodeLine{302         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_aa4359e2f0925ab3483cae7fefb2d9b3a}{checksum}};}
+\DoxyCodeLine{303         \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t}{fc\_InjPriLagvsBattV\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__InjPriLagvsBattV__info__t_a471e5c28634ce889d29c5ed98f98ba37}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{304     \};}
+\DoxyCodeLine{305     }
+\DoxyCodeLine{306     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_ae4db0f92b7812722e438b8f288af2e2c}{packageInjScLagvsBattV}}[12];}
+\DoxyCodeLine{307     }
+\DoxyCodeLine{308     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t}{fc\_InjScLagvsBattV\_info\_t}}\{}
+\DoxyCodeLine{309         }
+\DoxyCodeLine{310         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_afb90cb3f533366ef789a200036a07812}{requesttype}};}
+\DoxyCodeLine{311         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_a09ddd3e1322a49f62957a8cb03dea019}{InjScLag16V}};}
+\DoxyCodeLine{312         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_a9139e552c8c7114c6ec2ff9c20b3547c}{InjScLag14V}};}
+\DoxyCodeLine{313         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_a9aa6f44108ff4911d317520307374739}{InjScLag12V}};}
+\DoxyCodeLine{314         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_aa2c02257b25647bf3241b597d8cb9942}{InjScLag10V}};}
+\DoxyCodeLine{315         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_a735f0ec05282b4fc4bca1ce500bf5928}{InjScLag8V}};}
+\DoxyCodeLine{316         quint16 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_aab28b4c5806a3b101313bc7d777e7e08}{InjScLag6V}};}
+\DoxyCodeLine{317         quint8 \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_ad1a1432df9ec12f9f39c8c4ee3541d83}{checksum}};}
+\DoxyCodeLine{318         \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t}{fc\_InjScLagvsBattV\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__InjScLagvsBattV__info__t_a00259f094877c2b4c5a45b10651b96b9}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{319     \};}
+\DoxyCodeLine{320     \textcolor{keywordtype}{double} \mbox{\hyperlink{classApexi_a420c3ef7e59f4b1d380739b0dbf7cf88}{packageFuelInjectors}}[26];}
+\DoxyCodeLine{321     }
+\DoxyCodeLine{322     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t}{fc\_FuelInjectors\_info\_t}}\{}
+\DoxyCodeLine{323         }
+\DoxyCodeLine{324         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a9141b5d7894852abf2f1d7f266036631}{requesttype}};}
+\DoxyCodeLine{325         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a33bb9c1e4787fb2a1f1912755157f81d}{empty1}};}
+\DoxyCodeLine{326         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a192ca48633070835738dcaafa67d66a0}{frontpulse}}; \textcolor{comment}{//(for percent multiply by 100 to get percentage)}}
+\DoxyCodeLine{327         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_ad9d319ea34d7a74cd3a9d5276fc8dc1f}{empty2}};}
+\DoxyCodeLine{328         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_abdf38d6a07d87bae47801f3b01073383}{rearpulse}}; \textcolor{comment}{//(for percent multiply by 100 to get percentage)}}
+\DoxyCodeLine{329         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_ae4428aaa1af31f88e793174e17e16750}{frntprilag}}; \textcolor{comment}{//(multiply by 0.004)}}
+\DoxyCodeLine{330         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_ae49658501ed7eb228999716a3ed76fa8}{empty3}};}
+\DoxyCodeLine{331         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aab0d19d4c98fb01d92049e40e0c2afca}{frntseclag}}; \textcolor{comment}{// (multiply by 0.004)}}
+\DoxyCodeLine{332         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aa8eae3ce7c3f18fe7ef89daa823b2fbf}{empty4}};}
+\DoxyCodeLine{333         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aee85db2e2b88e3faaeacb396697aff68}{rearprilag}}; \textcolor{comment}{//  (multiply by 0.004)}}
+\DoxyCodeLine{334         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a824e6e29434453088c46e5f482fe5591}{empty5}};}
+\DoxyCodeLine{335         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aff89a1a028bd3722265d09ce3916deba}{rearseclag}}; \textcolor{comment}{// (multiply by 0.004)}}
+\DoxyCodeLine{336         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a9207836da8fccfe3fd8744728908b61d}{empty6}};}
+\DoxyCodeLine{337         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a98da9f6413c11315aa0155ca779333cb}{prinjsize}};}
+\DoxyCodeLine{338         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a3a567def76f591eaefad6567f29120f6}{secinjsize}};}
+\DoxyCodeLine{339         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a9c9d96b3aa4df846ed472dec4caebd33}{prisectransprc}}; \textcolor{comment}{// (divide it by 10to get the percentage)}}
+\DoxyCodeLine{340         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_ab6a7f7c267b9a86df0fe9bad77ddadce}{prisectransms}};}
+\DoxyCodeLine{341         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aeccf614fbee11d457614bfda7a8416b9}{empty7}};}
+\DoxyCodeLine{342         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a4c62840a7c7e9b7eb22c1b20075c9d1e}{empty8}};}
+\DoxyCodeLine{343         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_aa88550112a0160b050d201c28327662b}{empty9}};}
+\DoxyCodeLine{344         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_ae6941b6671ac772fd4064ee6cd8f5650}{empty10}};}
+\DoxyCodeLine{345         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_abcd0788ee1f689cb94d20db136fec2a0}{checksum}};}
+\DoxyCodeLine{346         \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t}{fc\_FuelInjectors\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__FuelInjectors__info__t_a55f37e3f37830fb2364f4e515c870011}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{347     \};}
+\DoxyCodeLine{348     }
+\DoxyCodeLine{349     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t}{fc\_FuelBase\_info\_t}}\{}
+\DoxyCodeLine{350         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t_ac0f43a14f0b0cf1ab8eda92d8cb1aa9a}{requesttype}};}
+\DoxyCodeLine{351         quint16 \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t_ad2c1cb6681393784c5fe3efa8ee81e2e}{fuelBase}}[100];}
+\DoxyCodeLine{352         quint8 \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t_a38c1ccfa086acd00813a8a10fd1d9fad}{checksum}};}
+\DoxyCodeLine{353         \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t}{fc\_FuelBase\_info\_t}} \mbox{\hyperlink{structApexi_1_1fc__FuelBase__info__t_ace7aa7d6ae146df10dfba5db3beeb032}{parse}}(\textcolor{keyword}{const} QByteArray \&);}
+\DoxyCodeLine{354     \};}
+\DoxyCodeLine{355     }
+\DoxyCodeLine{356     \textcolor{keyword}{struct }\mbox{\hyperlink{structApexi_1_1fc__fullFuelBase__info__t}{fc\_fullFuelBase\_info\_t}}\{}
+\DoxyCodeLine{357         quint16 \mbox{\hyperlink{structApexi_1_1fc__fullFuelBase__info__t_af487a96a744534249aae92f2587148c6}{fuelBase}}[800];}
+\DoxyCodeLine{358     \};}
+\DoxyCodeLine{359     }
+\DoxyCodeLine{360     }
+\DoxyCodeLine{361     }
+\DoxyCodeLine{362 \textcolor{keyword}{public}:}
+\DoxyCodeLine{363     \textcolor{keyword}{explicit} \mbox{\hyperlink{classApexi_accbe67b5637fc8b96bc3bb02fa2c3eaf}{Apexi}}(QObject *parent = 0);}
+\DoxyCodeLine{364     \textcolor{keyword}{explicit} \mbox{\hyperlink{classApexi_accbe67b5637fc8b96bc3bb02fa2c3eaf}{Apexi}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{365     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a242116e8b33bab893bd506edbc228cfa}{SetProtocol}}(\textcolor{keyword}{const} \textcolor{keywordtype}{int} \&protocolselect);}
+\DoxyCodeLine{366     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_ac87e6660438b97f793a0b6c2fda6e295}{Auxcalc}} (\textcolor{keyword}{const} QString \&unitaux1,\textcolor{keyword}{const} qreal \&an1V0,\textcolor{keyword}{const} qreal \&an2V5,\textcolor{keyword}{const} QString \&unitaux2,\textcolor{keyword}{const} qreal \&an3V0,\textcolor{keyword}{const} qreal \&an4V5);}
+\DoxyCodeLine{367     Q\_INVOKABLE \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a190e3079e22d645f5a2865da74feda7c}{writeDashfile}}(\textcolor{keyword}{const} QString \&gauge1,\textcolor{keyword}{const} QString \&gauge2,\textcolor{keyword}{const} QString \&gauge3,\textcolor{keyword}{const} QString \&gauge4,\textcolor{keyword}{const} QString \&gauge5,\textcolor{keyword}{const} QString \&gauge6);}
+\DoxyCodeLine{368 }
+\DoxyCodeLine{369 }
+\DoxyCodeLine{370     }
+\DoxyCodeLine{371     }
+\DoxyCodeLine{372 \textcolor{keyword}{private}:}
+\DoxyCodeLine{373     \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classApexi_a0855cd7fda07f53102f31c2145d5d4c3}{m\_dashboard}};}
+\DoxyCodeLine{374     \mbox{\hyperlink{classSerialPort}{SerialPort}} *\mbox{\hyperlink{classApexi_ab02f8638a4b1c0d34c2f2e31f52cfcac}{m\_serialport}};}
+\DoxyCodeLine{375     qint64      \mbox{\hyperlink{classApexi_ae2d8ac8ed5ed6db34e32bb42f843dbe9}{m\_bytesWritten}};}
+\DoxyCodeLine{376     QByteArray  \mbox{\hyperlink{classApexi_a1b99aea3799500703a73d1c392b7464e}{m\_readData}};}
+\DoxyCodeLine{377     QTimer      \mbox{\hyperlink{classApexi_a74faf8d54f8a63a3243b5e1cfc2efa61}{m\_timer}};}
+\DoxyCodeLine{378     QByteArray  \mbox{\hyperlink{classApexi_a1db3c3fdc885d348cb99b3dab0b2f94e}{m\_buffer}};}
+\DoxyCodeLine{379     QByteArray  \mbox{\hyperlink{classApexi_a014e0d12e9c110003e9401e35efddcd8}{m\_apexiMsg}};}
+\DoxyCodeLine{380     QByteArray  \mbox{\hyperlink{classApexi_a76ab1b154839b1ac82782806ea9e20ba}{m\_writeData}};}
+\DoxyCodeLine{381     }
+\DoxyCodeLine{382 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{383     \textcolor{comment}{// void SetProtocol(const int \&protocolselect);}}
+\DoxyCodeLine{384     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_abe3bf6800fce8a4c713a08c14474d625}{readyToRead}}();}
+\DoxyCodeLine{385     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a9c813630d2b2a70b7e098ae10220103e}{handleTimeout}}();}
+\DoxyCodeLine{386     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a8a8a56251df881cc9eb49f1f20332fda}{handleBytesWritten}}(qint64 bytes);}
+\DoxyCodeLine{387     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a6c775f27e878959c047bb9c252064cfe}{handleError}}(QSerialPort::SerialPortError error);}
+\DoxyCodeLine{388     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a169d6e9466a6c04e6533c8e84fdcaadb}{initSerialPort}}();}
+\DoxyCodeLine{389     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a84e5eadc545afab5fbb0aea8b27e17c3}{openConnection}}(\textcolor{keyword}{const} QString \&portName);}
+\DoxyCodeLine{390     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a669124cabae4ada616e650e582c068da}{closeConnection}}();}
+\DoxyCodeLine{391     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_af3673b74b8aebe06a2b2f9ed81c23ee4}{retryconnect}}();}
+\DoxyCodeLine{392     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_afd83573b4a9dc42abf1f9204b0f9b47d}{clear}}();}
+\DoxyCodeLine{393     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a4cb1314ab5ca5175aa227ed178148f40}{apexiECU}}(\textcolor{keyword}{const} QByteArray \&buffer);}
+\DoxyCodeLine{394     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a9ed7e794f2566b72a448e341233985eb}{sendRequest}}(\textcolor{keywordtype}{int} \mbox{\hyperlink{Apexi_8cpp_a807106db33ac183e122814d4a254353c}{requestIndex}});}
+\DoxyCodeLine{395     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_af312531b1dbc60175016a82881203f18}{writeRequestPFC}}(QByteArray);}
+\DoxyCodeLine{396     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a4e7b389e8d3e283a12733ab4f8492be3}{readData}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{397     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a3ecd8445700ab9532fc051325f66d03d}{decodeAdv}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{398     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a6ce2b40858fc637448d1f6dc27e10a70}{decodeSensor}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{399     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_af82382a1e22fdac04180f1734d59461f}{decodeAux}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{400     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a8434798529c3e79a33445e2ba626d8a2}{decodeMap}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{401     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_af3dad564d7c3cca0e98f5944e5e27cdf}{decodeBasic}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{402     \textcolor{comment}{// void decodeVersion(QByteArray rawmessagedata);}}
+\DoxyCodeLine{403     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_aaa77337f30dd52330c1070ce161eea83}{decodeInit}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{404     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a45f8db235553ca011083224aec6b3892}{decodeSensorStrings}}(QByteArray \mbox{\hyperlink{Apexi_8cpp_afa045797aef706327d4a0ac86ea31058}{rawmessagedata}});}
+\DoxyCodeLine{405     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a31ba55d59a08104995b5efad9deda277}{calculatorAux}}(\textcolor{keywordtype}{float} aux1min,\textcolor{keywordtype}{float} aux2max,\textcolor{keywordtype}{float} aux3min,\textcolor{keywordtype}{float} aux4max,QString Auxunit1,QString Auxunit2);}
+\DoxyCodeLine{406 }
+\DoxyCodeLine{407 signals:}
+\DoxyCodeLine{408     \textcolor{keywordtype}{void} \mbox{\hyperlink{classApexi_a7d165539c39fe017fc5b2d219e7dc7ea}{sig\_adaptronicReadFinished}}();}
+\DoxyCodeLine{409     }
+\DoxyCodeLine{410 \};}
+\DoxyCodeLine{411 }
+\DoxyCodeLine{412 }
+\DoxyCodeLine{413 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// APEXI\_H}}
+\DoxyCodeLine{414 }
+
+\end{DoxyCode}

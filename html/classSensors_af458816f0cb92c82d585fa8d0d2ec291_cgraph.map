@@ -1,0 +1,8 @@
+<map id="Sensors::Accel" name="Sensors::Accel">
+<area shape="rect" id="node1" title=" " alt="" coords="5,31,115,57"/>
+<area shape="rect" id="node2" href="$classSensors.html#a1924cb8692834d02ebfda23353ae44ef" title=" " alt="" coords="185,5,288,32"/>
+<area shape="rect" id="node3" href="$classSensors.html#af639095cc58e6f8e57aa05a1f87dabf8" title=" " alt="" coords="163,56,311,83"/>
+<area shape="rect" id="node4" href="$classDashBoard.html#a4f6cd3eac155d425aaa63efe9022005a" title=" " alt="" coords="359,5,505,32"/>
+<area shape="rect" id="node5" href="$classDashBoard.html#ad3b7b45503e833e2bba34e8779a152f2" title=" " alt="" coords="359,56,505,83"/>
+<area shape="rect" id="node6" href="$classDashBoard.html#ac1082f76daaa67d61cb1917bf62937cf" title=" " alt="" coords="359,107,505,133"/>
+</map>

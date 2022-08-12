@@ -1,0 +1,56 @@
+\hypertarget{obd_8h}{}\doxysection{obd.\+h File Reference}
+\label{obd_8h}\index{obd.h@{obd.h}}
+{\ttfamily \#include $<$QObject$>$}\newline
+{\ttfamily \#include $<$QTimer$>$}\newline
+{\ttfamily \#include $<$QThread$>$}\newline
+{\ttfamily \#include $<$Qt\+Serial\+Port/\+QSerial\+Port$>$}\newline
+Include dependency graph for obd.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{obd_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classOBD}{OBD}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+namespace \mbox{\hyperlink{namespacePIDS}{PIDS}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785e}{PIDS\+::\+ENUM}} \{ \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea33db3d51d472c1b14ff2292a1afdc78a}{PIDS\+::\+Supported\+Pids0to20}} = 0x00
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eac65930c1102c77599f5a33c2d65e09fa}{PIDS\+::\+Monitorstatus}} = 0x01
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea77ad507c541594b7c7a64e88e20a940a}{PIDS\+::\+Freeze\+DTC}} = 0x02
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eab7229e5c21bb9dca005453dc1eabf02d}{PIDS\+::\+Fuelsystem\+Status}} = 0x03
+, \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea928876f0f824c182cf86b95d44f24181}{PIDS\+::\+Calc\+Eng\+Load}} = 0x04
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eaaa07b7ee103173b0b1e007cd0d97c29c}{PIDS\+::\+Eng\+Coolant\+Temp}} = 0x05
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea709099ffd5962870267cba3bf1d4a670}{PIDS\+::\+Short\+Term\+Fueltrim\+B1}} = 0x06
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea3775c023ec507cf708818fb6bc878aa4}{PIDS\+::\+Long\+Term\+Fueltrim\+B1}} = 0x07
+, \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea9bfe1c857967cc3a724fae85cbbf3bed}{PIDS\+::\+Short\+Term\+Fueltrim\+B2}} = 0x08
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea73ac4a69df4a89e57576bf6f54fb70d0}{PIDS\+::\+Long\+Term\+Fueltrim\+B2}} = 0x09
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eace86562b201b45a408abc4a5647df059}{PIDS\+::\+Fuel\+Pressure}} = 0x0A
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea13a0ff7533e46714254b430e91031b1b}{PIDS\+::\+Intake\+Manifold\+Press}} = 0x0B
+, \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea033d16bd4b96a94c16e2aa0386c4dcc5}{PIDS\+::\+Engine\+RPM}} = 0x0C
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eac10e69e401e9d1046ac8ca435fbe02a7}{PIDS\+::\+Vehicle\+Speed}} = 0x0D
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea7dc98802d7375518a896452d19ea4b61}{PIDS\+::\+Timing\+Advance}} = 0x0E
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea9a1b45dd9a6760f0846cb484cd401791}{PIDS\+::\+Intake\+Air\+Temp}} = 0x0F
+, \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eadd2f4f0385836d961a4fac79d2c282e6}{PIDS\+::\+MAFrate}} = 0x10
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea8c707593eb537b7e0980cad5edf9236f}{PIDS\+::\+Throttle\+Position}} = 0x11
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785eaebc8193a655b4901027daed1d3d16978}{PIDS\+::\+Comsec\+Air\+Status}} = 0x12
+, \mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea6e35a9826aa13385884645f84e6cbb52}{PIDS\+::\+Oxygen\+Senspresent}} = 0x13
+, \newline
+\mbox{\hyperlink{namespacePIDS_af3b757915ae78a61908c0f472386785ea4d881913e8aec7760f165e3e5c6bf2da}{PIDS\+::\+O2sensor1}} = 0x14
+ \}
+\end{DoxyCompactItemize}

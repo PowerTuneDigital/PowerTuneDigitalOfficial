@@ -1,0 +1,226 @@
+\hypertarget{classArduino}{}\doxysection{Arduino Class Reference}
+\label{classArduino}\index{Arduino@{Arduino}}
+
+
+{\ttfamily \#include $<$arduino.\+h$>$}
+
+
+
+Inheritance diagram for Arduino\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=133pt]{classArduino__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Arduino\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=272pt]{classArduino__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classArduino_aa9571a2c5166e6871f6ee9df9eeaf495}{ready\+To\+Read}} ()
+\item 
+void \mbox{\hyperlink{classArduino_a0b97da51c2c192f994bad0f192d3cae8}{handle\+Error}} (QSerial\+Port\+::\+Serial\+Port\+Error error)
+\item 
+void \mbox{\hyperlink{classArduino_a8aef269fd3eec3f6ce534f6bca34bec5}{init\+Serial\+Port}} ()
+\item 
+void \mbox{\hyperlink{classArduino_a71f273d9d856bfe7f07dff4825439574}{open\+Connection}} (const QString \&port\+Name)
+\item 
+void \mbox{\hyperlink{classArduino_a8fcd03a58d456d5e4e1228db8b37ee85}{close\+Connection}} ()
+\item 
+void \mbox{\hyperlink{classArduino_a1b881ac54800a98895feebd69e297751}{clear}} ()
+\item 
+void \mbox{\hyperlink{classArduino_acd55f659ba2e87cd51fdc03883c406f7}{assemblemessage}} (const QByte\+Array \&buffer)
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classArduino_a1e2075f0d5d9f2c762c1bd4804a23e47}{Arduino}} (QObject $\ast$parent=0)
+\item 
+\mbox{\hyperlink{classArduino_a1dfd3ef357bd11db78fc16dd9206a34d}{Arduino}} (\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$dashboard, QObject $\ast$parent=0)
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$ \mbox{\hyperlink{classArduino_a270cabd5a2f5dd83fa8541f461f8abf1}{m\+\_\+dashboard}}
+\item 
+\mbox{\hyperlink{classSerialPort}{Serial\+Port}} $\ast$ \mbox{\hyperlink{classArduino_ad0df143683e541f4a319b6223c533a79}{m\+\_\+serialport}}
+\item 
+QByte\+Array \mbox{\hyperlink{classArduino_ab4cd81752464f4d409991d2026408b05}{m\+\_\+read\+Data}}
+\item 
+QByte\+Array \mbox{\hyperlink{classArduino_a4545361c919d1c8bbed43de7984d4ea2}{m\+\_\+buffer}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classArduino_a1e2075f0d5d9f2c762c1bd4804a23e47}\label{classArduino_a1e2075f0d5d9f2c762c1bd4804a23e47}} 
+\index{Arduino@{Arduino}!Arduino@{Arduino}}
+\index{Arduino@{Arduino}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{Arduino()}{Arduino()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Arduino\+::\+Arduino (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{classArduino_a1dfd3ef357bd11db78fc16dd9206a34d}\label{classArduino_a1dfd3ef357bd11db78fc16dd9206a34d}} 
+\index{Arduino@{Arduino}!Arduino@{Arduino}}
+\index{Arduino@{Arduino}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{Arduino()}{Arduino()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Arduino\+::\+Arduino (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{classDashBoard}{Dash\+Board}} $\ast$}]{dashboard,  }\item[{QObject $\ast$}]{parent = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classArduino_acd55f659ba2e87cd51fdc03883c406f7}\label{classArduino_acd55f659ba2e87cd51fdc03883c406f7}} 
+\index{Arduino@{Arduino}!assemblemessage@{assemblemessage}}
+\index{assemblemessage@{assemblemessage}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{assemblemessage}{assemblemessage}}
+{\footnotesize\ttfamily void Arduino\+::assemblemessage (\begin{DoxyParamCaption}\item[{const QByte\+Array \&}]{buffer }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classArduino_a1b881ac54800a98895feebd69e297751}\label{classArduino_a1b881ac54800a98895feebd69e297751}} 
+\index{Arduino@{Arduino}!clear@{clear}}
+\index{clear@{clear}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{clear}{clear}}
+{\footnotesize\ttfamily void Arduino\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+\mbox{\Hypertarget{classArduino_a8fcd03a58d456d5e4e1228db8b37ee85}\label{classArduino_a8fcd03a58d456d5e4e1228db8b37ee85}} 
+\index{Arduino@{Arduino}!closeConnection@{closeConnection}}
+\index{closeConnection@{closeConnection}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{closeConnection}{closeConnection}}
+{\footnotesize\ttfamily void Arduino\+::close\+Connection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a8fcd03a58d456d5e4e1228db8b37ee85_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a8fcd03a58d456d5e4e1228db8b37ee85_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classArduino_a0b97da51c2c192f994bad0f192d3cae8}\label{classArduino_a0b97da51c2c192f994bad0f192d3cae8}} 
+\index{Arduino@{Arduino}!handleError@{handleError}}
+\index{handleError@{handleError}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{handleError}{handleError}}
+{\footnotesize\ttfamily void Arduino\+::handle\+Error (\begin{DoxyParamCaption}\item[{QSerial\+Port\+::\+Serial\+Port\+Error}]{error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=344pt]{classArduino_a0b97da51c2c192f994bad0f192d3cae8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a0b97da51c2c192f994bad0f192d3cae8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classArduino_a8aef269fd3eec3f6ce534f6bca34bec5}\label{classArduino_a8aef269fd3eec3f6ce534f6bca34bec5}} 
+\index{Arduino@{Arduino}!initSerialPort@{initSerialPort}}
+\index{initSerialPort@{initSerialPort}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{initSerialPort}{initSerialPort}}
+{\footnotesize\ttfamily void Arduino\+::init\+Serial\+Port (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a8aef269fd3eec3f6ce534f6bca34bec5_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a8aef269fd3eec3f6ce534f6bca34bec5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classArduino_a71f273d9d856bfe7f07dff4825439574}\label{classArduino_a71f273d9d856bfe7f07dff4825439574}} 
+\index{Arduino@{Arduino}!openConnection@{openConnection}}
+\index{openConnection@{openConnection}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{openConnection}{openConnection}}
+{\footnotesize\ttfamily void Arduino\+::open\+Connection (\begin{DoxyParamCaption}\item[{const QString \&}]{port\+Name }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_a71f273d9d856bfe7f07dff4825439574_cgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{classArduino_aa9571a2c5166e6871f6ee9df9eeaf495}\label{classArduino_aa9571a2c5166e6871f6ee9df9eeaf495}} 
+\index{Arduino@{Arduino}!readyToRead@{readyToRead}}
+\index{readyToRead@{readyToRead}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{readyToRead}{readyToRead}}
+{\footnotesize\ttfamily void Arduino\+::ready\+To\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [slot]}}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_aa9571a2c5166e6871f6ee9df9eeaf495_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classArduino_aa9571a2c5166e6871f6ee9df9eeaf495_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classArduino_a4545361c919d1c8bbed43de7984d4ea2}\label{classArduino_a4545361c919d1c8bbed43de7984d4ea2}} 
+\index{Arduino@{Arduino}!m\_buffer@{m\_buffer}}
+\index{m\_buffer@{m\_buffer}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{m\_buffer}{m\_buffer}}
+{\footnotesize\ttfamily QByte\+Array Arduino\+::m\+\_\+buffer\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classArduino_a270cabd5a2f5dd83fa8541f461f8abf1}\label{classArduino_a270cabd5a2f5dd83fa8541f461f8abf1}} 
+\index{Arduino@{Arduino}!m\_dashboard@{m\_dashboard}}
+\index{m\_dashboard@{m\_dashboard}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{m\_dashboard}{m\_dashboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classDashBoard}{Dash\+Board}}$\ast$ Arduino\+::m\+\_\+dashboard\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classArduino_ab4cd81752464f4d409991d2026408b05}\label{classArduino_ab4cd81752464f4d409991d2026408b05}} 
+\index{Arduino@{Arduino}!m\_readData@{m\_readData}}
+\index{m\_readData@{m\_readData}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{m\_readData}{m\_readData}}
+{\footnotesize\ttfamily QByte\+Array Arduino\+::m\+\_\+read\+Data\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classArduino_ad0df143683e541f4a319b6223c533a79}\label{classArduino_ad0df143683e541f4a319b6223c533a79}} 
+\index{Arduino@{Arduino}!m\_serialport@{m\_serialport}}
+\index{m\_serialport@{m\_serialport}!Arduino@{Arduino}}
+\doxysubsubsection{\texorpdfstring{m\_serialport}{m\_serialport}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSerialPort}{Serial\+Port}}$\ast$ Arduino\+::m\+\_\+serialport\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{arduino_8h}{arduino.\+h}}\item 
+\mbox{\hyperlink{arduino_8cpp}{arduino.\+cpp}}\end{DoxyCompactItemize}

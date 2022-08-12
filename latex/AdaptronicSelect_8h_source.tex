@@ -1,0 +1,54 @@
+\hypertarget{AdaptronicSelect_8h_source}{}\doxysection{Adaptronic\+Select.\+h}
+\mbox{\hyperlink{AdaptronicSelect_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{1 \textcolor{preprocessor}{\#ifndef ADAPTRONICSELECT\_H}}
+\DoxyCodeLine{2 \textcolor{preprocessor}{\#define ADAPTRONICSELECT\_H}}
+\DoxyCodeLine{3 \textcolor{preprocessor}{\#include <QtSerialPort/QSerialPort>}}
+\DoxyCodeLine{4 \textcolor{preprocessor}{\#include <QObject>}}
+\DoxyCodeLine{5 \textcolor{preprocessor}{\#include <QModbusReply>}}
+\DoxyCodeLine{6 \textcolor{preprocessor}{\#include <QModbusClient>}}
+\DoxyCodeLine{7 }
+\DoxyCodeLine{8 \textcolor{preprocessor}{\#include <QModbusDataUnit>}}
+\DoxyCodeLine{9 }
+\DoxyCodeLine{10 }
+\DoxyCodeLine{11 \textcolor{keyword}{class }\mbox{\hyperlink{classDashBoard}{DashBoard}};}
+\DoxyCodeLine{12 \textcolor{keyword}{class }Serialport;}
+\DoxyCodeLine{13 \textcolor{keyword}{class }QModbusClient;}
+\DoxyCodeLine{14 \textcolor{keyword}{class }QModbusReply;}
+\DoxyCodeLine{15 }
+\DoxyCodeLine{16 \textcolor{keyword}{class }\mbox{\hyperlink{classAdaptronicSelect}{AdaptronicSelect}} : \textcolor{keyword}{public} QObject}
+\DoxyCodeLine{17 \{}
+\DoxyCodeLine{18     Q\_OBJECT}
+\DoxyCodeLine{19 }
+\DoxyCodeLine{20 \textcolor{keyword}{public}:}
+\DoxyCodeLine{21     \textcolor{keyword}{explicit} \mbox{\hyperlink{classAdaptronicSelect_a68871f00230e87b9f15e9ab18652fbd0}{AdaptronicSelect}}(QObject *parent = 0);}
+\DoxyCodeLine{22     \textcolor{keyword}{explicit} \mbox{\hyperlink{classAdaptronicSelect_a68871f00230e87b9f15e9ab18652fbd0}{AdaptronicSelect}}(\mbox{\hyperlink{classDashBoard}{DashBoard}} *dashboard, QObject *parent = 0);}
+\DoxyCodeLine{23     \mbox{\hyperlink{classAdaptronicSelect_a190dcd2f6330691ed27ba788eece3da1}{\string~AdaptronicSelect}}();}
+\DoxyCodeLine{24 }
+\DoxyCodeLine{25 \textcolor{keyword}{private}:}
+\DoxyCodeLine{26 }
+\DoxyCodeLine{27 }
+\DoxyCodeLine{28 \textcolor{keyword}{public} slots:}
+\DoxyCodeLine{29      \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_a16932b235281a8071bdf5404df8160ac}{openConnection}}(\textcolor{keyword}{const} QString \&portName);}
+\DoxyCodeLine{30      \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_a2d4e7c884777533961986e24d183aad8}{closeConnection}}();}
+\DoxyCodeLine{31      \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_a79148c38700405eb6a3fc1338be170ab}{AdaptronicStartStream}}();}
+\DoxyCodeLine{32      \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_af5ee85733260355dd5236c796c6a3fc5}{readyToRead}}();}
+\DoxyCodeLine{33      \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_ae353c5153a25423eb6044be7a2f1bf72}{decodeAdaptronic}}(QModbusDataUnit serialdata);}
+\DoxyCodeLine{34 }
+\DoxyCodeLine{35 \textcolor{keyword}{private}:}
+\DoxyCodeLine{36      \mbox{\hyperlink{classDashBoard}{DashBoard}} *\mbox{\hyperlink{classAdaptronicSelect_af63ebda6ac9476f293e4c014cb49f7bf}{m\_dashboard}};}
+\DoxyCodeLine{37      QModbusReply *\mbox{\hyperlink{classAdaptronicSelect_ab1634e1133dc3531d7ad906d56823873}{lastRequest}};}
+\DoxyCodeLine{38      QModbusClient *\mbox{\hyperlink{classAdaptronicSelect_aca40071035b88a557176dac27dd0bd2b}{modbusDevice}};}
+\DoxyCodeLine{39      QModbusDataUnit \mbox{\hyperlink{classAdaptronicSelect_a12887447906f103e6407d0cf1266550e}{readRequest}}() \textcolor{keyword}{const};}
+\DoxyCodeLine{40 }
+\DoxyCodeLine{41 }
+\DoxyCodeLine{42 }
+\DoxyCodeLine{43 signals:}
+\DoxyCodeLine{44     \textcolor{keywordtype}{void} \mbox{\hyperlink{classAdaptronicSelect_a14942ec47d2226c384ed59bbaa0bc021}{sig\_adaptronicReadFinished}}();}
+\DoxyCodeLine{45 }
+\DoxyCodeLine{46 \};}
+\DoxyCodeLine{47 }
+\DoxyCodeLine{48 }
+\DoxyCodeLine{49 \textcolor{preprocessor}{\#endif }\textcolor{comment}{// ADAPTRONICSELECT\_H}}
+
+\end{DoxyCode}
