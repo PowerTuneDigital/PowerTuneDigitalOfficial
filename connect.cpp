@@ -998,6 +998,8 @@ void Connect::canbitratesetup(const int &cansetting)
             << endl
             <<"    iface wlan0 inet dhcp"
             << endl
+            <<"    hostname PowerTuneDigital"
+            << endl
             <<"    wireless_mode managed"
             << endl
             << "   wireless_essid any"
