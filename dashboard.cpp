@@ -4,7 +4,6 @@
 #include <QVector>
 #include "math.h"
 
-
 QVector<int>averageSpeed(0);
 QVector<int>averageRPM(0);
 QVector<qreal>averageexanaloginput7(0);
