@@ -49,8 +49,9 @@ Rectangle {
             property alias checkan51Ksave   : checkan51k.checkState
             property alias rpmcheckboxsave  : rpmcheckbox.checkState
             property alias di1RPMsave  : enablefrequencydi1rpm.checkState
-            property alias cylindercomboboxsave : cylindercombobox.currentIndex
-            property alias cylindercomboboxDi1save : cylindercomboboxDi1.currentIndex
+//            property alias cylindercomboboxsave : cylindercombobox.currentIndex
+//            property alias cylindercomboboxDi1save : cylindercomboboxDi1.currentIndex
+            property alias  cylindercomboboxDi1save :cylindercomboboxDi1.text
             property alias t10save : t10.text
             property alias r10save : r10.text
             property alias t20save : t20.text
@@ -997,6 +998,33 @@ Rectangle {
         height: main.height /15
         onCheckStateChanged: inputs.setInputs();
         }
+
+
+    ///////////////
+
+    Text { text: "Multiplicator"
+        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
+        font.pixelSize: main.width / 55;color:"white"}
+    TextField {
+        id: cylindercomboboxDi1
+        width: main.width / 14
+        height: main.height /15
+        font.pixelSize: main.width / 55
+        text: "1"
+        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
+        inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+        onEditingFinished: { rpmfrequencydivider = cylindercomboboxDi1.text
+                             inputs.setInputs()
+        }
+
+    }
+    Text { text: "RPM :"
+        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
+        font.pixelSize: main.width / 55;color:"white"}
+    Text { text: Dashboard.rpm
+        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
+        font.pixelSize: main.width / 55;color:"white"}
+/*
     ComboBox {
         id: cylindercomboboxDi1
         visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
@@ -1015,7 +1043,7 @@ Rectangle {
             hoverEnabled: cylindercomboboxDi1.hoverEnabled
         }
         }
-
+*/
     }
     Component.onCompleted: {
 
