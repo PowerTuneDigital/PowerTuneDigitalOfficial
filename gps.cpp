@@ -127,7 +127,9 @@ void GPS::setGPSBAUD115()
     m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
-    closeConnection1();
+    closeConnection();
+    initialized = 1;
+    openConnection(GPSPort, "115200");
 }
 void GPS::setGPS10HZ()
 {
@@ -151,19 +153,6 @@ void GPS::closeConnection()
     disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
     m_serialport->close();
     m_dashboard->setgpsFIXtype("close serial");
-}
-void GPS::closeConnection1()
-{
-    m_dashboard->setgpsFIXtype("close connection");
-    disconnect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
-    disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
-               this, &GPS::handleError);
-    disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
-    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
-    m_serialport->close();
-    initialized = 1;
-    m_dashboard->setgpsFIXtype("close serial");
-    openConnection(GPSPort, "115200");
 }
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
@@ -293,10 +282,10 @@ void GPS::processGPRMC(const QString & line) {
     QString time = fields[1];
     time.insert(2, ":");
     time.insert(5, ":");
-    QString latitude = fields[3];
-    QString latDirection = fields[4];
-    QString longitude = fields[5];
-    QString lonDirection = fields[6];
+
+    float decLat = convertToFloat(fields[3], fields[4]);
+    float decLon = convertToFloat(fields[5], fields[6]);
+
     QString groundspeedknots = fields[7];
     QString bearing = fields[8];
     if (bearing != "")
@@ -307,13 +296,11 @@ void GPS::processGPRMC(const QString & line) {
 
     double speed = groundspeedknots.toDouble() * 1.852;
 
-    QString decLat = convertToDecimal(latitude, latDirection);
-    QString decLon = convertToDecimal(longitude, lonDirection);
 
     if ((m_dashboard->gpsFIXtype() == "GPS only") ||(m_dashboard->gpsFIXtype() == "DGPS") )
     {
-    m_dashboard->setgpsLatitude(decLat.toDouble());
-    m_dashboard->setgpsLongitude(decLon.toDouble());
+    m_dashboard->setgpsLatitude(decLat);
+    m_dashboard->setgpsLongitude(decLon);
   //  if ((hdop >= 20) || (speed >= 20))           // This avoids that the GPS speed fluctuates when standing and hdop is low
   //     {
        m_dashboard->setgpsSpeed(qRound(speed));  // round speed to the nearest integer
@@ -344,19 +331,16 @@ void GPS::processGPGGA(const QString & line)
         m_dashboard->setgpsFIXtype("No fix yet");
         break;
     }
-    QString latitude = fields[2];
-    QString latDirection = fields[3];
-    QString longitude = fields[4];
-    QString lonDirection = fields[5];
-    QString decLat = convertToDecimal(latitude, latDirection);
-    QString decLon = convertToDecimal(longitude, lonDirection);
+
+    float decLat = convertToFloat(fields[2], fields[3]);
+    float decLon = convertToFloat(fields[4], fields[5]);
 
     QString satelitesinview = fields[7];
     QString altitude = fields[9];
     if ((m_dashboard->gpsFIXtype() == "GPS only") ||(m_dashboard->gpsFIXtype() == "DGPS") )
     {
-    m_dashboard->setgpsLatitude(decLat.toDouble());
-    m_dashboard->setgpsLongitude(decLon.toDouble());
+    m_dashboard->setgpsLatitude(decLat);
+    m_dashboard->setgpsLongitude(decLon);
     m_dashboard->setgpsAltitude(altitude.toDouble());
     checknewLap();
     }
@@ -369,19 +353,19 @@ void GPS::processGPVTG(const QString & line)
     QString speed = fields[7];
     // m_dashboard->setgpsSpeed(speed.toInt());
 }
-QString GPS::convertToDecimal(const QString & coord, const QString & dir)
+
+float GPS::convertToFloat(const QString & coord, const QString & dir)
 {
     int decIndex = coord.indexOf('.');
     QString minutes = coord.mid(decIndex- 2);
     QString seconds = coord.mid(decIndex+1, 2);
-    double dec = minutes.toDouble() * 60 / 3600;
-    double degrees = coord.mid(0, decIndex -2).toDouble();
-    double decCoord = dec + degrees;
+    float dec = minutes.toDouble() * 60 / 3600;
+    float degrees = coord.mid(0, decIndex -2).toDouble();
+    float decCoord = dec + degrees;
     if (dir == "W" || dir == "S")
         decCoord *= -1.0;
-    return QString::number(decCoord, 'f', 6);
+    return decCoord;
 }
-
 
 // Laptimer
 void GPS::defineFinishLine(const qreal & Y1, const qreal & X1, const qreal & Y2, const qreal & X2)

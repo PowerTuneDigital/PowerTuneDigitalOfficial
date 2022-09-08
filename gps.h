@@ -27,7 +27,7 @@ class GPS : public QObject
     QElapsedTimer m_timer;
     QTimer m_timeouttimer;
     QTimer m_reconnecttimer;
-    QString convertToDecimal(const QString & coord, const QString & dir);
+    float convertToFloat(const QString & coord, const QString & dir);
     void processGPRMC(const QString &line);
     void checklinecrossed();
     void linecrossed();
@@ -46,7 +46,6 @@ class GPS : public QObject
     void setGPS10HZ();
     void setGPSOnly();
     void closeConnection();
-    void closeConnection1();
     void clear();
 
  private slots:
