@@ -1015,6 +1015,7 @@ Rectangle {
         inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
         onEditingFinished: { rpmfrequencydivider = cylindercomboboxDi1.text
                              inputs.setInputs()
+
         }
 
     }
