@@ -2145,6 +2145,15 @@ ListModel {
         divisor : "1"
     }
     ListElement {
+        sourcename:"MVSS"
+        defaultsymbol: "kph"
+        titlename:"Master speed"
+        decimalpoints : "0"
+        maxvalue : "320"
+        stepsize : "40"
+        divisor : "1"
+    }
+    ListElement {
         sourcename:"Moilp"
         defaultsymbol: "V"
         titlename:"Metering Oil Pump"
@@ -2426,6 +2435,78 @@ ListModel {
         divisor : "1"
     }
 
+ListElement {
+    sourcename:"sens1"
+    defaultsymbol: " "
+    titlename:"Sensor 1"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens2"
+    defaultsymbol: " "
+    titlename:"Sensor 2"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens3"
+    defaultsymbol: " "
+    titlename:"Sensor 3"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens4"
+    defaultsymbol: " "
+    titlename:"Sensor 4"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens4"
+    defaultsymbol: " "
+    titlename:"Sensor 1"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens5"
+    defaultsymbol: " "
+    titlename:"Sensor 5"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens6"
+    defaultsymbol: " "
+    titlename:"Sensor 6"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
+ListElement {
+    sourcename:"sens7"
+    defaultsymbol: " "
+    titlename:"Sensor 7"
+    decimalpoints : "0"
+    maxvalue : "320"
+    stepsize : "40"
+    divisor : "1"
+}
     ListElement {
         sourcename:"SteeringWheelAngle"
         defaultsymbol: "°"
