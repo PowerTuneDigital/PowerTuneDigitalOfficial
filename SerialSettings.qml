@@ -8,7 +8,7 @@ import QtQuick.Controls.Styles 1.4
 import QtMultimedia 5.8
 import "qrc:/Gauges/"
 import DLM 1.0
-
+import QtQuick.VirtualKeyboard 2.1
 
 Quick1.TabView {
     id: tabView
@@ -27,7 +27,39 @@ Quick1.TabView {
     }
 
 
+    Rectangle {
+        id: keyboardcontainer
+        color: "darkgrey"
+        visible: false
+        width: 500
+        height: 180
+        z: 220
 
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: parent
+            drag.target: keyboardcontainer
+        }
+        InputPanel {
+            id: keyboard
+            anchors.fill: parent
+            visible: false
+            states: State {
+                name: "visible"
+                when: keyboard.active
+                PropertyChanges {
+                    target: keyboard
+                    visible: true
+                }
+                PropertyChanges {
+                    target: keyboardcontainer
+                    visible: true
+                    x: 300
+                    y: 200
+                }
+            }
+        }
+    }
 
     style: TabViewStyle {
         frameOverlap: 1

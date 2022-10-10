@@ -32,6 +32,8 @@ Item {
             //console.log("double clicked");
             changesize.visible = true;
             Connect.readavailablebackrounds();
+            changesize.x = touchArea.mouseX;
+            changesize.y = touchArea.mouseY;
         }
     }
     Rectangle{
@@ -41,16 +43,11 @@ Item {
         width : 200
         height :150
         Drag.active: true
-        onVisibleChanged: {
-            changesize.x= -mytextlabel.x;
-            changesize.y= -mytextlabel.y;
-        }
         MouseArea {
             anchors.fill: parent
             drag.target: parent
             enabled: true
         }
-
         Grid { width: parent.width
             height:parent.height
             rows: 4

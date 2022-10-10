@@ -55,6 +55,8 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
+            changesize.x = touchArea.mouseX;
+            changesize.y = touchArea.mouseY;
         }
     }
     Rectangle{
@@ -68,10 +70,6 @@ Item {
             anchors.fill: parent
             drag.target: parent
             enabled: true
-        }
-        onVisibleChanged: {
-            changesize.x= -statepicture.x;
-            changesize.y= -statepicture.y;
         }
         Grid { width: parent.width
             height:parent.height
