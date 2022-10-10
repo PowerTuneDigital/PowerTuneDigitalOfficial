@@ -1,7 +1,12 @@
-import QtQuick 2.10
+import QtQuick 2.8
+import QtQuick.Controls 1.4 as Quick1
+import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 //import QtQuick.Layouts 1.1
 import com.powertune 1.0
+import QtQuick.VirtualKeyboard 2.1
+import QtQuick.Controls.Styles 1.4
+
 
 ApplicationWindow {
     id:window
@@ -12,6 +17,42 @@ ApplicationWindow {
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
+
+    Rectangle {
+        id: keyboardcontainer
+        color: "blue"
+        visible: false
+        width: 500
+        height: 180
+        z: 220
+        x: keyboard.x
+        y: keyboard.y
+
+
+        InputPanel {
+            id: keyboard
+            anchors.fill: keyboardcontainer
+            visible: false
+            states: State {
+                name: "visible"
+                when: keyboard.active
+                PropertyChanges {
+                    target: keyboard
+                    visible: true
+                }
+                PropertyChanges {
+                    target: keyboardcontainer
+                    visible: true
+
+                }
+            }
+        }
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: parent
+            drag.target: keyboard
+        }
+    }
 
     Connections{
             target: Dashboard
@@ -24,6 +65,8 @@ ApplicationWindow {
         id: name
         Component.onCompleted: Connect.checkifraspberrypi()
     }
+
+
     SwipeView {
         id: dashView
 
@@ -59,6 +102,21 @@ ApplicationWindow {
             SerialSettings{}
         }
     }
+    /* For future use
+    Button {
+        id: btnfinaliseupdate
+        
+        text: "Click to finalise update"
+        width: window.width / 1.5
+        height: window.height / 1.5
+        font.pixelSize: window.width / 20
+        anchors.centerIn: parent
+        onClicked: {
+            console.log("apply Fixes")
+            btnfinaliseupdate.text = "Please wait for reboot..."
+        }
+    }
+    */
     Drawer {
         id: drawerpopup
         //x: 20

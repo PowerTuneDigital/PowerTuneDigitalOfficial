@@ -4,7 +4,6 @@ Item {
     id:mytextlabel
     height: mytext.height
     width:  mytext.width
-    //color: "tra"
     property string information: "Text label gauge"
     property string displaytext
     property string fonttype
@@ -21,9 +20,10 @@ Item {
 
     Component.onCompleted: {togglemousearea();
         checkdatasource();
-    }
-    DatasourcesList{id: powertunedatasource}
 
+    }
+
+    DatasourcesList{id: powertunedatasource}
     Connections{
         target: Dashboard
         onDraggableChanged: togglemousearea();
@@ -35,19 +35,13 @@ Item {
         drag.target: parent
         enabled: false
         onDoubleClicked: {
-            console.log("double clicked");
             changesize.visible = true;
-            changesize.x = touchArea.mouseX;
-            changesize.y = touchArea.mouseY;
+
             for(var i = 0; i < colorselect.model.count; ++i) if (colorselect.textAt(i) === textcolor)colorselect.currentIndex = i ;
             for(var j = 0; j < cbx_sources.model.count; ++j) if (powertunedatasource.get(j).sourcename === datasourcename)cbx_sources.currentIndex = j;
         }
     }
-//Rectangle{
-      //      id : textrect
-      //      color: "blue"
-      //      height: mytext.height
-      //      width:  mytext.width
+
     Text {
         id: mytext
         text: displaytext
@@ -77,12 +71,18 @@ Item {
         visible: false
         width : 200
         height :480
+
         Drag.active: true
         MouseArea {
             anchors.fill: parent
             drag.target: parent
             enabled: true
         }
+        onVisibleChanged: {
+            changesize.x= -mytextlabel.x;
+            changesize.y= -mytextlabel.y;
+        }
+
 
         Grid { width: parent.width
             height:parent.height
@@ -125,6 +125,8 @@ Item {
                 text : displaytext
                 width: parent.width
                 font.pixelSize: 15 
+                inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
+                                  | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
                 onTextChanged: {
                     displaytext = changetext.text;
                     }
@@ -313,8 +315,7 @@ Item {
         id: warningindication
         function warn()
         {
-            console.log("Textwarning triggered")
-            console.log(mytext.text)
+
             if (mytext.text > warnvaluehigh || mytext.text < warnvaluelow )anim.running = true;
             else anim.running = false,mytext.color = resettextcolor;
             //if (displaytext.text > peakval)peakval = displaytext.text;
@@ -324,7 +325,7 @@ Item {
     }
     function togglemousearea()
     {
-        //console.log("toggle" + Dashboard.draggable);
+
         if (Dashboard.draggable === 1)
         {
             touchArea.enabled = true;
@@ -334,7 +335,7 @@ Item {
     }
     function increaseDecrease()
     {
-        console.log("ident "+ increasedecreaseident);
+
         switch(increasedecreaseident)
         {
 
