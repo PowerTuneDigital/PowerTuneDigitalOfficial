@@ -7,8 +7,6 @@ import QtQuick.Controls.Material 2.0
 import QtQml.Models 2.3
 import Qt.labs.settings 1.0
 import QtQuick.Controls 1.4 as Quick1
-import QtQuick.VirtualKeyboard 2.1
-import QtQuick.VirtualKeyboard.Styles 2.2
 import "../Gauges"
 import "qrc:/Gauges/createRoundGauge.js" as CreateRoundgaugeScript
 import "qrc:/Gauges/createsquaregaugeUserDash.js" as CreateSquareGaugeScript
@@ -253,6 +251,7 @@ Item {
         }
     }
     // Virtual Keyboard
+    /*
     Rectangle{
         id: keyboardcontainer
         color: "darkgrey"
@@ -285,7 +284,7 @@ Item {
                 }
             }
         }
-    }
+    }*/
     /// RPM STYLE SELECTOR and Backround picture loader
     Rectangle{
         id: rpmbackroundselector
