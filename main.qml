@@ -5,6 +5,7 @@ import QtQuick.Controls 2.3
 //import QtQuick.Layouts 1.1
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
+import QtQuick.Controls.Styles 1.4
 
 
 ApplicationWindow {
@@ -64,6 +65,8 @@ ApplicationWindow {
         id: name
         Component.onCompleted: Connect.checkifraspberrypi()
     }
+
+
     SwipeView {
         id: dashView
 
@@ -99,6 +102,21 @@ ApplicationWindow {
             SerialSettings{}
         }
     }
+    /* For future use
+    Button {
+        id: btnfinaliseupdate
+        
+        text: "Click to finalise update"
+        width: window.width / 1.5
+        height: window.height / 1.5
+        font.pixelSize: window.width / 20
+        anchors.centerIn: parent
+        onClicked: {
+            console.log("apply Fixes")
+            btnfinaliseupdate.text = "Please wait for reboot..."
+        }
+    }
+    */
     Drawer {
         id: drawerpopup
         //x: 20
