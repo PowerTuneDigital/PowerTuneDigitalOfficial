@@ -22,7 +22,6 @@ ApplicationWindow {
         width: 500
         height: 180
         z: 220
-
         x: keyboard.x
         y: keyboard.y
         MouseArea {
@@ -33,6 +32,8 @@ ApplicationWindow {
 
         InputPanel {
             id: keyboard
+            x:100
+            y:100
             width: keyboardcontainer.width
             visible: false
             states: State {
@@ -41,6 +42,7 @@ ApplicationWindow {
                 PropertyChanges {
                     target: keyboardcontainer
                     visible: true
+
                 }
                 PropertyChanges {
                     target: keyboard
