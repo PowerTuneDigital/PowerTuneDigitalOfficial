@@ -15,6 +15,7 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
+    //Screen Keyboard do not change !!!
     Rectangle {
         id: keyboardcontainer
         color: "blue"
@@ -22,35 +23,39 @@ ApplicationWindow {
         width: 500
         height: 180
         z: 220
-        x:keyboard.x
-        y:keyboard.y
-        MouseArea {
-            id: touchAkeyboardcontainer
-            anchors.fill: parent
-            drag.target: keyboard
-        }
+      //x:keyboard.x
+      //y:keyboard.y
+
 
         InputPanel {
             id: keyboard
             anchors.fill: keyboardcontainer
+            x:keyboardcontainer.x
+            y:keyboardcontainer.y
             visible: false
             states: State {
                 name: "visible"
                 when: keyboard.active
                 PropertyChanges {
+                    target: keyboard
+                    visible: true
+                }
+                PropertyChanges {
                     target: keyboardcontainer
                     visible: true
+                    x: 200
+                    y: 200
                 }
                 PropertyChanges {
                     target: drawerpopup
                     interactive: false
                 }
-
-                PropertyChanges {
-                    target: keyboard
-                    visible: true
-                }
             }
+        }
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: parent //This works now on QT 5.10 as well as QT 5.15
+            drag.target: keyboardcontainer
         }
     }
 
