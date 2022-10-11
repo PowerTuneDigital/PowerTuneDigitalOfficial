@@ -26,7 +26,7 @@ ApplicationWindow {
         y:keyboard.y
         MouseArea {
             id: touchAkeyboardcontainer
-            anchors.fill: keyboardcontainer
+            anchors.fill: parent
             drag.target: keyboard
         }
 
