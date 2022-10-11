@@ -42,6 +42,11 @@ ApplicationWindow {
                     visible: true
                 }
                 PropertyChanges {
+                    target: drawerpopup
+                    interactive: false
+                }
+
+                PropertyChanges {
                     target: keyboard
                     visible: true
                 }
@@ -114,7 +119,7 @@ ApplicationWindow {
     */
     Drawer {
         id: drawerpopup
-        //x: 20
+
         width: window.width
         height: 0.5 * window.height
         edge: Qt.TopEdge
