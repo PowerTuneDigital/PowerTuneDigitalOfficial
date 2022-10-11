@@ -71,7 +71,7 @@ Item {
         visible: false
         width : 200
         height :480
-
+        z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
             anchors.fill: parent

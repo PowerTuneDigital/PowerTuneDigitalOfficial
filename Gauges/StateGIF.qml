@@ -56,16 +56,18 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-            changesize.x = touchArea.mouseX;
-            changesize.y = touchArea.mouseY;
+                changesize.x= -statepicture.x;
+                changesize.y= -statepicture.y;
         }
     }
+
     Rectangle{
         id : changesize
         color: "darkgrey"
         visible: false
         width : 200
         height :320
+        z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
             anchors.fill: parent

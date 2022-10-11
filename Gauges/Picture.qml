@@ -40,6 +40,7 @@ Item {
         visible: false
         width : 200
         height :150
+        z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         onVisibleChanged: {
             changesize.x= -mytextlabel.x;
