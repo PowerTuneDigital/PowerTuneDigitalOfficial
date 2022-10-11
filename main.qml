@@ -15,7 +15,7 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
-    //Screen Keyboard do not change !!!
+    //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
     Rectangle {
         id: keyboardcontainer
         color: "blue"
@@ -26,7 +26,7 @@ ApplicationWindow {
 
         MouseArea {
             id: touchAkeyboardcontainer
-            anchors.fill: parent //This works now on QT 5.10 as well as QT 5.15
+            anchors.fill: parent
             drag.target: keyboardcontainer
         }
 
@@ -42,14 +42,10 @@ ApplicationWindow {
                 PropertyChanges {
                     target: keyboardcontainer
                     visible: true
-                    x: 200
-                    y: 200
                 }
                 PropertyChanges {
                     target: keyboard
                     visible: true
-                    x:keyboardcontainer.x //done to prevent a offset at opening on QT5.15
-                    y:keyboardcontainer.y //done to prevent a offset at opening on QT5.15
                 }
                 PropertyChanges {
                     target: drawerpopup
