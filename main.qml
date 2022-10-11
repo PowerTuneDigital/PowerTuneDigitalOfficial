@@ -48,6 +48,8 @@ ApplicationWindow {
                 PropertyChanges {
                     target: keyboard
                     visible: true
+                    x:keyboardcontainer.x //done to prevent a offset at opening on QT5.15
+                    y:keyboardcontainer.y //done to prevent a offset at opening on QT5.15
                 }
                 PropertyChanges {
                     target: drawerpopup
