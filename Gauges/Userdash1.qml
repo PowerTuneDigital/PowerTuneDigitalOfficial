@@ -250,41 +250,7 @@ Item {
             Dashboard.setdraggable(1);
         }
     }
-    // Virtual Keyboard
-    /*
-    Rectangle{
-        id: keyboardcontainer
-        color: "darkgrey"
-        visible: false
-        width :500
-        height:180
-        z:220
-        MouseArea {
-            id: touchAkeyboardcontainer
-            anchors.fill:parent
-            drag.target: keyboardcontainer
-        }
-        InputPanel {
-            id: keyboard
-            anchors.fill: parent
-            visible: false
 
-            states: State {
-                name: "visible";
-                when: keyboard.active;
-                PropertyChanges {
-                    target: keyboard;
-                    visible: true
-                }
-                PropertyChanges {
-                    target: keyboardcontainer;
-                    visible: true;
-                    x:0
-                    y:0
-                }
-            }
-        }
-    }*/
     /// RPM STYLE SELECTOR and Backround picture loader
     Rectangle{
         id: rpmbackroundselector
