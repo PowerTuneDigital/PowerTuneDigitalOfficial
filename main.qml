@@ -40,14 +40,14 @@ ApplicationWindow {
                 name: "visible"
                 when: keyboard.active
                 PropertyChanges {
-                    target: keyboard
-                    visible: true
-                }
-                PropertyChanges {
                     target: keyboardcontainer
                     visible: true
                     x: 200
                     y: 200
+                }
+                PropertyChanges {
+                    target: keyboard
+                    visible: true
                 }
                 PropertyChanges {
                     target: drawerpopup
