@@ -24,7 +24,11 @@ ApplicationWindow {
         z: 220
         x: keyboard.x
         y: keyboard.y
-
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: keyboardcontainer
+            drag.target: keyboard
+        }
 
         InputPanel {
             id: keyboard
@@ -34,20 +38,16 @@ ApplicationWindow {
                 name: "visible"
                 when: keyboard.active
                 PropertyChanges {
-                    target: keyboard
-                    visible: true
-                }
-                PropertyChanges {
                     target: keyboardcontainer
                     visible: true
 
                 }
+                PropertyChanges {
+                    target: keyboard
+                    visible: true
+                }
+
             }
-        }
-        MouseArea {
-            id: touchAkeyboardcontainer
-            anchors.fill: parent
-            drag.target: keyboard
         }
     }
 
