@@ -23,9 +23,12 @@ ApplicationWindow {
         width: 500
         height: 180
         z: 220
-      //x:keyboard.x
-      //y:keyboard.y
 
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: parent //This works now on QT 5.10 as well as QT 5.15
+            drag.target: keyboardcontainer
+        }
 
         InputPanel {
             id: keyboard
@@ -52,11 +55,7 @@ ApplicationWindow {
                 }
             }
         }
-        MouseArea {
-            id: touchAkeyboardcontainer
-            anchors.fill: parent //This works now on QT 5.10 as well as QT 5.15
-            drag.target: keyboardcontainer
-        }
+
     }
 
     Connections{
