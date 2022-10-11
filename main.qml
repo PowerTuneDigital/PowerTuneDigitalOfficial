@@ -21,7 +21,7 @@ ApplicationWindow {
         color: "blue"
         visible: false
         width: 500
-        height: 180
+        height: 220
         z: 220
 
         MouseArea {
