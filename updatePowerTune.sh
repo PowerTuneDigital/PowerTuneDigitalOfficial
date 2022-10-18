@@ -3,6 +3,8 @@
 if [ -d /home/root ]; then
 # Get the latest source
 		echo "Yocto detected "
+		echo "Fix rng "
+		rm /etc/init.d/rng-tools
 		if [ -d /home/pi/src ]; then
 		echo "Updating to latest source "
 		cd /home/pi/src
