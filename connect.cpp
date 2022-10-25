@@ -847,7 +847,7 @@ void Connect::daemonstartup(const int &daemon)
         daemonstart = "./GMCANOBD";
         break;
     case 38:
-        daemonstart = "./PTDCAND";
+        daemonstart = "";
         break;
     case 39:
         daemonstart = "./HondataS300";
