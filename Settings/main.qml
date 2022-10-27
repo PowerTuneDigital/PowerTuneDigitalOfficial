@@ -607,7 +607,7 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.97h " + Dashboard.Platform
+                    text: " V 1.97i " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 } //spacer
