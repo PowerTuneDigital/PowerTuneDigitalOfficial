@@ -15,7 +15,6 @@ ApplicationWindow {
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
-
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
     Rectangle {
         id: keyboardcontainer
