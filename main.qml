@@ -2,6 +2,7 @@ import QtQuick 2.8
 import QtQuick.Controls 1.4 as Quick1
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 
@@ -14,7 +15,6 @@ ApplicationWindow {
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
-
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
     Rectangle {
         id: keyboardcontainer
