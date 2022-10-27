@@ -1,10 +1,10 @@
 import QtQuick 2.8
 import QtQuick.Controls 1.4 as Quick1
+import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
-
 
 ApplicationWindow {
     id:window
@@ -16,40 +16,45 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
+    //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
     Rectangle {
         id: keyboardcontainer
         color: "blue"
         visible: false
         width: 500
-        height: 180
+        height: 220
         z: 220
-        x: keyboard.x
-        y: keyboard.y
 
+        MouseArea {
+            id: touchAkeyboardcontainer
+            anchors.fill: parent
+            drag.target: keyboardcontainer
+        }
 
         InputPanel {
             id: keyboard
             anchors.fill: keyboardcontainer
+            x:keyboardcontainer.x
+            y:keyboardcontainer.y
             visible: false
             states: State {
                 name: "visible"
                 when: keyboard.active
                 PropertyChanges {
+                    target: keyboardcontainer
+                    visible: true
+                }
+                PropertyChanges {
                     target: keyboard
                     visible: true
                 }
                 PropertyChanges {
-                    target: keyboardcontainer
-                    visible: true
-
+                    target: drawerpopup
+                    interactive: false
                 }
             }
         }
-        MouseArea {
-            id: touchAkeyboardcontainer
-            anchors.fill: parent
-            drag.target: keyboard
-        }
+
     }
 
     Connections{
@@ -117,7 +122,7 @@ ApplicationWindow {
     */
     Drawer {
         id: drawerpopup
-        //x: 20
+
         width: window.width
         height: 0.5 * window.height
         edge: Qt.TopEdge
