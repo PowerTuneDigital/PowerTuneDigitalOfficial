@@ -49,7 +49,7 @@ Rectangle {
             property alias checkan51Ksave   : checkan51k.checkState
             property alias rpmcheckboxsave  : rpmcheckbox.checkState
             property alias di1RPMsave  : enablefrequencydi1rpm.checkState
-//            property alias cylindercomboboxsave : cylindercombobox.currentIndex
+            property alias cylindercomboboxsave : cylindercombobox.currentIndex
 //            property alias cylindercomboboxDi1save : cylindercomboboxDi1.currentIndex
             property alias  cylindercomboboxDi1save :cylindercomboboxDi1.text
             property alias t10save : t10.text
