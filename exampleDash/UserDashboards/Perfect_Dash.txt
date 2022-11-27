@@ -1,0 +1,25 @@
+Round gauge,536,132,62,rpm,10000,0,10000,-1000,-117,117,10000,1,0,0,0,0,-55,0,0,0,0,0,0,0,0.5,0.4,0.33,0.25,0,4,43,7,0,0,red,darkred,transparent,transparent,grey,transparent,transparent,transparent,grey,black,transparent,transparent,transparent,transparent,true,false,false,Lato,30,50,10,false,Lato, ,red, ,, ,, ,,
+Text label gauge,375,304,0,DejaVu Sans,31,azure,wheelspdrearleft,true,0,20000,-20000,
+Text label gauge,387,399,0,DejaVu Sans,13,white,Gear,true,0,20000,-20000,
+Text label gauge,186,20,131087.0,DejaVu Sans,9,white,Odo,true,0,500000,-20000,
+Text label gauge,553,18,0.0,DejaVu Sans,10,white,Trip,true,1,20000,-20000,
+Text label gauge,63,83,15,DejaVu Sans,15,white,Watertemp,true,0,100,55,
+Text label gauge,62,200,90,DejaVu Sans,15,white,oiltemp,true,0,110,55,
+Text label gauge,56,309,10,DejaVu Sans,15,white,Intaketemp,true,0,40,-40,
+Text label gauge,47,421,12.4,DejaVu Sans,15,white,BatteryV,true,1,15,11.5,
+Text label gauge,708.1023720349563,83.985446985447,24,DejaVu Sans,15,white,FuelPress,true,0,75,15,
+Text label gauge,705.2184769038702,197.6694386694387,0.0,DejaVu Sans,15,white,oilpres,true,1,135,12,
+Text label gauge,722,304,0,DejaVu Sans,15,white,InjDuty,true,0,90,-20000,
+Text label gauge,712,419,43,DejaVu Sans,15,white,FuelLevel,true,0,1000,15,
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,8600,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Purple.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,8400,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_All.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,8200,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Blue_1.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,8000,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_3.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7750,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_2.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7500,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_1.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7250,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_3.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7000,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_2.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,6500,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_1.png
+
+
+
