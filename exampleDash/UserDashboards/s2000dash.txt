@@ -1,11 +1,11 @@
-Text label gauge,504.10242194122895,238.60706860706858,-29.03,DS-Digital,14,white,BoostPres,true,2,20000,-20000,
-Text label gauge,185.89263420724092,296.48648648648657,12.2,DS-Digital,15,white,BatteryV,true,1,21,8,
-Text label gauge,238.82646691635455,237.6091476091476,0,DS-Digital,15,white,TPS,true,0,20000,-20000,
-Text label gauge,575.4057428214729,290.49896049896046,19,DS-Digital,15,white,Intaketemp,true,0,20000,-20000,
-Text label gauge,656.3046192259674,373.32640332640347,145.4,DS-Digital,12,silver,Trip,true,1,20000,-20000,
-Text label gauge,91.0112359550562,369.33471933471935,17,DS-Digital,15,white,Watertemp,true,0,120,70,
-Round gauge,1540,1442.2222222222217,-949.9792099792102,DRIVESHAFTOFFSET,9,0,9,-1000,-33,33,9,100,-99,0,-99,0,2,41,0,0,6,3,10,1,0.5,0.4,0.33,0.25,20,5,93,8,0,0,red,darkred,transparent,transparent,transparent,transparent,darkmagenta,blue,transparent,transparent,red,transparent,transparent,transparent,false,false,false,Lato,30,50,10,false,Lato,DRIVESHAFT OFFSET,transparent, ,, ,, ,,
-Round gauge,1516,-361.5230961298378,-18.918918918918635,rpm,9000,0,10000,-1000,-33,33,6,1000,1000,6,-1000,0,2,36,0,-1,6,1,6,1,0.5,0.4,0.33,0.25,20,5,93,8,0,0,transparent,transparent,transparent,transparent,red,dimgray,red,dimgray,grey,transparent,transparent,transparent,transparent,transparent,true,false,false,Lato,30,50,10,false,Lato,RPM,transparent, ,, ,, ,,
-Square gauge,266,119,255.68039950062405,187.1101871101871,248,0, ,,false,false,false,Dashboard,speed,speed,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,10,160,0,Arial,DS-Digital,
-State GIF,246.70411985018723,97.81704781704781,300,rpm,8500,file:///home/pi/Logo/None,file:///home/pi/Logo/shift.gif
+Text label gauge,504.10242194122895,238.60706860706858,-29.03,DS-Digital,14,white,BoostPres,true,2,20000,-20000,
+Text label gauge,185.89263420724092,296.48648648648657,12.2,DS-Digital,15,white,BatteryV,true,1,21,8,
+Text label gauge,238.82646691635455,237.6091476091476,0,DS-Digital,15,white,TPS,true,0,20000,-20000,
+Text label gauge,575.4057428214729,290.49896049896046,19,DS-Digital,15,white,Intaketemp,true,0,20000,-20000,
+Text label gauge,656.3046192259674,373.32640332640347,145.4,DS-Digital,12,silver,Trip,true,1,20000,-20000,
+Text label gauge,91.0112359550562,369.33471933471935,17,DS-Digital,15,white,Watertemp,true,0,120,70,
+Round gauge,1540,1442.2222222222217,-949.9792099792102,DRIVESHAFTOFFSET,9,0,9,-1000,-33,33,9,100,-99,0,-99,0,2,41,0,0,6,3,10,1,0.5,0.4,0.33,0.25,20,5,93,8,0,0,red,darkred,transparent,transparent,transparent,transparent,darkmagenta,blue,transparent,transparent,red,transparent,transparent,transparent,false,false,false,Lato,30,50,10,false,Lato,DRIVESHAFT OFFSET,transparent, ,, ,, ,,
+Round gauge,1516,-361.5230961298378,-18.918918918918635,rpm,9000,0,10000,-1000,-33,33,6,1000,1000,6,-1000,0,2,36,0,-1,6,1,6,1,0.5,0.4,0.33,0.25,20,5,93,8,0,0,transparent,transparent,transparent,transparent,red,dimgray,red,dimgray,grey,transparent,transparent,transparent,transparent,transparent,true,false,false,Lato,30,50,10,false,Lato,RPM,transparent, ,, ,, ,,
+Square gauge,266,119,255.68039950062405,187.1101871101871,248,0, ,,false,false,false,Dashboard,speed,speed,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,10,160,0,Arial,DS-Digital,
+gauge image,301,301,176,file:///home/pi/Logo/Logo.png
 
