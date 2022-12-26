@@ -264,7 +264,8 @@ void GPS::handleTimeout()
     // We will try to reconnect at 115K BAUD and start another timer
     m_dashboard->setgpsSpeed(999);
     m_reconnecttimer.start(6000);
-    setGPSBAUD115();
+    handleReconnectTimeout();
+    //setGPSBAUD115();
 }
 void GPS::handleReconnectTimeout()
 {
