@@ -262,7 +262,7 @@ void GPS::handleTimeout()
 {
     // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     // We will try to reconnect at 115K BAUD and start another timer
-    m_dashboard->setgpsFIXtype("Timeout occured");
+    m_dashboard->setgpsSpeed(999);
     m_reconnecttimer.start(6000);
     setGPSBAUD115();
 }
