@@ -205,7 +205,7 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-
+    m_timeouttimer.start(6000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         qDebug() << "ACK 10Hz" <<messageline.toHex();
@@ -262,6 +262,7 @@ void GPS::handleTimeout()
 {
     // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     // We will try to reconnect at 115K BAUD and start another timer
+    m_dashboard->setgpsFIXtype("Timeout occured");
     m_reconnecttimer.start(6000);
     setGPSBAUD115();
 }
