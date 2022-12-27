@@ -128,6 +128,7 @@ void GPS::setGPSBAUD115()
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
     closeConnection();
+    initSerialPort();
     initialized = 1;
     openConnection(GPSPort, "115200");
 }
@@ -263,14 +264,15 @@ void GPS::handleTimeout()
     // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     // We will try to reconnect at 115K BAUD and start another timer
     m_dashboard->setgpsSpeed(999);
-    m_reconnecttimer.start(6000);
     m_reconnecttimer.stop();
+    m_reconnecttimer.start(6000);
     setGPSBAUD115();
 }
 void GPS::handleReconnectTimeout()
 {
     if (m_dashboard->gpsFIXtype() == "open with 9600" || m_dashboard->gpsFIXtype() == "open with 115200") {
         closeConnection();
+        initSerialPort();
         openConnection(GPSPort, "9600");
         m_reconnecttimer.start(6000);
     } else {
