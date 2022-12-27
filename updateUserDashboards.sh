@@ -5,5 +5,5 @@ rsync -a -v --ignore-existing /home/pi/src/exampleDash/UserDashboards/*.txt /hom
 
 echo "fix MFD"
 cp /home/pi/src/exampleDash/UserDashboards/MFD.txt /home/pi/UserDashboards/
-
+cp /home/pi/src/exampleDash/UserDashboards/s2000dash.txt /home/pi/UserDashboards/
 
