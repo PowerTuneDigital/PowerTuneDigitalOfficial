@@ -266,7 +266,10 @@ void GPS::handleTimeout()
     m_dashboard->setgpsSpeed(999);
     m_reconnecttimer.stop();
     m_reconnecttimer.start(6000);
-    setGPSBAUD115();
+    closeConnection();
+    initSerialPort();
+    initialized = 1;
+    openConnection(GPSPort, "115200");
 }
 void GPS::handleReconnectTimeout()
 {
