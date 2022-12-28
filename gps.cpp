@@ -40,6 +40,7 @@ int linedirection;       // Direction of the finish line 0 = Latitude 1 = Longit
 int line2direction = 2;  // Direction of the finish line 0 = Latitude 1 = Longitude
 int zeroslope;
 int zeroslope2;
+QString setbaudrate;
 
 GPS::GPS(QObject *parent)
     : QObject(parent)
@@ -72,6 +73,7 @@ void GPS::clear()
 void GPS::openConnection(const QString &portName, const QString &Baud)
 {
     GPSPort = portName;
+    setbaudrate = Baud;
     qDebug()<< " Open GPS on: " + GPSPort + "@" + Baud;
     initSerialPort();
     m_timeouttimer.stop();
@@ -271,8 +273,14 @@ void GPS::handleTimeout()
     rateset = 0;
     //setGPSBAUD115();
     closeConnection();
+    if (setbaudrate != "9600")
+    {
     openConnection(GPSPort, "9600");
-
+    }
+    else
+    {
+    openConnection(GPSPort, "115200");
+    }
 }
 void GPS::handleReconnectTimeout()
 {
