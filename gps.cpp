@@ -213,7 +213,7 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-
+    m_timeouttimer.start(5000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         qDebug() << "Received ACK 10Hz";
