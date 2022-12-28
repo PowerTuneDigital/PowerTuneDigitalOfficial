@@ -282,16 +282,12 @@ void GPS::handleTimeout()
     m_dashboard->setgpsTime("0");
     m_dashboard->setgpsHDOP(0);
     //wait 2 seconds before reconnecting
-    connect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnect);
-    m_reconnecttimer.start(2000);
-
+    QTimer::singleShot(2000, this, SLOT(handleReconnect()));
 }
 
 void GPS::handleReconnect()
 {
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
-    m_reconnecttimer.stop();
-    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnect);
     if (setbaudrate != "9600")
     {
     openConnection(GPSPort, "9600");
