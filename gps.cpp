@@ -74,7 +74,8 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
     GPSPort = portName;
     qDebug()<< " Open GPS on: " + GPSPort;
     initSerialPort();
-    m_timeouttimer.start(5000);
+    m_timeouttimer.stop();
+    m_timeouttimer.start(10000);
     baudrate = Baud.toInt();
     m_serialport->setPortName(GPSPort);
 
@@ -161,14 +162,10 @@ void GPS::closeConnection()
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 {
-    qDebug() << "Serial error" << m_serialport->errorString() ;
-    if (serialPortError == QSerialPort::ReadError)
+    if (m_serialport->errorString() == "No error")
     {
         qDebug() << "handle error" << m_serialport->errorString() ;
-        m_dashboard->setgpsFIXtype(m_serialport->errorString());
     }
-    //closeConnection();
-    //openConnection(GPSPort, "115200");
 }
 
 void GPS::readyToRead()
@@ -213,7 +210,7 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-    m_timeouttimer.start(5000);
+    m_timeouttimer.start(10000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         qDebug() << "Received ACK 10Hz";
