@@ -55,6 +55,7 @@ GPS::GPS(DashBoard *dashboard, QObject *parent)
 
 void GPS::initSerialPort()
 {
+    qDebug() << "Initialize Serial Port" ;
     m_serialport = new SerialPort(this);
     connect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
@@ -72,7 +73,7 @@ void GPS::clear()
 void GPS::openConnection(const QString &portName, const QString &Baud)
 {
     GPSPort = portName;
-    // qDebug()<< "GPS Port Name : " + GPSPort;
+    qDebug()<< " Open GPS on: " + GPSPort;
     initSerialPort();
     m_timeouttimer.start(5000);
     baudrate = Baud.toInt();
@@ -106,6 +107,7 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
 
 void GPS::removeNMEAmsg()
 {
+    qDebug() << "Disable unnecesary NMEA " ;
     // setGPS10HZ(); //as a backup
     // disables all the NMEA mesages that we don't need ( we only need RMC and  GGA)
     setGPSOnly();
@@ -124,16 +126,17 @@ void GPS::removeNMEAmsg()
 void GPS::setGPSBAUD115()
 {
     // Set Ublox GPS to use baudrate of 115200
+    qDebug() << "Set 115K" ;
     m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
     closeConnection();
-    initSerialPort();
     initialized = 1;
     openConnection(GPSPort, "115200");
 }
 void GPS::setGPS10HZ()
 {
+    qDebug() << "Set 10Hz" ;
     // Set Ublox GPS Update Rate to 10Hz
     m_dashboard->setgpsFIXtype("GPS set 10HZ");
     m_serialport->write(QByteArray::fromHex("b562060806006400010001007a12"));
@@ -142,11 +145,13 @@ void GPS::setGPS10HZ()
 void GPS::setGPSOnly()
 {
     // Switch on GPS only
+    qDebug() << "set GPS only" ;
     m_serialport->write(QByteArray::fromHex("B562063E2C0000201005000810000100010101010300000001010308100000000101050003000000010106080E00000001010CD1"));  // GPS Only
     m_serialport->waitForBytesWritten(4000);
 }
 void GPS::closeConnection()
 {
+    qDebug() << "close connection " ;
     disconnect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
@@ -158,6 +163,7 @@ void GPS::closeConnection()
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 {
+    qDebug() << "handle error" ;
     if (serialPortError == QSerialPort::ReadError)
     {
         m_dashboard->setgpsFIXtype(m_serialport->errorString());
@@ -166,6 +172,7 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 
 void GPS::readyToRead()
 {
+    qDebug() << "Data available" ;
     QByteArray rawData = m_serialport->readAll();          // read data from serial port
     // qDebug()<< "chunk " << rawData;
     line.append(rawData);
@@ -206,10 +213,10 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-    m_timeouttimer.start(6000);
+
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
-        qDebug() << "ACK 10Hz" <<messageline.toHex();
+        qDebug() << "Received ACK 10Hz";
         m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
         removeNMEAmsg();
@@ -263,19 +270,15 @@ void GPS::handleTimeout()
 {
     // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     // We will try to reconnect at 115K BAUD and start another timer
-    m_dashboard->setgpsSpeed(999);
-    m_reconnecttimer.stop();
+    qDebug() << "Timeout occured" ;
     m_reconnecttimer.start(6000);
-    closeConnection();
-    initSerialPort();
-    initialized = 1;
-    openConnection(GPSPort, "115200");
+    setGPSBAUD115();
 }
 void GPS::handleReconnectTimeout()
 {
+    qDebug() << "Reconnect Timeout occured" ;
     if (m_dashboard->gpsFIXtype() == "open with 9600" || m_dashboard->gpsFIXtype() == "open with 115200") {
         closeConnection();
-        initSerialPort();
         openConnection(GPSPort, "9600");
         m_reconnecttimer.start(6000);
     } else {
