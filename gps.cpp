@@ -271,7 +271,7 @@ void GPS::handleTimeout()
     qDebug() << "Timeout occured" ;
     m_timeouttimer.stop();
     closeConnection();
-    rateset = 0;
+    //rateset = 0;
     m_dashboard->setgpsLatitude(0);
     m_dashboard->setgpsLongitude(0);
     m_dashboard->setgpsAltitude(0);
