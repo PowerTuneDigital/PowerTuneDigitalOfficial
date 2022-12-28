@@ -288,6 +288,7 @@ void GPS::handleTimeout()
 void GPS::handleReconnect()
 {
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
+    // Check what baudrate was used previously and switch
     if (setbaudrate != "9600")
     {
     openConnection(GPSPort, "9600");
