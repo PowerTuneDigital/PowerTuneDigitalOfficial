@@ -59,8 +59,8 @@ void GPS::initSerialPort()
     qDebug() << "Initialize Serial Port" ;
     m_serialport = new SerialPort(this);
     connect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
-    connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
-            this, &GPS::handleError);
+ //   connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
+ //           this, &GPS::handleError);
     connect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
 }
 
@@ -77,7 +77,7 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
     qDebug()<< " Open GPS on: " + GPSPort + "@" + Baud;
     initSerialPort();
     m_timeouttimer.stop();
-    m_timeouttimer.start(5000);
+    m_timeouttimer.start(10000);
     baudrate = Baud.toInt();
     m_serialport->setPortName(GPSPort);
 
@@ -133,7 +133,6 @@ void GPS::setGPSBAUD115()
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
     initialized = 1;
-    m_timeouttimer.stop();
     handleTimeout();
 }
 void GPS::setGPS10HZ()
@@ -212,7 +211,7 @@ void GPS::readyToRead()
 void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
-    m_timeouttimer.start(5000);
+    m_timeouttimer.start(10000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         qDebug() << "Received ACK 10Hz";
@@ -270,6 +269,7 @@ void GPS::handleTimeout()
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
     // Reset all GPS values to 0 and also reset the 10Hz set marker
     qDebug() << "Timeout occured" ;
+    m_timeouttimer.stop();
     closeConnection();
     rateset = 0;
     m_dashboard->setgpsLatitude(0);
