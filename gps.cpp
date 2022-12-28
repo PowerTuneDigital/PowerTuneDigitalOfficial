@@ -290,6 +290,7 @@ void GPS::handleTimeout()
 void GPS::handleReconnect()
 {
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
+    m_reconnecttimer.stop();
     disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnect);
     if (setbaudrate != "9600")
     {
