@@ -142,6 +142,8 @@ void GPS::setGPS10HZ()
     m_dashboard->setgpsFIXtype("GPS set 10HZ");
     m_serialport->write(QByteArray::fromHex("b562060806006400010001007a12"));
     m_serialport->waitForBytesWritten(4000);
+    removeNMEAmsg();
+    setGPSBAUD115();
 }
 void GPS::setGPSOnly()
 {
@@ -217,8 +219,6 @@ void GPS::ProcessMessage(QByteArray messageline)
         qDebug() << "Received ACK 10Hz";
         m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
-        removeNMEAmsg();
-        setGPSBAUD115();
         return;
     }
 
@@ -271,7 +271,7 @@ void GPS::handleTimeout()
     qDebug() << "Timeout occured" ;
     m_timeouttimer.stop();
     closeConnection();
-    //rateset = 0;
+    rateset = 0;
     m_dashboard->setgpsLatitude(0);
     m_dashboard->setgpsLongitude(0);
     m_dashboard->setgpsAltitude(0);
