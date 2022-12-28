@@ -272,7 +272,8 @@ void GPS::handleTimeout()
     // We will try to reconnect at 115K BAUD and start another timer
     qDebug() << "Timeout occured" ;
     m_reconnecttimer.start(6000);
-    setGPSBAUD115();
+    //setGPSBAUD115();
+    handleReconnectTimeout();
 }
 void GPS::handleReconnectTimeout()
 {
