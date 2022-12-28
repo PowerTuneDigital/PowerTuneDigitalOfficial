@@ -271,9 +271,10 @@ void GPS::handleTimeout()
     // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
     // We will try to reconnect at 115K BAUD and start another timer
     qDebug() << "Timeout occured" ;
-    m_reconnecttimer.start(6000);
     //setGPSBAUD115();
-    handleReconnectTimeout();
+    closeConnection();
+    openConnection(GPSPort, "9600");
+    m_reconnecttimer.start(6000);
 }
 void GPS::handleReconnectTimeout()
 {
