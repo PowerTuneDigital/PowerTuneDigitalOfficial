@@ -164,10 +164,11 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
     qDebug() << "handle error" ;
     if (serialPortError == QSerialPort::ReadError)
     {
+        qDebug() << "handle error" << m_serialport->errorString() ;
         m_dashboard->setgpsFIXtype(m_serialport->errorString());
     }
-    closeConnection();
-    openConnection(GPSPort, "115200");
+    //closeConnection();
+    //openConnection(GPSPort, "115200");
 }
 
 void GPS::readyToRead()
