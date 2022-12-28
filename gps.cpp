@@ -213,6 +213,8 @@ void GPS::ProcessMessage(QByteArray messageline)
 {
     m_timeouttimer.stop();
     m_timeouttimer.start(5000);
+    m_reconnecttimer.stop();
+    m_reconnecttimer.start(6000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         qDebug() << "Received ACK 10Hz";
@@ -273,6 +275,7 @@ void GPS::handleTimeout()
     //setGPSBAUD115();
     closeConnection();
     openConnection(GPSPort, "9600");
+    m_reconnecttimer.stop();
     m_reconnecttimer.start(6000);
 }
 void GPS::handleReconnectTimeout()
