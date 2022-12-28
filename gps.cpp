@@ -81,7 +81,7 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
     baudrate = Baud.toInt();
     m_serialport->setPortName(GPSPort);
 
-    m_dashboard->setgpsFIXtype(GPSPort + "@" + Baud);
+    m_dashboard->setgpsFIXtype("Start GPS ...");
     switch (baudrate)
     {
     case 9600:
@@ -129,7 +129,7 @@ void GPS::setGPSBAUD115()
 {
     // Set Ublox GPS to use baudrate of 115200
     // qDebug() << "Set 115K" ;
-    m_dashboard->setgpsFIXtype("GPS set 115k");
+    // m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
     initialized = 1;
@@ -139,7 +139,7 @@ void GPS::setGPS10HZ()
 {
     // qDebug() << "Set 10Hz" ;
     // Set Ublox GPS Update Rate to 10Hz
-    m_dashboard->setgpsFIXtype("GPS set 10HZ");
+    //m_dashboard->setgpsFIXtype("GPS set 10HZ");
     m_serialport->write(QByteArray::fromHex("b562060806006400010001007a12"));
     m_serialport->waitForBytesWritten(4000);
 
@@ -159,7 +159,7 @@ void GPS::closeConnection()
                this, &GPS::handleError);
     disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
     m_serialport->close();
-    m_dashboard->setgpsFIXtype("close serial");
+    m_dashboard->setgpsFIXtype("");
 }
 
 void GPS::handleError(QSerialPort::SerialPortError serialPortError)
@@ -216,7 +216,7 @@ void GPS::ProcessMessage(QByteArray messageline)
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
         // qDebug() << "Received ACK 10Hz";
-        m_dashboard->setgpsFIXtype("10Hz ACK");
+        //m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
         if (setbaudrate == "9600")
         {
