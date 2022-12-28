@@ -267,8 +267,8 @@ void GPS::logNMEA(const QString & line){
 
 void GPS::handleTimeout()
 {
-    // Timeout will occur if the GPS was already initialized and still opened at 9600 Baud
-    // We will try to reconnect at 115K BAUD and start another timer
+    // Timeout will occur if no valid GPS message is reveived for 5 seconds
+    // Reset all GPS values to 0 and also reset the 10Hz set marker
     qDebug() << "Timeout occured" ;
     rateset = 0;
     m_dashboard->setgpsLatitude(0);
@@ -276,8 +276,9 @@ void GPS::handleTimeout()
     m_dashboard->setgpsAltitude(0);
     m_dashboard->setgpsVisibleSatelites(0);
     m_dashboard->setgpsbearing(0);
-     m_dashboard->setgpsSpeed(0);
-    //setGPSBAUD115();
+    m_dashboard->setgpsSpeed(0);
+    m_dashboard->setgpsTime("0");
+    // Close connection and try why out 9600 and 115200 Baud rates depending on how the last serial port opening was called
     closeConnection();
     if (setbaudrate != "9600")
     {
@@ -288,16 +289,8 @@ void GPS::handleTimeout()
     openConnection(GPSPort, "115200");
     }
 }
-void GPS::handleReconnectTimeout()
-{
-    qDebug() << "Reconnect Timeout occured" ;
-        rateset = 0;
-        closeConnection();
-        openConnection(GPSPort, "9600");
-}
 
 void GPS::processGPRMC(const QString & line) {
-    // qDebug()<< "GPRMC Processing";
     QStringList fields = line.split(',');
     QString time = fields[1];
     time.insert(2, ":");

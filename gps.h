@@ -51,7 +51,6 @@ class GPS : public QObject
  private slots:
     void readyToRead();
     void handleTimeout();
-    void handleReconnectTimeout();
     void handleError(QSerialPort::SerialPortError error);
     void initSerialPort();
     void logNMEA(const QString & line);
