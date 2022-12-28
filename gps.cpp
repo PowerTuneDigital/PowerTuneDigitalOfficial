@@ -172,7 +172,6 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 
 void GPS::readyToRead()
 {
-    qDebug() << "Data available" ;
     QByteArray rawData = m_serialport->readAll();          // read data from serial port
     // qDebug()<< "chunk " << rawData;
     line.append(rawData);
