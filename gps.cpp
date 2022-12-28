@@ -278,13 +278,9 @@ void GPS::handleTimeout()
 void GPS::handleReconnectTimeout()
 {
     qDebug() << "Reconnect Timeout occured" ;
-    if (m_dashboard->gpsFIXtype() == "open with 9600" || m_dashboard->gpsFIXtype() == "open with 115200") {
         closeConnection();
         openConnection(GPSPort, "9600");
         m_reconnecttimer.start(6000);
-    } else {
-        m_reconnecttimer.stop();
-    }
 }
 
 void GPS::processGPRMC(const QString & line) {
