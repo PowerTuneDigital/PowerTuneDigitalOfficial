@@ -56,7 +56,7 @@ GPS::GPS(DashBoard *dashboard, QObject *parent)
 
 void GPS::initSerialPort()
 {
-    qDebug() << "Initialize Serial Port" ;
+    // qDebug() << "Initialize Serial Port" ;
     m_serialport = new SerialPort(this);
     connect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
@@ -74,7 +74,7 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
 {
     GPSPort = portName;
     setbaudrate = Baud;
-    qDebug()<< " Open GPS on: " + GPSPort + "@" + Baud;
+    // qDebug()<< " Open GPS on: " + GPSPort + "@" + Baud;
     initSerialPort();
     m_timeouttimer.stop();
     m_timeouttimer.start(5000);
@@ -109,7 +109,7 @@ void GPS::openConnection(const QString &portName, const QString &Baud)
 
 void GPS::removeNMEAmsg()
 {
-    qDebug() << "Disable unnecesary NMEA " ;
+    // qDebug() << "Disable unnecesary NMEA " ;
     // setGPS10HZ(); //as a backup
     // disables all the NMEA mesages that we don't need ( we only need RMC and  GGA)
     setGPSOnly();
@@ -128,7 +128,7 @@ void GPS::removeNMEAmsg()
 void GPS::setGPSBAUD115()
 {
     // Set Ublox GPS to use baudrate of 115200
-    qDebug() << "Set 115K" ;
+    // qDebug() << "Set 115K" ;
     m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
@@ -138,7 +138,7 @@ void GPS::setGPSBAUD115()
 }
 void GPS::setGPS10HZ()
 {
-    qDebug() << "Set 10Hz" ;
+    // qDebug() << "Set 10Hz" ;
     // Set Ublox GPS Update Rate to 10Hz
     m_dashboard->setgpsFIXtype("GPS set 10HZ");
     m_serialport->write(QByteArray::fromHex("b562060806006400010001007a12"));
@@ -147,13 +147,13 @@ void GPS::setGPS10HZ()
 void GPS::setGPSOnly()
 {
     // Switch on GPS only
-    qDebug() << "set GPS only" ;
+    // qDebug() << "set GPS only" ;
     m_serialport->write(QByteArray::fromHex("B562063E2C0000201005000810000100010101010300000001010308100000000101050003000000010106080E00000001010CD1"));  // GPS Only
     m_serialport->waitForBytesWritten(4000);
 }
 void GPS::closeConnection()
 {
-    qDebug() << "close connection " ;
+    // qDebug() << "close connection " ;
     disconnect(this->m_serialport, SIGNAL(readyRead()), this, SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
@@ -166,24 +166,24 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
 {
     if (m_serialport->errorString() == "No error")
     {
-        qDebug() << "handle error" << m_serialport->errorString() ;
+        // qDebug() << "handle error" << m_serialport->errorString() ;
     }
 }
 
 void GPS::readyToRead()
 {
     QByteArray rawData = m_serialport->readAll();          // read data from serial port
-    // qDebug()<< "chunk " << rawData;
+    // // qDebug()<< "chunk " << rawData;
     line.append(rawData);
     while (line.contains("\r\n"))
     {
         int end = line.indexOf("\r\n") + 2;
         QByteArray message = line;
-        // qDebug()<< "line raw" << line;
+        // // qDebug()<< "line raw" << line;
         message.remove(end, line.length());
-        // qDebug()<< "Processed Message" << message;
+        // // qDebug()<< "Processed Message" << message;
         line.remove(0, end);
-        // qDebug()<< "line new" << line;
+        // // qDebug()<< "line new" << line;
         ProcessMessage(message);
     }
 
@@ -194,7 +194,7 @@ void GPS::readyToRead()
        line.append(rawData);
        if (line.size() >= 2 && line[line.size()-2] == '\r' && line[line.size()-1] == '\n')
        {
-          qDebug()<< "line " << line;
+          // qDebug()<< "line " << line;
           //emit(line);
           line.clear();
        }
@@ -215,7 +215,7 @@ void GPS::ProcessMessage(QByteArray messageline)
     m_timeouttimer.start(5000);
     // First, we handle any potential binary messages
     if (messageline.contains(ACK10HZ)) {
-        qDebug() << "Received ACK 10Hz";
+        // qDebug() << "Received ACK 10Hz";
         m_dashboard->setgpsFIXtype("10Hz ACK");
         rateset = 1;
         removeNMEAmsg();
@@ -225,7 +225,7 @@ void GPS::ProcessMessage(QByteArray messageline)
 
     // Then we check if the message looks like a valid NMEA message
     if (!messageline.startsWith("$G")) {
-        qDebug() << "Not a NMEA message" << messageline.toHex();
+        // qDebug() << "Not a NMEA message" << messageline.toHex();
         return;
     }
 
@@ -257,7 +257,7 @@ void GPS::logNMEA(const QString & line){
     QString logfile = QString("%1/%2.nmea").arg("/home/pi").arg(QDate::currentDate().toString("yyyyMMdd"));
     QFile file(logfile);
     if (!file.open(QIODevice::Append)) {
-        qDebug() << "Could not open log file" << logfile;
+        // qDebug() << "Could not open log file" << logfile;
         return;
     }
     QTextStream out(&file);
@@ -269,7 +269,7 @@ void GPS::handleTimeout()
 {
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
     // Reset all GPS values to 0 and also reset the 10Hz set marker
-    qDebug() << "Timeout occured" ;
+    // qDebug() << "Timeout occured" ;
     rateset = 0;
     m_dashboard->setgpsLatitude(0);
     m_dashboard->setgpsLongitude(0);
@@ -278,6 +278,7 @@ void GPS::handleTimeout()
     m_dashboard->setgpsbearing(0);
     m_dashboard->setgpsSpeed(0);
     m_dashboard->setgpsTime("0");
+    m_dashboard->setgpsHDOP(0);
     // Close connection and try why out 9600 and 115200 Baud rates depending on how the last serial port opening was called
     closeConnection();
     if (setbaudrate != "9600")
@@ -471,7 +472,7 @@ void GPS::checknewLap()
                 }
                 if (y < fastestlap)
                 {
-                   // qDebug() << "y is smaller";
+                   // // qDebug() << "y is smaller";
                     fastestlap = y;
                     m_dashboard->setbestlaptime(y.toString("mm:ss.zzz"));
                 }
@@ -501,7 +502,7 @@ void GPS::checknewLap()
                     m_dashboard->setbestlaptime(fastestlap.toString("mm:ss.zzz"));
                 }
                 if (y < fastestlap) {
-                   // qDebug() << "y is smaller";
+                   // // qDebug() << "y is smaller";
                    fastestlap = y;
                    m_dashboard->setbestlaptime(y.toString("mm:ss.zzz"));
                 }
