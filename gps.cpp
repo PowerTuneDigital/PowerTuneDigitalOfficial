@@ -132,9 +132,10 @@ void GPS::setGPSBAUD115()
     m_dashboard->setgpsFIXtype("GPS set 115k");
     m_serialport->write(QByteArray::fromHex("B5620600140001000000D008000000C201000700020000000000BF78"));
     m_serialport->waitForBytesWritten(4000);
-    closeConnection();
     initialized = 1;
-    openConnection(GPSPort, "115200");
+    m_timeouttimer.stop();
+    handleTimeout();
+   // openConnection(GPSPort, "115200");
 }
 void GPS::setGPS10HZ()
 {
@@ -270,6 +271,7 @@ void GPS::handleTimeout()
     // Timeout will occur if no valid GPS message is reveived for 5 seconds
     // Reset all GPS values to 0 and also reset the 10Hz set marker
     // qDebug() << "Timeout occured" ;
+    closeConnection();
     rateset = 0;
     m_dashboard->setgpsLatitude(0);
     m_dashboard->setgpsLongitude(0);
@@ -279,8 +281,16 @@ void GPS::handleTimeout()
     m_dashboard->setgpsSpeed(0);
     m_dashboard->setgpsTime("0");
     m_dashboard->setgpsHDOP(0);
-    // Close connection and try why out 9600 and 115200 Baud rates depending on how the last serial port opening was called
-    closeConnection();
+    //wait 2 seconds before reconnecting
+    connect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnect);
+    m_reconnecttimer.start(2000);
+
+}
+
+void GPS::handleReconnect()
+{
+    // Timeout will occur if no valid GPS message is reveived for 5 seconds
+    diconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnect);
     if (setbaudrate != "9600")
     {
     openConnection(GPSPort, "9600");
@@ -290,6 +300,7 @@ void GPS::handleTimeout()
     openConnection(GPSPort, "115200");
     }
 }
+
 
 void GPS::processGPRMC(const QString & line) {
     QStringList fields = line.split(',');
