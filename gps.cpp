@@ -72,7 +72,7 @@ void GPS::clear()
 void GPS::openConnection(const QString &portName, const QString &Baud)
 {
     GPSPort = portName;
-    qDebug()<< " Open GPS on: " + GPSPort;
+    qDebug()<< " Open GPS on: " + GPSPort + "@" + Baud;
     initSerialPort();
     m_timeouttimer.stop();
     m_timeouttimer.start(10000);
