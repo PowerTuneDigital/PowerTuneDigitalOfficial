@@ -61,7 +61,6 @@ void GPS::initSerialPort()
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &GPS::handleError);
     connect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
-    connect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
 }
 
 // function for flushing all serial buffers
@@ -156,7 +155,6 @@ void GPS::closeConnection()
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &GPS::handleError);
     disconnect(&m_timeouttimer, &QTimer::timeout, this, &GPS::handleTimeout);
-    disconnect(&m_reconnecttimer, &QTimer::timeout, this, &GPS::handleReconnectTimeout);
     m_serialport->close();
     m_dashboard->setgpsFIXtype("close serial");
 }
@@ -168,6 +166,7 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
     {
         m_dashboard->setgpsFIXtype(m_serialport->errorString());
     }
+    closeConnection();
     openConnection(GPSPort, "115200");
 }
 
@@ -275,8 +274,7 @@ void GPS::handleTimeout()
     //setGPSBAUD115();
     closeConnection();
     openConnection(GPSPort, "9600");
-    m_reconnecttimer.stop();
-    m_reconnecttimer.start(6000);
+
 }
 void GPS::handleReconnectTimeout()
 {
@@ -284,7 +282,6 @@ void GPS::handleReconnectTimeout()
         rateset = 0;
         closeConnection();
         openConnection(GPSPort, "9600");
-        m_reconnecttimer.start(5000);
 }
 
 void GPS::processGPRMC(const QString & line) {
