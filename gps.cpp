@@ -271,6 +271,12 @@ void GPS::handleTimeout()
     // We will try to reconnect at 115K BAUD and start another timer
     qDebug() << "Timeout occured" ;
     rateset = 0;
+    m_dashboard->setgpsLatitude(0);
+    m_dashboard->setgpsLongitude(0);
+    m_dashboard->setgpsAltitude(0);
+    m_dashboard->setgpsVisibleSatelites(0);
+    m_dashboard->setgpsbearing(0);
+     m_dashboard->setgpsSpeed(0);
     //setGPSBAUD115();
     closeConnection();
     if (setbaudrate != "9600")
