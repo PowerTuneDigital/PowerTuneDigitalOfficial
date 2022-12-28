@@ -168,6 +168,7 @@ void GPS::handleError(QSerialPort::SerialPortError serialPortError)
     {
         m_dashboard->setgpsFIXtype(m_serialport->errorString());
     }
+    openConnection(GPSPort, "115200");
 }
 
 void GPS::readyToRead()
@@ -283,7 +284,7 @@ void GPS::handleReconnectTimeout()
         rateset = 0;
         closeConnection();
         openConnection(GPSPort, "9600");
-        m_reconnecttimer.start(6000);
+        m_reconnecttimer.start(5000);
 }
 
 void GPS::processGPRMC(const QString & line) {
