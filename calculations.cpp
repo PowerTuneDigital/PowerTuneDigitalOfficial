@@ -66,9 +66,11 @@ calculations::calculations(DashBoard *dashboard, QObject *parent)
 void calculations::start()
 {
     connect(&m_updatetimer, &QTimer::timeout, this, &calculations::calculate);
+    connect(&m_updateodotimer, &QTimer::timeout, this, &calculations::saveodoandtriptofile);
     odometer = m_dashboard->Odo();
     tripmeter = m_dashboard->Trip();
     m_updatetimer.start(25);
+    m_updateodotimer.start(10000);
 
 }
 void calculations::stop()
@@ -124,9 +126,23 @@ void calculations::stopreactiontimer()
     reactiontime = (reactiontimerdiff.msecsTo(QTime::currentTime())); // reactiontime
 
 }
+
+
+
 void calculations::calculatereactiontime()
 {
     m_dashboard->setreactiontime((reactiontime / 1000) - qmlgreentime) ;
+}
+
+void calculations::readodoandtrip()
+{
+// Call this from QML to read Odo and Trip from file
+}
+void calculations::saveodoandtriptofile()
+{
+// To avoid file corruption  save this every 10 seconds only if speed is greater 10 KM/h
+    m_updateodotimer.start(10000);
+    //qDebug() << "Update Odometer";
 }
 // 1 foot = 0,00018939 miles =
 // 60 Feet = 0,0113634 miles = 0,01828762 km

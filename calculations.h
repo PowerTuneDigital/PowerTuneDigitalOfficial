@@ -24,6 +24,8 @@ public slots:
     Q_INVOKABLE void qmlrealtime();
     Q_INVOKABLE void stopreactiontimer();
     Q_INVOKABLE void calculatereactiontime();
+    Q_INVOKABLE void readodoandtrip();
+    void saveodoandtriptofile();
     void calculate();
     void start();
     void stop();
@@ -34,6 +36,7 @@ public slots:
 private:
     DashBoard *m_dashboard;
     QTimer      m_updatetimer;
+    QTimer      m_updateodotimer;
     QTimer      m_reactiontimer;
     QTimer      m_dynotimer;
 

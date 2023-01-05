@@ -3871,7 +3871,7 @@ void DashBoard::setEXAnalogInput2(const qreal &EXAnalogInput2)
     emit EXAnalogInput2Changed(EXAnalogInput2);
     if (EXsteinhart2 == 0)
     {
-    setEXAnalogCalc2(((EXAN25-AN20)*0.2)*EXAnalogInput2+EXAN20);
+    setEXAnalogCalc2(((EXAN25-EXAN20)*0.2)*EXAnalogInput2+EXAN20);
     }
     else
     {
