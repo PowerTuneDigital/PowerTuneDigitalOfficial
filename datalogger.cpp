@@ -358,7 +358,56 @@ void datalogger::updateLog()
                                    << endl;
                 mFile.close();
                 break;
+            case 6: ////GR YARIS
+                out << (loggerStartT.msecsTo(QTime::currentTime())) << ","
 
+                                   << m_dashboard->rpm() << ","
+                                   << m_dashboard->wheelspdftleft()  << ","
+                                   << m_dashboard->wheelspdftright()  << ","
+                                   << m_dashboard->wheelspdrearleft()  << ","
+                                   << m_dashboard->wheelspdrearright()  << ","
+                                   << m_dashboard->SteeringWheelAngle()  << ","
+                                   << m_dashboard->Flag1()  << ","                                              // Brake Switch
+                                   << m_dashboard->brakepress()  << ","                                         // Brake Pressure
+                                   << m_dashboard->IdleValue()  << ","                                          //  Idle Switch
+                                   << m_dashboard->TPS()  << ","                                                //Throttle Position A
+                                   << m_dashboard->ThrottleV()  << ","                                          //Throttle Position B
+                                   << m_dashboard->Torque()  << ","                                             //Steering Torque
+                                   << m_dashboard->clutchswitchstate()  << ","
+                                   << m_dashboard->gpsTime()   << ","
+                                   << m_dashboard->gpsAltitude()   << ","
+                                   << QString("%1").arg(m_dashboard->gpsLatitude(), 0, 'f', 6)  << ","
+                                   << QString("%1").arg(m_dashboard->gpsLongitude(), 0, 'f', 6)  << ","
+                                   << m_dashboard->gpsSpeed()   << ","
+                                   << m_dashboard->currentLap() << ","
+                                   << m_dashboard->laptime()  << ","
+                                   << m_dashboard->EXAnalogInput0()  << ","
+                                   << m_dashboard->EXAnalogInput1()  << ","
+                                   << m_dashboard->EXAnalogInput2()  << ","
+                                   << m_dashboard->EXAnalogInput3()  << ","
+                                   << m_dashboard->EXAnalogInput4()  << ","
+                                   << m_dashboard->EXAnalogInput5()  << ","
+                                   << m_dashboard->EXAnalogInput6()  << ","
+                                   << m_dashboard->EXAnalogInput7()  << ","
+                                   << m_dashboard->EXAnalogCalc0()  << ","
+                                   << m_dashboard->EXAnalogCalc1()  << ","
+                                   << m_dashboard->EXAnalogCalc2()  << ","
+                                   << m_dashboard->EXAnalogCalc3()  << ","
+                                   << m_dashboard->EXAnalogCalc4()  << ","
+                                   << m_dashboard->EXAnalogCalc5()  << ","
+                                   << m_dashboard->EXAnalogCalc6()  << ","
+                                   << m_dashboard->EXAnalogCalc7()  << ","
+                                   << m_dashboard->EXDigitalInput1()  << ","
+                                   << m_dashboard->EXDigitalInput2()  << ","
+                                   << m_dashboard->EXDigitalInput3()  << ","
+                                   << m_dashboard->EXDigitalInput4()  << ","
+                                   << m_dashboard->EXDigitalInput5()  << ","
+                                   << m_dashboard->EXDigitalInput6()  << ","
+                                   << m_dashboard->EXDigitalInput7()  << ","
+                                   << m_dashboard->EXDigitalInput8()  << ","
+                                   << endl;
+                mFile.close();
+                break;
         }
     }
 }
@@ -684,6 +733,56 @@ QTextStream out(&mFile);
                               << endl;
                               mFile.close();
                                   break;
+            case 6: ////GR YARIS
+                 out     << "Time ms" << ","
+                           << "RPM" << ","
+                           << "Wheel speed FL" << ","
+                           << "Wheel speed FR" << ","
+                           << "Wheel speed RL" << ","
+                           << "Wheel speed RR" << ","
+                           << "Steering wheel angle" << ","
+                           << "Brake switch" << ","
+                           << "Brake pressure" << ","
+                           << "Idle switch" << ","
+                           << "Throttle pos.A" << ","
+                           << "Throttle pos.B" << ","
+                           << "Steering torque" << ","
+                           << "Clutch switch" << ","
+                           << "GPS Time"   << ","
+                           << "GPS Altitude"  << ","
+                           << "GPS Latitude" << ","
+                           << "GPS Longitude"   << ","
+                           << "GPS Speed"  << ","
+                           << "Current LAP"    << ","
+                           << "LAP TIME"  << ","
+                           << "EX AN0"  << ","
+                           << "EX AN1"  << ","
+                           << "EX AN2"  << ","
+                           << "EX AN3"  << ","
+                           << "EX AN4"  << ","
+                           << "EX AN5"  << ","
+                           << "EX AN6"  << ","
+                           << "EX AN7"  << ","
+                           << "EX AN0 calc"  << ","
+                           << "EX AN1 calc"  << ","
+                           << "EX AN2 calc"  << ","
+                           << "EX AN3 calc"  << ","
+                           << "EX AN4 calc"  << ","
+                           << "EX AN5 calc"  << ","
+                           << "EX AN6 calc"  << ","
+                           << "EX AN7 calc"  << ","
+                           << "EX Digitial 1"  << ","
+                           << "EX Digitial 2"  << ","
+                           << "EX Digitial 3"  << ","
+                           << "EX Digitial 4"  << ","
+                           << "EX Digitial 5"  << ","
+                           << "EX Digitial 6"  << ","
+                           << "EX Digitial 7"  << ","
+                           << "EX Digitial 8"  << ","
+                           << endl;
+                mFile.close();
+                break;
+
         }
         }
     }
