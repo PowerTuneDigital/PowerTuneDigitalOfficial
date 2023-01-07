@@ -726,7 +726,7 @@ ListModel {
     ListElement {
         sourcename:"brakepress"
         defaultsymbol: "kPa"
-        titlename:"njDuty"
+        titlename:"Brake Pressure"
         decimalpoints : "0"
         maxvalue : "300"
         stepsize : "100"
