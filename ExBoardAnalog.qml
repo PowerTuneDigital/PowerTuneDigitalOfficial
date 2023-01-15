@@ -440,7 +440,7 @@ Rectangle {
     Grid {
         id:inputgrid2
         anchors.left:inputgrid.right
-        anchors.leftMargin: 20
+        anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.topMargin: 40
         rows:10
@@ -460,7 +460,7 @@ Rectangle {
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "R3 (Ω)"
             font.pixelSize: main.width / 55;color:"white"}
-        Text { text: "100Ω J."
+        Text { text: "100Ω"
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "1KΩ J."
             font.pixelSize: main.width / 55;color:"white"}
