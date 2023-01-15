@@ -98,7 +98,7 @@ Rectangle {
         columns: 3
         spacing: 5
         anchors.left: parent.left
-        anchors.leftMargin: 20
+        anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.topMargin: 40
         Text { text: "  "
@@ -440,12 +440,12 @@ Rectangle {
     Grid {
         id:inputgrid2
         anchors.left:inputgrid.right
-        anchors.leftMargin: 20
+        anchors.leftMargin: 5
         anchors.top: parent.top
         anchors.topMargin: 40
         rows:10
         columns: 9
-        spacing: 5
+        spacing: 3
         Text { text: "Temp. In"
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "T1 (°C)"
@@ -460,7 +460,7 @@ Rectangle {
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "R3 (Ω)"
             font.pixelSize: main.width / 55;color:"white"}
-        Text { text: "100Ω J."
+        Text { text: "100Ω"
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "1KΩ J."
             font.pixelSize: main.width / 55;color:"white"}
