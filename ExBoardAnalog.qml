@@ -440,12 +440,12 @@ Rectangle {
     Grid {
         id:inputgrid2
         anchors.left:inputgrid.right
-        anchors.leftMargin: 10
+        anchors.leftMargin: 5
         anchors.top: parent.top
         anchors.topMargin: 40
         rows:10
         columns: 9
-        spacing: 5
+        spacing: 3
         Text { text: "Temp. In"
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "T1 (°C)"
