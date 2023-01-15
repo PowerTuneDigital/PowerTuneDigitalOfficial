@@ -98,7 +98,7 @@ Rectangle {
         columns: 3
         spacing: 5
         anchors.left: parent.left
-        anchors.leftMargin: 20
+        anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.topMargin: 40
         Text { text: "  "
