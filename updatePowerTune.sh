@@ -5,6 +5,15 @@ if [ -d /home/root ]; then
 		echo "Yocto detected "
 		echo "Fix rng "
 		rm /etc/init.d/rng-tools
+		if [ -d /home/Recoverysrc ]; then
+	        cd /home/pi/Recoverysrc
+                ./updateRecovery.sh
+                else
+                mkdir /home/pi/Recoverysrc
+                git clone https://github.com/PowerTuneDigital/PowerTuneDigitalRecovery.git /home/pi/Recoverysrc
+                cd /home/pi/Recoverysrc
+                ./updateRecovery.sh
+                fi
 		if [ -d /home/pi/src ]; then
 		echo "Updating to latest source "
 		cd /home/pi/src
