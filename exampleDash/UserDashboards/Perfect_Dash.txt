@@ -1,25 +1,32 @@
 Round gauge,536,132,62,rpm,10000,0,10000,-1000,-117,117,10000,1,0,0,0,0,-55,0,0,0,0,0,0,0,0.5,0.4,0.33,0.25,0,4,43,7,0,0,red,darkred,transparent,transparent,grey,transparent,transparent,transparent,grey,black,transparent,transparent,transparent,transparent,true,false,false,Lato,30,50,10,false,Lato, ,red, ,, ,, ,,
-Text label gauge,375,304,0,DejaVu Sans,31,azure,wheelspdrearleft,true,0,20000,-20000,
-Text label gauge,387,399,0,DejaVu Sans,13,white,Gear,true,0,20000,-20000,
-Text label gauge,186,20,131087.0,DejaVu Sans,9,white,Odo,true,0,500000,-20000,
-Text label gauge,553,18,0.0,DejaVu Sans,10,white,Trip,true,1,20000,-20000,
-Text label gauge,63,83,15,DejaVu Sans,15,white,Watertemp,true,0,100,55,
-Text label gauge,62,200,90,DejaVu Sans,15,white,oiltemp,true,0,110,55,
-Text label gauge,56,309,10,DejaVu Sans,15,white,Intaketemp,true,0,40,-40,
-Text label gauge,47,421,12.4,DejaVu Sans,15,white,BatteryV,true,1,15,11.5,
-Text label gauge,708.1023720349563,83.985446985447,24,DejaVu Sans,15,white,FuelPress,true,0,75,15,
-Text label gauge,705.2184769038702,197.6694386694387,0.0,DejaVu Sans,15,white,oilpres,true,1,135,12,
-Text label gauge,722,304,0,DejaVu Sans,15,white,InjDuty,true,0,90,-20000,
-Text label gauge,712,419,43,DejaVu Sans,15,white,FuelLevel,true,0,1000,15,
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,8600,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Purple.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,8400,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_All.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,8200,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Blue_1.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,8000,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_3.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,7750,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_2.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,7500,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Red_1.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,7250,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_3.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,7000,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_2.png
-State gauge,4.184769038701859,-156.79625779625778,794,rpm,6500,file:///home/pi/Logo/None,file:///home/pi/Logo/Shift_Lights_Green_1.png
-
-
-
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7200,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Purple.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,7000,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_All.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,6500,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Blue_1.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,6000,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Red_3.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,5500,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Red_2.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,5000,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Red_1.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,4500,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Green_3.png
+State gauge,4.184769038701859,-156.79625779625778,794,rpm,4000,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Green_2.png
+State gauge,4.184769038701859,-157.79625779625778,794,rpm,3500,file:///home/pi/Logo,file:///home/pi/Logo/Shift_Lights_Green_1.png
+Text label gauge,21,51,WATER,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,465,16,TRIP,Nissan,13,mintcream, ,true,0,20000,-20000,
+Text label gauge,38,17,ODOMETER,Nissan,13,seashell, ,true,0,20000,-20000,
+Text label gauge,675,374,FUEL L,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,702,159,IAT,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,687,271,MAP,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,661,52,BATT V,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,43,155,Oil P,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,44,270,Oil T,Nissan,15,seashell, ,true,0,20000,-20000,
+Text label gauge,31,374,FUEL P,Nissan,15,seashell, ,true,0,20000,-20000,
+Square gauge,266,119,267,295,248,0, , ,false,false,false,Dashboard,speed,speed,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,22,90,0,Lato,Nissan,
+Square gauge,266,119,146,-32,248,1, ,Odometer,false,false,false,Dashboard,Odo,Odo,990000,0,transparent,transparent,transparent,transparent,white,transparent,25,24,0,Lato,Nissan,
+Square gauge,266,119,605,-29,248,0, ,Trip meter,false,false,false,Dashboard,Trip,Trip,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,28,0,Lato,Nissan,
+Square gauge,266,119,591,271,248,0, , ,false,false,false,Dashboard,MAP,MAP,10000,-20000,transparent,transparent,transparent,white,white,blue,10,30,0,Arial,Nissan,
+Text label gauge,63,93,0,Nissan,15,floralwhite,Watertemp,true,0,20000,-20000,
+Text label gauge,63,315,0,Nissan,15,floralwhite,oiltemp,true,0,20000,-20000,
+Text label gauge,51,194,0.0,Nissan,15,floralwhite,oilpres,true,1,20000,-20000,
+Text label gauge,63,423,0,Nissan,15,floralwhite,FuelPress,true,0,20000,-20000,
+Text label gauge,695,94,0.0,Nissan,15,floralwhite,BatteryV,true,1,20000,-20000,
+Text label gauge,714,196,0,Nissan,15,floralwhite,Intaketemp,true,0,20000,-20000,
+Text label gauge,100,50, ,Nissan,15,floralwhite, ,true,0,20000,-20000,
+Text label gauge,713,420,0,Nissan,15,floralwhite,FuelLevel,true,0,20000,-20000,
