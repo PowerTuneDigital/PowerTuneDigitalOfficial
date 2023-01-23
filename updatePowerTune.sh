@@ -7,6 +7,7 @@ if [ -d /home/root ]; then
 		rm /etc/init.d/rng-tools
 		if [ -d /home/Recoverysrc ]; then
 	        cd /home/pi/Recoverysrc
+		git pull
                 ./updateRecovery.sh
                 else
                 mkdir /home/pi/Recoverysrc
