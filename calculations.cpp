@@ -48,6 +48,8 @@ int Gear4;
 int Gear5;
 int Gear6;
 int GearN;
+double prev_speed = 0;
+qint64 prev_timestamp = QDateTime::currentMSecsSinceEpoch();
 
 calculations::calculations(QObject *parent)
     : QObject(parent)
@@ -69,8 +71,11 @@ void calculations::start()
     connect(&m_updateodotimer, &QTimer::timeout, this, &calculations::saveodoandtriptofile);
     odometer = m_dashboard->Odo();
     tripmeter = m_dashboard->Trip();
-    m_updatetimer.start(25);
+    m_updatetimer.setInterval(25);
     m_updateodotimer.start(10000);
+    m_updatetimer.start();
+
+
 
 }
 void calculations::stop()
@@ -289,13 +294,44 @@ if (m_dashboard->speedunits()  == "imperial"  && startdragcalculation == 1)
     //Odometer
    if (m_dashboard->speed() > 0) // ensure that odo and trip meter only gets updated if the speed is greater  km/h
    {
+    /*
     traveleddistance = ((startTime.msecsTo(QTime::currentTime())) * ((m_dashboard->speed()) / 3600000)); // Odometer
     odometer += traveleddistance;
     tripmeter += traveleddistance;
     m_dashboard->setOdo(odometer);
     m_dashboard->setTrip(tripmeter);
-   }
-    startTime.restart(); //(QTime::currentTime())
+*/
+       // Get the current timestamp
+       qint64 current_timestamp = QDateTime::currentMSecsSinceEpoch();
+
+       // Calculate the actual time interval in seconds since the last call
+       double time_interval = (current_timestamp - prev_timestamp) / 1000.0;
+
+       // Get the current speed value in kilometers per hour
+       double current_speed_kph = m_dashboard->speed();
+
+       // Convert the current speed from kilometers per hour to meters per second
+       double current_speed_mps = current_speed_kph / 3.6;
+
+       // If this is the first timeout signal, initialize prev_speed to the current speed in meters per second
+         if (prev_timestamp == 0) {
+             prev_speed = current_speed_mps;
+         }
+
+       // Calculate the distance traveled by multiplying the speed with the actual time interval and add it to the previous distance value
+       double distance_traveled = ((current_speed_mps + prev_speed) * time_interval * 0.5) /1000;
+
+       // Update the odometer value with the new distance value
+       m_dashboard->setOdo(m_dashboard->Odo() + distance_traveled);
+       m_dashboard->setTrip(m_dashboard->Trip() + distance_traveled);
+       // Update the previous speed value with the current speed value for the next iteration
+       prev_speed = current_speed_mps;
+
+       // Update the previous timestamp with the current timestamp for the next iteration
+       prev_timestamp = current_timestamp;
+}
+
+    //startTime.restart(); //(QTime::currentTime())
 
     // Virtual Dyno to calculate Wheel Power and Wheel Torque
 
