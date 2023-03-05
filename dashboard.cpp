@@ -814,7 +814,7 @@ void DashBoard::setEXAnalogVal(const qreal &EXA00,const qreal &EXA05,const qreal
 
 void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &T03,const qreal &R01,const qreal &R02,const qreal &R03,const qreal &T11,const qreal &T12,const qreal &T13,const qreal &R11,const qreal &R12,const qreal &R13,const qreal &T21,const qreal &T22,const qreal &T23,const qreal &R21,const qreal &R22,const qreal &R23,const qreal &T31,const qreal &T32,const qreal &T33,const qreal &R31,const qreal &R32,const qreal &R33,const qreal &T41,const qreal &T42,const qreal &T43,const qreal &R41,const qreal &R42,const qreal &R43,const qreal &T51,const qreal &T52,const qreal &T53,const qreal &R51,const qreal &R52,const qreal &R53)
 {
-    //qDebug() <<"Values :" <<T01 << R01 << T02 <<R02 <<T03 << R03 << T11 << R11 << T12 <<R12 <<T13 << R13 << T21 << R21 << T22 <<R22 <<T23 << R23;
+
     //EX Analog 0 Calculation
     long double L01 = log(R01); //Logrythm of Resistance 1
     long double L02 = log(R02); //Logrythm of Resistance 2
@@ -928,8 +928,9 @@ void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &
 
     //Coefficent Calculations
     C5 = ((V53 - V52)/(L53-L52))*(pow((L51+L52+L52),-1));
-    B5 = (V53-C5*(pow(L51,2)+L52*L22+pow(L52,2)));
+    B5 = (V53-C5*(pow(L51,2)+L52*L52+pow(L52,2)));
     A5 = Y51 -(B5+pow(L51,2)*C5)*L51;
+
 }
 // Advanced Info FD3S
 void DashBoard::setrpm(const qreal &rpm)
@@ -3932,6 +3933,7 @@ void DashBoard::setEXAnalogInput5(const qreal &EXAnalogInput5)
     if (m_EXAnalogInput5 == EXAnalogInput5)
         return;
     m_EXAnalogInput5 = EXAnalogInput5;
+
     emit EXAnalogInput5Changed(EXAnalogInput5);
     if (EXsteinhart5 == 0)
     {
