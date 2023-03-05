@@ -331,7 +331,7 @@ if (m_dashboard->speedunits()  == "imperial"  && startdragcalculation == 1)
        prev_timestamp = current_timestamp;
 }
 
-    //startTime.restart(); //(QTime::currentTime())
+
 
     // Virtual Dyno to calculate Wheel Power and Wheel Torque
 
