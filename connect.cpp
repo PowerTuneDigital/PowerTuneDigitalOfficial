@@ -897,6 +897,9 @@ void Connect::daemonstartup(const int &daemon)
     case 54:
         daemonstart = "./GR_Yaris";
         break;
+    case 55:
+        daemonstart = "./Syvecs";
+        break;
     }
 
     ///////
