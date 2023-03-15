@@ -3,7 +3,7 @@ echo "Disable System Logs"
 cd /home/pi/src
 ./fixlog.sh
 echo "Install fonts"
-cd /home/pi/src /fonts
+cd /home/pi/src/fonts
 sudo cp *.* /usr/local/share/fonts
 echo "Fetching latest Daemons"
 cd /home/pi/src
@@ -58,6 +58,7 @@ sudo pkill ProEFI
 sudo pkill TeslaSDU
 sudo pkill DTAFast
 sudo pkill GR_Yaris
+sudo pkill Syvecs
 echo "Removing previous Versions"
 
 sudo rm /home/pi/daemons/ProEFI
@@ -118,6 +119,7 @@ sudo rm /home/pi/daemons/RX8
 sudo rm /home/pi/daemons/WRX2016
 sudo rm /home/pi/daemons/BigNETLamda
 sudo rm /home/pi/daemons/GR_Yaris
+sudo rm /home/pi/daemons/Syvecs
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
