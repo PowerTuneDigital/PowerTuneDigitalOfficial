@@ -118,5 +118,5 @@ Rectangle {
       progress: Dashboard.rpm / Dashboard.maxRPM
     }
     }
-            ShiftLights{}
+      //      ShiftLights{}
 }
