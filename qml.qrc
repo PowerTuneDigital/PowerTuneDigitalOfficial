@@ -122,5 +122,7 @@
         <file>KTracks/Australia/The Bend West Circuit.txt</file>
         <file>ExBoardAnalog.qml</file>
         <file>Gauges/TyreMonitor.qml</file>
+        <file>graphics/RPM_BG1080.png</file>
+        <file>graphics/RPM_Fill1080.png</file>
     </qresource>
 </RCC>

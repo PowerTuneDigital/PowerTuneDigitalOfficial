@@ -55,6 +55,7 @@ Quick1.TabView {
         anchors.fill: parent
         source: "Settings/main.qml"
     }
+/*
     Quick1.Tab {
         id: dash
         title: "Dash Sel."
@@ -65,6 +66,7 @@ Quick1.TabView {
         title: "Sensehat" // Tab index 2
         source: "Settings/sensehat.qml"
     }
+*/
     Quick1.Tab {
         title: "Warn / Gear" // Tab index 3
         source: "Settings/warn_gear.qml"

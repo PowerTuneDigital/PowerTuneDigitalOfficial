@@ -9,10 +9,8 @@ import QtQuick.VirtualKeyboard 2.1
 ApplicationWindow {
     id:window
     visible: true
-    width: 800
-    height: 480
-    minimumWidth: 800
-    minimumHeight: 480
+    width: 1920
+    height: 1080
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
@@ -20,9 +18,9 @@ ApplicationWindow {
         id: keyboardcontainer
         color: "blue"
         visible: false
-        width: 500
-        height: 220
-        z: 220
+        width: 900
+        height: 450
+        z: 450
 
         MouseArea {
             id: touchAkeyboardcontainer
@@ -79,9 +77,9 @@ ApplicationWindow {
         Loader {
             id: firstPageLoader
             //active: SwipeView.isCurrentItem || SwipeView.isPreviousItem || firstPageLoader.source == "qrc:/GPSTracks/Laptimer.qml"
-            source: "qrc:/Intro.qml"
+            source: "qrc:/Gauges/Userdash1.qml"
         }
-
+/*
         Loader {
             id: secondPageLoader
             active: Dashboard.Visibledashes > 1
@@ -98,7 +96,7 @@ ApplicationWindow {
             active: Dashboard.Visibledashes > 3;
             source: ""
         }
-
+*/
         Item {
             id:lastPage
             SerialSettings{}

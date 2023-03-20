@@ -12,9 +12,9 @@ Rectangle {
 
     Text {
       text:"RPM"
-      font.pixelSize: 20
-      y: 150
-      x: 180
+      font.pixelSize: 20*2.4
+      y: 150*2.4
+      x: 180*2.4
       font.bold: true
       font.family: "Eurostile"
       color: "grey"
@@ -22,9 +22,9 @@ Rectangle {
   }
   Text {
       text: (Dashboard.rpm)
-      font.pixelSize: 100
-      y: 110
-      x: 220
+      font.pixelSize: 100*2.4
+      y: 110*2.4
+      x: 220*2.4
   font.italic: true
       font.bold: true
       font.family: "Eurostile"
@@ -34,9 +34,9 @@ Rectangle {
   Text {
       id :speed
       text: "km/h"
-      font.pixelSize: 20
-      y: 150
-      x: 510
+      font.pixelSize: 20*2.4
+      y: 150*2.4
+      x: 510*2.4
       font.bold: true
       font.family: "Eurostile"
       color: "grey"
@@ -44,9 +44,9 @@ Rectangle {
   }
   Text {
       text: (Dashboard.speed).toFixed(0);
-      font.pixelSize: 100
-      y: 110
-      x: 570
+      font.pixelSize: 100*2.4
+      y: 110*2.4
+      x: 570*2.4
   font.italic: true
       font.bold: true
       font.family: "Eurostile"
@@ -68,7 +68,7 @@ Rectangle {
     Image
     {
       id:groove1
-      source:"qrc:/graphics/RPM_BG.png"
+      source:"qrc:/graphics/RPM_BG1080.png"
       anchors.top:parent.top
       anchors.left:parent.left
       smooth: true
@@ -76,7 +76,7 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (678*(Dashboard.rpm)/Dashboard.maxRPM)+70 //+70 is the pixel where the RPM bar starts and from there is 678 pixels wide
+            width: (1633*(Dashboard.rpm)/Dashboard.maxRPM)+167 //+167 is the pixel where the RPM bar starts and from there is 1800 pixels wide
 
             clip: true
 
@@ -99,7 +99,7 @@ Rectangle {
               id:speedarcfill
               anchors.top:parent.top
               anchors.left:parent.left
-              source:"qrc:/graphics/RPM_Fill.png"
+              source:"qrc:/graphics/RPM_Fill1080.png"
               smooth: true
               z: 1
             }
