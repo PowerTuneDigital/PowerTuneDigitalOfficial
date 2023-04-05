@@ -353,6 +353,9 @@ void AppSettings::readandApplySettings()
     m_dashboard->setRPMFrequencyDividerDi1(getValue("RPMFrequencyDivider").toReal());
     m_dashboard->setDI1RPMEnabled(getValue("DI1RPMEnabled").toInt());
     m_dashboard->setspeedpercent(getValue("Speedcorrection").toReal());
-    qDebug() << "ExternalSpeed" <<getValue("ExternalSpeed").toString();
+    if (getValue("Speedcorrection").toReal() <= 0)
+    {
+        m_dashboard->setspeedpercent(1);
+    }
 }
 
