@@ -334,9 +334,25 @@ void AppSettings::readandApplySettings()
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal(),getValue("T31").toReal(),getValue("T32").toReal(),getValue("T33").toReal(),getValue("R31").toReal(),getValue("R32").toReal(),getValue("R33").toReal(),getValue("T41").toReal(),getValue("T42").toReal(),getValue("T43").toReal(),getValue("R41").toReal(),getValue("R42").toReal(),getValue("R43").toReal(),getValue("T51").toReal(),getValue("T52").toReal(),getValue("T53").toReal(),getValue("R51").toReal(),getValue("R52").toReal(),getValue("R53").toReal());
     m_dashboard->setwaterwarn(getValue("waterwarn").toReal());
+    if (getValue("waterwarn").toReal() <= 0)
+    {
+        m_dashboard->setwaterwarn(400);
+    }
     m_dashboard->setboostwarn(getValue("boostwarn").toReal());
+    if (getValue("boostwarn").toReal() <= 0)
+    {
+        m_dashboard->setboostwarn(999);
+    }
     m_dashboard->setrpmwarn(getValue("rpmwarn").toReal());
+    if (getValue("rpmwarn").toReal() <= 0)
+    {
+        m_dashboard->setrpmwarn(99999);
+    }
     m_dashboard->setknockwarn(getValue("knockwarn").toReal());
+    if (getValue("knockwarn").toReal() <= 0)
+    {
+        m_dashboard->setknockwarn(99999);
+    }
     m_dashboard->setgearcalcactivation(getValue("gercalactive").toInt());
     m_dashboard->setLambdamultiply(getValue("lambdamultiply").toReal());
     m_dashboard->setgearcalc1(getValue("valgear1").toReal());
@@ -357,5 +373,6 @@ void AppSettings::readandApplySettings()
     {
         m_dashboard->setspeedpercent(1);
     }
+
 }
 
