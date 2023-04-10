@@ -877,11 +877,11 @@ Rectangle {
         //function to Connect
         id: functconnect
         function connectfunc() {
+            Connect.setOdometer(odometer.text)
+            Connect.setWeight(weight.text)
             Connect.openConnection(serialName.currentText,
                                    ecuSelect.currentIndex, baseadresstext.text,
                                    shiftlightbaseadresstext.text)
-            Connect.setOdometer(odometer.text)
-            Connect.setWeight(weight.text)
             Apexi.calculatorAux(an1V0.text, an2V5.text, an3V0.text, an4V5.text,
                                 unitaux1.text, unitaux2.text)
             connected = 1

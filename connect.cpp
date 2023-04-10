@@ -900,6 +900,9 @@ void Connect::daemonstartup(const int &daemon)
     case 55:
         daemonstart = "./Syvecs";
         break;
+    case 56:
+        daemonstart = "./Rsport";
+        break;
     }
 
     ///////
