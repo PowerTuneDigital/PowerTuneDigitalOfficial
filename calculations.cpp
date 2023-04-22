@@ -72,7 +72,7 @@ void calculations::start()
     odometer = m_dashboard->Odo();
     tripmeter = m_dashboard->Trip();
     m_updatetimer.setInterval(25);
-    m_updateodotimer.start(10000);
+   // m_updateodotimer.start(10000);
     m_updatetimer.start();
 
 
@@ -146,7 +146,7 @@ void calculations::readodoandtrip()
 void calculations::saveodoandtriptofile()
 {
 // To avoid file corruption  save this every 10 seconds only if speed is greater 10 KM/h
-    m_updateodotimer.start(10000);
+  //  m_updateodotimer.start(600);
     //qDebug() << "Update Odometer";
 }
 // 1 foot = 0,00018939 miles =
@@ -294,13 +294,7 @@ if (m_dashboard->speedunits()  == "imperial"  && startdragcalculation == 1)
     //Odometer
    if (m_dashboard->speed() > 0) // ensure that odo and trip meter only gets updated if the speed is greater  km/h
    {
-    /*
-    traveleddistance = ((startTime.msecsTo(QTime::currentTime())) * ((m_dashboard->speed()) / 3600000)); // Odometer
-    odometer += traveleddistance;
-    tripmeter += traveleddistance;
-    m_dashboard->setOdo(odometer);
-    m_dashboard->setTrip(tripmeter);
-*/
+
        // Get the current timestamp
        qint64 current_timestamp = QDateTime::currentMSecsSinceEpoch();
 
@@ -320,10 +314,15 @@ if (m_dashboard->speedunits()  == "imperial"  && startdragcalculation == 1)
 
        // Calculate the distance traveled by multiplying the speed with the actual time interval and add it to the previous distance value
        double distance_traveled = ((current_speed_mps + prev_speed) * time_interval * 0.5) /1000;
+       //qDebug()<<"distance_traveled"<< distance_traveled;
+       //Sanity check to see if distance traveled is actually feasibe
+       if (distance_traveled < 0.005)
+       {
+           // Update the odometer value with the new distance value
+           m_dashboard->setOdo(m_dashboard->Odo() + distance_traveled);
+           m_dashboard->setTrip(m_dashboard->Trip() + distance_traveled);
+       }
 
-       // Update the odometer value with the new distance value
-       m_dashboard->setOdo(m_dashboard->Odo() + distance_traveled);
-       m_dashboard->setTrip(m_dashboard->Trip() + distance_traveled);
        // Update the previous speed value with the current speed value for the next iteration
        prev_speed = current_speed_mps;
 
