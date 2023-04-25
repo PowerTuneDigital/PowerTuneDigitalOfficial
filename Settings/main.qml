@@ -61,10 +61,10 @@ Rectangle {
             }
 
             onOdoChanged: {
-                odometer.text = (Dashboard.Odo).toFixed(0)
+                odometer.text = (Dashboard.Odo).toFixed(3)
             }
             onTripChanged: {
-                tripmeter.text = (Dashboard.Trip).toFixed(1)
+                tripmeter.text = (Dashboard.Trip).toFixed(3)
             }
             onWatertempChanged: {
                 if (Dashboard.Watertemp > Dashboard.waterwarn) {
@@ -607,7 +607,7 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.97p " + Dashboard.Platform
+                    text: " V 1.97r " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 } //spacer
