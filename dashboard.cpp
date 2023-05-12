@@ -890,7 +890,7 @@ void DashBoard::setSteinhartcalc(const qreal &T01,const qreal &T02,const qreal &
 
     //Coefficent Calculations
     C3 = ((V33 - V32)/(L33-L32))*(pow((L31+L32+L32),-1));
-    B3 = (V33-C3*(pow(L31,2)+L32*L22+pow(L32,2)));
+    B3 = (V33-C3*(pow(L31,2)+L32*L32+pow(L32,2)));
     A3 = Y31 -(B3+pow(L31,2)*C3)*L31;
 
     //EX Analog 4 Calculation
