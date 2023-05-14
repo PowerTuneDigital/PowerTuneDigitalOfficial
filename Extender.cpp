@@ -238,6 +238,7 @@ void Extender::readyToRead()
                 m_dashboard->setEXAnalogInput7(pkgpayload[3]*0.001);						          //Analog 7
         }
         if (frame.frameId() == adress5 && (m_dashboard->Cylinders() / 2) != 0) {
+                qDebug() << m_dashboard->Cylinders();
                 m_dashboard->setrpm(qRound((pkgpayload[0]*4) / (m_dashboard->Cylinders() / 2)));      //RPM
         }
 
