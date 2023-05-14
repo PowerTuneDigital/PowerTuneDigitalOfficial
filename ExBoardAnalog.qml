@@ -48,10 +48,12 @@ Rectangle {
             property alias checkan5100save  : checkan5100.checkState
             property alias checkan51Ksave   : checkan51k.checkState
             property alias rpmcheckboxsave  : rpmcheckbox.checkState
-            property alias di1RPMsave  : enablefrequencydi1rpm.checkState
+//            property alias di1RPMsave  : enablefrequencydi1rpm.checkState
             property alias cylindercomboboxsave : cylindercombobox.currentIndex
+            property alias cylindercomboboxv2save : cylindercomboboxv2.currentIndex
+            property alias rpmcanversionselectorsave : rpmcanversionselector.currentIndex
 //            property alias cylindercomboboxDi1save : cylindercomboboxDi1.currentIndex
-            property alias  cylindercomboboxDi1save :cylindercomboboxDi1.text
+//            property alias  cylindercomboboxDi1save :cylindercomboboxDi1.text
             property alias t10save : t10.text
             property alias r10save : r10.text
             property alias t20save : t20.text
@@ -94,7 +96,7 @@ Rectangle {
 
     Grid {
         id:inputgrid
-        rows:12
+        rows:10
         columns: 3
         spacing: 5
         anchors.left: parent.left
@@ -318,48 +320,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text {
-            text: "RPM CAN"
-            font.pixelSize: main.width / 55;
-            color:"white"
-        }
-        CheckBox {
-            id: rpmcheckbox
-            width: main.width / 14
-            height: main.height /15
-            onCheckStateChanged: inputs.setInputs();
-            }
-        //Placeholder
-        Text {
-            text: " "
-            font.pixelSize: main.width / 55;
-            color:"white"
-        }
 
-        Text {
-            text: "Cylinders"
-            font.pixelSize: main.width / 65;
-            color:"white"
-        }
-        ComboBox {
-            id: cylindercombobox
-            visible: { (rpmcheckbox.checked == true) ? true : false; }
-            width: main.width / 14
-            height: main.height /15
-            font.pixelSize: main.width / 75;
-            //model: ["2","3","4","5","6","8","12"]
-            model: ["0.5","0.6","0.7","0.8","0.9","1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2","2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8","2.9","3","3.1","3.2","3.3","3.4","3.5","3.6","3.7","3.8","3.9","4","4.1","4.2","4.3","4.4","4.5","4.6","4.7","4.8","4.9","5","5.1","5.2","5.3","5.4","5.5","5.6","5.7","5.8","5.9","6","6.1","6.2","6.3","6.4","6.5","6.6","6.7","6.8","6.9","7","7.1","7.2","7.3","7.4","7.5","7.6","7.7","7.8","7.9","8","8.1","8.2","8.3","8.4","8.5","8.6","8.7","8.8","8.9","9","9.1","9.2","9.3","9.4","9.5","9.6","9.7","9.8","9.9","10","10.1","10.2","10.3","10.4","10.5","10.6","10.7","10.8","10.9","11","11.1","11.2","11.3","11.4","11.5","11.6","11.7","11.8","11.9","12","12.1","12.2","12.3","12.4","12.5","12.6","12.7","12.8","12.9"]
-            onCurrentIndexChanged: inputs.setInputs();
-            delegate: ItemDelegate {
-                width: cylindercombobox.width
-                text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                font.weight: cylindercombobox.currentIndex == index ? Font.DemiBold : Font.Normal
-                font.family: cylindercombobox.font.family
-                font.pixelSize: cylindercombobox.font.pixelSize
-                highlighted: cylindercombobox.highlightedIndex == index
-                hoverEnabled: cylindercombobox.hoverEnabled
-            }
-            }
         Item {
             id: inputs
             function setInputs()
@@ -368,11 +329,18 @@ Rectangle {
             AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan3ntc.checkState,checkan4ntc.checkState,checkan5ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState,checkan3100.checkState,checkan31k.checkState,checkan4100.checkState,checkan41k.checkState,checkan5100.checkState,checkan51k.checkState)
             AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text,t13.text,t23.text,t33.text,r13.text,r23.text,r33.text,t14.text,t24.text,t34.text,r14.text,r24.text,r34.text,t15.text,t25.text,t35.text,r15.text,r25.text,r35.text)
             if(rpmcheckbox.checked == true)
-
+            {
+            if(rpmcanversionselector.currentIndex == 0)
             {
                 AppSettings.writeCylinderSettings(cylindercombobox.textAt(cylindercombobox.currentIndex))
             }
-            AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,enablefrequencydi1rpm.checked)
+            if(rpmcanversionselector.currentIndex == 1)
+            {
+                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex))
+            }
+
+            AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,0)
+            }
             }
         }
         Item {
@@ -431,6 +399,95 @@ Rectangle {
             }
         }
     }
+    Grid {
+        id:rpmcangrid
+        rows:2
+        columns: 6
+        spacing: 5
+        anchors.leftMargin: 10
+        anchors.left: parent.left
+        anchors.top: inputgrid.bottom
+        anchors.topMargin: 5
+    Text {
+        text: "RPM CAN"
+        font.pixelSize: main.width / 55;
+        color:"white"
+    }
+    CheckBox {
+        id: rpmcheckbox
+        width: main.width / 14
+        height: main.height /15
+        onCheckStateChanged: inputs.setInputs();
+        }
+
+    Text {
+        text: "RPMCAN Version"
+        font.pixelSize: main.width / 55;
+        visible: { (rpmcheckbox.checked == true) ? true : false; }
+        color:"white"
+    }
+    ComboBox {
+        id: rpmcanversionselector
+        visible: { (rpmcheckbox.checked == true) ? true : false; }
+        width: main.width / 8
+        height: main.height /15
+        font.pixelSize: main.width / 75;
+        model: ["V1","V2"]
+        onCurrentIndexChanged: inputs.setInputs();
+        delegate: ItemDelegate {
+            width: cylindercombobox.width
+            text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+            font.weight: cylindercombobox.currentIndex == index ? Font.DemiBold : Font.Normal
+            font.family: cylindercombobox.font.family
+            font.pixelSize: cylindercombobox.font.pixelSize
+            highlighted: cylindercombobox.highlightedIndex == index
+            hoverEnabled: cylindercombobox.hoverEnabled
+        }
+        }
+    Text {
+        text: "Cylinders"
+        font.pixelSize: main.width / 55;
+        visible: { (rpmcheckbox.checked == true) ? true : false; }
+        color:"white"
+    }
+    ComboBox {
+        id: cylindercombobox
+        visible: { (rpmcanversionselector.currentIndex == 0 && rpmcheckbox.checked == true) ? true : false; }
+        width: main.width / 8
+        height: main.height /15
+        font.pixelSize: main.width / 75;
+        //model: ["2","3","4","5","6","8","12"]
+        model: ["0.5","0.6","0.7","0.8","0.9","1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2","2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8","2.9","3","3.1","3.2","3.3","3.4","3.5","3.6","3.7","3.8","3.9","4","4.1","4.2","4.3","4.4","4.5","4.6","4.7","4.8","4.9","5","5.1","5.2","5.3","5.4","5.5","5.6","5.7","5.8","5.9","6","6.1","6.2","6.3","6.4","6.5","6.6","6.7","6.8","6.9","7","7.1","7.2","7.3","7.4","7.5","7.6","7.7","7.8","7.9","8","8.1","8.2","8.3","8.4","8.5","8.6","8.7","8.8","8.9","9","9.1","9.2","9.3","9.4","9.5","9.6","9.7","9.8","9.9","10","10.1","10.2","10.3","10.4","10.5","10.6","10.7","10.8","10.9","11","11.1","11.2","11.3","11.4","11.5","11.6","11.7","11.8","11.9","12","12.1","12.2","12.3","12.4","12.5","12.6","12.7","12.8","12.9"]
+        onCurrentIndexChanged: inputs.setInputs();
+        delegate: ItemDelegate {
+            width: cylindercombobox.width
+            text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+            font.weight: cylindercombobox.currentIndex == index ? Font.DemiBold : Font.Normal
+            font.family: cylindercombobox.font.family
+            font.pixelSize: cylindercombobox.font.pixelSize
+            highlighted: cylindercombobox.highlightedIndex == index
+            hoverEnabled: cylindercombobox.hoverEnabled
+        }
+        }
+    ComboBox {
+        id: cylindercomboboxv2
+        visible: { (rpmcanversionselector.currentIndex == 1 && rpmcheckbox.checked == true) ? true : false; }
+        width: main.width / 8
+        height: main.height /15
+        font.pixelSize: main.width / 75;
+        model: ["1","2","3","4","5","6","8","12"]
+        onCurrentIndexChanged: inputs.setInputs();
+        delegate: ItemDelegate {
+            width: cylindercombobox.width
+            text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+            font.weight: cylindercombobox.currentIndex == index ? Font.DemiBold : Font.Normal
+            font.family: cylindercombobox.font.family
+            font.pixelSize: cylindercombobox.font.pixelSize
+            highlighted: cylindercombobox.highlightedIndex == index
+            hoverEnabled: cylindercombobox.hoverEnabled
+        }
+        }
+    }
     Text {
         anchors.leftMargin: 10
         anchors.top: parent.top
@@ -474,7 +531,7 @@ Rectangle {
             id: t10
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -485,7 +542,7 @@ Rectangle {
             id: r10
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "15462"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -496,7 +553,7 @@ Rectangle {
             id: t20
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -507,7 +564,7 @@ Rectangle {
             id: r20
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2500"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -518,7 +575,7 @@ Rectangle {
             id: t30
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -529,7 +586,7 @@ Rectangle {
             id: r30
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "323"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -558,7 +615,7 @@ Rectangle {
             id: t11
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -569,7 +626,7 @@ Rectangle {
             id: r11
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
            // text: "14600"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -580,7 +637,7 @@ Rectangle {
             id: t21
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -591,7 +648,7 @@ Rectangle {
             id: r21
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2200"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -602,7 +659,7 @@ Rectangle {
             id: t31
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -613,7 +670,7 @@ Rectangle {
             id: r31
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "290"
             enabled: checkan1ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -642,7 +699,7 @@ Rectangle {
             id: t12
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -653,7 +710,7 @@ Rectangle {
             id: r12
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "14600"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -664,7 +721,7 @@ Rectangle {
             id: t22
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -675,7 +732,7 @@ Rectangle {
             id: r22
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2200"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -686,7 +743,7 @@ Rectangle {
             id: t32
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -697,7 +754,7 @@ Rectangle {
             id: r32
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "290"
             enabled: checkan2ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -727,7 +784,7 @@ Rectangle {
             id: t13
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -738,7 +795,7 @@ Rectangle {
             id: r13
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "14600"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -749,7 +806,7 @@ Rectangle {
             id: t23
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -760,7 +817,7 @@ Rectangle {
             id: r23
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2200"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -771,7 +828,7 @@ Rectangle {
             id: t33
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -782,7 +839,7 @@ Rectangle {
             id: r33
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "290"
             enabled: checkan3ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -812,7 +869,7 @@ Rectangle {
             id: t14
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -823,7 +880,7 @@ Rectangle {
             id: r14
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "14600"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -834,7 +891,7 @@ Rectangle {
             id: t24
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -845,7 +902,7 @@ Rectangle {
             id: r24
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2200"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -856,7 +913,7 @@ Rectangle {
             id: t34
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -867,7 +924,7 @@ Rectangle {
             id: r34
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "290"
             enabled: checkan4ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -897,7 +954,7 @@ Rectangle {
             id: t15
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -908,7 +965,7 @@ Rectangle {
             id: r15
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "14600"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -919,7 +976,7 @@ Rectangle {
             id: t25
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "20"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -930,7 +987,7 @@ Rectangle {
             id: r25
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "2200"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -941,7 +998,7 @@ Rectangle {
             id: t35
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "80"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -952,7 +1009,7 @@ Rectangle {
             id: r35
             width: main.width / 14
             height: main.height /15
-            font.pixelSize: main.width / 55
+            font.pixelSize: main.width / 65
             //text: "290"
             enabled: checkan5ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
@@ -971,85 +1028,8 @@ Rectangle {
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
-        //
-
-    Text { text: "Di1 RPM"
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: "Cylinders"
-         color:  { (enablefrequencydi1rpm.checked == true) ? "white" : "transparent"; }
-        font.pixelSize: main.width / 55;}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: " "
-        font.pixelSize: main.width / 55;color:"white"}
-    CheckBox {
-        id: enablefrequencydi1rpm
-        width: main.width / 14
-        height: main.height /15
-        onCheckStateChanged: inputs.setInputs();
-        }
-
-
-    ///////////////
-
-    Text { text: "Multiplicator"
-        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
-        font.pixelSize: main.width / 55;color:"white"}
-    TextField {
-        id: cylindercomboboxDi1
-        width: main.width / 14
-        height: main.height /15
-        font.pixelSize: main.width / 55
-        text: "1"
-        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
-        inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
-        onEditingFinished: { rpmfrequencydivider = cylindercomboboxDi1.text
-                             inputs.setInputs()
-
-        }
-
     }
-    Text { text: "RPM :"
-        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
-        font.pixelSize: main.width / 55;color:"white"}
-    Text { text: Dashboard.rpm
-        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
-        font.pixelSize: main.width / 55;color:"white"}
-/*
-    ComboBox {
-        id: cylindercomboboxDi1
-        visible: { (enablefrequencydi1rpm.checked == true) ? true : false; }
-        width: main.width / 14
-        height: main.height /15
-        font.pixelSize: main.width / 90;
-        model:["1","2","3","4","5","6","8","10","12"]
-        onCurrentIndexChanged: cylindercalcrpmdi1.cylindercalcrpmdi1();
-        delegate: ItemDelegate {
-            width: cylindercomboboxDi1.width
-            text: cylindercomboboxDi1.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-            font.weight: cylindercomboboxDi1.currentIndex == index ? Font.DemiBold : Font.Normal
-            font.family: cylindercomboboxDi1.font.family
-            font.pixelSize: cylindercomboboxDi1.font.pixelSize
-            highlighted: cylindercomboboxDi1.highlightedIndex == index
-            hoverEnabled: cylindercomboboxDi1.hoverEnabled
-        }
-        }
-*/
-    }
-    Component.onCompleted: {
-
-    inputs.setInputs();
-    }
+    Component.onCompleted: {inputs.setInputs();}
 /*
     Text {
         id: explanationtext

@@ -284,6 +284,7 @@ void AppSettings::writeCylinderSettings(const qreal &Cylinders)
 {
     setValue("Cylinders", Cylinders);
     m_dashboard->setCylinders(Cylinders);
+    qDebug() << "Cylinders" << m_dashboard->Cylinders();
 }
 
 void AppSettings::writeCountrySettings(const QString &Country)
