@@ -475,7 +475,7 @@ Rectangle {
         width: main.width / 8
         height: main.height /15
         font.pixelSize: main.width / 75;
-        model: ["1","2","3","4","5","6","8","12"]
+        model: ["1","2","3","4","5","6","8","12","24","48"]
         onCurrentIndexChanged: inputs.setInputs();
         delegate: ItemDelegate {
             width: cylindercombobox.width
