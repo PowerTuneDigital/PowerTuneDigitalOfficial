@@ -336,7 +336,7 @@ Rectangle {
             }
             if(rpmcanversionselector.currentIndex == 1)
             {
-                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex))
+                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)
             }
 
             AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,0)
@@ -475,7 +475,7 @@ Rectangle {
         width: main.width / 8
         height: main.height /15
         font.pixelSize: main.width / 75;
-        model: ["1","2","3","4","5","6","8","12","24","48"]
+        model: ["1","2","3","4","5","6","8","12"]
         onCurrentIndexChanged: inputs.setInputs();
         delegate: ItemDelegate {
             width: cylindercombobox.width
