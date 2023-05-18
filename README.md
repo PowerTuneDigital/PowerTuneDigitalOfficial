@@ -2,10 +2,15 @@
 
 #### Changelog :
 * 1.97u 
+* 
 RPM CAN V2 implementation 
+
 * 1.97t
+
 Change of font size for EX Board temp sensor fields to avoid scrolling
+
 * 1.97s
+
 Fix for Ex Board Analog 3 Temperature calculation 
 
 [![Discord](https://badgen.net/badge/icon/discord?icon=discord&label)](https://discord.gg/c9pmpYDCXZ)
