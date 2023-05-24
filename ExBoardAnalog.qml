@@ -311,20 +311,23 @@ Rectangle {
             color:"white"
         }
         TextField {
-            id:an7dampingfactor
+            id: an7dampingfactor
             width: main.width / 14
-            height: main.height /15
+            height: main.height / 15
             font.pixelSize: main.width / 55
             text: "0"
-            inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
+            inputMethodHints: Qt.ImhFormattedNumbersOnly
+            validator: RegExpValidator {
+                regExp: /^(?:[1-9]\d{0,2}|1000)$/
+            }
             onEditingFinished: inputs.setInputs()
-
         }
 
         Item {
             id: inputs
             function setInputs()
             {
+
             AppSettings.writeEXAN7dampingSettings(an7dampingfactor.text);
             AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan3ntc.checkState,checkan4ntc.checkState,checkan5ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState,checkan3100.checkState,checkan31k.checkState,checkan4100.checkState,checkan41k.checkState,checkan5100.checkState,checkan51k.checkState)
             AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text,t13.text,t23.text,t33.text,r13.text,r23.text,r33.text,t14.text,t24.text,t34.text,r14.text,r24.text,r34.text,t15.text,t25.text,t35.text,r15.text,r25.text,r35.text)
