@@ -267,7 +267,7 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     //model: [ "PowerFC","UDP","None","CAN Adaptronic Modular","Consult","HaltechV1","HaltechV2","OBD2"]
-                    model: ["CAN", "PowerFC", "Consult", "OBD2"]
+                    model: ["CAN", "PowerFC", "Consult", "OBD2","Generic CAN"]
                     property bool initialized: false
                     onCurrentIndexChanged: {
                         if (initialized)
@@ -607,7 +607,7 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.97v " + Dashboard.Platform
+                    text: " V 1.97w " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 } //spacer

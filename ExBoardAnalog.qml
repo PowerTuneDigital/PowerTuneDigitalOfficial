@@ -339,7 +339,7 @@ Rectangle {
             }
             if(rpmcanversionselector.currentIndex == 1)
             {
-                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)
+                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
             }
 
             AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,0)
