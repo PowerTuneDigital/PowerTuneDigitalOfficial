@@ -903,6 +903,9 @@ void Connect::daemonstartup(const int &daemon)
     case 56:
         daemonstart = "./Rsport";
         break;
+    case 57:
+        daemonstart = "./Generic";
+        break;
     }
 
     ///////
