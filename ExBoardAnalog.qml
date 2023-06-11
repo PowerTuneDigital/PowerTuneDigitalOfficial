@@ -339,7 +339,58 @@ Rectangle {
             }
             if(rpmcanversionselector.currentIndex == 1)
             {
-                AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+
+
+                switch (cylindercomboboxv2.currentIndex)
+                {
+                case 0: //1cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 1: //2cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 2: //3cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 3: //4cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 4: //5cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 5: //6cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)
+                    //console.log("6 Cyl")
+                    break;
+                }
+                case 6: //8cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                   // console.log("8 Cyl")
+                    break;
+                }
+                case 7: //10cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                case 8: //12cyl
+                {
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    break;
+                }
+                }
             }
 
             AppSettings.writeRPMFrequencySettings(rpmfrequencydivider,0)
