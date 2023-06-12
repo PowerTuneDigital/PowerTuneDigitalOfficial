@@ -5,7 +5,7 @@ if [ -d /home/root ]; then
 		echo "Yocto detected "
 		echo "Fix rng "
 		rm /etc/init.d/rng-tools
-		if [ -d /home/Recoverysrc ]; then
+		if [ -d /home/pi/Recoverysrc ]; then
 	        cd /home/pi/Recoverysrc
 		git pull
                 ./updateRecovery.sh
