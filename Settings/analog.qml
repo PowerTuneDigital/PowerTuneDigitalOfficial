@@ -24,16 +24,14 @@ Rectangle {
         if (Dashboard.ecu == "2") {
             console.log("Loadersource changing")
             pageLoader.source = "qrc:/ConsultRegs.qml"
-
+        }
         if (Dashboard.ecu == "3") {
             console.log("Loadersource changing")
             pageLoader.source = "qrc:/OBDPIDS.qml"
         }
         if (Dashboard.ecu == "4") {
-            console.log("Loadersource changing")
             pageLoader.source = "qrc:/OBDPIDS.qml"
         }
-
     }
 
     Connections {
