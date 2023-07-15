@@ -8,8 +8,6 @@ sudo cp *.* /usr/local/share/fonts
 echo "Fetching latest Daemons"
 cd /home/pi/src
 git pull
-cd /home/pi/src/
-./checkall
 cd
 echo "Killing all  Daemons"
 sudo pkill AdaptronicCANd
@@ -129,4 +127,6 @@ sudo rm /home/pi/daemons/Generic
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
+cd /home/pi/src
+./checkall
 cp /home/pi/src/*.sh /home/pi/
