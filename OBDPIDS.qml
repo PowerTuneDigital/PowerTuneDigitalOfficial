@@ -83,7 +83,18 @@ Button {
                 text: qsTr("Intake mani abs pres")
                 font.pixelSize: obdselect.width / 55
             }
-// 12 and 13 are RPM and speed and are polled by default
+            CheckBox {
+                id: obd12
+                visible: false;
+                text: qsTr("RPM")
+                font.pixelSize: obdselect.width / 55
+            }
+            CheckBox {
+                id: obd13
+                visible: false;
+                text: qsTr("Speed")
+                font.pixelSize: obdselect.width / 55
+            }
             CheckBox {
                 id: obd14
                 visible: false;
@@ -313,12 +324,14 @@ Button {
                 text: qsTr("")
                 font.pixelSize: obdselect.width / 55
             }
+            /*
             CheckBox {
                 id: obd65
                 visible: false;
-                text: qsTr("")
+                text: qsTr("Monitor status this drive cycle")
                 font.pixelSize: obdselect.width / 55
             }
+            */
             CheckBox {
                 id: obd66
                 visible: false;

@@ -113,5 +113,8 @@ Quick1.TabView {
         if (Dashboard.ecu == "3") {
             regtab.title = "OBD"
         }
+        if (Dashboard.ecu == "4") {
+            regtab.title = "OBD"
+        }
     }
 }

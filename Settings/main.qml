@@ -272,6 +272,7 @@ Rectangle {
                     onCurrentIndexChanged: {
                         if (initialized)
                             AppSettings.setECU(currentIndex), Dashboard.setecu(ecuSelect.currentIndex)
+                        console.log("setting ecu" +Dashboard.ecu)
                     }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
@@ -607,7 +608,7 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.97x " + Dashboard.Platform
+                    text: " V 1.97y " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 } //spacer
