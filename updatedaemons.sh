@@ -60,6 +60,7 @@ sudo pkill DTAFast
 sudo pkill GR_Yaris
 sudo pkill Syvecs
 sudo pkill Rsport
+sudo pkill Generic
 echo "Removing previous Versions"
 
 sudo rm /home/pi/daemons/ProEFI
@@ -122,7 +123,10 @@ sudo rm /home/pi/daemons/BigNETLamda
 sudo rm /home/pi/daemons/GR_Yaris
 sudo rm /home/pi/daemons/Syvecs
 sudo rm /home/pi/daemons/Rsport
+sudo rm /home/pi/daemons/Generic
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
+cd /home/pi/src
+./checkall
 cp /home/pi/src/*.sh /home/pi/

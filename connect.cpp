@@ -1203,6 +1203,11 @@ void Connect::openConnection(const QString &portName, const int &ecuSelect,const
         //OBD2
         m_udpreceiver->startreceiver();
     }
+    if (ecuSelect == 4)
+    {
+        //OBD2
+        m_udpreceiver->startreceiver();
+    }
     /*
     if (ecuSelect == 5)
     {

@@ -1100,6 +1100,14 @@ Button {
                     obd11.visible = true;
                     break;
                 }
+                case 12: {
+                    obd12.visible = true;
+                    break;
+                }
+                case 13: {
+                    obd13.visible = true;
+                    break;
+                }
                 case 14: {
                     obd14.visible = true;
                     break;

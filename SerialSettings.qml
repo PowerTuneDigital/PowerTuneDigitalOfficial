@@ -114,7 +114,7 @@ Quick1.TabView {
             regtab.title = "OBD"
         }
         if (Dashboard.ecu == "4") {
-            regtab.title = "OBD"
+            regtab.title = "Generic CAN"
         }
     }
 }
