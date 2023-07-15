@@ -272,6 +272,7 @@ Rectangle {
                     onCurrentIndexChanged: {
                         if (initialized)
                             AppSettings.setECU(currentIndex), Dashboard.setecu(ecuSelect.currentIndex)
+                        console.log("setting ecu" +Dashboard.ecu)
                     }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
