@@ -5,11 +5,8 @@ REPO_URL="https://github.com/PowerTuneDigital/YoctoExtraPackages.git"
 
 # Define the paths for Perl and OpenSSL
 PERL_INSTALL_PATH="/usr/local/lib/perl5/5.38.0"
-OPENSSL_INSTALL_PATH="/usr/local/lib"
+OPENSSL_INSTALL_PATH="/usr/local/lib/openssl/openssl"
 OPENSSL_BIN_PATH="/usr/local/bin"
-
-# Create a temporary directory to hold downloaded files
-TMP_DIR="$(mktemp -d)"
 
 # Function to check if a command is available
 command_exists() {
@@ -21,9 +18,10 @@ if ! command_exists git; then
     echo "Error: 'git' command not found. Please install git before running this script."
     exit 1
 fi
-# Move to the /home/pi directory 
-cd /home/pi
+
 # Clone the GitHub repository to the temporary directory
+cd /home/pi
+TMP_DIR="$(mktemp -d)"
 git clone "$REPO_URL" "$TMP_DIR"
 
 # Check if the tarball exists
@@ -56,7 +54,10 @@ if [ -f "$TMP_DIR/compiled_perl_openssl.tar.gz" ]; then
     # Reload the profile to apply the changes
     source /etc/profile
 
-    echo "Installation completed successfully."
+    # Inform user to set LD_LIBRARY_PATH permanently
+    echo "Installation completed successfully. Please add the following line to your shell profile (e.g., .bashrc, .bash_profile, or .profile) to set LD_LIBRARY_PATH permanently:"
+    echo "export LD_LIBRARY_PATH=\"$OPENSSL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH\""
+
 else
     echo "Error: The tarball 'compiled_perl_openssl.tar.gz' not found in the downloaded directory."
     ls -al "$TMP_DIR"
