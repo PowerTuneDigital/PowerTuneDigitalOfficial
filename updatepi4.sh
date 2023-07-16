@@ -20,6 +20,7 @@ if ! command_exists git; then
 fi
 
 # Clone the GitHub repository to the temporary directory
+cd /home/pi
 TMP_DIR="$(mktemp -d)"
 git clone "$REPO_URL" "$TMP_DIR"
 
