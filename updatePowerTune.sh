@@ -5,17 +5,6 @@ if [ -d /home/root ]; then
 		echo "Yocto detected "
 		echo "Fix rng "
                 rm /etc/init.d/rng-tools
-		echo "check "
-		if [ -d /opt/ssl ]; then
- 		echo "openssl exists "
-		else
-		mkdir /home/pi/temp
-                git clone https://github.com/PowerTuneDigital/YoctoExtraPackages.git /home/pi/temp
-                cd /home/pi/temp
-                ./installopenssl.sh
-                sudo rm -r /home/pi/temp
-                fi
-                sudo rm -r /home/pi/temp
 		if [ -d /home/Recoverysrc ]; then
 	        cd /home/pi/Recoverysrc
 		git pull

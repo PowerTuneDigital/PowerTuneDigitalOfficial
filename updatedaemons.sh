@@ -3,7 +3,7 @@
 if [ -d /home/root ]; then
 # Get the latest source
                 echo "check openssl install "
-                if [ -d /opt/ssl ]; then
+                if [ -d /usr/local/openssl-1.1.1u ]; then
                 echo "openssl exists "
                 else
                 mkdir /home/pi/temp
