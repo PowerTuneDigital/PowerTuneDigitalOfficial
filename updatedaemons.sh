@@ -11,9 +11,6 @@ command_exists() {
 
 # Check if 'openssl' command is available
 if ! command_exists openssl; then
-    cd /home/pi/src
-    ./updatepi4.sh
-    exit 1
 fi
 
 # Get the installed OpenSSL version
@@ -24,6 +21,8 @@ if [ "$INSTALLED_OPENSSL_VERSION" == "$EXPECTED_OPENSSL_VERSION" ]; then
     echo "Correct: OpenSSL version $EXPECTED_OPENSSL_VERSION is installed."
 else
     echo "Not Correct: Installed OpenSSL version is $INSTALLED_OPENSSL_VERSION, expected version $EXPECTED_OPENSSL_VERSION."
+   cd /home/pi/src
+    ./updatepi4.sh
 fi
 fi
 echo "Disable System Logs"
