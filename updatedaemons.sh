@@ -9,10 +9,6 @@ command_exists() {
     command -v "$1" >/dev/null 2>&1
 }
 
-# Check if 'openssl' command is available
-if ! command_exists openssl; then
-fi
-
 # Get the installed OpenSSL version
 INSTALLED_OPENSSL_VERSION=$(openssl version | awk '{print $2}')
 
