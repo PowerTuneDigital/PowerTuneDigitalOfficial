@@ -1,17 +1,31 @@
 #!/bin/sh
 #Check if this is a Yocto image
 if [ -d /home/root ]; then
-# Get the latest source
-                echo "check openssl install "
-                if [ -d /usr/local/openssl-1.1.1u ]; then
-                echo "openssl exists "
-                else
-                mkdir /home/pi/temp
-                git clone https://github.com/PowerTuneDigital/YoctoExtraPackages.git /home/pi/temp
-                cd /home/pi/temp
-                ./installopenssl.sh
-                sudo rm -r /home/pi/temp
-                fi
+# Define the expected OpenSSL version
+EXPECTED_OPENSSL_VERSION="1.1.1u"
+
+# Function to check if a command is available
+command_exists() {
+    command -v "$1" >/dev/null 2>&1
+}
+
+# Check if 'openssl' command is available
+if ! command_exists openssl; then
+    cd /home/pi/src
+    ./updatepi4.sh
+    exit 1
+fi
+
+# Get the installed OpenSSL version
+INSTALLED_OPENSSL_VERSION=$(openssl version | awk '{print $2}')
+
+# Compare the installed version with the expected version
+if [ "$INSTALLED_OPENSSL_VERSION" == "$EXPECTED_OPENSSL_VERSION" ]; then
+    echo "Correct: OpenSSL version $EXPECTED_OPENSSL_VERSION is installed."
+else
+    echo "Not Correct: Installed OpenSSL version is $INSTALLED_OPENSSL_VERSION, expected version $EXPECTED_OPENSSL_VERSION."
+fi
+fi
 echo "Disable System Logs"
 cd /home/pi/src
 ./fixlog.sh
