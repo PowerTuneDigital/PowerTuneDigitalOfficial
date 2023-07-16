@@ -20,7 +20,6 @@ if ! command_exists git; then
 fi
 
 # Clone the GitHub repository to the temporary directory
-cd /home/pi/
 TMP_DIR="$(mktemp -d)"
 git clone "$REPO_URL" "$TMP_DIR"
 
@@ -45,7 +44,7 @@ if [ -f "$TMP_DIR/compiled_perl_openssl.tar.gz" ]; then
 
     # Register the versions of Perl and OpenSSL
     echo "export PATH=\"$OPENSSL_BIN_PATH:\$PATH\"" > /etc/profile.d/yocto_extra_packages.sh
-    echo "export LD_LIBRARY_PATH=\"$OPENSSL_INSTALL_PATH/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
+    echo "export LD_LIBRARY_PATH=\"/usr/local/lib/openssl/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
 
     # Reload the profile to apply the changes for the current session
     source /etc/profile.d/yocto_extra_packages.sh
