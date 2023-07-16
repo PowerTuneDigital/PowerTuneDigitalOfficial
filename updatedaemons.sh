@@ -1,4 +1,17 @@
 #!/bin/sh
+#Check if this is a Yocto image
+if [ -d /home/root ]; then
+# Get the latest source
+                echo "check openssl install "
+                if [ -d /opt/ssl ]; then
+                echo "openssl exists "
+                else
+                mkdir /home/pi/temp
+                git clone https://github.com/PowerTuneDigital/YoctoExtraPackages.git /home/pi/temp
+                cd /home/pi/temp
+                ./installopenssl.sh
+                sudo rm -r /home/pi/temp
+                fi
 echo "Disable System Logs"
 cd /home/pi/src
 ./fixlog.sh
