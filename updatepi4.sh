@@ -20,7 +20,6 @@ if ! command_exists git; then
 fi
 
 # Clone the GitHub repository to the temporary directory
-cd /home/pi
 TMP_DIR="$(mktemp -d)"
 git clone "$REPO_URL" "$TMP_DIR"
 
@@ -43,21 +42,16 @@ if [ -f "$TMP_DIR/compiled_perl_openssl.tar.gz" ]; then
     cp -r openssl "$OPENSSL_INSTALL_PATH"
     cp openssl/bin/openssl "$OPENSSL_BIN_PATH"
 
-    # Set environment variables for Perl and OpenSSL
-    export PATH="$OPENSSL_BIN_PATH:$PATH"
-    export LD_LIBRARY_PATH="$OPENSSL_INSTALL_PATH/lib:$LD_LIBRARY_PATH"
-
     # Register the versions of Perl and OpenSSL
-    echo "export PATH=\"$OPENSSL_BIN_PATH:\$PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
-    echo "export LD_LIBRARY_PATH=\"$OPENSSL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
+    echo "export PATH=\"$OPENSSL_BIN_PATH:\$PATH\"" > /etc/profile.d/yocto_extra_packages.sh
+    echo "export LD_LIBRARY_PATH=\"$OPENSSL_INSTALL_PATH/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
 
-    # Reload the profile to apply the changes
-    source /etc/profile
+    # Reload the profile to apply the changes for the current session
+    source /etc/profile.d/yocto_extra_packages.sh
 
-    # Inform user to set LD_LIBRARY_PATH permanently
-    echo "Installation completed successfully. Please add the following line to your shell profile (e.g., .bashrc, .bash_profile, or .profile) to set LD_LIBRARY_PATH permanently:"
-    echo "export LD_LIBRARY_PATH=\"$OPENSSL_INSTALL_PATH/lib:\$LD_LIBRARY_PATH\""
-
+    # Inform user about successful installation
+    echo "Installation completed successfully. Please log out and log back in to apply the changes."
+    echo "After logging back in, you can check OpenSSL version with 'openssl version'."
 else
     echo "Error: The tarball 'compiled_perl_openssl.tar.gz' not found in the downloaded directory."
     ls -al "$TMP_DIR"
