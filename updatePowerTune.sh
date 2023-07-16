@@ -12,6 +12,7 @@ if [ -d /home/root ]; then
 		mkdir /home/pi/temp
                 git clone https://github.com/PowerTuneDigital/YoctoExtraPackages.git /home/pi/temp
                 installopenssl.sh
+                fi
                 sudo rm -r /home/pi/temp
 		if [ -d /home/Recoverysrc ]; then
 	        cd /home/pi/Recoverysrc
