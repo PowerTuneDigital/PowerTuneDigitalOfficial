@@ -150,5 +150,6 @@ sudo rm /home/pi/daemons/Generic
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
 cd /home/pi/src
-./checkall
 cp /home/pi/src/*.sh /home/pi/
+cd /home/pi/daemons
+./checkall
