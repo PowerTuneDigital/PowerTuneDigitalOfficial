@@ -2,7 +2,7 @@
 #Check if this is a Yocto image
 if [ -d /home/root ]; then
 # Ensure QT uses the correct Libray path 
-# Custom Environment Variables for OpenSSL Version 1
+export LD_LIBRARY_PATH=/usr/local/lib/openssl:$LD_LIBRARY_PATH
 # Define the expected OpenSSL version
 EXPECTED_OPENSSL_VERSION="1.1.1u"
 
