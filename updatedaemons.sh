@@ -1,8 +1,21 @@
 #!/bin/sh
 #Check if this is a Yocto image
 if [ -d /home/root ]; then
-# Ensure QT uses the correct Libray path 
-export LD_LIBRARY_PATH=/usr/local/lib/openssl:$LD_LIBRARY_PATH
+# Check the startup file if the library path has been added already , if not update it 
+file_path="/etc/init.d/powertune"
+search_line="export LD_LIBRARY_PATH=/usr/local/lib/openssl:$LD_LIBRARY_PATH"
+
+if [ -f "$file_path" ]; then
+    if grep -q "$search_line" "$file_path"; then
+        echo "The line '$search_line' already exists in '$file_path'."
+    else
+        # Add the line to the beginning of the file
+        echo "$search_line" | cat - "$file_path" > temp && mv temp "$file_path"
+        echo "The line '$search_line' has been added to '$file_path'."
+    fi
+else
+    echo "File '$file_path' not found."
+fi
 # Define the expected OpenSSL version
 EXPECTED_OPENSSL_VERSION="1.1.1u"
 
