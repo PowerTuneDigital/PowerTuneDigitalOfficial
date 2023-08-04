@@ -2,6 +2,10 @@
 #Check if this is a Yocto image
 if [ -d /home/root ]; then
 # Define the expected OpenSSL version
+cd /home/pi/src
+./fixpi4ssl.sh
+source /etc/profile
+sleep 2
 EXPECTED_OPENSSL_VERSION="1.1.1u"
 
 # Function to check if a command is available
