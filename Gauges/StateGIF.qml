@@ -242,9 +242,10 @@ Item {
         {
           //  //console.log("warning" +mainvaluetextfield.text);
           //  //console.log("Trigger" +mainvaluetextfield.text);
-         if (mainvaluetextfield.text >= triggervalue && mainvaluetextfield.text <= triggeroffvalue){statepictureoff.visible = false,statepictureon.visible = true}
-          else{statepictureoff.visible = true,statepictureon.visible = false}
-
+          if (mainvaluetextfield.text >= triggervalue && mainvaluetextfield.text <= triggeroffvalue){statepictureoff.visible = false,statepictureon.visible = true}
+          if (mainvaluetextfield.text < triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
+          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue > triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
+          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue < triggervalue){statepictureoff.visible = false,statepictureon.visible = true}
         }
     }
     function togglemousearea()
