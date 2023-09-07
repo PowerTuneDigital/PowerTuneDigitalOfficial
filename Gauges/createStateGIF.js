@@ -1,18 +1,18 @@
 var component;
 var gauge;
-function createPicture(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon) {
+function createPicture(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon,settriggeroffvalue) {
     component = Qt.createComponent("StateGIF.qml");
     if (component.status === Component.Ready){
         //console.log("creating State Pic")
         //console.log("Create trigger:",settriggervalue);
-        finishCreation(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon);
+        finishCreation(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon,settriggeroffvalue);
     }
      else
 
         component.statusChanged.connect(finishCreation);
 }
 
-function finishCreation(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon) {
+function finishCreation(setX,setY,setpictureheight,setValuePropertyMain,settriggervalue,setstatepicturesourceoff,setstatepicturesourceon,settriggeroffvalue) {
     if (component.status === Component.Ready) {
         gauge = component.createObject(userDash, {
 
@@ -22,7 +22,8 @@ function finishCreation(setX,setY,setpictureheight,setValuePropertyMain,settrigg
                                            "mainvaluename":setValuePropertyMain,
                                            "triggervalue":settriggervalue,
                                            "statepicturesourceoff":setstatepicturesourceoff,
-                                           "statepicturesourceon":setstatepicturesourceon
+                                           "statepicturesourceon":setstatepicturesourceon,
+                                           "triggeroffvalue":settriggeroffvalue
 
                                        });
 
