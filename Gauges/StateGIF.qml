@@ -66,8 +66,8 @@ Item {
         id : changesize
         color: "darkgrey"
         visible: false
-        width : 200
-        height :320
+        width : 250
+        height :420
         z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
@@ -109,7 +109,7 @@ Item {
                 }
             }
             Grid {
-                rows: 4
+                rows: 5
                 columns: 2
                 rowSpacing :5
             Text{
