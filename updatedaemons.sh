@@ -150,6 +150,8 @@ sudo rm /home/pi/daemons/GR_Yaris
 sudo rm /home/pi/daemons/Syvecs
 sudo rm /home/pi/daemons/Rsport
 sudo rm /home/pi/daemons/Generic
+sudo rm /home/pi/daemons/checkall
+sudo rm /home/pi/daemons/checkall2
 
 echo "Updating Daemons"
 cp -r /home/pi/src/daemons/. /home/pi/daemons/
