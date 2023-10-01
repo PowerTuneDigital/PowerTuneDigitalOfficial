@@ -44,6 +44,7 @@ public:
 private:
 
     QCanBusDevice *m_canDevice;
+    QString byteArrayToHex(const QByteArray &byteArray);
     DashBoard *m_dashboard;
     double pkgpayload[8];
     struct payload{
@@ -70,11 +71,10 @@ private:
 
 signals:
 
-
+void newCanFrameReceived(int canId, QString payload);
 
 public slots:
     void readyToRead();
-
 
 };
 

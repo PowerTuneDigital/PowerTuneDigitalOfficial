@@ -18,6 +18,7 @@ int main(int argc, char *argv[])
     app.setOrganizationDomain("power-tune.org");
     app.setApplicationName("PowerTune");
     QQmlApplicationEngine engine;
+    Extender extenderObject; // Initialize with the appropriate parameters
     //File system models to show drive letter and Path
     /*
     QFileSystemModel pathmodel;
@@ -37,6 +38,7 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("IMD", new ioMapData(&engine));
     engine.rootContext()->setContextProperty("DLM", new DownloadManager(&engine));
     engine.rootContext()->setContextProperty("Connect", new Connect(&engine));
+    engine.rootContext()->setContextProperty("extenderObject", &extenderObject);
     //engine.rootContext()->setContextProperty("CANExtender", new Extender(&engine));
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     return app.exec();

@@ -6,6 +6,8 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 
+
+
 ApplicationWindow {
     id:window
     visible: true
@@ -16,6 +18,7 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
+
     Rectangle {
         id: keyboardcontainer
         color: "blue"
@@ -81,7 +84,12 @@ ApplicationWindow {
             //active: SwipeView.isCurrentItem || SwipeView.isPreviousItem || firstPageLoader.source == "qrc:/GPSTracks/Laptimer.qml"
             source: "qrc:/Intro.qml"
         }
-
+        Loader {
+            id: testLoader
+            active: true
+            //source: ""
+            source: "qrc:/Settings/CanMonitor.qml"
+        }
         Loader {
             id: secondPageLoader
             active: Dashboard.Visibledashes > 1
@@ -102,23 +110,42 @@ ApplicationWindow {
         Item {
             id:lastPage
             SerialSettings{}
+
         }
+
     }
-    /* For future use
+    // For future use
+    ExBoardAnalog{
+        id:custom
+        visible:false
+    }
+
+    Item {
+        id: mysettings
+
+        Text
+        {
+            text: custom.getRpmCheckboxSaveValue()
+        }
+        visible:false
+
+    }
     Button {
         id: btnfinaliseupdate
-        
-        text: "Click to finalise update"
+        visible: false
+
+       text: custom.getRpmCheckboxSaveValue()
         width: window.width / 1.5
         height: window.height / 1.5
         font.pixelSize: window.width / 20
         anchors.centerIn: parent
+
         onClicked: {
             console.log("apply Fixes")
             btnfinaliseupdate.text = "Please wait for reboot..."
         }
     }
-    */
+
     Drawer {
         id: drawerpopup
 

@@ -321,7 +321,14 @@ void AppSettings::writeRPMFrequencySettings(const qreal &Divider,const int &DI1i
     m_dashboard->setDI1RPMEnabled(DI1isRPM);
 
 }
+void AppSettings::writeExternalrpm(const int checked)
+{
+    qDebug() << "External RPM :" <<checked;
+    setValue("ExternalRPM", checked);
+    m_dashboard->setExternalrpm(checked);
 
+
+}
 void AppSettings::readandApplySettings()
 {
     //Set Analog Input Settings
@@ -374,6 +381,6 @@ void AppSettings::readandApplySettings()
     {
         m_dashboard->setspeedpercent(1);
     }
-
+    m_dashboard->setExternalrpm(getValue("ExternalRPM").toInt());
 }
 

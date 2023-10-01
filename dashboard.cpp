@@ -604,6 +604,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_RR_Tyre_Temp_08()
     , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
+    , m_Externalrpm(0)
 
 {
 
@@ -953,6 +954,13 @@ void DashBoard::setrpm(const qreal &rpm)
         emit rpmChanged(rpm);
     }
 
+}
+void DashBoard::setExternalrpm(const int &Externalrpm)
+{
+    if (m_Externalrpm == Externalrpm)
+        return;
+    m_Externalrpm = Externalrpm;
+    emit ExternalrpmChanged(Externalrpm);
 }
 
 void DashBoard::setIntakepress(const qreal &Intakepress)
@@ -5801,3 +5809,5 @@ qreal DashBoard::RR_Tyre_Temp_07() const {return m_RR_Tyre_Temp_07;}
 qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
 qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
+int DashBoard::Externalrpm() const {return m_Externalrpm;}
+
