@@ -84,12 +84,13 @@ ApplicationWindow {
             //active: SwipeView.isCurrentItem || SwipeView.isPreviousItem || firstPageLoader.source == "qrc:/GPSTracks/Laptimer.qml"
             source: "qrc:/Intro.qml"
         }
+        /*
         Loader {
             id: testLoader
             active: true
             //source: ""
             source: "qrc:/Settings/CanMonitor.qml"
-        }
+        }*/
         Loader {
             id: secondPageLoader
             active: Dashboard.Visibledashes > 1
