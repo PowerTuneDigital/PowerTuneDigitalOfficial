@@ -43,6 +43,7 @@ Rectangle {
     Connections {
         target: extenderObject
         onNewCanFrameReceived: {
+            console.log("new frame received")
             // Handle the new CAN frame received
             for (var i = 0; i < listView.model.count; ++i) {
                 if (listView.model.get(i).canId === canId) {

@@ -106,6 +106,7 @@ void Extender::readyToRead()
     const QCanBusFrame frame = m_canDevice->readFrame();
     //for the CAN monitor
     emit newCanFrameReceived(frame.frameId(), byteArrayToHex(frame.payload()));
+    qDebug() << "emit newCanFrameReceived";
 // Just for testing  start
         QString view;
         if (frame.frameType() == QCanBusFrame::ErrorFrame)
