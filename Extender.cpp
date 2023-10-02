@@ -116,14 +116,15 @@ void Extender::readyToRead()
     qDebug() << "Received message" << list;
     */
     // Convert the CAN frame ID to a hex string
-    QString canid = "0x" + QString::number(frame.frameId(), 16).toUpper();
+    // Convert the CAN frame ID to a hex string
+            QString canid = "0x" + QString::number(static_cast<quint32>(frame.frameId()), 16).toUpper();
 
-    // Convert the payload to a hex string
-    QString payloadHex = byteArrayToHex(frame.payload());
+            // Convert the payload to a hex string
+            QString payloadHex = byteArrayToHex(frame.payload());
 
-    QStringList list = {canid, payloadHex};
-    m_dashboard->setcan(list);
-    qDebug() << "Received message" << list;
+            QStringList list = {canid, payloadHex};
+            m_dashboard->setcan(list);
+            qDebug() << "Received message" << list;
     // Can Monitor end
 // Just for testing  start
         QString view;
