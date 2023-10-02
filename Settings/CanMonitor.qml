@@ -14,8 +14,6 @@ Rectangle {
 
         model: ListModel {
 
-
-            // Add more ListElements for each CAN ID you want to display
         }
 
         delegate: Item {
@@ -27,6 +25,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 font.bold: true
+                font.pixelSize: 14
             }
 
             Text {
