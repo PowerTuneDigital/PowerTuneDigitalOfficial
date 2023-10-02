@@ -38,8 +38,7 @@ public:
 public slots:
     void openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID);
     void closeConnection();
-public:
-
+    void readyToRead();
 
 private:
 
@@ -71,10 +70,8 @@ private:
 
 signals:
 
-void newCanFrameReceived(int canId, QString payload);
-
-public slots:
-    void readyToRead();
+void NewCanFrameReceived(int canId, QString payload);
+void Newtestsignal();
 
 };
 
