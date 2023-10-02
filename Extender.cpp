@@ -107,15 +107,12 @@ void Extender::readyToRead()
     while (m_canDevice->framesAvailable()) {
     const QCanBusFrame frame = m_canDevice->readFrame();
     //for the CAN monitor
- //   emit NewCanFrameReceived(frame.frameId(), byteArrayToHex(frame.payload()));
-
-//    QString predefinedPayload = "00 11 22 33 44 55 66 88";
-    //m_dashboard->setcan();
     QString canid;
     canid.resize(sizeof(frame.frameId()));
     canid = "0x" + QString::number(frame.frameId(),16).toUpper();
     QStringList list = {canid,byteArrayToHex(frame.payload())};
     m_dashboard->setcan(list);
+    qDebug() << "Received message" << list;
     // Can Monitor end
 // Just for testing  start
         QString view;
