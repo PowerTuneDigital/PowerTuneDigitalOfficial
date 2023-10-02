@@ -13,11 +13,7 @@ Rectangle {
         height: parent.height
 
         model: ListModel {
-            ListElement { canId: "0x123"; payload: "00 11 22 33 44 55 66 77" }
-            ListElement { canId: "0x456"; payload: "88 99 AA BB CC DD EE FF" }
-            ListElement { canId: "0x124"; payload: "00 11 22 33 44 55 66 77" }
-            ListElement { canId: "0x455"; payload: "88 99 AA BB CC DD EE FF" }
-            // Add more ListElements for each CAN ID you want to display
+
         }
 
         delegate: Item {
@@ -29,6 +25,7 @@ Rectangle {
                 anchors.verticalCenter: parent.verticalCenter
                 anchors.left: parent.left
                 font.bold: true
+                font.pixelSize: 14
             }
 
             Text {
@@ -41,16 +38,31 @@ Rectangle {
     }
 
     Connections {
-        target: extenderObject
-        onNewCanFrameReceived: {
-            // Handle the new CAN frame received
+        target: Dashboard
+        function onCanChanged() {
+            var canId = Dashboard.can[0];
+            var payload = Dashboard.can[1];
+            var itemFound = false;
+
+            // Check if the canId is already in the ListView
             for (var i = 0; i < listView.model.count; ++i) {
                 if (listView.model.get(i).canId === canId) {
-                    listView.model.setProperty(i, "payload", payload)
+                    listView.model.setProperty(i, "payload", payload);
+                    itemFound = true;
                     break;
                 }
             }
+
+            // If the item is not found, add it to the ListView
+            if (!itemFound) {
+                var newItem = {
+                    "canId": canId,
+                    "payload": payload
+                };
+                listView.model.append(newItem);
+            }
         }
+
     }
 }
 

@@ -47,6 +47,8 @@ Extender::~Extender()
 
 void Extender::openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID)
 {
+
+
     canstartadress = ExtenderBaseID;
     adress1 = canstartadress + 1;
     adress2 = canstartadress + 2;
@@ -105,7 +107,16 @@ void Extender::readyToRead()
     while (m_canDevice->framesAvailable()) {
     const QCanBusFrame frame = m_canDevice->readFrame();
     //for the CAN monitor
-    emit newCanFrameReceived(frame.frameId(), byteArrayToHex(frame.payload()));
+ //   emit NewCanFrameReceived(frame.frameId(), byteArrayToHex(frame.payload()));
+
+//    QString predefinedPayload = "00 11 22 33 44 55 66 88";
+    //m_dashboard->setcan();
+    QString canid;
+    canid.resize(sizeof(frame.frameId()));
+    canid = "0x" + QString::number(frame.frameId(),16).toUpper();
+    QStringList list = {canid,byteArrayToHex(frame.payload())};
+    m_dashboard->setcan(list);
+    // Can Monitor end
 // Just for testing  start
         QString view;
         if (frame.frameType() == QCanBusFrame::ErrorFrame)
