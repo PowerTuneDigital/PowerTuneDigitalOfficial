@@ -395,7 +395,7 @@ Row{
             interval: 3000;
             running: false
             onTriggered: {
-                Calculations.calculatereactiontime();
+               // Calculations.calculatereactiontime();
             }
         }
     }

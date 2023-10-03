@@ -132,16 +132,18 @@ void calculations::stopreactiontimer()
    // qDebug() << "stop reaction timer";
     m_reactiontimer.stop();
     reactiontime = (reactiontimerdiff.msecsTo(QTime::currentTime())); // reactiontime
+    qDebug() << "stop reaction timer" << reactiontime /1000;
+    m_dashboard->setreactiontime(reactiontime /1000);
 
 }
 
 
-
+/*
 void calculations::calculatereactiontime()
 {
     m_dashboard->setreactiontime((reactiontime / 1000) - qmlgreentime) ;
 }
-
+*/
 void calculations::readodoandtrip()
 {
 // Call this from QML to read Odo and Trip from file
