@@ -4204,7 +4204,7 @@ void DashBoard::setAuxTemp1(const int &AuxTemp1)
     m_AuxTemp1 = AuxTemp1;
     emit AuxTemp1Changed(AuxTemp1);
 }
-void DashBoard::setsixtyfoottime(const qreal &sixtyfoottime)
+void DashBoard::setsixtyfoottime(const float &sixtyfoottime)
 {
     if (m_sixtyfoottime == sixtyfoottime)
         return;
@@ -5678,7 +5678,7 @@ int DashBoard::overtempalarm() const {return m_overtempalarm;}
 int DashBoard::alternatorfail() const {return m_alternatorfail;}
 int DashBoard::AuxTemp1() const {return m_AuxTemp1;}
 
-qreal DashBoard::sixtyfoottime() const {return m_sixtyfoottime;}
+float DashBoard::sixtyfoottime() const {return m_sixtyfoottime;}
 qreal DashBoard::sixtyfootspeed() const {return m_sixtyfootspeed;}
 qreal DashBoard::threehundredthirtyfoottime() const {return m_threehundredthirtyfoottime;}
 qreal DashBoard::threehundredthirtyfootspeed() const {return m_threehundredthirtyfootspeed;}

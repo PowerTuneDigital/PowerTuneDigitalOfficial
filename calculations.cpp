@@ -24,7 +24,7 @@ qreal totaldragtime;
 qreal zerotohundredtime;
 qreal twohundredtime;
 qreal threehundredtime;
-qreal reactiontime;
+float reactiontime;
 qreal qmlgreentime;
 
 int zerotohundredset = 0;

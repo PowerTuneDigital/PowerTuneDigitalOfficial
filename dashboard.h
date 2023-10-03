@@ -461,7 +461,7 @@ class DashBoard : public QObject
 
     Q_PROPERTY(qreal SteeringWheelAngle READ SteeringWheelAngle WRITE setSteeringWheelAngle NOTIFY SteeringWheelAngleChanged)
 
-    Q_PROPERTY(qreal sixtyfoottime READ sixtyfoottime WRITE setsixtyfoottime NOTIFY sixtyfoottimeChanged)
+    Q_PROPERTY(float sixtyfoottime READ sixtyfoottime WRITE setsixtyfoottime NOTIFY sixtyfoottimeChanged)
     Q_PROPERTY(qreal sixtyfootspeed READ sixtyfootspeed WRITE setsixtyfootspeed NOTIFY sixtyfootspeedChanged)
     Q_PROPERTY(qreal threehundredthirtyfoottime READ threehundredthirtyfoottime WRITE setthreehundredthirtyfoottime NOTIFY threehundredthirtyfoottimeChanged)
     Q_PROPERTY(qreal threehundredthirtyfootspeed READ threehundredthirtyfootspeed WRITE setthreehundredthirtyfootspeed NOTIFY threehundredthirtyfootspeedChanged)
@@ -1132,7 +1132,7 @@ class DashBoard : public QObject
     void setalternatorfail(const int &alternatorfail);
     void setAuxTemp1(const int &AuxTemp1);
 
-    void setsixtyfoottime(const qreal &sixtyfoottime);
+    void setsixtyfoottime(const float &sixtyfoottime);
     void setsixtyfootspeed(const qreal &sixtyfootspeed);
     void setthreehundredthirtyfoottime(const qreal &threehundredthirtyfoottime);
     void setthreehundredthirtyfootspeed(const qreal &threehundredthirtyfootspeed);
@@ -1726,7 +1726,7 @@ class DashBoard : public QObject
     int alternatorfail()const;
     int AuxTemp1()const;
 
-    qreal sixtyfoottime()const;
+    float sixtyfoottime()const;
     qreal sixtyfootspeed()const;
     qreal threehundredthirtyfoottime()const;
     qreal threehundredthirtyfootspeed()const;
@@ -2313,7 +2313,7 @@ signals:
     void alternatorfailChanged(int alternatorfail);
     void AuxTemp1Changed(int AuxTemp1);
 
-    void sixtyfoottimeChanged(qreal sixtyfoottime);
+    void sixtyfoottimeChanged(float sixtyfoottime);
     void sixtyfootspeedChanged(qreal sixtyfootspeed);
     void threehundredthirtyfoottimeChanged(qreal threehundredthirtyfoottime);
     void threehundredthirtyfootspeedChanged(qreal threehundredthirtyfootspeed);
@@ -2909,7 +2909,7 @@ private:
     int m_AuxTemp1;
 
 
-    qreal m_sixtyfoottime;
+    float m_sixtyfoottime;
     qreal m_sixtyfootspeed;
     qreal m_threehundredthirtyfoottime;
     qreal m_threehundredthirtyfootspeed;
