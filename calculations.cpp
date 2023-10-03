@@ -132,7 +132,6 @@ void calculations::stopreactiontimer()
    // qDebug() << "stop reaction timer";
     m_reactiontimer.stop();
     reactiontime = (reactiontimerdiff.msecsTo(QTime::currentTime())); // reactiontime
-    qDebug() << "stop reaction timer" << reactiontime /1000;
     m_dashboard->setreactiontime(reactiontime /1000);
 
 }
