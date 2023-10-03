@@ -45,6 +45,7 @@ public:
     Q_INVOKABLE void writeTrackSettings(const QString &Track);
     Q_INVOKABLE void writebrightnessettings(const int &Brightness);
     Q_INVOKABLE void writeRPMFrequencySettings(const qreal &Divider,const int &DI1isRPM);
+    Q_INVOKABLE void writeExternalrpm(const int checked);
     Q_INVOKABLE void writeStartupSettings(const int &ExternalSpeed);
     Q_INVOKABLE void readandApplySettings();
 

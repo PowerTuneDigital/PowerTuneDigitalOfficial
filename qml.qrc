@@ -125,5 +125,6 @@
         <file>CustomStyles/Constants.qml</file>
         <file>CustomStyles/StyledComboBox.qml</file>
         <file>CustomStyles/qmldir</file>
+        <file>Settings/CanMonitor.qml</file>
     </qresource>
 </RCC>

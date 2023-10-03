@@ -62,6 +62,10 @@ Rectangle {
         {
             return "qrc:/Gauges/SpeedMeasurements.qml"
         }
+        case 11:
+        {
+            return "qrc:/Settings/CanMonitor.qml"
+        }
         }
     }
 

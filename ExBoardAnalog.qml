@@ -12,7 +12,7 @@ Rectangle {
     Item {
         id:exsave
         Settings {
-
+            id:settings
             property alias ex00save : ex00.text
             property alias ex05save : ex05.text
             property alias ex10save : ex10.text
@@ -93,7 +93,10 @@ Rectangle {
             property alias an7dampingfactorsave : an7dampingfactor.text
         }
     }
-
+    property int rpmCheckboxSaveValue: settings.rpmcheckboxsave
+    function getRpmCheckboxSaveValue() {
+        return rpmCheckboxSaveValue;
+    }
     Grid {
         id:inputgrid
         rows:10
@@ -327,7 +330,7 @@ Rectangle {
             id: inputs
             function setInputs()
             {
-
+            AppSettings.writeExternalrpm(rpmcheckbox.checked);
             AppSettings.writeEXAN7dampingSettings(an7dampingfactor.text);
             AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan3ntc.checkState,checkan4ntc.checkState,checkan5ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState,checkan3100.checkState,checkan31k.checkState,checkan4100.checkState,checkan41k.checkState,checkan5100.checkState,checkan51k.checkState)
             AppSettings.writeSteinhartSettings(t10.text,t20.text,t30.text,r10.text,r20.text,r30.text,t11.text,t21.text,t31.text,r11.text,r21.text,r31.text,t12.text,t22.text,t32.text,r12.text,r22.text,r32.text,t13.text,t23.text,t33.text,r13.text,r23.text,r33.text,t14.text,t24.text,t34.text,r14.text,r24.text,r34.text,t15.text,t25.text,t35.text,r15.text,r25.text,r35.text)
@@ -370,13 +373,13 @@ Rectangle {
                 }
                 case 5: //6cyl
                 {
-                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)     //Confirmed
                     //console.log("6 Cyl")
                     break;
                 }
                 case 6: //8cyl
                 {
-                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)
+                    AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)     //Confirmed
                    // console.log("8 Cyl")
                     break;
                 }
