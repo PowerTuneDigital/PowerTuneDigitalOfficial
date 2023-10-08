@@ -23,7 +23,7 @@ public slots:
     Q_INVOKABLE void startreactiontimer();
     Q_INVOKABLE void qmlrealtime();
     Q_INVOKABLE void stopreactiontimer();
-    Q_INVOKABLE void calculatereactiontime();
+   // Q_INVOKABLE void calculatereactiontime();
     Q_INVOKABLE void readodoandtrip();
     void saveodoandtriptofile();
     void calculate();
