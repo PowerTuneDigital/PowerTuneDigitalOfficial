@@ -160,6 +160,7 @@ Row{
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
         }
+
         Text {
             id:reactiotimertimetext
             text: (Dashboard.reactiontime).toFixed(3)
@@ -374,6 +375,7 @@ Row{
                 measurements.color = "limegreen"
                 sliptextcolor = "transparent"
                 calculationtimer.running = true
+                Calculations.startreactiontimer();
                 Calculations.qmlrealtime();
             }
         }
@@ -436,7 +438,6 @@ Row{
         measurements.color = "orange"
         sliptextcolor = "transparent"
         startmeasurement = 1;
-        Calculations.startreactiontimer();
         if (Dashboard.speed > 0)
         {
         stagelight.running = false;

@@ -114,7 +114,6 @@ void calculations::startdragtimer()
 void calculations::startreactiontimer()
 {
     //qDebug() << "Reactiontimer start";
-    startTime = QTime::currentTime();
     reactiontime = 0;
     qmlgreentime = 0;
     reactiontimerdiff = QTime::currentTime();
@@ -131,6 +130,7 @@ void calculations::stopreactiontimer()
 {
    // qDebug() << "stop reaction timer";
     m_reactiontimer.stop();
+    startTime = QTime::currentTime();
     reactiontime = (reactiontimerdiff.msecsTo(QTime::currentTime())); // reactiontime
     m_dashboard->setreactiontime(reactiontime /1000);
 
