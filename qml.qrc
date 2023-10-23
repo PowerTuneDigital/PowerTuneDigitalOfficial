@@ -122,6 +122,9 @@
         <file>KTracks/Australia/The Bend West Circuit.txt</file>
         <file>ExBoardAnalog.qml</file>
         <file>Gauges/TyreMonitor.qml</file>
+        <file>CustomStyles/Constants.qml</file>
+        <file>CustomStyles/StyledComboBox.qml</file>
+        <file>CustomStyles/qmldir</file>
         <file>Settings/CanMonitor.qml</file>
     </qresource>
 </RCC>
