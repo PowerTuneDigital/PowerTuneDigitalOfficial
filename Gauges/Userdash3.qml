@@ -812,7 +812,7 @@ Item {
             }
             if (userDash.children[i].information === "State GIF")
             {
-                saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].pictureheight+","+userDash.children[i].mainvaluename+","+userDash.children[i].triggervalue+","+userDash.children[i].statepicturesourceoff+","+userDash.children[i].statepicturesourceon+"\r\n");
+                saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].pictureheight+","+userDash.children[i].mainvaluename+","+userDash.children[i].triggervalue+","+userDash.children[i].statepicturesourceoff+","+userDash.children[i].statepicturesourceon+","+userDash.children[i].triggeroffvalue+"\r\n");
             }
         }
     }
@@ -918,7 +918,7 @@ Item {
             }
             case "State GIF": {
                 //console.log("Save state");
-                CreateStateGIFScript.createPicture(gaugelist.get(i).x,gaugelist.get(i).y,gaugelist.get(i).height,gaugelist.get(i).source,gaugelist.get(i).trigger,gaugelist.get(i).pictureoff,gaugelist.get(i).pictureon);
+                CreateStateGIFScript.createPicture(gaugelist.get(i).x,gaugelist.get(i).y,gaugelist.get(i).height,gaugelist.get(i).source,gaugelist.get(i).trigger,gaugelist.get(i).pictureoff,gaugelist.get(i).pictureon,gaugelist.get(i).triggeroff);
                 break;
             }
             }
@@ -1116,7 +1116,9 @@ Item {
                                      "source":userDash.children[i].mainvaluename,
                                      "trigger":userDash.children[i].triggervalue,
                                      "pictureoff":userDash.children[i].statepicturesourceoff,
-                                     "pictureon":userDash.children[i].statepicturesourceon})
+                                     "pictureon":userDash.children[i].statepicturesourceon,
+                                     "triggeroff":userDash.children[i].triggeroffvalue
+                                 })
             }
         }
         var datamodel = []

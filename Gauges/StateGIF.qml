@@ -12,6 +12,7 @@ Item {
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
+    property double triggeroffvalue : 0
     Drag.active: true
     DatasourcesList{id: powertunedatasource}
     Component.onCompleted: {togglemousearea();
@@ -65,8 +66,8 @@ Item {
         id : changesize
         color: "darkgrey"
         visible: false
-        width : 200
-        height :320
+        width : 250
+        height :420
         z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
@@ -108,7 +109,7 @@ Item {
                 }
             }
             Grid {
-                rows: 4
+                rows: 5
                 columns: 2
                 rowSpacing :5
             Text{
@@ -194,6 +195,17 @@ Item {
                 //onTextChanged: triggervalue = triggeronvalue.text
                 font.pixelSize: 12
             }
+         Text{
+                text: "Triggeroff"
+                font.pixelSize: 12
+            }
+            TextField {
+                id: triggerofffvalue
+                width: 140
+                height: 40
+                text: triggeroffvalue
+                font.pixelSize: 12
+            }
             }
             RoundButton{
                 width: parent.width
@@ -207,6 +219,7 @@ Item {
                 font.pixelSize: 15
                 onClicked: {
                     triggervalue = triggeronvalue.text;
+                    triggeroffvalue = triggerofffvalue.text;
                     mainvaluename = powertunedatasource.get(cbxMain.currentIndex).sourcename;
                     changesize.visible = false;
             }
@@ -229,10 +242,10 @@ Item {
         {
           //  //console.log("warning" +mainvaluetextfield.text);
           //  //console.log("Trigger" +mainvaluetextfield.text);
-            if (mainvaluetextfield.text >= triggervalue ){statepictureoff.visible = false,statepictureon.visible = true}
-            if (mainvaluetextfield.text < triggervalue ){statepictureoff.visible = true,statepictureon.visible = false}
-//            else {statepictureoff.visible = true,statepictureon.visible = false};
-
+          if (mainvaluetextfield.text >= triggervalue && mainvaluetextfield.text <= triggeroffvalue){statepictureoff.visible = false,statepictureon.visible = true}
+          if (mainvaluetextfield.text < triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
+          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue > triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
+          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue < triggervalue){statepictureoff.visible = false,statepictureon.visible = true}
         }
     }
     function togglemousearea()
