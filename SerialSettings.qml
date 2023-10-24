@@ -10,9 +10,6 @@ import "qrc:/Gauges/"
 import DLM 1.0
 
 
-import "./CustomStyles"
-
-
 Quick1.TabView {
     id: tabView
     anchors.fill: parent
@@ -36,8 +33,8 @@ Quick1.TabView {
         frameOverlap: 1
         tab: Rectangle {
             id: tabrect
-            color: styleData.selected ? Constants.active : Constants.inactive
-            border.color: Constants.border
+            color: styleData.selected ? "grey" : "lightgrey"
+            border.color: "steelblue"
             implicitWidth: Math.max(text.width + 4, 80)
             implicitHeight: 50
             radius: 2
@@ -50,7 +47,7 @@ Quick1.TabView {
             }
         }
         frame: Rectangle {
-            color: Constants.border
+            color: "steelblue"
         }
     }
     Quick1.Tab {

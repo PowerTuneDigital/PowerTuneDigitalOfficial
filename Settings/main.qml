@@ -3,12 +3,10 @@ import QtQuick.Controls 2.1
 import QtMultimedia 5.8
 import Qt.labs.settings 1.0
 
-import "../CustomStyles"
-
 Rectangle {
     id: windowbackround
     anchors.fill: parent
-    color: Constants.active
+    color: "grey"
     property int test1: 0
     property int connected: 0
     property var gpscom
@@ -108,15 +106,16 @@ Rectangle {
                 Text {
                     text: "ECU Serial Port: "
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                     visible: {
                         (ecuSelect.currentIndex != "1") ? false : true
                     }
                 }
-                StyledComboBox {
+                ComboBox {
                     id: serialName
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
                     visible: {
                         (ecuSelect.currentIndex != "1") ? false : true
@@ -130,30 +129,52 @@ Rectangle {
                         initialized = true
                         autoconnect.auto()
                     }
+                    delegate: ItemDelegate {
+                        width: serialName.width
+                        text: serialName.textRole ? (Array.isArray(
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: serialName.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: serialName.font.family
+                        font.pixelSize: serialName.font.pixelSize
+                        highlighted: serialName.highlightedIndex == index
+                        hoverEnabled: serialName.hoverEnabled
+                    }
                 }
-
                 Text {
                     text: "GPS Port: "
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
                 }
-                StyledComboBox {
+                ComboBox {
                     id: serialNameGPS
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
+                    // visible: { (gpsswitch.checked == true ) ? true:false; }
+                    delegate: ItemDelegate {
+                        width: serialNameGPS.width
+                        text: serialNameGPS.textRole ? (Array.isArray(
+                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: serialNameGPS.currentIndex
+                                     == index ? Font.DemiBold : Font.Normal
+                        font.family: serialNameGPS.font.family
+                        font.pixelSize: serialNameGPS.font.pixelSize
+                        highlighted: serialNameGPS.highlightedIndex == index
+                        hoverEnabled: serialNameGPS.hoverEnabled
+                    }
                 }
-
                 Text {
                     text: "Speed units:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
-                StyledComboBox {
+                ComboBox {
                     id: unitSelect1
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["Metric", "Imperial"]
                     property bool initialized: false
                     Component.onCompleted: {
@@ -164,17 +185,27 @@ Rectangle {
                         Connect.setSpeedUnits(currentIndex)
                         changeweighttext.changetext()
                     }
+                    delegate: ItemDelegate {
+                        width: unitSelect1.width
+                        text: unitSelect1.textRole ? (Array.isArray(
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect1.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: unitSelect1.font.family
+                        font.pixelSize: unitSelect1.font.pixelSize
+                        highlighted: unitSelect1.highlightedIndex == index
+                        hoverEnabled: unitSelect1.hoverEnabled
+                    }
                 }
-
                 Text {
                     text: "Temp units:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
-                StyledComboBox {
+                ComboBox {
                     id: unitSelect
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["Metric", "Imperial"]
                     property bool initialized: false
                     Component.onCompleted: {
@@ -184,17 +215,28 @@ Rectangle {
                     onCurrentIndexChanged: {
                         Connect.setUnits(currentIndex)
                         changeweighttext.changetext()
+                    }
+                    delegate: ItemDelegate {
+                        width: unitSelect.width
+                        text: unitSelect.textRole ? (Array.isArray(
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: unitSelect.font.family
+                        font.pixelSize: unitSelect.font.pixelSize
+                        highlighted: unitSelect.highlightedIndex == index
+                        hoverEnabled: unitSelect.hoverEnabled
                     }
                 }
                 Text {
                     text: "Pressure units:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
-                StyledComboBox {
+                ComboBox {
                     id: unitSelect2
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["kPa", "PSI"]
                     property bool initialized: false
                     Component.onCompleted: {
@@ -203,16 +245,28 @@ Rectangle {
                     onCurrentIndexChanged: {
                         Connect.setPressUnits(currentIndex)
                     }
+                    delegate: ItemDelegate {
+                        width: unitSelect.width
+                        text: unitSelect.textRole ? (Array.isArray(
+                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: unitSelect.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: unitSelect.font.family
+                        font.pixelSize: unitSelect.font.pixelSize
+                        highlighted: unitSelect.highlightedIndex == index
+                        hoverEnabled: unitSelect.hoverEnabled
+                    }
                 }
                 Text {
                     text: "ECU Selection:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
-                StyledComboBox {
+                ComboBox {
                     id: ecuSelect
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    //model: [ "PowerFC","UDP","None","CAN Adaptronic Modular","Consult","HaltechV1","HaltechV2","OBD2"]
                     model: ["CAN", "PowerFC", "Consult", "OBD2","Generic CAN"]
                     property bool initialized: false
                     onCurrentIndexChanged: {
@@ -223,22 +277,43 @@ Rectangle {
                     Component.onCompleted: {
                         currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
                     }
+                    delegate: ItemDelegate {
+                        width: ecuSelect.width
+                        text: ecuSelect.textRole ? (Array.isArray(
+                                                        control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: ecuSelect.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: ecuSelect.font.family
+                        font.pixelSize: ecuSelect.font.pixelSize
+                        highlighted: ecuSelect.highlightedIndex == index
+                        hoverEnabled: ecuSelect.hoverEnabled
+                    }
                 }
                 Text {
                     text: "GoPro Variant :"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
-                StyledComboBox {
+                ComboBox {
                     id: goProSelect
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["Hero", "Hero2", "Hero3"]
+                    delegate: ItemDelegate {
+                        width: goProSelect.width
+                        text: goProSelect.textRole ? (Array.isArray(
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: goProSelect.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: goProSelect.font.family
+                        font.pixelSize: goProSelect.font.pixelSize
+                        highlighted: goProSelect.highlightedIndex == index
+                        hoverEnabled: goProSelect.hoverEnabled
+                    }
                 }
                 Text {
                     text: "GoPro Password :"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
                 TextField {
                     id: goPropass
@@ -256,7 +331,7 @@ Rectangle {
                 Text {
                     text: "Logfile name:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
                 TextField {
                     id: logfilenameSelect
@@ -271,7 +346,7 @@ Rectangle {
                 Text {
                     text: "Odo:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
                 TextField {
                     id: odometer
@@ -285,7 +360,7 @@ Rectangle {
                 Text {
                     text: "Trip:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
                 TextField {
                     id: tripmeter
@@ -300,7 +375,7 @@ Rectangle {
                 Text {
                     id: weighttext
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                     text: "Weight:"
                 }
                 TextField {
@@ -313,7 +388,7 @@ Rectangle {
                 Text {
                     text: "Serial Status:"
                     font.pixelSize: windowbackround.width / 55
-                    color: Constants.label_text_color
+                    color: "white"
                 }
                 TextField {
                     width: windowbackround.width / 5
@@ -442,13 +517,14 @@ Rectangle {
 
                 Text {
                     text: "RPM Smoothing :"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
-                StyledComboBox {
+                ComboBox {
                     id: smoothrpm
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["OFF", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     //property bool initialized: true
                     onCurrentIndexChanged: {
@@ -457,17 +533,28 @@ Rectangle {
                     Component.onCompleted: {
                         Dashboard.setsmoothrpm(smoothrpm.currentIndex)
                     }
+                    delegate: ItemDelegate {
+                        width: smoothrpm.width
+                        text: smoothrpm.textRole ? (Array.isArray(
+                                                        control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: smoothrpm.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: smoothrpm.font.family
+                        font.pixelSize: smoothrpm.font.pixelSize
+                        highlighted: smoothrpm.highlightedIndex == index
+                        hoverEnabled: smoothrpm.hoverEnabled
+                    }
                 }
 
                 Text {
                     text: "Speed Smoothing :"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
-                StyledComboBox {
+                ComboBox {
                     id: smoothspeed
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
                     model: ["OFF", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     property bool initialized: true
                     onCurrentIndexChanged: {
@@ -475,6 +562,16 @@ Rectangle {
                     }
                     Component.onCompleted: {
                         Dashboard.setsmoothspeed(smoothspeed.currentIndex)
+                    }
+                    delegate: ItemDelegate {
+                        width: smoothspeed.width
+                        text: smoothspeed.textRole ? (Array.isArray(
+                                                          control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: smoothspeed.currentIndex == index ? Font.DemiBold : Font.Normal
+                        font.family: smoothspeed.font.family
+                        font.pixelSize: smoothspeed.font.pixelSize
+                        highlighted: smoothspeed.highlightedIndex == index
+                        hoverEnabled: smoothspeed.hoverEnabled
                     }
                 }
                 Switch {
@@ -511,9 +608,8 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-
                     text: " V 1.98c " + Dashboard.Platform
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 } //spacer
             }
@@ -526,17 +622,17 @@ Rectangle {
 
                 Text {
                     text: "     CAN Extender"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
                     text: "      base adress "
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
                     text: "       (decimal) :"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 TextField {
@@ -556,22 +652,22 @@ Rectangle {
                 Text {
                     text: "      HEX: 0x" + (hexstring + 0x1000).toString(
                               16).substr(-3).toUpperCase()
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
                     text: "     Shiftlight CAN"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
                     text: "      base adress "
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
                     text: "       (decimal) :"
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 TextField {
@@ -591,7 +687,7 @@ Rectangle {
                 Text {
                     text: "      HEX: 0x" + (hexstring2 + 0x1000).toString(
                               16).substr(-3).toUpperCase()
-                    color: Constants.label_text_color
+                    color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
             }
