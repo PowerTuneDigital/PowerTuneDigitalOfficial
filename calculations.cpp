@@ -15,8 +15,9 @@ qreal Torque;
 qreal odometer;
 qreal tripmeter;
 qreal traveleddistance;
+qreal timesincelastupdate;
 
-QTime startTime = QTime::currentTime();
+QTime startTime;
 QTime reactiontimerdiff = QTime::currentTime();
 qreal dragdistance;
 qreal dragdistancetotal;
@@ -108,6 +109,7 @@ void calculations::startdragtimer()
     thousandfootset = 0;
     startdragcalculation = 0;
     startdragcalculation = 1;
+
 }
 void calculations::startreactiontimer()
 {
@@ -128,17 +130,19 @@ void calculations::stopreactiontimer()
 {
    // qDebug() << "stop reaction timer";
     m_reactiontimer.stop();
+    startTime = QTime::currentTime();
     reactiontime = (reactiontimerdiff.msecsTo(QTime::currentTime())); // reactiontime
+    m_dashboard->setreactiontime(reactiontime /1000);
 
 }
 
 
-
+/*
 void calculations::calculatereactiontime()
 {
     m_dashboard->setreactiontime((reactiontime / 1000) - qmlgreentime) ;
 }
-
+*/
 void calculations::readodoandtrip()
 {
 // Call this from QML to read Odo and Trip from file
@@ -164,8 +168,9 @@ void calculations::calculate()
 // Dragracing Calculations
 if (m_dashboard->speedunits() == "metric" && startdragcalculation == 1)
     {
-    dragdistance = ((startTime.msecsTo(QTime::currentTime())) * ((m_dashboard->speed()) / 3600000)); // Odometer
-    totaldragtime += (startTime.msecsTo(QTime::currentTime()));
+    timesincelastupdate = (startTime.msecsTo(QTime::currentTime())) -totaldragtime;
+    dragdistance = (timesincelastupdate * ((m_dashboard->speed()) / 3600000)); // Odometer
+    totaldragtime = (startTime.msecsTo(QTime::currentTime()));
     dragdistancetotal += dragdistance;
     if (dragdistancetotal >= 0.01828762 && sixtyfootset == 0)
        {
@@ -217,16 +222,18 @@ if (m_dashboard->speedunits() == "metric" && startdragcalculation == 1)
         }
 }
 if (m_dashboard->speedunits()  == "imperial"  && startdragcalculation == 1)
-{    dragdistance = ((startTime.msecsTo(QTime::currentTime())) * ((m_dashboard->speed()) / 3600000)); // Odometer
-     totaldragtime += (startTime.msecsTo(QTime::currentTime()));
-     dragdistancetotal += dragdistance;
-     if (dragdistancetotal >= 0.0113634 && sixtyfootset == 0)
+{
+    timesincelastupdate = (startTime.msecsTo(QTime::currentTime())) -totaldragtime;
+    dragdistance = (timesincelastupdate * ((m_dashboard->speed()) / 3600000)); // Odometer
+    totaldragtime = (startTime.msecsTo(QTime::currentTime()));
+    dragdistancetotal += dragdistance;
+     if (dragdistancetotal >= 0.01136364 && sixtyfootset == 0)
         {
          m_dashboard->setsixtyfoottime(totaldragtime / 1000);
          m_dashboard->setsixtyfootspeed(m_dashboard->speed());
          sixtyfootset = 1;
         }
-     if (dragdistancetotal >= 0.0624987 &&  threhundredthirtyfootset == 0)
+     if (dragdistancetotal >= 0.0625 &&  threhundredthirtyfootset == 0)
         {
          m_dashboard->setthreehundredthirtyfoottime(totaldragtime / 1000);
          m_dashboard->setthreehundredthirtyfootspeed(m_dashboard->speed());

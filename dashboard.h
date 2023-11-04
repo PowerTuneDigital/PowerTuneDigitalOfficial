@@ -402,6 +402,7 @@ class DashBoard : public QObject
 
     Q_PROPERTY(int draggable READ draggable WRITE setdraggable NOTIFY draggableChanged)
     Q_PROPERTY(QStringList wifi READ wifi WRITE setwifi NOTIFY wifiChanged)
+    Q_PROPERTY(QStringList can READ can WRITE setcan NOTIFY canChanged)
 
 
     Q_PROPERTY(qreal Analog0 READ Analog0 WRITE setAnalog0 NOTIFY Analog0Changed)
@@ -603,7 +604,7 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal RR_Tyre_Temp_08 READ RR_Tyre_Temp_08 WRITE setRR_Tyre_Temp_08 NOTIFY RR_Tyre_Temp_08Changed)
     Q_PROPERTY(qreal RPMFrequencyDividerDi1 READ RPMFrequencyDividerDi1 WRITE setRPMFrequencyDividerDi1 NOTIFY RPMFrequencyDividerDi1Changed)
     Q_PROPERTY(int DI1RPMEnabled READ DI1RPMEnabled WRITE setDI1RPMEnabled NOTIFY DI1RPMEnabledChanged)
-
+    Q_PROPERTY(int Externalrpm READ Externalrpm WRITE setExternalrpm NOTIFY ExternalrpmChanged)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1074,6 +1075,7 @@ class DashBoard : public QObject
 
     Q_INVOKABLE void setdraggable(const int &draggable);
     void setwifi(const QStringList&wifi);
+    void setcan(const QStringList&can);
 
     void setAnalog0(const qreal &Analog0);
     void setAnalog1(const qreal &Analog1);
@@ -1272,6 +1274,8 @@ class DashBoard : public QObject
     void setRR_Tyre_Temp_08(const qreal &RR_Tyre_Temp_08);
     void setRPMFrequencyDividerDi1(const qreal &RPMFrequencyDividerDi1);
     void setDI1RPMEnabled(const int &DI1RPMEnabled);
+    void setExternalrpm(const int &Externalrpm);
+
 
     qreal Odo() const;
     qreal Cylinders() const;
@@ -1665,6 +1669,7 @@ class DashBoard : public QObject
 
     int draggable() const;
     QStringList wifi() const;
+    QStringList can() const;
 
     qreal Analog0() const;
     qreal Analog1() const;
@@ -1862,6 +1867,7 @@ class DashBoard : public QObject
     qreal RR_Tyre_Temp_08()const;
     qreal RPMFrequencyDividerDi1()const;
     int DI1RPMEnabled()const;
+    int Externalrpm()const;
 
 signals:
 
@@ -2250,6 +2256,7 @@ signals:
     void bestlaptimeChanged(QString bestlaptime);
     void draggableChanged(int draggable);
     void wifiChanged(QStringList wifi);
+    void canChanged(QStringList can);
 
     void Analog0Changed(qreal Analog0);
     void Analog1Changed(qreal Analog1);
@@ -2448,6 +2455,7 @@ signals:
     void RR_Tyre_Temp_08Changed(qreal RR_Tyre_Temp_08);
     void RPMFrequencyDividerDi1Changed(qreal RPMFrequencyDividerDi1);
     void DI1RPMEnabledChanged(int DI1RPMEnabled);
+    void ExternalrpmChanged(int Externalrpm);
 
 private:
     // Odometer
@@ -2843,6 +2851,7 @@ private:
 
     int m_draggable;
     QStringList m_wifi;
+    QStringList m_can;
 
     qreal m_Analog0;
     qreal m_Analog1;
@@ -3040,7 +3049,7 @@ private:
     qreal m_RR_Tyre_Temp_08;
     qreal m_RPMFrequencyDividerDi1;
     int m_DI1RPMEnabled;
-
+    int m_Externalrpm;
 };
 
 #endif // DASHBOARD_H

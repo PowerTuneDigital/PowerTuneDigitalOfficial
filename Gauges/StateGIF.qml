@@ -207,6 +207,17 @@ Item {
                 onTextChanged: triggerofffColor();
                 font.pixelSize: 12
             }
+         Text{
+                text: "Triggeroff"
+                font.pixelSize: 12
+            }
+            TextField {
+                id: triggerofffvalue
+                width: 140
+                height: 40
+                text: triggeroffvalue
+                font.pixelSize: 12
+            }
             }
             RoundButton{
                 width: parent.width

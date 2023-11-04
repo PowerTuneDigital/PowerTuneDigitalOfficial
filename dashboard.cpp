@@ -430,6 +430,7 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_bestlaptime("00:00.000")
     ,  m_draggable(0)
     ,  m_wifi()
+    ,  m_can()
     ,  m_Analog0(0)
     ,  m_Analog1(0)
     ,  m_Analog2(0)
@@ -604,6 +605,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_RR_Tyre_Temp_08()
     , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
+    , m_Externalrpm(0)
 
 {
 
@@ -953,6 +955,13 @@ void DashBoard::setrpm(const qreal &rpm)
         emit rpmChanged(rpm);
     }
 
+}
+void DashBoard::setExternalrpm(const int &Externalrpm)
+{
+    if (m_Externalrpm == Externalrpm)
+        return;
+    m_Externalrpm = Externalrpm;
+    emit ExternalrpmChanged(Externalrpm);
 }
 
 void DashBoard::setIntakepress(const qreal &Intakepress)
@@ -3612,6 +3621,13 @@ void DashBoard::setwifi(const QStringList &wifi)
     m_wifi = wifi;
     emit wifiChanged(wifi);
 }
+void DashBoard::setcan(const QStringList &can)
+{
+    if (m_can== can)
+        return;
+    m_can = can;
+    emit canChanged(can);
+}
 void DashBoard::setAnalog0(const qreal &Analog0)
 {
     if (m_Analog0== Analog0)
@@ -5604,6 +5620,7 @@ QString DashBoard::bestlaptime() const {return m_bestlaptime; }
 int DashBoard::draggable() const { return m_draggable; }
 
 QStringList DashBoard::wifi() const {return m_wifi; }
+QStringList DashBoard::can() const {return m_can; }
 
 qreal DashBoard::Analog0() const {return m_Analog0; }
 qreal DashBoard::Analog1() const {return m_Analog1; }
@@ -5801,3 +5818,5 @@ qreal DashBoard::RR_Tyre_Temp_07() const {return m_RR_Tyre_Temp_07;}
 qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
 qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
+int DashBoard::Externalrpm() const {return m_Externalrpm;}
+

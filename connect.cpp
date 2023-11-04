@@ -108,7 +108,7 @@ Connect::Connect(QObject *parent) :
     if (engine == Q_NULLPTR)
         return;
     engine->rootContext()->setContextProperty("Dashboard", m_dashBoard);
-    engine->rootContext()->setContextProperty("Extender", m_extender);
+    engine->rootContext()->setContextProperty("Extender2", m_extender);
     engine->rootContext()->setContextProperty("AppSettings", m_appSettings);
     engine->rootContext()->setContextProperty("GoPro", m_gopro);
     engine->rootContext()->setContextProperty("Gps", m_gps);
@@ -898,7 +898,7 @@ void Connect::daemonstartup(const int &daemon)
         daemonstart = "./GR_Yaris";
         break;
     case 55:
-        daemonstart = "./Syvecs";
+        daemonstart = "./SyvecsS7";
         break;
     case 56:
         daemonstart = "./Rsport";

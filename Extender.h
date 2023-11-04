@@ -38,12 +38,12 @@ public:
 public slots:
     void openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID);
     void closeConnection();
-public:
-
+    void readyToRead();
 
 private:
 
     QCanBusDevice *m_canDevice;
+    QString byteArrayToHex(const QByteArray &byteArray);
     DashBoard *m_dashboard;
     double pkgpayload[8];
     struct payload{
@@ -70,11 +70,8 @@ private:
 
 signals:
 
-
-
-public slots:
-    void readyToRead();
-
+void NewCanFrameReceived(int canId, QString payload);
+void Newtestsignal();
 
 };
 

@@ -47,6 +47,8 @@ Extender::~Extender()
 
 void Extender::openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID)
 {
+
+
     canstartadress = ExtenderBaseID;
     adress1 = canstartadress + 1;
     adress2 = canstartadress + 2;
@@ -71,10 +73,12 @@ void Extender::openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID)
           //  qDebug() << "device connected!";
             //connect(m_canDevice,SIGNAL(framesReceived()),this,SLOT(readyToRead()));
             connect(m_canDevice, &QCanBusDevice::framesReceived, this, &Extender::readyToRead);
+
+              }
         }
 
     }
-}
+
 void Extender::closeConnection()
 {
     disconnect(m_canDevice,SIGNAL(framesReceived()),this,SLOT(readyToRead()));
@@ -83,13 +87,35 @@ void Extender::closeConnection()
 
 
 }
+
+
+QString Extender::byteArrayToHex(const QByteArray &byteArray)
+{
+    QString hexString;
+    for (const uchar &byte : byteArray)
+    {
+        hexString.append(QString("%1 ").arg(byte, 2, 16, QChar('0')));
+    }
+    return hexString.trimmed();
+}
+
 void Extender::readyToRead()
 {
     if (!m_canDevice)
         return;
 
     while (m_canDevice->framesAvailable()) {
-        const QCanBusFrame frame = m_canDevice->readFrame();
+    const QCanBusFrame frame = m_canDevice->readFrame();
+    //for the CAN monitor
+            QString canid = "0x" + QString::number(static_cast<quint32>(frame.frameId()), 16).toUpper();
+
+            // Convert the payload to a hex string
+            QString payloadHex = byteArrayToHex(frame.payload());
+
+            QStringList list = {canid, payloadHex};
+            m_dashboard->setcan(list);
+            qDebug() << "Received message" << list;
+    // Can Monitor end
 // Just for testing  start
         QString view;
         if (frame.frameType() == QCanBusFrame::ErrorFrame)
@@ -237,7 +263,8 @@ void Extender::readyToRead()
                 m_dashboard->setEXAnalogInput6(pkgpayload[2]*0.001);         				  		  //Analog 6
                 m_dashboard->setEXAnalogInput7(pkgpayload[3]*0.001);						          //Analog 7
         }
-        if (frame.frameId() == adress5 && (m_dashboard->Cylinders() / 2) != 0) {
+        if (frame.frameId() == adress5 && (m_dashboard->Cylinders() / 2) != 0 && m_dashboard->Externalrpm() == 1)
+        {
                 m_dashboard->setrpm(qRound((pkgpayload[0]*4) / (m_dashboard->Cylinders() / 2)));      //RPM
         }
 

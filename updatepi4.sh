@@ -5,8 +5,9 @@ REPO_URL="https://github.com/PowerTuneDigital/YoctoExtraPackages.git"
 
 # Define the paths for Perl and OpenSSL
 PERL_INSTALL_PATH="/usr/local/lib/perl5/5.38.0"
-OPENSSL_INSTALL_PATH="/usr/local/lib/openssl/openssl"
-OPENSSL_BIN_PATH="/usr/local/bin"
+OPENSSL_INSTALL_PATH="/usr/local/lib/openssl "
+OPENSSL_BIN_PATH="/usr/local/bin/"
+
 
 # Function to check if a command is available
 command_exists() {
