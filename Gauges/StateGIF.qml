@@ -192,7 +192,7 @@ Item {
                 width: 140
                 height: 40
                 text: triggervalue
-                //onTextChanged: triggervalue = triggeronvalue.text
+                onTextChanged: triggerofffColor();
                 font.pixelSize: 12
             }
          Text{
@@ -204,6 +204,7 @@ Item {
                 width: 140
                 height: 40
                 text: triggeroffvalue
+                onTextChanged: triggerofffColor();
                 font.pixelSize: 12
             }
             }
@@ -240,13 +241,30 @@ Item {
         id: warningindication
         function warn()
         {
-          //  //console.log("warning" +mainvaluetextfield.text);
-          //  //console.log("Trigger" +mainvaluetextfield.text);
-          if (mainvaluetextfield.text >= triggervalue && mainvaluetextfield.text <= triggeroffvalue){statepictureoff.visible = false,statepictureon.visible = true}
-          if (mainvaluetextfield.text < triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
-          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue > triggervalue){statepictureoff.visible = true,statepictureon.visible = false}
-          if (mainvaluetextfield.text > triggeroffvalue && triggeroffvalue < triggervalue){statepictureoff.visible = false,statepictureon.visible = true}
+           if(triggeroffvalue <= triggervalue){
+			    if (mainvaluetextfield.text >= triggervalue ){statepictureoff.visible = false,statepictureon.visible = true}
+			    if (mainvaluetextfield.text < triggervalue ){statepictureoff.visible = true,statepictureon.visible = false}
+		    }else { 
+			    if(mainvaluetextfield.text >= triggervalue && mainvaluetextfield.text <= triggeroffvalue){statepictureoff.visible = false,statepictureon.visible = true}
+			    else{statepictureoff.visible = true,statepictureon.visible = false}
+		    }
         }
+    }
+
+function triggerofffColor()
+    {
+	    triggervalue = triggeronvalue.text;
+            triggeroffvalue = triggerofffvalue.text;
+                 
+	    if (triggervalue >= triggeroffvalue)
+	    {
+
+		    triggerofffvalue.background.color = "grey";
+	    }
+	    else
+	    {
+		    triggerofffvalue.background.color = "white";
+	    }
     }
     function togglemousearea()
     {
