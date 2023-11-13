@@ -2,6 +2,7 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtMultimedia 5.8
 import Qt.labs.settings 1.0
+import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: windowbackround
@@ -12,6 +13,7 @@ Rectangle {
     property var gpscom
     property int hexstring
     property int hexstring2
+    property int currentLanguage: Dashboard.Language
     Item {
         id: powerTuneSettings
         Settings {
@@ -45,6 +47,7 @@ Rectangle {
             property alias smoothingspeed: smoothspeed.currentIndex
             property alias extendercanbase: baseadresstext.text
             property alias shiftlightcanbase: shiftlightbaseadresstext.text
+            property alias languagecombobox: languageselect.currentIndex
         }
         SoundEffect {
             id: warnsound
@@ -93,8 +96,8 @@ Rectangle {
         }
 
         Row {
-            x: windowbackround.width / 150
-            y: windowbackround.width / 150
+            x: windowbackround.width / 60
+            y: windowbackround.width / 60
             spacing: windowbackround.width / 150
             Grid {
                 anchors.top: parent.top
@@ -104,7 +107,7 @@ Rectangle {
                 spacing: windowbackround.width / 150
                 // [0]
                 Text {
-                    text: "ECU Serial Port: "
+                    text: Translator.translate("ECU Serial Port", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     visible: {
@@ -113,7 +116,7 @@ Rectangle {
                 }
                 ComboBox {
                     id: serialName
-                    width: windowbackround.width / 5
+                    width: windowbackround.width / 6
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
@@ -141,7 +144,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "GPS Port: "
+                    text: Translator.translate("GPS Port", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -152,7 +155,6 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
-                    // visible: { (gpsswitch.checked == true ) ? true:false; }
                     delegate: ItemDelegate {
                         width: serialNameGPS.width
                         text: serialNameGPS.textRole ? (Array.isArray(
@@ -166,7 +168,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "Speed units:"
+                    text: Translator.translate("Speed units", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -197,7 +199,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "Temp units:"
+                    text: Translator.translate("Temp units", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -228,7 +230,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "Pressure units:"
+                    text: Translator.translate("Pressure units", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -257,7 +259,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "ECU Selection:"
+                    text: Translator.translate("ECU Selection", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -289,7 +291,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "GoPro Variant :"
+                    text: Translator.translate("GoPro Variant", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -311,7 +313,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "GoPro Password :"
+                    text: Translator.translate("GoPro Pasword", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -329,7 +331,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: "Logfile name:"
+                    text: Translator.translate("Logfile name", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -344,7 +346,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: "Odo:"
+                    text: Translator.translate("Odo", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -358,7 +360,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: "Trip:"
+                    text: Translator.translate("Trip", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -386,7 +388,7 @@ Rectangle {
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                 }
                 Text {
-                    text: "Serial Status:"
+                    text: Translator.translate("Serial Status", Dashboard.Language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -407,7 +409,7 @@ Rectangle {
                 id: middlegrid
                 Button {
                     id: connectButton
-                    text: "Connect"
+                    text: Translator.translate("Connect", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -416,12 +418,11 @@ Rectangle {
                         connectButton.enabled = false
                         ecuSelect.enabled = false
                         disconnectButton.enabled = true
-                        //consultset.enabled = false;
                     }
                 }
                 Button {
                     id: disconnectButton
-                    text: "Disconnect"
+                    text: Translator.translate("Disconnect", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -430,29 +431,25 @@ Rectangle {
                         connectButton.enabled = true
                         disconnectButton.enabled = false
                         ecuSelect.enabled = true
-                        // consultset.enabled = true;
                         functdisconnect.disconnectfunc()
                     }
                 }
                 Button {
                     id: connectButtonGPS
-                    text: "GPS Connect"
+                    text: Translator.translate("GPS Connect", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     Component.onCompleted: autoconnectGPS.auto()
                     onClicked: {
-
-                        //console.log("clicked GPS")
                         connectButtonGPS.enabled = false
                         disconnectButtonGPS.enabled = true
                         autoconnectGPS.auto()
-                        //console.log("gps disconnect enabled")
                     }
                 }
                 Button {
                     id: disconnectButtonGPS
-                    text: "GPS Disconnect"
+                    text: Translator.translate("GPS Disconnect", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -466,7 +463,7 @@ Rectangle {
 
                 Button {
                     id: resettrip
-                    text: "Trip Reset"
+                    text: Translator.translate("Trip Reset", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -487,7 +484,7 @@ Rectangle {
         }
 */
                 Button {
-                    text: "Quit"
+                    text: Translator.translate("Quit", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -496,7 +493,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: "Shutdown"
+                    text: Translator.translate("Shutdown", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -505,7 +502,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: "Reboot"
+                    text: Translator.translate("Reboot", Dashboard.Language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -516,7 +513,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: "RPM Smoothing :"
+                    text: Translator.translate("RPM Smoothing", Dashboard.Language)//"RPM Smoothing :"
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -546,7 +543,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: "Speed Smoothing :"
+                    text: Translator.translate("Speed Smoothing", Dashboard.Language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -611,10 +608,14 @@ Rectangle {
                     text: " V 1.98f " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
-                } //spacer
+                }
+
+
+
+                //END
             }
             Grid {
-                rows: 10
+                rows: 12
                 columns: 1
                 spacing: windowbackround.width / 150
                 anchors.top: parent.top
@@ -689,6 +690,74 @@ Rectangle {
                               16).substr(-3).toUpperCase()
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
+                }
+
+                Text {
+                    text: Translator.translate("Language", Dashboard.Language)
+                    font.pixelSize: windowbackround.width / 55
+                    color: "white"
+                    //visible: { (gpsswitch.checked == true ) ? true:false; }
+                }
+
+                ComboBox {
+                    id: languageselect
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+
+                    model: [
+                        {name: "English", flag: "qrc:/graphics/Flags/us.png"},
+                        {name: "German", flag: "qrc:/graphics/Flags/de.png"},
+                        {name: "Japanese", flag: "qrc:/graphics/Flags/jp.png"}
+                    ]
+
+                    onCurrentIndexChanged: {
+                        functLanguageselect.languageselectfunct()
+                        console.log("Language combobox index")
+                    }
+
+                    delegate: Item {
+                        width: languageselect.width
+                        height: 40 // Adjust the height as needed
+                        Row {
+                            spacing: 5
+                            Image {
+                                source: modelData.flag
+                                width: 20 // Adjust the width of the flag image
+                                height: 20 // Adjust the height of the flag image
+                            }
+                            Text {
+                                text: modelData.name
+                                font.weight: languageselect.currentIndex === index ? Font.DemiBold : Font.Normal
+                                font.pixelSize: languageselect.font.pixelSize
+                            }
+                        }
+
+                        MouseArea {
+                            anchors.fill: parent
+                            onClicked: {
+                                languageselect.currentIndex = index
+                            }
+                        }
+                    }
+
+                    contentItem: Item {
+                        width: languageselect.width
+                        height: languageselect.height
+                        Row {
+                            spacing: 5
+                            Image {
+                                source: languageselect.model[languageselect.currentIndex].flag  // Explicitly reference the modelData
+                                width: 20 // Adjust the width of the flag image
+                                height: 20 // Adjust the height of the flag image
+                            }
+                            Text {
+                                text: languageselect.model[languageselect.currentIndex].name  // Explicitly reference the modelData
+                                verticalAlignment: Text.AlignVCenter
+                                font.pixelSize: languageselect.font.pixelSize
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -907,4 +976,15 @@ Rectangle {
                 warnsound.play()
         }
     }
+
+    //function to set the Language
+    Item {
+
+        id: functLanguageselect
+        function languageselectfunct() {
+            AppSettings.writeLanguage(languageselect.currentIndex)
+        }
+    }
+
+
 }

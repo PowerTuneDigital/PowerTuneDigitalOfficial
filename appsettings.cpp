@@ -319,15 +319,18 @@ void AppSettings::writeRPMFrequencySettings(const qreal &Divider,const int &DI1i
     setValue("DI1RPMEnabled", DI1isRPM);
     m_dashboard->setRPMFrequencyDividerDi1(Divider);
     m_dashboard->setDI1RPMEnabled(DI1isRPM);
-
 }
 void AppSettings::writeExternalrpm(const int checked)
 {
-    qDebug() << "External RPM :" <<checked;
     setValue("ExternalRPM", checked);
     m_dashboard->setExternalrpm(checked);
+}
 
-
+void AppSettings::writeLanguage(const int Language)
+{
+    qDebug() << "Language :" <<Language;
+    setValue("Language", Language);
+    m_dashboard->setLanguage(Language);
 }
 void AppSettings::readandApplySettings()
 {

@@ -606,6 +606,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
     , m_Externalrpm(0)
+    , m_Language(0)
 
 {
 
@@ -963,7 +964,14 @@ void DashBoard::setExternalrpm(const int &Externalrpm)
     m_Externalrpm = Externalrpm;
     emit ExternalrpmChanged(Externalrpm);
 }
-
+void DashBoard::setLanguage(const int &Language)
+{
+    if (m_Language == Language)
+        return;
+    m_Language = Language;
+    emit LanguageChanged(Language);
+    qDebug() <<Language ;
+}
 void DashBoard::setIntakepress(const qreal &Intakepress)
 {
     if (m_Intakepress == Intakepress)
@@ -5819,4 +5827,6 @@ qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
 qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
 int DashBoard::Externalrpm() const {return m_Externalrpm;}
+int DashBoard::Language() const {return m_Language;}
+
 

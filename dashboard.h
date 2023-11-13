@@ -605,6 +605,8 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal RPMFrequencyDividerDi1 READ RPMFrequencyDividerDi1 WRITE setRPMFrequencyDividerDi1 NOTIFY RPMFrequencyDividerDi1Changed)
     Q_PROPERTY(int DI1RPMEnabled READ DI1RPMEnabled WRITE setDI1RPMEnabled NOTIFY DI1RPMEnabledChanged)
     Q_PROPERTY(int Externalrpm READ Externalrpm WRITE setExternalrpm NOTIFY ExternalrpmChanged)
+    Q_PROPERTY(int Language READ Language WRITE setLanguage NOTIFY LanguageChanged)
+
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1275,7 +1277,7 @@ class DashBoard : public QObject
     void setRPMFrequencyDividerDi1(const qreal &RPMFrequencyDividerDi1);
     void setDI1RPMEnabled(const int &DI1RPMEnabled);
     void setExternalrpm(const int &Externalrpm);
-
+    void setLanguage(const int &Language);
 
     qreal Odo() const;
     qreal Cylinders() const;
@@ -1868,6 +1870,7 @@ class DashBoard : public QObject
     qreal RPMFrequencyDividerDi1()const;
     int DI1RPMEnabled()const;
     int Externalrpm()const;
+    int Language()const;
 
 signals:
 
@@ -2456,6 +2459,8 @@ signals:
     void RPMFrequencyDividerDi1Changed(qreal RPMFrequencyDividerDi1);
     void DI1RPMEnabledChanged(int DI1RPMEnabled);
     void ExternalrpmChanged(int Externalrpm);
+    void LanguageChanged(int Language);
+
 
 private:
     // Odometer
@@ -3050,6 +3055,7 @@ private:
     qreal m_RPMFrequencyDividerDi1;
     int m_DI1RPMEnabled;
     int m_Externalrpm;
+    int m_Language;
 };
 
 #endif // DASHBOARD_H
