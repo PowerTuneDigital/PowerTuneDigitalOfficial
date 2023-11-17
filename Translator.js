@@ -1,5 +1,6 @@
 var translations = {
 
+    "Analogexplanation": { en: "Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc", de: "Geben Sie den Wert den Sie bei 0 Volt sehen wollen in das Feld Val.@ 0V, und den Wert den Sie bei 5 Volt sehen wollen in das Feld Val @5V ein.Die Berecheneten Werte werden in den Korrespondierenden Datenquellen Analog x Calc angezeigt.", jp: "", es: "", fr: "", ar:"" },
     "ActiveDashboards": { en: "Active Dashboards", de: "Aktive Dashboards", jp: "", es: "", fr: "", ar:"" },
     "Connect": { en: "Connect", de: "Verbinden", jp: "接続する", es: "", fr: "", ar:"" },
     "Disconnect": { en: "Disconnect", de: "Trennen", jp: "切断する", es: "", fr: "", ar:"" },
@@ -59,7 +60,8 @@ var translations = {
     "Analog description": { en: "Enter the Value that should be displayed at 0V in the field Val.@ 0V and the value that should be displayed at 5 V in the field Val @5V. The calculated values will be availabe in the corresponding datasource Analog x Calc", de: "",  jp: "", es: "", fr: "", ar:"" },
     "Max RPM": { en: "Max RPM", de: "Max Drehzahl",  jp: "", es: "", fr: "", ar:"" },
     "Shift Light": { en: "Shift Light", de: "Schalt Licht",  jp: "", es: "", fr: "", ar:"" },
-    "Voltage divider jumpers": { en: "Voltage divider jumpers", de: "Spannungs Teiler jumper",  jp: "", es: "", fr: "", ar:"" },
+    "Voltage divider jumpers": { en: "Voltage divider jumpers", de: "Spannungs Teiler brücke",  jp: "", es: "", fr: "", ar:"" },
+    "Temp In.": { en: "Temp. Sensor", de: "Temp. Sensor",  jp: "", es: "", fr: "", ar:"" },
     "Cylinders": { en: "Cylinders", de: "Zylinder",  jp: "", es: "", fr: "", ar:"" },
     "Apply settings": { en: "Apply settings", de: "Einstellungen übernehmen",  jp: "", es: "", fr: "", ar:"" },
     "Apply": { en: "Apply", de: "Übernehmen",  jp: "", es: "", fr: "", ar:"" },
@@ -68,17 +70,18 @@ var translations = {
     "Main Speed Source": { en: "Main Speed Source", de: "Haupt Geschwindigkeits Quelle",  jp: "", es: "", fr: "", ar:"" },
     "Warningtext": { en: "WARNING: DO NOT SELECT ANY START UP DAEMON THAT INCLUDES OBD/OBD2 WHILST TUNING YOUR VEHICLE or working with the ECU/PCM. PowerTune Digital users MUST disable OBD polling when tuning or performing any task related to the ECU/PCM by changing the start up daemon above to a NON OBD/OBD2 option and pressing apply, or disconnecting the dash entirely whilst tuning or working with any vehicle electronics. PowerTune Digital assumes no liability for damage to your vehicle/ECU/PCM if polling OBD data at the same time as another device causes an interruption, or for any other reason. Refer to our warranty at https://www.powertunedigital.com/pages/manual", de: "Warnung : Wählen sie keinen Aufstart daemon aus, der OBD/OBD2 enthält, während Sie ihr Fahrzeug tunen, oder mit dem Steuergerät / PCM arbeiten.PowerTune Digital Nutzer MÜSSEN das OBD Polling während Arbeiten mit dem Steuergerät /PCM abschalten.Sie können einfach einen Aufstart daemon wählen der keine OBD/OBD2 option enthält und dann auf übernehmen drücken, oder das Dash komplett während Arbeiten an der Fahrzeug Elektronik abstecken.PowerTune Digital übernimmt keine Verantwortung für schäden an ihrem Fahrzeug / Steuergerät / PCM / Motor when OBD Daten zur selben Zeit mit einem anderen Gerät gepollt werden und dadurch aussetzer verursachen oder aus anderen Gründen Schäden entstehen. Bitte lesen Sie sich unsere Garantie Bedingungen auf https://www.powertunedigital.com/pages/manual durch.",  jp: "", es: "", fr: "", ar:"" },
     "Scan WIFI": { en: "Scan WIFI", de: "WIFI suchen",  jp: "", es: "", fr: "", ar:"" },
-    "WIFI country": { en: "WIFI country", de: "WIFI LAND",  jp: "", es: "", fr: "", ar:"" },
+    "WIFI Country": { en: "WIFI country", de: "WIFI LAND",  jp: "", es: "", fr: "", ar:"" },
     "WIFI 1": { en: "WIFI 1", de: "WIFI 1",  jp: "", es: "", fr: "", ar:"" },
     "Password 1": { en: "Password 1", de: "Passwort 1",  jp: "", es: "", fr: "", ar:"" },
     "Connect WIFI": { en: "Connect WIFI", de: "WIFI Verbinden",  jp: "", es: "", fr: "", ar:"" },
     "Update": { en: "Update", de: "Update",  jp: "", es: "", fr: "", ar:"" },
     "Restart daemon": { en: "Restart daemon", de: "Daemon Neustart",  jp: "", es: "", fr: "", ar:"" },
-    "Update tracks": { en: "Update tracks", de: "Strecken Update",  jp: "", es: "", fr: "", ar:"" },
+    "Update Tracks": { en: "Update tracks", de: "Strecken Update",  jp: "", es: "", fr: "", ar:"" },
     "Ethernet IP adress": { en: "Ethernet IP adress", de: "Ethernet IP adresse",  jp: "", es: "", fr: "", ar:"" },
     "WLAN IP adress": { en: "WLAN IP adress", de: "WLAN IP adresse",  jp: "", es: "", fr: "", ar:"" },
     "NOT CONNECTED": { en: "NOT CONNECTED", de: "NICHT VERBUNDEN",  jp: "", es: "", fr: "", ar:"" },
-
+    "Damping": { en: "Damping", de: "Dämpfung",  jp: "", es: "", fr: "", ar:"" },
+    "Version": { en: "Version", de: "Version",  jp: "", es: "", fr: "", ar:"" },
  // DATASOURCES
     "DRIVESHAFT OFFSET":{ en: "DRIVESHAFT OFFSET", de: "German", jp: "", es: "", fr: "", ar:"" },
     "Average Fuel Economy":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },

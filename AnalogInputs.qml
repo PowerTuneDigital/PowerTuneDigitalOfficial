@@ -3,6 +3,7 @@ import QtQuick.Extras 1.4
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import Qt.labs.settings 1.0
+import "Translator.js" as Translator
 
 Rectangle {
     anchors.fill: parent
@@ -319,6 +320,6 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
         color: "black"
         wrapMode: Text.WordWrap
-        text: qsTr("Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V. The calculated values will be available in the corresponding datasource Analog x Calc")
+        text: Translator.translate("Analogexplanation", Dashboard.Language)
     }
 }
