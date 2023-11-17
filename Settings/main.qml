@@ -178,7 +178,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: ["Metric", "Imperial"]
+                    model: [Translator.translate("Metric", Dashboard.Language), Translator.translate("Imperial", Dashboard.Language)]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setSpeedUnits(currentIndex)
@@ -209,7 +209,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: ["Metric", "Imperial"]
+                    model: [Translator.translate("Metric", Dashboard.Language), Translator.translate("Imperial", Dashboard.Language)]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setUnits(currentIndex)
@@ -529,7 +529,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: ["OFF", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    model: [Translator.translate("OFF", Dashboard.Language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     //property bool initialized: true
                     onCurrentIndexChanged: {
                         Dashboard.setsmoothrpm(smoothrpm.currentIndex)
@@ -559,7 +559,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: ["OFF", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    model: [Translator.translate("OFF", Dashboard.Language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     property bool initialized: true
                     onCurrentIndexChanged: {
                         Dashboard.setsmoothspeed(smoothspeed.currentIndex)
@@ -634,12 +634,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: "      base adress "
+                    text: Translator.translate("base adress", Dashboard.Language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: "       (decimal) :"
+                    text: Translator.translate("(decimal)", Dashboard.Language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -669,12 +669,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: "      base adress "
+                    text: Translator.translate("base adress", Dashboard.Language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: "       (decimal) :"
+                    text: Translator.translate("(decimal)", Dashboard.Language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }

@@ -1,5 +1,7 @@
 var translations = {
 
+    "Metric": { en: "Metric", de: "Metrisch", jp: "", es: "", fr: "", ar:"" },
+    "Imperial": { en: "Imperial", de: "Imperial", jp: "", es: "", fr: "", ar:"" },
     "Analogexplanation": { en: "Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc", de: "Geben Sie den Wert den Sie bei 0 Volt sehen wollen in das Feld Val.@ 0V, und den Wert den Sie bei 5 Volt sehen wollen in das Feld Val @5V ein.Die Berecheneten Werte werden in den Korrespondierenden Datenquellen Analog x Calc angezeigt.", jp: "", es: "", fr: "", ar:"" },
     "ActiveDashboards": { en: "Active Dashboards", de: "Aktive Dashboards", jp: "", es: "", fr: "", ar:"" },
     "Connect": { en: "Connect", de: "Verbinden", jp: "接続する", es: "", fr: "", ar:"" },
@@ -29,8 +31,8 @@ var translations = {
     "Data Logger": { en: "Data Logger", de: "Daten Logger",  jp: "", es: "", fr: "", ar:"" },
     "GoPro rec": { en: "GoPro rec", de: "GoPro Aufnahme",  jp: "", es: "", fr: "", ar:"" },
     "NMEA Logger": { en: "NMEA Logger", de: "NMEA Logger",  jp: "", es: "", fr: "", ar:"" },
-    "CAN Extender start adress (decimal)": { en: "CAN Extender start adress (decimal)", de: "CAN Extender start adresse (dezimal)",  jp: "", es: "", fr: "", ar:"" },
-    "Shiftligt CAN start adress (decimal)": { en: "Shiftligt CAN start adress (decimal)", de: "Schaltblitz CAN start adresse (dezimal)",  jp: "", es: "", fr: "", ar:"" },
+    "(decimal)": { en: "        (decimal)", de: "        (dezimal)",  jp: "", es: "", fr: "", ar:"" },
+    "base adress": { en: "      base adress", de: "     start Adresse",  jp: "", es: "", fr: "", ar:"" },
     "Main": { en: "Main", de: "Haupt",  jp: "", es: "", fr: "", ar:"" },
     "Dash Sel.": { en: "Dash Sel.", de: "Dash Ausw.",  jp: "", es: "", fr: "", ar:"" },
     "Sensehat": { en: "Sensehat", de: "Sensehat",  jp: "", es: "", fr: "", ar:"" },
@@ -146,7 +148,7 @@ var translations = {
      "Av. Fuel Economy":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Battery Light":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Ctrl.":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
-    "BOOST OFFSET":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
+     "BOOST OFFSET":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Duty":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Linear boost":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Tp":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
