@@ -73,7 +73,6 @@ void Extender::openCAN(const int &ExtenderBaseID,const int &RPMCANBaseID)
           //  qDebug() << "device connected!";
             //connect(m_canDevice,SIGNAL(framesReceived()),this,SLOT(readyToRead()));
             connect(m_canDevice, &QCanBusDevice::framesReceived, this, &Extender::readyToRead);
-
               }
         }
 
