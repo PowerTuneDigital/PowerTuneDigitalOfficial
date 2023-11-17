@@ -96,8 +96,8 @@ Rectangle {
         }
 
         Row {
-            x: windowbackround.width / 60
-            y: windowbackround.width / 60
+            x: windowbackround.width / 150
+            y: windowbackround.width / 150
             spacing: windowbackround.width / 150
             Grid {
                 anchors.top: parent.top
@@ -116,7 +116,7 @@ Rectangle {
                 }
                 ComboBox {
                     id: serialName
-                    width: windowbackround.width / 6
+                    width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
@@ -155,6 +155,7 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
+                    // visible: { (gpsswitch.checked == true ) ? true:false; }
                     delegate: ItemDelegate {
                         width: serialNameGPS.width
                         text: serialNameGPS.textRole ? (Array.isArray(
@@ -398,6 +399,7 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                     text: qsTr(Dashboard.SerialStat)
                 }
+
             }
 
             Grid {
@@ -418,6 +420,7 @@ Rectangle {
                         connectButton.enabled = false
                         ecuSelect.enabled = false
                         disconnectButton.enabled = true
+                        //consultset.enabled = false;
                     }
                 }
                 Button {
@@ -431,6 +434,7 @@ Rectangle {
                         connectButton.enabled = true
                         disconnectButton.enabled = false
                         ecuSelect.enabled = true
+                        // consultset.enabled = true;
                         functdisconnect.disconnectfunc()
                     }
                 }
@@ -442,9 +446,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                     Component.onCompleted: autoconnectGPS.auto()
                     onClicked: {
+
+                        //console.log("clicked GPS")
                         connectButtonGPS.enabled = false
                         disconnectButtonGPS.enabled = true
                         autoconnectGPS.auto()
+                        //console.log("gps disconnect enabled")
                     }
                 }
                 Button {
@@ -707,8 +714,11 @@ Rectangle {
 
                     model: [
                         {name: "English", flag: "qrc:/graphics/Flags/us.png"},
-                        {name: "German", flag: "qrc:/graphics/Flags/de.png"},
-                        {name: "Japanese", flag: "qrc:/graphics/Flags/jp.png"}
+                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
+                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
+                        {name: "Español", flag: "qrc:/graphics/Flags/es.png"},
+                        {name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
+                        {name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
                     ]
 
                     onCurrentIndexChanged: {

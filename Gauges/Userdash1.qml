@@ -411,6 +411,60 @@ Item {
             anchors.fill:parent
             drag.target: squaregaugemenu
         }
+///////////////////
+        ComboBox {
+            id: cbx_sources
+            width: 200
+            model: filteredModel // Use the filtered model as the model for the ComboBox
+            textRole: "titlename" // Set the role for display text
+            onActivated: {
+                console.log("Selected:", cbx_sources.currentText);
+            }
+
+            // Filter the model based on the condition
+            Component.onCompleted: {
+                powertunedatasource.append({supportedECUs: "Microtech"}); // Add a dummy element to trigger filtering
+                powertunedatasource.remove(powertunedatasource.count - 1); // Remove the dummy element
+            }
+
+            // Filter and sort the model alphabetically
+            property ListModel filteredModel: {
+                var filteredModel = Qt.createQmlObject('import QtQuick 2.8; ListModel {}', cbx_sources);
+                // Add a Dynamic Filter via Dashboard String
+                var filterValues = ["Microtech"];
+
+                // Create an array to store the filtered elements
+                var filteredElements = [];
+
+                for (var i = 0; i < powertunedatasource.count; ++i) {
+                    var element = powertunedatasource.get(i);
+                    if (element.supportedECUs !== undefined && element.supportedECUs !== null) {
+                        // Remove trailing commas and split the string into an array
+                        var ecuList = element.supportedECUs.replace(/,+$/, '').split(',');
+
+                        for (var j = 0; j < filterValues.length; ++j) {
+                            if (ecuList.indexOf(filterValues[j]) !== -1) {
+                                filteredElements.push({"titlename": element.titlename});
+                                break; // Break out of the inner loop if a match is found
+                            }
+                        }
+                    }
+                }
+
+                // Sort the filtered elements alphabetically
+                filteredElements.sort(function(a, b) {
+                    return a.titlename.localeCompare(b.titlename);
+                });
+
+                // Add the sorted elements to the filtered model
+                for (var k = 0; k < filteredElements.length; ++k) {
+                    filteredModel.append(filteredElements[k]);
+                }
+
+                return filteredModel;
+            }
+        }
+        /*
         ComboBox {
             id: cbx_sources
             font.pixelSize: 15
@@ -428,6 +482,8 @@ Item {
                 hoverEnabled: cbx_sources.hoverEnabled
             }
         }
+
+       */
         ComboBox {
             id: loadfileselect
             font.pixelSize: 15

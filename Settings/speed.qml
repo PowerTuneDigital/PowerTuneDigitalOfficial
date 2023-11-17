@@ -1,6 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
+import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: calcs
@@ -19,7 +20,7 @@ Rectangle {
         id: grid
         spacing: calcs.height / 150
         Text {
-            text: "Speed Correction %"
+            text: Translator.translate("SpeedCorrection", Dashboard.Language)
             font.pixelSize: calcs.width / 55
             color: "white"
         }

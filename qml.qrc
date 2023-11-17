@@ -128,5 +128,7 @@
         <file>graphics/Flags/es.png</file>
         <file>graphics/Flags/jp.png</file>
         <file>graphics/Flags/us.png</file>
+        <file>graphics/Flags/fr.png</file>
+        <file>graphics/Flags/ae.png</file>
     </qresource>
 </RCC>

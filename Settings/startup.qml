@@ -1,6 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
+import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: daemons
@@ -25,14 +26,14 @@ Rectangle {
         columns: 2
         spacing: parent.width / 150
         Text {
-            text: "Apply Settings :"
+            text: Translator.translate("Apply settings", Dashboard.Language)
             font.pixelSize: daemons.width / 55
         }
         Button {
             id: apply
             width: daemons.width / 3
             height: daemons.height / 15
-            text: "apply"
+            text: Translator.translate("Apply", Dashboard.Language)
             onClicked: {
                 Connect.daemonstartup(daemonselect.currentIndex)
                 Connect.canbitratesetup(canbitrateselect.currentIndex)
@@ -41,7 +42,7 @@ Rectangle {
         }
 
         Text {
-            text: "Start up Daemon :"
+            text: Translator.translate("Startup daemon", Dashboard.Language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -64,7 +65,7 @@ Rectangle {
             //Component.onCompleted: tabView.currentIndex = 0;
         }
         Text {
-            text: "CAN Bitrate :"
+            text: Translator.translate("Can Bitrate", Dashboard.Language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -153,7 +154,7 @@ Rectangle {
             }
         }
         Text {
-            text: "Main Speed Source :"
+            text: Translator.translate("Main Speed Source", Dashboard.Language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -180,7 +181,7 @@ Rectangle {
     }
     Text {
         id: warningtext
-        text: "DO NOT SELECT ANY START UP DAEMON THAT INCLUDES OBD/OBD2 WHILST TUNING YOUR VEHICLE or working with the ECU/PCM. PowerTune Digital users MUST disable OBD polling when tuning or performing any task related to the ECU/PCM by changing the start up daemon above to a NON OBD/OBD2 option and pressing apply, or disconnecting the dash entirely whilst tuning or working with any vehicle electronics. PowerTune Digital assumes no liability for damage to your vehicle/ECU/PCM if polling OBD data at the same time as another device causes an interruption, or for any other reason. Refer to our warranty at https://www.powertunedigital.com/pages/manual "
+        text:Translator.translate("Warningtext", Dashboard.Language)
         font.pixelSize: daemons.width / 55
         font.bold: true
         width: parent.width / 1.5

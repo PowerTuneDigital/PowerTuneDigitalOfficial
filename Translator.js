@@ -1,4 +1,6 @@
 var translations = {
+
+    "ActiveDashboards": { en: "Active Dashboards", de: "Aktive Dashboards", jp: "", es: "", fr: "", ar:"" },
     "Connect": { en: "Connect", de: "Verbinden", jp: "接続する", es: "", fr: "", ar:"" },
     "Disconnect": { en: "Disconnect", de: "Trennen", jp: "切断する", es: "", fr: "", ar:"" },
     "GPS Connect": { en: "GPS Connect", de: "GPS Verbinden",  jp: "", es: "", fr: "", ar:"" },
@@ -7,33 +9,34 @@ var translations = {
     "Quit": { en: "Quit", de: "Beenden", jp: "終了する", es: "", fr: "", ar:"" },
     "Shutdown": { en: "Shutdown", de: "Herunterfahren",  jp: "", es: "", fr: "", ar:"" },
     "Reboot": { en: "Reboot", de: "Neustart",  jp: "", es: "", fr: "", ar:"" },
-    "Language": { en: "Language", de: "Sprache",  jp: "", es: "", fr: "", ar:"" },
+    "Language": { en: "Language:", de: "Sprache:",  jp: "", es: "", fr: "", ar:"" },
     "GPS Port": { en: "GPS Port :", de: "GPS Port :",  jp: "", es: "", fr: "", ar:"" },
-    "ECU Serial Port": { en: "ECU Serial Port", de: "ECU Serial Port",  jp: "", es: "", fr: "", ar:"" },
-    "Speed units": { en: "Speed unit:              ", de: "Geschwindigkeits Einheit:",  jp: "", es: "", fr: "", ar:"" },
+    "ECU Serial Port": { en: "ECU Serial Port:", de: "ECU Serial Port:",  jp: "", es: "", fr: "", ar:"" },
+    "Speed units": { en: "Speed unit:", de: "Geschw. Einh.:",  jp: "", es: "", fr: "", ar:"" },
     "Temp units": { en: "Temp unit:", de: "Temp. Einheit:",  jp: "", es: "", fr: "", ar:"" },
     "Pressure units": { en: "Pressure unit:", de: "Druck Einheit:",  jp: "", es: "", fr: "", ar:"" },
-    "ECU Selection": { en: "ECU Selection", de: "ECU Selektion",  jp: "", es: "", fr: "", ar:"" },
-    "GoPro Variant": { en: "GoPro Variant", de: "GoPro Variante",  jp: "", es: "", fr: "", ar:"" },
-    "GoPro Pasword": { en: "GoPro Pasword", de: "GoPro Paswort",  jp: "", es: "", fr: "", ar:"" },
-    "Logfile name": { en: "Logfile name", de: "Log Datei Name",  jp: "", es: "", fr: "", ar:"" },
-    "Odo": { en: "Odo", de: "KM Stand",  jp: "", es: "", fr: "", ar:"" },
-    "Trip": { en: "Trip", de: "Tages KM Stand",  jp: "", es: "", fr: "", ar:"" },
+    "ECU Selection": { en: "ECU Selection:", de: "ECU Selektion:",  jp: "", es: "", fr: "", ar:"" },
+    "GoPro Variant": { en: "GoPro Variant:", de: "GoPro Variante:",  jp: "", es: "", fr: "", ar:"" },
+    "GoPro Pasword": { en: "GoPro Pasword:", de: "GoPro Paswort:",  jp: "", es: "", fr: "", ar:"" },
+    "Logfile name": { en: "Logfile name:", de: "Log Datei Name",  jp: "", es: "", fr: "", ar:"" },
+    "Odo": { en: "Odo", de: "KM Stand:",  jp: "", es: "", fr: "", ar:"" },
+    "Trip": { en: "Trip:                  ", de: "Tages KM Zähler:",  jp: "", es: "", fr: "", ar:"" },
     "Weight Kg": { en: "Weight Kg", de: "Gewicht Kg",  jp: "", es: "", fr: "", ar:"" },
+    "Serial Status": { en: "Serial Status", de: "",  jp: "", es: "", fr: "", ar:"" },
     "RPM Smoothing": { en: "RPM Smoothing", de: "Drehzahl Glättung",  jp: "", es: "", fr: "", ar:"" },
-    "Speed Smoothing": { en: "Speed Smoothing", de: "Geschwidigkeits Glättung",  jp: "", es: "", fr: "", ar:"" },
+    "Speed Smoothing": { en: "Speed Smoothing", de: "Geschw. Glättung",  jp: "", es: "", fr: "", ar:"" },
     "Data Logger": { en: "Data Logger", de: "Daten Logger",  jp: "", es: "", fr: "", ar:"" },
     "GoPro rec": { en: "GoPro rec", de: "GoPro Aufnahme",  jp: "", es: "", fr: "", ar:"" },
     "NMEA Logger": { en: "NMEA Logger", de: "NMEA Logger",  jp: "", es: "", fr: "", ar:"" },
     "CAN Extender start adress (decimal)": { en: "CAN Extender start adress (decimal)", de: "CAN Extender start adresse (dezimal)",  jp: "", es: "", fr: "", ar:"" },
-    "Shiftligt CAN start adress (decimal)": { en: "Shiftligt CAN start adress (decimal)", de: "Schalt Licht CAN start adresse (dezimal)",  jp: "", es: "", fr: "", ar:"" },
+    "Shiftligt CAN start adress (decimal)": { en: "Shiftligt CAN start adress (decimal)", de: "Schaltblitz CAN start adresse (dezimal)",  jp: "", es: "", fr: "", ar:"" },
     "Main": { en: "Main", de: "Haupt",  jp: "", es: "", fr: "", ar:"" },
-    "Dash Sel.": { en: "Dash Sel.", de: "Dash Auswahl.",  jp: "", es: "", fr: "", ar:"" },
+    "Dash Sel.": { en: "Dash Sel.", de: "Dash Ausw.",  jp: "", es: "", fr: "", ar:"" },
     "Sensehat": { en: "Sensehat", de: "Sensehat",  jp: "", es: "", fr: "", ar:"" },
-    "Warn / Gear": { en: "Warn / Gear", de: "Warn / Gang",  jp: "", es: "", fr: "", ar:"" },
-    "Speed": { en: "Speed", de: "Geschwindigkeit",  jp: "", es: "", fr: "", ar:"" },
+    "Warn / Gear": { en: "Warn/Gear", de: "Warn/Gang",  jp: "", es: "", fr: "", ar:"" },
+    "Speedtab": { en: "Speed", de: "Geschw.",  jp: "", es: "", fr: "", ar:"" },
     "Analog": { en: "Analog", de: "Analog",  jp: "", es: "", fr: "", ar:"" },
-    "RPM": { en: "RPM", de: "Drehzahl",  jp: "", es: "", fr: "", ar:"" },
+    "RPM2": { en: "RPM", de: "Drehzahl",  jp: "", es: "", fr: "", ar:"" },
     "EX Board": { en: "EX Board", de: "EX Board",  jp: "", es: "", fr: "", ar:"" },
     "Startup": { en: "Startup", de: "Aufstart",  jp: "", es: "", fr: "", ar:"" },
     "Network": { en: "Network", de: "Netzwerk",  jp: "", es: "", fr: "", ar:"" },
@@ -43,27 +46,27 @@ var translations = {
     "Gyro Sensor": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
     "Pressure Sensor": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
     "Active Dashboards": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Water Temp": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Boost": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Revs": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Knock": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Lambda multiply": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Gear Calculation": { en: "", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Off": { en: "Off", de: "Aus",  jp: "", es: "", fr: "", ar:"" },
-    "On": { en: "ON", de: "an",  jp: "", es: "", fr: "", ar:"" },
+    "WaterTemp": { en: "Coolant", de: "Kühlmittel",  jp: "", es: "", fr: "", ar:"" },
+    "Boost": { en: "Boost", de: "Ladedruck",  jp: "", es: "", fr: "", ar:"" },
+    "Revs": { en: "Max RPM", de: "Max U/min",  jp: "", es: "", fr: "", ar:"" },
+    "Knock": { en: "Knock", de: "Klopfen",  jp: "", es: "", fr: "", ar:"" },
+    "Lamdamultiply": { en: "Lambda multiply", de: "Lambda Multiplikator",  jp: "", es: "", fr: "", ar:"" },
+    "GearCalculation": { en: "Gear Calculation", de: "Gang Berechnung",  jp: "", es: "", fr: "", ar:"" },
+    "OFF": { en: "Off", de: "Aus",  jp: "", es: "", fr: "", ar:"" },
+    "ON": { en: "On", de: "An",  jp: "", es: "", fr: "", ar:"" },
     "Gear": { en: "Gear", de: "Gang",  jp: "", es: "", fr: "", ar:"" },
-    "Speed Correction %": { en: "Speed Correction %", de: "Geschwindigkeits Korrektur %",  jp: "", es: "", fr: "", ar:"" },
+    "SpeedCorrection": { en: "Speed Correction %", de: "Geschwindigkeits Korrektur %",  jp: "", es: "", fr: "", ar:"" },
     "Analog description": { en: "Enter the Value that should be displayed at 0V in the field Val.@ 0V and the value that should be displayed at 5 V in the field Val @5V. The calculated values will be availabe in the corresponding datasource Analog x Calc", de: "",  jp: "", es: "", fr: "", ar:"" },
     "Max RPM": { en: "Max RPM", de: "Max Drehzahl",  jp: "", es: "", fr: "", ar:"" },
     "Shift Light": { en: "Shift Light", de: "Schalt Licht",  jp: "", es: "", fr: "", ar:"" },
     "Voltage divider jumpers": { en: "Voltage divider jumpers", de: "Spannungs Teiler jumper",  jp: "", es: "", fr: "", ar:"" },
     "Cylinders": { en: "Cylinders", de: "Zylinder",  jp: "", es: "", fr: "", ar:"" },
-    "Apply settings": { en: "Apply settings", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Apply": { en: "Apply", de: "",  jp: "", es: "", fr: "", ar:"" },
-    "Startup Daemon": { en: "Startup Daemon", de: "Startup Daemon",  jp: "", es: "", fr: "", ar:"" },
+    "Apply settings": { en: "Apply settings", de: "Einstellungen übernehmen",  jp: "", es: "", fr: "", ar:"" },
+    "Apply": { en: "Apply", de: "Übernehmen",  jp: "", es: "", fr: "", ar:"" },
+    "Startup daemon": { en: "Startup Daemon", de: "Aufstart Daemon",  jp: "", es: "", fr: "", ar:"" },
     "Can Bitrate": { en: "Can Bitrate", de: "Can Bit Rate",  jp: "", es: "", fr: "", ar:"" },
     "Main Speed Source": { en: "Main Speed Source", de: "Haupt Geschwindigkeits Quelle",  jp: "", es: "", fr: "", ar:"" },
-    "Startup warning text": { en: "DO NOT SELECT ANY START UP DAEMON THAT INCLUDES OBD/OBD2 WHILST TUNING YOUR VEHICLE or working with the ECU/PCM. PowerTune Digital users MUST disable OBD polling when tuning or performing any task related to the ECU/PCM by changing the start up daemon above to a NON OBD/OBD2 option and pressing apply, or disconnecting the dash entirely whilst tuning or working with any vehicle electronics. PowerTune Digital assumes no liability for damage to your vehicle/ECU/PCM if polling OBD data at the same time as another device causes an interruption, or for any other reason. Refer to our warranty at https://www.powertunedigital.com/pages/manual", de: "",  jp: "", es: "", fr: "", ar:"" },
+    "Warningtext": { en: "WARNING: DO NOT SELECT ANY START UP DAEMON THAT INCLUDES OBD/OBD2 WHILST TUNING YOUR VEHICLE or working with the ECU/PCM. PowerTune Digital users MUST disable OBD polling when tuning or performing any task related to the ECU/PCM by changing the start up daemon above to a NON OBD/OBD2 option and pressing apply, or disconnecting the dash entirely whilst tuning or working with any vehicle electronics. PowerTune Digital assumes no liability for damage to your vehicle/ECU/PCM if polling OBD data at the same time as another device causes an interruption, or for any other reason. Refer to our warranty at https://www.powertunedigital.com/pages/manual", de: "Warnung : Wählen sie keinen Aufstart daemon aus, der OBD/OBD2 enthält, während Sie ihr Fahrzeug tunen, oder mit dem Steuergerät / PCM arbeiten.PowerTune Digital Nutzer MÜSSEN das OBD Polling während Arbeiten mit dem Steuergerät /PCM abschalten.Sie können einfach einen Aufstart daemon wählen der keine OBD/OBD2 option enthält und dann auf übernehmen drücken, oder das Dash komplett während Arbeiten an der Fahrzeug Elektronik abstecken.PowerTune Digital übernimmt keine Verantwortung für schäden an ihrem Fahrzeug / Steuergerät / PCM / Motor when OBD Daten zur selben Zeit mit einem anderen Gerät gepollt werden und dadurch aussetzer verursachen oder aus anderen Gründen Schäden entstehen. Bitte lesen Sie sich unsere Garantie Bedingungen auf https://www.powertunedigital.com/pages/manual durch.",  jp: "", es: "", fr: "", ar:"" },
     "Scan WIFI": { en: "Scan WIFI", de: "WIFI suchen",  jp: "", es: "", fr: "", ar:"" },
     "WIFI country": { en: "WIFI country", de: "WIFI LAND",  jp: "", es: "", fr: "", ar:"" },
     "WIFI 1": { en: "WIFI 1", de: "WIFI 1",  jp: "", es: "", fr: "", ar:"" },
@@ -77,7 +80,7 @@ var translations = {
     "NOT CONNECTED": { en: "NOT CONNECTED", de: "NICHT VERBUNDEN",  jp: "", es: "", fr: "", ar:"" },
 
  // DATASOURCES
-    "DRIVESHAFT OFFSET":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
+    "DRIVESHAFT OFFSET":{ en: "DRIVESHAFT OFFSET", de: "German", jp: "", es: "", fr: "", ar:"" },
     "Average Fuel Economy":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Alternator Light":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Aux Temp 1":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -142,7 +145,6 @@ var translations = {
      "Boost Ctrl.":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "BOOST OFFSET":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Duty":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
-     "Boost":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Linear boost":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Tp":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
      "Boost Wg":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -234,9 +236,7 @@ var translations = {
     "Fuel trim long B2":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Fuel trim short B1":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Fuel trim short B2":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
-    "Gear":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Gear offset":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
-    "Gear Caluclation":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Gear sw.":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Gear Oil Pres.":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Generic out 1":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -271,7 +271,6 @@ var translations = {
     "Inj timing.":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "IAT":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "ISCV duty":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
-    "Knock":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Knocklevel 1":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Knocklevel 2":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Knock restard 1":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -461,7 +460,34 @@ var translations = {
     //Datasources End
 
 };
+function translate(text, language) {
+    // Convert numeric language code to string if needed
 
+    var languageString =
+        language === 0 ? "en" :
+        language === 1 ? "de" :
+        language === 2 ? "jp" :
+        language === 3 ? "es" :
+        language === 4 ? "fr" :
+        language === 5 ? "ar" :
+        "";
+    // Check if the text is defined in translations
+    if (translations[text]) {
+        // Check if the language is defined for the given text
+        var translatedWord = translations[text][languageString];
+
+        // If translation is found and not an empty string, return it
+        if (translatedWord !== undefined && translatedWord !== "") {
+            console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
+            return translatedWord;
+        }
+    }
+
+    // If translation is not found or is an empty string, provide the English version
+    console.warn("Translation not found or empty for:", text, "and language:", language);
+    return translations[text].en || "Translation not found";
+}
+/*
 function translate(text, language) {
     // Convert numeric language code to string if needed
     var languageString = language === 0 ? "en" : (language === 1 ? "de" : (language === 2 ? "jp" : ""));
@@ -482,3 +508,4 @@ function translate(text, language) {
     console.warn("Translation not found for:", text, "and language:", language);
     return "Translation not found";
 }
+*/

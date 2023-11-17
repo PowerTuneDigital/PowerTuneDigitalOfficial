@@ -8,7 +8,7 @@ import QtQuick.Controls.Styles 1.4
 import QtMultimedia 5.8
 import "qrc:/Gauges/"
 import DLM 1.0
-
+import "qrc:/Translator.js" as Translator
 
 Quick1.TabView {
     id: tabView
@@ -50,27 +50,30 @@ Quick1.TabView {
             color: "steelblue"
         }
     }
+
     Quick1.Tab {
-        title: "Main"
+        id:tab1
+        title: Translator.translate("Main", Dashboard.Language)
         anchors.fill: parent
         source: "Settings/main.qml"
+
     }
     Quick1.Tab {
         id: dash
-        title: "Dash Sel."
+        title: Translator.translate("Dash Sel.", Dashboard.Language)
         source: "Settings/DashSelector.qml"
     }
 
     Quick1.Tab {
-        title: "Sensehat" // Tab index 2
+        title: Translator.translate("Sensehat", Dashboard.Language)// Tab index 2
         source: "Settings/sensehat.qml"
     }
     Quick1.Tab {
-        title: "Warn / Gear" // Tab index 3
+        title: Translator.translate("Warn / Gear", Dashboard.Language)  // Tab index 3
         source: "Settings/warn_gear.qml"
     }
     Quick1.Tab {
-        title: "Speed" // Tab index 4
+        title: Translator.translate("Speedtab", Dashboard.Language) // Tab index 4
         source: "Settings/speed.qml"
     }
 
@@ -81,31 +84,31 @@ Quick1.TabView {
         Component.onCompleted: setregtabtitle()
     }
     Quick1.Tab {
-        title: "RPM"
+        title: Translator.translate("RPM2", Dashboard.Language)
         source: "Settings/rpm.qml"
     }
 
     Quick1.Tab {
-        title: "EX Board" // Tab index 6
+        title: Translator.translate("EX Board", Dashboard.Language) // Tab index 6
         source: "qrc:/ExBoardAnalog.qml"
     }
 
     Quick1.Tab {
-        title: "Startup" // Tab index 8
+        title: Translator.translate("Startup", Dashboard.Language) // Tab index 8
         source: "Settings/startup.qml"
     }
 
     Quick1.Tab {
-        title: "Network" // Tab index 9
+        title: Translator.translate("Network", Dashboard.Language) // Tab index 9
         source: "Settings/network.qml"
     }
 
     function setregtabtitle() {
         if (Dashboard.ecu == "0") {
-            regtab.title = "Analog"
+            regtab.title = Translator.translate("Analog", Dashboard.Language)
         }
         if (Dashboard.ecu == "1") {
-            regtab.title = "Analog"
+            regtab.title = Translator.translate("Analog", Dashboard.Language)
         }
         if (Dashboard.ecu == "2") {
             regtab.title = "Consult"

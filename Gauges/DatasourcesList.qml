@@ -1,14 +1,11 @@
 import QtQuick 2.8
-
+/*
+Supported ECU List completed for :
+Haltech V2
+Microtech
+*/
 ListModel {
     id: datasources
-
-///////////
-
-
-
-
-
 
 
     ListElement {
@@ -21,11 +18,8 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
-
-
-
-///////////
 
     ListElement {
         titlename: "Average Fuel Economy"
@@ -36,7 +30,8 @@ ListModel {
         decimalpoints2 : "0" // 4 means its treated as a string
         maxvalue : "100"
         stepsize : "1"
-        divisor : "1"
+        divisor : "1"        
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Alternator Light"
@@ -48,6 +43,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Aux Temp 1"
@@ -59,6 +55,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Overtemp Light"
@@ -70,6 +67,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "OilP Light"
@@ -81,6 +79,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
 //////////////
@@ -94,6 +93,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "activeboosttable"
@@ -104,6 +104,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "activetunetable"
@@ -114,6 +115,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog0"
@@ -124,6 +126,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog1"
@@ -134,6 +137,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog2"
@@ -144,6 +148,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog3"
@@ -154,6 +159,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog4"
@@ -164,6 +170,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog5"
@@ -174,6 +181,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog6"
@@ -184,6 +192,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog7"
@@ -194,6 +203,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog8"
@@ -204,6 +214,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog9"
@@ -214,6 +225,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog10"
@@ -224,6 +236,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "Analog 0 Calc"
@@ -234,6 +247,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 1 Calc"
@@ -244,6 +258,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 2 Calc"
@@ -254,6 +269,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 3 Calc"
@@ -264,6 +280,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 4 Calc"
@@ -274,6 +291,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 5 Calc"
@@ -284,6 +302,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 6 Calc"
@@ -294,6 +313,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 7 Calc"
@@ -304,6 +324,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 8 Calc"
@@ -314,6 +335,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 9 Calc"
@@ -324,6 +346,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "Analog 10 Calc"
@@ -334,6 +357,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
 ////////////////
@@ -346,6 +370,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"AccelTimer"
@@ -356,6 +381,7 @@ ListModel {
         maxvalue : "1000"
         stepsize : "1000"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"accelx"
@@ -366,6 +392,7 @@ ListModel {
         maxvalue : "4"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"accely"
@@ -376,6 +403,7 @@ ListModel {
         maxvalue : "4"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"accelz"
@@ -386,6 +414,7 @@ ListModel {
         maxvalue : "4"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFR"
@@ -396,6 +425,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "AFR L.BANK ACTUAL"
@@ -407,6 +437,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "AFR R.BANK ACTUAL"
@@ -418,6 +449,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRLEFTBANKTARGET"
@@ -428,6 +460,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRRIGHTBANKTARGET"
@@ -438,6 +471,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
@@ -450,6 +484,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl2"
@@ -460,6 +495,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl3"
@@ -470,6 +506,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl4"
@@ -480,6 +517,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl5"
@@ -490,6 +528,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl6"
@@ -500,6 +539,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl7"
@@ -510,6 +550,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AFRcyl8"
@@ -520,20 +561,22 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
 
 
     ListElement {
+        titlename:"Air T.2"
         sourcename:"airtempensor2"
         defaultsymbol: "°C"
-        titlename:"Air T.2"
         supportedECU: ""
         decimalpoints : "1"
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"ambipress"
@@ -544,6 +587,7 @@ ListModel {
         maxvalue : "140"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"ambitemp"
@@ -554,6 +598,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"antilaglauchswitch"
@@ -564,6 +609,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"antilaglaunchon"
@@ -574,6 +620,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"auxcalc1"
@@ -583,6 +630,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"auxcalc2"
@@ -592,6 +640,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"auxcalc3"
@@ -601,6 +650,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"auxcalc4"
@@ -610,6 +660,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"auxrevlimitswitch"
@@ -619,6 +670,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"AUXT"
@@ -628,15 +680,17 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
-        sourcename:"avfueleconomy"
-        defaultsymbol: ""
         titlename:"Av. Fuel Economy"
+        sourcename:"avfueleconomy"
+        defaultsymbol: ""      
         decimalpoints : "1"
         maxvalue : "30"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"battlight"
@@ -647,15 +701,17 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
+        titlename:"Boost Ctrl."
         sourcename:"boostcontrol"
         defaultsymbol: "%"
-        titlename:"Boost Ctrl."
         decimalpoints : "0"
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         titlename: "BOOST OFFSET"
@@ -667,6 +723,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"BoostDuty"
@@ -676,15 +733,17 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
-        sourcename:"BoostPres"
-        defaultsymbol: "kgcm2"
         titlename:"Boost"
+        sourcename:"BoostPres"
+        defaultsymbol: "kgcm2"     
         decimalpoints : "2"
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"BoostPreskpa"
@@ -694,6 +753,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Boosttp"
@@ -703,6 +763,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Boostwg"
@@ -712,6 +773,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"brakepedalstate"
@@ -722,15 +784,17 @@ ListModel {
         stepsize : "1"
         divisor : "1"
 
+        supportedECUs: ""
     }
     ListElement {
-        sourcename:"brakepress"
-        defaultsymbol: "kPa"
         titlename:"Brake Pressure"
+        sourcename:"brakepress"
+        defaultsymbol: "kPa"       
         decimalpoints : "0"
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"clutchswitchstate"
@@ -740,6 +804,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"compass"
@@ -749,6 +814,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -759,17 +825,19 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
+        titlename:"Coolant P."
         sourcename:"coolantpress"
         defaultsymbol: "kPa"
-        titlename:"Coolant P."
         supportedECU: ""
         decimalpoints : "0"
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2,Test,"
     }
 
     ListElement {
@@ -780,6 +848,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl2_O2_Corr"
@@ -789,6 +858,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl3_O2_Corr"
@@ -798,6 +868,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl4_O2_Corr"
@@ -807,6 +878,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl5_O2_Corr"
@@ -816,6 +888,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl6_O2_Corr"
@@ -825,6 +898,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl7_O2_Corr"
@@ -834,6 +908,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Cyl8_O2_Corr"
@@ -843,6 +918,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"decelcut"
@@ -852,15 +928,17 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
+        titlename:"Diff Oil T."
         sourcename:"diffoiltemp"
         defaultsymbol: "°C"
-        titlename:"Diff Oil T."
         decimalpoints : "0"
         maxvalue : "180"
         stepsize : "30"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -871,6 +949,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput2"
@@ -880,6 +959,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput3"
@@ -889,6 +969,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput4"
@@ -898,6 +979,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput5"
@@ -907,6 +989,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput6"
@@ -916,6 +999,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigitalInput7"
@@ -925,6 +1009,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
@@ -937,6 +1022,7 @@ ListModel {
         maxvalue : "600"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Dwell"
@@ -946,6 +1032,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"cputempecu"
@@ -955,6 +1042,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"egt1"
@@ -964,6 +1052,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt2"
@@ -973,6 +1062,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt3"
@@ -982,6 +1072,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt4"
@@ -991,6 +1082,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt5"
@@ -1000,6 +1092,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt6"
@@ -1009,6 +1102,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt7"
@@ -1018,6 +1112,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt8"
@@ -1027,6 +1122,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"egt9"
@@ -1036,6 +1132,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"egt10"
@@ -1045,6 +1142,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"egt11"
@@ -1054,6 +1152,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"egt12"
@@ -1063,6 +1162,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"egthighest"
@@ -1072,6 +1172,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"egtdiff"
@@ -1081,6 +1182,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"EngLoad"
@@ -1090,6 +1192,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"excamangle1"
@@ -1099,6 +1202,7 @@ ListModel {
         maxvalue : "270"
         stepsize : "30"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"excamangle2"
@@ -1108,6 +1212,7 @@ ListModel {
         maxvalue : "270"
         stepsize : "30"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag1"
@@ -1117,6 +1222,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag2"
@@ -1126,6 +1232,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag3"
@@ -1135,6 +1242,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag4"
@@ -1144,6 +1252,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag5"
@@ -1153,6 +1262,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag6"
@@ -1162,6 +1272,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag7"
@@ -1171,6 +1282,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag8"
@@ -1180,6 +1292,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag9"
@@ -1189,6 +1302,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag10"
@@ -1198,6 +1312,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag11"
@@ -1207,6 +1322,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag12"
@@ -1216,6 +1332,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag13"
@@ -1225,6 +1342,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag14"
@@ -1234,6 +1352,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag15"
@@ -1243,6 +1362,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag16"
@@ -1252,6 +1372,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag17"
@@ -1261,6 +1382,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag18"
@@ -1270,6 +1392,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag19"
@@ -1279,6 +1402,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Flag20"
@@ -1288,6 +1412,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Flag21"
@@ -1297,6 +1422,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Flag22"
@@ -1306,6 +1432,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Flag23"
@@ -1315,6 +1442,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Flag24"
@@ -1324,6 +1452,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Flag25"
@@ -1333,6 +1462,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         // Ignition Angle Bank 1
@@ -1342,6 +1472,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         //Ignition Angle Bank 2
@@ -1351,22 +1482,28 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     /*
     ListElement {
         //Torque Management Driveshaft RPM Target
+        supportedECUs: ""
     }
     ListElement {
         //Torque Management Driveshaft RPM Target Error
+        supportedECUs: ""
     }
     ListElement {
         //Torque Management Driveshaft RPM Target Error Ignition Correction
+        supportedECUs: ""
     }
     ListElement {
         //Torque Management Driveshaft RPM Timed Ignition Correction
+        supportedECUs: ""
     }
     ListElement {
         //Torque Management Combined Ignition Correction
+        supportedECUs: ""
     }
     */
 
@@ -1380,6 +1517,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "FSL INDEX"
@@ -1391,6 +1529,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"flatshiftstate"
@@ -1400,6 +1539,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Fuelc"
@@ -1409,6 +1549,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"fuelclevel"
@@ -1418,6 +1559,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"FuelLevel"
@@ -1427,6 +1569,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -1437,7 +1580,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"fuelconsrate"
@@ -1447,6 +1590,7 @@ ListModel {
         maxvalue : "200"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fuelcutperc"
@@ -1456,6 +1600,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"fuelflow"
@@ -1465,6 +1610,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fuelflowdiff"
@@ -1474,6 +1620,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fuelflowret"
@@ -1483,6 +1630,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"FuelPress"
@@ -1492,6 +1640,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"Fueltemp"
@@ -1501,6 +1650,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"fueltrimlongtbank1"
@@ -1510,6 +1660,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fueltrimlongtbank2"
@@ -1519,6 +1670,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fueltrimshorttbank1"
@@ -1528,6 +1680,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"fueltrimshorttbank2"
@@ -1537,6 +1690,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Gear"
@@ -1546,6 +1700,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"Gearoffset"
@@ -1555,6 +1710,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
@@ -1566,6 +1722,7 @@ ListModel {
         maxvalue : "6"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -1576,6 +1733,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"GearOilPress"
@@ -1585,6 +1743,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -1595,6 +1754,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -1605,6 +1765,7 @@ ListModel {
         maxvalue : "2000"
         stepsize : "1000"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"gpsLatitude"
@@ -1614,6 +1775,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"gpsLongitude"
@@ -1623,6 +1785,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"gpsSpeed"
@@ -1632,6 +1795,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"gpsTime"
@@ -1641,6 +1805,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"gpsVisibleSatelites"
@@ -1650,6 +1815,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"gyrox"
@@ -1659,6 +1825,7 @@ ListModel {
         maxvalue : "360"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"gyroy"
@@ -1668,6 +1835,7 @@ ListModel {
         maxvalue : "360"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"gyroz"
@@ -1677,6 +1845,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"handbrake"
@@ -1686,6 +1855,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"highbeam"
@@ -1695,6 +1865,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"lowBeam"
@@ -1704,6 +1875,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"homeccounter"
@@ -1713,6 +1885,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"IdleValue"
@@ -1722,6 +1895,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Ign"
@@ -1731,6 +1905,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "Microtech"
     }
     ListElement {
         sourcename:"Ign1"
@@ -1740,6 +1915,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Ign2"
@@ -1749,6 +1925,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Ign3"
@@ -1758,6 +1935,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Ign4"
@@ -1767,6 +1945,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"incamangle1"
@@ -1776,6 +1955,7 @@ ListModel {
         maxvalue : "270"
         stepsize : "30"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"incamangle2"
@@ -1785,10 +1965,12 @@ ListModel {
         maxvalue : "270"
         stepsize : "30"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
         sourcename:"Inj"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Inj1"
@@ -1798,6 +1980,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -1808,6 +1991,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Inj2"
@@ -1817,6 +2001,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Inj3"
@@ -1826,6 +2011,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Inj4"
@@ -1835,6 +2021,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -1845,6 +2032,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -1855,6 +2043,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"injms"
@@ -1864,6 +2053,7 @@ ListModel {
         maxvalue : "6"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "Microtech"
     }
     ListElement {
         sourcename:"Intaketemp"
@@ -1873,6 +2063,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"Iscvduty"
@@ -1882,6 +2073,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Knock"
@@ -1891,6 +2083,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -1901,6 +2094,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"knocklevlogged2"
@@ -1910,6 +2104,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"knockretardbank1"
@@ -1919,6 +2114,7 @@ ListModel {
         maxvalue : "30"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"knockretardbank2"
@@ -1928,6 +2124,7 @@ ListModel {
         maxvalue : "30"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"knockallpeak"
@@ -1937,6 +2134,7 @@ ListModel {
         maxvalue : "30"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"knockcorr"
@@ -1946,6 +2144,7 @@ ListModel {
         maxvalue : "30"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"knocklastcyl"
@@ -1955,6 +2154,7 @@ ListModel {
         maxvalue : "30"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"LAMBDA"
@@ -1964,6 +2164,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"lambda2"
@@ -1973,6 +2174,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"lambda3"
@@ -1982,6 +2184,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"lambda4"
@@ -1991,6 +2194,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"LAMBDATarget"
@@ -2000,6 +2204,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
 
@@ -2011,6 +2216,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"laptime"
@@ -2020,6 +2226,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2030,6 +2237,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
@@ -2042,6 +2250,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"launchctrolignretard"
@@ -2051,6 +2260,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Leadingign"
@@ -2060,6 +2270,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"leftindicator"
@@ -2069,6 +2280,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"limpmode"
@@ -2078,6 +2290,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"MAF1V"
@@ -2087,6 +2300,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"MAF2V"
@@ -2096,6 +2310,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"MAFactivity"
@@ -2105,6 +2320,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"MAP"
@@ -2114,6 +2330,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
 
 
@@ -2125,6 +2342,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"mil"
@@ -2134,6 +2352,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"missccount"
@@ -2143,6 +2362,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"MVSS"
@@ -2152,6 +2372,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Moilp"
@@ -2161,6 +2382,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"speed"
@@ -2170,6 +2392,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"nosactive"
@@ -2179,6 +2402,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"nospress"
@@ -2188,6 +2412,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"nosswitch"
@@ -2197,6 +2422,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"O2volt"
@@ -2206,6 +2432,7 @@ ListModel {
         maxvalue : "6"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"O2volt_2"
@@ -2215,6 +2442,7 @@ ListModel {
         maxvalue : "6"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "O2 CORR R BANK "
@@ -2226,6 +2454,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "O2 CORR L BANK"
@@ -2237,6 +2466,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Odo"
@@ -2246,6 +2476,7 @@ ListModel {
         maxvalue : "1000"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"oilpres"
@@ -2255,6 +2486,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"oiltemp"
@@ -2265,6 +2497,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -2275,6 +2508,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2285,6 +2519,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2295,6 +2530,7 @@ ListModel {
         maxvalue : "600"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"PressureV"
@@ -2304,6 +2540,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Primaryinp"
@@ -2313,6 +2550,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"rallyantilagswitch"
@@ -2322,6 +2560,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"rightindicator"
@@ -2331,6 +2570,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "REV LIM 3STEP"
@@ -2342,6 +2582,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "REV LIM 2STEP"
@@ -2353,6 +2594,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "REV LIM HIGHSIDE"
@@ -2364,6 +2606,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2376,6 +2619,7 @@ ListModel {
         maxvalue : "9"
         stepsize : "1"
         divisor : "100"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"rpm"
@@ -2385,6 +2629,7 @@ ListModel {
         maxvalue : "10000"
         stepsize : "1000"
         divisor : "1000"
+        supportedECUs: "HaltechV2,Microtech"
     }
 
     ListElement {
@@ -2395,6 +2640,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -2405,6 +2651,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -2415,6 +2662,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Secinjpulse"
@@ -2424,6 +2672,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"SVSS"
@@ -2433,6 +2682,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
 ListElement {
@@ -2443,7 +2693,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens2"
     defaultsymbol: " "
@@ -2452,7 +2703,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens3"
     defaultsymbol: " "
@@ -2461,7 +2713,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens4"
     defaultsymbol: " "
@@ -2470,7 +2723,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens4"
     defaultsymbol: " "
@@ -2479,7 +2733,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens5"
     defaultsymbol: " "
@@ -2488,7 +2743,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens6"
     defaultsymbol: " "
@@ -2497,7 +2753,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
 ListElement {
     sourcename:"sens7"
     defaultsymbol: " "
@@ -2506,7 +2763,8 @@ ListElement {
     maxvalue : "320"
     stepsize : "40"
     divisor : "1"
-}
+        supportedECUs: ""
+    }
     ListElement {
         sourcename:"SteeringWheelAngle"
         defaultsymbol: "°"
@@ -2515,6 +2773,7 @@ ListElement {
         maxvalue : "920"
         stepsize : "45"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
 
     ListElement {
@@ -2525,6 +2784,7 @@ ListElement {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"ThrottleV"
@@ -2534,6 +2794,7 @@ ListElement {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"timeddutyout1"
@@ -2543,6 +2804,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"timeddutyout2"
@@ -2552,6 +2814,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"timeddutyoutputactive"
@@ -2561,6 +2824,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Torque"
@@ -2570,6 +2834,7 @@ ListElement {
         maxvalue : "600"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"torqueredcutactive"
@@ -2579,6 +2844,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"torqueredlevelactive"
@@ -2588,6 +2854,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TPS"
@@ -2597,6 +2864,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
 
 
@@ -2610,6 +2878,7 @@ ListElement {
         maxvalue : "9"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         titlename: "TC COMMAND"
@@ -2621,6 +2890,7 @@ ListElement {
         maxvalue : "9"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"tractionControl"
@@ -2630,6 +2900,7 @@ ListElement {
         maxvalue : "11"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2640,6 +2911,7 @@ ListElement {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"transientthroactive"
@@ -2649,6 +2921,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"transoiltemp"
@@ -2658,6 +2931,7 @@ ListElement {
         maxvalue : "150"
         stepsize : "25"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"triggerccounter"
@@ -2667,6 +2941,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"triggersrsinceasthome"
@@ -2676,6 +2951,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"TRIM"
@@ -2685,6 +2961,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Trip"
@@ -2694,6 +2971,7 @@ ListElement {
         maxvalue : "1000"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"turborpm"
@@ -2703,6 +2981,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10000"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"turborpm2"
@@ -2712,6 +2991,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10000"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel1"
@@ -2721,6 +3001,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel2"
@@ -2730,6 +3011,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel3"
@@ -2739,6 +3021,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel4"
@@ -2748,6 +3031,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel5"
@@ -2757,6 +3041,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel6"
@@ -2766,6 +3051,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel7"
@@ -2775,6 +3061,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel8"
@@ -2784,6 +3071,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel9"
@@ -2793,6 +3081,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel9"
@@ -2802,6 +3091,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel10"
@@ -2811,6 +3101,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel11"
@@ -2820,6 +3111,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Userchannel12"
@@ -2829,6 +3121,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
 
@@ -2840,6 +3133,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"Watertemp"
@@ -2850,6 +3144,7 @@ ListElement {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"wheeldiff"
@@ -2859,6 +3154,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"wheelslip"
@@ -2868,6 +3164,7 @@ ListElement {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"wheelspdftleft"
@@ -2877,6 +3174,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"wheelspdftright"
@@ -2886,6 +3184,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"wheelspdrearleft"
@@ -2895,6 +3194,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"wheelspdrearright"
@@ -2904,6 +3204,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
+        supportedECUs: "HaltechV2"
     }
     ListElement {
         sourcename:"BatteryV"
@@ -2913,6 +3214,7 @@ ListElement {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
+        supportedECUs: "HaltechV2,Microtech"
     }
     ListElement {
         sourcename:"Intakepress"
@@ -2923,6 +3225,7 @@ ListElement {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"Error"
@@ -2932,6 +3235,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"IGBTPhaseATemp"
@@ -2941,6 +3245,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2951,6 +3256,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"IGBTPhaseCTemp"
@@ -2960,6 +3266,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"GateDriverTemp"
@@ -2969,6 +3276,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"ControlBoardTemp"
@@ -2978,6 +3286,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -2988,6 +3297,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"RtdTemp2"
@@ -2997,6 +3307,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"RtdTemp3"
@@ -3006,6 +3317,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"RtdTemp4"
@@ -3015,6 +3327,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"RtdTemp5"
@@ -3024,6 +3337,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"EMotorTemperature"
@@ -3033,6 +3347,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TorqueShudder"
@@ -3042,6 +3357,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput2ReverseSw"
@@ -3051,6 +3367,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput3BrakeSw"
@@ -3060,6 +3377,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
       ListElement {
         sourcename:"DigInput4RegenDisableSw"
@@ -3069,6 +3387,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput5IgnSw"
@@ -3078,6 +3397,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput6StartSw"
@@ -3087,6 +3407,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput7Bool"
@@ -3096,6 +3417,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DigInput8Bool"
@@ -3105,6 +3427,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"EMotorAngle"
@@ -3114,6 +3437,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"ElectricalOutFreq"
@@ -3123,6 +3447,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"DeltaResolverFiltered"
@@ -3132,6 +3457,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"PhaseACurrent"
@@ -3141,6 +3467,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"EMotorSpeed"
@@ -3150,6 +3477,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"PhaseBCurrent"
@@ -3159,6 +3487,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"PhaseCCurrent"
@@ -3168,6 +3497,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3178,6 +3508,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3188,6 +3519,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3198,6 +3530,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"VABvdVoltage"
@@ -3207,6 +3540,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3217,6 +3551,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TiretempLF"
@@ -3226,6 +3561,7 @@ ListElement {
         maxvalue : "150"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3236,6 +3572,7 @@ ListElement {
         maxvalue : "150"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TiretempLR"
@@ -3245,6 +3582,7 @@ ListElement {
         maxvalue : "150"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TiretempRR"
@@ -3254,6 +3592,7 @@ ListElement {
         maxvalue : "150"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"TirepresLF"
@@ -3263,6 +3602,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3273,6 +3613,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3283,6 +3624,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3293,6 +3635,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     //EX Board
     ListElement {
@@ -3303,6 +3646,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput1"
@@ -3312,6 +3656,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput2"
@@ -3321,6 +3666,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput3"
@@ -3330,6 +3676,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput4"
@@ -3339,6 +3686,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput5"
@@ -3348,6 +3696,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput6"
@@ -3357,6 +3706,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogInput7"
@@ -3366,6 +3716,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
    //
     ListElement {
@@ -3376,6 +3727,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc1"
@@ -3385,6 +3737,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc2"
@@ -3394,6 +3747,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc3"
@@ -3403,6 +3757,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc4"
@@ -3412,6 +3767,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc5"
@@ -3421,6 +3777,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc6"
@@ -3430,6 +3787,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXAnalogCalc7"
@@ -3439,6 +3797,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
 
 
@@ -3451,6 +3810,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput2"
@@ -3460,6 +3820,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput3"
@@ -3469,6 +3830,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput4"
@@ -3478,6 +3840,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput5"
@@ -3487,6 +3850,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput6"
@@ -3496,6 +3860,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput7"
@@ -3505,6 +3870,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"EXDigitalInput8"
@@ -3514,6 +3880,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
     ListElement {
         sourcename:"frequencyDIEX1"
@@ -3523,6 +3890,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
     }
 
     //////////
@@ -3534,6 +3902,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"undrivenavgspeed"
@@ -3543,6 +3912,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"drivenavgspeed"
@@ -3552,6 +3922,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"dsettargetslip"
@@ -3561,6 +3932,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"tractionctlpowerlimit"
@@ -3570,6 +3942,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 
     ListElement {
@@ -3580,6 +3953,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"totaligncomp"
@@ -3589,6 +3963,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"errorcodecount"
@@ -3598,6 +3973,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
     ListElement {
         sourcename:"lostsynccount"
@@ -3607,6 +3983,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
+        supportedECUs: ""
     }
 }
 
