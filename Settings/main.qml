@@ -379,7 +379,7 @@ Rectangle {
                     id: weighttext
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
-                    text: "Weight:"
+                    //text: Translator.translate("Weight", Dashboard.Language)
                 }
                 TextField {
                     id: weight
@@ -714,16 +714,17 @@ Rectangle {
 
                     model: [
                         {name: "English", flag: "qrc:/graphics/Flags/us.png"},
-                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
-
-                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
-                        {name: "Español", flag: "qrc:/graphics/Flags/es.png"},
-                       {name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
-                        {name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
+                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"}
+                        //For Later Use
+                        //{name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
+                        //{name: "Español", flag: "qrc:/graphics/Flags/es.png"},
+                        //{name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
+                        //{name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
                     ]
 
                     onCurrentIndexChanged: {
                         functLanguageselect.languageselectfunct()
+                        changeweighttext.changetext()
                         console.log("Language combobox index")
                     }
 
@@ -917,9 +918,9 @@ Rectangle {
         id: changeweighttext
         function changetext() {
             if (unitSelect.currentIndex == 0)
-                weighttext.text = "Weight kg"
+                weighttext.text = Translator.translate("Weight", Dashboard.Language) +" kg"
             if (unitSelect.currentIndex == 1)
-                weighttext.text = "Weight lbs"
+                weighttext.text = Translator.translate("Weight", Dashboard.Language) +" lbs"
         }
     }
     Item {

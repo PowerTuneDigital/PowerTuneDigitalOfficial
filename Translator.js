@@ -1,5 +1,5 @@
 var translations = {
-
+    //Menu Items:
     "Metric": { en: "Metric", de: "Metrisch", jp: "", es: "", fr: "", ar:"" },
     "Imperial": { en: "Imperial", de: "Imperial", jp: "", es: "", fr: "", ar:"" },
     "Analogexplanation": { en: "Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc", de: "Geben Sie den Wert den Sie bei 0 Volt sehen wollen in das Feld Val.@ 0V, und den Wert den Sie bei 5 Volt sehen wollen in das Feld Val @5V ein.Die Berecheneten Werte werden in den Korrespondierenden Datenquellen Analog x Calc angezeigt.", jp: "", es: "", fr: "", ar:"" },
@@ -24,7 +24,7 @@ var translations = {
     "Logfile name": { en: "Logfile name:", de: "Log Datei Name",  jp: "", es: "", fr: "", ar:"" },
     "Odo": { en: "Odo", de: "KM Stand:",  jp: "", es: "", fr: "", ar:"" },
     "Trip": { en: "Trip:                  ", de: "Tages KM Zähler:",  jp: "", es: "", fr: "", ar:"" },
-    "Weight Kg": { en: "Weight Kg", de: "Gewicht Kg",  jp: "", es: "", fr: "", ar:"" },
+    "Weight": { en: "Weight", de: "Gewicht",  jp: "", es: "", fr: "", ar:"" },
     "Serial Status": { en: "Serial Status", de: "",  jp: "", es: "", fr: "", ar:"" },
     "RPM Smoothing": { en: "RPM Smoothing", de: "Drehzahl Glättung",  jp: "", es: "", fr: "", ar:"" },
     "Speed Smoothing": { en: "Speed Smoothing", de: "Geschw. Glättung",  jp: "", es: "", fr: "", ar:"" },
@@ -61,7 +61,8 @@ var translations = {
     "SpeedCorrection": { en: "Speed Correction %", de: "Geschwindigkeits Korrektur %",  jp: "", es: "", fr: "", ar:"" },
     "Analog description": { en: "Enter the Value that should be displayed at 0V in the field Val.@ 0V and the value that should be displayed at 5 V in the field Val @5V. The calculated values will be availabe in the corresponding datasource Analog x Calc", de: "",  jp: "", es: "", fr: "", ar:"" },
     "Max RPM": { en: "Max RPM", de: "Max Drehzahl",  jp: "", es: "", fr: "", ar:"" },
-    "Shift Light": { en: "Shift Light", de: "Schalt Licht",  jp: "", es: "", fr: "", ar:"" },
+    "Shift Light": { en: "Shift light", de: "Schalt Blitz",  jp: "", es: "", fr: "", ar:"" },
+    "Stage": { en: "stage", de: "Stufe",  jp: "", es: "", fr: "", ar:"" },
     "Voltage divider jumpers": { en: "Voltage divider jumpers", de: "Spannungs Teiler brücke",  jp: "", es: "", fr: "", ar:"" },
     "Temp In.": { en: "Temp. Sensor", de: "Temp. Sensor",  jp: "", es: "", fr: "", ar:"" },
     "Cylinders": { en: "Cylinders", de: "Zylinder",  jp: "", es: "", fr: "", ar:"" },
@@ -84,7 +85,11 @@ var translations = {
     "NOT CONNECTED": { en: "NOT CONNECTED", de: "NICHT VERBUNDEN",  jp: "", es: "", fr: "", ar:"" },
     "Damping": { en: "Damping", de: "Dämpfung",  jp: "", es: "", fr: "", ar:"" },
     "Version": { en: "Version", de: "Version",  jp: "", es: "", fr: "", ar:"" },
- // DATASOURCES
+
+
+
+
+    // DATASOURCES Translation, currently unused
     "DRIVESHAFT OFFSET":{ en: "DRIVESHAFT OFFSET", de: "German", jp: "", es: "", fr: "", ar:"" },
     "Average Fuel Economy":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Alternator Light":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -459,9 +464,6 @@ var translations = {
     "Total ign comp":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Error code count":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
     "Lost sync count":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" }
-
-
-
     //Datasources End
 
 };
