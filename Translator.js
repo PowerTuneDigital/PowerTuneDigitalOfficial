@@ -483,34 +483,13 @@ function translate(text, language) {
 
         // If translation is found and not an empty string, return it
         if (translatedWord !== undefined && translatedWord !== "") {
-            console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
+         //   console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
             return translatedWord;
         }
     }
 
     // If translation is not found or is an empty string, provide the English version
-    console.warn("Translation not found or empty for:", text, "and language:", language);
+   // console.warn("Translation not found or empty for:", text, "and language:", language);
     return translations[text].en || "Translation not found";
 }
-/*
-function translate(text, language) {
-    // Convert numeric language code to string if needed
-    var languageString = language === 0 ? "en" : (language === 1 ? "de" : (language === 2 ? "jp" : ""));
 
-    // Check if the text is defined in translations
-    if (translations[text]) {
-        // Check if the language is defined for the given text
-        var translatedWord = translations[text][languageString];
-
-        // If translation is found, return it
-        if (translatedWord !== undefined) {
-            console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
-            return translatedWord;
-        }
-    }
-
-    // If translation is not found, provide a default value or handle the situation accordingly
-    console.warn("Translation not found for:", text, "and language:", language);
-    return "Translation not found";
-}
-*/

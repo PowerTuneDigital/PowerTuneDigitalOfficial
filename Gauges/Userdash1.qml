@@ -412,6 +412,8 @@ Item {
             drag.target: squaregaugemenu
         }
 ///////////////////
+        /*
+        //Combobox filtered by ECU. Datasources must still be filled with each supported ECU
         ComboBox {
             id: cbx_sources
             width: 200
@@ -464,7 +466,7 @@ Item {
                 return filteredModel;
             }
         }
-        /*
+        */
         ComboBox {
             id: cbx_sources
             font.pixelSize: 15
@@ -483,7 +485,7 @@ Item {
             }
         }
 
-       */
+
         ComboBox {
             id: loadfileselect
             font.pixelSize: 15

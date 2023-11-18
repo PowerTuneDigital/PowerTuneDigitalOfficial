@@ -713,12 +713,13 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
 
                     model: [
-                        {name: "English", flag: "qrc:/graphics/Flags/us.png"},
-                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
-                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
-                        {name: "Español", flag: "qrc:/graphics/Flags/es.png"},
-                        {name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
-                        {name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
+                        {name: "English", flag: "qrc:/graphics/Flags/us.png"}
+                      //  For later use
+                      //  {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
+                      //  {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
+                      //  {name: "Español", flag: "qrc:/graphics/Flags/es.png"},
+                      //  {name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
+                      //  {name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
                     ]
 
                     onCurrentIndexChanged: {

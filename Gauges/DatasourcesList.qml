@@ -3,6 +3,11 @@ import QtQuick 2.8
 Supported ECU List completed for :
 Haltech V2
 Microtech
+ECU Master
+EMTRON
+Extender
+PowerTune
+Syvecs S7
 */
 ListModel {
     id: datasources
@@ -137,7 +142,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog2"
@@ -148,7 +153,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog3"
@@ -159,7 +164,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog4"
@@ -170,7 +175,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog5"
@@ -181,7 +186,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog6"
@@ -192,7 +197,7 @@ ListModel {
         maxvalue : "10"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         titlename: "Analog7"
@@ -370,12 +375,12 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
+        titlename:"Accel. Timmer"
         sourcename:"AccelTimer"
         defaultsymbol: "s"
-        titlename:"Accel. Timmer"
         supportedECU: ""
         decimalpoints : "4"
         maxvalue : "1000"
@@ -384,31 +389,31 @@ ListModel {
         supportedECUs: "HaltechV2"
     }
     ListElement {
+        titlename:"X accel."
         sourcename:"accelx"
         defaultsymbol: "G"
-        titlename:"X accel."
         supportedECU: ""
         decimalpoints : "1"
         maxvalue : "4"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
+        titlename:"Y accel."
         sourcename:"accely"
         defaultsymbol: "G"
-        titlename:"Y accel."
         supportedECU: ""
         decimalpoints : "1"
         maxvalue : "4"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
+        titlename:"Z accel."
         sourcename:"accelz"
         defaultsymbol: "G"
-        titlename:"Z accel."
         supportedECU: ""
         decimalpoints : "1"
         maxvalue : "4"
@@ -417,9 +422,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR"
         sourcename:"AFR"
         defaultsymbol: "A/F"
-        titlename:"AFR"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -452,9 +457,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR L. BANK TARGET"
         sourcename:"AFRLEFTBANKTARGET"
         defaultsymbol: "A/F"
-        titlename:"AFR L. BANK TARGET"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -463,9 +468,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR R. BANK TARGET"
         sourcename:"AFRRIGHTBANKTARGET"
         defaultsymbol: "A/F"
-        titlename:"AFR R. BANK TARGET"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -476,9 +481,9 @@ ListModel {
 
 
     ListElement {
+        titlename:"AFR CYL 1"
         sourcename:"AFRcyl1"
         defaultsymbol: "A/F"
-        titlename:"AFR CYL 1"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -487,9 +492,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR CYL 2"
         sourcename:"AFRcyl2"
         defaultsymbol: "A/F"
-        titlename:"AFR CYL 2"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -498,9 +503,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR CYL 3"
         sourcename:"AFRcyl3"
         defaultsymbol: "A/F"
-        titlename:"AFR CYL 3"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -509,9 +514,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR CYL 4"
         sourcename:"AFRcyl4"
         defaultsymbol: "A/F"
-        titlename:"AFR CYL 4"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -520,9 +525,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"AFR CYL 5"
         sourcename:"AFRcyl5"
         defaultsymbol: "A/F"
-        titlename:"AFR CYL 5"
         supportedECU: ""
         decimalpoints : "2"
         maxvalue : "20"
@@ -564,9 +569,6 @@ ListModel {
         supportedECUs: ""
     }
 
-
-
-
     ListElement {
         titlename:"Air T.2"
         sourcename:"airtempensor2"
@@ -587,7 +589,7 @@ ListModel {
         maxvalue : "140"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"ambitemp"
@@ -609,7 +611,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"antilaglaunchon"
@@ -743,7 +745,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master,EMTRON"
     }
     ListElement {
         sourcename:"BoostPreskpa"
@@ -753,7 +755,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Boosttp"
@@ -804,7 +806,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"compass"
@@ -837,7 +839,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: "HaltechV2,Test,"
+        supportedECUs: "HaltechV2,EMTRON,Syvecs S7"
     }
 
     ListElement {
@@ -1032,7 +1034,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "ECU Master"
     }
     ListElement {
         sourcename:"cputempecu"
@@ -1042,7 +1044,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "ECU Master"
     }
     ListElement {
         sourcename:"egt1"
@@ -1052,7 +1054,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,Syvecs S7"
     }
     ListElement {
         sourcename:"egt2"
@@ -1062,7 +1064,7 @@ ListModel {
         maxvalue : "1300"
         stepsize : "200"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,Syvecs S7"
     }
     ListElement {
         sourcename:"egt3"
@@ -1222,7 +1224,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag2"
@@ -1232,7 +1234,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag3"
@@ -1242,7 +1244,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag4"
@@ -1252,7 +1254,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag5"
@@ -1262,7 +1264,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag6"
@@ -1272,7 +1274,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2.ECU,Master"
     }
     ListElement {
         sourcename:"Flag7"
@@ -1282,7 +1284,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag8"
@@ -1292,7 +1294,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag9"
@@ -1302,7 +1304,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag10"
@@ -1312,7 +1314,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag11"
@@ -1322,7 +1324,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag12"
@@ -1332,7 +1334,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag13"
@@ -1342,7 +1344,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag14"
@@ -1352,7 +1354,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag15"
@@ -1362,7 +1364,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag16"
@@ -1372,7 +1374,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag17"
@@ -1382,7 +1384,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag18"
@@ -1392,7 +1394,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag19"
@@ -1402,7 +1404,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
     ListElement {
         sourcename:"Flag20"
@@ -1569,18 +1571,18 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master"
     }
 
     ListElement {
+        titlename:"Ethanol"
         sourcename:"fuelcomposition"
         defaultsymbol: "%"
-        titlename:"Ethanol"
         decimalpoints : "0"
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"fuelconsrate"
@@ -1640,7 +1642,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"Fueltemp"
@@ -1650,7 +1652,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"fueltrimlongtbank1"
@@ -1700,7 +1702,7 @@ ListModel {
         maxvalue : "5"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"Gearoffset"
@@ -1765,7 +1767,7 @@ ListModel {
         maxvalue : "2000"
         stepsize : "1000"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gpsLatitude"
@@ -1775,7 +1777,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gpsLongitude"
@@ -1785,7 +1787,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gpsSpeed"
@@ -1795,7 +1797,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gpsTime"
@@ -1805,7 +1807,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gpsVisibleSatelites"
@@ -1815,7 +1817,7 @@ ListModel {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gyrox"
@@ -1825,7 +1827,7 @@ ListModel {
         maxvalue : "360"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gyroy"
@@ -1835,7 +1837,7 @@ ListModel {
         maxvalue : "360"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"gyroz"
@@ -1845,7 +1847,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"handbrake"
@@ -1905,7 +1907,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "Microtech"
+        supportedECUs: "Microtech,ECU Master"
     }
     ListElement {
         sourcename:"Ign1"
@@ -2032,7 +2034,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "EMTRON,Syvecs S7"
     }
 
     ListElement {
@@ -2043,7 +2045,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"injms"
@@ -2063,7 +2065,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"Iscvduty"
@@ -2083,7 +2085,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
 
     ListElement {
@@ -2164,7 +2166,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"lambda2"
@@ -2174,7 +2176,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"lambda3"
@@ -2204,7 +2206,7 @@ ListModel {
         maxvalue : "2"
         stepsize : "0.5"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,EMTRON"
     }
 
 
@@ -2216,7 +2218,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
     ListElement {
         sourcename:"laptime"
@@ -2226,7 +2228,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
 
     ListElement {
@@ -2237,7 +2239,7 @@ ListModel {
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "PowerTune"
     }
 
 
@@ -2270,7 +2272,7 @@ ListModel {
         maxvalue : "50"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,EMTRON"
     }
     ListElement {
         sourcename:"leftindicator"
@@ -2330,7 +2332,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON"
     }
 
 
@@ -2392,7 +2394,7 @@ ListModel {
         maxvalue : "320"
         stepsize : "40"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON"
     }
     ListElement {
         sourcename:"nosactive"
@@ -2412,7 +2414,7 @@ ListModel {
         maxvalue : "300"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
         sourcename:"nosswitch"
@@ -2486,7 +2488,7 @@ ListModel {
         maxvalue : "400"
         stepsize : "100"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"oiltemp"
@@ -2497,7 +2499,7 @@ ListModel {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,ECU Master,EMTRON,Syvecs S7"
     }
 
     ListElement {
@@ -2622,14 +2624,14 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"RPM"
         sourcename:"rpm"
         defaultsymbol: "rpm"
-        titlename:"RPM"
         decimalpoints : "0"
         maxvalue : "10000"
         stepsize : "1000"
         divisor : "1000"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
 
     ListElement {
@@ -2672,7 +2674,7 @@ ListModel {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "ECU Master"
     }
     ListElement {
         sourcename:"SVSS"
@@ -2857,14 +2859,14 @@ ListElement {
         supportedECUs: ""
     }
     ListElement {
+        titlename:"Throttle Position"
         sourcename:"TPS"
         defaultsymbol: "%"
-        titlename:"Throttle Position"
         decimalpoints : "0"
         maxvalue : "100"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON"
     }
 
 
@@ -3001,7 +3003,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel2"
@@ -3011,7 +3013,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel3"
@@ -3021,7 +3023,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel4"
@@ -3031,7 +3033,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel5"
@@ -3041,7 +3043,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel6"
@@ -3051,7 +3053,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel7"
@@ -3061,7 +3063,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel8"
@@ -3071,7 +3073,7 @@ ListElement {
         maxvalue : "100000"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
     ListElement {
         sourcename:"Userchannel9"
@@ -3144,7 +3146,7 @@ ListElement {
         maxvalue : "120"
         stepsize : "20"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"wheeldiff"
@@ -3174,7 +3176,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
         sourcename:"wheelspdftright"
@@ -3184,7 +3186,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
         sourcename:"wheelspdrearleft"
@@ -3194,7 +3196,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
         sourcename:"wheelspdrearright"
@@ -3204,7 +3206,7 @@ ListElement {
         maxvalue : "320"
         stepsize : "90"
         divisor : "1"
-        supportedECUs: "HaltechV2"
+        supportedECUs: "HaltechV2,Syvecs S7"
     }
     ListElement {
         sourcename:"BatteryV"
@@ -3214,7 +3216,7 @@ ListElement {
         maxvalue : "20"
         stepsize : "5"
         divisor : "1"
-        supportedECUs: "HaltechV2,Microtech"
+        supportedECUs: "HaltechV2,Microtech,ECU Master,EMTRON,Syvecs S7"
     }
     ListElement {
         sourcename:"Intakepress"
@@ -3377,7 +3379,7 @@ ListElement {
         maxvalue : "1"
         stepsize : "1"
         divisor : "1"
-        supportedECUs: ""
+        supportedECUs: "Syvecs S7"
     }
       ListElement {
         sourcename:"DigInput4RegenDisableSw"
@@ -3646,7 +3648,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput1"
@@ -3656,7 +3658,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput2"
@@ -3666,7 +3668,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+       supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput3"
@@ -3676,7 +3678,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput4"
@@ -3686,7 +3688,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput5"
@@ -3696,7 +3698,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput6"
@@ -3706,7 +3708,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogInput7"
@@ -3716,7 +3718,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
    //
     ListElement {
@@ -3727,7 +3729,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc1"
@@ -3737,7 +3739,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+    supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc2"
@@ -3747,7 +3749,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc3"
@@ -3757,7 +3759,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc4"
@@ -3767,7 +3769,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc5"
@@ -3777,7 +3779,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc6"
@@ -3787,7 +3789,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXAnalogCalc7"
@@ -3797,10 +3799,8 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
-
-
 
     ListElement {
         sourcename:"EXDigitalInput1"
@@ -3810,7 +3810,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput2"
@@ -3820,7 +3820,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput3"
@@ -3830,7 +3830,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput4"
@@ -3840,7 +3840,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput5"
@@ -3850,7 +3850,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput6"
@@ -3860,7 +3860,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput7"
@@ -3870,7 +3870,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"EXDigitalInput8"
@@ -3880,7 +3880,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
     ListElement {
         sourcename:"frequencyDIEX1"
@@ -3890,7 +3890,7 @@ ListElement {
         maxvalue : "300"
         stepsize : "10"
         divisor : "1"
-        supportedECUs: "All,PowerFC,HaltechV2,OBD2,GenericCAN,Link Generic Dash,Microtech,Consult,M800 Set1,OBD2,Hondata 20Hz,Adaptronic CAN,Motec M1,AEM V2,AUDI B7, BRZ FRS 86,ECU Masters,Audi B8,Emtron,Holley,MaxxECU,Ford FG MK1,Ford FG MK1 + OBD Polling,Ford BA+BF,Ford BA+BF + OBD Polling,Ford FG2x,Ford FG2x + OBD Polling, EVO X, Blackbox M3, NISSAN 370Z, GM: LS2-LS7 CAN, NISSAN 350Z, Megasquirt CAN Simplified, EMTECH EMS CAN, WRX 2008-2015, Motec Set3 ADL, Testdaemon, Ecoboost, Emerald ECU, Wolf, GM OBD-CAN, Unused, Hondata 100Hz, 11-Bit CAN, Motorsport Electronics, Fueltech, Delta, Bigstuff AFR, Bigstuff Lamda, R35, Prado, WRX 2016, LifeRacing beta, DTAFast, ProEFI, TeslaSDU, NeuroBasic ,GR Yaris (Beta),Syvecs S7,RSport,Generic CAN"
+        supportedECUs: "Extender"
     }
 
     //////////
