@@ -608,6 +608,7 @@ DashBoard::DashBoard(QObject *parent)
     , m_DI1RPMEnabled(0)
     , m_Externalrpm(0)
     , m_Language(0)
+    , m_externalspeedconnectionrequest(0)
 
 {
 
@@ -973,6 +974,14 @@ void DashBoard::setLanguage(const int &Language)
     emit LanguageChanged(Language);
     qDebug() <<Language ;
 }
+void DashBoard::setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest)
+{
+    if (m_externalspeedconnectionrequest == externalspeedconnectionrequest)
+        return;
+    m_externalspeedconnectionrequest = externalspeedconnectionrequest;
+    emit externalspeedconnectionrequestChanged(externalspeedconnectionrequest);
+}
+
 void DashBoard::setIntakepress(const qreal &Intakepress)
 {
     if (m_Intakepress == Intakepress)
@@ -5858,5 +5867,5 @@ qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
 int DashBoard::Externalrpm() const {return m_Externalrpm;}
 int DashBoard::Language() const {return m_Language;}
-
+int DashBoard::externalspeedconnectionrequest() const {return m_externalspeedconnectionrequest;}
 

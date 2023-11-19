@@ -607,7 +607,7 @@ class DashBoard : public QObject
     Q_PROPERTY(int DI1RPMEnabled READ DI1RPMEnabled WRITE setDI1RPMEnabled NOTIFY DI1RPMEnabledChanged)
     Q_PROPERTY(int Externalrpm READ Externalrpm WRITE setExternalrpm NOTIFY ExternalrpmChanged)
     Q_PROPERTY(int Language READ Language WRITE setLanguage NOTIFY LanguageChanged)
-
+    Q_PROPERTY(int externalspeedconnectionrequest READ externalspeedconnectionrequest WRITE setexternalspeedconnectionrequest NOTIFY externalspeedconnectionrequestChanged)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1281,6 +1281,7 @@ class DashBoard : public QObject
     void setDI1RPMEnabled(const int &DI1RPMEnabled);
     void setExternalrpm(const int &Externalrpm);
     void setLanguage(const int &Language);
+    void setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest);
 
     qreal Odo() const;
     qreal Cylinders() const;
@@ -1875,7 +1876,7 @@ class DashBoard : public QObject
     int DI1RPMEnabled()const;
     int Externalrpm()const;
     int Language()const;
-
+    int externalspeedconnectionrequest()const;
 signals:
 
     //Odometer
@@ -2465,7 +2466,7 @@ signals:
     void DI1RPMEnabledChanged(int DI1RPMEnabled);
     void ExternalrpmChanged(int Externalrpm);
     void LanguageChanged(int Language);
-
+    void externalspeedconnectionrequestChanged(int externalspeedconnectionrequest);
 
 private:
     // Odometer
@@ -3062,6 +3063,7 @@ private:
     int m_DI1RPMEnabled;
     int m_Externalrpm;
     int m_Language;
+    int m_externalspeedconnectionrequest;
 };
 
 #endif // DASHBOARD_H

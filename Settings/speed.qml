@@ -52,10 +52,10 @@ Rectangle {
             text: "100"
             inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
             Component.onCompleted: {
-                AppSettings.writeSpeedSettings(speedpercent.text / 100)
+                AppSettings.writeSpeedSettings(speedpercent.text / 100, pulsespermile.text)
             }
             onEditingFinished: AppSettings.writeSpeedSettings(
-                                   speedpercent.text / 100)
+                                   speedpercent.text / 100, pulsespermile.text)
         }
         Text {
             text: "Pulses Per Mile"
@@ -75,7 +75,6 @@ Rectangle {
             onEditingFinished: AppSettings.writeSpeedSettings(
                                    speedpercent.text / 100, pulsespermile.text)
         }
-
         Text {
             //periferal serial port box
             text: "External Speed Port:"
@@ -114,15 +113,12 @@ Rectangle {
             font.pixelSize: calcs.width / 55
             Component.onCompleted: autoconnectArd.auto()
             onClicked: {
-
-                //console.log("clicked GPS")
+                AppSettings.externalspeedconnectionstatus(1)
                 connectButtonArd.enabled = false
                 disconnectButtonArd.enabled = true
                 autoconnectArd.auto()
-                //console.log("gps disconnect enabled")
             }
         }
-
         Button {
             id: disconnectButtonArd
             text: "Speed Disconnect"
@@ -131,11 +127,11 @@ Rectangle {
             font.pixelSize: calcs.width / 55
             enabled: false
             onClicked: {
+                AppSettings.externalspeedconnectionstatus(0)
                 connectButtonArd.enabled = true
                 disconnectButtonArd.enabled = false
                 Arduino.closeConnection()
             }
         }
     }
-
 }

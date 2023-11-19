@@ -121,6 +121,11 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
      // To be implemented later
 }
 
+void AppSettings::externalspeedconnectionstatus(int connected)
+{
+     setValue("externalspeedconnect", connected);
+
+}
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn", waterwarn);
@@ -392,5 +397,8 @@ void AppSettings::readandApplySettings()
         m_dashboard->setpulsespermile(100000);
     }
     m_dashboard->setExternalrpm(getValue("ExternalRPM").toInt());
+    //getValue("externalspeedconnect")
+    m_dashboard->setexternalspeedconnectionrequest(getValue("externalspeedconnect").toInt());
+    qDebug() << "current speedsettings" <<m_dashboard->externalspeedconnectionrequest();
 }
 
