@@ -784,29 +784,6 @@ Rectangle {
             x: 350
             y: 290
 
-            //  anchors.right: windowbackround.right
-            //   anchors.bottom: windowbackround.bottom
-
-
-            /*                  //Just a spacer for now still need to do it properly
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            Text  { text: "";font.pixelSize: windowbackround.width / 55}
-            //Spacer end
-*/
             Text {
                 text: ""
                 font.pixelSize: windowbackround.width / 55

@@ -3,7 +3,7 @@ import QtGraphicalEffects 1.0
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
-
+import "qrc:/Translator.js" as Translator
 Rectangle {
 
     id: gauge
@@ -373,21 +373,20 @@ Rectangle {
         Menu {
             id: popupmenu
             MenuItem {
-                text: "Change gauge size"
+                text: Translator.translate("Change gauge size", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: sizemenu.popup(touchArea.mouseX, touchArea.mouseY)
             }
             MenuItem {
-                text: "Text font size"
+                text: Translator.translate("Text font size", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked:    {
                     cbx_titlefontsize.visible =true;
                     btntitlefontsize.visible =true;
                 }
-
             }
             MenuItem {
-                text: "Text font style"
+                text: Translator.translate("Text font style", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked:    {
                     cbx_titlefontstyle.visible = true;
@@ -395,7 +394,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Gauge font size"
+                text: Translator.translate("Gauge font size", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked:
                 {
@@ -404,7 +403,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Gauge font style"
+                text: Translator.translate("Gauge font style", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked:    {
                     btn_valuefontstyle.visible = true;
@@ -412,7 +411,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Change main value"
+                text: Translator.translate("Change main value", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -420,8 +419,9 @@ Rectangle {
                     btnMainSrc.visible = true;
                 }
             }
+
             MenuItem {
-                text: "Change sec value"
+                text: Translator.translate("Change sec value", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -430,7 +430,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Change title"
+                text: Translator.translate("Change title", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -439,7 +439,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Set decimal"
+                text: Translator.translate("Set decimal", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -449,7 +449,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Set bar gauge max"
+                text: Translator.translate("Set bar gauge max", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -458,7 +458,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Toggle sec value"
+                text: Translator.translate("Toggle sec value", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     if(secondaryvaluetextfield.visible === true){
@@ -470,7 +470,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Toggle vertical bar gauge"
+                text: Translator.translate("Toggle vertical bar gauge", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     if(vertgauge.visible === true){
@@ -485,7 +485,7 @@ Rectangle {
             }
 
             MenuItem {
-                text: "Toggle horizontal bar gauge"
+                text: Translator.translate("Toggle horizontal bar gauge", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     if(horizgauge.visible === true){
@@ -499,7 +499,7 @@ Rectangle {
             }
 
             MenuItem {
-                text: "Set min warning"
+                text: Translator.translate("Set min warning", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -509,7 +509,7 @@ Rectangle {
             }
 
             MenuItem {
-                text: "Set max warning"
+                text: Translator.translate("Set max warning", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {
                     hidemenues();
@@ -518,12 +518,12 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "Change unit symbol"
+                text: Translator.translate("Change unit symbol", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: symbolMenu.popup(touchArea.mouseX, touchArea.mouseY)
             }
             MenuItem {
-                text: "remove gauge"
+                text: Translator.translate("remove gauge", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: gauge.destroy()
             }
@@ -532,7 +532,7 @@ Rectangle {
         Menu {
             id: sizemenu
             MenuItem {
-                text: "small"
+                text: Translator.translate("small", Dashboard.Language)
                 onClicked: {
 
                     gauge.width = 199;
@@ -540,7 +540,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "medium"
+                text: Translator.translate("medium", Dashboard.Language)
                 onClicked: {
 
                     gauge.width = 266;
@@ -548,7 +548,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "large"
+                text: Translator.translate("large", Dashboard.Language)
                 onClicked: {
 
                     gauge.width = 533;
@@ -556,20 +556,21 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: "custom"
+                text: Translator.translate("custom", Dashboard.Language)
                 onClicked: {
                     txtwidth.visible = true;
                     txtheight.visible = true;
                     btnSize.visible =true;
                 }
             }
+
         }
 
 
         Menu {
             id: symbolMenu
             MenuItem {
-                text: "None"
+                text: Translator.translate("None", Dashboard.Language)
                 onClicked: {
                     mainvalueunittextfield.text = ""
                 }
@@ -664,7 +665,7 @@ Rectangle {
             id: btnMainSrc
             x: 150
             visible: false
-            text: "apply"
+            text: Translator.translate("Apply", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbxMain.right
@@ -695,7 +696,7 @@ Rectangle {
             id: btnSecSrc
             x: 150
             visible: false
-            text: "apply"
+            text: Translator.translate("Apply", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbxSecondary.right
@@ -723,7 +724,7 @@ Rectangle {
         Button {
             id: btnMinValue
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: txtMinValue.right
@@ -757,7 +758,7 @@ Rectangle {
         Button {
             id: btnSize
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: txtwidth.right
@@ -805,7 +806,7 @@ Rectangle {
         Button {
             id: btndecimalplaces
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbx_decimalplaces.right
@@ -832,7 +833,7 @@ Rectangle {
         Button {
             id: btntitlefontsize
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbx_titlefontsize.right
@@ -863,7 +864,7 @@ Rectangle {
         Button {
             id: btn_titlefontstyle
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbx_titlefontstyle.right
@@ -895,7 +896,7 @@ Rectangle {
         Button {
             id: btn_valuefontstyle
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbx_valuefontstyle.right
@@ -920,7 +921,7 @@ Rectangle {
         Button {
             id: btngaugefontsize
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: cbx_gaugefontsize.right
@@ -952,7 +953,7 @@ Rectangle {
         Button {
             id: btnMaxValue
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: txtMaxValue.right
@@ -980,7 +981,7 @@ Rectangle {
         Button {
             id: btntitleValue
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: titlenameValue.right
@@ -1009,7 +1010,7 @@ Rectangle {
         Button {
             id: btnmaxValue
             x: 119
-            text: qsTr("OK")
+            text: Translator.translate("OK", Dashboard.Language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.left: bargaugeMax.right

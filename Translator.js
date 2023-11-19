@@ -12,7 +12,7 @@ var translations = {
     "Quit": { en: "Quit", de: "Beenden", jp: "終了する", es: "", fr: "", ar:"" },
     "Shutdown": { en: "Shutdown", de: "Herunterfahren",  jp: "シャットダウン", es: "", fr: "", ar:"" },
     "Reboot": { en: "Reboot", de: "Neustart",  jp: "リブート", es: "", fr: "", ar:"" },
-    "Language": { en: "Language:", de: "Sprache:",  jp: "", es: "", fr: "", ar:"" },
+    "Language": { en: "Language:", de: "Sprache:",  jp: "言語", es: "Idioma", fr: "Langue", ar:"" },
     "GPS Port": { en: "GPS Port :", de: "GPS Port :",  jp: "", es: "", fr: "", ar:"" },
     "ECU Serial Port": { en: "ECU Serial Port:", de: "ECU Serial Port:",  jp: "", es: "", fr: "", ar:"" },
     "Speed units": { en: "Speed unit:", de: "Geschw. Einh.:",  jp: "", es: "", fr: "", ar:"" },
@@ -86,9 +86,68 @@ var translations = {
     "Damping": { en: "Damping", de: "Dämpfung",  jp: "", es: "", fr: "", ar:"" },
     "Version": { en: "Version", de: "Version",  jp: "", es: "", fr: "", ar:"" },
 
+//Popup submenues 
+    "Add": { en: "Add", de: "Einfügen",  jp: "", es: "", fr: "", ar:"" },
+    "Square": { en: "Square", de: "Quadrat",  jp: "", es: "", fr: "", ar:"" },
+    "Bar": { en: "Bar", de: "Bar",  jp: "", es: "", fr: "", ar:"" },
+    "Round": { en: "Round", de: "Rund",  jp: "", es: "", fr: "", ar:"" },
+    "Text": { en: "Text", de: "Text",  jp: "", es: "", fr: "", ar:"" },
+    "Image": { en: "Image", de: "Bild",  jp: "", es: "", fr: "", ar:"" },
+    "State": { en: "State", de: "Status",  jp: "", es: "", fr: "", ar:"" },
+    "GIF": { en: "GIF", de: "GIF",  jp: "", es: "", fr: "", ar:"" },
+    "Save": { en: "Save", de: "Speichern",  jp: "", es: "", fr: "", ar:"" },
+    "Colors": { en: "Colors", de: "Farben",  jp: "", es: "", fr: "", ar:"" },
+    "Color": { en: "Color", de: "Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Clear": { en: "Clear", de: "Löschen",  jp: "", es: "", fr: "", ar:"" },
+    "Import": { en: "Import", de: "Importieren",  jp: "", es: "", fr: "", ar:"" },
+    "Export": { en: "Export", de: "Exportieren",  jp: "", es: "", fr: "", ar:"" },
+    "Backround": { en: "Backround", de: "Hintergrund",  jp: "", es: "", fr: "", ar:"" },
+    "Close": { en: "Close", de: "Schliessen",  jp: "", es: "", fr: "", ar:"" },
+    "Load": { en: "Load", de: "Laden",  jp: "", es: "", fr: "", ar:"" },
+    "Cancel": { en: "Cancel", de: "Abbruch",  jp: "", es: "", fr: "", ar:"" },
+    "Style": { en: "style", de: "Stil",  jp: "", es: "", fr: "", ar:"" },
+    "Extra": { en: "Extra", de: "Extra",  jp: "", es: "", fr: "", ar:"" },
+    "None": { en: "None", de: "Kein",  jp: "", es: "", fr: "", ar:"" },
+//Square Gauge
+    "OK": { en: "OK", de: "OK",  jp: "", es: "", fr: "", ar:"" },
+    "Change gauge size": { en: "Change gauge size", de: "Ändere Anzeigen größe",  jp: "", es: "", fr: "", ar:"" },
+    "Text font size": { en: "Text font size", de: "Text Schriftart größe",  jp: "", es: "", fr: "", ar:"" },
+    "Text font style": { en: "Text font style", de: "Text Schriftart stil",  jp: "", es: "", fr: "", ar:"" },
+    "Gauge font size": { en: "Gauge font size", de: "Anzeigen Schriftart größe ",  jp: "", es: "", fr: "", ar:"" },
+    "Gauge font style": { en: "Gauge font style", de: "Anzeigen Schriftart stil",  jp: "", es: "", fr: "", ar:"" },
+    "Change main value": { en: "Change main value", de: "Ändere haupt wert",  jp: "", es: "", fr: "", ar:"" },
+    "Change sec value": { en: "Change sec value", de: "Ändere sekundär wert",  jp: "", es: "", fr: "", ar:"" },
+    "Change title": { en: "Change title", de: "Ändere Titel",  jp: "", es: "", fr: "", ar:"" },
+    "Set decimal": { en: "Set decimal", de: "Setze dezimal",  jp: "", es: "", fr: "", ar:"" },
+    "Set bar gauge max": { en: "Set bar gauge max", de: "Setze Balken Max.",  jp: "", es: "", fr: "", ar:"" },
+    "Toggle sec value": { en: "Toggle sec value", de: "Umschalten sekundär Wert",  jp: "", es: "", fr: "", ar:"" },
+     "Toggle vertical bar gauge": { en: "Toggle vertical bar gauge", de: "Umschalten vertikaler Balken",  jp: "", es: "", fr: "", ar:"" },
+    "Toggle horizontal bar gauge": { en: "Toggle horizontal bar gauge", de: "Umschalten horizontaler Balken",  jp: "", es: "", fr: "", ar:"" },
+    "Set min warning": { en: "Set min warnin", de: "Setze min Warnung",  jp: "", es: "", fr: "", ar:"" },
+    "Set max warning": { en: "Set max warning", de: "Setze max Warnung",  jp: "", es: "", fr: "", ar:"" },
+    "Change unit symbol": { en: "Change unit symbol", de: "Ändere Symboleinheit",  jp: "", es: "", fr: "", ar:"" },
+    "remove gauge": { en: "remove gauge", de: "Anzeige löschen",  jp: "", es: "", fr: "", ar:"" },
+    "medium": { en: "medium", de: "mittel",  jp: "", es: "", fr: "", ar:"" },
+    "small": { en: "small", de: "klein",  jp: "", es: "", fr: "", ar:"" },
+    "large": { en: "large", de: "groß",  jp: "", es: "", fr: "", ar:"" },
+    "custom": { en: "custom", de: "benutzerdefiniert",  jp: "", es: "", fr: "", ar:"" },
+//Round Gauge
 
 
 
+
+//State GIF
+    "Source": { en: "Source", de: "Datenquelle",  jp: "", es: "", fr: "", ar:"" },
+    "Trigger": { en: "Trigger", de: "Trigger",  jp: "", es: "", fr: "", ar:"" },
+    "Delete image": { en: "Delete image", de: "Bild löschen",  jp: "", es: "", fr: "", ar:"" },
+//Text Label
+    "Warn value high": { en: "Warn value high", de: "Oberer Warnungs Wert",  jp: "", es: "", fr: "", ar:"" },
+    "Warn value low": { en: "Warn value low", de: "Unterer Warnungs Wert",  jp: "", es: "", fr: "", ar:"" },
+    "Delete": { en: "Delete", de: "Löschen",  jp: "", es: "", fr: "", ar:"" },
+    "Use Datasource": { en: "Use Datasource", de: "Benutze Datenquelle",  jp: "", es: "", fr: "", ar:"" },
+//State Picture
+    "Image on": { en: "Image on value", de: "Bild an",  jp: "", es: "", fr: "", ar:"" },
+    "Image off": { en: "Image off value", de: "Bild aus",  jp: "", es: "", fr: "", ar:"" },
     // DATASOURCES Translation, currently unused
     "DRIVESHAFT OFFSET":{ en: "DRIVESHAFT OFFSET", de: "German", jp: "", es: "", fr: "", ar:"" },
     "Average Fuel Economy":{ en: "", de: "", jp: "", es: "", fr: "", ar:"" },
@@ -485,7 +544,7 @@ function translate(text, language) {
 
         // If translation is found and not an empty string, return it
         if (translatedWord !== undefined && translatedWord !== "") {
-         //   console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
+           console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
             return translatedWord;
         }
     }
