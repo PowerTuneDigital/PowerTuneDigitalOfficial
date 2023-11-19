@@ -1,5 +1,5 @@
 var translations = {
-    //Menu Items:
+//Menu Items:
     "Metric": { en: "Metric", de: "Metrisch", jp: "", es: "", fr: "", ar:"" },
     "Imperial": { en: "Imperial", de: "Imperial", jp: "", es: "", fr: "", ar:"" },
     "Analogexplanation": { en: "Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc", de: "Geben Sie den Wert den Sie bei 0 Volt sehen wollen in das Feld Val.@ 0V, und den Wert den Sie bei 5 Volt sehen wollen in das Feld Val @5V ein.Die Berecheneten Werte werden in den Korrespondierenden Datenquellen Analog x Calc angezeigt.", jp: "", es: "", fr: "", ar:"" },
@@ -206,6 +206,13 @@ var translations = {
 //Bar Gauge
     "min value": { en: "min value", de: "Minimal Wert",  jp: "", es: "", fr: "", ar:"" },
     "max value": { en: "max value", de: "Maximal Wert",  jp: "", es: "", fr: "", ar:"" },
+//Color Bar
+    "Frame color": { en: "Frame color", de: "Rahmen Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Backround color": { en: "Backround color", de: "Hintergrund Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Titlebar color": { en: "Titlebar color", de: "Titel Bar Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Bargauge color": { en: "Bargauge colore", de: "Bar Anzeige Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Title text color": { en: "Title text color", de: "Titel Text Farbe",  jp: "", es: "", fr: "", ar:"" },
+    "Main text color": { en: "Main text color", de: "Haupt Text Farbe",  jp: "", es: "", fr: "", ar:"" },
 
 
 // DATASOURCES Translation, Low priority as i have to find a way to get them to work in a Listmodel ...
@@ -604,7 +611,7 @@ function translate(text, language) {
 
         // If translation is found and not an empty string, return it
         if (translatedWord !== undefined && translatedWord !== "") {
-           console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
+//           console.log("Translating:", text, "to language:", language, "Result:", translatedWord);
             return translatedWord;
         }
     }

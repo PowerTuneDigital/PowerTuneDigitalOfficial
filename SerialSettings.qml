@@ -26,9 +26,6 @@ Quick1.TabView {
         }
     }
 
-
-
-
     style: TabViewStyle {
         frameOverlap: 1
         tab: Rectangle {

@@ -1218,17 +1218,18 @@ Item {
             spacing:5
             // FrameColor
             Text {
-                text: qsTr("Frame color:")
+                text: Translator.translate("Frame color", Dashboard.Language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Titlebar color:")
+                text: Translator.translate("Titlebar color", Dashboard.Language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Backround color:")
+                text: Translator.translate("Backround color", Dashboard.Language)
                 font.pixelSize: 15
             }
+
             ComboBox {
                 id: colorselect
                 width: 150;
@@ -1330,15 +1331,15 @@ Item {
                 }
             }
             Text {
-                text: qsTr("Bargauge color:")
+                text: Translator.translate("Bargauge color", Dashboard.Language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Title text color:")
+                text: Translator.translate("Title text color", Dashboard.Language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Main text color:")
+                text: Translator.translate("Main text color", Dashboard.Language)
                 font.pixelSize: 15
             }
             // BargaugeColor
@@ -1452,7 +1453,7 @@ Item {
             Button {
                 id: btnclosecolorselect
                 width:150
-                text: qsTr("CLOSE")
+                text: Translator.translate("Close menu", Dashboard.Language)
                 font.pixelSize: 15
                 onClicked: {selectcolor.visible = false;}
 
