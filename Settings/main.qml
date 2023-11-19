@@ -21,6 +21,7 @@ Rectangle {
             // property alias connectAtStartUp: connectAtStart.checked
             property alias connectECUAtStartup: connectButton.enabled
             property alias connectGPSAtStartup: connectButtonGPS.enabled
+            property alias connectArdAtStartup: connectButtonArd.enabled
             //property alias gpsswitch: gpsswitch.checked
             property alias serialPortName: serialName.currentText
             property alias gpsPortName: serialNameGPS.currentText
@@ -622,7 +623,7 @@ Rectangle {
                 //END
             }
             Grid {
-                rows: 12
+                rows: 14
                 columns: 1
                 spacing: windowbackround.width / 150
                 anchors.top: parent.top
@@ -769,6 +770,60 @@ Rectangle {
                                 font.pixelSize: languageselect.font.pixelSize
                             }
                         }
+                    }
+                }
+                Text {
+                    //periferal serial port box
+                    text: "External Speed Port:"
+                    color: "white"
+                    font.pixelSize: windowbackround.width / 55
+                }
+                ComboBox {
+                    id: serialNameArd
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    model: Connect.portsNames
+                    // visible: { (gpsswitch.checked == true ) ? true:false; }
+                    delegate: ItemDelegate {
+                        width: serialNameArd.width
+                        text: serialNameArd.textRole ? (Array.isArray(
+                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: serialNameArd.currentIndex
+                                     == index ? Font.DemiBold : Font.Normal
+                        font.family: serialNameArd.font.family
+                        font.pixelSize: serialNameArd.font.pixelSize
+                        highlighted: serialNameArd.highlightedIndex == index
+                        hoverEnabled: serialNameArd.hoverEnabled
+                    }
+                }
+                Button {
+                    id: connectButtonArd
+                    text: "Speed Connect"
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: autoconnectArd.auto()
+                    onClicked: {
+
+                        //console.log("clicked GPS")
+                        connectButtonArd.enabled = false
+                        disconnectButtonArd.enabled = true
+                        autoconnectArd.auto()
+                        //console.log("gps disconnect enabled")
+                    }
+                }
+                Button {
+                    id: disconnectButtonArd
+                    text: "Speed Disconnect"
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    enabled: false
+                    onClicked: {
+                        connectButtonArd.enabled = true
+                        disconnectButtonArd.enabled = false
+                        Arduino.closeConnection()
                     }
                 }
             }

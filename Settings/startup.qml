@@ -162,7 +162,7 @@ Rectangle {
             width: daemons.width / 3
             height: daemons.height / 15
             font.pixelSize: daemons.width / 55
-            model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS"]
+            model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS", "VR Sensor"]
             onCurrentIndexChanged: AppSettings.writeStartupSettings(
                                        mainspeedsource.currentIndex) //,console.log("Setting SPeed")
             property bool initialized: false

@@ -23,6 +23,7 @@ void Arduino::initSerialPort()
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &Arduino::handleError);
     m_readData.clear();
+    qDebug("Serial port set for arduino");
 }
 
 //function for flushing all serial buffers
@@ -39,7 +40,7 @@ void Arduino::openConnection(const QString &portName)
 
     initSerialPort();
     m_serialport->setPortName(portName);
-    m_serialport->setBaudRate(QSerialPort::Baud38400);
+    m_serialport->setBaudRate(QSerialPort::Baud9600);
     m_serialport->setParity(QSerialPort::NoParity);
     m_serialport->setDataBits(QSerialPort::Data8);
     m_serialport->setStopBits(QSerialPort::OneStop);
@@ -48,6 +49,12 @@ void Arduino::openConnection(const QString &portName)
     if(m_serialport->open(QIODevice::ReadWrite) == false)
     {
         Arduino::closeConnection();
+        qDebug("no arduino");
+    }
+    else
+    {
+        qDebug("arduino connected");
+
     }
 
 }
@@ -56,7 +63,17 @@ void Arduino::closeConnection()
     disconnect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &Arduino::handleError);
-        m_serialport->close();
+    m_serialport->close();
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+    m_dashboard->setSerialSpeed(0);
+
 }
 
 
@@ -80,6 +97,7 @@ void Arduino::handleError(QSerialPort::SerialPortError serialPortError)
 
 void Arduino::readyToRead()
 {
+
     QByteArray test;
     test =m_readData = m_serialport->readAll();
     QString fileName = "AdaptronicOutputTest.txt";
@@ -91,43 +109,40 @@ void Arduino::readyToRead()
     mFile.close();
     m_dashboard->setSerialStat(test.toHex());
     //qDebug()<< "Arduino"+m_readData;
-    //Arduino::assemblemessage(m_readData);
+    Arduino::assemblemessage(m_readData);
 }
 
 
 void Arduino::assemblemessage(const QByteArray &buffer)
 {
 
-
-/*
     m_buffer.append(buffer);
-    QByteArray startpattern = //828180//QByteArray::fromStdString("\r\n");
-    QByteArrayMatcher endmatcher(endpattern);
-
-    int pos = 0;
-    while((pos = endmatcher.indexIn(m_buffer, pos)) != -1)
+    QByteArray message = m_buffer;
+    if(m_buffer.contains("\r\n"))
     {
-        if (pos !=0)
+        int end = m_buffer.indexOf("\r\n") + 2;
+        message.remove(m_buffer.indexOf("\r\n"), end);
+        m_buffer.clear();
+
+        bool ok = false;
+        float value = message.toFloat(&ok);
+
+        if (!ok)
         {
-        QString raw = m_buffer;
-         m_buffer.clear();
-        if (raw.isEmpty())
-        {raw ="0,0";}
-        QStringList list = raw.split( "," );
-        int ident =list[0].toInt();
-        float Value =list[1].toFloat();
-
-        switch(ident) {
-
-        case 199:
-            m_dashboard->setSpeed(Value);
-            break;
-        default:
-            break;
+            qDebug() << "Conversion failed";
         }
 
+        else
+        {
+
+            m_dashboard->setSerialSpeed(value);
         }
 
 
-}*/
+
+    }
+
+
+
+
 }

@@ -397,6 +397,7 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_wheelspdrearleft(0)
     ,  m_wheelspdrearright(0)
     ,  m_speedpercent(1)
+    ,  m_pulsespermile(128000)
     ,  m_maxRPM(8000)
     ,  m_rpmStage1(3000)
     ,  m_rpmStage2(4000)
@@ -1128,7 +1129,29 @@ if (m_ExternalSpeed == 0){
     emit speedChanged(m_speed);
     }
 }
-
+void DashBoard::setSerialSpeed(const qreal &speed)
+{
+    qDebug()<< "SPEED  " << m_speed;
+    if (m_speed == speed)
+        return;
+    if (m_speedunits == "metric")
+    {m_speed = qRound(speed/m_pulsespermile * m_speedpercent * 1.609344);}
+    if (m_speedunits == "imperial")
+    {m_speed = qRound(speed/m_pulsespermile * m_speedpercent);}
+    if (m_smoothspeed != 0)
+    {
+        averageSpeed.removeFirst();
+        averageSpeed.append(m_speed);
+        //qDebug() << "Vector Speed " << averageSpeed;
+        avgspeed = 0;
+        for (int i = 0; i <= m_smoothspeed-1; i++){avgspeed+= averageSpeed[i];}
+        m_speed = avgspeed/m_smoothspeed;
+        qDebug() << "Average Speed " << m_speed;
+    }
+    if (m_ExternalSpeed == 6){
+        emit speedChanged(m_speed);
+    }
+}
 void DashBoard::setIscvduty(const qreal &Iscvduty)
 {
     if (m_Iscvduty == Iscvduty)
@@ -3346,7 +3369,13 @@ void DashBoard::setspeedpercent(const qreal &speedpercent)
     m_speedpercent = speedpercent;
     emit speedpercentChanged(speedpercent);
 }
-
+void DashBoard::setpulsespermile(const qreal &pulsespermile)
+{
+    if (m_pulsespermile == pulsespermile)
+        return;
+    m_pulsespermile = pulsespermile;
+    emit pulsespermileChanged(pulsespermile);
+}
 //
 
 void DashBoard::setmaxRPM(const int &maxRPM)
@@ -5585,6 +5614,7 @@ qreal DashBoard::wheelspdrearright() const { return m_wheelspdrearright; }
 QString DashBoard::musicpath() const {return m_musicpath; }
 int DashBoard::supportedReg() const {return m_supportedReg; }
 qreal DashBoard::speedpercent() const {return m_speedpercent; }
+qreal DashBoard::pulsespermile() const {return m_pulsespermile; }
 
 int DashBoard::maxRPM() const {return m_maxRPM; }
 int DashBoard::rpmStage1() const {return m_rpmStage1; }

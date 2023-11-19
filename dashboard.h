@@ -351,6 +351,7 @@ class DashBoard : public QObject
 
     Q_PROPERTY(int supportedReg READ supportedReg WRITE setsupportedReg NOTIFY supportedRegChanged)
     Q_PROPERTY(qreal speedpercent READ speedpercent WRITE setspeedpercent NOTIFY speedpercentChanged)
+    Q_PROPERTY(qreal pulsespermile READ pulsespermile WRITE setpulsespermile NOTIFY pulsespermileChanged)
 
     Q_PROPERTY(int maxRPM READ maxRPM WRITE setmaxRPM NOTIFY maxRPMChanged)
     Q_PROPERTY(int rpmStage1 READ rpmStage1 WRITE setrpmStage1 NOTIFY rpmStage1Changed)
@@ -703,6 +704,7 @@ class DashBoard : public QObject
     void setIntaketemp(const qreal &Intaketemp);
     void setKnock(const qreal &Knock);
     void setBatteryV(const qreal &BatteryV);
+    void setSerialSpeed(const qreal &speed);
     void setSpeed(const qreal &speed);
     void setIscvduty (const qreal &Iscvduty );
     void setO2volt(const qreal &O2volt);
@@ -1045,6 +1047,7 @@ class DashBoard : public QObject
 
     Q_INVOKABLE void setExternalSpeed(const int &ExternalSpeed);
     Q_INVOKABLE void setspeedpercent(const qreal &speedpercent);
+    Q_INVOKABLE void setpulsespermile(const qreal &pulsespermile);
 
     Q_INVOKABLE void setmaxRPM(const int &maxRPM);
     Q_INVOKABLE void setrpmStage1(const int &rpmStage1);
@@ -1624,6 +1627,7 @@ class DashBoard : public QObject
 
     int supportedReg() const;
     qreal speedpercent() const;
+    qreal pulsespermile() const;
 
     int maxRPM() const;
     int rpmStage1() const;
@@ -2216,6 +2220,7 @@ signals:
     void musicpathChanged(QString musicpath);
     void supportedRegChanged(int supportedReg);
     void speedpercentChanged(qreal speedpercent);
+    void pulsespermileChanged(qreal pulsespermile);
     void maxRPMChanged (int maxRPM);
     void rpmStage1Changed(int rpmStage1);
     void rpmStage2Changed(int rpmStage2);
@@ -2810,6 +2815,7 @@ private:
     QString m_musicpath;
     int m_supportedReg;
     qreal m_speedpercent;
+    qreal m_pulsespermile;
 
     int m_maxRPM;
     int m_rpmStage1;
