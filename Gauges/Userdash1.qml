@@ -703,7 +703,7 @@ Item {
             Button{
                 id: load
                 width: 95
-                text: "Load"
+                text: Translator.translate("Load", Dashboard.Language)
                 font.pixelSize: 12
                 visible: false
                 onClicked: {
