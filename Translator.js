@@ -117,8 +117,8 @@ var translations = {
     "Gauge font style": { en: "Gauge font style", de: "Anzeigen Schriftart stil",  jp: "", es: "", fr: "", ar:"" },
     "Change main value": { en: "Change main value", de: "Ändere haupt wert",  jp: "", es: "", fr: "", ar:"" },
     "Change sec value": { en: "Change sec value", de: "Ändere sekundär wert",  jp: "", es: "", fr: "", ar:"" },
-    "Change title": { en: "Change title", de: "Ändere Titel",  jp: "", es: "", fr: "", ar:"" },
-    "Set decimal": { en: "Set decimal", de: "Setze dezimal",  jp: "", es: "", fr: "", ar:"" },
+    "Change title": { en: "Change title", de: "Titel Ändern",  jp: "", es: "", fr: "", ar:"" },
+    "Set decimal": { en: "decimal points", de: "Dezimal Punkte",  jp: "", es: "", fr: "", ar:"" },
     "Set bar gauge max": { en: "Set bar gauge max", de: "Setze Balken Max.",  jp: "", es: "", fr: "", ar:"" },
     "Toggle sec value": { en: "Toggle sec value", de: "Umschalten sekundär Wert",  jp: "", es: "", fr: "", ar:"" },
      "Toggle vertical bar gauge": { en: "Toggle vertical bar gauge", de: "Umschalten vertikaler Balken",  jp: "", es: "", fr: "", ar:"" },
@@ -203,8 +203,9 @@ var translations = {
 //State Picture
     "Image on": { en: "Image on value", de: "Bild an",  jp: "", es: "", fr: "", ar:"" },
     "Image off": { en: "Image off value", de: "Bild aus",  jp: "", es: "", fr: "", ar:"" },
-
-
+//Bar Gauge
+    "min value": { en: "min value", de: "Minimal Wert",  jp: "", es: "", fr: "", ar:"" },
+    "max value": { en: "max value", de: "Maximal Wert",  jp: "", es: "", fr: "", ar:"" },
 
 
 // DATASOURCES Translation, Low priority as i have to find a way to get them to work in a Listmodel ...
