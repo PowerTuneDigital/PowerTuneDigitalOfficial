@@ -21,7 +21,7 @@ Rectangle {
             // property alias connectAtStartUp: connectAtStart.checked
             property alias connectECUAtStartup: connectButton.enabled
             property alias connectGPSAtStartup: connectButtonGPS.enabled
-            property alias connectArdAtStartup: connectButtonArd.enabled
+            //property alias connectArdAtStartup: connectButtonArd.enabled
             //property alias gpsswitch: gpsswitch.checked
             property alias serialPortName: serialName.currentText
             property alias gpsPortName: serialNameGPS.currentText
@@ -772,60 +772,7 @@ Rectangle {
                         }
                     }
                 }
-                Text {
-                    //periferal serial port box
-                    text: "External Speed Port:"
-                    color: "white"
-                    font.pixelSize: windowbackround.width / 55
-                }
-                ComboBox {
-                    id: serialNameArd
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    model: Connect.portsNames
-                    // visible: { (gpsswitch.checked == true ) ? true:false; }
-                    delegate: ItemDelegate {
-                        width: serialNameArd.width
-                        text: serialNameArd.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: serialNameArd.currentIndex
-                                     == index ? Font.DemiBold : Font.Normal
-                        font.family: serialNameArd.font.family
-                        font.pixelSize: serialNameArd.font.pixelSize
-                        highlighted: serialNameArd.highlightedIndex == index
-                        hoverEnabled: serialNameArd.hoverEnabled
-                    }
-                }
-                Button {
-                    id: connectButtonArd
-                    text: "Speed Connect"
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    Component.onCompleted: autoconnectArd.auto()
-                    onClicked: {
 
-                        //console.log("clicked GPS")
-                        connectButtonArd.enabled = false
-                        disconnectButtonArd.enabled = true
-                        autoconnectArd.auto()
-                        //console.log("gps disconnect enabled")
-                    }
-                }
-                Button {
-                    id: disconnectButtonArd
-                    text: "Speed Disconnect"
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    enabled: false
-                    onClicked: {
-                        connectButtonArd.enabled = true
-                        disconnectButtonArd.enabled = false
-                        Arduino.closeConnection()
-                    }
-                }
             }
         }
 
@@ -946,20 +893,7 @@ Rectangle {
             //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
         }
     }
-    Item {
-        //Function to connect and disconnect GPS
-        id: autoconnectArd
-        function auto() {
 
-            // if (gpsswitch.checked == true)GPS.startGPScom(serialNameGPS.currentText,serialGPSBaud.currentText);
-            if (connectButtonArd.enabled == false) {
-                Arduino.openConnection(serialNameArd.currentText, "9600")
-                disconnectButtonArd.enabled = true
-            }
-            //if (connectButtonGPS.enabled == true)GPS.openConnection(serialNameGPS.currentText,"9600"),disconnectButtonGPS.enabled=false;
-            //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
-        }
-    }
     Item {
         id: changeweighttext
         function changetext() {
