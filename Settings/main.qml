@@ -623,7 +623,7 @@ Rectangle {
                 //END
             }
             Grid {
-                rows: 14
+                rows: 15
                 columns: 1
                 spacing: windowbackround.width / 150
                 anchors.top: parent.top
@@ -941,6 +941,20 @@ Rectangle {
             if (connectButtonGPS.enabled == false) {
                 Gps.openConnection(serialNameGPS.currentText, "9600")
                 disconnectButtonGPS.enabled = true
+            }
+            //if (connectButtonGPS.enabled == true)GPS.openConnection(serialNameGPS.currentText,"9600"),disconnectButtonGPS.enabled=false;
+            //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
+        }
+    }
+    Item {
+        //Function to connect and disconnect GPS
+        id: autoconnectArd
+        function auto() {
+
+            // if (gpsswitch.checked == true)GPS.startGPScom(serialNameGPS.currentText,serialGPSBaud.currentText);
+            if (connectButtonArd.enabled == false) {
+                Arduino.openConnection(serialNameArd.currentText, "9600")
+                disconnectButtonArd.enabled = true
             }
             //if (connectButtonGPS.enabled == true)GPS.openConnection(serialNameGPS.currentText,"9600"),disconnectButtonGPS.enabled=false;
             //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
