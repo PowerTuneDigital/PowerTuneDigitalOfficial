@@ -100,13 +100,14 @@ void Arduino::readyToRead()
 
     QByteArray test;
     test =m_readData = m_serialport->readAll();
+    /*
     QString fileName = "AdaptronicOutputTest.txt";
     QFile mFile(fileName);
     if(!mFile.open(QFile::Append | QFile::Text)){
     }
     QTextStream out(&mFile);
     out  << (test.toHex()) <<endl;
-    mFile.close();
+    mFile.close();*/
     m_dashboard->setSerialStat(test.toHex());
     //qDebug()<< "Arduino"+m_readData;
     Arduino::assemblemessage(m_readData);
