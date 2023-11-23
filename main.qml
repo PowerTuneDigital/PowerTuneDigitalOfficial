@@ -142,7 +142,7 @@ ApplicationWindow {
         anchors.centerIn: parent
 
         onClicked: {
-            console.log("apply Fixes")
+          //  console.log("apply Fixes")
             btnfinaliseupdate.text = "Please wait for reboot..."
         }
     }

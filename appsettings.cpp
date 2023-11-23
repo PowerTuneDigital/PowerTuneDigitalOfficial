@@ -124,8 +124,18 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
 void AppSettings::externalspeedconnectionstatus(int connected)
 {
      setValue("externalspeedconnect", connected);
+     m_dashboard->setexternalspeedconnectionrequest(connected);
+
 
 }
+void AppSettings::externalspeedport(const QString &port)
+{
+     setValue("externalspeedport", port);
+     m_dashboard->setexternalspeedport(port);
+   //  qDebug() << "externalspeedport" <<getValue("externalspeedport").toString();
+
+}
+
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn", waterwarn);
@@ -337,7 +347,7 @@ void AppSettings::writeLanguage(const int Language)
 {
     qDebug() << "Language :" <<Language;
     setValue("Language", Language);
-    m_dashboard->setLanguage(Language);
+    m_dashboard->setlanguage(Language);
 }
 void AppSettings::readandApplySettings()
 {
@@ -399,6 +409,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setExternalrpm(getValue("ExternalRPM").toInt());
     //getValue("externalspeedconnect")
     m_dashboard->setexternalspeedconnectionrequest(getValue("externalspeedconnect").toInt());
+    m_dashboard->setexternalspeedport(getValue("externalspeedport").toString());
     qDebug() << "current speedsettings" <<m_dashboard->externalspeedconnectionrequest();
 }
 

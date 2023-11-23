@@ -4,51 +4,36 @@ import Qt.labs.settings 1.0
 import "qrc:/Translator.js" as Translator
 
 Rectangle {
-    id: calcs
+    id: windowbackround
     anchors.fill: parent
     color: "grey"
-    Item {
-        id: speedSettings
-        Settings {
-            property alias connectArdAtStartup: connectButtonArd.enabled
-        }
-    }
-    Item {
-        //Function to connect and disconnect GPS
-        id: autoconnectArd
-        function auto() {
 
-            // if (gpsswitch.checked == true)GPS.startGPScom(serialNameGPS.currentText,serialGPSBaud.currentText);
-            if (connectButtonArd.enabled == false) {
-                Arduino.openConnection(serialNameArd.currentText, "9600")
-                disconnectButtonArd.enabled = true
-            }
-            //if (connectButtonGPS.enabled == true)GPS.openConnection(serialNameGPS.currentText,"9600"),disconnectButtonGPS.enabled=false;
-            //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
-        }
-    }
+
     Item {
         id: speedcorretionsettings
         Settings {
             property alias speedpercentsetting: speedpercent.text
             property alias pulsespermilesetting: pulsespermile.text
+            property alias usbvrsensorcheckstate: usbvrcheckbox.checkState
+            property alias connectbuttonenabled: connectButtonArd.enabled
+            property alias disconnectbuttonenabled: disconnectButtonArd.enabled
         }
     }
     Grid {
         rows: 5
         columns: 2
         id: grid
-        spacing: calcs.height / 150
+        spacing: windowbackround.height / 150
         Text {
-            text: Translator.translate("SpeedCorrection", Dashboard.Language)
-            font.pixelSize: calcs.width / 55
+            text: Translator.translate("SpeedCorrection", Dashboard.language)
+            font.pixelSize: windowbackround.width / 55
             color: "white"
         }
         TextField {
             id: speedpercent
-            width: calcs.width / 5
-            height: calcs.height / 15
-            font.pixelSize: calcs.width / 55
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
             text: "100"
             inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
             Component.onCompleted: {
@@ -58,15 +43,28 @@ Rectangle {
                                    speedpercent.text / 100, pulsespermile.text)
         }
         Text {
-            text: "Pulses Per Mile"
-            font.pixelSize: calcs.width / 55
+            text: "USB VR Speed Sensor"
+            font.pixelSize: windowbackround.width / 55
             color: "white"
+        }
+        CheckBox {
+            id: usbvrcheckbox
+            width: windowbackround.width / 14
+            height: windowbackround.height /15
+            //onCheckStateChanged: inputs.setInputs();
+            }
+        Text {
+            text: "Pulses Per Mile"
+            font.pixelSize: windowbackround.width / 55
+            color: "white"
+            visible: usbvrcheckbox.checked
         }
         TextField {
             id: pulsespermile
-            width: calcs.width / 5
-            height: calcs.height / 15
-            font.pixelSize: calcs.width / 55
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
+            visible: usbvrcheckbox.checked
             text: "100000"
             inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
             Component.onCompleted: {
@@ -79,13 +77,15 @@ Rectangle {
             //periferal serial port box
             text: "External Speed Port:"
             color: "white"
-            font.pixelSize: calcs.width / 55
+            font.pixelSize: windowbackround.width / 55
+            visible: usbvrcheckbox.checked
         }
         ComboBox {
             id: serialNameArd
-            width: calcs.width / 5
-            height: calcs.height / 15
-            font.pixelSize: calcs.width / 55
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
+            visible: usbvrcheckbox.checked
             model: Connect.portsNames
             // visible: { (gpsswitch.checked == true ) ? true:false; }
             delegate: ItemDelegate {
@@ -102,35 +102,38 @@ Rectangle {
         }
         Text {
             text: ""
-            font.pixelSize: calcs.width / 55
+            font.pixelSize: windowbackround.width / 55
             color: "white"
         }
         Button {
             id: connectButtonArd
+            visible: usbvrcheckbox.checked
             text: "Speed Connect"
-            width: calcs.width / 5
-            height: calcs.height / 15
-            font.pixelSize: calcs.width / 55
-            Component.onCompleted: autoconnectArd.auto()
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
+            //Component.onCompleted: autoconnectArd.auto()
             onClicked: {
                 AppSettings.externalspeedconnectionstatus(1)
+                AppSettings.externalspeedport(serialNameArd.textAt(serialNameArd.currentIndex))
+                Arduino.openConnection(Dashboard.externalspeedport, "9600")
                 connectButtonArd.enabled = false
                 disconnectButtonArd.enabled = true
-                autoconnectArd.auto()
             }
         }
         Button {
             id: disconnectButtonArd
+            visible: usbvrcheckbox.checked
             text: "Speed Disconnect"
-            width: calcs.width / 5
-            height: calcs.height / 15
-            font.pixelSize: calcs.width / 55
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
             enabled: false
             onClicked: {
                 AppSettings.externalspeedconnectionstatus(0)
+                Arduino.closeConnection()
                 connectButtonArd.enabled = true
                 disconnectButtonArd.enabled = false
-                Arduino.closeConnection()
             }
         }
     }

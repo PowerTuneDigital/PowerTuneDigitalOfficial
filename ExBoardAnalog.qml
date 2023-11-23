@@ -310,7 +310,7 @@ Rectangle {
         }
         Text {
 
-            text: Translator.translate("Damping", Dashboard.Language)
+            text: Translator.translate("Damping", Dashboard.language)
             font.pixelSize: main.width / 55;
             color:"white"
         }
@@ -479,7 +479,7 @@ Rectangle {
         }
 
     Text {
-        text: "RPMCAN " +Translator.translate("Version", Dashboard.Language)
+        text: "RPMCAN " +Translator.translate("Version", Dashboard.language)
         font.pixelSize: main.width / 55;
         visible: { (rpmcheckbox.checked == true) ? true : false; }
         color:"white"
@@ -503,7 +503,7 @@ Rectangle {
         }
         }
     Text {
-        text: Translator.translate("Cylinders", Dashboard.Language)
+        text: Translator.translate("Cylinders", Dashboard.language)
         font.pixelSize: main.width / 55;
         visible: { (rpmcheckbox.checked == true) ? true : false; }
         color:"white"
@@ -550,7 +550,7 @@ Rectangle {
         anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.right: parent.right
-        text: Translator.translate("Voltage divider jumpers", Dashboard.Language)
+        text: Translator.translate("Voltage divider jumpers", Dashboard.language)
         font.pixelSize: main.width / 55;color:"white"}
     Grid {
         id:inputgrid2
@@ -561,7 +561,7 @@ Rectangle {
         rows:10
         columns: 9
         spacing: 3
-        Text { text: Translator.translate("Temp In.", Dashboard.Language)
+        Text { text: Translator.translate("Temp In.", Dashboard.language)
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "T1 (°C)"
             font.pixelSize: main.width / 55;color:"white"}

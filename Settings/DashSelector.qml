@@ -110,7 +110,7 @@ Rectangle {
         columns: 1
         anchors.centerIn: parent
         Text {
-            text: Translator.translate("ActiveDashboards", Dashboard.Language)
+            text: Translator.translate("ActiveDashboards", Dashboard.language)
 
             font.pixelSize: dashselector.width / 55
         }

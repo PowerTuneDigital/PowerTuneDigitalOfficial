@@ -37,7 +37,7 @@ Rectangle {
     Connections {
         target: Dashboard
         onEcuChanged: {
-            console.log("Loadersource changing")
+            //console.log("Loadersource changing")
             loadersource()
 
         }

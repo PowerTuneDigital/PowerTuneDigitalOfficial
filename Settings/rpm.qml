@@ -28,22 +28,22 @@ Rectangle {
             color: "white"
         }
         Text {
-            text: Translator.translate("Shift Light", Dashboard.Language) + " " + Translator.translate("Stage", Dashboard.Language) + " 1"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 1"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: Translator.translate("Shift Light", Dashboard.Language) + " " + Translator.translate("Stage", Dashboard.Language) + " 2"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 2"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: Translator.translate("Shift Light", Dashboard.Language) + " " + Translator.translate("Stage", Dashboard.Language) + " 3"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 3"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: Translator.translate("Shift Light", Dashboard.Language) + " " + Translator.translate("Stage", Dashboard.Language) + " 4"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 4"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }

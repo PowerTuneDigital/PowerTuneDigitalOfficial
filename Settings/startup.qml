@@ -26,14 +26,14 @@ Rectangle {
         columns: 2
         spacing: parent.width / 150
         Text {
-            text: Translator.translate("Apply settings", Dashboard.Language)
+            text: Translator.translate("Apply settings", Dashboard.language)
             font.pixelSize: daemons.width / 55
         }
         Button {
             id: apply
             width: daemons.width / 3
             height: daemons.height / 15
-            text: Translator.translate("Apply", Dashboard.Language)
+            text: Translator.translate("Apply", Dashboard.language)
             onClicked: {
                 Connect.daemonstartup(daemonselect.currentIndex)
                 Connect.canbitratesetup(canbitrateselect.currentIndex)
@@ -42,7 +42,7 @@ Rectangle {
         }
 
         Text {
-            text: Translator.translate("Startup daemon", Dashboard.Language)
+            text: Translator.translate("Startup daemon", Dashboard.language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -65,7 +65,7 @@ Rectangle {
             //Component.onCompleted: tabView.currentIndex = 0;
         }
         Text {
-            text: Translator.translate("Can Bitrate", Dashboard.Language)
+            text: Translator.translate("Can Bitrate", Dashboard.language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -154,7 +154,7 @@ Rectangle {
             }
         }
         Text {
-            text: Translator.translate("Main Speed Source", Dashboard.Language)
+            text: Translator.translate("Main Speed Source", Dashboard.language)
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -181,7 +181,7 @@ Rectangle {
     }
     Text {
         id: warningtext
-        text:Translator.translate("Warningtext", Dashboard.Language)
+        text:Translator.translate("Warningtext", Dashboard.language)
         font.pixelSize: daemons.width / 55
         font.bold: true
         width: parent.width / 1.5

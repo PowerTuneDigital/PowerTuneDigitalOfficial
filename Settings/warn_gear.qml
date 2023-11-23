@@ -33,27 +33,27 @@ Rectangle {
             columns: 5
             spacing: warningsettings.height / 150
             Text {
-                text: Translator.translate("WaterTemp", Dashboard.Language)
+                text: Translator.translate("WaterTemp", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Boost", Dashboard.Language)
+                text: Translator.translate("Boost", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Revs", Dashboard.Language)
+                text: Translator.translate("Revs", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Knock", Dashboard.Language)
+                text: Translator.translate("Knock", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Lamdamultiply", Dashboard.Language)
+                text: Translator.translate("Lamdamultiply", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
@@ -120,37 +120,37 @@ Rectangle {
 
             Text {
                 id: switchtext
-                text: Translator.translate("GearCalculation", Dashboard.Language)
+                text: Translator.translate("GearCalculation", Dashboard.language)
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 1"
+                text: Translator.translate("Gear", Dashboard.language)+" 1"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 2"
+                text: Translator.translate("Gear", Dashboard.language)+" 2"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 3"
+                text: Translator.translate("Gear", Dashboard.language)+" 3"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 4"
+                text: Translator.translate("Gear", Dashboard.language)+" 4"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 5"
+                text: Translator.translate("Gear", Dashboard.language)+" 5"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.Language)+" 6"
+                text: Translator.translate("Gear", Dashboard.language)+" 6"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
@@ -163,21 +163,21 @@ Rectangle {
                 Component.onCompleted: if (gearcalcselect.checked == true) {
                                            gercalactive = 1
                                            applysettings.start()
-                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.Language) +" " +Translator.translate("ON", Dashboard.Language)
+                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.language) +" " +Translator.translate("ON", Dashboard.language)
                                        } else {
                                            gercalactive = 0
                                            applysettings.start()
-                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.Language) + " " +Translator.translate("OFF", Dashboard.Language)
+                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.language) + " " +Translator.translate("OFF", Dashboard.language)
                                        }
 
                 onCheckedChanged: if (gearcalcselect.checked == true) {
                                       gercalactive = 1
                                       applysettings.start()
-                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.Language) +" " +Translator.translate("ON", Dashboard.Language)
+                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.language) +" " +Translator.translate("ON", Dashboard.language)
                                   } else {
                                       gercalactive = 0
                                       applysettings.start()
-                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.Language) + " " +Translator.translate("OFF", Dashboard.Language)
+                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.language) + " " +Translator.translate("OFF", Dashboard.language)
                                   }
             }
 

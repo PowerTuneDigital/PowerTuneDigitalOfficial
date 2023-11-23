@@ -114,7 +114,7 @@ Item {
                 columns: 2
                 rowSpacing :5
             Text{
-                text: Translator.translate("Image", Dashboard.Language) + " " + Translator.translate("OFF", Dashboard.Language)
+                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("OFF", Dashboard.language)
                 font.pixelSize: 12
 
             }
@@ -142,7 +142,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Image", Dashboard.Language) + " " + Translator.translate("ON", Dashboard.Language)
+                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("ON", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -171,7 +171,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Source", Dashboard.Language)
+                text: Translator.translate("Source", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -185,7 +185,7 @@ Item {
                 onCurrentIndexChanged: bind();
             }
             Text{
-                text: Translator.translate("Trigger", Dashboard.Language)
+                text: Translator.translate("Trigger", Dashboard.language)
                 font.pixelSize: 12
             }
             TextField {
@@ -197,7 +197,7 @@ Item {
                 font.pixelSize: 12
             }
          Text{
-                text: Translator.translate("Trigger", Dashboard.Language) +" " +Translator.translate("OFF", Dashboard.Language)
+                text: Translator.translate("Trigger", Dashboard.language) +" " +Translator.translate("OFF", Dashboard.language)
                 font.pixelSize: 12
             }
             TextField {
@@ -212,13 +212,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Delete image", Dashboard.Language)
+                text: Translator.translate("Delete image", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Close", Dashboard.Language)
+                text: Translator.translate("Close", Dashboard.language)
                 onClicked: {
                     triggervalue = triggeronvalue.text;
                     triggeroffvalue = triggerofffvalue.text;

@@ -108,7 +108,7 @@ Item {
                 columns: 2
                 spacing :5
             Text{
-                text: Translator.translate("Image off", Dashboard.Language)
+                text: Translator.translate("Image off", Dashboard.language)
                 font.pixelSize: 12
 
             }
@@ -136,7 +136,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Image on", Dashboard.Language)
+                text: Translator.translate("Image on", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -165,7 +165,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Source", Dashboard.Language)
+                text: Translator.translate("Source", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -179,7 +179,7 @@ Item {
                 onCurrentIndexChanged: bind();
             }
             Text{
-                text: Translator.translate("Trigger", Dashboard.Language)
+                text: Translator.translate("Trigger", Dashboard.language)
                 font.pixelSize: 12
             }
             TextField {
@@ -193,13 +193,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Delete image", Dashboard.Language)
+                text: Translator.translate("Delete image", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Close", Dashboard.Language)
+                text: Translator.translate("Close", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: {
                     triggervalue = triggeronvalue.text;

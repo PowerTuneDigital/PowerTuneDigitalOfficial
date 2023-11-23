@@ -13,7 +13,7 @@ Rectangle {
     property var gpscom
     property int hexstring
     property int hexstring2
-    property int currentLanguage: Dashboard.Language
+    property int currentLanguage: Dashboard.language
     Item {
         id: powerTuneSettings
         Settings {
@@ -94,6 +94,13 @@ Rectangle {
                 }
                 ;
             }
+/*
+            onExternalspeedconnectionrequestChanged:
+            {
+                autoconnectArd.auto()
+
+            }
+*/
 
         }
 
@@ -101,6 +108,7 @@ Rectangle {
             x: windowbackround.width / 150
             y: windowbackround.width / 150
             spacing: windowbackround.width / 150
+
             Grid {
                 anchors.top: parent.top
                 anchors.topMargin: parent.height / 20
@@ -109,7 +117,7 @@ Rectangle {
                 spacing: windowbackround.width / 150
                 // [0]
                 Text {
-                    text: Translator.translate("ECU Serial Port", Dashboard.Language)
+                    text: Translator.translate("ECU Serial Port", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     visible: {
@@ -146,7 +154,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GPS Port", Dashboard.Language)
+                    text: Translator.translate("GPS Port", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -170,8 +178,9 @@ Rectangle {
                         hoverEnabled: serialNameGPS.hoverEnabled
                     }
                 }
+
                 Text {
-                    text: Translator.translate("Speed units", Dashboard.Language)
+                    text: Translator.translate("Speed units", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -180,7 +189,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("Metric", Dashboard.Language), Translator.translate("Imperial", Dashboard.Language)]
+                    model: [Translator.translate("Metric", Dashboard.language), Translator.translate("Imperial", Dashboard.language)]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setSpeedUnits(currentIndex)
@@ -202,7 +211,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Temp units", Dashboard.Language)
+                    text: Translator.translate("Temp units", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -211,7 +220,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("Metric", Dashboard.Language), Translator.translate("Imperial", Dashboard.Language)]
+                    model: [Translator.translate("Metric", Dashboard.language), Translator.translate("Imperial", Dashboard.language)]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setUnits(currentIndex)
@@ -233,7 +242,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Pressure units", Dashboard.Language)
+                    text: Translator.translate("Pressure units", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -262,7 +271,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("ECU Selection", Dashboard.Language)
+                    text: Translator.translate("ECU Selection", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -294,7 +303,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GoPro Variant", Dashboard.Language)
+                    text: Translator.translate("GoPro Variant", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -316,7 +325,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GoPro Pasword", Dashboard.Language)
+                    text: Translator.translate("GoPro Pasword", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -325,7 +334,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    placeholderText: qsTr("GoPro Password")
+                    placeholderText: Translator.translate("GoPro Pasword", Dashboard.language)
                     //InputMethod:Qt.
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
                                       | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
@@ -334,7 +343,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Logfile name", Dashboard.Language)
+                    text: Translator.translate("Logfile name", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -349,7 +358,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: Translator.translate("Odo", Dashboard.Language)
+                    text: Translator.translate("Odo", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -363,7 +372,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: Translator.translate("Trip", Dashboard.Language)
+                    text: Translator.translate("Trip", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -381,7 +390,7 @@ Rectangle {
                     id: weighttext
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
-                    //text: Translator.translate("Weight", Dashboard.Language)
+                    //text: Translator.translate("Weight", Dashboard.language)
                 }
                 TextField {
                     id: weight
@@ -391,7 +400,7 @@ Rectangle {
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                 }
                 Text {
-                    text: Translator.translate("Serial Status", Dashboard.Language)
+                    text: Translator.translate("Serial Status", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -403,17 +412,20 @@ Rectangle {
                 }
 
             }
-
             Grid {
-                rows: 13
-                columns: 2
-                spacing: windowbackround.width / 150
+                rows: 12
+                columns: 1
                 anchors.top: parent.top
                 anchors.topMargin: parent.height / 20
+            Grid {
+                rows: 8
+                columns: 2
+                spacing: windowbackround.width / 150
+
                 id: middlegrid
                 Button {
                     id: connectButton
-                    text: Translator.translate("Connect", Dashboard.Language)
+                    text: Translator.translate("Connect", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -427,7 +439,7 @@ Rectangle {
                 }
                 Button {
                     id: disconnectButton
-                    text: Translator.translate("Disconnect", Dashboard.Language)
+                    text: Translator.translate("Disconnect", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -442,7 +454,7 @@ Rectangle {
                 }
                 Button {
                     id: connectButtonGPS
-                    text: Translator.translate("GPS Connect", Dashboard.Language)
+                    text: Translator.translate("GPS Connect", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -458,7 +470,7 @@ Rectangle {
                 }
                 Button {
                     id: disconnectButtonGPS
-                    text: Translator.translate("GPS Disconnect", Dashboard.Language)
+                    text: Translator.translate("GPS Disconnect", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -472,7 +484,7 @@ Rectangle {
 
                 Button {
                     id: resettrip
-                    text: Translator.translate("Trip Reset", Dashboard.Language)
+                    text: Translator.translate("Trip Reset", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -493,7 +505,7 @@ Rectangle {
         }
 */
                 Button {
-                    text: Translator.translate("Quit", Dashboard.Language)
+                    text: Translator.translate("Quit", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -502,7 +514,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: Translator.translate("Shutdown", Dashboard.Language)
+                    text: Translator.translate("Shutdown", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -511,7 +523,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: Translator.translate("Reboot", Dashboard.Language)
+                    text: Translator.translate("Reboot", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -522,16 +534,18 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("RPM Smoothing", Dashboard.Language)//"RPM Smoothing :"
+                    text: Translator.translate("RPM Smoothing", Dashboard.language)//"RPM Smoothing :"
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
+                    visible: Dashboard.ecu == "2"
                 }
                 ComboBox {
                     id: smoothrpm
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("OFF", Dashboard.Language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    visible: Dashboard.ecu == "2"
+                    model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     //property bool initialized: true
                     onCurrentIndexChanged: {
                         Dashboard.setsmoothrpm(smoothrpm.currentIndex)
@@ -552,16 +566,18 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("Speed Smoothing", Dashboard.Language)
+                    text: Translator.translate("Speed Smoothing", Dashboard.language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
+                    visible: Dashboard.ecu == "2"
                 }
                 ComboBox {
                     id: smoothspeed
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("OFF", Dashboard.Language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    visible: Dashboard.ecu == "2"
                     property bool initialized: true
                     onCurrentIndexChanged: {
                         Dashboard.setsmoothspeed(smoothspeed.currentIndex)
@@ -585,7 +601,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: qsTr("Data Logger")
+                    text: Translator.translate("Data Logger", Dashboard.language)
                     Component.onCompleted: {
                         logger.datalogger()
                     }
@@ -597,7 +613,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: qsTr("GoPro rec")
+                    text: Translator.translate("GoPro rec", Dashboard.language)
                     onCheckedChanged: {
                         transferSettings.sendSettings(), goproRec.rec()
                     }
@@ -607,24 +623,110 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: qsTr("NMEA Log.")
+                    text: Translator.translate("NMEA Logger", Dashboard.language)
                     onCheckedChanged: {
                         Dashboard.setNMEAlog(nmeaLog.checked)
                     }
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.98h " + Dashboard.Platform
+                    text: " V 1.98i " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
-
-
-
-                //END
             }
             Grid {
-                rows: 15
+                visible: {
+                    (ecuSelect.currentIndex != "1") ? false : true
+                }
+                rows: 3
+                columns: 4
+                spacing: windowbackround.width / 150
+
+                Text {
+                    text: ""
+                    font.pixelSize: windowbackround.width / 55
+                }
+                Text {
+                    text: "0V"
+                    font.pixelSize: windowbackround.width / 55
+                }
+                Text {
+                    text: "5V"
+                    font.pixelSize: windowbackround.width / 55
+                }
+                Text {
+                    text: "Name"
+                    font.pixelSize: windowbackround.width / 55
+                }
+                Text {
+                    text: "    "
+                    font.pixelSize: windowbackround.width / 55
+                }
+                TextField {
+                    id: an1V0
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
+                    inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    placeholderText: qsTr("9")
+                }
+                TextField {
+                    id: an2V5
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    // validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
+                    inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    placeholderText: qsTr("16")
+                }
+
+                TextField {
+                    id: unitaux1
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    placeholderText: qsTr("AFR")
+                }
+                Text {
+                    text: "AN1-2"
+                    font.pixelSize: windowbackround.width / 55
+                }
+                TextField {
+                    id: an3V0
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
+                    inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    placeholderText: qsTr("0")
+                }
+                TextField {
+                    id: an4V5
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
+                    inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    placeholderText: qsTr("5")
+                }
+                TextField {
+                    id: unitaux2
+                    width: windowbackround.width / 10
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    placeholderText: qsTr("AFR")
+                }
+                Text {
+                    text: "AN3-4"
+                    font.pixelSize: windowbackround.width / 55
+                }
+            }
+        }
+            Grid {
+                id: rightgrid
+                rows: 12
                 columns: 1
                 spacing: windowbackround.width / 150
                 anchors.top: parent.top
@@ -636,12 +738,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("base adress", Dashboard.Language)
+                    text: Translator.translate("base adress", Dashboard.language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("(decimal)", Dashboard.Language)
+                    text: Translator.translate("(decimal)", Dashboard.language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -671,12 +773,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("base adress", Dashboard.Language)
+                    text: Translator.translate("base adress", Dashboard.language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("(decimal)", Dashboard.Language)
+                    text: Translator.translate("(decimal)", Dashboard.language)
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -702,7 +804,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("Language", Dashboard.Language)
+                    text: Translator.translate("Language", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -716,9 +818,9 @@ Rectangle {
 
                     model: [
                         {name: "English", flag: "qrc:/graphics/Flags/us.png"},
-                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"}
+                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
+                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"}
                         //For Later Use
-                        //{name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
                         //{name: "Español", flag: "qrc:/graphics/Flags/es.png"},
                         //{name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
                         //{name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
@@ -776,97 +878,6 @@ Rectangle {
 
             }
         }
-
-        Grid {
-            visible: {
-                (ecuSelect.currentIndex != "1") ? false : true
-            }
-            rows: 3
-            columns: 4
-            spacing: windowbackround.width / 150
-            x: 350
-            y: 290
-
-            Text {
-                text: ""
-                font.pixelSize: windowbackround.width / 55
-            }
-            Text {
-                text: "0V"
-                font.pixelSize: windowbackround.width / 55
-            }
-            Text {
-                text: "5V"
-                font.pixelSize: windowbackround.width / 55
-            }
-            Text {
-                text: "Name"
-                font.pixelSize: windowbackround.width / 55
-            }
-            Text {
-                text: "    "
-                font.pixelSize: windowbackround.width / 55
-            }
-            TextField {
-                id: an1V0
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-                placeholderText: qsTr("9")
-            }
-            TextField {
-                id: an2V5
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                // validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-                placeholderText: qsTr("16")
-            }
-
-            TextField {
-                id: unitaux1
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                placeholderText: qsTr("AFR")
-            }
-            Text {
-                text: "AN1-2"
-                font.pixelSize: windowbackround.width / 55
-            }
-            TextField {
-                id: an3V0
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-                placeholderText: qsTr("0")
-            }
-            TextField {
-                id: an4V5
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
-                inputMethodHints: Qt.ImhFormattedNumbersOnly
-                placeholderText: qsTr("5")
-            }
-            TextField {
-                id: unitaux2
-                width: windowbackround.width / 10
-                height: windowbackround.height / 15
-                font.pixelSize: windowbackround.width / 55
-                placeholderText: qsTr("AFR")
-            }
-            Text {
-                text: "AN3-4"
-                font.pixelSize: windowbackround.width / 55
-            }
-        }
     }
 
     //Functions
@@ -899,9 +910,9 @@ Rectangle {
         id: changeweighttext
         function changetext() {
             if (unitSelect.currentIndex == 0)
-                weighttext.text = Translator.translate("Weight", Dashboard.Language) +" kg"
+                weighttext.text = Translator.translate("Weight", Dashboard.language) +" kg"
             if (unitSelect.currentIndex == 1)
-                weighttext.text = Translator.translate("Weight", Dashboard.Language) +" lbs"
+                weighttext.text = Translator.translate("Weight", Dashboard.language) +" lbs"
         }
     }
     Item {
@@ -979,5 +990,14 @@ Rectangle {
         }
     }
 
-
+    Item {
+        //Function to connect and disconnect External VR Sensor Speed modulk
+        id: autoconnectArd
+        Component.onCompleted: autoconnectArd.auto()
+        function auto() {
+            if (Dashboard.externalspeedconnectionrequest == 1) {
+                Arduino.openConnection(Dashboard.externalspeedport, "9600")
+            }
+        }
+    }
 }

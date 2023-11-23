@@ -79,7 +79,7 @@ Rectangle {
         Menu {
             id: popupmenu
             MenuItem {
-                text: Translator.translate("max value", Dashboard.Language)
+                text: Translator.translate("max value", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: {
                     bargaugeMax.visible = true;
@@ -87,7 +87,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("min value", Dashboard.Language)
+                text: Translator.translate("min value", Dashboard.language)
                 font.pixelSize: 15
                 onClicked:    {
                     txtBarMinValue.visible = true;
@@ -95,7 +95,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("Set decimal", Dashboard.Language)
+                text: Translator.translate("Set decimal", Dashboard.language)
                 font.pixelSize: 15
                 onClicked:    {
                     cbx_decimalplaces.visible = true;
@@ -121,7 +121,7 @@ Rectangle {
             }
             */
             MenuItem {
-                text: Translator.translate("Change title", Dashboard.Language)
+                text: Translator.translate("Change title", Dashboard.language)
                 font.pixelSize: 15
                 onClicked:    {
                     txtgaugenamechange.visible = true;
@@ -129,7 +129,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("remove gauge", Dashboard.Language)
+                text: Translator.translate("remove gauge", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: gauge.destroy()
             }
@@ -153,7 +153,7 @@ Rectangle {
         Button {
             id: btnMaxValue
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -179,7 +179,7 @@ Rectangle {
         Button {
             id: btnBarMinValue
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -202,7 +202,7 @@ Rectangle {
         Button {
             id: btndecimalplaces
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -229,7 +229,7 @@ Rectangle {
         Button {
             id: btnminValue
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -256,7 +256,7 @@ Rectangle {
         Button {
             id: btnmaxValue
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -283,7 +283,7 @@ Rectangle {
         Button {
             id: btngaugenamechange
             x: 119
-            text: Translator.translate("OK", Dashboard.Language)
+            text: Translator.translate("OK", Dashboard.language)
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right

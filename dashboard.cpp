@@ -1,4 +1,4 @@
-#include <dashboard.h>
+#include "dashboard.h"
 #include <QStringList>
 #include <QDebug>
 #include <QVector>
@@ -607,8 +607,9 @@ DashBoard::DashBoard(QObject *parent)
     , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
     , m_Externalrpm(0)
-    , m_Language(0)
-    , m_externalspeedconnectionrequest(0)
+    , m_language(0)
+    , m_externalspeedconnectionrequest()
+    , m_externalspeedport()
 
 {
 
@@ -966,13 +967,13 @@ void DashBoard::setExternalrpm(const int &Externalrpm)
     m_Externalrpm = Externalrpm;
     emit ExternalrpmChanged(Externalrpm);
 }
-void DashBoard::setLanguage(const int &Language)
+void DashBoard::setlanguage(const int &language)
 {
-    if (m_Language == Language)
+    if (m_language == language)
         return;
-    m_Language = Language;
-    emit LanguageChanged(Language);
-    qDebug() <<Language ;
+    m_language = language;
+    emit languageChanged(language);
+    qDebug() <<language ;
 }
 void DashBoard::setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest)
 {
@@ -981,6 +982,14 @@ void DashBoard::setexternalspeedconnectionrequest(const int &externalspeedconnec
     m_externalspeedconnectionrequest = externalspeedconnectionrequest;
     emit externalspeedconnectionrequestChanged(externalspeedconnectionrequest);
 }
+void DashBoard::setexternalspeedport(const QString &externalspeedport)
+{
+    if (m_externalspeedport == externalspeedport)
+        return;
+    m_externalspeedport = externalspeedport;
+    emit externalspeedportChanged(externalspeedport);
+}
+
 
 void DashBoard::setIntakepress(const qreal &Intakepress)
 {
@@ -5866,6 +5875,6 @@ qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
 qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
 int DashBoard::Externalrpm() const {return m_Externalrpm;}
-int DashBoard::Language() const {return m_Language;}
+int DashBoard::language() const {return m_language;}
 int DashBoard::externalspeedconnectionrequest() const {return m_externalspeedconnectionrequest;}
-
+QString DashBoard::externalspeedport() const {return m_externalspeedport;}
