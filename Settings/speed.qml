@@ -101,7 +101,6 @@ Rectangle {
             font.pixelSize: windowbackround.width / 55
             visible: usbvrcheckbox.checked
             model: Connect.portsNames
-            // visible: { (gpsswitch.checked == true ) ? true:false; }
             delegate: ItemDelegate {
                 width: serialNameArd.width
                 text: serialNameArd.textRole ? (Array.isArray(
@@ -122,11 +121,10 @@ Rectangle {
         Button {
             id: connectButtonArd
             visible: usbvrcheckbox.checked
-            text: "Speed Connect"
+            text: Translator.translate("Connect", Dashboard.language)
             width: windowbackround.width / 5
             height: windowbackround.height / 15
             font.pixelSize: windowbackround.width / 55
-            //Component.onCompleted: autoconnectArd.auto()
             onClicked: {
                 AppSettings.externalspeedconnectionstatus(1)
                 AppSettings.externalspeedport(serialNameArd.textAt(serialNameArd.currentIndex))
@@ -138,7 +136,7 @@ Rectangle {
         Button {
             id: disconnectButtonArd
             visible: usbvrcheckbox.checked
-            text: "Speed Disconnect"
+            text: Translator.translate("Disconnect", Dashboard.language)
             width: windowbackround.width / 5
             height: windowbackround.height / 15
             font.pixelSize: windowbackround.width / 55
