@@ -37,7 +37,6 @@ Rectangle {
             onClicked: {
                 Connect.daemonstartup(daemonselect.currentIndex)
                 Connect.canbitratesetup(canbitrateselect.currentIndex)
-                Dashboard.setLanguage(1)
             }
         }
 
