@@ -104,10 +104,10 @@ Quick1.TabView {
 
     function setregtabtitle() {
         if (Dashboard.ecu == "0") {
-            regtab.title = Translator.translate("Analogtab", Dashboard.language)
+            regtab.title = Translator.translate("Analog", Dashboard.language)
         }
         if (Dashboard.ecu == "1") {
-            regtab.title = Translator.translate("Analogtab", Dashboard.language)
+            regtab.title = Translator.translate("Analog", Dashboard.language)
         }
         if (Dashboard.ecu == "2") {
             regtab.title = "Consult"

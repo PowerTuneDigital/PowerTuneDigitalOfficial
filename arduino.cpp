@@ -23,7 +23,7 @@ void Arduino::initSerialPort()
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
             this, &Arduino::handleError);
     m_readData.clear();
-    qDebug("Serial port set for arduino");
+   // qDebug("Serial port set for arduino");
 }
 
 //function for flushing all serial buffers
@@ -36,7 +36,7 @@ void Arduino::clear()
 //function to open serial port
 void Arduino::openConnection(const QString &portName)
 {
-    qDebug()<<"open Arduino  "+portName;
+   // qDebug()<<"open Arduino  "+portName;
 
     initSerialPort();
     m_serialport->setPortName(portName);
@@ -49,11 +49,11 @@ void Arduino::openConnection(const QString &portName)
     if(m_serialport->open(QIODevice::ReadWrite) == false)
     {
         Arduino::closeConnection();
-        qDebug("no arduino");
+     //   qDebug("no arduino");
     }
     else
     {
-        qDebug("arduino connected");
+      //  qDebug("arduino connected");
 
     }
 
@@ -139,10 +139,6 @@ void Arduino::assemblemessage(const QByteArray &buffer)
         }
 
 
-
     }
-
-
-
 
 }
