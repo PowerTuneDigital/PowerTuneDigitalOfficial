@@ -51,13 +51,27 @@ Rectangle {
             id: usbvrcheckbox
             width: windowbackround.width / 14
             height: windowbackround.height /15
-            //onCheckStateChanged: inputs.setInputs();
+            onCheckStateChanged: {
+
+                if (usbvrcheckbox.checkState == false)
+                {
+                    if (Dashboard.externalspeedconnectionrequest ==1)
+                    {
+                        Arduino.closeConnection()
+                    }
+                    AppSettings.externalspeedconnectionstatus(0)
+                    connectButtonArd.enabled = true
+                    disconnectButtonArd.enabled = false
+                }
+
+               }
             }
         Text {
             text: "Pulses Per Mile"
             font.pixelSize: windowbackround.width / 55
             color: "white"
             visible: usbvrcheckbox.checked
+
         }
         TextField {
             id: pulsespermile
@@ -79,7 +93,7 @@ Rectangle {
             color: "white"
             font.pixelSize: windowbackround.width / 55
             visible: usbvrcheckbox.checked
-        }
+                    }
         ComboBox {
             id: serialNameArd
             width: windowbackround.width / 5
