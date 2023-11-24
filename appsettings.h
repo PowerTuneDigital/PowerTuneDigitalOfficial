@@ -33,8 +33,10 @@ public:
     Q_INVOKABLE void setLogging(const int &arg);
     Q_INVOKABLE void writeMainSettings();
     Q_INVOKABLE void writeSelectedDashSettings(int numberofdashes);
+    Q_INVOKABLE void externalspeedconnectionstatus(int connected);
+    Q_INVOKABLE void externalspeedport(const QString &port);
     Q_INVOKABLE void writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6);
-    Q_INVOKABLE void writeSpeedSettings(const qreal &Speedcorrection);
+    Q_INVOKABLE void writeSpeedSettings(const qreal &Speedcorrection,const qreal &Pulsespermile);
     Q_INVOKABLE void writeAnalogSettings(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105);
     Q_INVOKABLE void writeRPMSettings(const int &mxrpm,const int &shift1,const int &shift2,const int &shift3,const int &shift4);
     Q_INVOKABLE void writeEXBoardSettings(const qreal &EXA00,const qreal &EXA05,const qreal &EXA10,const qreal &EXA15,const qreal &EXA20,const qreal &EXA25,const qreal &EXA30,const qreal &EXA35,const qreal &EXA40,const qreal &EXA45,const qreal &EXA50,const qreal &EXA55,const qreal &EXA60,const qreal &EXA65,const qreal &EXA70,const qreal &EXA75,const int &steinhartcalc0on, const int &steinhartcalc1on, const int &steinhartcalc2on,const int &steinhartcalc3on, const int &steinhartcalc4on, const int &steinhartcalc5on,const int &AN0R3VAL,const int &AN0R4VAL,const int &AN1R3VAL,const int &AN1R4VAL,const int &AN2R3VAL,const int &AN2R4VAL,const int &AN3R3VAL,const int &AN3R4VAL,const int &AN4R3VAL,const int &AN4R4VAL,const int &AN5R3VAL,const int &AN5R4VAL);
@@ -46,6 +48,7 @@ public:
     Q_INVOKABLE void writebrightnessettings(const int &Brightness);
     Q_INVOKABLE void writeRPMFrequencySettings(const qreal &Divider,const int &DI1isRPM);
     Q_INVOKABLE void writeExternalrpm(const int checked);
+    Q_INVOKABLE void writeLanguage(const int Language);
     Q_INVOKABLE void writeStartupSettings(const int &ExternalSpeed);
     Q_INVOKABLE void readandApplySettings();
 

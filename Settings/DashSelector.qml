@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-
+import "qrc:/Translator.js" as Translator
 Rectangle {
 
     id: dashselector
@@ -110,7 +110,7 @@ Rectangle {
         columns: 1
         anchors.centerIn: parent
         Text {
-            text: "Active Dashboards"
+            text: Translator.translate("ActiveDashboards", Dashboard.language)
 
             font.pixelSize: dashselector.width / 55
         }

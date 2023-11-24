@@ -351,6 +351,7 @@ class DashBoard : public QObject
 
     Q_PROPERTY(int supportedReg READ supportedReg WRITE setsupportedReg NOTIFY supportedRegChanged)
     Q_PROPERTY(qreal speedpercent READ speedpercent WRITE setspeedpercent NOTIFY speedpercentChanged)
+    Q_PROPERTY(qreal pulsespermile READ pulsespermile WRITE setpulsespermile NOTIFY pulsespermileChanged)
 
     Q_PROPERTY(int maxRPM READ maxRPM WRITE setmaxRPM NOTIFY maxRPMChanged)
     Q_PROPERTY(int rpmStage1 READ rpmStage1 WRITE setrpmStage1 NOTIFY rpmStage1Changed)
@@ -393,7 +394,6 @@ class DashBoard : public QObject
 
     Q_PROPERTY(int ExternalSpeed READ ExternalSpeed WRITE setExternalSpeed NOTIFY ExternalSpeedChanged)
 
-    //laptimer
 
     Q_PROPERTY(QString laptime READ laptime WRITE setlaptime NOTIFY laptimeChanged)
     Q_PROPERTY(QString Lastlaptime READ Lastlaptime WRITE setLastlaptime NOTIFY LastlaptimeChanged)
@@ -605,6 +605,9 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal RPMFrequencyDividerDi1 READ RPMFrequencyDividerDi1 WRITE setRPMFrequencyDividerDi1 NOTIFY RPMFrequencyDividerDi1Changed)
     Q_PROPERTY(int DI1RPMEnabled READ DI1RPMEnabled WRITE setDI1RPMEnabled NOTIFY DI1RPMEnabledChanged)
     Q_PROPERTY(int Externalrpm READ Externalrpm WRITE setExternalrpm NOTIFY ExternalrpmChanged)
+    Q_PROPERTY(int language READ language WRITE setlanguage NOTIFY languageChanged)
+    Q_PROPERTY(int externalspeedconnectionrequest READ externalspeedconnectionrequest WRITE setexternalspeedconnectionrequest NOTIFY externalspeedconnectionrequestChanged)
+    Q_PROPERTY(QString externalspeedport READ externalspeedport WRITE setexternalspeedport NOTIFY externalspeedportChanged)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -701,6 +704,7 @@ class DashBoard : public QObject
     void setIntaketemp(const qreal &Intaketemp);
     void setKnock(const qreal &Knock);
     void setBatteryV(const qreal &BatteryV);
+    void setSerialSpeed(const qreal &speed);
     void setSpeed(const qreal &speed);
     void setIscvduty (const qreal &Iscvduty );
     void setO2volt(const qreal &O2volt);
@@ -1043,6 +1047,7 @@ class DashBoard : public QObject
 
     Q_INVOKABLE void setExternalSpeed(const int &ExternalSpeed);
     Q_INVOKABLE void setspeedpercent(const qreal &speedpercent);
+    Q_INVOKABLE void setpulsespermile(const qreal &pulsespermile);
 
     Q_INVOKABLE void setmaxRPM(const int &maxRPM);
     Q_INVOKABLE void setrpmStage1(const int &rpmStage1);
@@ -1275,6 +1280,9 @@ class DashBoard : public QObject
     void setRPMFrequencyDividerDi1(const qreal &RPMFrequencyDividerDi1);
     void setDI1RPMEnabled(const int &DI1RPMEnabled);
     void setExternalrpm(const int &Externalrpm);
+    void setlanguage(const int &language);
+    void setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest);
+    void setexternalspeedport(const QString &externalspeedport);
 
 
     qreal Odo() const;
@@ -1622,6 +1630,7 @@ class DashBoard : public QObject
 
     int supportedReg() const;
     qreal speedpercent() const;
+    qreal pulsespermile() const;
 
     int maxRPM() const;
     int rpmStage1() const;
@@ -1868,6 +1877,9 @@ class DashBoard : public QObject
     qreal RPMFrequencyDividerDi1()const;
     int DI1RPMEnabled()const;
     int Externalrpm()const;
+    int language()const;
+    int externalspeedconnectionrequest()const;
+    QString externalspeedport()const;
 
 signals:
 
@@ -2213,6 +2225,7 @@ signals:
     void musicpathChanged(QString musicpath);
     void supportedRegChanged(int supportedReg);
     void speedpercentChanged(qreal speedpercent);
+    void pulsespermileChanged(qreal pulsespermile);
     void maxRPMChanged (int maxRPM);
     void rpmStage1Changed(int rpmStage1);
     void rpmStage2Changed(int rpmStage2);
@@ -2247,6 +2260,7 @@ signals:
     void autogearChanged(QString autogear);
 
     void ExternalSpeedChanged(int ExternalSpeed);
+    void externalspeedport(QString externalspeedport);
 
     //laptimer
 
@@ -2456,6 +2470,10 @@ signals:
     void RPMFrequencyDividerDi1Changed(qreal RPMFrequencyDividerDi1);
     void DI1RPMEnabledChanged(int DI1RPMEnabled);
     void ExternalrpmChanged(int Externalrpm);
+    void languageChanged(int language);
+    void externalspeedconnectionrequestChanged(int externalspeedconnectionrequest);
+    void externalspeedportChanged(QString externalspeedport);
+
 
 private:
     // Odometer
@@ -2805,6 +2823,7 @@ private:
     QString m_musicpath;
     int m_supportedReg;
     qreal m_speedpercent;
+    qreal m_pulsespermile;
 
     int m_maxRPM;
     int m_rpmStage1;
@@ -3050,6 +3069,9 @@ private:
     qreal m_RPMFrequencyDividerDi1;
     int m_DI1RPMEnabled;
     int m_Externalrpm;
+    int m_language;
+    int m_externalspeedconnectionrequest;
+    QString m_externalspeedport;
 };
 
 #endif // DASHBOARD_H

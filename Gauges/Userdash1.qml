@@ -15,6 +15,7 @@ import "qrc:/Gauges/createText.js" as CreateTextScript
 import "qrc:/Gauges/createPicture.js" as CreatePictureScript
 import "qrc:/Gauges/createStatePicture.js" as CreateStatePictureScript
 import "qrc:/Gauges/createStateGIF.js" as CreateStateGIFScript
+import "qrc:/Translator.js" as Translator
 
 Item {
     id: mainwindow
@@ -272,7 +273,7 @@ Item {
             rowSpacing :5
 
             Text {
-                text: qsTr("RPM Style:")
+                text: Translator.translate("RPM2", Dashboard.language)+ " " +Translator.translate("Style", Dashboard.language)
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -281,7 +282,7 @@ Item {
                 width: 200
                 height: 40
                 font.pixelSize: 15
-                model: ["None", "Style1","Style2", "Style3", "Style4"]
+                model: [Translator.translate("None", Dashboard.language), Translator.translate("Style", Dashboard.language) + " 1",Translator.translate("Style", Dashboard.language) + " 2", Translator.translate("Style", Dashboard.language) + " 3", Translator.translate("Style", Dashboard.language) + " 4"]
                 onCurrentIndexChanged: rpmgauge.selector();
                 delegate: ItemDelegate {
                     width: rpmstyleselector.width
@@ -294,7 +295,7 @@ Item {
                 }
             }
             Text {
-                text: qsTr("Backround picture:")
+                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -323,7 +324,7 @@ Item {
                 }
             }
             Text {
-                text: qsTr("Backround color:")
+                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -374,7 +375,7 @@ Item {
                 width: 200
                 height: 40
                 font.pixelSize: 15
-                model: ["None", "PFC Sensors"]
+                model: [Translator.translate(Translator.translate("None", Dashboard.language), Dashboard.language), "PFC Sensors"]
                 onCurrentIndexChanged: setextra();
                 delegate: ItemDelegate {
                     width: extraSelector.width
@@ -388,7 +389,7 @@ Item {
             }
             Button {
                 id: btncloserpm
-                text: qsTr("CLOSE:")
+                text: Translator.translate("Close", Dashboard.language)
                 font.pixelSize: 15
                 width: 200
                 height: 40
@@ -411,6 +412,62 @@ Item {
             anchors.fill:parent
             drag.target: squaregaugemenu
         }
+///////////////////
+        /*
+        //Combobox filtered by ECU. Datasources must still be filled with each supported ECU
+        ComboBox {
+            id: cbx_sources
+            width: 200
+            model: filteredModel // Use the filtered model as the model for the ComboBox
+            textRole: "titlename" // Set the role for display text
+            onActivated: {
+                console.log("Selected:", cbx_sources.currentText);
+            }
+
+            // Filter the model based on the condition
+            Component.onCompleted: {
+                powertunedatasource.append({supportedECUs: "Microtech"}); // Add a dummy element to trigger filtering
+                powertunedatasource.remove(powertunedatasource.count - 1); // Remove the dummy element
+            }
+
+            // Filter and sort the model alphabetically
+            property ListModel filteredModel: {
+                var filteredModel = Qt.createQmlObject('import QtQuick 2.8; ListModel {}', cbx_sources);
+                // Add a Dynamic Filter via Dashboard String
+                var filterValues = ["Microtech"];
+
+                // Create an array to store the filtered elements
+                var filteredElements = [];
+
+                for (var i = 0; i < powertunedatasource.count; ++i) {
+                    var element = powertunedatasource.get(i);
+                    if (element.supportedECUs !== undefined && element.supportedECUs !== null) {
+                        // Remove trailing commas and split the string into an array
+                        var ecuList = element.supportedECUs.replace(/,+$/, '').split(',');
+
+                        for (var j = 0; j < filterValues.length; ++j) {
+                            if (ecuList.indexOf(filterValues[j]) !== -1) {
+                                filteredElements.push({"titlename": element.titlename});
+                                break; // Break out of the inner loop if a match is found
+                            }
+                        }
+                    }
+                }
+
+                // Sort the filtered elements alphabetically
+                filteredElements.sort(function(a, b) {
+                    return a.titlename.localeCompare(b.titlename);
+                });
+
+                // Add the sorted elements to the filtered model
+                for (var k = 0; k < filteredElements.length; ++k) {
+                    filteredModel.append(filteredElements[k]);
+                }
+
+                return filteredModel;
+            }
+        }
+        */
         ComboBox {
             id: cbx_sources
             font.pixelSize: 15
@@ -428,6 +485,8 @@ Item {
                 hoverEnabled: cbx_sources.hoverEnabled
             }
         }
+
+
         ComboBox {
             id: loadfileselect
             font.pixelSize: 15
@@ -458,7 +517,7 @@ Item {
                 id: btnaddSquare
                 width: 95
                 height: 40
-                text: qsTr("Add Square")
+                text:  Translator.translate("Square", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     console.log(powertunedatasource.get(cbx_sources.currentIndex).decimalpoints);
@@ -472,7 +531,7 @@ Item {
                 id: btnaddBar
                 width: 95
                 height: 40
-                text: qsTr("Add Bar")
+                text: Translator.translate("Bar", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     CreateBargaugeScript.createVerticalGauge(320,80,10,0,0,8000,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,powertunedatasource.get(cbx_sources.currentIndex).titlename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,1000,0);
@@ -485,7 +544,7 @@ Item {
                 id: btnaddRound
                 width: 95
                 height: 40
-                text: qsTr("Add Round")
+                text: Translator.translate("Round", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     CreateRoundgaugeScript.createRoundGauge(400,20,20,powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,0,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,-1000,-145,90,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,powertunedatasource.get(cbx_sources.currentIndex).divisor,powertunedatasource.get(cbx_sources.currentIndex).stepsize,1,powertunedatasource.get(cbx_sources.currentIndex).stepsize,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,2,38,3,3,8,3,15,5,0.50,0.40,0.33,0.25,20,5,93,8,0,0,"red","darkred","aliceblue","red","grey","darkgrey","darkgrey","black","grey","black","dodgerblue","deepskyblue","lightskyblue","transparent",true,true,true,"Lato",30,50,10,false,"Lato",powertunedatasource.get(cbx_sources.currentIndex).titlename,"red",0,0,0,0,0,0,"false");
@@ -498,7 +557,7 @@ Item {
                 id: btnaddText
                 width: 95
                 height: 40
-                text: qsTr("Add Text")
+                text: Translator.translate("Text", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     CreateTextScript.createText(100,50,"Textelement","Lato",15,"red","",true,0,20000,-20000)
@@ -511,7 +570,7 @@ Item {
                 id: btnaddPicture
                 width: 95
                 height: 40
-                text: qsTr("Add Image")
+                text: Translator.translate("Image", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     CreatePictureScript.createPicture(10,10,100,"qrc:/graphics/slectImage.png")
@@ -524,7 +583,7 @@ Item {
                 id: btnaddStatePicture
                 width: 95
                 height: 40
-                text: qsTr("State Img")
+                text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                    // console.log("create State gauge ");
@@ -538,7 +597,7 @@ Item {
                 id: btnaddStateGIF
                 width: 95
                 height: 40
-                text: qsTr("State GIF")
+                text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("GIF", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                    // console.log("create State gauge ");
@@ -551,7 +610,7 @@ Item {
             Button {
                 id: btnsave
                 width: 95
-                text: qsTr("SAVE")
+                text: Translator.translate("Save", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     squaregaugemenu.visible = false;
@@ -564,7 +623,7 @@ Item {
             Button {
                 id: btnopencolorselect
                 width:95
-                text: qsTr("Colors")
+                text: Translator.translate("Colors", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     selectcolor.visible =true;
@@ -575,7 +634,7 @@ Item {
             Button {
                 id: btnclear
                 width: 95
-                text: "Clear"
+                text: Translator.translate("Clear", Dashboard.language)
                 font.pixelSize: 12
                 onClicked:  {
 
@@ -592,7 +651,7 @@ Item {
             Button{
                 id: loadfromfile
                 width: 95
-                text: "Import"
+                text: Translator.translate("Import", Dashboard.language)
                 font.pixelSize: 12
 
                 onClicked: {
@@ -624,7 +683,7 @@ Item {
             Button{
                 id: savetofile
                 width: 95
-                text: "Export"
+                text: Translator.translate("Export", Dashboard.language)
                 font.pixelSize: 12
 
                 onClicked: {
@@ -644,7 +703,7 @@ Item {
             Button{
                 id: load
                 width: 95
-                text: "Load"
+                text: Translator.translate("Load", Dashboard.language)
                 font.pixelSize: 12
                 visible: false
                 onClicked: {
@@ -661,7 +720,7 @@ Item {
             Button{
                 id: btncancelload
                 width: 95
-                text: "Cancel"
+                text: Translator.translate("Cancel", Dashboard.language)
                 font.pixelSize: 12
                 visible: false
                 onClicked: {
@@ -677,7 +736,7 @@ Item {
             Button{
                 id: btnbackround
                 width: 95
-                text: "Background"
+                text: Translator.translate("Backround", Dashboard.language)
                 font.pixelSize: 12
                 onClicked: {
                     rpmbackroundselector.visible =true;
@@ -691,7 +750,7 @@ Item {
             Button {
                 id: btncancel
                 width: 95
-                text: "Close"
+                text: Translator.translate("Close", Dashboard.language)
                 font.pixelSize: 12
                 onClicked:  {
                     squaregaugemenu.visible = false;
@@ -1159,17 +1218,18 @@ Item {
             spacing:5
             // FrameColor
             Text {
-                text: qsTr("Frame color:")
+                text: Translator.translate("Frame color", Dashboard.language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Titlebar color:")
+                text: Translator.translate("Titlebar color", Dashboard.language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Backround color:")
+                text: Translator.translate("Backround color", Dashboard.language)
                 font.pixelSize: 15
             }
+
             ComboBox {
                 id: colorselect
                 width: 150;
@@ -1271,15 +1331,15 @@ Item {
                 }
             }
             Text {
-                text: qsTr("Bargauge color:")
+                text: Translator.translate("Bargauge color", Dashboard.language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Title text color:")
+                text: Translator.translate("Title text color", Dashboard.language)
                 font.pixelSize: 15
             }
             Text {
-                text: qsTr("Main text color:")
+                text: Translator.translate("Main text color", Dashboard.language)
                 font.pixelSize: 15
             }
             // BargaugeColor
@@ -1393,7 +1453,7 @@ Item {
             Button {
                 id: btnclosecolorselect
                 width:150
-                text: qsTr("CLOSE")
+                text: Translator.translate("Close menu", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: {selectcolor.visible = false;}
 

@@ -121,6 +121,21 @@ void AppSettings::writeSelectedDashSettings(int numberofdashes)
      // To be implemented later
 }
 
+void AppSettings::externalspeedconnectionstatus(int connected)
+{
+     setValue("externalspeedconnect", connected);
+     m_dashboard->setexternalspeedconnectionrequest(connected);
+
+
+}
+void AppSettings::externalspeedport(const QString &port)
+{
+     setValue("externalspeedport", port);
+     m_dashboard->setexternalspeedport(port);
+   //  qDebug() << "externalspeedport" <<getValue("externalspeedport").toString();
+
+}
+
 void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boostwarn,const qreal &rpmwarn,const qreal &knockwarn,const int &gercalactive,const qreal&lambdamultiply,const qreal &valgear1,const qreal &valgear2,const qreal &valgear3,const qreal &valgear4,const qreal &valgear5,const qreal &valgear6)
 {
     setValue("waterwarn", waterwarn);
@@ -148,10 +163,12 @@ void AppSettings::writeWarnGearSettings(const qreal &waterwarn,const qreal &boos
     m_dashboard->setgearcalc5(valgear5);
     m_dashboard->setgearcalc6(valgear6);
 }
-void AppSettings::writeSpeedSettings(const qreal &Speedcorrection)
+void AppSettings::writeSpeedSettings(const qreal &Speedcorrection,const qreal &Pulsespermile)
 {
     setValue("Speedcorrection",Speedcorrection);
+    setValue("Pulsespermile",Pulsespermile);
     m_dashboard->setspeedpercent(getValue("Speedcorrection").toReal());
+    m_dashboard->setpulsespermile(getValue("Pulsespermile").toReal());
 }
 void AppSettings::writeAnalogSettings(const qreal &A00,const qreal &A05,const qreal &A10,const qreal &A15,const qreal &A20,const qreal &A25,const qreal &A30,const qreal &A35,const qreal &A40,const qreal &A45,const qreal &A50,const qreal &A55,const qreal &A60,const qreal &A65,const qreal &A70,const qreal &A75,const qreal &A80,const qreal &A85,const qreal &A90,const qreal &A95,const qreal &A100,const qreal &A105)
 {
@@ -319,15 +336,18 @@ void AppSettings::writeRPMFrequencySettings(const qreal &Divider,const int &DI1i
     setValue("DI1RPMEnabled", DI1isRPM);
     m_dashboard->setRPMFrequencyDividerDi1(Divider);
     m_dashboard->setDI1RPMEnabled(DI1isRPM);
-
 }
 void AppSettings::writeExternalrpm(const int checked)
 {
-    qDebug() << "External RPM :" <<checked;
     setValue("ExternalRPM", checked);
     m_dashboard->setExternalrpm(checked);
+}
 
-
+void AppSettings::writeLanguage(const int Language)
+{
+    qDebug() << "Language :" <<Language;
+    setValue("Language", Language);
+    m_dashboard->setlanguage(Language);
 }
 void AppSettings::readandApplySettings()
 {
@@ -381,6 +401,15 @@ void AppSettings::readandApplySettings()
     {
         m_dashboard->setspeedpercent(1);
     }
+    m_dashboard->setpulsespermile(getValue("Pulsespermile").toReal());
+    if (getValue("Pulsespermile").toReal() <= 0)
+    {
+        m_dashboard->setpulsespermile(100000);
+    }
     m_dashboard->setExternalrpm(getValue("ExternalRPM").toInt());
+    //getValue("externalspeedconnect")
+    m_dashboard->setexternalspeedconnectionrequest(getValue("externalspeedconnect").toInt());
+    m_dashboard->setexternalspeedport(getValue("externalspeedport").toString());
+    qDebug() << "current speedsettings" <<m_dashboard->externalspeedconnectionrequest();
 }
 

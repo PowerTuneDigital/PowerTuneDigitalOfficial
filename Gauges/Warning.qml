@@ -28,7 +28,6 @@ Rectangle {
             font.bold: true
             font.family: "Eurostile"
             color: "black"
-
         }
 
         Text {
@@ -41,7 +40,6 @@ Rectangle {
             font.bold: true
             font.family: "Eurostile"
             color: "black"
-
         }
     }
 }

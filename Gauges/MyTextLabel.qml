@@ -1,5 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
+import "qrc:/Translator.js" as Translator
+
 Item {
     id:mytextlabel
     height: mytext.height
@@ -202,7 +204,7 @@ Item {
                 }
             }
         Text{
-            text: "Warn value high :"
+            text: Translator.translate("Warn value high", Dashboard.language)
             font.pointSize: 7
             }
             ////
@@ -235,7 +237,7 @@ Item {
                 }
             }
             Text{
-                text: "Warn value low :"
+                text: Translator.translate("Warn value low", Dashboard.language)
                 font.pointSize: 7
                 }
             Grid {
@@ -267,7 +269,7 @@ Item {
                 }
             }
             RoundButton{
-                text: "Use Datasource"
+                text: Translator.translate("Use Datasource", Dashboard.language)
                 width: parent.width
                 font.pixelSize: 15
                 onClicked: {
@@ -277,13 +279,13 @@ Item {
                 }
             }
             RoundButton {
-                text: "Delete"
+                text: Translator.translate("Delete", Dashboard.language)
                 font.pixelSize: 15
                 width: parent.width
                 onClicked: mytextlabel.destroy();
             }
             RoundButton{
-                text: "Close"
+                text: Translator.translate("Close", Dashboard.language)
                 width: parent.width
                 font.pixelSize: 15
                 onClicked: changesize.visible = false;

@@ -1,4 +1,4 @@
-#include <dashboard.h>
+#include "dashboard.h"
 #include <QStringList>
 #include <QDebug>
 #include <QVector>
@@ -397,6 +397,7 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_wheelspdrearleft(0)
     ,  m_wheelspdrearright(0)
     ,  m_speedpercent(1)
+    ,  m_pulsespermile(128000)
     ,  m_maxRPM(8000)
     ,  m_rpmStage1(3000)
     ,  m_rpmStage2(4000)
@@ -606,6 +607,9 @@ DashBoard::DashBoard(QObject *parent)
     , m_RPMFrequencyDividerDi1(1)
     , m_DI1RPMEnabled(0)
     , m_Externalrpm(0)
+    , m_language(0)
+    , m_externalspeedconnectionrequest()
+    , m_externalspeedport()
 
 {
 
@@ -963,6 +967,29 @@ void DashBoard::setExternalrpm(const int &Externalrpm)
     m_Externalrpm = Externalrpm;
     emit ExternalrpmChanged(Externalrpm);
 }
+void DashBoard::setlanguage(const int &language)
+{
+    if (m_language == language)
+        return;
+    m_language = language;
+    emit languageChanged(language);
+    qDebug() <<language ;
+}
+void DashBoard::setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest)
+{
+    if (m_externalspeedconnectionrequest == externalspeedconnectionrequest)
+        return;
+    m_externalspeedconnectionrequest = externalspeedconnectionrequest;
+    emit externalspeedconnectionrequestChanged(externalspeedconnectionrequest);
+}
+void DashBoard::setexternalspeedport(const QString &externalspeedport)
+{
+    if (m_externalspeedport == externalspeedport)
+        return;
+    m_externalspeedport = externalspeedport;
+    emit externalspeedportChanged(externalspeedport);
+}
+
 
 void DashBoard::setIntakepress(const qreal &Intakepress)
 {
@@ -1120,7 +1147,29 @@ if (m_ExternalSpeed == 0){
     emit speedChanged(m_speed);
     }
 }
-
+void DashBoard::setSerialSpeed(const qreal &speed)
+{
+    qDebug()<< "SPEED  " << m_speed;
+    if (m_speed == speed)
+        return;
+    if (m_speedunits == "metric")
+    {m_speed = qRound(speed/m_pulsespermile * m_speedpercent * 1.609344);}
+    if (m_speedunits == "imperial")
+    {m_speed = qRound(speed/m_pulsespermile * m_speedpercent);}
+    if (m_smoothspeed != 0)
+    {
+        averageSpeed.removeFirst();
+        averageSpeed.append(m_speed);
+        //qDebug() << "Vector Speed " << averageSpeed;
+        avgspeed = 0;
+        for (int i = 0; i <= m_smoothspeed-1; i++){avgspeed+= averageSpeed[i];}
+        m_speed = avgspeed/m_smoothspeed;
+        qDebug() << "Average Speed " << m_speed;
+    }
+    if (m_ExternalSpeed == 6){
+        emit speedChanged(m_speed);
+    }
+}
 void DashBoard::setIscvduty(const qreal &Iscvduty)
 {
     if (m_Iscvduty == Iscvduty)
@@ -3338,7 +3387,13 @@ void DashBoard::setspeedpercent(const qreal &speedpercent)
     m_speedpercent = speedpercent;
     emit speedpercentChanged(speedpercent);
 }
-
+void DashBoard::setpulsespermile(const qreal &pulsespermile)
+{
+    if (m_pulsespermile == pulsespermile)
+        return;
+    m_pulsespermile = pulsespermile;
+    emit pulsespermileChanged(pulsespermile);
+}
 //
 
 void DashBoard::setmaxRPM(const int &maxRPM)
@@ -5577,6 +5632,7 @@ qreal DashBoard::wheelspdrearright() const { return m_wheelspdrearright; }
 QString DashBoard::musicpath() const {return m_musicpath; }
 int DashBoard::supportedReg() const {return m_supportedReg; }
 qreal DashBoard::speedpercent() const {return m_speedpercent; }
+qreal DashBoard::pulsespermile() const {return m_pulsespermile; }
 
 int DashBoard::maxRPM() const {return m_maxRPM; }
 int DashBoard::rpmStage1() const {return m_rpmStage1; }
@@ -5819,4 +5875,6 @@ qreal DashBoard::RR_Tyre_Temp_08() const {return m_RR_Tyre_Temp_08;}
 qreal DashBoard::RPMFrequencyDividerDi1() const {return m_RPMFrequencyDividerDi1;}
 int DashBoard::DI1RPMEnabled() const {return m_DI1RPMEnabled;}
 int DashBoard::Externalrpm() const {return m_Externalrpm;}
-
+int DashBoard::language() const {return m_language;}
+int DashBoard::externalspeedconnectionrequest() const {return m_externalspeedconnectionrequest;}
+QString DashBoard::externalspeedport() const {return m_externalspeedport;}

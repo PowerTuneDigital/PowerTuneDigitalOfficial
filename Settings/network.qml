@@ -1,9 +1,9 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-
 import QtQuick.Controls 1.4 as Quick1
 import QtQuick.Controls.Styles 1.4
+import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: extrarect
@@ -65,7 +65,7 @@ Rectangle {
         Button {
             id: btnScanNetwork
             // visible: false
-            text: "Scan WIFI"
+            text: Translator.translate("Scan WIFI", Dashboard.language)
             width: extrarect.width / 5
             height: extrarect.height / 15
             font.pixelSize: extrarect.width / 55
@@ -77,7 +77,7 @@ Rectangle {
         }
         Component.onCompleted: Wifiscanner.initializeWifiscanner() // Workarround to show initial values
         Text {
-            text: "WIFI Country :"
+            text: Translator.translate("WIFI Country", Dashboard.language)
             font.pixelSize: extrarect.width / 55
         }
         ComboBox {
@@ -91,7 +91,7 @@ Rectangle {
             property bool initialized: true
         }
         Text {
-            text: "Wifi 1 :"
+            text: Translator.translate("WIFI 1", Dashboard.language)
             font.pixelSize: extrarect.width / 55
         }
         ComboBox {
@@ -116,7 +116,7 @@ Rectangle {
         }
         Text {
 
-            text: "Password 1:"
+            text: Translator.translate("Password 1", Dashboard.language)
             font.pixelSize: extrarect.width / 55
         }
         TextField {
@@ -165,7 +165,7 @@ Rectangle {
 
         Button {
             id: applyWifiSettings
-            text: "Connect WIFI"
+            text: Translator.translate("Connect WIFI", Dashboard.language)
             width: extrarect.width / 5
             height: extrarect.height / 15
             font.pixelSize: extrarect.width / 55
@@ -191,7 +191,7 @@ Rectangle {
         }
         Button {
             id: updateBtn
-            text: "Update"
+            text: Translator.translate("Update", Dashboard.language)
             width: extrarect.width / 5
             height: extrarect.height / 15
             font.pixelSize: extrarect.width / 55
@@ -208,7 +208,7 @@ Rectangle {
 
         Button {
             id: develtest
-            text: "Restart daemon"
+            text: Translator.translate("Restart daemon", Dashboard.language)
             width: extrarect.width / 5
             height: extrarect.height / 15
             font.pixelSize: extrarect.width / 55
@@ -226,7 +226,7 @@ Rectangle {
         }
         Button {
             id: trackUpdate
-            text: "Update Tracks"
+            text: Translator.translate("Update Tracks", Dashboard.language)
             width: extrarect.width / 5
             height: extrarect.height / 15
             font.pixelSize: extrarect.width / 55
@@ -251,7 +251,7 @@ Rectangle {
         }
         Text {
             id: ethernetip
-            text: "Ethernet IP adress :"
+            text: Translator.translate("Ethernet IP adress", Dashboard.language)
             font.pixelSize: extrarect.width / 55
             visible: true
         }
@@ -281,7 +281,7 @@ Rectangle {
 
         Text {
             id: wlanip
-            text: "WLAN IP adress :"
+            text: Translator.translate("WLAN IP adress", Dashboard.language)
             font.pixelSize: extrarect.width / 55
             visible: true
         }

@@ -1,6 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 2.1
-
+import "qrc:/Translator.js" as Translator
 Item {
     id: statepicture
     height: pictureheight
@@ -16,7 +16,6 @@ Item {
     DatasourcesList{id: powertunedatasource}
     Component.onCompleted: {togglemousearea();
                             bind();
-       // //console.log("created trigger:",triggervalue);
                             }
 
 
@@ -63,7 +62,7 @@ Item {
         id : changesize
         color: "darkgrey"
         visible: false
-        width : 200
+        width : 230
         height :320
         Drag.active: true
         MouseArea {
@@ -107,9 +106,9 @@ Item {
             Grid {
                 rows: 4
                 columns: 2
-                rowSpacing :5
+                spacing :5
             Text{
-                text: "Pic. Off"
+                text: Translator.translate("Image off", Dashboard.language)
                 font.pixelSize: 12
 
             }
@@ -137,7 +136,7 @@ Item {
                 }
             }
             Text{
-                text: "Pic. On"
+                text: Translator.translate("Image on", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -166,7 +165,7 @@ Item {
                 }
             }
             Text{
-                text: "Source"
+                text: Translator.translate("Source", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -180,7 +179,7 @@ Item {
                 onCurrentIndexChanged: bind();
             }
             Text{
-                text: "Trigger"
+                text: Translator.translate("Trigger", Dashboard.language)
                 font.pixelSize: 12
             }
             TextField {
@@ -194,13 +193,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: "Delete picture"
+                text: Translator.translate("Delete image", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: "Close"
+                text: Translator.translate("Close", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: {
                     triggervalue = triggeronvalue.text;

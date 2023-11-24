@@ -123,5 +123,12 @@
         <file>ExBoardAnalog.qml</file>
         <file>Gauges/TyreMonitor.qml</file>
         <file>Settings/CanMonitor.qml</file>
+        <file>Translator.js</file>
+        <file>graphics/Flags/de.png</file>
+        <file>graphics/Flags/es.png</file>
+        <file>graphics/Flags/jp.png</file>
+        <file>graphics/Flags/us.png</file>
+        <file>graphics/Flags/fr.png</file>
+        <file>graphics/Flags/ae.png</file>
     </qresource>
 </RCC>
