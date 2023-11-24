@@ -34,11 +34,13 @@ Quick1.TabView {
             id: tabrect
             color: styleData.selected ? "grey" : "lightgrey"
             border.color: "steelblue"
-            implicitWidth: Math.max(text.width + 4, 80)
+            implicitWidth: 80//Math.max(text.width + 4, 80)
             implicitHeight: 50
             radius: 2
             Text {
                 id: text
+                width: parent.width - 10 // Adjust the width to provide some padding
+                wrapMode: Text.Wrap // Enable text wrapping
                 anchors.centerIn: parent
                 font.pixelSize: tabView.width / 55
                 text: styleData.title
