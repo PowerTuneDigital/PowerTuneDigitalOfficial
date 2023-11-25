@@ -47,6 +47,25 @@ if [ -f "$TMP_DIR/compiled_perl_openssl.tar.gz" ]; then
     # Register the versions of Perl and OpenSSL
     echo "export PATH=\"$OPENSSL_BIN_PATH:\$PATH\"" > /etc/profile.d/yocto_extra_packages.sh
     echo "export LD_LIBRARY_PATH=\"/usr/local/lib/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
+
+    # Check it the file exists with a incorrect path 
+    FILE="/etc/profile.d/yocto_extra_packages.sh"
+LINE_TO_CHECK='export LD_LIBRARY_PATH="/usr/local/lib/openssl/openssl/openssl/lib:$LD_LIBRARY_PATH"'
+NEW_LINE='export LD_LIBRARY_PATH="/usr/local/lib/openssl/openssl/lib:$LD_LIBRARY_PATH"'
+
+# Check if the file exists
+if [ -f "$FILE" ]; then
+    # Check if the line exists in the file
+    if grep -qF "$LINE_TO_CHECK" "$FILE"; then
+        # Replace the line
+        sed -i "s|$LINE_TO_CHECK|$NEW_LINE|" "$FILE"
+        echo "Line replaced in $FILE"
+    else
+        echo "Line not found in $FILE"
+    fi
+else
+    echo "Error: File $FILE not found."
+fi
                                    
     # Reload the profile to apply the changes for the current session
     source /etc/profile.d/yocto_extra_packages.sh
