@@ -46,8 +46,8 @@ if [ -f "$TMP_DIR/compiled_perl_openssl.tar.gz" ]; then
 
     # Register the versions of Perl and OpenSSL
     echo "export PATH=\"$OPENSSL_BIN_PATH:\$PATH\"" > /etc/profile.d/yocto_extra_packages.sh
-    echo "export LD_LIBRARY_PATH=\"/usr/local/lib/openssl/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
-
+    echo "export LD_LIBRARY_PATH=\"/usr/local/lib/openssl/openssl/lib:\$LD_LIBRARY_PATH\"" >> /etc/profile.d/yocto_extra_packages.sh
+                                   
     # Reload the profile to apply the changes for the current session
     source /etc/profile.d/yocto_extra_packages.sh
 
