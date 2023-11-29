@@ -211,7 +211,8 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Temp units", Dashboard.language)
+                    text:Translator.translate("Temp units", Dashboard.language)
+                   // font.family: "Arial Narrow"
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }

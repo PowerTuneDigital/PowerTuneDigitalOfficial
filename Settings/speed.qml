@@ -43,10 +43,11 @@ Rectangle {
                                    speedpercent.text / 100, pulsespermile.text)
         }
         Text {
-            text: "USB VR Speed Sensor"
+            text: Translator.translate("USB VR Speed Sensor", Dashboard.language)
             font.pixelSize: windowbackround.width / 55
             color: "white"
         }
+
         CheckBox {
             id: usbvrcheckbox
             width: windowbackround.width / 14
@@ -67,7 +68,7 @@ Rectangle {
                }
             }
         Text {
-            text: "Pulses Per Mile"
+            text: Translator.translate("Pulses per mile", Dashboard.language)
             font.pixelSize: windowbackround.width / 55
             color: "white"
             visible: usbvrcheckbox.checked
@@ -89,7 +90,7 @@ Rectangle {
         }
         Text {
             //periferal serial port box
-            text: "External Speed Port:"
+            text: Translator.translate("External Speed port", Dashboard.language)
             color: "white"
             font.pixelSize: windowbackround.width / 55
             visible: usbvrcheckbox.checked

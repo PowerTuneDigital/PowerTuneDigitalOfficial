@@ -1,6 +1,11 @@
 var translations = {
     //Menu Items:
 
+
+       "Pulses per mile": { en: "Pulses per mile", de: "Pulse pro meile", jp: "パルス/マイル", es: "", fr: "", ar:"" },
+       "Pulses per KM": { en: "Pulses per KM", de: "Pulse pro KM", jp: "パルス/キロメートル", es: "", fr: "", ar:"" },
+       "External Speed port": { en: "External Speed port", de: "Externer Geschwindigkeits port", jp: "外部車速ポート", es: "", fr: "", ar:"" },
+       "USB VR Speed Sensor": { en: "USB VR Speed Sensor", de: "USB VR Geschwindigkeits Sensor", jp: "USB VRスピードセンサー", es: "", fr: "", ar:"" },
        "Metric": { en: "Metric", de: "Metrisch", jp: "メトリック", es: "", fr: "", ar:"" },
        "Imperial": { en: "Imperial", de: "Imperial", jp: "インペリアル", es: "", fr: "", ar:"" },
        "°C": { en: "°C", de: "°C", jp: "°C", es: "°C", fr: "°C", ar:"°C" },
@@ -28,7 +33,7 @@ var translations = {
        "Odo": { en: "Odo", de: "KM Stand:",  jp: "走行距離", es: "", fr: "", ar:"" },
        "Trip": { en: "Trip:                  ", de: "Tages KM Zähler:",  jp: "トリップ", es: "", fr: "", ar:"" },
        "Weight": { en: "Weight", de: "Gewicht",  jp: "重量", es: "", fr: "", ar:"" },
-       "Serial Status": { en: "Serial Status", de: "",  jp: "シリアルステータス", es: "", fr: "", ar:"" },
+       "Serial Status": { en: "Serial Status", de: "Serial Status",  jp: "シリアルステータス", es: "", fr: "", ar:"" },
        "RPM Smoothing": { en: "RPM Smoothing", de: "Drehzahl Glättung",  jp: "回転メーター円滑補正", es: "", fr: "", ar:"" },
        "Speed Smoothing": { en: "Speed Smoothing", de: "Geschw. Glättung",  jp: "車速メーター円滑補正", es: "", fr: "", ar:"" },
        "Data Logger": { en: "Data Logger", de: "Daten Logger",  jp: "データロガー", es: "", fr: "", ar:"" },
@@ -619,9 +624,10 @@ function translate(text, language) {
             return translatedWord;
         }
     }
-
+ //console.log(translations[text])
     // If translation is not found or is an empty string, provide the English version
    // console.warn("Translation not found or empty for:", text, "and language:", language);
     return translations[text].en || "Translation not found";
+
 }
 
