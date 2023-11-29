@@ -220,7 +220,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("Metric", Dashboard.language), Translator.translate("Imperial", Dashboard.language)]
+                    model: [Translator.translate("°C", Dashboard.language), Translator.translate("°F", Dashboard.language)]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setUnits(currentIndex)
