@@ -7,7 +7,23 @@ cd /home/pi/src
 source /etc/profile
 sleep 2
 EXPECTED_OPENSSL_VERSION="1.1.1u"
+FILE="/etc/profile.d/yocto_extra_packages.sh"
+LINE_TO_CHECK='export LD_LIBRARY_PATH="/usr/local/lib/openssl/openssl/openssl/lib:$LD_LIBRARY_PATH"'
+NEW_LINE='export LD_LIBRARY_PATH="/usr/local/lib/openssl/openssl/lib:$LD_LIBRARY_PATH"'
 
+# Check if the file exists
+if [ -f "$FILE" ]; then
+    # Check if the line exists in the file
+    if grep -qF "$LINE_TO_CHECK" "$FILE"; then
+        # Replace the line
+        sed -i "s|$LINE_TO_CHECK|$NEW_LINE|" "$FILE"
+        echo "Line replaced in $FILE"
+    else
+        echo "Line not found in $FILE"
+    fi
+else
+    echo "Error: File $FILE not found."
+fi
 # Function to check if a command is available
 command_exists() {
     command -v "$1" >/dev/null 2>&1
