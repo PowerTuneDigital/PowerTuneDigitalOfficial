@@ -631,7 +631,7 @@ Rectangle {
                     Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
                 }
                 Text {
-                    text: " V 1.98i " + Dashboard.Platform
+                    text: " V 1.98j " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -820,9 +820,9 @@ Rectangle {
                     model: [
                         {name: "English", flag: "qrc:/graphics/Flags/us.png"},
                         {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
-                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"}
+                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
+                        {name: "Español", flag: "qrc:/graphics/Flags/es.png"}
                         //For Later Use
-                        //{name: "Español", flag: "qrc:/graphics/Flags/es.png"},
                         //{name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
                         //{name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
                     ]
