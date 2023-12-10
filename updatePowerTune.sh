@@ -20,16 +20,17 @@ if [ -d /home/root ]; then
 		else
     		echo "Error: File $FILE not found."
 		fi
-		PROFILE_FILE="/etc/profile"
-		OLD_LIB_PATH="/usr/local/lib/openssl"
-		NEW_LIB_PATH="/usr/local/lib/openssl/openssl/lib"
-		# Check if the old line is present in the profile file
-		if grep -q "^export LD_LIBRARY_PATH=.*$OLD_LIB_PATH" "$PROFILE_FILE"; then
-  		echo "Replacing $OLD_LIB_PATH with $NEW_LIB_PATH in $PROFILE_FILE"
-  		# Use sed to replace the old line with the new one
-  		sed -i "s|^export LD_LIBRARY_PATH=.*$OLD_LIB_PATH|export LD_LIBRARY_PATH=\"$NEW_LIB_PATH:\$LD_LIBRARY_PATH\"|" "$PROFILE_FILE"
+		#!/bin/bash
+
+		library_path="/usr/local/lib/openssl/openssl/lib"
+		init_script="/etc/init.d/powertune"
+		# Check if the library path is already present in the init script
+		if grep -q "$library_path" "$init_script"; then
+   	        echo "Library path already present in $init_script."
 		else
-  		echo "Old line not found in $PROFILE_FILE"
+    		# If not present, append the library path to the end of the file
+    		echo "Adding library path to $init_script."
+    		echo "export LD_LIBRARY_PATH=\"$library_path:\$LD_LIBRARY_PATH\"" >> "$init_script"
 		fi
 		echo "Fix rng "
                 rm /etc/init.d/rng-tools
