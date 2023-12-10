@@ -41,6 +41,21 @@ else
     ./updatepi4.sh
 fi
 fi
+
+# Ensure libaries are correctly linked 
+
+library_path="/usr/local/lib/openssl/openssl/lib"
+init_script="/etc/init.d/powertune"
+
+# Check if the library path is already present in the init script
+if grep -q "$library_path" "$init_script"; then
+    echo "Library path already present in $init_script."
+else
+    # If not present, add the library path to the top of the file
+    echo "Adding library path to $init_script."
+    sed -i "1iexport LD_LIBRARY_PATH=\"$library_path:\$LD_LIBRARY_PATH\"" "$init_script"
+fi
+
 echo "Disable System Logs"
 cd /home/pi/src
 ./fixlog.sh
