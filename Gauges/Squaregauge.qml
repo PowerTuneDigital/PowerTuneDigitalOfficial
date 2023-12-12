@@ -170,7 +170,8 @@ Rectangle {
 
     Text {
         id: mainvaluetextfield
-        anchors.horizontalCenter: parent.horizontalCenter
+        //anchors.horizontalCenter: parent.horizontalCenter
+        anchors.rightMargin: (parent.width / 2) - ((mainvaluetextfield.font.pixelSize * (decimalpoints + 1)) / 2)
         anchors.verticalCenter: parent.verticalCenter
         font.pixelSize: 50
         font.family: valueFonttype
