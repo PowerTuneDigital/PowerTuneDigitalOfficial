@@ -906,6 +906,9 @@ void Connect::daemonstartup(const int &daemon)
     case 57:
         daemonstart = "./Generic";
         break;
+    case 58:
+        daemonstart = "./Edelbrock";
+        break;
     }
 
     ///////
