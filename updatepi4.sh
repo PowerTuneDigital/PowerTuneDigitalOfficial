@@ -66,7 +66,7 @@ if [ -f "$FILE" ]; then
 else
     echo "Error: File $FILE not found."
 fi
-
+                                   
     # Reload the profile to apply the changes for the current session
     source /etc/profile.d/yocto_extra_packages.sh
 
