@@ -7,7 +7,6 @@ PERL_INSTALL_PATH="/usr/local/lib/perl5/5.38.0"
 OPENSSL_INSTALL_PATH="/usr/local/lib/openssl"
 OPENSSL_BIN_PATH="/usr/local/bin/"
 
-
 # Function to check if a command is available
 command_exists() {
     command -v "$1" >/dev/null 2>&1
