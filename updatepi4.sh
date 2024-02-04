@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Define the GitHub repository URL
 REPO_URL="https://github.com/PowerTuneDigital/YoctoExtraPackages.git"
 
