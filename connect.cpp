@@ -184,7 +184,7 @@ void Connect::checkifraspberrypi()
     }
     else
     {
-        m_dashBoard->setscreen(false);
+        m_dashBoard->setscreen(true);
     }
 }
 void Connect::readavailabledashfiles()
@@ -326,6 +326,13 @@ void Connect::setSreenbrightness(const int &brightness)
     out << brightness;
     //qDebug() << brightness;
     f.close();
+
+    // Adjust the brightness using ddcutil
+    QProcess process;
+    QString command = QString("ddcutil setvcp 10 %1").arg(brightness); // Assuming VCP code 10 is for brightness
+    process.start(command);
+    process.waitForFinished();
+
 }
 void Connect::setSpeedUnits(const int &units1)
 {
