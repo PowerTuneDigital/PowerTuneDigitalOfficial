@@ -44,7 +44,9 @@
 #include <QTextStream>
 #include <QByteArrayMatcher>
 #include <QProcess>
-
+#ifdef HAVE_DDCUTIL
+#include "ddcutil_c_api.h"  // Include ddcutil C API header
+#endif
 
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU
 int logging; // 0 Logging off , 1 Logging to file
@@ -318,20 +320,25 @@ void Connect::readdashsetup1()
 void Connect::setSreenbrightness(const int &brightness)
 {
 
-    //This works only on raspberry pi
-    QFile f("/sys/class/backlight/rpi_backlight/brightness");
-    //f.close();
-    f.open(QIODevice::WriteOnly | QIODevice::Truncate);
-    QTextStream out(&f);
-    out << brightness;
-    //qDebug() << brightness;
-    f.close();
+#ifdef HAVE_DDCUTIL
+        // Use ddcutil C API function to set the brightness
+        int result = DDCA_Get_Set_VCP(0x10, brightness); // Assuming 0x10 is the VCP code for brightness
 
-    // Adjust the brightness using ddcutil
-    QProcess process;
-    QString command = QString("ddcutil setvcp 10 %1").arg(brightness); // Assuming VCP code 10 is for brightness
-    process.start(command);
-    process.waitForFinished();
+        // Check for errors if needed
+        if (result != DDCA_RC_OK) {
+            qDebug() << "Error setting brightness:" << result;
+            // Handle error
+        }
+#else
+        //Use standard interface
+        QFile f("/sys/class/backlight/rpi_backlight/brightness");
+        //f.close();
+        f.open(QIODevice::WriteOnly | QIODevice::Truncate);
+        QTextStream out(&f);
+        out << brightness;
+        //qDebug() << brightness;
+        f.close();
+#endif
 
 }
 void Connect::setSpeedUnits(const int &units1)
