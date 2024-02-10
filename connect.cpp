@@ -324,13 +324,14 @@ void Connect::setSreenbrightness(const int &brightness)
 
 #ifdef HAVE_DDCUTIL
         // Use ddcutil C API function to set the brightness
-        int result = DDCA_Get_Set_VCP(0x10, brightness); // Assuming 0x10 is the VCP code for brightness
-
-        // Check for errors if needed
-        if (result != DDCA_RC_OK) {
-            qDebug() << "Error setting brightness:" << result;
-            // Handle error
+    // Get the display handle
+        DDCA_Display_Handle dh;
+        DDCA_Status rc = ddca_open_display2(displayRef, false, &dh);
+        if (rc != 0) {
+            qDebug() << "Error opening display:" << rc;
+            return -1;
         }
+         rc = ddca_set_non_table_vcp_value(dh, 0x10, brightness, 0);
 #else
         //Use standard interface
         QFile f("/sys/class/backlight/rpi_backlight/brightness");

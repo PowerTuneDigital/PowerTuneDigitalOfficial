@@ -14,6 +14,7 @@ CONFIG += c++11
 # Check for the existence of ddcutil headers
 #exists(/usr/include/ddcutil/ddcutil_c_api.h) {
 exists(/usr/lib/libddcutil.so*) {
+    INCLUDEPATH += /usr/include/ddcutil
     DEFINES += HAVE_DDCUTIL
     LIBS += -lddcutil
 }
