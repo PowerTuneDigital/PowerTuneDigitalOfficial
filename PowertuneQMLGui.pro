@@ -55,6 +55,7 @@ include(deployment.pri)
 HEADERS += \
     Extender.h \
     dashboard.h \
+    ddcutil_c_api.h \
     downloadmanager.h \
     iomapdata.h \
     parsegithubdata.h \
