@@ -45,7 +45,9 @@
 #include <QByteArrayMatcher>
 #include <QProcess>
 #ifdef HAVE_DDCUTIL
-#include "ddcutil_c_api.h"  // Include ddcutil C API header
+extern "C" {
+#include <ddcutil/ddcutil.h>
+}
 #endif
 
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU

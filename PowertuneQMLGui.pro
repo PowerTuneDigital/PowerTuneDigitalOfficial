@@ -7,10 +7,10 @@ CONFIG += c++11
 # QMAKE_LFLAGS += -static
 # Check for the existence of libddcutil
 # Check for the existence of libddcutil
-exists(/usr/lib/libddcutil.so*) {
+#exists(/usr/lib/libddcutil.so*) {
     # Add the library if it exists
-    LIBS += -lddcutil
-}
+#    LIBS += -lddcutil
+#'}
 # Check for the existence of ddcutil headers
 exists(/usr/include/ddcutil/ddcutil_c_api.h) {
     DEFINES += HAVE_DDCUTIL
