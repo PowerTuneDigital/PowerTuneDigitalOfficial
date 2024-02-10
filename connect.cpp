@@ -46,7 +46,7 @@
 #include <QProcess>
 #ifdef HAVE_DDCUTIL
 extern "C" {
-#include <ddcutil/ddcutil.h>
+#include "ddcutil_c_api.h"
 }
 #endif
 
