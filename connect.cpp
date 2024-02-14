@@ -65,10 +65,9 @@ QString dashfilename3;
 #ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
 
-    // Hardcode display 1
-    int desiredDisplayNumber = 1;
-
-    // Create a display identifier for display 1
+    // Hardcode display 0
+    int desiredDisplayNumber = 0;
+    // Create a display identifier for display 0
     DDCA_Display_Ref dref;
     DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
     DDCA_Display_Handle dh;
