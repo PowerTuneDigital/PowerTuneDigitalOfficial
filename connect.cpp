@@ -183,6 +183,7 @@ void Connect::checkifraspberrypi()
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
+    qDebug() <<"Checkifraspberrypi";
     status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
     if (status != 0) {
         qDebug() << "Failed to create display identifier for display . Status code:" << status;
