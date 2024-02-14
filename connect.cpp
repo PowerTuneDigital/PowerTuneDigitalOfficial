@@ -71,6 +71,7 @@ QString dashfilename3;
     // Create a display identifier for display 1
     DDCA_Display_Ref dref;
     DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+    DDCA_Display_Handle dh;
  #endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
@@ -192,7 +193,7 @@ void Connect::checkifraspberrypi()
     qDebug() << "Using display reference:" << dref;
 
     // Open display handle
-    DDCA_Display_Handle dh;
+
     qDebug() << "Opening Display now ";
     status = ddca_open_display2(dref, false, &dh);
     qDebug() << "DDCA STATUS" << status;
