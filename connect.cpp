@@ -335,7 +335,7 @@ void Connect::setSreenbrightness(const int &brightness)
         // output level has no effect on this debug report
         qDebug() << "Report the result using ddca_report_display_info_list()...";
         ddca_report_display_info_list(dlist, 2);
-
+/*
         DDCA_Output_Level savedOutputLevel = ddca_set_output_level(DDCA_OL_NORMAL);
         // A similar function that hooks directly into the "ddcutil detect" command.
         qDebug() << "Calling ddca_report_active_displays()...";
@@ -347,7 +347,7 @@ void Connect::setSreenbrightness(const int &brightness)
         for (int ndx = 0; ndx < dlist->ct; ndx++) {
             DDCA_Display_Ref dref = dlist->info[ndx].dref;
             ddca_report_display_by_dref(dref, 1);
-
+*/
 
 
 
