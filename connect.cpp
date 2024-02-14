@@ -328,7 +328,7 @@ void Connect::setSreenbrightness(const int &brightness)
 
             // Open display handle
                     DDCA_Display_Handle dh;
-                    DDCA_Status status = ddca_open_display2(DDCA_DEFAULT_DISPLAY_REF, false, &dh);
+                    DDCA_Status status = ddca_open_display2(DDCA_Display_Ref, false, &dh);
                     if (status != 0) {
                         qDebug() << "Failed to open display. Status code:" << status;
                         return;
