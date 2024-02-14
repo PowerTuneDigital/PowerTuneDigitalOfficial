@@ -325,6 +325,38 @@ void Connect::setSreenbrightness(const int &brightness)
 #ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
 
+
+    // Inquire about detected monitors.
+        DDCA_Display_Info_List *dlist = NULL;
+        ddca_get_display_info_list2(true, &dlist);
+        qDebug() << "ddca_get_display_info_list2() done. dlist=" << dlist;
+
+        // A convenience function to report the result of ddca_get_display_info_list2()
+        // output level has no effect on this debug report
+        qDebug() << "Report the result using ddca_report_display_info_list()...";
+        ddca_report_display_info_list(dlist, 2);
+
+        DDCA_Output_Level savedOutputLevel = ddca_set_output_level(DDCA_OL_NORMAL);
+        // A similar function that hooks directly into the "ddcutil detect" command.
+        qDebug() << "Calling ddca_report_active_displays()...";
+        // Note that ddca_set_output_level() affects detail shown:
+        int displayCount = ddca_report_displays(true, 2);
+        qDebug() << "ddca_report_active_displays() found" << displayCount << "displays";
+
+        qDebug() << "Calling ddca_report_display_by_dref() for each dlist entry...";
+        for (int ndx = 0; ndx < dlist->ct; ndx++) {
+            DDCA_Display_Ref dref = dlist->info[ndx].dref;
+            ddca_report_display_by_dref(dref, 1);
+
+
+
+
+
+
+
+
+
+
     // Obtain display information list
     DDCA_Display_Info_List *dlist = NULL;
     ddca_get_display_info_list2(false, &dlist);
@@ -334,10 +366,8 @@ void Connect::setSreenbrightness(const int &brightness)
         // Use the first available display
         DDCA_Display_Ref dref = dlist->info[0].dref;
         qDebug() << "Using display reference:" << dref;
-        dref = dinfo->dref;
-        qDebug() << "dinfo->dref:" << dref;
         // Open display handle
-        DDCA_Display_Handle dh = NULL;
+        DDCA_Display_Handle dh;
         qDebug() << "Opening Display now ";
         DDCA_Status status = ddca_open_display2(dref, false, &dh);
         qDebug() << "DDCA STATUS" << status;
