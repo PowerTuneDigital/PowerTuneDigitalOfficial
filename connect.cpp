@@ -325,32 +325,48 @@ void Connect::setSreenbrightness(const int &brightness)
 #ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
 
+    // Hardcode display 1
+    int desiredDisplayNumber = 1;
 
-    // Inquire about detected monitors.
-        DDCA_Display_Info_List *dlist = NULL;
-        ddca_get_display_info_list2(true, &dlist);
-        qDebug() << "ddca_get_display_info_list2() done. dlist=" << dlist;
+    // Create a display identifier for display 1
+    DDCA_Display_Ref dref;
+    DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+    if (status != 0) {
+        qDebug() << "Failed to create display identifier for display 1. Status code:" << status;
+        return;
+    }
 
-        // A convenience function to report the result of ddca_get_display_info_list2()
-        // output level has no effect on this debug report
-        qDebug() << "Report the result using ddca_report_display_info_list()...";
-        ddca_report_display_info_list(dlist, 2);
-/*
-        DDCA_Output_Level savedOutputLevel = ddca_set_output_level(DDCA_OL_NORMAL);
-        // A similar function that hooks directly into the "ddcutil detect" command.
-        qDebug() << "Calling ddca_report_active_displays()...";
-        // Note that ddca_set_output_level() affects detail shown:
-        int displayCount = ddca_report_displays(true, 2);
-        qDebug() << "ddca_report_active_displays() found" << displayCount << "displays";
+    qDebug() << "Using display reference:" << dref;
 
-        qDebug() << "Calling ddca_report_display_by_dref() for each dlist entry...";
-        for (int ndx = 0; ndx < dlist->ct; ndx++) {
-            DDCA_Display_Ref dref = dlist->info[ndx].dref;
-            ddca_report_display_by_dref(dref, 1);
-*/
+    // Open display handle
+    DDCA_Display_Handle dh;
+    qDebug() << "Opening Display now ";
+    status = ddca_open_display2(dref, false, &dh);
+    qDebug() << "DDCA STATUS" << status;
+    if (status != 0) {
+        qDebug() << "Failed to open display. Status code:" << status;
+        return;
+    }
 
+    // Set the VCP code for brightness (e.g., 0x10)
+    DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
 
+    // Set the brightness value
+    status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
 
+    if (status != 0 && status != DDCRC_VERIFY) {
+        qDebug() << "Failed to set brightness. Status code:" << status;
+    } else {
+        qDebug() << "Brightness set successfully.";
+    }
+
+    // Close display handle
+    status = ddca_close_display(dh);
+    if (status != 0) {
+        qDebug() << "Failed to close display. Status code:" << status;
+    }
+/*#ifdef HAVE_DDCUTIL
+    // Use ddcutil C API function to set the brightness
 
 
 
@@ -401,6 +417,7 @@ void Connect::setSreenbrightness(const int &brightness)
     } else {
         qDebug() << "No displays available.";
     }
+    */
 #else
     // Use standard interface
     QFile f("/sys/class/backlight/rpi_backlight/brightness");
