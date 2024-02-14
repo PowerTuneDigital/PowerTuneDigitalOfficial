@@ -173,6 +173,32 @@ void Connect::checkifraspberrypi()
 {
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
+#ifdef HAVE_DDCUTIL
+    // Use ddcutil C API function to set the brightness
+
+    // Hardcode display 1
+    int desiredDisplayNumber = 1;
+
+    // Create a display identifier for display 1
+    DDCA_Display_Ref dref;
+    DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+    if (status != 0) {
+        qDebug() << "Failed to create display identifier for display 1. Status code:" << status;
+        return;
+    }
+
+    qDebug() << "Using display reference:" << dref;
+
+    // Open display handle
+    DDCA_Display_Handle dh;
+    qDebug() << "Opening Display now ";
+    status = ddca_open_display2(dref, false, &dh);
+    qDebug() << "DDCA STATUS" << status;
+    if (status != 0) {
+        qDebug() << "Failed to open display. Status code:" << status;
+        return;
+    }
+    #endif
     if (inputFile.open(QIODevice::ReadOnly))
     {
         QTextStream in(&inputFile);
@@ -323,30 +349,6 @@ void Connect::readdashsetup1()
 void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
-    // Use ddcutil C API function to set the brightness
-
-    // Hardcode display 1
-    int desiredDisplayNumber = 1;
-
-    // Create a display identifier for display 1
-    DDCA_Display_Ref dref;
-    DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
-    if (status != 0) {
-        qDebug() << "Failed to create display identifier for display 1. Status code:" << status;
-        return;
-    }
-
-    qDebug() << "Using display reference:" << dref;
-
-    // Open display handle
-    DDCA_Display_Handle dh;
-    qDebug() << "Opening Display now ";
-    status = ddca_open_display2(dref, false, &dh);
-    qDebug() << "DDCA STATUS" << status;
-    if (status != 0) {
-        qDebug() << "Failed to open display. Status code:" << status;
-        return;
-    }
 
     // Set the VCP code for brightness (e.g., 0x10)
     DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
@@ -360,11 +362,7 @@ void Connect::setSreenbrightness(const int &brightness)
         qDebug() << "Brightness set successfully.";
     }
 
-    // Close display handle
-    status = ddca_close_display(dh);
-    if (status != 0) {
-        qDebug() << "Failed to close display. Status code:" << status;
-    }
+
 /*#ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
 
