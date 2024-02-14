@@ -324,8 +324,33 @@ void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
+////////////
+    DDCA_Status rc;
+     DDCA_Display_Ref dref;
+     DDCA_Display_Handle dh = NULL;  // initialize to avoid clang analyzer warning
+     int MAX_DISPLAYS = 4;           // limit the number of displays
 
-    // Obtain display information list
+     DDCA_Display_Info_List* dlist = NULL;
+     ddca_get_display_info_list2(
+           false,    // don't include invalid displays
+           &dlist);
+     for (int ndx = 0; ndx <  dlist->ct && ndx < MAX_DISPLAYS; ndx++) {
+        DDCA_Display_Info * dinfo = &dlist->info[ndx];
+        qDebug() << "\n===> Test loop for display %d\n" <<  dinfo->dispno;
+        // For all the gory details:
+        ddca_report_display_info(dinfo, /* depth=*/ 1);
+        dref = dinfo->dref;
+
+        // printf("Open display reference %s, creating a display handle...\n", ddca_dref_repr(dref));
+        rc = ddca_open_display2(dref, false, &dh);
+        if (rc != 0) {
+           DDC_ERRMSG("ddca_open_display", rc);
+           continue;
+        }
+
+        qDebug() << "Opened display handle: %s\n"" <<  ddca_dh_repr(dh);
+///
+/*    // Obtain display information list
     DDCA_Display_Info_List *dlist = NULL;
     ddca_get_display_info_list2(false, &dlist);
 
@@ -370,6 +395,7 @@ void Connect::setSreenbrightness(const int &brightness)
     } else {
         qDebug() << "No displays available.";
     }
+    */
 #else
     // Use standard interface
     QFile f("/sys/class/backlight/rpi_backlight/brightness");
