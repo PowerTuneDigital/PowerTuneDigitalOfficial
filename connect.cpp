@@ -47,6 +47,7 @@
 #ifdef HAVE_DDCUTIL
 extern "C" {
 #include "ddcutil_c_api.h"
+#include "ddcutil_status_codes.h"
 }
 #endif
 
@@ -332,12 +333,11 @@ void Connect::setSreenbrightness(const int &brightness)
                         qDebug() << "Failed to open display. Status code:" << status;
                         return;
                     }
-
                     // Set the VCP code for brightness (e.g., 0x10)
                     DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
 
                     // Set the brightness value
-                    status = perform_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
+                    status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
 
                     if (status != 0 && status != DDCRC_VERIFY) {
                         qDebug() << "Failed to set brightness. Status code:" << status;
