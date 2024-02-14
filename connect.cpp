@@ -62,7 +62,16 @@ QString selectedPort;
 QString dashfilename1;
 QString dashfilename2;
 QString dashfilename3;
+#ifdef HAVE_DDCUTIL
+    // Use ddcutil C API function to set the brightness
 
+    // Hardcode display 1
+    int desiredDisplayNumber = 1;
+
+    // Create a display identifier for display 1
+    DDCA_Display_Ref dref;
+    DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+ #endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
     m_serialport(Q_NULLPTR),
@@ -174,14 +183,7 @@ void Connect::checkifraspberrypi()
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
-    // Use ddcutil C API function to set the brightness
 
-    // Hardcode display 1
-    int desiredDisplayNumber = 1;
-
-    // Create a display identifier for display 1
-    DDCA_Display_Ref dref;
-    DDCA_Status status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
     if (status != 0) {
         qDebug() << "Failed to create display identifier for display 1. Status code:" << status;
         return;
