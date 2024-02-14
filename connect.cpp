@@ -71,6 +71,8 @@ QString dashfilename3;
     DDCA_Display_Ref dref;
     DDCA_Status status;
     DDCA_Display_Handle dh;
+    // Specify the I2C bus number where the display is connected
+    int i2cBusNumber = 20; // For example, assuming the display is connected to /dev/i2c-20
  #endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
@@ -184,7 +186,9 @@ void Connect::checkifraspberrypi()
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
-    status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+    ddca_create_busno_display_identifier
+    //status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
+    status = ddca_open_display2(i2cBusNumber, false, &dh);
     if (status != 0) {
         qDebug() << "Failed to create display identifier for display . Status code:" << status;
         return;
