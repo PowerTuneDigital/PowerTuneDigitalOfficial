@@ -322,46 +322,62 @@ void Connect::readdashsetup1()
 
 void Connect::setSreenbrightness(const int &brightness)
 {
-
 #ifdef HAVE_DDCUTIL
-        // Use ddcutil C API function to set the brightness
+    // Use ddcutil C API function to set the brightness
 
-            // Open display handle
-                    DDCA_Display_Handle dh;
-                    DDCA_Status status = ddca_open_display2(DDCA_Display_Ref, false, &dh);
-                    if (status != 0) {
-                        qDebug() << "Failed to open display. Status code:" << status;
-                        return;
-                    }
-                    // Set the VCP code for brightness (e.g., 0x10)
-                    DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
+    // Obtain display information list
+    DDCA_Display_Info_List *dlist = NULL;
+    ddca_get_display_info_list2(false, &dlist);
 
-                    // Set the brightness value
-                    status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
+    // Check if there are any displays available
+    if (dlist->ct > 0) {
+        // Use the first available display
+        DDCA_Display_Ref dref = dlist->info[0].dref;
+        qDebug() << "Using display reference:" << dref;
 
-                    if (status != 0 && status != DDCRC_VERIFY) {
-                        qDebug() << "Failed to set brightness. Status code:" << status;
-                    } else {
-                        qDebug() << "Brightness set successfully.";
-                    }
+        // Open display handle
+        DDCA_Display_Handle dh;
+        DDCA_Status status = ddca_open_display2(dref, false, &dh);
+        if (status != 0) {
+            qDebug() << "Failed to open display. Status code:" << status;
+            // Free display information list
+            ddca_free_display_info_list(dlist);
+            return;
+        }
 
-                    // Close display handle
-                    status = ddca_close_display(dh);
-                    if (status != 0) {
-                        qDebug() << "Failed to close display. Status code:" << status;
-                    }
-                }
+        // Set the VCP code for brightness (e.g., 0x10)
+        DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
+
+        // Set the brightness value
+        status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
+
+        if (status != 0 && status != DDCRC_VERIFY) {
+            qDebug() << "Failed to set brightness. Status code:" << status;
+        } else {
+            qDebug() << "Brightness set successfully.";
+        }
+
+        // Close display handle
+        status = ddca_close_display(dh);
+        if (status != 0) {
+            qDebug() << "Failed to close display. Status code:" << status;
+        }
+
+        // Free display information list
+        ddca_free_display_info_list(dlist);
+    } else {
+        qDebug() << "No displays available.";
+    }
 #else
-        //Use standard interface
-        QFile f("/sys/class/backlight/rpi_backlight/brightness");
-        //f.close();
-        f.open(QIODevice::WriteOnly | QIODevice::Truncate);
-        QTextStream out(&f);
-        out << brightness;
-        //qDebug() << brightness;
-        f.close();
+    // Use standard interface
+    QFile f("/sys/class/backlight/rpi_backlight/brightness");
+    // f.close();
+    f.open(QIODevice::WriteOnly | QIODevice::Truncate);
+    QTextStream out(&f);
+    out << brightness;
+    // qDebug() << brightness;
+    f.close();
 #endif
-
 }
 void Connect::setSpeedUnits(const int &units1)
 {
