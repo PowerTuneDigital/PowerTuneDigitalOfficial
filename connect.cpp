@@ -332,7 +332,7 @@ void Connect::setSreenbrightness(const int &brightness)
     // Check if there are any displays available
     if (dlist->ct > 0) {
         // Use the first available display
-        DDCA_Display_Ref dref = dlist->info[0].dref;
+        DDCA_Display_Ref dref = 1//dlist->info[0].dref;
         qDebug() << "Using display reference:" << dref;
 
         // Open display handle
