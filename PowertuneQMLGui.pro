@@ -9,7 +9,7 @@ CONFIG += c++11
 exists(/usr/lib/libddcutil.so*) {
     INCLUDEPATH += /usr/include/ddcutil
     DEFINES += HAVE_DDCUTIL
-    LIBS+=/usr/lib/libddcutil.so.4.2.0
+    LIBS+=/usr/lib/libddcutil.so.4
 }
 static {
     QT += svg
