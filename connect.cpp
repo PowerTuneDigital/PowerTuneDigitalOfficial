@@ -190,8 +190,7 @@ void Connect::checkifraspberrypi()
     const char *libopts = "--ddc"; // Example options
     DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
     if (status != 0) {
-        // Handle initialization error
-        return 1;
+        qDebug() <<"Not working again ;( ";
     }
 
 
