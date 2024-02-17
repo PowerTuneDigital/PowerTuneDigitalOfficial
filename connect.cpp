@@ -961,10 +961,10 @@ void Connect::daemonstartup(const int &daemon)
     }
 
     //Reboot the PI for settings to take Effect
-   // m_dashBoard->setSerialStat("Rebooting ");
-   // QProcess *process = new QProcess(this);
-   // process->start("sudo reboot");
-   // process->waitForFinished(100); // 10 minutes time before timeout
+    m_dashBoard->setSerialStat("Rebooting ");
+    QProcess *process = new QProcess(this);
+    process->start("sudo reboot");
+    process->waitForFinished(100); // 10 minutes time before timeout
 }
 //////////////
 void Connect::canbitratesetup(const int &cansetting)
