@@ -186,8 +186,17 @@ void Connect::checkifraspberrypi()
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
-    char * libopts = "--ddc";  // report DDC/CI data errors to the terminal
-    ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
+    // Initialize libddcutil with options
+    const char *libopts = "--ddc"; // Example options
+    DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
+    if (status != 0) {
+        // Handle initialization error
+        return 1;
+    }
+
+
+    //char * libopts = "--ddc";  // report DDC/CI data errors to the terminal
+    //ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
 
     DDCA_Display_Info_List* dlist = nullptr;
     ddca_get_display_info_list2(false, &dlist);
