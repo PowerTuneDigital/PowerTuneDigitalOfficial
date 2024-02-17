@@ -917,6 +917,9 @@ void Connect::daemonstartup(const int &daemon)
     //QString fileName = "startdaemon.sh";//for testing on windows
     QFile mFile(fileName);
 
+    if (daemonstart == "./Consult /dev/ttyUSB0")
+    {
+        qDebug()<< "Consult Selected";
         mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
         QTextStream out(&mFile);
         out << "#!/bin/sh"
@@ -931,12 +934,31 @@ void Connect::daemonstartup(const int &daemon)
             << endl
             << "sudo sh -c 'echo \"0403 c7d9\" > /sys/bus/usb-serial/drivers/ftdi_sio/new_id'"
             << endl
+            << "sleep 1.5"
+            << endl
             << "cd /home/pi/daemons"
             << endl
             << daemonstart
             << endl;
         mFile.close();
-
+    }
+    else
+    {
+        qDebug()<< "No Consult Selected";
+        mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
+        QTextStream out(&mFile);
+        out << "#!/bin/sh"
+            << endl
+            << "sudo ifdown can0"
+            << endl
+            << "sudo ifup can0"
+            << endl
+            << "cd /home/pi/daemons"
+            << endl
+            << daemonstart
+            << endl;
+        mFile.close();
+    }
 
     //Reboot the PI for settings to take Effect
    // m_dashBoard->setSerialStat("Rebooting ");
