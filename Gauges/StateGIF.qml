@@ -121,7 +121,7 @@ Item {
 
             ComboBox {
                 id: pictureSelectoroff
-                width: 140
+                width: 190
                 height: 40
                 font.pixelSize: 12
                 model: Dashboard.backroundpictures
@@ -147,7 +147,7 @@ Item {
             }
             ComboBox {
                 id: pictureSelectoron
-                width: 140
+                width: 190
                 height: 40
                 font.pixelSize: 12
                 model: Dashboard.backroundpictures
@@ -178,7 +178,7 @@ Item {
                 id: cbxMain
                 textRole: "titlename"
                 model: powertunedatasource
-                width: 140
+                width: 190
                 height: 40
                 font.pixelSize: 12
                 Component.onCompleted: {for(var i = 0; i < cbxMain.model.count; ++i) if (powertunedatasource.get(i).sourcename === mainvaluename)cbxMain.currentIndex = i,bind()}
@@ -190,7 +190,7 @@ Item {
             }
             TextField {
                 id: triggeronvalue
-                width: 140
+                width: 190
                 height: 40
                 text: triggervalue
                 onTextChanged: triggerofffColor();
@@ -202,7 +202,7 @@ Item {
             }
             TextField {
                 id: triggerofffvalue
-                width: 140
+                width: 190
                 height: 40
                 text: triggeroffvalue
                 onTextChanged: triggerofffColor();
