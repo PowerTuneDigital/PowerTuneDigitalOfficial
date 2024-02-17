@@ -186,8 +186,7 @@ void Connect::checkifraspberrypi()
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
-    //status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
-    status = ddca_open_display2(i2cBusNumber, false, &dh);
+    status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
     if (status != 0) {
         qDebug() << "Failed to create display identifier for display . Status code:" << status;
         return;
