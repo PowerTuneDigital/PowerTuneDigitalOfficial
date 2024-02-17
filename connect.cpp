@@ -186,23 +186,37 @@ void Connect::checkifraspberrypi()
     QFile inputFile(path);
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
-    status = ddca_create_dispno_display_identifier(desiredDisplayNumber, &dref);
-    if (status != 0) {
-        qDebug() << "Failed to create display identifier for display . Status code:" << status;
-        return;
+    char * libopts = "--ddc";  // report DDC/CI data errors to the terminal
+    ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
+
+    DDCA_Display_Info_List* dlist = nullptr;
+    ddca_get_display_info_list2(false, &dlist);
+
+    for (int ndx = 0; ndx < dlist->ct; ++ndx)
+    {
+        DDCA_Display_Info *dinfo = &dlist->info[ndx];
+        DDCA_Display_Ref dref = dinfo->dref;
+        DDCA_Display_Handle dh = nullptr;
+
+        DDCA_Status rc = ddca_open_display2(dref, false, &dh);
+        if (rc != 0) {
+            qWarning("Failed to open display");
+            continue;
+        }
+
+        // Set brightness to 50 (hex: 0x32)
+        rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x32);
+        if (rc != 0) {
+            qWarning("Failed to set brightness");
+        }
+
+        rc = ddca_close_display(dh);
+        if (rc != 0) {
+            qWarning("Failed to close display");
+        }
     }
 
-    qDebug() << "Using display reference:" << dref;
-
-    // Open display handle
-
-    qDebug() << "Opening Display now ";
-    status = ddca_open_display2(dref, false, &dh);
-    qDebug() << "DDCA STATUS" << status;
-    if (status != 0) {
-        qDebug() << "Failed to open display. Status code:" << status;
-        return;
-    }
+    ddca_free_display_info_list(dlist);
     #endif
     if (inputFile.open(QIODevice::ReadOnly))
     {
