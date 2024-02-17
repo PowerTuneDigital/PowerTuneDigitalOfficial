@@ -6,10 +6,10 @@ CONFIG += c++11
 
 # QMAKE_LFLAGS += -static
 # Check for the existence of ddcutil headers
-exists(/usr/lib/libddcutil.so*) {
+exists(/usr/lib/libddcutil.so) {
     INCLUDEPATH += /usr/include/ddcutil
     DEFINES += HAVE_DDCUTIL
-    LIBS+=/usr/lib/libddcutil.so.4.2.0
+    LIBS+=/usr/lib/ -lddcutil
 }
 static {
     QT += svg
