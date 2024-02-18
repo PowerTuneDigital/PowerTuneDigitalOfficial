@@ -60,11 +60,8 @@ QString dashfilename1;
 QString dashfilename2;
 QString dashfilename3;
 //#ifdef HAVE_DDCUTIL
-    // Use ddcutil C API function to set the brightness
-    DDCA_Display_Ref dref;
-    DDCA_Status status;
-    DDCA_Display_Handle dh;
-    DDCA_Status rc;
+
+
  //#endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
@@ -176,50 +173,7 @@ void Connect::checkifraspberrypi()
 {
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
-/*
-    //#ifdef HAVE_DDCUTIL
-    qDebug() <<"Checkifraspberrypi";
-    // Initialize libddcutil with options
-   const char* libopts = "--ddc";  // report DDC/CI data errors to the terminal
-   DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
-    if (status != 0) {
-        qDebug() <<"Not working again ;( ";
-    }
 
-qDebug() <<"find daisplays ";
-    DDCA_Display_Info_List* dlist = nullptr;
-    ddca_get_display_info_list2(false, &dlist);
-qDebug() <<"open display ";
-    for (int ndx = 0; ndx < dlist->ct; ++ndx)
-    {
-        DDCA_Display_Info *dinfo = &dlist->info[ndx];
-        DDCA_Display_Ref dref = dinfo->dref;
-        DDCA_Display_Handle dh = nullptr;
-        qDebug() << "Display #" << ndx + 1;
-
-        //DDCA_Status rc = ddca_open_display2(dref, false, &dh);
-        rc = ddca_open_display2(dref, false, &dh);
-        if (rc != 0) {
-            qWarning("Failed to open display");
-            continue;
-        }
-qDebug() <<"Set Brighness ddc ";
-        // Set brightness to 50 (hex: 0x32)
-        rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x00);
-        if (rc != 0) {
-            qWarning("Warning Failed to set brightness");
-        }
-qDebug() <<"brightness set to 0 ddc ";
-        rc = ddca_close_display(dh);
-        if (rc != 0) {
-            qWarning("Warning Failed to close display");
-        }
-    }
-
-    ddca_free_display_info_list(dlist);
-
-    */
- //   #endif
     if (inputFile.open(QIODevice::ReadOnly))
     {
         QTextStream in(&inputFile);
@@ -236,8 +190,11 @@ qDebug() <<"brightness set to 0 ddc ";
     }
     else
     {
-        m_dashBoard->setscreen(true);
+        m_dashBoard->setscreen(false);
     }
+    #ifdef HAVE_DDCUTIL
+       m_dashBoard->setscreen(true);
+    #endif
 }
 void Connect::readavailabledashfiles()
 {
@@ -371,9 +328,8 @@ void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
     // Adjust brightness using ddcutil
-    QString command = QString("ddcutil setvcp 10 %1").arg(brightness-20);
+    QString command = QString("ddcutil setvcp 10 %1").arg(brightness);
     QProcess::execute(command);
-
 #else
     // Use standard interface
     QFile f("/sys/class/backlight/rpi_backlight/brightness");

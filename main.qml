@@ -258,7 +258,17 @@ ApplicationWindow {
                      Connect.setSreenbrightness(brightness.value);
                      AppSettings.writebrightnessettings(brightness.value);
                      }
-            //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
+            // Conditional assignment of 'from' and 'to' properties
+            Component.onCompleted: {
+                // Check if HAVE_DDCUTIL is defined
+                if (Qt.platform.os === "linux" && defined(HAVE_DDCUTIL)) {
+                    from = 0;  // Adjust based on your requirements
+                    to = 100;  // Adjust based on your requirements
+                } else {
+                    from = 0;  // Default values if HAVE_DDCUTIL is not defined
+                    to = 255;  // Default values if HAVE_DDCUTIL is not defined
+                }
+            }
         }
     }
     }
