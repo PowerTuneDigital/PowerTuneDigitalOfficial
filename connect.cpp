@@ -193,10 +193,10 @@ void Connect::checkifraspberrypi()
         qDebug() <<"Not working again ;( ";
     }
 */
-
+qDebug() <<"find daisplays ";
     DDCA_Display_Info_List* dlist = nullptr;
     ddca_get_display_info_list2(false, &dlist);
-
+qDebug() <<"open display ";
     for (int ndx = 0; ndx < dlist->ct; ++ndx)
     {
         DDCA_Display_Info *dinfo = &dlist->info[ndx];
@@ -208,9 +208,9 @@ void Connect::checkifraspberrypi()
             qWarning("Failed to open display");
             continue;
         }
-
+qDebug() <<Set brigh ";
         // Set brightness to 50 (hex: 0x32)
-        rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x32);
+        rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x00);
         if (rc != 0) {
             qWarning("Failed to set brightness");
         }
