@@ -59,17 +59,13 @@ QString selectedPort;
 QString dashfilename1;
 QString dashfilename2;
 QString dashfilename3;
-#ifdef HAVE_DDCUTIL
+//#ifdef HAVE_DDCUTIL
     // Use ddcutil C API function to set the brightness
-
-    // Hardcode display 0
-    int desiredDisplayNumber = 1;
-    // Create a display identifier for display 0
     DDCA_Display_Ref dref;
     DDCA_Status status;
     DDCA_Display_Handle dh;
     DDCA_Status rc;
- #endif
+ //#endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
     m_serialport(Q_NULLPTR),
@@ -180,10 +176,11 @@ void Connect::checkifraspberrypi()
 {
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
-#ifdef HAVE_DDCUTIL
+/*
+    //#ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
     // Initialize libddcutil with options
-   char * libopts = "--ddc";  // report DDC/CI data errors to the terminal
+   const char* libopts = "--ddc";  // report DDC/CI data errors to the terminal
    DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
     if (status != 0) {
         qDebug() <<"Not working again ;( ";
@@ -220,7 +217,9 @@ qDebug() <<"brightness set to 0 ddc ";
     }
 
     ddca_free_display_info_list(dlist);
-    #endif
+
+    */
+ //   #endif
     if (inputFile.open(QIODevice::ReadOnly))
     {
         QTextStream in(&inputFile);
@@ -371,73 +370,8 @@ void Connect::readdashsetup1()
 void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
+    DDCA_Status status = ddca_set_vcp_feature(DDCA_DISPLAY_LOCAL, 0x10, brightness, false);
 
-    // Set the VCP code for brightness (e.g., 0x10)
-    DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
-
-    // Set the brightness value
-    //status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
-    rc = ddca_set_non_table_vcp_value(dh, 10, 0, brightness);
-    if (rc != 0 && status != DDCRC_VERIFY) {
-        qDebug() << "Failed to set brightness. Status code:" << rc;
-    } else {
-        qDebug() << "Brightness set successfully.";
-    }
-
-
-/*#ifdef HAVE_DDCUTIL
-    // Use ddcutil C API function to set the brightness
-
-
-
-
-
-
-    // Obtain display information list
-    DDCA_Display_Info_List *dlist = NULL;
-    ddca_get_display_info_list2(false, &dlist);
-
-    // Check if there are any displays available
-    if (dlist->ct > 0) {
-        // Use the first available display
-        DDCA_Display_Ref dref = dlist->info[0].dref;
-        qDebug() << "Using display reference:" << dref;
-        // Open display handle
-        DDCA_Display_Handle dh;
-        qDebug() << "Opening Display now ";
-        DDCA_Status status = ddca_open_display2(dref, false, &dh);
-        qDebug() << "DDCA STATUS" << status;
-        if (status != 0) {
-            qDebug() << "Failed to open display. Status code:" << status;
-            // Free display information list
-            ddca_free_display_info_list(dlist);
-            return;
-        }
-
-        // Set the VCP code for brightness (e.g., 0x10)
-        DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
-
-        // Set the brightness value
-        status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
-
-        if (status != 0 && status != DDCRC_VERIFY) {
-            qDebug() << "Failed to set brightness. Status code:" << status;
-        } else {
-            qDebug() << "Brightness set successfully.";
-        }
-
-        // Close display handle
-        status = ddca_close_display(dh);
-        if (status != 0) {
-            qDebug() << "Failed to close display. Status code:" << status;
-        }
-
-        // Free display information list
-        ddca_free_display_info_list(dlist);
-    } else {
-        qDebug() << "No displays available.";
-    }
-    */
 #else
     // Use standard interface
     QFile f("/sys/class/backlight/rpi_backlight/brightness");
