@@ -251,8 +251,8 @@ ApplicationWindow {
             //anchors.top: brightnestext.bottom
             //anchors.horizontalCenter: parent.horizontalCenter
             stepSize: 5
-            from: 20
-            to: 255
+            from: 0
+            to: 100
             value: Dashboard.Brightness
             onValueChanged: {
                      Connect.setSreenbrightness(brightness.value);

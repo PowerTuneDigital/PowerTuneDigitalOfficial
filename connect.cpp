@@ -371,7 +371,7 @@ void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
     // Adjust brightness using ddcutil
-    QString command = QString("ddcutil setvcp 10 %1").arg(brightness);
+    QString command = QString("ddcutil setvcp 10 %1").arg(brightness-20);
     QProcess::execute(command);
 
 #else
