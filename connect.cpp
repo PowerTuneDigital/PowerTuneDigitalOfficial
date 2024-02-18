@@ -44,9 +44,6 @@
 #include <QTextStream>
 #include <QByteArrayMatcher>
 #include <QProcess>
-#include "ddcutil_status_codes.h"
-#include "ddcutil_c_api.h"
-
 
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU
 int logging; // 0 Logging off , 1 Logging to file
@@ -59,10 +56,7 @@ QString selectedPort;
 QString dashfilename1;
 QString dashfilename2;
 QString dashfilename3;
-//#ifdef HAVE_DDCUTIL
 
-
- //#endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
     m_serialport(Q_NULLPTR),

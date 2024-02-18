@@ -255,7 +255,6 @@ ApplicationWindow {
             to: 100
             value: Dashboard.Brightness
             onValueChanged: {
-                console.log(value)
                      Connect.setSreenbrightness(brightness.value);
                      AppSettings.writebrightnessettings(brightness.value);
                      }
@@ -266,7 +265,7 @@ ApplicationWindow {
                     from = 0;  // Adjust based on your requirements
                     to = 100;  // Adjust based on your requirements
                 } else {
-                    from = 0;  // Default values if HAVE_DDCUTIL is not defined
+                    from = 20;  // Default values if HAVE_DDCUTIL is not defined
                     to = 255;  // Default values if HAVE_DDCUTIL is not defined
                 }
             }

@@ -49,9 +49,6 @@ include(deployment.pri)
 HEADERS += \
     Extender.h \
     dashboard.h \
-    ddcutil_c_api.h \
-    ddcutil_status_codes.h \
-    ddcutil_types.h \
     downloadmanager.h \
     iomapdata.h \
     parsegithubdata.h \
