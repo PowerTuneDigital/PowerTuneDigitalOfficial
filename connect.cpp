@@ -370,7 +370,9 @@ void Connect::readdashsetup1()
 void Connect::setSreenbrightness(const int &brightness)
 {
 #ifdef HAVE_DDCUTIL
-    DDCA_Status status = ddca_set_vcp_feature(DDCA_DISPLAY_LOCAL, 0x10, brightness, false);
+    // Adjust brightness using ddcutil
+    QString command = QString("ddcutil setvcp 10 %1").arg(brightness);
+    QProcess::execute(command);
 
 #else
     // Use standard interface
