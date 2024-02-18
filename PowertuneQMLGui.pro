@@ -8,7 +8,7 @@ CONFIG += c++11
 # Check for the existence of ddcutil headers
 exists(/usr/lib/libddcutil.so) {
     DEFINES += HAVE_DDCUTIL
-    LIBS += -L/usr/lib -lddcutil
+    QT += HAVE_DDCUTIL
 }
 static {
     QT += svg
