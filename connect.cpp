@@ -186,12 +186,12 @@ void Connect::checkifraspberrypi()
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
     // Initialize libddcutil with options
-  /*
-   * DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
+
+   DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
     if (status != 0) {
         qDebug() <<"Not working again ;( ";
     }
-*/
+
 qDebug() <<"find daisplays ";
     DDCA_Display_Info_List* dlist = nullptr;
     ddca_get_display_info_list2(false, &dlist);
