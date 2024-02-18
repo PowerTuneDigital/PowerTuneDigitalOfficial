@@ -44,12 +44,9 @@
 #include <QTextStream>
 #include <QByteArrayMatcher>
 #include <QProcess>
-#ifdef HAVE_DDCUTIL
-extern "C" {
-#include "ddcutil_c_api.h"
 #include "ddcutil_status_codes.h"
-}
-#endif
+#include "ddcutil_c_api.h"
+
 
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU
 int logging; // 0 Logging off , 1 Logging to file
