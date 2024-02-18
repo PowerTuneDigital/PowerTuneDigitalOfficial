@@ -186,7 +186,7 @@ void Connect::checkifraspberrypi()
 #ifdef HAVE_DDCUTIL
     qDebug() <<"Checkifraspberrypi";
     // Initialize libddcutil with options
-
+   char * libopts = "--ddc";  // report DDC/CI data errors to the terminal
    DDCA_Status status = ddca_init(libopts, DDCA_SYSLOG_ERROR, DDCA_INIT_OPTIONS_NONE);
     if (status != 0) {
         qDebug() <<"Not working again ;( ";
@@ -202,10 +202,7 @@ qDebug() <<"open display ";
         DDCA_Display_Ref dref = dinfo->dref;
         DDCA_Display_Handle dh = nullptr;
         qDebug() << "Display #" << ndx + 1;
-           qDebug() << "  Display Name:" << dinfo->name;
-           qDebug() << "  Display Width:" << dinfo->width;
-           qDebug() << "  Display Height:" << dinfo->height;
-           qDebug() << "  Display Refresh Rate:" << dinfo->refresh_rate;
+
         //DDCA_Status rc = ddca_open_display2(dref, false, &dh);
         rc = ddca_open_display2(dref, false, &dh);
         if (rc != 0) {
