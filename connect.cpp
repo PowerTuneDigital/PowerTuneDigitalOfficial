@@ -208,16 +208,16 @@ qDebug() <<"open display ";
             qWarning("Failed to open display");
             continue;
         }
-qDebug() <<Set brigh ";
+        qDebug() <<"Set Brighness ddc ";
         // Set brightness to 50 (hex: 0x32)
         rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x00);
         if (rc != 0) {
-            qWarning("Failed to set brightness");
+            qWarning("Warning Failed to set brightness");
         }
-
+        qDebug() <<"brightness set to 0 ddc ";
         rc = ddca_close_display(dh);
         if (rc != 0) {
-            qWarning("Failed to close display");
+            qWarning("Warning Failed to close display");
         }
     }
 
