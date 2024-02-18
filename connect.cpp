@@ -201,7 +201,11 @@ qDebug() <<"open display ";
         DDCA_Display_Info *dinfo = &dlist->info[ndx];
         DDCA_Display_Ref dref = dinfo->dref;
         DDCA_Display_Handle dh = nullptr;
-
+        qDebug() << "Display #" << ndx + 1;
+           qDebug() << "  Display Name:" << dinfo->name;
+           qDebug() << "  Display Width:" << dinfo->width;
+           qDebug() << "  Display Height:" << dinfo->height;
+           qDebug() << "  Display Refresh Rate:" << dinfo->refresh_rate;
         //DDCA_Status rc = ddca_open_display2(dref, false, &dh);
         rc = ddca_open_display2(dref, false, &dh);
         if (rc != 0) {
