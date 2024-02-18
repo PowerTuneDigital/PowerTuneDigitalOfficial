@@ -71,8 +71,7 @@ QString dashfilename3;
     DDCA_Display_Ref dref;
     DDCA_Status status;
     DDCA_Display_Handle dh;
-    // Specify the I2C bus number where the display is connected
-    int i2cBusNumber = 20; // For example, assuming the display is connected to /dev/i2c-20
+    DDCA_Status rc;
  #endif
 Connect::Connect(QObject *parent) :
     QObject(parent),
@@ -203,18 +202,19 @@ qDebug() <<"open display ";
         DDCA_Display_Ref dref = dinfo->dref;
         DDCA_Display_Handle dh = nullptr;
 
-        DDCA_Status rc = ddca_open_display2(dref, false, &dh);
+        //DDCA_Status rc = ddca_open_display2(dref, false, &dh);
+        rc = ddca_open_display2(dref, false, &dh);
         if (rc != 0) {
             qWarning("Failed to open display");
             continue;
         }
-        qDebug() <<"Set Brighness ddc ";
+qDebug() <<"Set Brighness ddc ";
         // Set brightness to 50 (hex: 0x32)
         rc = ddca_set_non_table_vcp_value(dh, 0x10, 0x00, 0x00);
         if (rc != 0) {
             qWarning("Warning Failed to set brightness");
         }
-        qDebug() <<"brightness set to 0 ddc ";
+qDebug() <<"brightness set to 0 ddc ";
         rc = ddca_close_display(dh);
         if (rc != 0) {
             qWarning("Warning Failed to close display");
@@ -378,10 +378,10 @@ void Connect::setSreenbrightness(const int &brightness)
     DDCA_Vcp_Feature_Code brightnessVcpCode = 0x10;
 
     // Set the brightness value
-    status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
-
-    if (status != 0 && status != DDCRC_VERIFY) {
-        qDebug() << "Failed to set brightness. Status code:" << status;
+    //status = ddca_set_non_table_vcp_value(dh, brightnessVcpCode, 0, brightness);
+    rc = ddca_set_non_table_vcp_value(dh, 10, 0, brightness);
+    if (rc != 0 && status != DDCRC_VERIFY) {
+        qDebug() << "Failed to set brightness. Status code:" << rc;
     } else {
         qDebug() << "Brightness set successfully.";
     }
