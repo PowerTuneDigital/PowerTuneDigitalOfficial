@@ -7,6 +7,8 @@ import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
 
+
+
 ApplicationWindow {
     id:window
     visible: true
@@ -16,6 +18,10 @@ ApplicationWindow {
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
+
+    Component.onCompleted: {
+        popUpLoader.source = "qrc:/PopUpTest.qml"
+    }
 
 
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
@@ -27,6 +33,7 @@ ApplicationWindow {
         width: 500
         height: 220
         z: 220
+
 
         MouseArea {
             id: touchAkeyboardcontainer
@@ -84,18 +91,15 @@ ApplicationWindow {
             id: firstPageLoader
             //active: SwipeView.isCurrentItem || SwipeView.isPreviousItem || firstPageLoader.source == "qrc:/GPSTracks/Laptimer.qml"
             source: "qrc:/Intro.qml"
+
         }
-        /*
-        Loader {
-            id: testLoader
-            active: true
-            //source: ""
-            source: "qrc:/Settings/CanMonitor.qml"
-        }*/
+
+
         Loader {
             id: secondPageLoader
             active: Dashboard.Visibledashes > 1
             source: ""
+
         }
         Loader {
             id: thirdPageLoader
@@ -256,12 +260,14 @@ ApplicationWindow {
             from: 20
             to: 255
             value: Dashboard.Brightness
+
             onValueChanged: {
                      Connect.setSreenbrightness(brightness.value);
                      AppSettings.writebrightnessettings(brightness.value);
                      }
             //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
         }
+
     }
     }
     PageIndicator {
@@ -272,99 +278,20 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    Rectangle{
-        id: popUp1
-        color: "white"
+    Loader {
+        id: popUpLoader
         visible: true
-        width: 500
-        height: 300
         anchors.centerIn: parent
-        focus: true
-
-        Grid {
-            id :row5
-            rows: 1
-            columns: 2
-            topPadding: window.width / 40
-            spacing: window.width / 3
-            anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.centerIn: parent
-            Button {
-                id: btntripreset2
-                text: "Trip Reset"
-                font.family: "Eurostile"
-                font.bold: true
-                width: window.width / 9
-                height: window.width / 9
-                font.pixelSize: window.width / 70
-                onClicked: {Calculations.resettrip()}
-                background: Rectangle {
-                    radius: window.width / 10
-                    opacity: enabled ? 1 : 0.3
-                    color: btntripreset2.down ? "darkgrey" : "grey"
-                    border.color: btntripreset2.down ? "grey" : "darkgrey"
-                    border.width: window.width / 200
-                        }
-            }
-
-            Button {
-                id: btnshutdown2
-                text: "Shutdown"
-                font.family: "Eurostile"
-                font.bold: true
-                width: window.width / 10
-                height: window.width / 10
-                font.pixelSize: window.width / 70
-                onClicked: {Connect.shutdown();}
-                background: Rectangle {
-                            //color: "red"
-                            radius: window.width / 10
-                            opacity: enabled ? 1 : 0.3
-                            color: btnshutdown2.down ? "darkred" : "red"
-                            border.color: btnshutdown2.down ? "red" : "darkred"
-                            border.width: window.width / 200
-                        }
-            }
-        }
-
-        Grid {
-            id :row3
-            rows: 1
-            columns: 2
-            spacing: window.width /50
-            anchors.top: row1.bottom
-            anchors.topMargin: drawerpopup.height/30
-            anchors.horizontalCenter: parent.horizontalCenter
-            visible: Dashboard.screen
-            Image {
-                height: window.height /15
-                width:height
-                id: brightnessimage2
-                source: "qrc:/graphics/brightness.png"
-            }
-        Slider {
-            id:brightness2
-            width: window.width / 3
-            height: window.height /15
-            //anchors.top: brightnestext.bottom
-            //anchors.horizontalCenter: parent.horizontalCenter
-            stepSize: 5
-            from: 20
-            to: 255
-            value: Dashboard.Brightness
-            onValueChanged: {
-                     Connect.setSreenbrightness(brightness.value);
-                     AppSettings.writebrightnessettings(brightness.value);
-                     }
-            //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
-        }
-        }
-
-        Timer {
-              interval: 5000
-              running: true
-              onTriggered: popUp1.destroy()
-        }
     }
-}
 
+
+
+//        Timer {
+
+//              interval: 10000
+//              running: (follow = 0)
+//              onTriggered: follow = 1
+//        }
+
+
+    }

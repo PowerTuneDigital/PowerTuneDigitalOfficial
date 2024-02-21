@@ -130,5 +130,6 @@
         <file>graphics/Flags/us.png</file>
         <file>graphics/Flags/fr.png</file>
         <file>graphics/Flags/ae.png</file>
+        <file>PopUpTest.qml</file>
     </qresource>
 </RCC>
