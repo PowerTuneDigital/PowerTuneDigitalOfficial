@@ -12,6 +12,8 @@ Item {
       {
         id:groove1
         source:"qrc:/graphics/fueltechempty.png"
+        width: parent.width
+        height: parent.width /4
         anchors.top:parent.top
         anchors.left:parent.left
         smooth: true
@@ -19,7 +21,7 @@ Item {
         Item{
               id: displayWindow1
               height: parent.height
-              width: (800*(Dashboard.rpm)/Dashboard.maxRPM)
+              width: (parent.width*(Dashboard.rpm)/Dashboard.maxRPM)
               clip: true
 
                 anchors.bottom: parent.bottom
@@ -30,6 +32,8 @@ Item {
                 id:speedarcfill
                 anchors.top:parent.top
                 anchors.left:parent.left
+                width: groove1.width
+                height: groove1.height
                 source:"qrc:/graphics/fueltechfill.png"
                 smooth: true
                 z: 1
@@ -41,8 +45,8 @@ Item {
         property int value
 
            path: Path {
-           startX: 0; startY: 189
-           PathLine { x: 800; y: 480 }
+           startX: 0; startY: parent.width /4.2
+           PathLine { x: parent.width; y: parent.height }
          }
         progress: Dashboard.rpm / Dashboard.maxRPM
       }
