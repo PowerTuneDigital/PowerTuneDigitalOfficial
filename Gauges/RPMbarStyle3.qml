@@ -52,13 +52,13 @@ Item {
       }
 }
 //
-        ShiftLights{}
+        ShiftLights{ }
 
 
         Text {
             x: 0
-            y: 43
-            font.pixelSize: 70
+            y: userDash.width / 18.6 // 43
+            font.pixelSize:  userDash.width / 11.4 //70
             font.bold: true
             color: "white"
             text: Dashboard.rpm
