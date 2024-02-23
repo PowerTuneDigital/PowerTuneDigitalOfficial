@@ -127,7 +127,7 @@ Rectangle {
                 ComboBox {
                     id: serialName
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
                     visible: {
@@ -162,7 +162,7 @@ Rectangle {
                 ComboBox {
                     id: serialNameGPS
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
                     // visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -187,7 +187,7 @@ Rectangle {
                 ComboBox {
                     id: unitSelect1
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: [Translator.translate("Metric", Dashboard.language), Translator.translate("Imperial", Dashboard.language)]
                     property bool initialized: false
@@ -219,7 +219,7 @@ Rectangle {
                 ComboBox {
                     id: unitSelect
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: [Translator.translate("°C", Dashboard.language), Translator.translate("°F", Dashboard.language)]
                     property bool initialized: false
@@ -250,7 +250,7 @@ Rectangle {
                 ComboBox {
                     id: unitSelect2
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: ["kPa", "PSI"]
                     property bool initialized: false
@@ -279,7 +279,7 @@ Rectangle {
                 ComboBox {
                     id: ecuSelect
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     //model: [ "PowerFC","UDP","None","CAN Adaptronic Modular","Consult","HaltechV1","HaltechV2","OBD2"]
                     model: ["CAN", "PowerFC", "Consult", "OBD2","Generic CAN"]
@@ -311,7 +311,7 @@ Rectangle {
                 ComboBox {
                     id: goProSelect
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: ["Hero", "Hero2", "Hero3"]
                     delegate: ItemDelegate {
@@ -333,7 +333,7 @@ Rectangle {
                 TextField {
                     id: goPropass
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     placeholderText: Translator.translate("GoPro Pasword", Dashboard.language)
                     //InputMethod:Qt.
@@ -352,7 +352,7 @@ Rectangle {
                     id: logfilenameSelect
                     text: qsTr("DataLog")
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
                                       | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
@@ -366,7 +366,7 @@ Rectangle {
                 TextField {
                     id: odometer
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     text: qsTr("0")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -380,7 +380,7 @@ Rectangle {
                 TextField {
                     id: tripmeter
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     readOnly: true
                     text: "0"
@@ -396,7 +396,7 @@ Rectangle {
                 TextField {
                     id: weight
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                 }
@@ -407,7 +407,7 @@ Rectangle {
                 }
                 TextField {
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     text: qsTr(Dashboard.SerialStat)
                 }
@@ -428,7 +428,7 @@ Rectangle {
                     id: connectButton
                     text: Translator.translate("Connect", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     onClicked: {
                         functconnect.connectfunc()
@@ -442,7 +442,7 @@ Rectangle {
                     id: disconnectButton
                     text: Translator.translate("Disconnect", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     enabled: false
                     onClicked: {
@@ -457,7 +457,7 @@ Rectangle {
                     id: connectButtonGPS
                     text: Translator.translate("GPS Connect", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     Component.onCompleted: autoconnectGPS.auto()
                     onClicked: {
@@ -473,7 +473,7 @@ Rectangle {
                     id: disconnectButtonGPS
                     text: Translator.translate("GPS Disconnect", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     enabled: false
                     onClicked: {
@@ -487,7 +487,7 @@ Rectangle {
                     id: resettrip
                     text: Translator.translate("Trip Reset", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     onClicked: {
                         Calculations.resettrip()
@@ -508,7 +508,7 @@ Rectangle {
                 Button {
                     text: Translator.translate("Quit", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     onClicked: {
                         Qt.quit()
@@ -517,7 +517,7 @@ Rectangle {
                 Button {
                     text: Translator.translate("Shutdown", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     onClicked: {
                         Connect.shutdown()
@@ -526,7 +526,7 @@ Rectangle {
                 Button {
                     text: Translator.translate("Reboot", Dashboard.language)
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     onClicked: {
                         //GPS.closeConnection();
@@ -543,7 +543,7 @@ Rectangle {
                 ComboBox {
                     id: smoothrpm
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     visible: Dashboard.ecu == "2"
                     model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
@@ -575,7 +575,7 @@ Rectangle {
                 ComboBox {
                     id: smoothspeed
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     visible: Dashboard.ecu == "2"
@@ -600,7 +600,7 @@ Rectangle {
                 Switch {
                     id: loggerswitch
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     text: Translator.translate("Data Logger", Dashboard.language)
                     Component.onCompleted: {
@@ -612,7 +612,7 @@ Rectangle {
                 Switch {
                     id: record
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     text: Translator.translate("GoPro rec", Dashboard.language)
                     onCheckedChanged: {
@@ -622,7 +622,7 @@ Rectangle {
                 Switch {
                     id: nmeaLog
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     text: Translator.translate("NMEA Logger", Dashboard.language)
                     onCheckedChanged: {
@@ -667,7 +667,7 @@ Rectangle {
                 TextField {
                     id: an1V0
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -676,7 +676,7 @@ Rectangle {
                 TextField {
                     id: an2V5
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     // validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -686,7 +686,7 @@ Rectangle {
                 TextField {
                     id: unitaux1
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     placeholderText: qsTr("AFR")
                 }
@@ -697,7 +697,7 @@ Rectangle {
                 TextField {
                     id: an3V0
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -706,7 +706,7 @@ Rectangle {
                 TextField {
                     id: an4V5
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
@@ -715,7 +715,7 @@ Rectangle {
                 TextField {
                     id: unitaux2
                     width: windowbackround.width / 10
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     placeholderText: qsTr("AFR")
                 }
@@ -752,7 +752,7 @@ Rectangle {
                     id: baseadresstext
                     enabled: connectButton.enabled == false ? false : true
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     validator: IntValidator {
                         bottom: 0
@@ -787,7 +787,7 @@ Rectangle {
                     id: shiftlightbaseadresstext
                     enabled: connectButton.enabled == false ? false : true
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
                     validator: IntValidator {
                         bottom: 0
@@ -814,7 +814,7 @@ Rectangle {
                 ComboBox {
                     id: languageselect
                     width: windowbackround.width / 5
-                    height: windowbackround.height / 15
+                    height: windowbackround.height / 18
                     font.pixelSize: windowbackround.width / 55
 
                     model: [
