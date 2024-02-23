@@ -12,6 +12,8 @@ Rectangle {
     //property var warnmsg : "hello"
 
     Loader {
+        anchors.fill:parent
+
         id: warningSign
         source: ""
     }
