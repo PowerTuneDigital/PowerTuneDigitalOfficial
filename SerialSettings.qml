@@ -34,8 +34,8 @@ Quick1.TabView {
             id: tabrect
             color: styleData.selected ? "grey" : "lightgrey"
             border.color: "steelblue"
-            implicitWidth: 80//Math.max(text.width + 4, 80)
-            implicitHeight: 50
+            implicitWidth: tabView.width /10//Math.max(text.width + 4, 80)
+            implicitHeight: tabView.height /10
             radius: 2
             Text {
                 id: text

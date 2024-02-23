@@ -6,13 +6,15 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
-
+import QtQuick.Window 2.15
 
 ApplicationWindow {
     id:window
     visible: true
-    width: 800
-    height: 480
+    //width: 800
+    //height: 480
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
@@ -23,9 +25,9 @@ ApplicationWindow {
         id: keyboardcontainer
         color: "blue"
         visible: false
-        width: 500
-        height: 220
-        z: 220
+        width: Screen.desktopAvailableWidth *0.63
+        height: Screen.desktopAvailableHeight *0.5
+        z: Screen.desktopAvailableHeight *0.5
 
         MouseArea {
             id: touchAkeyboardcontainer
