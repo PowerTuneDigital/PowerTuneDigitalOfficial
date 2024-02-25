@@ -20,7 +20,7 @@ ApplicationWindow {
     color: "black"
 
     Component.onCompleted: {
-        popUpLoader.source = "qrc:/PopUpTest.qml"
+        popUpLoader.source = "qrc:/BrightnessPopUp.qml"
     }
 
 
@@ -282,16 +282,8 @@ ApplicationWindow {
         id: popUpLoader
         visible: true
         anchors.centerIn: parent
+        Component.onCompleted: {
+            console.log("Brightness Loaded")
+        }
     }
-
-
-
-//        Timer {
-
-//              interval: 10000
-//              running: (follow = 0)
-//              onTriggered: follow = 1
-//        }
-
-
     }

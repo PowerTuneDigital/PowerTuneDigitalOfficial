@@ -419,11 +419,12 @@ Rectangle {
                 anchors.top: parent.top
                 anchors.topMargin: parent.height / 20
             Grid {
-                rows: 8
+                id: middlegrid
+                rows: 9
                 columns: 2
                 spacing: windowbackround.width / 150
 
-                id: middlegrid
+
                 Button {
                     id: connectButton
                     text: Translator.translate("Connect", Dashboard.language)
@@ -635,6 +636,8 @@ Rectangle {
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
+
+
             }
             Grid {
                 visible: {
@@ -1002,3 +1005,9 @@ Rectangle {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/
