@@ -6,8 +6,8 @@ import QtQuick.Extras 1.4
 import "qrc:/Translator.js" as Translator
 Rectangle {
     id: gauge
-    width: 100
-    height: 80
+    width: parent.width * 0.125//100
+    height: parent.height * 0.17//80
     color: "transparent"
     antialiasing: false
     Drag.active: true
@@ -39,7 +39,7 @@ Rectangle {
     }
     Gauge {
         id: gauge1
-        height: 200
+        height: parent.width * 0.42
         anchors.fill: parent
         anchors.margins: 10
         orientation : Qt.Horizontal

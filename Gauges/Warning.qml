@@ -7,8 +7,8 @@ Item {
     Rectangle {
         id: genwarningsquare
         anchors.centerIn: parent
-        width: parent.width /1.5
-        height:parent.height /1.5
+        width: parent.width / 1.5
+        height:parent.height / 1.5
         color:"red"
         SequentialAnimation on color {
             loops: Animation.Infinite
@@ -19,7 +19,7 @@ Item {
         Text {
             id: warntxt
             text: "Warning!!!"
-            font.pixelSize: parent.width /13 //60
+            font.pixelSize: parent.width / 13 //60
             anchors.top : parent.top
             anchors.topMargin: parent.height / 5
             anchors.horizontalCenter: genwarningsquare.horizontalCenter
@@ -31,7 +31,7 @@ Item {
         Text {
             id : warningtxt
             text: warningtext
-            font.pixelSize: parent.width /20// 40
+            font.pixelSize: parent.width / 20// 40
             anchors.top : warntxt.bottom
             anchors.topMargin: parent.height / 5
             anchors.horizontalCenter: genwarningsquare.horizontalCenter

@@ -12,9 +12,9 @@ Rectangle {
 
     Text {
       text:"RPM"
-      font.pixelSize: 20
-      y: 150
-      x: 180
+      font.pixelSize: parent.width * 0.025
+      y: parent.width * 0.15//150
+      x: parent.width * 0.25//180
       font.bold: true
       font.family: "Eurostile"
       color: "grey"
@@ -22,9 +22,9 @@ Rectangle {
   }
   Text {
       text: (Dashboard.rpm)
-      font.pixelSize: 100
-      y: 110
-      x: 220
+      font.pixelSize: parent.width * 0.125//100
+      y: parent.width * 0.1//110
+      x: parent.width * 0.3//220
   font.italic: true
       font.bold: true
       font.family: "Eurostile"
@@ -34,9 +34,9 @@ Rectangle {
   Text {
       id :speed
       text: "km/h"
-      font.pixelSize: 20
-      y: 150
-      x: 510
+      font.pixelSize: parent.width * 0.025//20
+      y: parent.width * 0.15//150
+      x: parent.width * 0.5//510
       font.bold: true
       font.family: "Eurostile"
       color: "grey"
@@ -44,9 +44,9 @@ Rectangle {
   }
   Text {
       text: (Dashboard.speed).toFixed(0);
-      font.pixelSize: 100
-      y: 110
-      x: 570
+      font.pixelSize: parent.width * 0.125//100
+      y: parent.width * 0.1//110
+      x: parent.width * 0.6//570
   font.italic: true
       font.bold: true
       font.family: "Eurostile"
@@ -72,12 +72,13 @@ Rectangle {
       anchors.top:parent.top
       anchors.left:parent.left
       smooth: true
-
+      width: parent.width
+      height: parent.width /4
       Item{
             id: displayWindow1
             height: parent.height
-            width: (678*(Dashboard.rpm)/Dashboard.maxRPM)+70 //+70 is the pixel where the RPM bar starts and from there is 678 pixels wide
-
+            //width: (678*(Dashboard.rpm)/Dashboard.maxRPM)+70 //+70 is the pixel where the RPM bar starts and from there is 678 pixels wide
+            width: (parent.width*(Dashboard.rpm)/Dashboard.maxRPM)+70
             clip: true
 
               anchors.bottom: parent.bottom
@@ -101,6 +102,8 @@ Rectangle {
               anchors.left:parent.left
               source:"qrc:/graphics/RPM_Fill.png"
               smooth: true
+              width: groove1.width
+              height: groove1.height
               z: 1
             }
           }

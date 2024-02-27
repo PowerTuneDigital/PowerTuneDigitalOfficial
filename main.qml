@@ -11,10 +11,10 @@ import QtQuick.Window 2.10 //compatibility with QT 5.10
 ApplicationWindow {
     id:window
     visible: true
-    //width: 800
-    //height: 480
-    width: Screen.desktopAvailableWidth
-    height: Screen.desktopAvailableHeight
+    width: 1600
+    height: 720
+    //width: Screen.desktopAvailableWidth
+    //height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform

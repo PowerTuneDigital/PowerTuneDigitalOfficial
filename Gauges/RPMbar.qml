@@ -12,7 +12,7 @@ Rectangle {
 
   Text {
       text:"RPM"
-      font.pixelSize: 20
+      font.pixelSize: parent.width * 0.025
       y: 160
       x: 180
       font.bold: true
@@ -22,7 +22,7 @@ Rectangle {
   }
   Text {
       text: (Dashboard.rpm)
-      font.pixelSize: 100
+      font.pixelSize: parent.width * 0.125
       y: 130
       x: 217
   font.italic: true
@@ -34,7 +34,7 @@ Rectangle {
   Text {
       id :speed
       text: "km/h"
-      font.pixelSize: 20
+      font.pixelSize: parent.width * 0.025
       y: 160
       x: 510
       font.bold: true
@@ -44,7 +44,7 @@ Rectangle {
   }
   Text {
       text: (Dashboard.speed).toFixed(0)
-      font.pixelSize: 100
+      font.pixelSize: parent.width * 0.125
       y: 130
       x: 570
   font.italic: true
@@ -75,7 +75,7 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (651*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide
+            width: (parent.width*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide
 
             clip: true
 
