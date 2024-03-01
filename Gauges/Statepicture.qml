@@ -4,11 +4,12 @@ import "qrc:/Translator.js" as Translator
 Item {
     id: statepicture
     height: pictureheight
-    width : pictureheight
+    width : picturewidth
     property string information: "State gauge"
     property string statepicturesourceoff
     property string statepicturesourceon
-    property int pictureheight
+    property int pictureheight: 480 * 0.25
+    property int picturewidth: 800 * 0.2
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
@@ -62,62 +63,66 @@ Item {
         id : changesize
         color: "darkgrey"
         visible: false
-        width : 230
-        height :320
+        width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
+        height : 480 * 0.667//320 Taking the resolution from the 7" and dividing it by (230/screenHeight)
         Drag.active: true
         MouseArea {
             anchors.fill: parent
             drag.target: parent
             enabled: true
         }
-        Grid { width: parent.width
-            height:parent.height
+        Grid {
+            width: parent.width
+            height: parent.height
             rows: 7
             columns: 1
             rowSpacing :5
             Grid {
                 rows: 1
                 columns: 3
-                rowSpacing :5
+                width: parent.width
+                rowSpacing: 5
+
                 RoundButton{text: "-"
-                    width: changesize.width /3.2
-                    font.pixelSize: 15
+                    width: changesize.width / 3.2
+                    font.pixelSize: 800 * (15 / 800)
                     onPressAndHold: {timer.running = true;
                         increasedecreaseident = "decreasePicture"}
                     onReleased: {timer.running = false;}
-                    onClicked: {pictureheight--}
+                    onClicked: {pictureheight-- && picturewidth--}
                 }
                 Text{id: sizeTxt
-                    text: pictureheight
-                    font.pixelSize: 15
+                    text: "Image Size"
+                    font.pixelSize: 800 * (15 / 800)
                     width: changesize.width /3.2
                     horizontalAlignment: Text.AlignHCenter
-                    onTextChanged: {pictureheight = sizeTxt.text}
+                    onTextChanged: {picturewidth+ "x" + pictureheight == sizeTxt.text}
                 }
                 RoundButton{ text: "+"
-                    font.pixelSize: 15
+                    font.pixelSize: 800 * (15 / 800)
                     width: changesize.width /3.2
                     onPressAndHold: {timer.running = true;
                         increasedecreaseident = "increasePicture"}
                     onReleased: {timer.running = false;}
-                    onClicked: {pictureheight++}
+                    onClicked: {pictureheight++ && picturewidth++}
                 }
             }
             Grid {
+                id: valueGrid
                 rows: 4
                 columns: 2
                 spacing :5
             Text{
-                text: Translator.translate("Image off", Dashboard.language)
-                font.pixelSize: 12
+                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("OFF", Dashboard.language)
+                font.pixelSize: 800 * (12 / 800)
 
             }
 
             ComboBox {
                 id: pictureSelectoroff
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800) //12 being the font size. 800 being 7" screen width
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
@@ -136,14 +141,14 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Image on", Dashboard.language)
-                font.pixelSize: 12
+                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("ON", Dashboard.language)
+                font.pixelSize: 800 * (12 / 800)
             }
             ComboBox {
                 id: pictureSelectoron
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800)
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
@@ -166,41 +171,41 @@ Item {
             }
             Text{
                 text: Translator.translate("Source", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             ComboBox {
                 id: cbxMain
                 textRole: "titlename"
                 model: powertunedatasource
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800)
                 Component.onCompleted: {for(var i = 0; i < cbxMain.model.count; ++i) if (powertunedatasource.get(i).sourcename === mainvaluename)cbxMain.currentIndex = i,bind()}
                 onCurrentIndexChanged: bind();
             }
             Text{
                 text: Translator.translate("Trigger", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             TextField {
                 id: triggeronvalue
-                width: 140
-                height: 40
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
                 text: triggervalue
                 //onTextChanged: triggervalue = triggeronvalue.text
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             }
             RoundButton{
                 width: parent.width
                 text: Translator.translate("Delete image", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: 800 * (15 / 800)
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
                 text: Translator.translate("Close", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: 800 * (15 / 800)
                 onClicked: {
                     triggervalue = triggeronvalue.text;
                     mainvaluename = powertunedatasource.get(cbxMain.currentIndex).sourcename;
@@ -249,10 +254,12 @@ Item {
 
         case "increasePicture": {
             pictureheight++;
+            picturewidth++;
             break;
         }
         case "decreasePicture": {
             pictureheight--;
+            picturewidth--;
             break;
         }
         }

@@ -205,7 +205,7 @@ Item {
             }
         Text{
             text: Translator.translate("Warn value high", Dashboard.language)
-            font.pointSize: 7
+            font.pointSize: 800 * (7 / 800)
             }
             ////
             Grid {
@@ -238,7 +238,7 @@ Item {
             }
             Text{
                 text: Translator.translate("Warn value low", Dashboard.language)
-                font.pointSize: 7
+                font.pointSize: 800 * (7 / 800)
                 }
             Grid {
                 rows: 1
@@ -255,7 +255,7 @@ Item {
                 TextField{id: warnvaluelowxt
                     text: warnvaluelow
                     width: popupgrid.width /3.2
-                    font.pointSize: 7
+                    font.pointSize: 800 * (7 / 800)
                     horizontalAlignment: Text.AlignHCenter
                     onTextChanged: warnvaluelow = warnvaluelowxt.text
                     inputMethodHints: Qt.ImhDigitsOnly

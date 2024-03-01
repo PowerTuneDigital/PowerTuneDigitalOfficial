@@ -3,6 +3,10 @@ import QtQuick.Window 2.2
 import QtGraphicalEffects 1.0
 import QtQuick.Controls 1.4
 import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls 2.1
+import QtQuick.Extras 1.4
+import QtQuick 2.8
+import com.powertune 1.0
 Rectangle {
   visible: true
   color:"transparent"
@@ -10,48 +14,53 @@ Rectangle {
   property  var unit : Dashboard.units;
   Component.onCompleted: {units.unitadjust();}
 
-  Text {
-      text:"RPM"
-      font.pixelSize: parent.width * 0.025
-      y: 160
-      x: 180
-      font.bold: true
-      font.family: "Eurostile"
-      color: "grey"
+  Row{
+      spacing: 30
+      x: groove1.width * 0.28
+      y: groove1.height * 0.2
+      topPadding: 3
+      Text {
+          text:"RPM"
+          topPadding: 80
 
+          font.pixelSize: groove1.width * 0.025 //20
+          font.bold: true
+          font.family: "Eurostile"
+          color: "grey"
+      }
+      Text {
+          text: (Dashboard.rpm)
+          topPadding: 20
+          font.pixelSize: groove1.width * 0.125 //130
+          font.italic: true
+          font.bold: true
+          font.family: "Eurostile"
+          color: "white"
+      }
   }
-  Text {
-      text: (Dashboard.rpm)
-      font.pixelSize: parent.width * 0.125
-      y: 130
-      x: 217
-  font.italic: true
-      font.bold: true
-      font.family: "Eurostile"
-      color: "white"
 
-  }
-  Text {
-      id :speed
-      text: "km/h"
-      font.pixelSize: parent.width * 0.025
-      y: 160
-      x: 510
-      font.bold: true
-      font.family: "Eurostile"
-      color: "grey"
-
-  }
-  Text {
-      text: (Dashboard.speed).toFixed(0)
-      font.pixelSize: parent.width * 0.125
-      y: 130
-      x: 570
-  font.italic: true
-      font.bold: true
-      font.family: "Eurostile"
-      color: "white"
-
+  Row{
+      spacing: 30
+      x: groove1.width * 0.58
+      y: groove1.height * 0.2
+      Text {
+          id :speed
+          text: "km/h"
+          topPadding: 80
+          font.pixelSize: groove1.width * 0.025 //20
+          font.bold: true
+          font.family: "Eurostile"
+          color: "grey"
+      }
+      Text {
+          text: (Dashboard.speed).toFixed(0);
+          topPadding: 20
+          font.pixelSize: groove1.width * 0.125 //130
+          font.italic: true
+          font.bold: true
+          font.family: "Eurostile"
+          color: "white"
+      }
   }
 
   Item {
@@ -68,6 +77,8 @@ Rectangle {
     {
       id:groove1
       source:"qrc:/graphics/empty.png"
+      width: parent.width
+      height: parent.height
       anchors.top:parent.top
       anchors.left:parent.left
       smooth: true
@@ -98,6 +109,8 @@ Rectangle {
               id:speedarcfill
               anchors.top:parent.top
               anchors.left:parent.left
+              width: groove1.width
+              height: groove1.height
               source:"qrc:/graphics/fill.png"
               smooth: true
               z: 1

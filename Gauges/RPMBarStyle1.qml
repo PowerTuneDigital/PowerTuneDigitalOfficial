@@ -75,6 +75,7 @@ Row{
     //using rpmDash as its the full size of the screen
     x: rpmDash.width * 0.28
     y: rpmDash.height * 0.2
+    topPadding: 3
     Text {
         text:"RPM"
         topPadding: 20

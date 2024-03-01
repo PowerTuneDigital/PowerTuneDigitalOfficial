@@ -20,10 +20,10 @@ import "qrc:/Translator.js" as Translator
 Item {
     id: mainwindow
     anchors.fill: parent
-    property string datastore: ""
+    property string datastore2: ""
     property string saveDashtofilestring : ""
     property string gaugeType : ""
-    property string backroundpicturesource1 : ""
+    property string backroundpicturesource2 : ""
     property bool val1: false
     property bool val2: false
     property bool val3: false
@@ -53,7 +53,7 @@ Item {
 
     }
     Image {
-        id:backroundpicture1
+        id:backroundpicture2
         anchors.fill: parent
         fillMode: Image.PreserveAspectFit
         z: 0
@@ -62,7 +62,7 @@ Item {
     ComboBox{
         id: dashvalue
         width: mainwindow.width * 0.25//200
-        model: Dashboard.dashsetup1
+        model: Dashboard.dashsetup2
         visible:false
         font.pixelSize: mainwindow.width * 0.018//15
         delegate: ItemDelegate {
@@ -79,20 +79,20 @@ Item {
     DatasourcesList{id: powertunedatasource}
 
     Component.onCompleted: {
-        if (datastore) {
+        if (datastore2) {
             gaugelist.clear()
-            var datamodel = JSON.parse(datastore)
+            var datamodel = JSON.parse(datastore2)
             for (var i = 0; i < datamodel.length; ++i) gaugelist.append(datamodel[i])
         }
         createDash()
     }
 
     Settings {
-        property alias datastore1: mainwindow.datastore
-        property alias rpmbackround1: rpmstyleselector.currentIndex
-        property alias extraLoader1: extraSelector.currentIndex
-        property alias savebackroundpicture1: backroundpicture1.source
-        property alias savemainbackroundcolor: mainbackroundcolor.color
+        property alias datastore2: mainwindow.datastore2
+        property alias rpmbackround2: rpmstyleselector.currentIndex
+        property alias extraLoader2: extraSelector.currentIndex
+        property alias savebackroundpicture2: backroundpicture2.source
+        property alias savemainbackroundcolor2: mainbackroundcolor.color
 
     }
 
@@ -101,7 +101,7 @@ Item {
         target: Dashboard
 
         onBackroundpicturesChanged: updatppiclist();
-        onDashsetup1Changed:
+        onDashsetup2Changed:
         {
             if (dashvalue.textAt(1) !== "") {
 
@@ -198,8 +198,8 @@ Item {
     function updatppiclist()
     {
                     for(var i = 0; i < backroundSelector.count; ++i)
-//                    if (backroundpicture1.source == "file:///home/pi/Logo/" + backroundSelector.textAt(i))
-                        if (backroundpicture1.source == "file:"  + backroundSelector.textAt(i))
+//                    if (backroundpicture2.source == "file:///home/pi/Logo/" + backroundSelector.textAt(i))
+                        if (backroundpicture2.source == "file:"  + backroundSelector.textAt(i))
 
 
                     backroundSelector.currentIndex = i
@@ -308,10 +308,10 @@ Item {
                 currentIndex: 0
                 onCurrentIndexChanged: {
 
-                    backroundpicturesource1 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    //backroundpicturesource1 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    //backroundpicturesource1 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    backroundpicture1.source = backroundpicturesource1;
+                    backroundpicturesource2 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    //backroundpicturesource2 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    //backroundpicturesource2 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    backroundpicture2.source = backroundpicturesource2;
                 }
                 delegate: ItemDelegate {
                     width: backroundSelector.width
@@ -342,11 +342,12 @@ Item {
                     ItemDelegate {
                     id:itemDelegate
                     width: mainbackroundcolorselect.width
+                    height: mainbackroundcolorselect.height
                     font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
                         id: backroundcolorcbxcolor
                         width: mainbackroundcolorselect.width
-                        height: mainwindow.parent * 0.0625//50
+                        height: mainbackroundcolorselect.height //50
                         color:  itemColor
 
                         Text {
@@ -510,7 +511,6 @@ Item {
             columns: 2
             x:0
             y:45
-            anchors.bottom: loadfileselect
             topPadding: 8
             width: parent.width
             height: parent.height
@@ -537,7 +537,6 @@ Item {
                 id: btnaddBar
                 width: mainwindow.width * 0.118
                 height: mainwindow.height * 0.083
-                anchors.right: parent
                 text: Translator.translate("Bar", Dashboard.language)
                 font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
@@ -697,7 +696,7 @@ Item {
                     selectcolor.visible =false;
                     savedash();
                     saveDashtofile();
-                    Connect.saveDashtoFile("Dash1Export",saveDashtofilestring);
+                    Connect.saveDashtoFile("Dash2Export",saveDashtofilestring);
                 }
             }
             Button{
@@ -726,13 +725,13 @@ Item {
                 visible: false
                 onClicked: {
                     loadfileselect.visible = false;
-                    Connect.setfilename1(loadfileselect.textAt(loadfileselect.currentIndex));
+                    Connect.setfilename2(loadfileselect.textAt(loadfileselect.currentIndex));
                     btncancelload.visible = false;
                     squaregaugemenu.visible = false;
                     load.visible = false;
                     selectcolor.visible =false;
                     Dashboard.setdraggable(0);
-                    Connect.readdashsetup1();
+                    Connect.readdashsetup2();
                 }
             }
             Button{
@@ -1213,7 +1212,7 @@ Item {
         }
         var datamodel = []
         for (var j = 0; j < gaugelist.count; ++j) datamodel.push(gaugelist.get(j))
-        datastore = JSON.stringify(datamodel)
+        datastore2 = JSON.stringify(datamodel)
     }
     //Color Selection panel
     Rectangle{

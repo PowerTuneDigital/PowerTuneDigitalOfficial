@@ -35,7 +35,7 @@ Item {
 
     Text {
         text: qsTr("Press to switch off screen")
-        font.pixelSize: 20
+        font.pixelSize: parent.width * (20 / parent.width)//20
         anchors.centerIn: parent
         font.bold: true
         font.family: "Eurostile"

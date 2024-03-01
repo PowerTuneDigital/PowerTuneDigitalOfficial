@@ -9,6 +9,7 @@ import Qt.labs.settings 1.0
 import QtQuick.Controls 1.4 as Quick1
 import "../Gauges"
 import "qrc:/Gauges/createsquaregaugeUserDash.js" as CreateSquareGaugeScript
+import "qrc:/Translator.js" as Translator
 
 
 
@@ -58,7 +59,7 @@ Item {
 
     ComboBox{
         id: dashvalue
-        width: 200
+        width: parent.width * (200 / parent.width)
         model: Dashboard.maindashsetup
         visible:false
         font.pixelSize: 15
@@ -430,8 +431,8 @@ Item {
     /// The Gauge Creation Menu
     Rectangle{
         id: squaregaugemenu
-        width: 200
-        height: 300
+        width: mainwindow.width * 0.24 //200
+        height: mainwindow.height * 0.625 //300
         color : "darkgrey"
         x :590
         y: 0
@@ -447,10 +448,10 @@ Item {
             x:0
             y:0
             textRole: "titlename"
-            width: 200
-            height: 40
+            width: squaregaugemenu.width
+            height: mainwindow.height * 0.08333
             model: powertunedatasource
-            font.pixelSize: 15
+            font.pixelSize: mainwindow.width * 0.018
             delegate: ItemDelegate {
                 width: cbx_sources.width
                 text: cbx_sources.textRole ? (Array.isArray(cbx_sources.model) ? modelData[cbx_sources.textRole] : model[cbx_sources.textRole]) : modelData
@@ -466,10 +467,10 @@ Item {
             x:0
             y:0
             model: Dashboard.dashfiles
-            width: 200
-            height: 40
+            width: squaregaugemenu.width
+            height: mainwindow.height * 0.08333
             visible: false
-            font.pixelSize: 15
+            font.pixelSize: mainwindow.width * 0.018
             delegate: ItemDelegate {
                 width: loadfileselect.width
                 text: loadfileselect.textRole ? (Array.isArray(loadfileselect.model) ? modelData[loadfileselect.textRole] : model[loadfileselect.textRole]) : modelData
@@ -482,19 +483,23 @@ Item {
         }
 
         Grid{
-            rows:6
+            rows:7
             columns: 2
-            //anchors.top : cbx_sources.bottom
-            spacing:10
+            topPadding: squaregaugemenu.height * 0.067
+            width: parent.width
+            height: parent.height
+            rowSpacing: 3
+            spacing: (parent.width + parent.height) * 0.005
+            layoutDirection: "RightToLeft"
             x:0
             y:45
 
             Button {
                 id: btnadd
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
                 text: qsTr("ADD")
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018
                 onClicked: {
                     CreateSquareGaugeScript.createSquareGauge(266,119,0,240,248,0,powertunedatasource.get(cbx_sources.currentIndex).defaultsymbol,powertunedatasource.get(cbx_sources.currentIndex).titlename,false,true,false,"Dashboard",powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,10000,-20000,"lightsteelblue","black","lightsteelblue","white","white","blue",25,40);
                     squaregaugemenu.visible = false;
@@ -503,11 +508,134 @@ Item {
                 }
             }
 
+
+            Button {
+                id: btnopencolorselect
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: qsTr("COLORS")
+                font.pixelSize: mainwindow.width * 0.018
+                onClicked: {
+                    selectcolor.visible =true;
+                    squaregaugemenu.visible = false;
+                    Dashboard.setdraggable(0);
+                }
+            }
+            Button {
+                id: btnclear
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "CLEAR"
+                font.pixelSize: mainwindow.width * 0.018
+                onClicked:  {
+                    selectcolor.visible =false;
+                    squaregaugemenu.visible = false;
+                    Dashboard.setdraggable(0);
+                    for (var i=0; i<userDash.children.length; ++i)
+                    {
+                        userDash.children[i].destroy()
+                    }
+                }
+            }
+
+            Button{
+                id: loadfromfile
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "IMPORT"
+                font.pixelSize: mainwindow.width * 0.018
+
+                onClicked: {
+                    Connect.readavailabledashfiles();
+                    btncancelload.visible = true;
+                    loadfromfile.visible = false;
+                    loadfileselect.visible = true;
+                    btnadd.visible = false;
+                    btncancel.visible = false;
+                    cbx_sources.visible = false;
+                    btnsave.visible = false;
+                    btnclear.visible = false;
+                    selectcolor.visible = false;
+                    savetofile.visible = false;
+                    btnopencolorselect.visible = false;
+                    loadfromfile.visible = false;
+                    load.visible = true;
+                    selectcolor.visible =false;
+
+                }
+            }
+            Button {
+                id: btncancel
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "CLOSE"
+                font.pixelSize: mainwindow.width * 0.018
+                //highlighted: true "Highlights the box"
+                onClicked:  {
+                    squaregaugemenu.visible = false;
+                    selectcolor.visible =false;
+                    Dashboard.setdraggable(0);
+                }
+            }
+
+            Button{
+                id: load
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "LOAD"
+                font.pixelSize: mainwindow.width * 0.018
+                visible: false
+                onClicked: {
+                    loadfileselect.visible = false;
+                    Connect.setfilename1(loadfileselect.textAt(loadfileselect.currentIndex));
+                    btncancelload.visible = false;
+                    squaregaugemenu.visible = false;
+                    load.visible = false;
+                    selectcolor.visible =false;
+                    Dashboard.setdraggable(0);
+                    Connect.readMaindashsetup();
+                }
+            }
+            Button{
+                id: btncancelload
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "CANCEL"
+                font.pixelSize: mainwindow.width * 0.018
+                visible: false
+                onClicked: {
+                    loadfileselect.visible = false;
+                    btncancelload.visible = false;
+                    squaregaugemenu.visible = false;
+                    load.visible = false;
+                    selectcolor.visible =false;
+                    Dashboard.setdraggable(0);
+                }
+            }
+
+
+            Button{
+                id: savetofile
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
+                text: "EXPORT"
+                font.pixelSize: mainwindow.width * 0.018
+
+                onClicked: {
+                    squaregaugemenu.visible = false;
+                    Dashboard.setdraggable(0);
+                    selectcolor.visible =false;
+                    saveDashtofile();
+                    Connect.saveDashtoFile("MainDashexport",saveDashtofilestring);
+                }
+            }
             Button {
                 id: btnsave
-                width: 95
+                width: mainwindow.width * 0.118//95
+                height: mainwindow.height * 0.083//40
                 text: qsTr("SAVE")
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018
+                //highlighted: true "Highlights the box"
                 onClicked: {
                     squaregaugemenu.visible = false;
                     selectcolor.visible =false;
@@ -537,116 +665,6 @@ Item {
                     for (var j = 0; j < gaugelist.count; ++j) datamodel.push(gaugelist.get(j))
                     datastore = JSON.stringify(datamodel)
 
-                }
-            }
-            Button {
-                id: btnopencolorselect
-                width:95
-                text: qsTr("COLORS")
-                font.pixelSize: 15
-                onClicked: {
-                    selectcolor.visible =true;
-                    squaregaugemenu.visible = false;
-                    Dashboard.setdraggable(0);
-                }
-            }
-            Button {
-                id: btnclear
-                width: 95
-                text: "CLEAR"
-                font.pixelSize: 15
-                onClicked:  {
-                    selectcolor.visible =false;
-                    squaregaugemenu.visible = false;
-                    Dashboard.setdraggable(0);
-                    for (var i=0; i<userDash.children.length; ++i)
-                    {
-                        userDash.children[i].destroy()
-                    }
-                }
-            }
-
-            Button{
-                id: loadfromfile
-                width: 95
-                text: "IMPORT"
-                font.pixelSize: 15
-
-                onClicked: {
-                    Connect.readavailabledashfiles();
-                    btncancelload.visible = true;
-                    loadfromfile.visible = false;
-                    loadfileselect.visible = true;
-                    btnadd.visible = false;
-                    btncancel.visible = false;
-                    cbx_sources.visible = false;
-                    btnsave.visible = false;
-                    btnclear.visible = false;
-                    selectcolor.visible = false;
-                    savetofile.visible = false;
-                    btnopencolorselect.visible = false;
-                    loadfromfile.visible = false;
-                    load.visible = true;
-                    selectcolor.visible =false;
-
-                }
-            }
-            Button{
-                id: savetofile
-                width: 95
-                text: "EXPORT"
-                font.pixelSize: 15
-
-                onClicked: {
-                    squaregaugemenu.visible = false;
-                    Dashboard.setdraggable(0);
-                    selectcolor.visible =false;
-                    saveDashtofile();
-                    Connect.saveDashtoFile("MainDashexport",saveDashtofilestring);
-                }
-            }
-            Button{
-                id: load
-                width: 95
-                text: "LOAD"
-                font.pixelSize: 15
-                visible: false
-                onClicked: {
-                    loadfileselect.visible = false;
-                    Connect.setfilename1(loadfileselect.textAt(loadfileselect.currentIndex));
-                    btncancelload.visible = false;
-                    squaregaugemenu.visible = false;
-                    load.visible = false;
-                    selectcolor.visible =false;
-                    Dashboard.setdraggable(0);
-                    Connect.readMaindashsetup();
-                }
-            }
-            Button{
-                id: btncancelload
-                width: 95
-                text: "CANCEL"
-                font.pixelSize: 15
-                visible: false
-                onClicked: {
-                    loadfileselect.visible = false;
-                    btncancelload.visible = false;
-                    squaregaugemenu.visible = false;
-                    load.visible = false;
-                    selectcolor.visible =false;
-                    Dashboard.setdraggable(0);
-                }
-            }
-
-            Button {
-                id: btncancel
-                width: 95
-                text: "CLOSE"
-                font.pixelSize: 15
-                onClicked:  {
-                    squaregaugemenu.visible = false;
-                    selectcolor.visible =false;
-                    Dashboard.setdraggable(0);
                 }
             }
         }
@@ -772,8 +790,8 @@ Item {
         id: selectcolor
         x:0
         y:0
-        height :200
-        width: 500
+        height : mainwindow.height * 0.41 //200
+        width: mainwindow.width * 0.625 //500
         color: "darkgrey"
         visible: false
 
@@ -782,19 +800,7 @@ Item {
             anchors.fill:parent
             drag.target: selectcolor
         }
-        /*
-        Item {
-            id: colorsettingsSaved
-            Settings {
-                property alias indexframecolor: colorselect.currentIndex
-                property alias indextitlebarcolor: colorselecttitlebar.currentIndex
-                property alias indexbackroundcolor: backroundcolor.currentIndex
-                property alias indexbargaugecolor: bargaugecolor.currentIndex
-                property alias indextitletextcolor: titlecolor.currentIndex
-                property alias indexmaintextcolor: valuetext.currentIndex
-            }
-        }
-        */
+
         Grid{
             rows:5
             columns: 3
@@ -802,41 +808,41 @@ Item {
             spacing:5
             // FrameColor
             Text {
-                text: qsTr("Frame color:")
-                font.pixelSize: 15
+                text: Translator.translate("Frame color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
-                text: qsTr("Titlebar color:")
-                font.pixelSize: 15
+                text: Translator.translate("Titlebar color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
-                text: qsTr("Backround color:")
-                font.pixelSize: 15
+                text: Translator.translate("Backround color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
+
             ComboBox {
                 id: colorselect
-                width: 150;
+                width: mainwindow.width * 0.1875 //150
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changeframeclolor()
                 delegate:
 
                     ItemDelegate {
-                    id:itemDelegate
+                    id:itemDelegate2
                     width: colorselect.width
-                    font.pixelSize: 15
+                    height: colorselect.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
-
                         width: colorselect.width
-                        height: 50
+                        height: colorselect.height //50
                         color:  itemColor
-
                         Text {
-
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -851,27 +857,28 @@ Item {
             // Titlebarcolor
             ComboBox {
                 id: colorselecttitlebar
-                width: 150;
+                width: mainwindow.width * 0.1875 //150
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changetitlebarclolor()
-
+                //Component.onCompleted: {for(var i = 0; i < colorselecttitlebar.model.count; ++i) if (colorselecttitlebar.textAt(i) === "green")colorselecttitlebar.currentIndex = i }
                 delegate:
 
                     ItemDelegate {
-                    font.pixelSize: 15
+                    font.pixelSize: mainwindow.width * 0.018//15
                     width: colorselecttitlebar.width
-
+                    height: colorselecttitlebar.height
                     Rectangle {
                         width: colorselecttitlebar.width
-                        height: 50
+                        height: colorselecttitlebar.height //50
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -886,26 +893,28 @@ Item {
             ComboBox {
 
                 id: backroundcolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
+                font.pixelSize: mainwindow.width * 0.018//15
                 visible: true
-                font.pixelSize: 15
                 onCurrentIndexChanged: changebackroundcolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: backroundcolor.width
-                    font.pixelSize: 15
+                    height: backroundcolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
                         width: backroundcolor.width
-                        height: 50
+                        height: backroundcolor.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -917,41 +926,43 @@ Item {
                 }
             }
             Text {
-                text: qsTr("Bargauge color:")
-                font.pixelSize: 15
+                text: Translator.translate("Bargauge color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
-                text: qsTr("Title text color:")
-                font.pixelSize: 15
+                text: Translator.translate("Title text color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
-                text: qsTr("Main text color:")
-                font.pixelSize: 15
+                text: Translator.translate("Main text color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             // BargaugeColor
             ComboBox {
                 id: bargaugecolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
+                font.pixelSize: mainwindow.width * 0.018//15
                 visible: true
-                font.pixelSize: 15
                 onCurrentIndexChanged: changebargaugecolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: bargaugecolor.width
-                    font.pixelSize: 15
+                    height: bargaugecolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: bargaugecolor.width
-                        height: 50
+                        height: bargaugecolor.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -968,27 +979,29 @@ Item {
             ComboBox {
 
                 id: titlecolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changetitlecolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: titlecolor.width
-                    font.pixelSize: 15
+                    height: titlecolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: titlecolor.width
-                        height: 50
+                        height: titlecolor.width
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1005,27 +1018,29 @@ Item {
             ComboBox {
 
                 id: valuetext
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changevaluetextcolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: valuetext.width
-                    font.pixelSize: 15
+                    height: valuetext.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: valuetext.width
-                        height: 50
+                        height: valuetext.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1035,16 +1050,16 @@ Item {
                     height: valuetext.height
                     color:  valuetext.currentText
                 }
-
             }
             Button {
                 id: btnclosecolorselect
-                width:150
-                text: qsTr("CLOSE")
-                font.pixelSize: 15
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
+                text: Translator.translate("Close menu", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018//15
                 onClicked: {selectcolor.visible = false;}
+                }
             }
         }
-    }
 ////////////////////////
 }

@@ -8,9 +8,10 @@ import "qrc:/Translator.js" as Translator
 
 Rectangle{
     id: roundGauge
-    height : 300
+    height : parent.height * (300 / parent.height)//300
     width: height
     color: "transparent"
+
     property string information: "Round gauge"
     property string mainvaluename
     property double mainvalue:10
@@ -2378,3 +2379,4 @@ Menu{
         }
     }
 }
+

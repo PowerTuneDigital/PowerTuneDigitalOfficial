@@ -93,14 +93,14 @@ Row{
     spacing: 20
     Image {
         id : stagelight1
-        height: 35
-        width: 35
+        height: measurements.height * (35 / measurements.height)//35
+        width: measurements.width * (35 / measurements.width)//35
         source: "/graphics/ledoff.png"
     }
     Image {
         id : stagelight2
-        height: 35
-        width: 35
+        height: measurements.height * (35 / measurements.height)//35
+        width: measurements.width * (35 / measurements.width)//35
         source: "/graphics/ledoff.png"
     }
     }
@@ -113,32 +113,32 @@ Row{
                 spacing: parent.width /200
                 Image {
                     id : orangeled1
-                    height: 35
-                    width: 35
+                    height: measurements.height * (35 / measurements.height)//35
+                    width: measurements.width * (35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : orangeled2
-                    height: 35
-                    width: 35
+                    height: measurements.height * (35 / measurements.height)//35
+                    width: measurements.width * (35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : orangeled3
-                    height: 35
-                    width: 35
+                    height: measurements.height * (35 / measurements.height)//35
+                    width: measurements.width * (35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : greenled
-                    height: 35
-                    width: 35
+                    height: measurements.height * (35 / measurements.height)//35
+                    width: measurements.width * (35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : redled
-                    height: 35
-                    width: 35
+                    height: measurements.height * (35 / measurements.height)//35
+                    width: measurements.width * (35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
 
