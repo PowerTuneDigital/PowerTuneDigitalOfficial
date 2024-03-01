@@ -8,7 +8,7 @@ Item {
     width : pictureheight
     property string information: "gauge image"
     property string picturesource
-    property int pictureheight: 480 * 0.25
+    property int pictureheight //: 480 * 0.25
     //property int picturewidth
     property string increasedecreaseident
     Drag.active: true

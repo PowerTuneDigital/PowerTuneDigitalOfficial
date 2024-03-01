@@ -308,10 +308,10 @@ Item {
                 currentIndex: 0
                 onCurrentIndexChanged: {
 
-                    backroundpicturesource1 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    //backroundpicturesource1 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    //backroundpicturesource1 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
-                    backroundpicture3.source = backroundpicturesource1;
+                    backroundpicturesource3 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    //backroundpicturesource3 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    //backroundpicturesource3 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    backroundpicture3.source = backroundpicturesource3;
                 }
                 delegate: ItemDelegate {
                     width: backroundSelector.width
