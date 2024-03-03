@@ -4,10 +4,13 @@ import QtQuick.Controls 2.2
 import Qt.labs.folderlistmodel 2.1
 import QtQuick.Extras 1.4
 import QtMultimedia 5.8
+import QtQuick.Window 2.10 //compatibility with QT 5.10
 
 Rectangle {
-    width: 800
-    height: 480
+    //width: 800
+    //height: 480
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     property bool playing: false
     Connections{
         target: Dashboard
@@ -23,7 +26,7 @@ Rectangle {
             id:test1
             title: "Name"
             role: "fileName"
-            width: 300
+            width: parent.wdith * (300 / parent.width)
         }
         model: Dirmodel
         onActivated: Connect.qmlTreeviewclicked(mp3selector.currentIndex),folderModel.folder = Dashboard.musicpath;
@@ -46,7 +49,7 @@ Rectangle {
         delegate: Component {
             Item {
                 width: parent.width
-                height: 40
+                height: parent.height * (40 / parent.height)
                 Column {
                     Text { text: fileName }
                 }

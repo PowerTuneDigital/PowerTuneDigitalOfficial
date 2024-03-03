@@ -7,8 +7,8 @@ import "qrc:/Translator.js" as Translator
 Rectangle {
 
     id: gauge
-    width: 250
-    height: 200
+    width: parent.width * (250 / parent.width)
+    height: parent.height * (200 / parent.height)
     property string information: "Square gauge"
     border.color: "#9f9f9f"
     border.width: 2
@@ -107,7 +107,6 @@ Rectangle {
     Rectangle {
         id: titlebar
         width: parent.width - 4
-        //height: (parent.height) * 0.2
         height: parent.height / 4
         anchors.top : parent.top
         anchors.left: parent.left
@@ -165,14 +164,13 @@ Rectangle {
         font.bold: true
         font.family: textFonttype
         color: titletextcolor
-
     }
 
     Text {
         id: mainvaluetextfield
         anchors.horizontalCenter: parent.horizontalCenter
         anchors.verticalCenter: parent.verticalCenter
-        font.pixelSize: 50
+        font.pixelSize: parent.width * (50 / parent.width)
         font.family: valueFonttype
         color: "white"
         onTextChanged: {

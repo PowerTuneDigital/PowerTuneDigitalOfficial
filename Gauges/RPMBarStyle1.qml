@@ -8,6 +8,7 @@ import QtQuick.Extras 1.4
 import com.powertune 1.0
 
 Item {
+  id: speedUnits
   anchors.fill:parent
   property  var unit : Dashboard.speedunits;
   Component.onCompleted: {units.unitadjust();}
@@ -18,7 +19,6 @@ id: gaugebackround
 height: parent.height /2.2
 width: parent.width
 color: "darkgrey"
-
 }
 
   Gauge {
@@ -63,54 +63,64 @@ color: "darkgrey"
 
 Image
     {
+      id: rpmDash
       source:"qrc:/graphics/Racedash.png"
       anchors.fill: parent
       smooth: true
-
  }
-Text {
-    text:"RPM"
-    font.pixelSize: 20
-    y: 150
-    x: 180
-    font.bold: true
-    font.family: "Eurostile"
-    color: "grey"
 
-}
-Text {
-    text: (Dashboard.rpm)
-    font.pixelSize: 100
-    y: 110
-    x: 220
-font.italic: true
-    font.bold: true
-    font.family: "Eurostile"
-    color: "white"
+Row{
+    spacing: 30
+    //anchors.centerIn: rpmDash
+    //using rpmDash as its the full size of the screen
+    x: rpmDash.width * 0.28
+    y: rpmDash.height * 0.2
+    topPadding: 3
+    Text {
+        text:"RPM"
+        topPadding: 20
+        font.pixelSize: rpmDash.width * 0.025 //20
+        font.bold: true
+        font.family: "Eurostile"
+        color: "grey"
 
-}
-Text {
-    id :speed
-    text: "km/h"
-    font.pixelSize: 20
-    y: 150
-    x: 510
-    font.bold: true
-    font.family: "Eurostile"
-    color: "grey"
 
+    }
+    Text {
+        text: (Dashboard.rpm)
+        font.pixelSize: rpmDash.width * 0.125 //130
+        font.italic: true
+        font.bold: true
+        font.family: "Eurostile"
+        color: "white"
+    }
 }
-Text {
-    text: (Dashboard.speed).toFixed(0);
-    font.pixelSize: 100
-    y: 110
-    x: 570
-font.italic: true
-    font.bold: true
-    font.family: "Eurostile"
-    color: "white"
 
+Row{
+    spacing: 30
+    //anchors.centerIn: rpmDash
+    x: rpmDash.width * 0.58
+    y: rpmDash.height * 0.2
+    Text {
+        id :speed
+        text: "km/h"
+        topPadding: 20
+        font.pixelSize: rpmDash.width * 0.025 //20
+        font.bold: true
+        font.family: "Eurostile"
+        color: "grey"
+    }
+    Text {
+        text: (Dashboard.speed).toFixed(0);
+        font.pixelSize: rpmDash.width * 0.125 //130
+        font.italic: true
+        font.bold: true
+        font.family: "Eurostile"
+        color: "white"
+    }
 }
+
+
         ShiftLights{}
 
 Item {

@@ -35,8 +35,6 @@ Rectangle {
                   height: (gauge.orientation == Qt.Vertical) ? 260 : 85
                   color: "transparent"
 
-
-
                   Gauge {
                       id: gauge
                       anchors.fill: parent
@@ -56,7 +54,7 @@ Rectangle {
                       }
                       Text {
                           id: titleText
-                          font.pixelSize: 20
+                          font.pixelSize: parent.width * (20 / parent.width)
                           anchors.top : parent.top
                           font.bold: true
                           font.family: "Eurostile"

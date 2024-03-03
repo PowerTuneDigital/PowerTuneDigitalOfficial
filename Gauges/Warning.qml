@@ -1,16 +1,14 @@
-import QtQuick 2.0
+import QtQuick 2.8
 
-Rectangle {
+Item {
     id: genwarning
-    width: 800
-    height:480
-    color:"transparent"
-    property var warningtext : ""
+   anchors.fill: parent
+    property string warningtext : ""
     Rectangle {
         id: genwarningsquare
         anchors.centerIn: parent
-        width: parent.width /1.5
-        height:parent.height /1.5
+        width: parent.width / 1.5
+        height:parent.height / 1.5
         color:"red"
         SequentialAnimation on color {
             loops: Animation.Infinite
@@ -21,7 +19,7 @@ Rectangle {
         Text {
             id: warntxt
             text: "Warning!!!"
-            font.pixelSize: 60
+            font.pixelSize: parent.width / 13 //60
             anchors.top : parent.top
             anchors.topMargin: parent.height / 5
             anchors.horizontalCenter: genwarningsquare.horizontalCenter
@@ -33,7 +31,7 @@ Rectangle {
         Text {
             id : warningtxt
             text: warningtext
-            font.pixelSize: 40
+            font.pixelSize: parent.width / 20// 40
             anchors.top : warntxt.bottom
             anchors.topMargin: parent.height / 5
             anchors.horizontalCenter: genwarningsquare.horizontalCenter

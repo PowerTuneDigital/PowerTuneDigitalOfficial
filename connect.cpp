@@ -45,7 +45,6 @@
 #include <QByteArrayMatcher>
 #include <QProcess>
 
-
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU
 int logging; // 0 Logging off , 1 Logging to file
 int connectclicked =0;
@@ -168,6 +167,7 @@ void Connect::checkifraspberrypi()
 {
     QString path = "/sys/class/backlight/rpi_backlight/brightness";
     QFile inputFile(path);
+
     if (inputFile.open(QIODevice::ReadOnly))
     {
         QTextStream in(&inputFile);
@@ -186,6 +186,9 @@ void Connect::checkifraspberrypi()
     {
         m_dashBoard->setscreen(false);
     }
+    #ifdef HAVE_DDCUTIL
+       m_dashBoard->setscreen(true);
+    #endif
 }
 void Connect::readavailabledashfiles()
 {
@@ -317,15 +320,20 @@ void Connect::readdashsetup1()
 
 void Connect::setSreenbrightness(const int &brightness)
 {
-
-    //This works only on raspberry pi
+#ifdef HAVE_DDCUTIL
+    // Adjust brightness using ddcutil
+    QString command = QString("ddcutil setvcp 12 %1").arg(brightness);
+    QProcess::execute(command);
+#else
+    // Use standard interface
     QFile f("/sys/class/backlight/rpi_backlight/brightness");
-    //f.close();
+    // f.close();
     f.open(QIODevice::WriteOnly | QIODevice::Truncate);
     QTextStream out(&f);
     out << brightness;
-    //qDebug() << brightness;
+    // qDebug() << brightness;
     f.close();
+#endif
 }
 void Connect::setSpeedUnits(const int &units1)
 {
@@ -911,7 +919,7 @@ void Connect::daemonstartup(const int &daemon)
         break;
     }
 
-    ///////
+
 
     QString fileName = "/home/pi/startdaemon.sh";//This will be the correct path on pi
     //QString fileName = "startdaemon.sh";//for testing on windows
@@ -960,13 +968,8 @@ void Connect::daemonstartup(const int &daemon)
         mFile.close();
     }
 
-    //Reboot the PI for settings to take Effect
-   // m_dashBoard->setSerialStat("Rebooting ");
-   // QProcess *process = new QProcess(this);
-   // process->start("sudo reboot");
-   // process->waitForFinished(100); // 10 minutes time before timeout
 }
-//////////////
+
 void Connect::canbitratesetup(const int &cansetting)
 {
     QString canbitrate;

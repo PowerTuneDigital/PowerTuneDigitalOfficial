@@ -11,57 +11,57 @@ Item {
 Rectangle {
     id: tyremonLF
     anchors.left: mainwindow.left
-    height:75
-    width:160
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (160 / mainwindow.width) //160
 Grid{
 
     columns: 8
     Rectangle{
     id:templf01
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf02
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf03
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf04
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf05
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf06
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "green"
     }
     Rectangle{
     id:templf07
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:templf08
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
 }
@@ -69,57 +69,57 @@ Grid{
 Rectangle {
     id: tyremonRF
     anchors.right: mainwindow.right
-    height:75
-    width:160
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (160 / mainwindow.width) //160
 Grid{
 
     columns: 8
     Rectangle{
     id:temprf01
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf02
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf03
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf04
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf05
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf06
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "green"
     }
     Rectangle{
     id:temprf07
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprf08
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
 }
@@ -128,15 +128,15 @@ Rectangle {
     id: tyremonLR
     anchors.left: mainwindow.left
     anchors.bottom: mainwindow.bottom
-    height:75
-    width:160
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (160 / mainwindow.width) //160
 Grid{
 
     columns: 8
     Rectangle{
     id:templr01
-    height:100
-    width: 20
+    height:mainwindow.height * (100 / mainwindow.height) //100
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_01  < greencolor)
                  return "blue"
@@ -151,13 +151,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_01).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr02
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_02  < greencolor)
                  return "blue"
@@ -172,13 +172,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_02).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr03
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_03  < greencolor)
                  return "blue"
@@ -193,13 +193,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_03).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr04
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_04  < greencolor)
                  return "blue"
@@ -214,13 +214,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_04).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr05
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_05  < greencolor)
                  return "blue"
@@ -235,13 +235,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_05).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr06
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_06  < greencolor)
                  return "blue"
@@ -256,13 +256,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_03).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr07
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_07  < greencolor)
                  return "blue"
@@ -277,13 +277,13 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_07).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
     Rectangle{
     id:templr08
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: {
              if (Dashboard.LR_Tyre_Temp_08  < greencolor)
                  return "blue"
@@ -298,7 +298,7 @@ Grid{
     anchors.fill: parent
     text: (Dashboard.LR_Tyre_Temp_08).toFixed(0)
     wrapMode: Text.WrapAnywhere
-    font.pixelSize: 20
+    font.pixelSize: mainwindow.width * (20 / mainwindow.width) //20
     }
     }
 }
@@ -307,57 +307,57 @@ Rectangle {
     id: tyremonRR
     anchors.right: mainwindow.right
     anchors.bottom: mainwindow.bottom
-    height:75
-    width:160
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (160 / mainwindow.width) //160
 Grid{
 
     columns: 8
     Rectangle{
     id:temprr01
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr02
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr03
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr04
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr05
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr06
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "green"
     }
     Rectangle{
     id:temprr07
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
     Rectangle{
     id:temprr08
-    height:75
-    width: 20
+    height:mainwindow.height * (75 / mainwindow.height) //75
+    width:mainwindow.width * (20 / mainwindow.width) //20
     color: "blue"
     }
 }

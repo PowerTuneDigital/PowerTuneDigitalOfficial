@@ -6,14 +6,15 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
-
-
+import QtQuick.Window 2.10 //compatibility with QT 5.10
 
 ApplicationWindow {
     id:window
     visible: true
-    width: 800
-    height: 480
+    width: 1600
+    height: 720
+    //width: Screen.desktopAvailableWidth
+    //height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
@@ -30,9 +31,9 @@ ApplicationWindow {
         id: keyboardcontainer
         color: "blue"
         visible: false
-        width: 500
-        height: 220
-        z: 220
+        width: Screen.desktopAvailableWidth *0.63
+        height: Screen.desktopAvailableHeight *0.5
+        z: Screen.desktopAvailableHeight *0.5
 
 
         MouseArea {
@@ -257,15 +258,25 @@ ApplicationWindow {
             //anchors.top: brightnestext.bottom
             //anchors.horizontalCenter: parent.horizontalCenter
             stepSize: 5
-            from: 20
-            to: 255
+            from: 0
+            to: 100
             value: Dashboard.Brightness
 
             onValueChanged: {
                      Connect.setSreenbrightness(brightness.value);
                      AppSettings.writebrightnessettings(brightness.value);
                      }
-            //Component.onCompleted: Connect.setSreenbrightness(brightness.value);
+            // Conditional assignment of 'from' and 'to' properties
+            Component.onCompleted: {
+                // Check if HAVE_DDCUTIL is defined
+                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                    from = 0;  // Adjust based on your requirements
+                    to = 100;  // Adjust based on your requirements
+                } else {
+                    from = 20;  // Default values if HAVE_DDCUTIL is not defined
+                    to = 255;  // Default values if HAVE_DDCUTIL is not defined
+                }
+            }
         }
 
     }
