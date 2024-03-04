@@ -1,4 +1,5 @@
 import QtQuick 2.8
+import QtQuick 2.15
 import QtQuick.Controls 1.4
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
@@ -7,6 +8,7 @@ import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
 import QtQuick.Window 2.10 //compatibility with QT 5.10
+import Qt.labs.settings 1.0
 
 ApplicationWindow {
     id:window
@@ -20,8 +22,14 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
+    Settings{
+        id: appSettings
+        property alias sampleActionEnabled: popUpLoader.enabled
+    }
+
     Component.onCompleted: {
-        popUpLoader.source = "qrc:/BrightnessPopUp.qml"
+
+            popUpLoader.source = "qrc:/BrightnessPopUp.qml"
     }
 
 
@@ -173,7 +181,7 @@ ApplicationWindow {
         Grid {
             id :row1
             rows: 1
-            columns: 2
+            columns: 3
             topPadding: window.width / 40
             spacing: window.width / 3
             anchors.horizontalCenter: parent.horizontalCenter
@@ -215,26 +223,60 @@ ApplicationWindow {
                         }
             }
 
-            /*
-            Button {
-                text: "Quit"
-                width: window.width / 5
-                height: window.height /15
-                font.pixelSize: window.width / 55
-                onClicked: { Qt.quit();}
-            }*/
 
 
-            /*
-            Button {
-                text: "Reboot"
-                width: window.width / 5
-                height: window.height /15
-                font.pixelSize: window.width / 55
-                onClicked: {Connect.reboot();}
-            }*/
+            Switch {
+                id: disablePopUp
+                text:  "On"
+                font.family: "Eurostile"
+                font.bold: true
+                width: window.width / 10
+                height: window.width / 10
+                font.pixelSize: window.width / 70
+                Component.onCompleted: {
+                    if(popUpLoader.enabled){
+                        disablePopUp.text = "On"
+                    }else{
+                       disablePopUp.text = "Off"
+                    }
+                }
+                onPositionChanged: {
+                    popUpLoader.enabled = !popUpLoader.enabled;
+                    appSettings.setValue("sampleActionEnabled", popUpLoader.enabled);
+                    popUpLoader.visible = false
+                    if(popUpLoader.enabled){
+                        disablePopUp.text = "On"
+                        console.log("Pop Up Enabled")
+                    }else{
+                       disablePopUp.text = "Off"
+                        console.log("Pop Up Disabled")
+                    }
+                }
+                contentItem: Text {
+                    leftPadding: disablePopUp.indicator.width + disablePopUp.spacing
+                    text: disablePopUp.text
+                    font: disablePopUp.font
+                    opacity: enabled ? 1.0 : 0.3
+                    //color: disablePopUp.down ? "#17a81a" : "#21be2b"
+                    elide: Text.ElideRight
+                    verticalAlignment: Text.AlignVCenter
+                }
+                Rectangle {
+                    width: window.width / 5
+                    height: window.width / 10
+                    color: "transparent"
+                    anchors.right: disablePopUp.left
+                    Text {
+                        text: "Brightness Pop Up at Boot"
+                        anchors.centerIn: parent
+                        color: "black"
+                        font.family: "Eurostile"
+                        font.bold: true
+                        font.pixelSize: window.width / 70
+                    }
+                }
 
-
+            }
         }
         Grid {
             id :row2
@@ -288,13 +330,19 @@ ApplicationWindow {
         anchors.bottom: dashView.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
-
     Loader {
         id: popUpLoader
-        visible: true
-        anchors.centerIn: parent
+        visible: false
+        enabled: appSettings.sampleActionEnabled
+        anchors.right: parent.right
+        width: window.width * 0.15
+        //anchors.verticalCenter: parent.verticalCenter
         Component.onCompleted: {
+            if(popUpLoader.enabled){
+                visible = true
+            }
+
             console.log("Brightness Loaded")
         }
     }
-    }
+}
