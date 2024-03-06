@@ -70,10 +70,9 @@ Image
  }
 
 Row{
-    spacing: 30
-    //anchors.centerIn: rpmDash
+    spacing: 5
     //using rpmDash as its the full size of the screen
-    x: rpmDash.width * 0.28
+    x: rpmDash.width * 0.26
     y: rpmDash.height * 0.2
     topPadding: 3
     Text {
@@ -88,7 +87,7 @@ Row{
     }
     Text {
         text: (Dashboard.rpm)
-        font.pixelSize: rpmDash.width * 0.125 //130
+        font.pixelSize: rpmDash.width * 0.095 //76
         font.italic: true
         font.bold: true
         font.family: "Eurostile"
@@ -97,10 +96,10 @@ Row{
 }
 
 Row{
-    spacing: 30
-    //anchors.centerIn: rpmDash
-    x: rpmDash.width * 0.58
+    spacing: 5
+    x: rpmDash.width * 0.65
     y: rpmDash.height * 0.2
+    topPadding: 3
     Text {
         id :speed
         text: "km/h"
@@ -112,7 +111,7 @@ Row{
     }
     Text {
         text: (Dashboard.speed).toFixed(0);
-        font.pixelSize: rpmDash.width * 0.125 //130
+        font.pixelSize: rpmDash.width * 0.095 //76
         font.italic: true
         font.bold: true
         font.family: "Eurostile"

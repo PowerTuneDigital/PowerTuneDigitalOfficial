@@ -7,7 +7,7 @@ Rectangle {
 
     id: warningsettings
     anchors.fill: parent
-    color: "black"
+    color: "grey"
     property int gercalactive
     Item {
         id: warnettings

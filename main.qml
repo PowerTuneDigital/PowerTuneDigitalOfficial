@@ -1,5 +1,4 @@
 import QtQuick 2.8
-import QtQuick 2.15
 import QtQuick.Controls 1.4
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
@@ -13,10 +12,10 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    width: 1600
-    height: 720
-    //width: Screen.desktopAvailableWidth
-    //height: Screen.desktopAvailableHeight
+    //width: 1600
+    //height: 720
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform

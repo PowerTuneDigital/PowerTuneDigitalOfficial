@@ -93,55 +93,55 @@ Row{
     spacing: 20
     Image {
         id : stagelight1
-        height: measurements.height * (35 / measurements.height)//35
-        width: measurements.width * (35 / measurements.width)//35
+        height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+        width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
         source: "/graphics/ledoff.png"
     }
     Image {
         id : stagelight2
-        height: measurements.height * (35 / measurements.height)//35
-        width: measurements.width * (35 / measurements.width)//35
+        height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+        width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
         source: "/graphics/ledoff.png"
+
     }
     }
             Column {
                 id: staginglights2
                 anchors.right: parent.right
                 anchors.rightMargin: parent.width /15
-                anchors.bottom: measurements.bottom
+                anchors.bottom: rpmbarloader.bottom
                 anchors.bottomMargin: parent.width /150
                 spacing: parent.width /200
                 Image {
                     id : orangeled1
-                    height: measurements.height * (35 / measurements.height)//35
-                    width: measurements.width * (35 / measurements.width)//35
+                    height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+                    width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : orangeled2
-                    height: measurements.height * (35 / measurements.height)//35
-                    width: measurements.width * (35 / measurements.width)//35
+                    height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+                    width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : orangeled3
-                    height: measurements.height * (35 / measurements.height)//35
-                    width: measurements.width * (35 / measurements.width)//35
+                    height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+                    width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : greenled
-                    height: measurements.height * (35 / measurements.height)//35
-                    width: measurements.width * (35 / measurements.width)//35
+                    height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+                    width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
                 Image {
                     id : redled
-                    height: measurements.height * (35 / measurements.height)//35
-                    width: measurements.width * (35 / measurements.width)//35
+                    height: rpmbarloader.width * 0.035//(35 / measurements.width)//35
+                    width: rpmbarloader.width * 0.035//(35 / measurements.width)//35
                     source: "/graphics/ledoff.png"
                 }
-
             }
     //////////////////////////////
 
@@ -149,108 +149,109 @@ Row{
     Grid {
         id:timegrid
         anchors.bottom: measurements.bottom
-        anchors.topMargin: parent.height / 20
-        spacing: parent.width /200
+        anchors.topMargin: parent.height /20
+        spacing: parent.width / 200
         rows: 9
         columns: 2
 
         Text {
             id:reactiotimertext
             text: "R/T : "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
+
         }
 
         Text {
             id:reactiotimertimetext
             text: (Dashboard.reactiontime).toFixed(3)
-            font.pixelSize: measurements.width / 40
-            color: sliptextcolor
+            font.pixelSize: measurements.width / 50
+            color: sliptextcolor            
         }
         Text {
             text: "60' TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: (Dashboard.sixtyfoottime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: "330' TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.threehundredthirtyfoottime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
 
 
         Text {
             text: "1/8 MILE TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: (Dashboard.eightmiletime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: "1000' TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
 
         Text {
             text:  (Dashboard.thousandfoottime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: "1/4 TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.quartermiletime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             id : hundred
             text: "0-100 km/h TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.zerotohundredt)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             id : twohundred
             text:"100-200 km/h TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.hundredtotwohundredtime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             id : threehundred
             text:"200-300 km/h TIME: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.twohundredtothreehundredtime)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
 
@@ -261,57 +262,59 @@ Row{
         anchors.bottomMargin: parent.height / 7
         anchors.left: timegrid.right
         anchors.leftMargin: parent.width /20
+        anchors.topMargin: parent.height /20
+        leftPadding: rpmbarloader.width * 0.1
         spacing: parent.width /200
         rows: 9
         columns: 2
         Text {
             text: "60' TOP SPEED: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: (Dashboard.sixtyfootspeed)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: "330' TOP SPEED: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: (Dashboard.threehundredthirtyfootspeed)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text: "1/8 MILE TOP SPEED: "
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
         Text {
             text:  (Dashboard.eightmilespeed)
-            font.pixelSize: measurements.width / 40
+            font.pixelSize: measurements.width / 50
             color: sliptextcolor
         }
     Text {
         text: "1000' TOP SPEED: "
-        font.pixelSize: measurements.width / 40
+        font.pixelSize: measurements.width / 50
         color: sliptextcolor
     }
     Text {
         text:  (Dashboard.thousandfootspeed)
-        font.pixelSize: measurements.width / 40
+        font.pixelSize: measurements.width / 50
         color: sliptextcolor
     }
     Text {
         text: "1/4 TOP SPEED: "
-        font.pixelSize: measurements.width / 40
+        font.pixelSize: measurements.width / 50
         color: sliptextcolor
     }
     Text {
         text:  (Dashboard.quartermilespeed)
-        font.pixelSize: measurements.width / 40
+        font.pixelSize: measurements.width / 50
         color: sliptextcolor
     }
 

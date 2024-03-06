@@ -15,8 +15,8 @@ Rectangle {
   Component.onCompleted: {units.unitadjust();}
 
   Row{
-      spacing: 30
-      x: groove1.width * 0.28
+      spacing: 5
+      x: groove1.width * 0.26
       y: groove1.height * 0.2
       topPadding: 3
       Text {
@@ -30,8 +30,8 @@ Rectangle {
       }
       Text {
           text: (Dashboard.rpm)
-          topPadding: 20
-          font.pixelSize: groove1.width * 0.125 //130
+          topPadding: 30
+          font.pixelSize: groove1.width * 0.095 //76
           font.italic: true
           font.bold: true
           font.family: "Eurostile"
@@ -40,8 +40,8 @@ Rectangle {
   }
 
   Row{
-      spacing: 30
-      x: groove1.width * 0.58
+      spacing: 5
+      x: groove1.width * 0.65
       y: groove1.height * 0.2
       Text {
           id :speed
@@ -54,8 +54,8 @@ Rectangle {
       }
       Text {
           text: (Dashboard.speed).toFixed(0);
-          topPadding: 20
-          font.pixelSize: groove1.width * 0.125 //130
+          topPadding: 30
+          font.pixelSize: groove1.width * 0.095 //76
           font.italic: true
           font.bold: true
           font.family: "Eurostile"
