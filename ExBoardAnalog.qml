@@ -102,23 +102,25 @@ Rectangle {
         id:inputgrid
         rows:10
         columns: 3
-        spacing: 5
+        spacing: 3
         anchors.left: parent.left
-        anchors.leftMargin: 10
+        anchors.leftMargin: 2
         anchors.top: parent.top
         anchors.topMargin: 40
-        Text { text: "  "
-            font.pixelSize: main.width / 55;color:"white"}
+        Text { text: " "
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "Val. @ 0V"
-            font.pixelSize: main.width / 55;color:"white"}
+            rightPadding: 3
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "Val. @ 5V"
-            font.pixelSize: main.width / 55;color:"white"}
+            rightPadding: 3
+            font.pixelSize: main.width / 60;color:"white"}
 
         Text { text: "EX AN 0"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex00
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -129,7 +131,7 @@ Rectangle {
         }
         TextField {
             id: ex05
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -140,10 +142,10 @@ Rectangle {
         }
 
         Text { text: "EX AN 1"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex10
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -154,7 +156,7 @@ Rectangle {
         }
         TextField {
             id: ex15
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -164,10 +166,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 2"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex20
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -178,7 +180,7 @@ Rectangle {
         }
         TextField {
             id: ex25
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -188,10 +190,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 3"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex30
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -202,7 +204,7 @@ Rectangle {
         }
         TextField {
             id: ex35
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -212,10 +214,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 4"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex40
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -226,7 +228,7 @@ Rectangle {
         }
         TextField {
             id: ex45
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -236,10 +238,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 5"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex50
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -250,7 +252,7 @@ Rectangle {
         }
         TextField {
             id: ex55
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -260,10 +262,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 6"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex60
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -273,7 +275,7 @@ Rectangle {
         }
         TextField {
             id: ex65
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -282,10 +284,10 @@ Rectangle {
 
         }
         Text { text: "EX AN 7"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         TextField {
             id: ex70
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "0"
@@ -295,7 +297,7 @@ Rectangle {
         }
         TextField {
             id: ex75
-            width: main.width / 14
+            width: main.width / 15
             height: main.height /15
             font.pixelSize: main.width / 55
             text: "5"
@@ -305,18 +307,18 @@ Rectangle {
         }
         Text {
             text: "Ex AN 7"
-            font.pixelSize: main.width / 55;
+            font.pixelSize: main.width / 60;
             color:"white"
         }
         Text {
 
             text: Translator.translate("Damping", Dashboard.language)
-            font.pixelSize: main.width / 55;
+            font.pixelSize: main.width / 60;
             color:"white"
         }
         TextField {
             id: an7dampingfactor
-            width: main.width / 14
+            width: main.width / 15
             height: main.height / 15
             font.pixelSize: main.width / 55
             text: "0"
@@ -468,7 +470,7 @@ Rectangle {
         anchors.topMargin: 5
     Text {
         text: "RPM CAN"
-        font.pixelSize: main.width / 55;
+        font.pixelSize: main.width / 60;
         color:"white"
     }
     CheckBox {
@@ -480,7 +482,7 @@ Rectangle {
 
     Text {
         text: "RPMCAN " +Translator.translate("Version", Dashboard.language)
-        font.pixelSize: main.width / 55;
+        font.pixelSize: main.width / 60;
         visible: { (rpmcheckbox.checked == true) ? true : false; }
         color:"white"
     }
@@ -504,7 +506,7 @@ Rectangle {
         }
     Text {
         text: Translator.translate("Cylinders", Dashboard.language)
-        font.pixelSize: main.width / 55;
+        font.pixelSize: main.width / 60;
         visible: { (rpmcheckbox.checked == true) ? true : false; }
         color:"white"
     }
@@ -551,65 +553,65 @@ Rectangle {
         anchors.top: parent.top
         anchors.right: parent.right
         text: Translator.translate("Voltage divider jumpers", Dashboard.language)
-        font.pixelSize: main.width / 55;color:"white"}
+        font.pixelSize: main.width / 60;color:"white"}
     Grid {
         id:inputgrid2
-        anchors.left:inputgrid.right
-        anchors.leftMargin: 5
+        anchors.right:parent.right
+        anchors.leftMargin: 10
         anchors.top: parent.top
         anchors.topMargin: 40
         rows:10
         columns: 9
         spacing: 3
         Text { text: Translator.translate("Temp In.", Dashboard.language)
-            font.pixelSize: main.width / 55;color:"white"}
-        Text { text: "T1 (°C)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"
+            rightPadding: main.width * 0.01675
+        }
+        Text {id: t1; text: "T1 (°C)"
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "R1 (Ω)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "T2 (°C)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "R2 (Ω)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "T3 (°C)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "R3 (Ω)"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "100Ω"
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         Text { text: "1KΩ J."
-            font.pixelSize: main.width / 55;color:"white"}
+            font.pixelSize: main.width / 60;color:"white"}
         CheckBox {
             id: checkan0ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t10
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
-
         }
         TextField {
             id: r10
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "15462"
             enabled: checkan0ntc.checked == true ? true : false
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
             onEditingFinished: inputs.setInputs()
-
         }
         TextField {
             id: t20
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -620,7 +622,7 @@ Rectangle {
         }
         TextField {
             id: r20
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2500"
@@ -631,7 +633,7 @@ Rectangle {
         }
         TextField {
             id: t30
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -642,7 +644,7 @@ Rectangle {
         }
         TextField {
             id: r30
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "323"
@@ -653,25 +655,25 @@ Rectangle {
         }
         CheckBox {
             id: checkan0100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan01k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan1ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t11
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
@@ -682,7 +684,7 @@ Rectangle {
         }
         TextField {
             id: r11
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
            // text: "14600"
@@ -693,7 +695,7 @@ Rectangle {
         }
         TextField {
             id: t21
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -704,7 +706,7 @@ Rectangle {
         }
         TextField {
             id: r21
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2200"
@@ -715,7 +717,7 @@ Rectangle {
         }
         TextField {
             id: t31
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -726,7 +728,7 @@ Rectangle {
         }
         TextField {
             id: r31
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "290"
@@ -737,25 +739,25 @@ Rectangle {
         }
         CheckBox {
             id: checkan1100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan11k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan2ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t12
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
@@ -766,7 +768,7 @@ Rectangle {
         }
         TextField {
             id: r12
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "14600"
@@ -777,7 +779,7 @@ Rectangle {
         }
         TextField {
             id: t22
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -788,7 +790,7 @@ Rectangle {
         }
         TextField {
             id: r22
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2200"
@@ -799,7 +801,7 @@ Rectangle {
         }
         TextField {
             id: t32
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -810,7 +812,7 @@ Rectangle {
         }
         TextField {
             id: r32
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "290"
@@ -821,26 +823,26 @@ Rectangle {
         }
         CheckBox {
             id: checkan2100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan21k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
 
         CheckBox {
             id: checkan3ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t13
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
@@ -851,7 +853,7 @@ Rectangle {
         }
         TextField {
             id: r13
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "14600"
@@ -862,7 +864,7 @@ Rectangle {
         }
         TextField {
             id: t23
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -873,7 +875,7 @@ Rectangle {
         }
         TextField {
             id: r23
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2200"
@@ -884,7 +886,7 @@ Rectangle {
         }
         TextField {
             id: t33
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -895,7 +897,7 @@ Rectangle {
         }
         TextField {
             id: r33
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "290"
@@ -906,26 +908,26 @@ Rectangle {
         }
         CheckBox {
             id: checkan3100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan31k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
 
         CheckBox {
             id: checkan4ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t14
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
@@ -936,7 +938,7 @@ Rectangle {
         }
         TextField {
             id: r14
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "14600"
@@ -947,7 +949,7 @@ Rectangle {
         }
         TextField {
             id: t24
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -958,7 +960,7 @@ Rectangle {
         }
         TextField {
             id: r24
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2200"
@@ -969,7 +971,7 @@ Rectangle {
         }
         TextField {
             id: t34
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -980,7 +982,7 @@ Rectangle {
         }
         TextField {
             id: r34
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "290"
@@ -991,26 +993,26 @@ Rectangle {
         }
         CheckBox {
             id: checkan4100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan41k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
 //
         CheckBox {
             id: checkan5ntc
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         TextField {
             id: t15
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "-20"
@@ -1021,7 +1023,7 @@ Rectangle {
         }
         TextField {
             id: r15
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "14600"
@@ -1032,7 +1034,7 @@ Rectangle {
         }
         TextField {
             id: t25
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "20"
@@ -1043,7 +1045,7 @@ Rectangle {
         }
         TextField {
             id: r25
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "2200"
@@ -1054,7 +1056,7 @@ Rectangle {
         }
         TextField {
             id: t35
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "80"
@@ -1065,7 +1067,7 @@ Rectangle {
         }
         TextField {
             id: r35
-            width: main.width / 14
+            width: main.width / 12
             height: main.height /15
             font.pixelSize: main.width / 65
             //text: "290"
@@ -1076,13 +1078,13 @@ Rectangle {
         }
         CheckBox {
             id: checkan5100
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }
         CheckBox {
             id: checkan51k
-            width: main.width / 14
+            width: main.width / 20
             height: main.height /15
             onCheckStateChanged: inputs.setInputs();
             }

@@ -34,8 +34,8 @@ Quick1.TabView {
             id: tabrect
             color: styleData.selected ? "grey" : "lightgrey"
             border.color: "steelblue"
-            implicitWidth: tabView.width /10//Math.max(text.width + 4, 80)
-            implicitHeight: tabView.height /10
+            implicitWidth: tabView.width /11//Math.max(text.width + 4, 80)
+            implicitHeight: tabView.height /11
             radius: 2
             Text {
                 id: text
@@ -102,6 +102,11 @@ Quick1.TabView {
     Quick1.Tab {
         title: Translator.translate("Network", Dashboard.language) // Tab index 9
         source: "Settings/network.qml"
+    }
+
+    Quick1.Tab{
+        title: "Support" //Translator.translate("Support", Dashboard.language)
+        source: "Settings/help.qml"
     }
 
     function setregtabtitle() {

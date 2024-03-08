@@ -12,10 +12,10 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    //width: 1600
-    //height: 720
-    width: Screen.desktopAvailableWidth
-    height: Screen.desktopAvailableHeight
+    width: 1600
+    height: 720
+    //width: Screen.desktopAvailableWidth
+    //height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
@@ -92,6 +92,12 @@ ApplicationWindow {
         id: dashView
 
         currentIndex: 0
+        onCurrentIndexChanged: {
+            if (dashView.currentIndex != 0){
+                console.log("Object Closed")
+            }
+        }
+
         anchors.fill: parent
         //Component.onCompleted: Connect.readavailabledashfiles()
 
