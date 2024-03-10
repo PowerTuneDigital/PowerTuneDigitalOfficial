@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-
+import "qrc:/Translator.js" as Translator
 Rectangle {
     id: helpBackground
     anchors.fill: parent
@@ -12,7 +12,7 @@ Rectangle {
                 Text {
                     id: supportText
                     bottomPadding: helpBackground.height * 0.5
-                    text: "Powertune Digital offers unlimited free tech support! <p>If you are having any issues please reach out using any of the platforms below.</p> <br>Australia: 07 2102 4825</br> <br>USA: 1888 421 2360</br> <br>Worldwide: +61 721 024 825</br> <br>Email Inquiries: info@powertunedigital.com</br>"
+                    text: Translator.translate("Support", Dashboard.language)
                     font.bold: true
                     font.pixelSize: helpBackground.width * 0.02
                     horizontalAlignment: Text.AlignHCenter

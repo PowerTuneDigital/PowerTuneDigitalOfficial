@@ -94,6 +94,9 @@ var translations = {
            "Damping": { en: "Damping", de: "Dämpfung",  jp: "ダンピング", es: "Mojadura", fr: "", ar:"" },
            "Version": { en: "Version", de: "Version",  jp: "バージョン", es: "Versión", fr: "", ar:"" },
            "Analog":{ en: "Analog", de: "Analog", jp: "アナログ", es: "Cosa análoga", fr: "", ar:"" },
+           "Support":{ en: "Powertune Digital offers unlimited free tech support! <p>If you are having any issues please reach out using any of the platforms below.</p> <br>Australia: 07 2102 4825</br> <br>USA: 1888 421 2360</br> <br>Worldwide: +61 721 024 825</br> <br>Email Inquiries: info@powertunedigital.com</br>", de: "Powertune Digital offeriert unlimitierten Technischen Support! <p>Bei Problemen wenden Sie sich bitte an uns über eine der unten aufgelistetetn Platformen .</p> <br>Australien: 07 2102 4825</br> <br>USA: 1888 421 2360</br> <br>Worldwide: +61 721 024 825</br> <br>Email Inquiries: info@powertunedigital.com</br>", jp: "", es: "", fr: "", ar:"" },
+
+
        //Popup submenues
 
            "Add": { en: "Add", de: "Einfügen",  jp: "入れる", es: "Agregar", fr: "", ar:"" },
