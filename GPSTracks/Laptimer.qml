@@ -83,8 +83,8 @@ Rectangle {
         Map {
                 id: map
                 copyrightsVisible : false
-                height : mapItem.height * (480 / mapItem.height)
-                width : mapItem.width * (400 / mapItem.width)
+                height : mapItem.height
+                width : mapItem.width * 0.5
                 //plugin: Plugin { name: "osm" }
                 tilt: 0
         }

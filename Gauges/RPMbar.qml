@@ -8,6 +8,7 @@ import QtQuick.Extras 1.4
 import QtQuick 2.8
 import com.powertune 1.0
 Rectangle {
+    id: rpmParent
   visible: true
   color:"transparent"
   anchors.fill:parent
@@ -20,46 +21,81 @@ Rectangle {
       y: groove1.height * 0.2
       topPadding: 3
       Text {
+          id: rpmText
           text:"RPM"
           topPadding: 80
 
-          font.pixelSize: groove1.width * 0.025 //20
+          font.pixelSize: 20
           font.bold: true
           font.family: "Eurostile"
           color: "grey"
+          Component.onCompleted: {
+              if(rpmParent.width == 800){
+                  rpmText.font.pixelSize = 20
+              }else{
+                  rpmText.font.pixelSize = 40
+              }
+              console.log(rpmText.font.pixelSize)
+          }
       }
       Text {
+          id:rpmNumbers
           text: (Dashboard.rpm)
           topPadding: 30
-          font.pixelSize: groove1.width * 0.095 //76
+          font.pixelSize: 100
           font.italic: true
           font.bold: true
           font.family: "Eurostile"
           color: "white"
+          Component.onCompleted: {
+              if(rpmParent.width == 800){
+                  rpmNumbers.font.pixelSize = 100
+              }else{
+                  rpmNumbers.font.pixelSize = 150
+              }
+              console.log(rpmNumbers.font.pixelSize)
+          }
       }
   }
 
   Row{
       spacing: 5
-      x: groove1.width * 0.65
+      x: groove1.width * 0.67
       y: groove1.height * 0.2
       Text {
           id :speed
           text: "km/h"
           topPadding: 80
-          font.pixelSize: groove1.width * 0.025 //20
+          font.pixelSize: 20
           font.bold: true
           font.family: "Eurostile"
           color: "grey"
+          Component.onCompleted: {
+              if(rpmParent.width == 800){
+                  speed.font.pixelSize = 20
+              }else{
+                  speed.font.pixelSize = 40
+              }
+              console.log(speed.font.pixelSize)
+          }
       }
       Text {
+          id: speedNumbers
           text: (Dashboard.speed).toFixed(0);
           topPadding: 30
-          font.pixelSize: groove1.width * 0.095 //76
+          font.pixelSize: 100
           font.italic: true
           font.bold: true
           font.family: "Eurostile"
           color: "white"
+          Component.onCompleted: {
+              if(rpmParent.width == 800){
+                  speedNumbers.font.pixelSize = 100
+              }else{
+                  speedNumbers.font.pixelSize = 150
+              }
+              console.log(speedNumbers.font.pixelSize)
+          }
       }
   }
 
@@ -77,8 +113,8 @@ Rectangle {
     {
       id:groove1
       source:"qrc:/graphics/empty.png"
-      width: parent.width
-      height: parent.height
+      //width: parent.width
+      //height: parent.height
       anchors.top:parent.top
       anchors.left:parent.left
       smooth: true
@@ -86,7 +122,7 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (parent.width*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide
+            width: (651*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide, Needs to be scaled dynamically
 
             clip: true
 
@@ -109,8 +145,8 @@ Rectangle {
               id:speedarcfill
               anchors.top:parent.top
               anchors.left:parent.left
-              width: groove1.width
-              height: groove1.height
+              //width: groove1.width
+              //height: groove1.height
               source:"qrc:/graphics/fill.png"
               smooth: true
               z: 1

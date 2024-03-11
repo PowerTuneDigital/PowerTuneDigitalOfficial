@@ -7,7 +7,7 @@ Item {
     width:parent.width * 0.75
     height:parent.height * 0.75
     //Setting Position to align with the RPM 1 Bar
-    x: parent.width * 0.23
+    x: parent.width * 0.33
     property  int rpmwarn1: Dashboard.rpmStage1
     property  int rpmwarn2: Dashboard.rpmStage2
     property  int rpmwarn3: Dashboard.rpmStage3

@@ -21,7 +21,7 @@ Item {
         Item{
               id: displayWindow1
               height: parent.height
-              width: (parent.width*(Dashboard.rpm)/Dashboard.maxRPM)
+              width: (800*(Dashboard.rpm)/Dashboard.maxRPM)  //(parent.width*(Dashboard.rpm)/Dashboard.maxRPM)
               clip: true
 
                 anchors.bottom: parent.bottom
@@ -57,8 +57,8 @@ Item {
 
         Text {
             x: 0
-            y: userDash.width / 18.6 // 43
-            font.pixelSize:  userDash.width / 11.4 //70
+            y: 43 //userDash.width / 18.6 // 43
+            font.pixelSize:  70 //userDash.width / 11.4 //70
             font.bold: true
             color: "white"
             text: Dashboard.rpm

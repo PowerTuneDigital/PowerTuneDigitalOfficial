@@ -6,8 +6,8 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
-import QtQuick 2.15
-import QtQuick.Controls 2.15
+//import QtQuick 2.15
+//import QtQuick.Controls 2.15
 import QtQuick.Window 2.10 //compatibility with QT 5.10
 import Qt.labs.settings 1.0
 
@@ -33,7 +33,7 @@ Rectangle{
 
             Button {
                 id: brightnessLow                
-                text: "🌙 Night"
+                text: "✮ Night"
                 font.family: "Eurostile"
                 font.bold: true
                 width: popUp1.width / 1.2

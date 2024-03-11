@@ -76,46 +76,82 @@ Row{
     y: rpmDash.height * 0.2
     topPadding: 3
     Text {
+        id: rpmText
         text:"RPM"
         topPadding: 20
-        font.pixelSize: rpmDash.width * 0.025 //20
+        //font.pixelSize: rpmDash.width * 0.025 //20
+        font.pixelSize: 20
         font.bold: true
         font.family: "Eurostile"
         color: "grey"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                rpmText.font.pixelSize = 20
+            }else{
+                rpmText.font.pixelSize = 40
+            }
+            console.log(rpmText.font.pixelSize)
+        }
 
 
     }
     Text {
+        id: rpmNumber
         text: (Dashboard.rpm)
-        font.pixelSize: rpmDash.width * 0.095 //76
+        font.pixelSize: 100
         font.italic: true
         font.bold: true
         font.family: "Eurostile"
         color: "white"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                rpmNumber.font.pixelSize = 100
+            }else{
+                rpmNumber.font.pixelSize = 40
+            }
+            console.log(rpmNumber.font.pixelSize)
+        }
     }
 }
 
 Row{
     spacing: 5
-    x: rpmDash.width * 0.65
+    x: rpmDash.width * 0.67
     y: rpmDash.height * 0.2
     topPadding: 3
     Text {
         id :speed
         text: "km/h"
         topPadding: 20
-        font.pixelSize: rpmDash.width * 0.025 //20
+        font.pixelSize: 20
         font.bold: true
         font.family: "Eurostile"
         color: "grey"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                speed.font.pixelSize = 20
+            }else{
+                speed.font.pixelSize = 40
+            }
+            console.log(speed.font.pixelSize)
+        }
     }
     Text {
+        id: speedNumbers
         text: (Dashboard.speed).toFixed(0);
-        font.pixelSize: rpmDash.width * 0.095 //76
+        font.pixelSize: 100
         font.italic: true
         font.bold: true
         font.family: "Eurostile"
         color: "white"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                speedNumbers.font.pixelSize = 100
+            }else{
+                speedNumbers.font.pixelSize = 40
+            }
+            console.log(speedNumbers.font.pixelSize)
+        }
     }
 }
 

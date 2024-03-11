@@ -1,6 +1,7 @@
 import QtQuick 2.8
+//import QtQuick 2.15
 import QtQuick.Controls 1.4
-import QtQuick.Controls 2.1
+import QtQuick.Controls 2.2
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 import com.powertune 1.0
@@ -12,8 +13,8 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    width: 1600
-    height: 720
+    //width: 1600
+    //height: 720
     //width: Screen.desktopAvailableWidth
     //height: Screen.desktopAvailableHeight
     minimumWidth: 800
@@ -27,7 +28,7 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-
+        //if ddcutil is true change all values to something
             popUpLoader.source = "qrc:/BrightnessPopUp.qml"
     }
 
@@ -188,7 +189,7 @@ ApplicationWindow {
             rows: 1
             columns: 3
             topPadding: window.width / 40
-            spacing: window.width / 3
+            spacing: window.width / 4
             anchors.horizontalCenter: parent.horizontalCenter
             //anchors.centerIn: parent
             Button {
@@ -235,6 +236,7 @@ ApplicationWindow {
                 text:  "On"
                 font.family: "Eurostile"
                 font.bold: true
+                rightPadding: 23
                 width: window.width / 10
                 height: window.width / 10
                 font.pixelSize: window.width / 70
@@ -247,7 +249,7 @@ ApplicationWindow {
                 }
                 onPositionChanged: {
                     popUpLoader.enabled = !popUpLoader.enabled;
-                    appSettings.setValue("sampleActionEnabled", popUpLoader.enabled);
+                    appSettings.sampleActionEnabled = popUpLoader.enabled //setValue
                     popUpLoader.visible = false
                     if(popUpLoader.enabled){
                         disablePopUp.text = "On"
