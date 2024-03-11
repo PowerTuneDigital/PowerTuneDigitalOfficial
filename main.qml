@@ -5,6 +5,7 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
+import Qt.labs.settings 1.0
 import "Translator.js" as Translator
 
 
@@ -18,6 +19,17 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
+
+    Settings{
+        id: appSettings
+        property alias sampleActionEnabled: popUpLoader.enabled
+    }
+
+    Component.onCompleted: {
+        //if ddcutil is true change all values to something
+            popUpLoader.source = "qrc:/BrightnessPopUp.qml"
+    }
+
 
     Rectangle {
         id: keyboardcontainer
@@ -165,69 +177,104 @@ ApplicationWindow {
         }
 
         Grid {
-            id :row1
-            rows: 1
-            columns: 2
-            topPadding: window.width / 40
-            spacing: window.width / 3
-            anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.centerIn: parent
-            Button {
-                id: btntripreset
-                text: "Trip Reset"
-                font.family: "Eurostile"
-                font.bold: true
-                width: window.width / 9
-                height: window.width / 9
-                font.pixelSize: window.width / 70
-                onClicked: {Calculations.resettrip()}
-                background: Rectangle {
-                    radius: window.width / 10
-                    opacity: enabled ? 1 : 0.3
-                    color: btntripreset.down ? "darkgrey" : "grey"
-                    border.color: btntripreset.down ? "grey" : "darkgrey"
-                    border.width: window.width / 200
-                        }
-            }
-            /*
-            Button {
-                text: "Quit"
-                width: window.width / 5
-                height: window.height /15
-                font.pixelSize: window.width / 55
-                onClicked: { Qt.quit();}
-            }*/
-
-
-            /*
-            Button {
-                text: "Reboot"
-                width: window.width / 5
-                height: window.height /15
-                font.pixelSize: window.width / 55
-                onClicked: {Connect.reboot();}
-            }*/
-
-            Button {
-                id: btnshutdown
-                text: "Shutdown"
-                font.family: "Eurostile"
-                font.bold: true
-                width: window.width / 10
-                height: window.width / 10
-                font.pixelSize: window.width / 70
-                onClicked: {Connect.shutdown();}
-                background: Rectangle {
-                            //color: "red"
+                    id :row1
+                    rows: 1
+                    columns: 3
+                    topPadding: window.width / 40
+                    spacing: window.width / 4
+                    anchors.horizontalCenter: parent.horizontalCenter
+                    //anchors.centerIn: parent
+                    Button {
+                        id: btntripreset
+                        text: "Trip Reset"
+                        font.family: "Eurostile"
+                        font.bold: true
+                        width: window.width / 9
+                        height: window.width / 9
+                        font.pixelSize: window.width / 70
+                        onClicked: {Calculations.resettrip()}
+                        background: Rectangle {
                             radius: window.width / 10
                             opacity: enabled ? 1 : 0.3
-                            color: btnshutdown.down ? "darkred" : "red"
-                            border.color: btnshutdown.down ? "red" : "darkred"
+                            color: btntripreset.down ? "darkgrey" : "grey"
+                            border.color: btntripreset.down ? "grey" : "darkgrey"
                             border.width: window.width / 200
+                                }
+                    }
+
+                    Button {
+                        id: btnshutdown
+                        text: "Shutdown"
+                        font.family: "Eurostile"
+                        font.bold: true
+                        width: window.width / 10
+                        height: window.width / 10
+                        font.pixelSize: window.width / 70
+                        onClicked: {Connect.shutdown();}
+                        background: Rectangle {
+                                    //color: "red"
+                                    radius: window.width / 10
+                                    opacity: enabled ? 1 : 0.3
+                                    color: btnshutdown.down ? "darkred" : "red"
+                                    border.color: btnshutdown.down ? "red" : "darkred"
+                                    border.width: window.width / 200
+                                }
+                    }
+
+
+
+                    Switch {
+                        id: disablePopUp
+                        text:  "On"
+                        font.family: "Eurostile"
+                        font.bold: true
+                        rightPadding: 23
+                        width: window.width / 10
+                        height: window.width / 10
+                        font.pixelSize: window.width / 70
+                        Component.onCompleted: {
+                            if(popUpLoader.enabled){
+                                disablePopUp.text = "On"
+                            }else{
+                               disablePopUp.text = "Off"
+                            }
                         }
-            }
-
-
+                        onPositionChanged: {
+                            popUpLoader.enabled = !popUpLoader.enabled;
+                            appSettings.sampleActionEnabled = popUpLoader.enabled //setValue
+                            popUpLoader.visible = false
+                            if(popUpLoader.enabled){
+                                disablePopUp.text = "On"
+                                console.log("Pop Up Enabled")
+                            }else{
+                               disablePopUp.text = "Off"
+                                console.log("Pop Up Disabled")
+                            }
+                        }
+                        contentItem: Text {
+                            leftPadding: disablePopUp.indicator.width + disablePopUp.spacing
+                            text: disablePopUp.text
+                            font: disablePopUp.font
+                            opacity: enabled ? 1.0 : 0.3
+                            //color: disablePopUp.down ? "#17a81a" : "#21be2b"
+                            elide: Text.ElideRight
+                            verticalAlignment: Text.AlignVCenter
+                        }
+                        Rectangle {
+                            width: window.width / 5
+                            height: window.width / 10
+                            color: "transparent"
+                            anchors.right: disablePopUp.left
+                            Text {
+                                text: "Brightness Pop Up at Boot"
+                                anchors.centerIn: parent
+                                color: "black"
+                                font.family: "Eurostile"
+                                font.bold: true
+                                font.pixelSize: window.width / 70
+                            }
+                        }
+                    }
         }
         Grid {
             id :row2
@@ -268,6 +315,21 @@ ApplicationWindow {
         currentIndex: dashView.currentIndex
         anchors.bottom: dashView.bottom
         anchors.horizontalCenter: parent.horizontalCenter
+    }
+    Loader {
+            id: popUpLoader
+            visible: false
+            enabled: appSettings.sampleActionEnabled
+            anchors.right: parent.right
+            width: window.width * 0.15
+            //anchors.verticalCenter: parent.verticalCenter
+            Component.onCompleted: {
+                if(popUpLoader.enabled){
+                    visible = true
+                }
+
+                console.log("Brightness Loaded")
+            }
     }
 }
 
