@@ -128,10 +128,14 @@ Rectangle {
                 font.family: "Eurostile"
             }
             Text {
+                id:dateTime
                 text: Dashboard.gpsTime
                 font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
+                Component.onCompleted: {
+                    console.log("Date time 2: " + dateTime.text)
+                }
             }
             Text {
                 text: "GPS Speed: "

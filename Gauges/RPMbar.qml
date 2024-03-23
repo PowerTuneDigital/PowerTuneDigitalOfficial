@@ -19,7 +19,7 @@ Rectangle {
       spacing: 5
       x: groove1.width * 0.26
       y: groove1.height * 0.2
-      topPadding: 3
+      topPadding: 20
       Text {
           id: rpmText
           text:"RPM"
@@ -51,7 +51,7 @@ Rectangle {
               if(rpmParent.width == 800){
                   rpmNumbers.font.pixelSize = 100
               }else{
-                  rpmNumbers.font.pixelSize = 150
+                  rpmNumbers.font.pixelSize = 130
               }
               console.log(rpmNumbers.font.pixelSize)
           }
@@ -60,6 +60,7 @@ Rectangle {
 
   Row{
       spacing: 5
+      topPadding: 20
       x: groove1.width * 0.67
       y: groove1.height * 0.2
       Text {
@@ -92,7 +93,7 @@ Rectangle {
               if(rpmParent.width == 800){
                   speedNumbers.font.pixelSize = 100
               }else{
-                  speedNumbers.font.pixelSize = 150
+                  speedNumbers.font.pixelSize = 130
               }
               console.log(speedNumbers.font.pixelSize)
           }
@@ -108,13 +109,12 @@ Rectangle {
       }
   }
 
-
     Image
     {
       id:groove1
       source:"qrc:/graphics/empty.png"
-      //width: parent.width
-      //height: parent.height
+      width: parent.width
+      height: parent.height
       anchors.top:parent.top
       anchors.left:parent.left
       smooth: true
@@ -122,7 +122,13 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (651*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide, Needs to be scaled dynamically
+            width: (groove1.width*0.81375*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide, Needs to be scaled dynamically
+
+            Component.onCompleted: {
+                // if(rpmParent.width == 1600){
+                //     displayWindow1.width = (1302*(Dashboard.rpm)/Dashboard.maxRPM)+140
+                // }
+            }
 
             clip: true
 
@@ -145,11 +151,16 @@ Rectangle {
               id:speedarcfill
               anchors.top:parent.top
               anchors.left:parent.left
-              //width: groove1.width
-              //height: groove1.height
               source:"qrc:/graphics/fill.png"
               smooth: true
               z: 1
+
+              Component.onCompleted: {
+                  if(rpmParent.width == 1600){
+                      speedarcfill.width = groove1.width
+                      speedarcfill.height = groove1.height
+                  }
+              }
             }
           }
 
@@ -163,16 +174,18 @@ Rectangle {
         PathArc { x: 176; y: 11; radiusX: 90; radiusY: 90 }
         PathLine { x: 245; y: 11 }
       }*/
-         path: Path {
-         startX: 61; startY: 189
-         PathLine { x: 712; y: 480 }
-         //PathArc { x: 176; y: 11; radiusX: 90; radiusY: 90 }
-         //PathLine { x: 800; y: 11 }
-       }
-      progress: Dashboard.rpm / Dashboard.maxRPM //slider.value/8000 // replace this with Dashboard.rpm
+      path: Path {
+      startX: 61; startY: 189
+      PathLine { x: 712; y: 480 }
+      //PathArc { x: 176; y: 11; radiusX: 90; radiusY: 90 }
+      //PathLine { x: 800; y: 11 }
     }
+   progress: Dashboard.rpm / Dashboard.maxRPM //slider.value/8000 // replace this with Dashboard.rpm
+        }
     }
-            ShiftLights{}
+    ShiftLights{
+
+    }
 // remove slider
 /*
     Slider {

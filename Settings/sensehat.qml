@@ -28,7 +28,7 @@ Rectangle {
             Switch {
                 id: accelsens
                 text: Translator.translate("Accelerometer", Dashboard.language)
-                font.pixelSize: senhatselector.width * 0.015
+                font.pixelSize: senhatselector.width / 45
                 onCheckedChanged: {
                     if (accelsens.checked == true) {
                         Sens.Accel()
@@ -39,7 +39,7 @@ Rectangle {
             Switch {
                 id: gyrosense
                 text: Translator.translate("Gyro Sensor", Dashboard.language)
-                font.pixelSize: senhatselector.width * 0.015
+                font.pixelSize: senhatselector.width / 45
                 onCheckedChanged: {
 
                     if (gyrosense.checked == true) {
@@ -51,7 +51,7 @@ Rectangle {
             Switch {
                 id: compass
                 text: Translator.translate("Compass", Dashboard.language)
-                font.pixelSize: senhatselector.width * 0.015
+                font.pixelSize: senhatselector.width / 45
                 onCheckedChanged: {
                     if (compass.checked == true) {
                         Sens.Comp()
@@ -62,7 +62,7 @@ Rectangle {
             Switch {
                 id: pressuresens
                 text: Translator.translate("Pressure Sensor", Dashboard.language)
-                font.pixelSize: senhatselector.width * 0.015
+                font.pixelSize: senhatselector.width / 45
                 onCheckedChanged: {
 
                     if (pressuresens.checked == true) {
@@ -74,7 +74,7 @@ Rectangle {
             Switch {
                 id: tempsense
                 text: Translator.translate("Temperature Sensor", Dashboard.language)
-                font.pixelSize: senhatselector.width * 0.015
+                font.pixelSize: senhatselector.width / 45
                 onCheckedChanged: {
 
                     if (tempsense.checked == true) {

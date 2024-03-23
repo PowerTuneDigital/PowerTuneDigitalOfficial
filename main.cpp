@@ -7,6 +7,8 @@
 #include "Extender.h"
 #include "iomapdata.h"
 #include "downloadmanager.h"
+#include <QDebug>
+#include <QDateTime>
 #include <cstdio>
     ioMapData mpd;
 

@@ -21,7 +21,7 @@ Item {
         Item{
               id: displayWindow1
               height: parent.height
-              width: (800*(Dashboard.rpm)/Dashboard.maxRPM)  //(parent.width*(Dashboard.rpm)/Dashboard.maxRPM)
+              width: (userDash.width*(Dashboard.rpm)/Dashboard.maxRPM)  //(parent.width*(Dashboard.rpm)/Dashboard.maxRPM)
               clip: true
 
                 anchors.bottom: parent.bottom
@@ -56,14 +56,22 @@ Item {
 
 
         Text {
+            id: rpmNumber
             x: 0
-            y: 43 //userDash.width / 18.6 // 43
-            font.pixelSize:  70 //userDash.width / 11.4 //70
+            y: userDash.width / 18.6 // 43
+            font.pixelSize:  70
             font.bold: true
             color: "white"
             text: Dashboard.rpm
             horizontalAlignment: Text.AlignLeft
             font.letterSpacing: 3
             font.wordSpacing: 0
+            Component.onCompleted: {
+                if(userDash.width == 800){
+                    rpmNumber.font.pixelSize = 70
+                }else{
+                    rpmNumber.font.pixelSize = 140
+                }
+            }
         }
 }

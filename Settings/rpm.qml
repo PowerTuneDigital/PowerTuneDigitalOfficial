@@ -2,6 +2,14 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
 import "qrc:/Translator.js" as Translator
+import QtQuick.Extras 1.4
+import QtQuick.Dialogs 1.0
+import QtQuick.Controls.Styles 1.4
+import QtQuick.Controls.Material 2.0
+import QtQml.Models 2.3
+import QtQuick.Controls 1.4 as Quick1
+// import "qrc:/Gauges/DatasourcesList.qml"
+
 Rectangle {
     id: rpmSettings
     anchors.fill: parent
@@ -18,7 +26,7 @@ Rectangle {
     }
 
     Grid {
-
+        id: rpmGrid
         rows: 2
         columns: 5
         spacing: 5
@@ -105,4 +113,5 @@ Rectangle {
             }
         }
     }
+
 }

@@ -3,6 +3,10 @@
 #include <QDebug>
 #include <QVector>
 #include "math.h"
+#include <QDateTime>
+
+
+
 
 QVector<int>averageSpeed(0);
 QVector<int>averageRPM(0);
@@ -79,7 +83,6 @@ int EXsteinhart5; //Flag to use Steinhart/hart for Analog input 5
 
 qreal lamdamultiplicator = 1;
 int brightness;
-
 
 
 
@@ -4759,7 +4762,6 @@ void DashBoard::setDigitalInput7(const qreal &DigitalInput7)
 }
 
 //EX Board
-
 void DashBoard::setEXDigitalInput1(const qreal &EXDigitalInput1)
 {
     if(m_EXDigitalInput1 == EXDigitalInput1)
@@ -5799,6 +5801,8 @@ qreal DashBoard::DigitalInput6() const {return m_DigitalInput6;}
 qreal DashBoard::DigitalInput7() const {return m_DigitalInput7;}
 
 // EXBoard
+
+
 
 qreal DashBoard::EXDigitalInput1() const {return m_EXDigitalInput1;}
 qreal DashBoard::EXDigitalInput2() const {return m_EXDigitalInput2;}

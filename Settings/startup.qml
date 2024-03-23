@@ -34,7 +34,7 @@ Rectangle {
             width: daemons.width / 3
             height: daemons.height / 15            
             text: Translator.translate("Apply", Dashboard.language)
-            font.pixelSize: daemons.width * 0.015
+            font.pixelSize: daemons.width * 0.0225
             onClicked: {
                 Connect.daemonstartup(daemonselect.currentIndex)
                 Connect.canbitratesetup(canbitrateselect.currentIndex)

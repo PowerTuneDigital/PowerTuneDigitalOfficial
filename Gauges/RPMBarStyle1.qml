@@ -24,7 +24,7 @@ color: "darkgrey"
   Gauge {
       id: gauge
       height: parent.height
-      width: parent.width /1.024
+      width: parent.width /1.022
       y:0
       minorTickmarkCount: 0
       tickmarkStepSize : Dashboard.maxRPM
@@ -55,8 +55,14 @@ color: "darkgrey"
               }
           }
           valueBar: Rectangle {
+              id: rpmFill
               width:  210
               color: Qt.rgba(gauge.value / gauge.maximumValue, 1.1 - gauge.value / gauge.maximumValue, 0, 1)
+              Component.onCompleted: {
+                  if(speedUnits.width == 1600){
+                      rpmFill.width = 320
+                  }
+              }
           }
       }
 }
@@ -90,7 +96,6 @@ Row{
             }else{
                 rpmText.font.pixelSize = 40
             }
-            console.log(rpmText.font.pixelSize)
         }
 
 
@@ -107,9 +112,8 @@ Row{
             if(speedUnits.width == 800){
                 rpmNumber.font.pixelSize = 100
             }else{
-                rpmNumber.font.pixelSize = 40
+                rpmNumber.font.pixelSize = 130
             }
-            console.log(rpmNumber.font.pixelSize)
         }
     }
 }
@@ -133,7 +137,6 @@ Row{
             }else{
                 speed.font.pixelSize = 40
             }
-            console.log(speed.font.pixelSize)
         }
     }
     Text {
@@ -148,9 +151,8 @@ Row{
             if(speedUnits.width == 800){
                 speedNumbers.font.pixelSize = 100
             }else{
-                speedNumbers.font.pixelSize = 40
+                speedNumbers.font.pixelSize = 130
             }
-            console.log(speedNumbers.font.pixelSize)
         }
     }
 }

@@ -60,7 +60,6 @@ Rectangle {
             //reactiotimertext.color = "red"
             redled.source = "qrc:/graphics/ledred.png"
         }
-
         }
     }
 
@@ -96,13 +95,24 @@ Row{
         height: 35
         width: 35
         source: "/graphics/ledoff.png"
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                stagelight1.width = 60
+                stagelight1.height = 60
+            }
+        }
     }
     Image {
         id : stagelight2
         height: 35
         width: 35
         source: "/graphics/ledoff.png"
-
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                stagelight2.width = 60
+                stagelight2.height = 60
+            }
+        }
     }
     }
             Column {
@@ -117,30 +127,60 @@ Row{
                     height: 35
                     width: 35
                     source: "/graphics/ledoff.png"
+                    Component.onCompleted: {
+                        if(measurements.width == 1600){
+                            orangeled1.width = 60
+                            orangeled1.height = 60
+                        }
+                    }
                 }
                 Image {
                     id : orangeled2
                     height: 35
                     width: 35
                     source: "/graphics/ledoff.png"
+                    Component.onCompleted: {
+                        if(measurements.width == 1600){
+                            orangeled2.width = 60
+                            orangeled2.height = 60
+                        }
+                    }
                 }
                 Image {
                     id : orangeled3
                     height: 35
                     width: 35
                     source: "/graphics/ledoff.png"
+                    Component.onCompleted: {
+                        if(measurements.width == 1600){
+                            orangeled3.width = 60
+                            orangeled3.height = 60
+                        }
+                    }
                 }
                 Image {
                     id : greenled
                     height: 35
                     width: 35
                     source: "/graphics/ledoff.png"
+                    Component.onCompleted: {
+                        if(measurements.width == 1600){
+                            greenled.width = 60
+                            greenled.height = 60
+                        }
+                    }
                 }
                 Image {
                     id : redled
                     height: 35
                     width: 35
                     source: "/graphics/ledoff.png"
+                    Component.onCompleted: {
+                        if(measurements.width == 1600){
+                            redled.width = 60
+                            redled.height = 60
+                        }
+                    }
                 }
             }
     //////////////////////////////
@@ -159,163 +199,332 @@ Row{
             text: "R/T : "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
-
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    reactiotimertext.font.pixelSize = 32
+                }
+            }
         }
 
         Text {
             id:reactiotimertimetext
             text: (Dashboard.reactiontime).toFixed(3)
             font.pixelSize: measurements.width / 40
-            color: sliptextcolor            
+            color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    reactiotimertimetext.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id:sixtyTimeText
             text: "60' TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    sixtyTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: sixtyTime
             text: (Dashboard.sixtyfoottime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    sixtyTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: threeTimeText
             text: "330' TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: threeTime
             text:  (Dashboard.threehundredthirtyfoottime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeTime.font.pixelSize = 32
+                }
+            }
         }
 
 
         Text {
+            id: eigthMileTimeText
             text: "1/8 MILE TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    eigthMileTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: eigthMileTime
             text: (Dashboard.eightmiletime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    eigthMileTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: thousandTimeText
             text: "1000' TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    thousandTimeText.font.pixelSize = 32
+                }
+            }
         }
 
         Text {
+            id: thousandTime
             text:  (Dashboard.thousandfoottime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    thousandTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: quarterTimeText
             text: "1/4 TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    quarterTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: quarterTime
             text:  (Dashboard.quartermiletime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    quarterTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
-            id : hundred
+            id : hundredTimeText
             text: "0-100 km/h TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    hundredTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: hundredTime
             text:  (Dashboard.zerotohundredt)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    hundredTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
-            id : twohundred
+            id : twoHundredTimeText
             text:"100-200 km/h TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    twoHundredTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: twoHundredTime
             text:  (Dashboard.hundredtotwohundredtime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    twoHundredTime.font.pixelSize = 32
+                }
+            }
         }
         Text {
-            id : threehundred
+            id : threeHundredTimeText
             text:"200-300 km/h TIME: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeHundredTimeText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: threeHundredTime
             text:  (Dashboard.twohundredtothreehundredtime)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeHundredTime.font.pixelSize = 32
+                }
+            }
         }
-
 }
 
     Grid {
+        id: centerGrid
         anchors.bottom: measurements.bottom
         anchors.bottomMargin: parent.height / 7
         anchors.left: timegrid.right
         anchors.leftMargin: parent.width /20
         anchors.topMargin: parent.height /20
-        //leftPadding: rpmbarloader.width * 0.1
+
         spacing: parent.width /200
         rows: 9
         columns: 2
+
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                centerGrid.leftPadding = rpmbarloader.width * 0.1
+            }
+        }
+
         Text {
+            id: sixtyTopSpeedText
             text: "60' TOP SPEED: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    sixtyTopSpeedText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: sixtyTopSpeed
             text: (Dashboard.sixtyfootspeed)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    sixtyTopSpeed.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: threeThirtySpeedText
             text: "330' TOP SPEED: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeThirtySpeedText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: threeThirtySpeed
             text: (Dashboard.threehundredthirtyfootspeed)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    threeThirtySpeed.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: eightMileTopText
             text: "1/8 MILE TOP SPEED: "
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    eightMileTopText.font.pixelSize = 32
+                }
+            }
         }
         Text {
+            id: eightMileTop
             text:  (Dashboard.eightmilespeed)
             font.pixelSize: measurements.width / 40
             color: sliptextcolor
+            Component.onCompleted: {
+                if(measurements.width == 1600){
+                    eightMileTop.font.pixelSize = 32
+                }
+            }
         }
     Text {
+        id: thousandTopSpeedText
         text: "1000' TOP SPEED: "
         font.pixelSize: measurements.width / 40
         color: sliptextcolor
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                thousandTopSpeedText.font.pixelSize = 32
+            }
+        }
     }
     Text {
+        id: thousandTopSpeed
         text:  (Dashboard.thousandfootspeed)
         font.pixelSize: measurements.width / 40
         color: sliptextcolor
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                thousandTopSpeed.font.pixelSize = 32
+            }
+        }
     }
     Text {
+        id: quarterTopSpeedText
         text: "1/4 TOP SPEED: "
         font.pixelSize: measurements.width / 40
         color: sliptextcolor
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                quarterTopSpeedText.font.pixelSize = 32
+            }
+        }
     }
     Text {
+        id: quarterTopSpeed
         text:  (Dashboard.quartermilespeed)
         font.pixelSize: measurements.width / 40
         color: sliptextcolor
+        Component.onCompleted: {
+            if(measurements.width == 1600){
+                quarterTopSpeed.font.pixelSize = 32
+            }
+        }
     }
 
 

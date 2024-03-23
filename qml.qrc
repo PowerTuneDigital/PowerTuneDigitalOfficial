@@ -137,5 +137,7 @@
         <file>graphics/instagramQR.png</file>
         <file>graphics/warrantyQR.png</file>
         <file>graphics/userManualQR.png</file>
+        <file>graphics/brightnessIncrease.png</file>
+        <file>graphics/brightnessDecrease.png</file>
     </qresource>
 </RCC>
