@@ -56,7 +56,7 @@ color: "darkgrey"
           }
           valueBar: Rectangle {
               id: rpmFill
-              width:  210
+              width:  220
               color: Qt.rgba(gauge.value / gauge.maximumValue, 1.1 - gauge.value / gauge.maximumValue, 0, 1)
               Component.onCompleted: {
                   if(speedUnits.width == 1600){
@@ -80,7 +80,7 @@ Row{
     //using rpmDash as its the full size of the screen
     x: rpmDash.width * 0.26
     y: rpmDash.height * 0.2
-    topPadding: 3
+    topPadding: 8
     Text {
         id: rpmText
         text:"RPM"
@@ -110,7 +110,7 @@ Row{
         color: "white"
         Component.onCompleted: {
             if(speedUnits.width == 800){
-                rpmNumber.font.pixelSize = 100
+                rpmNumber.font.pixelSize = 80
             }else{
                 rpmNumber.font.pixelSize = 130
             }
@@ -122,7 +122,7 @@ Row{
     spacing: 5
     x: rpmDash.width * 0.67
     y: rpmDash.height * 0.2
-    topPadding: 3
+    topPadding: 8
     Text {
         id :speed
         text: "km/h"
@@ -149,7 +149,7 @@ Row{
         color: "white"
         Component.onCompleted: {
             if(speedUnits.width == 800){
-                speedNumbers.font.pixelSize = 100
+                speedNumbers.font.pixelSize = 80
             }else{
                 speedNumbers.font.pixelSize = 130
             }

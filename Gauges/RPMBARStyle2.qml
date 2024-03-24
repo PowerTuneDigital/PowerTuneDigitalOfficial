@@ -26,6 +26,8 @@ Rectangle {
   property int pathArcRadius: 90
   property int pathLineYFinal: 76
 
+  property int rpmFillStart: 70
+
 
   Component.onCompleted: {
       units.unitadjust()
@@ -42,6 +44,8 @@ Rectangle {
           pathArcY = 132
           pathArcRadius = 135
           pathLineYFinal = 114
+
+          rpmFillStart = 140
 
           console.log(pathStartX + " " + pathStartY)
       }
@@ -79,7 +83,7 @@ Rectangle {
       color: "white"
       Component.onCompleted: {
           if(rpmDash.width == 800){
-              rpmNumbers.font.pixelSize = 100
+              rpmNumbers.font.pixelSize = 80
           }else{
               rpmNumbers.font.pixelSize = 130
           }
@@ -119,7 +123,7 @@ Rectangle {
           color: "white"
           Component.onCompleted: {
               if(rpmDash.width == 800){
-                  speedNumber.font.pixelSize = 100
+                  speedNumber.font.pixelSize = 80
               }else{
                   speedNumber.font.pixelSize = 130
               }
@@ -153,16 +157,9 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (groove1.width*0.85*(Dashboard.rpm)/Dashboard.maxRPM)+70 //+70 is the pixel where the RPM bar starts and from there is 678 pixels wide
+            width: (groove1.width*0.85*(Dashboard.rpm)/Dashboard.maxRPM)+rpmFillStart //+70 is the pixel where the RPM bar starts and from there is 678 pixels wide
             clip: true
 
-              Component.onCompleted: {
-                  console.log("rpmBg width " + displayWindow1.width + "Height: " + displayWindow1.height)
-                   // if(rpmDash.width == 1600){
-                   //     displayWindow1.width = (1356*(Dashboard.rpm)/Dashboard.maxRPM)+140
-                   //     console.log("rpmBg width " + displayWindow1.width)
-                   // }
-              }
               anchors.bottom: parent.bottom
               anchors.left: parent.left
                anchors.rightMargin:{switch(true)

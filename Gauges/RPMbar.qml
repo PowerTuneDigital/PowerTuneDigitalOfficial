@@ -13,7 +13,13 @@ Rectangle {
   color:"transparent"
   anchors.fill:parent
   property  var unit : Dashboard.units;
-  Component.onCompleted: {units.unitadjust();}
+  property int rpmFillStart: 61
+
+  Component.onCompleted: {units.unitadjust();
+        if(rpmParent.width == 1600){
+            rpmFillStart = 122
+        }
+  }
 
   Row{
       spacing: 5
@@ -49,7 +55,7 @@ Rectangle {
           color: "white"
           Component.onCompleted: {
               if(rpmParent.width == 800){
-                  rpmNumbers.font.pixelSize = 100
+                  rpmNumbers.font.pixelSize = 80
               }else{
                   rpmNumbers.font.pixelSize = 130
               }
@@ -91,7 +97,7 @@ Rectangle {
           color: "white"
           Component.onCompleted: {
               if(rpmParent.width == 800){
-                  speedNumbers.font.pixelSize = 100
+                  speedNumbers.font.pixelSize = 80
               }else{
                   speedNumbers.font.pixelSize = 130
               }
@@ -122,14 +128,7 @@ Rectangle {
       Item{
             id: displayWindow1
             height: parent.height
-            width: (groove1.width*0.81375*(Dashboard.rpm)/Dashboard.maxRPM)+61 //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide, Needs to be scaled dynamically
-
-            Component.onCompleted: {
-                // if(rpmParent.width == 1600){
-                //     displayWindow1.width = (1302*(Dashboard.rpm)/Dashboard.maxRPM)+140
-                // }
-            }
-
+            width: (groove1.width*0.81375*(Dashboard.rpm)/Dashboard.maxRPM)+rpmFillStart //+61 is the pixel where the RPM bar starts and from there is 651 pixels wide, Needs to be scaled dynamically
             clip: true
 
               anchors.bottom: parent.bottom
