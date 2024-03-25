@@ -34,6 +34,8 @@ ApplicationWindow {
     property int digitalInput8: Dashboard.EXDigitalInput8
 
     property int brightnessIncrease: 150
+    property int ddcUtilBrightnessIncrease: 50
+
 
     ListModel {
         id: comboBoxModel
@@ -188,7 +190,6 @@ ApplicationWindow {
         anchors.centerIn: parent
 
         onClicked: {
-          //  console.log("apply Fixes")
             btnfinaliseupdate.text = "Please wait for reboot..."
         }
     }
@@ -215,8 +216,6 @@ ApplicationWindow {
             columns: 1
             topPadding: window.width / 40
             spacing: window.width / 30
-            //anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.centerIn: parent
             anchors.top: drawerpopup.top
             anchors.left:parent.left
             Button {
@@ -493,12 +492,23 @@ ApplicationWindow {
                         }
                     }
                     onClicked: {
-                        brightnessIncrease + 30;
-                        if(brightnessIncrease > 250){
-                            brightnessIncrease = 250
+                        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                            ddcUtilBrightnessIncrease += 10;  // increase by 10% every time button is pressed
+                            if(ddcUtilBrightnessIncrease > 100){ //if the variable goes above 100 bring it back down
+                                ddcUtilBrightnessIncrease = 100
+                            }
+
+                            Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
+                            AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
+                        }else{
+                            brightnessIncrease += 25
+                            if(brightnessIncrease > 250){ //if the variable goes above 250 bring it back down
+                                brightnessIncrease = 250
+                            }
+
+                            Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
+                            AppSettings.writebrightnessettings(brightnessIncrease);
                         }
-                        Connect.setSreenbrightness(brightnessIncrease);
-                        AppSettings.writebrightnessettings(brightnessIncrease);
                     }
                     background: Rectangle {
                                 //color: "red"
@@ -534,13 +544,23 @@ ApplicationWindow {
                     }
 
                     onClicked: {
-                        brightnessIncrease - 30;
-                        if(brightnessIncrease < 20){
-                            brightnessIncrease = 20
-                        }
+                        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                            ddcUtilBrightnessIncrease -= 10;  // increase by 10% every time button is pressed
+                            if(ddcUtilBrightnessIncrease < 0){ //if the variable goes above 100 bring it back down
+                                ddcUtilBrightnessIncrease = 0
+                            }
 
-                        Connect.setSreenbrightness(brightnessIncrease);
-                        AppSettings.writebrightnessettings(brightnessIncrease);
+                            Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
+                            AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
+                        }else{
+                            brightnessIncrease -= 25
+                            if(brightnessIncrease < 25){ //if the variable goes above 250 bring it back down
+                                brightnessIncrease = 25
+                            }
+
+                            Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
+                            AppSettings.writebrightnessettings(brightnessIncrease);
+                        }
                     }
                     background: Rectangle {
                         radius: window.width / 10
@@ -587,37 +607,69 @@ ApplicationWindow {
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput2Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput3Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput4Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput5Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput6Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput7Changed: {
-        digitalLoop()
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
 
     onDigitalInput8Changed: {
-        digitalLoop()
-        console.log("Digital Input 8 Changed: " + digitalInput1)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
     }
+
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
             if (0 === digiValue && digitalInput1 == 1) {
@@ -669,10 +721,59 @@ ApplicationWindow {
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 8")
                 return;
-            }else{
-                console.log("No If statements passed")
+            }
+    }
+
+    function ddcutilDigitalLoop(){
+            if (0 === digiValue && digitalInput1 == 1) {
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 1")
+                console.log(digiValue)
+                return;
+            }else if(1 === digiValue && digitalInput2 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 2")
+                console.log(digiValue)
+                return;
+            }else if(2 === digiValue && digitalInput3 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 3")
+                console.log(digiValue)
+                return;
+
+            }else if(3 === digiValue && digitalInput4 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 4")
+                console.log(digiValue)
+                return;
+
+            }else if(4 === digiValue && digitalInput5 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 5")
+                return;
+
+            }else if(5 === digiValue && digitalInput6 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 6")
+                return;
+
+            }else if(6 === digiValue && digitalInput7 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 7")
+                return;
+
+            }else if(7 === digiValue && digitalInput8 == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 8")
                 return;
             }
-
     }
 }

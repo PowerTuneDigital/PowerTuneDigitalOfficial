@@ -24,7 +24,7 @@ color: "darkgrey"
   Gauge {
       id: gauge
       height: parent.height
-      width: parent.width /1.022
+      width: parent.width /1.024
       y:0
       minorTickmarkCount: 0
       tickmarkStepSize : Dashboard.maxRPM
@@ -56,7 +56,7 @@ color: "darkgrey"
           }
           valueBar: Rectangle {
               id: rpmFill
-              width:  220
+              width:  210
               color: Qt.rgba(gauge.value / gauge.maximumValue, 1.1 - gauge.value / gauge.maximumValue, 0, 1)
               Component.onCompleted: {
                   if(speedUnits.width == 1600){

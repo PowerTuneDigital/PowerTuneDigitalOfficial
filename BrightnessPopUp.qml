@@ -18,6 +18,8 @@ Rectangle{
         height: parent.height
         //anchors.right: parent.right
 
+        property int brightnessValue
+
 
         Grid {
             id :buttonRow
@@ -39,10 +41,15 @@ Rectangle{
                 width: popUp1.width / 1.2
                 height: popUp1.width / 1.2//5.5
                 font.pixelSize: popUp1.width / 7.5
-                onClicked: {brightness.value = 25;
-                            Connect.setSreenbrightness(25);
-                            AppSettings.writebrightnessettings(25);
-                            console.log("Low Brightness " + brightness.value)
+                onClicked: {
+                    if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                        brightnessValue = 5;
+                    }else{
+                        brightnessValue = 25
+                    }
+                        Connect.setSreenbrightness(brightnessValue);
+                        AppSettings.writebrightnessettings(brightnessValue);
+                        console.log("Low Brightness: " + brightnessValue)
                 }
                 background: Rectangle {
                     radius: popUp1.width / 1.2
@@ -62,10 +69,15 @@ Rectangle{
                 height: popUp1.width / 1.2
                 font.pixelSize: popUp1.width / 7.5
                 transformOrigin: Item.Center
-                onClicked: {brightness.value = 255;
-                    Connect.setSreenbrightness(255);
-                            AppSettings.writebrightnessettings(255);
-                            console.log("High Brightness " + brightness.value)
+                onClicked: {
+                    if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                        brightnessValue = 100;
+                    }else{
+                        brightnessValue = 255
+                    }
+                        Connect.setSreenbrightness(brightnessValue);
+                        AppSettings.writebrightnessettings(brightnessValue);
+                        console.log("High Brightness: " + brightnessValue)
                 }
                 background: Rectangle {
                             radius: popUp1.width / 1.2
