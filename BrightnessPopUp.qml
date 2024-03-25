@@ -16,8 +16,6 @@ Rectangle{
         color: "grey"
         width: parent.width
         height: parent.height
-        //anchors.right: parent.right
-
         property int brightnessValue
 
 

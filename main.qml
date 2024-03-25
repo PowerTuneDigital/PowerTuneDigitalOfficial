@@ -14,8 +14,8 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    width: 1600
-    height: 720
+    //width: 1600
+    //height: 720
     //width: Screen.desktopAvailableWidth
     //height: Screen.desktopAvailableHeight
     minimumWidth: 800
@@ -58,6 +58,13 @@ ApplicationWindow {
     Component.onCompleted: {
         //if ddcutil is true change all values to something
             popUpLoader.source = "qrc:/BrightnessPopUp.qml"
+        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+            Connect.setSreenbrightness(100);
+            AppSettings.writebrightnessettings(100);
+        } else {
+            Connect.setSreenbrightness(250);
+            AppSettings.writebrightnessettings(250);
+        }
             digitalLoop()
     }
 
@@ -339,7 +346,7 @@ ApplicationWindow {
                     color: "transparent"
                     Text {
                         id: switchText
-                        leftPadding: 80
+                        leftPadding: 70
                         text: "Brightness Pop Up at Boot"
                         anchors.centerIn: parent
                         color: "black"
@@ -349,7 +356,7 @@ ApplicationWindow {
                         Component.onCompleted: {
                             if(window.width == 800){
                                 switchText.font.pixelSize = 15
-                                switchRectangle.width = window.width / 3
+                                switchRectangle.width = window.width / 2.8
                             }
                         }
                     }
@@ -422,9 +429,12 @@ ApplicationWindow {
                     id: digitalExtender
                     model: comboBoxModel
                     width: window.width * 0.15
+
                     Component.onCompleted: {
                         if(window.width == 800){
                             digitalExtender.width = 200
+                            digitalExtender.height = 35
+                            digitalExtender.font.pixelSize = 15
                         }
                     }
                     onCurrentIndexChanged: {
