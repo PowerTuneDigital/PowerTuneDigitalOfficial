@@ -2,7 +2,6 @@ import QtQuick 2.8
 import QtQuick.Controls 2.1
 import QtMultimedia 5.8
 import Qt.labs.settings 1.0
-import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: windowbackround
@@ -117,7 +116,7 @@ Rectangle {
                 spacing: windowbackround.width / 150
                 // [0]
                 Text {
-                    text: Translator.translate("ECU Serial Port", Dashboard.language)
+                    text: qsTr("ECU Serial Port")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     visible: {
@@ -154,7 +153,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GPS Port", Dashboard.language)
+                    text: qsTr("GPS Port")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -180,7 +179,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("Speed units", Dashboard.language)
+                    text: qsTr("Speed units")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -189,7 +188,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("Metric", Dashboard.language), Translator.translate("Imperial", Dashboard.language)]
+                    model: [qsTr("Metric"), qsTr("Imperial")]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setSpeedUnits(currentIndex)
@@ -211,7 +210,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text:Translator.translate("Temp units", Dashboard.language)
+                    text:qsTr("Temp units")
                    // font.family: "Arial Narrow"
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
@@ -221,7 +220,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("°C", Dashboard.language), Translator.translate("°F", Dashboard.language)]
+                    model: [qsTr("°C"), qsTr("°F")]
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setUnits(currentIndex)
@@ -243,7 +242,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Pressure units", Dashboard.language)
+                    text: qsTr("Pressure units")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -272,7 +271,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("ECU Selection", Dashboard.language)
+                    text: qsTr("ECU Selection")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -304,7 +303,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GoPro Variant", Dashboard.language)
+                    text: qsTr("GoPro Variant")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -326,7 +325,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("GoPro Pasword", Dashboard.language)
+                    text: qsTr("GoPro Pasword")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -335,7 +334,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    placeholderText: Translator.translate("GoPro Pasword", Dashboard.language)
+                    placeholderText: qsTr("GoPro Pasword")
                     //InputMethod:Qt.
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
                                       | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
@@ -344,7 +343,7 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: Translator.translate("Logfile name", Dashboard.language)
+                    text: qsTr("Logfile name")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -359,7 +358,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: Translator.translate("Odo", Dashboard.language)
+                    text: qsTr("Odo")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -373,7 +372,7 @@ Rectangle {
                     //enterKeyAction: EnterKeyAction.Next
                 }
                 Text {
-                    text: Translator.translate("Trip", Dashboard.language)
+                    text: qsTr("Trip")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -391,7 +390,7 @@ Rectangle {
                     id: weighttext
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
-                    //text: Translator.translate("Weight", Dashboard.language)
+                    //text: qsTr("Weight")
                 }
                 TextField {
                     id: weight
@@ -401,7 +400,7 @@ Rectangle {
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                 }
                 Text {
-                    text: Translator.translate("Serial Status", Dashboard.language)
+                    text: qsTr("Serial Status")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                 }
@@ -426,7 +425,7 @@ Rectangle {
                 id: middlegrid
                 Button {
                     id: connectButton
-                    text: Translator.translate("Connect", Dashboard.language)
+                    text: qsTr("Connect")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -440,7 +439,7 @@ Rectangle {
                 }
                 Button {
                     id: disconnectButton
-                    text: Translator.translate("Disconnect", Dashboard.language)
+                    text: qsTr("Disconnect")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -455,7 +454,7 @@ Rectangle {
                 }
                 Button {
                     id: connectButtonGPS
-                    text: Translator.translate("GPS Connect", Dashboard.language)
+                    text: qsTr("GPS Connect")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -471,7 +470,7 @@ Rectangle {
                 }
                 Button {
                     id: disconnectButtonGPS
-                    text: Translator.translate("GPS Disconnect", Dashboard.language)
+                    text: qsTr("GPS Disconnect")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -485,7 +484,7 @@ Rectangle {
 
                 Button {
                     id: resettrip
-                    text: Translator.translate("Trip Reset", Dashboard.language)
+                    text: qsTr("Trip Reset")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -506,7 +505,7 @@ Rectangle {
         }
 */
                 Button {
-                    text: Translator.translate("Quit", Dashboard.language)
+                    text: qsTr("Quit")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -515,7 +514,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: Translator.translate("Shutdown", Dashboard.language)
+                    text: qsTr("Shutdown")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -524,7 +523,7 @@ Rectangle {
                     }
                 }
                 Button {
-                    text: Translator.translate("Reboot", Dashboard.language)
+                    text: qsTr("Reboot")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
@@ -535,7 +534,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("RPM Smoothing", Dashboard.language)//"RPM Smoothing :"
+                    text: qsTr("RPM Smoothing")//"RPM Smoothing :"
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                     visible: Dashboard.ecu == "2"
@@ -546,7 +545,7 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     visible: Dashboard.ecu == "2"
-                    model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    model: [qsTr("OFF"), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     //property bool initialized: true
                     onCurrentIndexChanged: {
                         Dashboard.setsmoothrpm(smoothrpm.currentIndex)
@@ -567,7 +566,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("Speed Smoothing", Dashboard.language)
+                    text: qsTr("Speed Smoothing")
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                     visible: Dashboard.ecu == "2"
@@ -577,7 +576,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: [Translator.translate("OFF", Dashboard.language), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
+                    model: [qsTr("OFF"), "2", "3", "4", "5", "6", "7", "8", "9", "10"]
                     visible: Dashboard.ecu == "2"
                     property bool initialized: true
                     onCurrentIndexChanged: {
@@ -602,7 +601,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: Translator.translate("Data Logger", Dashboard.language)
+                    text: qsTr("Data Logger")
                     Component.onCompleted: {
                         logger.datalogger()
                     }
@@ -614,7 +613,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: Translator.translate("GoPro rec", Dashboard.language)
+                    text: qsTr("GoPro rec")
                     onCheckedChanged: {
                         transferSettings.sendSettings(), goproRec.rec()
                     }
@@ -624,7 +623,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    text: Translator.translate("NMEA Logger", Dashboard.language)
+                    text: qsTr("NMEA Logger")
                     onCheckedChanged: {
                         Dashboard.setNMEAlog(nmeaLog.checked)
                     }
@@ -739,12 +738,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("base adress", Dashboard.language)
+                    text: qsTr("base adress")
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("(decimal)", Dashboard.language)
+                    text: qsTr("(decimal)")
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -774,12 +773,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("base adress", Dashboard.language)
+                    text: qsTr("base adress")
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
                 Text {
-                    text: Translator.translate("(decimal)", Dashboard.language)
+                    text: qsTr("(decimal)")
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -805,7 +804,7 @@ Rectangle {
                 }
 
                 Text {
-                    text: Translator.translate("Language", Dashboard.language)
+                    text: qsTr("Language")
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
@@ -911,9 +910,9 @@ Rectangle {
         id: changeweighttext
         function changetext() {
             if (unitSelect.currentIndex == 0)
-                weighttext.text = Translator.translate("Weight", Dashboard.language) +" kg"
+                weighttext.text = qsTr("Weight") +" kg"
             if (unitSelect.currentIndex == 1)
-                weighttext.text = Translator.translate("Weight", Dashboard.language) +" lbs"
+                weighttext.text = qsTr("Weight") +" lbs"
         }
     }
     Item {

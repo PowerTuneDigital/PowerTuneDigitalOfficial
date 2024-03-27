@@ -1,7 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: windowbackround
@@ -25,7 +24,7 @@ Rectangle {
         id: grid
         spacing: windowbackround.height / 150
         Text {
-            text: Translator.translate("SpeedCorrection", Dashboard.language)
+            text: qsTr("SpeedCorrection")
             font.pixelSize: windowbackround.width / 55
             color: "white"
         }
@@ -43,7 +42,7 @@ Rectangle {
                                    speedpercent.text / 100, pulsespermile.text)
         }
         Text {
-            text: Translator.translate("USB VR Speed Sensor", Dashboard.language)
+            text: qsTr("USB VR Speed Sensor")
             font.pixelSize: windowbackround.width / 55
             color: "white"
         }
@@ -68,7 +67,7 @@ Rectangle {
                }
             }
         Text {
-            text: Translator.translate("Pulses per mile", Dashboard.language)
+            text: qsTr("Pulses per mile")
             font.pixelSize: windowbackround.width / 55
             color: "white"
             visible: usbvrcheckbox.checked
@@ -90,7 +89,7 @@ Rectangle {
         }
         Text {
             //periferal serial port box
-            text: Translator.translate("External Speed port", Dashboard.language)
+            text: qsTr("External Speed port")
             color: "white"
             font.pixelSize: windowbackround.width / 55
             visible: usbvrcheckbox.checked
@@ -122,7 +121,7 @@ Rectangle {
         Button {
             id: connectButtonArd
             visible: usbvrcheckbox.checked
-            text: Translator.translate("Connect", Dashboard.language)
+            text: qsTr("Connect")
             width: windowbackround.width / 5
             height: windowbackround.height / 15
             font.pixelSize: windowbackround.width / 55
@@ -137,7 +136,7 @@ Rectangle {
         Button {
             id: disconnectButtonArd
             visible: usbvrcheckbox.checked
-            text: Translator.translate("Disconnect", Dashboard.language)
+            text: qsTr("Disconnect")
             width: windowbackround.width / 5
             height: windowbackround.height / 15
             font.pixelSize: windowbackround.width / 55
