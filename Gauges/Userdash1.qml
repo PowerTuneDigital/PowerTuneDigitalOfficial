@@ -15,7 +15,6 @@ import "qrc:/Gauges/createText.js" as CreateTextScript
 import "qrc:/Gauges/createPicture.js" as CreatePictureScript
 import "qrc:/Gauges/createStatePicture.js" as CreateStatePictureScript
 import "qrc:/Gauges/createStateGIF.js" as CreateStateGIFScript
-import "qrc:/Translator.js" as Translator
 
 Item {
     id: mainwindow

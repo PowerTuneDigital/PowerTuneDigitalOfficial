@@ -3,7 +3,6 @@ import QtGraphicalEffects 1.0
 import QtQuick.Controls 2.2
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
-import "qrc:/Translator.js" as Translator
 
 //first try of full parameterized gauge
 

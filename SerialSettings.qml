@@ -7,7 +7,6 @@ import QtQuick.Controls.Styles 1.4
 import QtMultimedia 5.8
 import "qrc:/Gauges/"
 import DLM 1.0
-import "qrc:/Translator.js" as Translator
 
 Quick1.TabView {
     id: tabView

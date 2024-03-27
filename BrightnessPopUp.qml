@@ -5,7 +5,6 @@ import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
-import "Translator.js" as Translator
 import QtQuick.Window 2.10 //compatibility with QT 5.10
 import Qt.labs.settings 1.0
 
