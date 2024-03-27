@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1" language="it">
 <context>
     <name>AnalogInputs</name>
     <message>
@@ -16,7 +15,7 @@
         <location filename="AnalogInputs.qml" line="258"/>
         <location filename="AnalogInputs.qml" line="280"/>
         <source>Analog</source>
-        <translation>Analogue</translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="AnalogInputs.qml" line="323"/>
