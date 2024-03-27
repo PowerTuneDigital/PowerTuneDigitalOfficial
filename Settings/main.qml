@@ -4,6 +4,42 @@ import QtMultimedia 5.8
 import Qt.labs.settings 1.0
 
 Rectangle {
+    Settings {
+        id: powerTuneSettings
+        //property alias brightnessselect: brightness.value
+        // property alias connectAtStartUp: connectAtStart.checked
+        property alias connectECUAtStartup: connectButton.enabled
+        property alias connectGPSAtStartup: connectButtonGPS.enabled
+        //property alias connectArdAtStartup: connectButtonArd.enabled
+        //property alias gpsswitch: gpsswitch.checked
+        property alias serialPortName: serialName.currentText
+        property alias gpsPortName: serialNameGPS.currentText
+        property alias gpsPortNameindex: serialNameGPS.currentIndex
+        //property alias gpsBaud: serialGPSBaud.currentText
+        //property alias gpsBaudindex: serialGPSBaud.currentIndex
+        property alias ecuType: ecuSelect.currentText
+        property alias auxunit1: unitaux1.text
+        property alias aux1: an1V0.text
+        property alias aux2: an2V5.text
+        property alias auxunit2: unitaux2.text
+        property alias aux3: an3V0.text
+        property alias aux4: an4V5.text
+        property alias goProVariant: goProSelect.currentIndex
+        property alias password: goPropass.text
+        property alias vehicleweight: weight.text
+        property alias unitSelector1: unitSelect1.currentIndex
+        property alias unitSelector: unitSelect.currentIndex
+        property alias unitSelector2: unitSelect2.currentIndex
+        property alias odometervalue: odometer.text
+        property alias tripmetervalue: tripmeter.text
+        //property alias protocol : protocol.currentIndex
+        property alias smoothingrpm: smoothrpm.currentIndex
+        property alias smoothingspeed: smoothspeed.currentIndex
+        property alias extendercanbase: baseadresstext.text
+        property alias shiftlightcanbase: shiftlightbaseadresstext.text
+        property string languageCode: "en" // Default value
+    }
+
     id: windowbackround
     anchors.fill: parent
     color: "grey"
@@ -13,41 +49,7 @@ Rectangle {
     property int hexstring
     property int hexstring2
     property int currentLanguage: Dashboard.language
-    Item {
-        id: powerTuneSettings
-        Settings {
-            //property alias brightnessselect: brightness.value
-            // property alias connectAtStartUp: connectAtStart.checked
-            property alias connectECUAtStartup: connectButton.enabled
-            property alias connectGPSAtStartup: connectButtonGPS.enabled
-            //property alias connectArdAtStartup: connectButtonArd.enabled
-            //property alias gpsswitch: gpsswitch.checked
-            property alias serialPortName: serialName.currentText
-            property alias gpsPortName: serialNameGPS.currentText
-            property alias gpsPortNameindex: serialNameGPS.currentIndex
-            //property alias gpsBaud: serialGPSBaud.currentText
-            //property alias gpsBaudindex: serialGPSBaud.currentIndex
-            property alias ecuType: ecuSelect.currentText
-            property alias auxunit1: unitaux1.text
-            property alias aux1: an1V0.text
-            property alias aux2: an2V5.text
-            property alias auxunit2: unitaux2.text
-            property alias aux3: an3V0.text
-            property alias aux4: an4V5.text
-            property alias goProVariant: goProSelect.currentIndex
-            property alias password: goPropass.text
-            property alias vehicleweight: weight.text
-            property alias unitSelector1: unitSelect1.currentIndex
-            property alias unitSelector: unitSelect.currentIndex
-            property alias unitSelector2: unitSelect2.currentIndex
-            property alias odometervalue: odometer.text
-            property alias tripmetervalue: tripmeter.text
-            //property alias protocol : protocol.currentIndex
-            property alias smoothingrpm: smoothrpm.currentIndex
-            property alias smoothingspeed: smoothspeed.currentIndex
-            property alias extendercanbase: baseadresstext.text
-            property alias shiftlightcanbase: shiftlightbaseadresstext.text
-        }
+    Item {      
         SoundEffect {
             id: warnsound
             source: "qrc:/Sounds/alarm.wav"
@@ -841,8 +843,19 @@ Rectangle {
                             anchors.verticalCenter: parent.verticalCenter
                         }
                     }
+                    Component.onCompleted: {
+                        // Set the current index based on the saved language code on startup
+                        for (let i = 0; i < model.count; i++) {
+                            if (model.get(i).code === powerTuneSettings.languageCode) {
+                                currentIndex = i;
+                                break;
+                            }
+                        }
+                    }                    
                     onCurrentIndexChanged: {
                         const languageCode = model.get(currentIndex).code;
+                        console.log("Selected language code: " + languageCode);
+                        powerTuneSettings.languageCode = languageCode;
                         languageManager.changeLanguage(languageCode);
                     }
                 }
