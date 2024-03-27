@@ -204,7 +204,7 @@ Item {
                 }
             }
         Text{
-            text: Translator.translate("Warn value high", Dashboard.language)
+            text: qsTr("Warn value high")
             font.pointSize: 7
             }
             ////
@@ -237,7 +237,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Warn value low", Dashboard.language)
+                text: qsTr("Warn value low")
                 font.pointSize: 7
                 }
             Grid {
@@ -269,7 +269,7 @@ Item {
                 }
             }
             RoundButton{
-                text: Translator.translate("Use Datasource", Dashboard.language)
+                text: qsTr("Use Datasource")
                 width: parent.width
                 font.pixelSize: 15
                 onClicked: {
@@ -279,13 +279,13 @@ Item {
                 }
             }
             RoundButton {
-                text: Translator.translate("Delete", Dashboard.language)
+                text: qsTr("Delete")
                 font.pixelSize: 15
                 width: parent.width
                 onClicked: mytextlabel.destroy();
             }
             RoundButton{
-                text: Translator.translate("Close", Dashboard.language)
+                text: qsTr("Close")
                 width: parent.width
                 font.pixelSize: 15
                 onClicked: changesize.visible = false;

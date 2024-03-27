@@ -114,7 +114,7 @@ Item {
                 columns: 2
                 rowSpacing :5
             Text{
-                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("OFF", Dashboard.language)
+                text: qsTr("Image") + " " + qsTr("OFF")
                 font.pixelSize: 12
 
             }
@@ -142,7 +142,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("ON", Dashboard.language)
+                text: qsTr("Image") + " " + qsTr("ON")
                 font.pixelSize: 12
             }
             ComboBox {
@@ -171,7 +171,7 @@ Item {
                 }
             }
             Text{
-                text: Translator.translate("Source", Dashboard.language)
+                text: qsTr("Source")
                 font.pixelSize: 12
             }
             ComboBox {
@@ -185,7 +185,7 @@ Item {
                 onCurrentIndexChanged: bind();
             }
             Text{
-                text: Translator.translate("Trigger", Dashboard.language)
+                text: qsTr("Trigger")
                 font.pixelSize: 12
             }
             TextField {
@@ -197,7 +197,7 @@ Item {
                 font.pixelSize: 12
             }
          Text{
-                text: Translator.translate("Trigger", Dashboard.language) +" " +Translator.translate("OFF", Dashboard.language)
+                text: qsTr("Trigger") +" " +qsTr("OFF")
                 font.pixelSize: 12
             }
             TextField {
@@ -212,13 +212,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Delete image", Dashboard.language)
+                text: qsTr("Delete image")
                 font.pixelSize: 15
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Close", Dashboard.language)
+                text: qsTr("Close")
                 onClicked: {
                     triggervalue = triggeronvalue.text;
                     triggeroffvalue = triggerofffvalue.text;

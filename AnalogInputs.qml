@@ -57,7 +57,7 @@ Rectangle {
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "Val. @ 5V"
             font.pixelSize: main.width / 55;color:"white"}
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "0"
+        Text { text: qsTr("Analog") + " " + "0"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an00
@@ -79,7 +79,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "1"
+        Text { text: qsTr("Analog") + " " + "1"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an10
@@ -101,7 +101,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "2"
+        Text { text: qsTr("Analog") + " " + "2"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an20
@@ -123,7 +123,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "3"
+        Text { text: qsTr("Analog") + " " + "3"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an30
@@ -145,7 +145,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "4"
+        Text { text: qsTr("Analog") + " " + "4"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an40
@@ -167,7 +167,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "5"
+        Text { text: qsTr("Analog") + " " + "5"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an50
@@ -189,7 +189,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "6"
+        Text { text: qsTr("Analog") + " " + "6"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an60
@@ -211,7 +211,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "7"
+        Text { text: qsTr("Analog") + " " + "7"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an70
@@ -233,7 +233,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "8"
+        Text { text: qsTr("Analog") + " " + "8"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an80
@@ -255,7 +255,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "9"
+        Text { text: qsTr("Analog") + " " + "9"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an90
@@ -277,7 +277,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "10"
+        Text { text: qsTr("Analog") + " " + "10"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an100
@@ -320,6 +320,6 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
         color: "black"
         wrapMode: Text.WordWrap
-        text: Translator.translate("Analogexplanation", Dashboard.language)
+        text: qsTr("Analogexplanation")
     }
 }

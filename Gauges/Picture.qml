@@ -107,13 +107,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Delete image", Dashboard.language)
+                text: qsTr("Delete image")
                 font.pixelSize: 15
                 onClicked: picture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: Translator.translate("Close", Dashboard.language)
+                text: qsTr("Close")
                 onClicked: changesize.visible = false;
             }
         }
