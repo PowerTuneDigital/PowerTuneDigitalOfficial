@@ -47,7 +47,6 @@ Rectangle {
             property alias smoothingspeed: smoothspeed.currentIndex
             property alias extendercanbase: baseadresstext.text
             property alias shiftlightcanbase: shiftlightbaseadresstext.text
-            property alias languagecombobox: languageselect.currentIndex
         }
         SoundEffect {
             id: warnsound
@@ -810,69 +809,42 @@ Rectangle {
                     //visible: { (gpsswitch.checked == true ) ? true:false; }
                 }
 
+
                 ComboBox {
-                    id: languageselect
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-
-                    model: [
-                        {name: "English", flag: "qrc:/graphics/Flags/us.png"},
-                        {name: "Deutsch", flag: "qrc:/graphics/Flags/de.png"},
-                        {name: "日本語", flag: "qrc:/graphics/Flags/jp.png"},
-                        {name: "Español", flag: "qrc:/graphics/Flags/es.png"}
-                        //For Later Use
-                        //{name: "Français", flag: "qrc:/graphics/Flags/fr.png"},
-                        //{name: "العربية", flag: "qrc:/graphics/Flags/ae.png"}
-                    ]
-
+                    id: languageComboBox
+                    width: 200
+                    model: ListModel {
+                        ListElement { name: "English"; code: "en"; flag: "qrc:/graphics/Flags/us.png" }
+                        ListElement { name: "Deutsch"; code: "de"; flag: "qrc:/graphics/Flags/de.png" }
+                        ListElement { name: "日本語"; code: "ja_KANJI"; flag: "qrc:/graphics/Flags/jp.png" }
+                        ListElement { name: "Español"; code: "es"; flag: "qrc:/graphics/Flags/es.png" }
+                        // Uncomment or add more languages as needed
+                        //ListElement { name: "Français"; code: "fr"; flag: "qrc:/graphics/Flags/fr.png" }
+                        //ListElement { name: "العربية"; code: "ar"; flag: "qrc:/graphics/Flags/ae.png" }
+                    }
+                    textRole: "name"
+                    delegate: ItemDelegate {
+                        width: languageComboBox.width
+                        contentItem: Row {
+                            Image {
+                                source: model.flag
+                                width: 24
+                                height: 24
+                                fillMode: Image.PreserveAspectFit
+                            }
+                            Label {
+                                text: model.name
+                                elide: Label.ElideRight
+                                verticalAlignment: Label.AlignVCenter
+                            }
+                            spacing: 10
+                            anchors.verticalCenter: parent.verticalCenter
+                        }
+                    }
                     onCurrentIndexChanged: {
-                        functLanguageselect.languageselectfunct()
-                        changeweighttext.changetext()
-                        console.log("Language combobox index")
-                    }
-
-                    delegate: Item {
-                        width: languageselect.width
-                        height: 40 // Adjust the height as needed
-                        Row {
-                            spacing: 5
-                            Image {
-                                source: modelData.flag
-                                width: 20 // Adjust the width of the flag image
-                                height: 20 // Adjust the height of the flag image
-                            }
-                            Text {
-                                text: modelData.name
-                                font.weight: languageselect.currentIndex === index ? Font.DemiBold : Font.Normal
-                                font.pixelSize: languageselect.font.pixelSize
-                            }
-                        }
-
-                        MouseArea {
-                            anchors.fill: parent
-                            onClicked: {
-                                languageselect.currentIndex = index
-                            }
-                        }
-                    }
-
-                    contentItem: Item {
-                        width: languageselect.width
-                        height: languageselect.height
-                        Row {
-                            spacing: 5
-                            Image {
-                                source: languageselect.model[languageselect.currentIndex].flag  // Explicitly reference the modelData
-                                width: 20 // Adjust the width of the flag image
-                                height: 20 // Adjust the height of the flag image
-                            }
-                            Text {
-                                text: languageselect.model[languageselect.currentIndex].name  // Explicitly reference the modelData
-                                verticalAlignment: Text.AlignVCenter
-                                font.pixelSize: languageselect.font.pixelSize
-                            }
-                        }
+                        const languageCode = model.get(currentIndex).code;
+                        // Assuming you have a languageManager object exposed to QML that can handle the language change.
+                        languageManager.changeLanguage(languageCode);
                     }
                 }
 
@@ -978,15 +950,6 @@ Rectangle {
         function start() {
             if (warnsound.playing == false)
                 warnsound.play()
-        }
-    }
-
-    //function to set the Language
-    Item {
-
-        id: functLanguageselect
-        function languageselectfunct() {
-            AppSettings.writeLanguage(languageselect.currentIndex)
         }
     }
 

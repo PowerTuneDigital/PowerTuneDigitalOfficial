@@ -2,6 +2,11 @@ TEMPLATE = app
 
 QT += qml quick serialport serialbus network charts location positioning sensors multimedia widgets
 
+TRANSLATIONS += $$PWD/i18n/t1_de.ts \
+                $$PWD/i18n/t1_es.ts \
+                $$PWD/i18n/t1_fr.ts \
+                $$PWD/i18n/t1_ja_KANJI.ts
+
 CONFIG += c++11
 
 # QMAKE_LFLAGS += -static
@@ -32,7 +37,8 @@ SOURCES += main.cpp \
     textprogressbar.cpp \
     udpreceiver.cpp \
     arduino.cpp \
-    wifiscanner.cpp
+    wifiscanner.cpp \
+    LanguageManager.cpp
 
 
 RESOURCES += qml.qrc
@@ -63,7 +69,8 @@ HEADERS += \
     textprogressbar.h \
     udpreceiver.h \
     arduino.h \
-    wifiscanner.h
+    wifiscanner.h \
+    LanguageManager.h
 
 
 FORMS +=
@@ -75,3 +82,9 @@ DISTFILES += \
     KTracks/Australia/stupid4.txt
 
 
+!isEmpty(TRANSLATIONS) {
+    lrelease.commands = $$[QT_INSTALL_BINS]/lrelease $$TRANSLATIONS
+    lrelease.target = qmfiles
+    QMAKE_EXTRA_TARGETS += lrelease
+    PRE_TARGETDEPS += qmfiles
+}
