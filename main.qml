@@ -14,8 +14,8 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    //width: 1600
-    //height: 720
+    width: 1600
+    height: 720
     //width: Screen.desktopAvailableWidth
     //height: Screen.desktopAvailableHeight
     minimumWidth: 800
@@ -23,7 +23,9 @@ ApplicationWindow {
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
-    property int digiValue
+    property int brightnessIncrease: 150
+    property int ddcUtilBrightnessIncrease: 50
+
     property int digitalInput1: Dashboard.EXDigitalInput1
     property int digitalInput2: Dashboard.EXDigitalInput2
     property int digitalInput3: Dashboard.EXDigitalInput3
@@ -33,39 +35,24 @@ ApplicationWindow {
     property int digitalInput7: Dashboard.EXDigitalInput7
     property int digitalInput8: Dashboard.EXDigitalInput8
 
-    property int brightnessIncrease: 150
-    property int ddcUtilBrightnessIncrease: 50
-
-
-    ListModel {
-        id: comboBoxModel
-        ListElement{text: "Ex Digital Input 1"; }
-        ListElement{text: "Ex Digital Input 2"; }
-        ListElement{text: "Ex Digital Input 3"; }
-        ListElement{text: "Ex Digital Input 4"; }
-        ListElement{text: "Ex Digital Input 5"; }
-        ListElement{text: "Ex Digital Input 6"; }
-        ListElement{text: "Ex Digital Input 7"; }
-        ListElement{text: "Ex Digital Input 8"; }
-    }
-
     Settings{
         id: appSettings
         property alias sampleActionEnabled: popUpLoader.enabled
-        property alias selectedValue: digitalExtender.currentIndex
+
     }
 
     Component.onCompleted: {
+        console.log("ExBoard digiValue: " + custom.digiValue)
         //if ddcutil is true change all values to something
             popUpLoader.source = "qrc:/BrightnessPopUp.qml"
-        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-            Connect.setSreenbrightness(100);
-            AppSettings.writebrightnessettings(100);
-        } else {
-            Connect.setSreenbrightness(250);
-            AppSettings.writebrightnessettings(250);
-        }
+        custom.executeOnBootAction()
+        console.log(" Max Brightness on boot test: " + custom.maxBrightnessOnBoot)
+
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
             digitalLoop()
+        }
     }
 
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
@@ -216,6 +203,19 @@ ApplicationWindow {
                 color: "black"
             }
         }
+        Component.onCompleted: {
+            if(custom.maxBrightnessOnBoot == 1){
+                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                    console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
+                    Connect.setSreenbrightness(80);
+                    AppSettings.writebrightnessettings(80);
+                } else {
+                    console.log("DDCUTIL Failed max brightness run without ddc")
+                    Connect.setSreenbrightness(250);
+                    AppSettings.writebrightnessettings(250);
+                }
+            }
+        }
 
         Grid {
             id :row1
@@ -285,6 +285,7 @@ ApplicationWindow {
              rows: 1
              columns: 2
              spacing: window.width /50
+             topPadding: 40
              anchors.top: row3.bottom
              anchors.topMargin: drawerpopup.height/30
              anchors.horizontalCenter: parent.horizontalCenter
@@ -328,12 +329,123 @@ ApplicationWindow {
          }
      }
 
+         Grid{
+             id :row4
+             rows: 2
+             columns: 1
+             topPadding: window.width / 40
+             spacing: window.width / 30
+             anchors.top: drawerpopup.top
+             anchors.right: parent.right
+             Row{
+                 Button {
+                     id: plusBrightness
+                     font.family: "Eurostile"
+                     font.bold: true
+                     width: window.width / 13
+                     height: window.width / 13
+                     font.pixelSize: window.width / 30
+                     Component.onCompleted: {
+                         if(window.width == 800){
+                             plusBrightness.width = window.width / 10
+                             plusBrightness.height = window.width / 10
+                         }
+                     }
+                     onClicked: {
+                         if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                             ddcUtilBrightnessIncrease += 25;  // increase by 10% every time button is pressed
+                             if(ddcUtilBrightnessIncrease > 80){ //if the variable goes above 100 bring it back down
+                                 ddcUtilBrightnessIncrease = 80
+                             }
+
+                             Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
+                             AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
+                         }else{
+                             brightnessIncrease += 50
+                             if(brightnessIncrease > 250){ //if the variable goes above 250 bring it back down
+                                 brightnessIncrease = 250
+                             }
+
+                             Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
+                             AppSettings.writebrightnessettings(brightnessIncrease);
+                         }
+                     }
+                     background: Rectangle {
+                                 //color: "red"
+                                 radius: window.width / 10
+                                 opacity: enabled ? 1 : 0.3
+                                 color: plusBrightness.down ? "darkgrey" : "grey"
+                                 border.color: plusBrightness.down ? "grey" : "darkgrey"
+                                 border.width: window.width / 200
+                             }
+                     Image{
+                         source: "qrc:/graphics/brightnessIncrease.png"
+                         //anchors.fill: plusBrightness
+                         width: plusBrightness.width
+                         height: plusBrightness.height
+                         anchors.centerIn: plusBrightness.horizontalCenter
+                         }
+                     }
+                 }
+
+             Row{
+                 Button {
+                     id: minusBrightness
+                     font.family: "Eurostile"
+                     font.bold: true
+                     width: window.width / 13
+                     height: window.width / 13
+                     font.pixelSize: window.width / 30
+                     Component.onCompleted: {
+                         if(window.width == 800){
+                             minusBrightness.width = window.width / 10
+                             minusBrightness.height = window.width / 10
+                         }
+                     }
+
+                     onClicked: {
+                         if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                             ddcUtilBrightnessIncrease -= 25;  // increase by 10% every time button is pressed
+                             if(ddcUtilBrightnessIncrease < 0){ //if the variable goes above 100 bring it back down
+                                 ddcUtilBrightnessIncrease = 0
+                             }
+
+                             Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
+                             AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
+                         }else{
+                             brightnessIncrease -= 50
+                             if(brightnessIncrease < 25){ //if the variable goes above 250 bring it back down
+                                 brightnessIncrease = 25
+                             }
+
+                             Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
+                             AppSettings.writebrightnessettings(brightnessIncrease);
+                         }
+                     }
+                     background: Rectangle {
+                         radius: window.width / 10
+                         opacity: enabled ? 1 : 0.3
+                         color: minusBrightness.down ? "darkgrey" : "grey"
+                         border.color: minusBrightness.down ? "grey" : "darkgrey"
+                         border.width: window.width / 200
+                         }
+                     Image{
+                         source: "qrc:/graphics/brightnessDecrease.png"
+                         //anchors.fill: plusBrightness
+                         width: minusBrightness.width
+                         height: minusBrightness.height
+                         anchors.centerIn: minusBrightness.horizontalCenter
+                         }
+                     }
+                 }
+             }
+
         Grid{
             id:row3
             columns: 1
             spacing: window.width /160
             anchors.top: drawerpopup.top
-            anchors.right: drawerpopup.right
+            //anchors.right: drawerpopup.right
             anchors.topMargin: drawerpopup.height/30
             anchors.horizontalCenter: parent.horizontalCenter
 
@@ -407,191 +519,7 @@ ApplicationWindow {
                     }
                 }
             }
-
-            Row{
-                Text{
-                    id: digitalSwitchText
-                    text:"Digital input headlight channel"
-                    color: "black"
-                    topPadding: 7
-                    rightPadding: 5
-                    font.family: "Eurostile"
-                    font.bold: true
-                    font.pixelSize: window.width / 70
-                    Component.onCompleted: {
-                        if(window.width == 800){
-                            digitalSwitchText.font.pixelSize = 15
-                        }
-                    }
-                }
-
-                ComboBox{
-                    id: digitalExtender
-                    model: comboBoxModel
-                    width: window.width * 0.15
-
-                    Component.onCompleted: {
-                        if(window.width == 800){
-                            digitalExtender.width = 200
-                            digitalExtender.height = 35
-                            digitalExtender.font.pixelSize = 15
-                        }
-                    }
-                    onCurrentIndexChanged: {
-                        //see if the index is matching with the text then assign digiValue a pointer for the function digitalLoop()
-                        if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 1"){
-                            digiValue = 0
-                            console.log("digital input 1 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 2"){
-                            digiValue = 1
-                            console.log("digital input 2 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 3"){
-                            digiValue = 2
-                            console.log("digital input 3 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 4"){
-                            digiValue = 3
-                            console.log("digital input 4 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 5"){
-                            digiValue = 4
-                            console.log("digital input 5 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 6"){
-                            digiValue = 5
-                            console.log("digital input 6 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 7"){
-                            digiValue = 6
-                            console.log("digital input 7 read")
-                            return;
-                        }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 8"){
-                            digiValue = 7
-                            console.log("digital input 8 read")
-                            return;
-                        }
-                   }
-                }
-            }
         }
-        Grid{
-            id :row4
-            rows: 2
-            columns: 1
-            topPadding: window.width / 40
-            spacing: window.width / 30
-            //anchors.horizontalCenter: parent.horizontalCenter
-            //anchors.centerIn: parent
-            anchors.top: drawerpopup.top
-            anchors.right: parent.right
-            Row{
-
-                Button {
-                    id: plusBrightness
-                    font.family: "Eurostile"
-                    font.bold: true
-                    width: window.width / 13
-                    height: window.width / 13
-                    font.pixelSize: window.width / 30
-                    Component.onCompleted: {
-                        if(window.width == 800){
-                            plusBrightness.width = window.width / 10
-                            plusBrightness.height = window.width / 10
-                        }
-                    }
-                    onClicked: {
-                        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                            ddcUtilBrightnessIncrease += 10;  // increase by 10% every time button is pressed
-                            if(ddcUtilBrightnessIncrease > 100){ //if the variable goes above 100 bring it back down
-                                ddcUtilBrightnessIncrease = 100
-                            }
-
-                            Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
-                            AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
-                        }else{
-                            brightnessIncrease += 25
-                            if(brightnessIncrease > 250){ //if the variable goes above 250 bring it back down
-                                brightnessIncrease = 250
-                            }
-
-                            Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
-                            AppSettings.writebrightnessettings(brightnessIncrease);
-                        }
-                    }
-                    background: Rectangle {
-                                //color: "red"
-                                radius: window.width / 10
-                                opacity: enabled ? 1 : 0.3
-                                color: plusBrightness.down ? "darkgrey" : "grey"
-                                border.color: plusBrightness.down ? "grey" : "darkgrey"
-                                border.width: window.width / 200
-                            }
-                    Image{
-                        source: "qrc:/graphics/brightnessIncrease.png"
-                        //anchors.fill: plusBrightness
-                        width: plusBrightness.width
-                        height: plusBrightness.height
-                        anchors.centerIn: plusBrightness.horizontalCenter
-                        }
-                    }
-                }
-
-            Row{
-                Button {
-                    id: minusBrightness
-                    font.family: "Eurostile"
-                    font.bold: true
-                    width: window.width / 13
-                    height: window.width / 13
-                    font.pixelSize: window.width / 30
-                    Component.onCompleted: {
-                        if(window.width == 800){
-                            minusBrightness.width = window.width / 10
-                            minusBrightness.height = window.width / 10
-                        }
-                    }
-
-                    onClicked: {
-                        if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                            ddcUtilBrightnessIncrease -= 10;  // increase by 10% every time button is pressed
-                            if(ddcUtilBrightnessIncrease < 0){ //if the variable goes above 100 bring it back down
-                                ddcUtilBrightnessIncrease = 0
-                            }
-
-                            Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
-                            AppSettings.writebrightnessettings(ddcUtilBrightnessIncrease);
-                        }else{
-                            brightnessIncrease -= 25
-                            if(brightnessIncrease < 25){ //if the variable goes above 250 bring it back down
-                                brightnessIncrease = 25
-                            }
-
-                            Connect.setSreenbrightness(brightnessIncrease); // set the brightness with the new value
-                            AppSettings.writebrightnessettings(brightnessIncrease);
-                        }
-                    }
-                    background: Rectangle {
-                        radius: window.width / 10
-                        opacity: enabled ? 1 : 0.3
-                        color: minusBrightness.down ? "darkgrey" : "grey"
-                        border.color: minusBrightness.down ? "grey" : "darkgrey"
-                        border.width: window.width / 200
-                        }
-                    Image{
-                        source: "qrc:/graphics/brightnessDecrease.png"
-                        //anchors.fill: plusBrightness
-                        width: minusBrightness.width
-                        height: minusBrightness.height
-                        anchors.centerIn: minusBrightness.horizontalCenter
-                        }
-                    }
-                }
-            }
-        }
-
-
 
     PageIndicator {
         id: indicator
@@ -600,19 +528,7 @@ ApplicationWindow {
         anchors.bottom: dashView.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
-    Loader {
-        id: popUpLoader
-        visible: false
-        enabled: appSettings.sampleActionEnabled
-        anchors.right: parent.right
-        width: window.width * 0.15
-        //anchors.verticalCenter: parent.verticalCenter
-        Component.onCompleted: {
-            if(popUpLoader.enabled){
-                visible = true
-            }
-            console.log("Brightness Loaded")
-        }
+
     }
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
@@ -680,110 +596,128 @@ ApplicationWindow {
         }
     }
 
+
+
+    Loader {
+        id: popUpLoader
+        visible: false
+        enabled: appSettings.sampleActionEnabled
+        anchors.right: parent.right
+        width: window.width * 0.15
+        //anchors.verticalCenter: parent.verticalCenter
+        Component.onCompleted: {
+            if(popUpLoader.enabled){
+                visible = true
+            }
+            console.log("Brightness Loaded")
+            }
+        }
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
-            if (0 === digiValue && digitalInput1 == 1) {
+            if (0 === custom.digiValue && digitalInput1 == 1) {
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 1")
                 console.log(digiValue)
                 return;
-            }else if(1 === digiValue && digitalInput2 == 1){
+            }else if(1 === custom.digiValue && digitalInput2 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 2")
                 console.log(digiValue)
                 return;
-            }else if(2 === digiValue && digitalInput3 == 1){
+            }else if(2 === custom.digiValue && digitalInput3 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 3")
                 console.log(digiValue)
                 return;
 
-            }else if(3 === digiValue && digitalInput4 == 1){
+            }else if(3 === custom.digiValue && digitalInput4 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 4")
                 console.log(digiValue)
                 return;
 
-            }else if(4 === digiValue && digitalInput5 == 1){
+            }else if(4 === custom.digiValue && digitalInput5 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 5")
                 return;
 
-            }else if(5 === digiValue && digitalInput6 == 1){
+            }else if(5 === custom.digiValue && digitalInput6 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 6")
                 return;
 
-            }else if(6 === digiValue && digitalInput7 == 1){
+            }else if(6 === custom.digiValue && digitalInput7 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 7")
                 return;
 
-            }else if(7 === digiValue && digitalInput8 == 1){
+            }else if(7 === custom.digiValue && digitalInput8 == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 8")
                 return;
+            }else{
+                console.log("No if Statements Passed")
             }
-    }
+        }
 
     function ddcutilDigitalLoop(){
-            if (0 === digiValue && digitalInput1 == 1) {
+            if (0 === custom.digiValue && digitalInput1 == 1) {
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 1")
                 console.log(digiValue)
                 return;
-            }else if(1 === digiValue && digitalInput2 == 1){
+            }else if(1 === custom.digiValue && digitalInput2 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 2")
                 console.log(digiValue)
                 return;
-            }else if(2 === digiValue && digitalInput3 == 1){
+            }else if(2 === custom.digiValue && digitalInput3 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 3")
                 console.log(digiValue)
                 return;
 
-            }else if(3 === digiValue && digitalInput4 == 1){
+            }else if(3 === custom.digiValue && digitalInput4 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 4")
                 console.log(digiValue)
                 return;
 
-            }else if(4 === digiValue && digitalInput5 == 1){
+            }else if(4 === custom.digiValue && digitalInput5 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 5")
                 return;
 
-            }else if(5 === digiValue && digitalInput6 == 1){
+            }else if(5 === custom.digiValue && digitalInput6 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 6")
                 return;
 
-            }else if(6 === digiValue && digitalInput7 == 1){
+            }else if(6 === custom.digiValue && digitalInput7 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 7")
                 return;
 
-            }else if(7 === digiValue && digitalInput8 == 1){
+            }else if(7 === custom.digiValue && digitalInput8 == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 8")
                 return;
             }
-    }
+        }
 }

@@ -6,8 +6,6 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import "Translator.js" as Translator
-//import QtQuick 2.15
-//import QtQuick.Controls 2.15
 import QtQuick.Window 2.10 //compatibility with QT 5.10
 import Qt.labs.settings 1.0
 
@@ -17,6 +15,7 @@ Rectangle{
         width: parent.width
         height: parent.height
         property int brightnessValue
+
 
 
         Grid {
@@ -41,7 +40,7 @@ Rectangle{
                 font.pixelSize: popUp1.width / 7.5
                 onClicked: {
                     if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                        brightnessValue = 5;
+                        brightnessValue = 10;
                     }else{
                         brightnessValue = 25
                     }
@@ -69,7 +68,7 @@ Rectangle{
                 transformOrigin: Item.Center
                 onClicked: {
                     if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                        brightnessValue = 100;
+                        brightnessValue = 80;
                     }else{
                         brightnessValue = 255
                     }
