@@ -1,5 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>AnalogInputs</name>
@@ -21,7 +19,7 @@
     <message>
         <location filename="../AnalogInputs.qml" line="322"/>
         <source>Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc</source>
-        <translation type="unfinished"></translation>
+        <translation>Geben Sie den Wert den Sie bei 0 Volt sehen wollen in das Feld Val.@ 0V, und den Wert den Sie bei 5 Volt sehen wollen in das Feld Val @5V ein.Die Berecheneten Werte werden in den Korrespondierenden Datenquellen Analog x Calc angezeigt.</translation>
     </message>
     <message>
         <source>Analogexplanation</source>
@@ -99,7 +97,7 @@
     <message>
         <location filename="../ConsultRegs.qml" line="41"/>
         <source>RPM</source>
-        <translation></translation>
+        <translation>Drehzahl</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="47"/>
@@ -134,12 +132,12 @@
     <message>
         <location filename="../ConsultRegs.qml" line="83"/>
         <source>Speed</source>
-        <translation></translation>
+        <translation>Geschw.</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="90"/>
         <source>Battery Voltage</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="96"/>
@@ -368,7 +366,7 @@
     <message>
         <location filename="../Gauges/HaltechFlags.qml" line="39"/>
         <source>NOS</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <location filename="../Gauges/HaltechFlags.qml" line="55"/>
@@ -424,7 +422,7 @@
     <message>
         <location filename="../Gauges/HaltechFlags.qml" line="189"/>
         <source>Flat Shift</source>
-        <translation></translation>
+        <translation />
     </message>
     <message>
         <location filename="../Gauges/HaltechFlags.qml" line="201"/>
@@ -550,12 +548,12 @@
     <message>
         <location filename="../OBDPIDS.qml" line="89"/>
         <source>RPM</source>
-        <translation></translation>
+        <translation>Drehzahl</translation>
     </message>
     <message>
         <location filename="../OBDPIDS.qml" line="95"/>
         <source>Speed</source>
-        <translation></translation>
+        <translation>Geschw.</translation>
     </message>
     <message>
         <location filename="../OBDPIDS.qml" line="101"/>
@@ -744,8 +742,8 @@
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="324"/>
-        <source></source>
-        <translation></translation>
+        <source />
+        <translation />
     </message>
     <message>
         <location filename="../OBDPIDS.qml" line="338"/>
@@ -1041,7 +1039,7 @@
     <message>
         <location filename="../Gauges/RoundGauge.qml" line="859"/>
         <source>Needle lenght</source>
-        <translation type="unfinished"></translation>
+        <translation>Nadel Länge</translation>
     </message>
     <message>
         <location filename="../Gauges/RoundGauge.qml" line="886"/>
@@ -1116,7 +1114,7 @@
     <message>
         <location filename="../Gauges/RoundGauge.qml" line="1404"/>
         <source>Major tickmark width</source>
-        <translation>Haupt Ticks Breite</translation>
+        <translation>Haupt Ticks Einsatz</translation>
     </message>
     <message>
         <location filename="../Gauges/RoundGauge.qml" line="1435"/>
@@ -2004,12 +2002,12 @@
     <message>
         <location filename="../Settings/main.qml" line="192"/>
         <source>Metric</source>
-        <translation type="unfinished"></translation>
+        <translation>Metrisch</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="192"/>
         <source>Imperial</source>
-        <translation type="unfinished"></translation>
+        <translation>Imperial</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="214"/>
@@ -2019,12 +2017,12 @@
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°C</source>
-        <translation type="unfinished"></translation>
+        <translation>°C</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°F</source>
-        <translation type="unfinished"></translation>
+        <translation>°F</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="246"/>
@@ -2060,7 +2058,7 @@
     <message>
         <location filename="../Settings/main.qml" line="362"/>
         <source>Odo</source>
-        <translation type="unfinished"></translation>
+        <translation>KM Stand:</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="371"/>
@@ -2081,47 +2079,47 @@
     <message>
         <location filename="../Settings/main.qml" line="429"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinden</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="443"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Trennen</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="458"/>
         <source>GPS Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS Verbinden</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="474"/>
         <source>GPS Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS Trennen</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="488"/>
         <source>Trip Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>Tages KM reset</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="509"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>Beenden</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="518"/>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>Herunterfahren</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="527"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>Neustart</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="538"/>
         <source>RPM Smoothing</source>
-        <translation type="unfinished"></translation>
+        <translation>Drehzahl Glättung</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="549"/>
@@ -2132,22 +2130,22 @@
     <message>
         <location filename="../Settings/main.qml" line="570"/>
         <source>Speed Smoothing</source>
-        <translation type="unfinished"></translation>
+        <translation>Geschw. Glättung</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="605"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>Daten Logger</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="617"/>
         <source>GoPro rec</source>
-        <translation type="unfinished"></translation>
+        <translation>GoPro Aufnahme</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="627"/>
         <source>NMEA Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>NMEA Logger</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="674"/>
@@ -2197,7 +2195,7 @@
         <location filename="../Settings/main.qml" line="897"/>
         <location filename="../Settings/main.qml" line="899"/>
         <source>Weight</source>
-        <translation type="unfinished"></translation>
+        <translation>Gewicht</translation>
     </message>
 </context>
 <context>
@@ -2205,7 +2203,7 @@
     <message>
         <location filename="../Settings/network.qml" line="67"/>
         <source>Scan WIFI</source>
-        <translation type="unfinished"></translation>
+        <translation>WIFI suchen</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="79"/>
@@ -2215,12 +2213,12 @@
     <message>
         <location filename="../Settings/network.qml" line="93"/>
         <source>WIFI 1</source>
-        <translation type="unfinished"></translation>
+        <translation>WIFI 1</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="118"/>
         <source>Password 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Passwort 1</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="123"/>
@@ -2230,17 +2228,17 @@
     <message>
         <location filename="../Settings/network.qml" line="167"/>
         <source>Connect WIFI</source>
-        <translation type="unfinished"></translation>
+        <translation>WIFI Verbinden</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="193"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Update</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="210"/>
         <source>Restart daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>Daemon Neustart</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="228"/>
@@ -2250,12 +2248,12 @@
     <message>
         <location filename="../Settings/network.qml" line="253"/>
         <source>Ethernet IP adress</source>
-        <translation type="unfinished"></translation>
+        <translation>Ethernet IP adresse</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="283"/>
         <source>WLAN IP adress</source>
-        <translation type="unfinished"></translation>
+        <translation>WLAN IP adresse</translation>
     </message>
 </context>
 <context>
@@ -2282,22 +2280,22 @@
     <message>
         <location filename="../Settings/sensehat.qml" line="30"/>
         <source>Accelerometer</source>
-        <translation type="unfinished"></translation>
+        <translation>Beschleunigungssensor</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="40"/>
         <source>Gyro Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>Gyroskop Sensor</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="51"/>
         <source>Compass</source>
-        <translation type="unfinished"></translation>
+        <translation>Compass</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="61"/>
         <source>Pressure Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>Druck Sensor</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="72"/>
@@ -2315,27 +2313,27 @@
     <message>
         <location filename="../Settings/speed.qml" line="45"/>
         <source>USB VR Speed Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>USB VR Geschwindigkeits Sensor</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="70"/>
         <source>Pulses per mile</source>
-        <translation type="unfinished"></translation>
+        <translation>Pulse pro meile</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="92"/>
         <source>External Speed port</source>
-        <translation type="unfinished"></translation>
+        <translation>Externer Geschwindigkeits port</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="124"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>Verbinden</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="139"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>Trennen</translation>
     </message>
 </context>
 <context>
@@ -2343,12 +2341,12 @@
     <message>
         <location filename="../Settings/startup.qml" line="28"/>
         <source>Apply settings</source>
-        <translation type="unfinished"></translation>
+        <translation>Einstellungen übernehmen</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="35"/>
         <source>Apply</source>
-        <translation type="unfinished">Übernehmen</translation>
+        <translation>Übernehmen</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="43"/>
@@ -2358,12 +2356,12 @@
     <message>
         <location filename="../Settings/startup.qml" line="66"/>
         <source>Can Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>Can Bit Rate</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="155"/>
         <source>Main Speed Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Haupt Geschwindigkeits Quelle</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="182"/>
@@ -2381,7 +2379,7 @@
     <message>
         <location filename="../Settings/warn_gear.qml" line="40"/>
         <source>Boost</source>
-        <translation type="unfinished"></translation>
+        <translation>Ladedruck</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="45"/>
@@ -2391,7 +2389,7 @@
     <message>
         <location filename="../Settings/warn_gear.qml" line="50"/>
         <source>Knock</source>
-        <translation type="unfinished"></translation>
+        <translation>Klopfen</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="55"/>
@@ -2415,7 +2413,7 @@
         <location filename="../Settings/warn_gear.qml" line="147"/>
         <location filename="../Settings/warn_gear.qml" line="152"/>
         <source>Gear</source>
-        <translation type="unfinished"></translation>
+        <translation>Gang</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="165"/>
