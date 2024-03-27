@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE TS>
-<TS version="2.1" language="fr_FR">
+<TS version="2.1">
 <context>
     <name>AnalogInputs</name>
     <message>
@@ -733,7 +733,7 @@
     <message>
         <location filename="OBDPIDS.qml" line="324"/>
         <source></source>
-        <translation></translation>
+        <translation type="unfinished"></translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="338"/>
@@ -797,6 +797,11 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="OBDPIDS.qml" line="423"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="OBDPIDS.qml" line="429"/>
         <source>Fuel Type</source>
         <translation type="unfinished"></translation>
@@ -814,6 +819,26 @@
     <message>
         <location filename="OBDPIDS.qml" line="447"/>
         <source>Evap sys Vapor Pres</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="453"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="459"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="465"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="471"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -844,6 +869,16 @@
     <message>
         <location filename="OBDPIDS.qml" line="507"/>
         <source>Fuel rate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="513"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="519"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -882,8 +917,413 @@
         <translation type="unfinished"></translation>
     </message>
     <message>
+        <location filename="OBDPIDS.qml" line="567"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="573"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="579"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <location filename="OBDPIDS.qml" line="586"/>
         <source>EGT</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="592"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="598"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="604"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="610"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="616"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="622"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="628"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="634"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="640"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="646"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="652"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="658"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="664"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="670"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="676"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="682"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="688"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="694"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="700"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="706"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="712"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="718"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="724"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="730"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="736"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="742"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="748"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="754"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="760"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="766"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="772"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="778"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="784"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="790"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="796"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="802"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="808"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="814"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="820"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="826"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="832"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="838"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="844"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="850"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="856"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="862"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="868"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="874"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="880"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="886"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="892"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="898"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="904"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="910"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="916"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="922"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="928"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="934"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="940"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="946"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="952"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="958"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="964"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="970"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="976"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="982"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="987"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="993"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="999"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1005"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1011"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1017"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1023"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1028"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1034"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1040"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1046"/>
+        <source></source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="OBDPIDS.qml" line="1052"/>
+        <source></source>
         <translation type="unfinished"></translation>
     </message>
 </context>
