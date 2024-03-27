@@ -14,10 +14,10 @@ import Qt.labs.settings 1.0
 ApplicationWindow {
     id:window
     visible: true
-    width: 1600
-    height: 720
-    //width: Screen.desktopAvailableWidth
-    //height: Screen.desktopAvailableHeight
+    //width: 1600
+    //height: 720
+    width: Screen.desktopAvailableWidth
+    height: Screen.desktopAvailableHeight
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
@@ -203,19 +203,7 @@ ApplicationWindow {
                 color: "black"
             }
         }
-        Component.onCompleted: {
-            if(custom.maxBrightnessOnBoot == 1){
-                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                    console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
-                    Connect.setSreenbrightness(80);
-                    AppSettings.writebrightnessettings(80);
-                } else {
-                    console.log("DDCUTIL Failed max brightness run without ddc")
-                    Connect.setSreenbrightness(250);
-                    AppSettings.writebrightnessettings(250);
-                }
-            }
-        }
+
 
         Grid {
             id :row1
@@ -520,6 +508,7 @@ ApplicationWindow {
                 }
             }
         }
+    }
 
     PageIndicator {
         id: indicator
@@ -529,7 +518,7 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
-    }
+
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
@@ -610,8 +599,20 @@ ApplicationWindow {
                 visible = true
             }
             console.log("Brightness Loaded")
+
+            if(custom.maxBrightnessOnBoot == 1){
+                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                    console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
+                    Connect.setSreenbrightness(80);
+                    AppSettings.writebrightnessettings(80);
+                } else {
+                    console.log("DDCUTIL Failed max brightness run without ddc")
+                    Connect.setSreenbrightness(250);
+                    AppSettings.writebrightnessettings(250);
+                }
             }
         }
+    }
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
             if (0 === custom.digiValue && digitalInput1 == 1) {
@@ -720,4 +721,5 @@ ApplicationWindow {
                 return;
             }
         }
+    }
 }
