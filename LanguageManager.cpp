@@ -2,6 +2,7 @@
 
 #include "LanguageManager.h"
 #include <QGuiApplication>
+#include <QDebug>
 
 LanguageManager::LanguageManager(QQmlApplicationEngine* engine, QObject *parent) 
     : QObject(parent), m_engine(engine) {}
