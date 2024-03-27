@@ -7,6 +7,11 @@ TRANSLATIONS += $$PWD/i18n/t1_de.ts \
                 $$PWD/i18n/t1_fr.ts \
                 $$PWD/i18n/t1_ja_KANJI.ts
 
+
+!isEmpty(TRANSLATIONS) {
+    system(lrelease $$TRANSLATIONS)
+}
+
 CONFIG += c++11
 
 # QMAKE_LFLAGS += -static
