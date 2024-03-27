@@ -80,11 +80,3 @@ DISTFILES += \
     KTracks/Australia/stupid2.txt \
     KTracks/Australia/stupid3.txt \
     KTracks/Australia/stupid4.txt
-
-
-!isEmpty(TRANSLATIONS) {
-    lrelease.commands = $$[QT_INSTALL_BINS]/lrelease $$TRANSLATIONS
-    lrelease.target = qmfiles
-    QMAKE_EXTRA_TARGETS += lrelease
-    PRE_TARGETDEPS += qmfiles
-}
