@@ -843,7 +843,6 @@ Rectangle {
                     }
                     onCurrentIndexChanged: {
                         const languageCode = model.get(currentIndex).code;
-                        // Assuming you have a languageManager object exposed to QML that can handle the language change.
                         languageManager.changeLanguage(languageCode);
                     }
                 }
