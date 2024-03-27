@@ -16,7 +16,7 @@
         <location filename="AnalogInputs.qml" line="258"/>
         <location filename="AnalogInputs.qml" line="280"/>
         <source>Analog</source>
-        <translation type="unfinished"></translation>
+        <translation>Analogue</translation>
     </message>
     <message>
         <location filename="AnalogInputs.qml" line="323"/>
