@@ -15,7 +15,7 @@
         <location filename="AnalogInputs.qml" line="258"/>
         <location filename="AnalogInputs.qml" line="280"/>
         <source>Analog</source>
-        <translation type="unfinished"></translation>
+        <translation>Analog</translation>
     </message>
     <message>
         <location filename="AnalogInputs.qml" line="323"/>
@@ -41,22 +41,22 @@
     <message>
         <location filename="Gauges/Cluster.qml" line="496"/>
         <source>ADD</source>
-        <translation type="unfinished"></translation>
+        <translation>Legg til</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="509"/>
         <source>SAVE</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="545"/>
         <source>COLORS</source>
-        <translation type="unfinished"></translation>
+        <translation>Farger</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="805"/>
         <source>Frame color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Rammefarge:</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="809"/>
@@ -66,7 +66,7 @@
     <message>
         <location filename="Gauges/Cluster.qml" line="813"/>
         <source>Backround color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge:</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="920"/>
@@ -81,12 +81,12 @@
     <message>
         <location filename="Gauges/Cluster.qml" line="928"/>
         <source>Main text color:</source>
-        <translation type="unfinished"></translation>
+        <translation>Hovedtekstfarge:</translation>
     </message>
     <message>
         <location filename="Gauges/Cluster.qml" line="1043"/>
         <source>CLOSE</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -104,7 +104,7 @@
     <message>
         <location filename="ConsultRegs.qml" line="53"/>
         <source>MAF Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>MAF-spenning</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="59"/>
@@ -114,7 +114,7 @@
     <message>
         <location filename="ConsultRegs.qml" line="65"/>
         <source>Coolant Temp</source>
-        <translation type="unfinished"></translation>
+        <translation>Kjølevesketemp.</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="71"/>
@@ -129,12 +129,12 @@
     <message>
         <location filename="ConsultRegs.qml" line="83"/>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Hastighet</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="90"/>
         <source>Battery Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>Batterispenning</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="96"/>
@@ -144,7 +144,7 @@
     <message>
         <location filename="ConsultRegs.qml" line="102"/>
         <source>Fuel Temp.</source>
-        <translation type="unfinished"></translation>
+        <translation>Drivstoff-temp.</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="108"/>
@@ -244,7 +244,7 @@
     <message>
         <location filename="ConsultRegs.qml" line="222"/>
         <source>Fuel Tank Temp</source>
-        <translation type="unfinished"></translation>
+        <translation>Drivstofftanktemp.</translation>
     </message>
     <message>
         <location filename="ConsultRegs.qml" line="228"/>
@@ -327,12 +327,12 @@
     <message>
         <location filename="ExBoardAnalog.qml" line="482"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>Versjon</translation>
     </message>
     <message>
         <location filename="ExBoardAnalog.qml" line="506"/>
         <source>Cylinders</source>
-        <translation type="unfinished"></translation>
+        <translation>Sylindre</translation>
     </message>
     <message>
         <location filename="ExBoardAnalog.qml" line="553"/>
@@ -375,18 +375,18 @@
     <message>
         <location filename="Gauges/HaltechFlags.qml" line="95"/>
         <source>Brake</source>
-        <translation type="unfinished"></translation>
+        <translation>Brems</translation>
     </message>
     <message>
         <location filename="Gauges/HaltechFlags.qml" line="111"/>
         <source>Clutch</source>
-        <translation type="unfinished"></translation>
+        <translation>Kløtsj</translation>
     </message>
     <message>
         <location filename="Gauges/HaltechFlags.qml" line="123"/>
         <location filename="Gauges/HaltechFlags.qml" line="322"/>
         <source>Reserved</source>
-        <translation type="unfinished"></translation>
+        <translation>Reservert</translation>
     </message>
     <message>
         <location filename="Gauges/HaltechFlags.qml" line="135"/>
@@ -461,7 +461,7 @@
     <message>
         <location filename="Gauges/HaltechFlags.qml" line="310"/>
         <source>Hand Brake</source>
-        <translation type="unfinished"></translation>
+        <translation>Håndbrekk</translation>
     </message>
 </context>
 <context>
@@ -469,27 +469,27 @@
     <message>
         <location filename="Gauges/MyTextLabel.qml" line="207"/>
         <source>Warn value high</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarselsverdi høy</translation>
     </message>
     <message>
         <location filename="Gauges/MyTextLabel.qml" line="240"/>
         <source>Warn value low</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarselsverdi lav</translation>
     </message>
     <message>
         <location filename="Gauges/MyTextLabel.qml" line="272"/>
         <source>Use Datasource</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Bruk datakilde</translation>
     </message>
     <message>
         <location filename="Gauges/MyTextLabel.qml" line="282"/>
         <source>Delete</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett</translation>
     </message>
     <message>
         <location filename="Gauges/MyTextLabel.qml" line="288"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -502,7 +502,7 @@
     <message>
         <location filename="OBDPIDS.qml" line="47"/>
         <source>Coolant Temp</source>
-        <translation type="unfinished"></translation>
+        <translation>Kjølevesketemp.</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="53"/>
@@ -527,7 +527,7 @@
     <message>
         <location filename="OBDPIDS.qml" line="77"/>
         <source>Fuel pressure</source>
-        <translation type="unfinished"></translation>
+        <translation>Drivstrofftrykk</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="83"/>
@@ -537,12 +537,12 @@
     <message>
         <location filename="OBDPIDS.qml" line="89"/>
         <source>RPM</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">r/min</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="95"/>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>Hastighet</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="101"/>
@@ -567,42 +567,42 @@
     <message>
         <location filename="OBDPIDS.qml" line="125"/>
         <source>Oxygen Sen 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 1</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="131"/>
         <source>Oxygen Sen 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 2</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="137"/>
         <source>Oxygen Sen 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 3</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="143"/>
         <source>Oxygen Sen 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 4</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="149"/>
         <source>Oxygen Sen 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 5</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="155"/>
         <source>Oxygen Sen 6</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 6</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="161"/>
         <source>Oxygen Sen 7</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 7</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="167"/>
         <source>Oxygen Sen 8</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygen sen. 8</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="174"/>
@@ -672,42 +672,42 @@
     <message>
         <location filename="OBDPIDS.qml" line="253"/>
         <source>Oxygen Sensor 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 1</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="259"/>
         <source>Oxygen Sensor 2</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 2</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="265"/>
         <source>Oxygen Sensor 3</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 3</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="271"/>
         <source>Oxygen Sensor 4</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 4</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="277"/>
         <source>Oxygen Sensor 5</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 5</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="283"/>
         <source>Oxygen Sensor 6</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 6</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="289"/>
         <source>Oxygen Sensor 7</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 7</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="295"/>
         <source>Oxygen Sensor 8</source>
-        <translation type="unfinished"></translation>
+        <translation>Oksygensensor 8</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="301"/>
@@ -737,7 +737,7 @@
     <message>
         <location filename="OBDPIDS.qml" line="338"/>
         <source>Battery voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>Batterispenning</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="344"/>
@@ -793,17 +793,17 @@
     <message>
         <location filename="OBDPIDS.qml" line="417"/>
         <source>Time since errors cleared</source>
-        <translation type="unfinished"></translation>
+        <translation>Tid siden tømming av feil</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="429"/>
         <source>Fuel Type</source>
-        <translation type="unfinished"></translation>
+        <translation>Drivstoff-type</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="435"/>
         <source>Ethanol fuel %</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ethanol %</translation>
     </message>
     <message>
         <location filename="OBDPIDS.qml" line="441"/>
@@ -891,12 +891,12 @@
     <message>
         <location filename="Gauges/Picture.qml" line="110"/>
         <source>Delete image</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett bilde</translation>
     </message>
     <message>
         <location filename="Gauges/Picture.qml" line="116"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -909,7 +909,7 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="371"/>
         <source>Datasource</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Datakilde</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="377"/>
@@ -944,17 +944,17 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="426"/>
         <source>Labels</source>
-        <translation type="unfinished"></translation>
+        <translation>Etiketter</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="436"/>
         <source>Warnings</source>
-        <translation type="unfinished"></translation>
+        <translation>Advarsler</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="441"/>
         <source>Description text</source>
-        <translation type="unfinished"></translation>
+        <translation>Beskrivelsestest</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="449"/>
@@ -973,7 +973,7 @@
         <location filename="Gauges/RoundGauge.qml" line="1924"/>
         <location filename="Gauges/RoundGauge.qml" line="2111"/>
         <source>Close menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk meny</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="531"/>
@@ -983,7 +983,7 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="567"/>
         <source>Backround color</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="602"/>
@@ -1003,22 +1003,22 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="647"/>
         <source>Start value</source>
-        <translation type="unfinished"></translation>
+        <translation>Startverdi</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="680"/>
         <source>End value</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluttverdi</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="713"/>
         <source>Start angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Startvinkel</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="743"/>
         <source>End angle</source>
-        <translation type="unfinished"></translation>
+        <translation>Sluttvinkel</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="797"/>
@@ -1128,7 +1128,7 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="1595"/>
         <source>Label size</source>
-        <translation type="unfinished"></translation>
+        <translation>Etikettstørrelse</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="1626"/>
@@ -1138,7 +1138,7 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="1655"/>
         <source>Label Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Etikettskrift</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="1679"/>
@@ -1188,17 +1188,17 @@
     <message>
         <location filename="Gauges/RoundGauge.qml" line="2011"/>
         <source>Fontsize</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Skriftstørrelse</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="2042"/>
         <source>Font</source>
-        <translation type="unfinished"></translation>
+        <translation>Skrift</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="2063"/>
         <source>Font color</source>
-        <translation type="unfinished"></translation>
+        <translation>Skriftfarge</translation>
     </message>
     <message>
         <location filename="Gauges/RoundGauge.qml" line="2097"/>
@@ -1244,7 +1244,7 @@
     <message>
         <location filename="SerialSettings.qml" line="88"/>
         <source>RPM2</source>
-        <translation type="unfinished"></translation>
+        <translation>r/min 2</translation>
     </message>
     <message>
         <location filename="SerialSettings.qml" line="93"/>
@@ -1254,18 +1254,18 @@
     <message>
         <location filename="SerialSettings.qml" line="98"/>
         <source>Startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Oppstart</translation>
     </message>
     <message>
         <location filename="SerialSettings.qml" line="103"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Nettverk</translation>
     </message>
     <message>
         <location filename="SerialSettings.qml" line="109"/>
         <location filename="SerialSettings.qml" line="112"/>
         <source>Analog</source>
-        <translation type="unfinished"></translation>
+        <translation>Analog</translation>
     </message>
 </context>
 <context>
@@ -1278,12 +1278,12 @@
     <message>
         <location filename="Gauges/Squaregauge.qml" line="381"/>
         <source>Text font size</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tekstskriftstørrelse</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="389"/>
         <source>Text font style</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Tekstskriftstil</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="397"/>
@@ -1358,33 +1358,33 @@
     <message>
         <location filename="Gauges/Squaregauge.qml" line="535"/>
         <source>small</source>
-        <translation type="unfinished"></translation>
+        <translation>liten</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="543"/>
         <source>medium</source>
-        <translation type="unfinished"></translation>
+        <translation>middels</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="551"/>
         <source>large</source>
-        <translation type="unfinished"></translation>
+        <translation>stor</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="559"/>
         <source>custom</source>
-        <translation type="unfinished"></translation>
+        <translation>egendefinert</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="573"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="668"/>
         <location filename="Gauges/Squaregauge.qml" line="699"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>Bruk</translation>
     </message>
     <message>
         <location filename="Gauges/Squaregauge.qml" line="727"/>
@@ -1398,7 +1398,7 @@
         <location filename="Gauges/Squaregauge.qml" line="984"/>
         <location filename="Gauges/Squaregauge.qml" line="1013"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1407,23 +1407,23 @@
         <location filename="Gauges/StateGIF.qml" line="117"/>
         <location filename="Gauges/StateGIF.qml" line="145"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilde</translation>
     </message>
     <message>
         <location filename="Gauges/StateGIF.qml" line="117"/>
         <location filename="Gauges/StateGIF.qml" line="200"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation>Av</translation>
     </message>
     <message>
         <location filename="Gauges/StateGIF.qml" line="145"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation>På</translation>
     </message>
     <message>
         <location filename="Gauges/StateGIF.qml" line="174"/>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilde</translation>
     </message>
     <message>
         <location filename="Gauges/StateGIF.qml" line="188"/>
@@ -1434,12 +1434,12 @@
     <message>
         <location filename="Gauges/StateGIF.qml" line="215"/>
         <source>Delete image</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett bilde</translation>
     </message>
     <message>
         <location filename="Gauges/StateGIF.qml" line="221"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -1447,17 +1447,17 @@
     <message>
         <location filename="Gauges/Statepicture.qml" line="111"/>
         <source>Image off</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilde av</translation>
     </message>
     <message>
         <location filename="Gauges/Statepicture.qml" line="139"/>
         <source>Image on</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilde på</translation>
     </message>
     <message>
         <location filename="Gauges/Statepicture.qml" line="168"/>
         <source>Source</source>
-        <translation type="unfinished"></translation>
+        <translation>Kilde</translation>
     </message>
     <message>
         <location filename="Gauges/Statepicture.qml" line="182"/>
@@ -1467,12 +1467,12 @@
     <message>
         <location filename="Gauges/Statepicture.qml" line="196"/>
         <source>Delete image</source>
-        <translation type="unfinished"></translation>
+        <translation>Slett bilde</translation>
     </message>
     <message>
         <location filename="Gauges/Statepicture.qml" line="202"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
 </context>
 <context>
@@ -1486,43 +1486,43 @@
         <location filename="Gauges/Userdash1.qml" line="276"/>
         <location filename="Gauges/Userdash1.qml" line="285"/>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="285"/>
         <location filename="Gauges/Userdash1.qml" line="378"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="298"/>
         <location filename="Gauges/Userdash1.qml" line="327"/>
         <location filename="Gauges/Userdash1.qml" line="739"/>
         <source>Backround</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunn</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="298"/>
         <location filename="Gauges/Userdash1.qml" line="573"/>
         <location filename="Gauges/Userdash1.qml" line="586"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilde</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="327"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="369"/>
         <source>Extra:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekstra:</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="392"/>
         <location filename="Gauges/Userdash1.qml" line="753"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="520"/>
@@ -1542,7 +1542,7 @@
     <message>
         <location filename="Gauges/Userdash1.qml" line="560"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="586"/>
@@ -1553,47 +1553,47 @@
     <message>
         <location filename="Gauges/Userdash1.qml" line="600"/>
         <source>GIF</source>
-        <translation type="unfinished"></translation>
+        <translation>GIF</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="613"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="626"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farger</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="637"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Tøm</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="654"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="686"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="706"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Last inn</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="723"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="1221"/>
         <source>Frame color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rammefarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="1225"/>
@@ -1603,7 +1603,7 @@
     <message>
         <location filename="Gauges/Userdash1.qml" line="1229"/>
         <source>Backround color</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="1334"/>
@@ -1618,12 +1618,12 @@
     <message>
         <location filename="Gauges/Userdash1.qml" line="1342"/>
         <source>Main text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Hovedtekstfarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash1.qml" line="1456"/>
         <source>Close menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk meny</translation>
     </message>
 </context>
 <context>
@@ -1637,43 +1637,43 @@
         <location filename="Gauges/Userdash2.qml" line="269"/>
         <location filename="Gauges/Userdash2.qml" line="278"/>
         <source>Style</source>
-        <translation type="unfinished"></translation>
+        <translation>Stil</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="278"/>
         <location filename="Gauges/Userdash2.qml" line="371"/>
         <source>None</source>
-        <translation type="unfinished"></translation>
+        <translation>Ingen</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="291"/>
         <location filename="Gauges/Userdash2.qml" line="320"/>
         <location filename="Gauges/Userdash2.qml" line="672"/>
         <source>Backround</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunn</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="291"/>
         <location filename="Gauges/Userdash2.qml" line="507"/>
         <location filename="Gauges/Userdash2.qml" line="520"/>
         <source>Image</source>
-        <translation type="unfinished"></translation>
+        <translation>Bilde</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="320"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="362"/>
         <source>Extra:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekstra:</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="385"/>
         <location filename="Gauges/Userdash2.qml" line="685"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="455"/>
@@ -1693,7 +1693,7 @@
     <message>
         <location filename="Gauges/Userdash2.qml" line="494"/>
         <source>Text</source>
-        <translation type="unfinished"></translation>
+        <translation>Tekst</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="520"/>
@@ -1704,47 +1704,47 @@
     <message>
         <location filename="Gauges/Userdash2.qml" line="534"/>
         <source>GIF</source>
-        <translation type="unfinished"></translation>
+        <translation>GIF</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="547"/>
         <source>Save</source>
-        <translation type="unfinished"></translation>
+        <translation>Lagre</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="560"/>
         <source>Colors</source>
-        <translation type="unfinished"></translation>
+        <translation>Farger</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="571"/>
         <source>Clear</source>
-        <translation type="unfinished"></translation>
+        <translation>Tøm</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="588"/>
         <source>Import</source>
-        <translation type="unfinished"></translation>
+        <translation>Importer</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="620"/>
         <source>Export</source>
-        <translation type="unfinished"></translation>
+        <translation>Eksporter</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="639"/>
         <source>Load</source>
-        <translation type="unfinished"></translation>
+        <translation>Last inn</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="656"/>
         <source>Cancel</source>
-        <translation type="unfinished"></translation>
+        <translation>Avbryt</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="1148"/>
         <source>Frame color</source>
-        <translation type="unfinished"></translation>
+        <translation>Rammefarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="1152"/>
@@ -1754,7 +1754,7 @@
     <message>
         <location filename="Gauges/Userdash2.qml" line="1156"/>
         <source>Backround color</source>
-        <translation type="unfinished"></translation>
+        <translation>Bakgrunnsfarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash2.qml" line="1260"/>
@@ -1813,18 +1813,18 @@
     <message>
         <location filename="Gauges/Userdash3.qml" line="322"/>
         <source>Color</source>
-        <translation type="unfinished"></translation>
+        <translation>Farge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash3.qml" line="364"/>
         <source>Extra:</source>
-        <translation type="unfinished"></translation>
+        <translation>Ekstra:</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash3.qml" line="387"/>
         <location filename="Gauges/Userdash3.qml" line="688"/>
         <source>Close</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash3.qml" line="457"/>
@@ -1920,12 +1920,12 @@
     <message>
         <location filename="Gauges/Userdash3.qml" line="1271"/>
         <source>Main text color</source>
-        <translation type="unfinished"></translation>
+        <translation>Hovedtekstfarge</translation>
     </message>
     <message>
         <location filename="Gauges/Userdash3.qml" line="1385"/>
         <source>Close menu</source>
-        <translation type="unfinished"></translation>
+        <translation>Lukk meny</translation>
     </message>
 </context>
 <context>
@@ -1933,12 +1933,12 @@
     <message>
         <location filename="Gauges/Verticalbargauge.qml" line="82"/>
         <source>max value</source>
-        <translation type="unfinished"></translation>
+        <translation>maksverdi</translation>
     </message>
     <message>
         <location filename="Gauges/Verticalbargauge.qml" line="90"/>
         <source>min value</source>
-        <translation type="unfinished"></translation>
+        <translation>minimumsverdi</translation>
     </message>
     <message>
         <location filename="Gauges/Verticalbargauge.qml" line="98"/>
@@ -1948,7 +1948,7 @@
     <message>
         <location filename="Gauges/Verticalbargauge.qml" line="124"/>
         <source>Change title</source>
-        <translation type="unfinished"></translation>
+        <translation>Endre navn</translation>
     </message>
     <message>
         <location filename="Gauges/Verticalbargauge.qml" line="132"/>
@@ -1963,7 +1963,7 @@
         <location filename="Gauges/Verticalbargauge.qml" line="259"/>
         <location filename="Gauges/Verticalbargauge.qml" line="286"/>
         <source>OK</source>
-        <translation type="unfinished"></translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
@@ -1971,7 +1971,7 @@
     <message>
         <location filename="main.qml" line="19"/>
         <source>PowerTune </source>
-        <translation type="unfinished"></translation>
+        <translation>PowerTune </translation>
     </message>
 </context>
 </TS>
