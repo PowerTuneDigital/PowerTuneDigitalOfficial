@@ -1,1976 +1,2433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE TS>
 <TS version="2.1" language="de_DE">
 <context>
     <name>AnalogInputs</name>
     <message>
-        <location filename="AnalogInputs.qml" line="60" />
-        <location filename="AnalogInputs.qml" line="82" />
-        <location filename="AnalogInputs.qml" line="104" />
-        <location filename="AnalogInputs.qml" line="126" />
-        <location filename="AnalogInputs.qml" line="148" />
-        <location filename="AnalogInputs.qml" line="170" />
-        <location filename="AnalogInputs.qml" line="192" />
-        <location filename="AnalogInputs.qml" line="214" />
-        <location filename="AnalogInputs.qml" line="236" />
-        <location filename="AnalogInputs.qml" line="258" />
-        <location filename="AnalogInputs.qml" line="280" />
+        <location filename="../AnalogInputs.qml" line="59"/>
+        <location filename="../AnalogInputs.qml" line="81"/>
+        <location filename="../AnalogInputs.qml" line="103"/>
+        <location filename="../AnalogInputs.qml" line="125"/>
+        <location filename="../AnalogInputs.qml" line="147"/>
+        <location filename="../AnalogInputs.qml" line="169"/>
+        <location filename="../AnalogInputs.qml" line="191"/>
+        <location filename="../AnalogInputs.qml" line="213"/>
+        <location filename="../AnalogInputs.qml" line="235"/>
+        <location filename="../AnalogInputs.qml" line="257"/>
+        <location filename="../AnalogInputs.qml" line="279"/>
         <source>Analog</source>
-        <translation type="">&#12450;&#12490;&#12525;&#12464;</translation>
+        <translation>アナログ</translation>
     </message>
     <message>
-        <location filename="AnalogInputs.qml" line="323" />
+        <location filename="../AnalogInputs.qml" line="322"/>
+        <source>Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
         <source>Analogexplanation</source>
-        <translation type="">&#12300;Val.@0V&#12301;&#12501;&#12451;&#12540;&#12523;&#12489;&#12395; 0V &#12391;&#34920;&#31034;&#12373;&#12428;&#12427;&#20516;&#12434;&#20837;&#21147;&#12375;&#12289;&#12300;Val @5V&#12301;&#12501;&#12451;&#12540;&#12523;&#12489;&#12395; 5V &#12391;&#34920;&#31034;&#12373;&#12428;&#12427;&#20516;&#12434;&#20837;&#21147;&#12375;&#12414;&#12377;&#12290;&#38651;&#22311;&#12487;&#12540;&#12479; &#65291; &#12480;&#12483;&#12471;&#12517;&#12508;&#12540;&#12489; &#12450;&#12490;&#12525;&#12464;&#35373;&#23450; &#65309; &#35336;&#31639;&#20516;&#12290;</translation>
+        <translation type="vanished">「Val.@0V」フィールドに 0V で表示される値を入力し、「Val @5V」フィールドに 5V で表示される値を入力します。電圧データ ＋ ダッシュボード アナログ設定 ＝ 計算値。</translation>
     </message>
 </context>
 <context>
     <name>Camera</name>
     <message>
-        <location filename="Gauges/Camera.qml" line="126" />
+        <location filename="../Gauges/Camera.qml" line="126"/>
         <source>G</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Camera.qml" line="154" />
+        <location filename="../Gauges/Camera.qml" line="154"/>
         <source>THR</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Cluster</name>
     <message>
-        <location filename="Gauges/Cluster.qml" line="496" />
+        <location filename="../Gauges/Cluster.qml" line="496"/>
         <source>ADD</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="509" />
+        <location filename="../Gauges/Cluster.qml" line="509"/>
         <source>SAVE</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="545" />
+        <location filename="../Gauges/Cluster.qml" line="545"/>
         <source>COLORS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="805" />
+        <location filename="../Gauges/Cluster.qml" line="805"/>
         <source>Frame color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="809" />
+        <location filename="../Gauges/Cluster.qml" line="809"/>
         <source>Titlebar color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="813" />
+        <location filename="../Gauges/Cluster.qml" line="813"/>
         <source>Backround color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="920" />
+        <location filename="../Gauges/Cluster.qml" line="920"/>
         <source>Bargauge color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="924" />
+        <location filename="../Gauges/Cluster.qml" line="924"/>
         <source>Title text color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="928" />
+        <location filename="../Gauges/Cluster.qml" line="928"/>
         <source>Main text color:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Cluster.qml" line="1043" />
+        <location filename="../Gauges/Cluster.qml" line="1043"/>
         <source>CLOSE</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ConsultRegs</name>
     <message>
-        <location filename="ConsultRegs.qml" line="41" />
+        <location filename="../ConsultRegs.qml" line="41"/>
         <source>RPM</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="47" />
+        <location filename="../ConsultRegs.qml" line="47"/>
         <source>RPMREF</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="53" />
+        <location filename="../ConsultRegs.qml" line="53"/>
         <source>MAF Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="59" />
+        <location filename="../ConsultRegs.qml" line="59"/>
         <source>RH MAF Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="65" />
+        <location filename="../ConsultRegs.qml" line="65"/>
         <source>Coolant Temp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="71" />
+        <location filename="../ConsultRegs.qml" line="71"/>
         <source>LH O2 Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="77" />
+        <location filename="../ConsultRegs.qml" line="77"/>
         <source>RH O2 Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="83" />
+        <location filename="../ConsultRegs.qml" line="83"/>
         <source>Speed</source>
-        <translation type="">&#36895;&#24230;</translation>
+        <translation>速度</translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="90" />
+        <location filename="../ConsultRegs.qml" line="90"/>
         <source>Battery Voltage</source>
-        <translation type="">&#12496;&#12483;&#12486;&#12522;&#12540;&#38651;&#22311;</translation>
+        <translation>バッテリー電圧</translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="96" />
+        <location filename="../ConsultRegs.qml" line="96"/>
         <source>TPS</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="102" />
+        <location filename="../ConsultRegs.qml" line="102"/>
         <source>Fuel Temp.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="108" />
+        <location filename="../ConsultRegs.qml" line="108"/>
         <source>Intake Air Temp.</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="114" />
+        <location filename="../ConsultRegs.qml" line="114"/>
         <source>EGT</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="120" />
+        <location filename="../ConsultRegs.qml" line="120"/>
         <source>Digital Bit Register</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="126" />
+        <location filename="../ConsultRegs.qml" line="126"/>
         <source>Inj Time LH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="132" />
+        <location filename="../ConsultRegs.qml" line="132"/>
         <source>IgnitionTiming</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="138" />
+        <location filename="../ConsultRegs.qml" line="138"/>
         <source>AACValve</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="144" />
+        <location filename="../ConsultRegs.qml" line="144"/>
         <source>AF ALPHA LH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="150" />
+        <location filename="../ConsultRegs.qml" line="150"/>
         <source>AF ALPHA RH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="156" />
+        <location filename="../ConsultRegs.qml" line="156"/>
         <source>AF ALPHA SELFLEARN LH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="162" />
+        <location filename="../ConsultRegs.qml" line="162"/>
         <source>AF ALPHA SELFLEARN RH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="168" />
+        <location filename="../ConsultRegs.qml" line="168"/>
         <source>Digital Control Reg1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="174" />
+        <location filename="../ConsultRegs.qml" line="174"/>
         <source>Digital Control Reg2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="180" />
+        <location filename="../ConsultRegs.qml" line="180"/>
         <source>MRFCMNT</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="186" />
+        <location filename="../ConsultRegs.qml" line="186"/>
         <source>Injector Time RH</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="192" />
+        <location filename="../ConsultRegs.qml" line="192"/>
         <source>WasteGate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="198" />
+        <location filename="../ConsultRegs.qml" line="198"/>
         <source>MAP Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="204" />
+        <location filename="../ConsultRegs.qml" line="204"/>
         <source>EngineMount</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="210" />
+        <location filename="../ConsultRegs.qml" line="210"/>
         <source>Position Counter</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="216" />
+        <location filename="../ConsultRegs.qml" line="216"/>
         <source>Purg. Vol. Control Valve</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="222" />
+        <location filename="../ConsultRegs.qml" line="222"/>
         <source>Fuel Tank Temp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="228" />
+        <location filename="../ConsultRegs.qml" line="228"/>
         <source>FPCM DR, Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="234" />
+        <location filename="../ConsultRegs.qml" line="234"/>
         <source>Fuel Gauge, Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="240" />
+        <location filename="../ConsultRegs.qml" line="240"/>
         <source>FR O2 Heater-B1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="246" />
+        <location filename="../ConsultRegs.qml" line="246"/>
         <source>FR O2 Heater-B2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="252" />
+        <location filename="../ConsultRegs.qml" line="252"/>
         <source>Ignition Switch</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="258" />
+        <location filename="../ConsultRegs.qml" line="258"/>
         <source>CAL/LD Value, %</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="264" />
+        <location filename="../ConsultRegs.qml" line="264"/>
         <source>B/Fuel Schedule,ms</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="270" />
+        <location filename="../ConsultRegs.qml" line="270"/>
         <source>RR O2 Sensor Volt</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="276" />
+        <location filename="../ConsultRegs.qml" line="276"/>
         <source>RR O2 Sensor B2 Volt</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="282" />
+        <location filename="../ConsultRegs.qml" line="282"/>
         <source>Absolute TPS Volt</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="288" />
+        <location filename="../ConsultRegs.qml" line="288"/>
         <source>MAF gm/S</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="294" />
+        <location filename="../ConsultRegs.qml" line="294"/>
         <source>Evap System Press Volt</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="300" />
+        <location filename="../ConsultRegs.qml" line="300"/>
         <source>Abs. Press. Sens. Volt</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="ConsultRegs.qml" line="306" />
+        <location filename="../ConsultRegs.qml" line="306"/>
         <source>FPCM F/P Voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>DashSelector</name>
+    <message>
+        <location filename="../Settings/DashSelector.qml" line="113"/>
+        <source>ActiveDashboards</source>
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>ExBoardAnalog</name>
     <message>
-        <location filename="ExBoardAnalog.qml" line="313" />
+        <location filename="../ExBoardAnalog.qml" line="312"/>
         <source>Damping</source>
-        <translation type="">&#12480;&#12531;&#12500;&#12531;&#12464;</translation>
+        <translation>ダンピング</translation>
     </message>
     <message>
-        <location filename="ExBoardAnalog.qml" line="482" />
+        <location filename="../ExBoardAnalog.qml" line="481"/>
         <source>Version</source>
-        <translation type="">&#12496;&#12540;&#12472;&#12519;&#12531;</translation>
+        <translation>バージョン</translation>
     </message>
     <message>
-        <location filename="ExBoardAnalog.qml" line="506" />
+        <location filename="../ExBoardAnalog.qml" line="505"/>
         <source>Cylinders</source>
-        <translation type="">- &#12471;&#12522;&#12531;&#12480;&#12540;</translation>
+        <translation>- シリンダー</translation>
     </message>
     <message>
-        <location filename="ExBoardAnalog.qml" line="553" />
+        <location filename="../ExBoardAnalog.qml" line="552"/>
         <source>Voltage divider jumpers</source>
-        <translation type="">&#38651;&#22311;&#20998;&#12369;&#12472;&#12515;&#12531;&#12497;&#12540;</translation>
+        <translation>電圧分けジャンパー</translation>
     </message>
     <message>
-        <location filename="ExBoardAnalog.qml" line="564" />
+        <location filename="../ExBoardAnalog.qml" line="563"/>
         <source>Temp In.</source>
-        <translation type="">&#28201;&#24230;&#12475;&#12531;&#12469;&#12540;</translation>
+        <translation>温度センサー</translation>
     </message>
 </context>
 <context>
     <name>HaltechFlags</name>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="26" />
+        <location filename="../Gauges/HaltechFlags.qml" line="26"/>
         <source>NOS SW</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="39" />
+        <location filename="../Gauges/HaltechFlags.qml" line="39"/>
         <source>NOS</source>
-        <translation type="">NOS</translation>
+        <translation>NOS</translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="55" />
+        <location filename="../Gauges/HaltechFlags.qml" line="55"/>
         <source>Gear SW</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="68" />
+        <location filename="../Gauges/HaltechFlags.qml" line="68"/>
         <source>DecelCut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="83" />
+        <location filename="../Gauges/HaltechFlags.qml" line="83"/>
         <source>Tr.Thro</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="95" />
+        <location filename="../Gauges/HaltechFlags.qml" line="95"/>
         <source>Brake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="111" />
+        <location filename="../Gauges/HaltechFlags.qml" line="111"/>
         <source>Clutch</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="123" />
-        <location filename="Gauges/HaltechFlags.qml" line="322" />
+        <location filename="../Gauges/HaltechFlags.qml" line="123"/>
+        <location filename="../Gauges/HaltechFlags.qml" line="322"/>
         <source>Reserved</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="135" />
+        <location filename="../Gauges/HaltechFlags.qml" line="135"/>
         <source>ALag Launch</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="148" />
+        <location filename="../Gauges/HaltechFlags.qml" line="148"/>
         <source>Antilag SW</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="160" />
+        <location filename="../Gauges/HaltechFlags.qml" line="160"/>
         <source>RevLim SW</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="173" />
+        <location filename="../Gauges/HaltechFlags.qml" line="173"/>
         <source>R A.Lag SW</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="189" />
+        <location filename="../Gauges/HaltechFlags.qml" line="189"/>
         <source>Flat Shift</source>
-        <translation type="">&#12501;&#12521;&#12483;&#12488;&#12471;&#12501;&#12488;</translation>
+        <translation>フラットシフト</translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="201" />
+        <location filename="../Gauges/HaltechFlags.qml" line="201"/>
         <source>Timed Duty</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="213" />
+        <location filename="../Gauges/HaltechFlags.qml" line="213"/>
         <source>Torque Red</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="225" />
+        <location filename="../Gauges/HaltechFlags.qml" line="225"/>
         <source>Torque Red Cut</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="238" />
+        <location filename="../Gauges/HaltechFlags.qml" line="238"/>
         <source>MIL</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="250" />
+        <location filename="../Gauges/HaltechFlags.qml" line="250"/>
         <source>Batt. Light</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="262" />
+        <location filename="../Gauges/HaltechFlags.qml" line="262"/>
         <source>Limp Mode</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="274" />
+        <location filename="../Gauges/HaltechFlags.qml" line="274"/>
         <source>L.Indicator</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="286" />
+        <location filename="../Gauges/HaltechFlags.qml" line="286"/>
         <source>R.Indicator</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="298" />
+        <location filename="../Gauges/HaltechFlags.qml" line="298"/>
         <source>High Beam</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/HaltechFlags.qml" line="310" />
+        <location filename="../Gauges/HaltechFlags.qml" line="310"/>
         <source>Hand Brake</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>MyTextLabel</name>
     <message>
-        <location filename="Gauges/MyTextLabel.qml" line="207" />
+        <location filename="../Gauges/MyTextLabel.qml" line="206"/>
         <source>Warn value high</source>
-        <translation type="">&#26368;&#22823;&#35686;&#21578;&#20516;</translation>
+        <translation>最大警告値</translation>
     </message>
     <message>
-        <location filename="Gauges/MyTextLabel.qml" line="240" />
+        <location filename="../Gauges/MyTextLabel.qml" line="239"/>
         <source>Warn value low</source>
-        <translation type="">&#26368;&#20302;&#35686;&#21578;&#20516;</translation>
+        <translation>最低警告値</translation>
     </message>
     <message>
-        <location filename="Gauges/MyTextLabel.qml" line="272" />
+        <location filename="../Gauges/MyTextLabel.qml" line="271"/>
         <source>Use Datasource</source>
-        <translation type="">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;&#20351;&#29992;</translation>
+        <translation>データソース使用</translation>
     </message>
     <message>
-        <location filename="Gauges/MyTextLabel.qml" line="282" />
+        <location filename="../Gauges/MyTextLabel.qml" line="281"/>
         <source>Delete</source>
-        <translation type="">&#28040;&#21435;</translation>
+        <translation>消去</translation>
     </message>
     <message>
-        <location filename="Gauges/MyTextLabel.qml" line="288" />
+        <location filename="../Gauges/MyTextLabel.qml" line="287"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
     <name>OBDPIDS</name>
     <message>
-        <location filename="OBDPIDS.qml" line="41" />
+        <location filename="../OBDPIDS.qml" line="41"/>
         <source>Calculated Engine LOAD</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="47" />
+        <location filename="../OBDPIDS.qml" line="47"/>
         <source>Coolant Temp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="53" />
-        <source>Short term fuel trim&#8212;Bank 1</source>
-        <translation type="unfinished" />
+        <location filename="../OBDPIDS.qml" line="53"/>
+        <source>Short term fuel trim—Bank 1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="59" />
-        <source>Long term fuel trim&#8212;Bank 1</source>
-        <translation type="unfinished" />
+        <location filename="../OBDPIDS.qml" line="59"/>
+        <source>Long term fuel trim—Bank 1</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="65" />
-        <source>Short term fuel trim&#8212;Bank 2</source>
-        <translation type="unfinished" />
+        <location filename="../OBDPIDS.qml" line="65"/>
+        <source>Short term fuel trim—Bank 2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="71" />
-        <source>Long term fuel trim&#8212;Bank 2</source>
-        <translation type="unfinished" />
+        <location filename="../OBDPIDS.qml" line="71"/>
+        <source>Long term fuel trim—Bank 2</source>
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="77" />
+        <location filename="../OBDPIDS.qml" line="77"/>
         <source>Fuel pressure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="83" />
+        <location filename="../OBDPIDS.qml" line="83"/>
         <source>Intake mani abs pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="89" />
+        <location filename="../OBDPIDS.qml" line="89"/>
         <source>RPM</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="95" />
+        <location filename="../OBDPIDS.qml" line="95"/>
         <source>Speed</source>
-        <translation type="">&#36895;&#24230;</translation>
+        <translation>速度</translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="101" />
+        <location filename="../OBDPIDS.qml" line="101"/>
         <source>Timing advance</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="107" />
+        <location filename="../OBDPIDS.qml" line="107"/>
         <source>Intake air temp (IAT)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="113" />
+        <location filename="../OBDPIDS.qml" line="113"/>
         <source>MAF rate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="119" />
+        <location filename="../OBDPIDS.qml" line="119"/>
         <source>Throttle pos</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="125" />
+        <location filename="../OBDPIDS.qml" line="125"/>
         <source>Oxygen Sen 1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="131" />
+        <location filename="../OBDPIDS.qml" line="131"/>
         <source>Oxygen Sen 2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="137" />
+        <location filename="../OBDPIDS.qml" line="137"/>
         <source>Oxygen Sen 3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="143" />
+        <location filename="../OBDPIDS.qml" line="143"/>
         <source>Oxygen Sen 4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="149" />
+        <location filename="../OBDPIDS.qml" line="149"/>
         <source>Oxygen Sen 5</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="155" />
+        <location filename="../OBDPIDS.qml" line="155"/>
         <source>Oxygen Sen 6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="161" />
+        <location filename="../OBDPIDS.qml" line="161"/>
         <source>Oxygen Sen 7</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="167" />
+        <location filename="../OBDPIDS.qml" line="167"/>
         <source>Oxygen Sen 8</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="174" />
+        <location filename="../OBDPIDS.qml" line="174"/>
         <source>Fuel Rail Rel. Pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="180" />
+        <location filename="../OBDPIDS.qml" line="180"/>
         <source>Fuel Rail Gauge Pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="186" />
+        <location filename="../OBDPIDS.qml" line="186"/>
         <source>Oxygen S.1 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="192" />
+        <location filename="../OBDPIDS.qml" line="192"/>
         <source>Oxygen S.2 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="197" />
+        <location filename="../OBDPIDS.qml" line="197"/>
         <source>Oxygen S.3 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="203" />
+        <location filename="../OBDPIDS.qml" line="203"/>
         <source>Oxygen S.4 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="209" />
+        <location filename="../OBDPIDS.qml" line="209"/>
         <source>Oxygen S.5 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="215" />
+        <location filename="../OBDPIDS.qml" line="215"/>
         <source>Oxygen S.6 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="220" />
+        <location filename="../OBDPIDS.qml" line="220"/>
         <source>Oxygen S.7 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="226" />
+        <location filename="../OBDPIDS.qml" line="226"/>
         <source>Oxygen S.8 AFR /V</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="233" />
+        <location filename="../OBDPIDS.qml" line="233"/>
         <source>Fuel Tank Level</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="241" />
+        <location filename="../OBDPIDS.qml" line="241"/>
         <source>Evap. System Vap Pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="247" />
+        <location filename="../OBDPIDS.qml" line="247"/>
         <source>Abs.Baro Pressure</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="253" />
+        <location filename="../OBDPIDS.qml" line="253"/>
         <source>Oxygen Sensor 1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="259" />
+        <location filename="../OBDPIDS.qml" line="259"/>
         <source>Oxygen Sensor 2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="265" />
+        <location filename="../OBDPIDS.qml" line="265"/>
         <source>Oxygen Sensor 3</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="271" />
+        <location filename="../OBDPIDS.qml" line="271"/>
         <source>Oxygen Sensor 4</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="277" />
+        <location filename="../OBDPIDS.qml" line="277"/>
         <source>Oxygen Sensor 5</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="283" />
+        <location filename="../OBDPIDS.qml" line="283"/>
         <source>Oxygen Sensor 6</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="289" />
+        <location filename="../OBDPIDS.qml" line="289"/>
         <source>Oxygen Sensor 7</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="295" />
+        <location filename="../OBDPIDS.qml" line="295"/>
         <source>Oxygen Sensor 8</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="301" />
+        <location filename="../OBDPIDS.qml" line="301"/>
         <source>Cat Temp: Bank 1,S1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="306" />
+        <location filename="../OBDPIDS.qml" line="306"/>
         <source>Cat Temp: Bank 2,S1</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="312" />
+        <location filename="../OBDPIDS.qml" line="312"/>
         <source>Cat Temp: Bank 1,S2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="318" />
+        <location filename="../OBDPIDS.qml" line="318"/>
         <source>Cat Temp: Bank 2,S2</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="324" />
-        <source />
-        <translation />
+        <location filename="OBDPIDS.qml" line="324"/>
+        <source></source>
+        <translation></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="338" />
+        <location filename="../OBDPIDS.qml" line="338"/>
         <source>Battery voltage</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="344" />
+        <location filename="../OBDPIDS.qml" line="344"/>
         <source>Absolute load value</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="357" />
+        <location filename="../OBDPIDS.qml" line="357"/>
         <source>Relative throttle pos</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="363" />
+        <location filename="../OBDPIDS.qml" line="363"/>
         <source>Ambient air temp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="369" />
+        <location filename="../OBDPIDS.qml" line="369"/>
         <source>Abs throttle pos B</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="375" />
+        <location filename="../OBDPIDS.qml" line="375"/>
         <source>Abs throttle pos C</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="381" />
+        <location filename="../OBDPIDS.qml" line="381"/>
         <source>Accel ped pos D</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="387" />
+        <location filename="../OBDPIDS.qml" line="387"/>
         <source>Accel ped pos E</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="393" />
+        <location filename="../OBDPIDS.qml" line="393"/>
         <source>Accel ped pos F</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="399" />
+        <location filename="../OBDPIDS.qml" line="399"/>
         <source>Com. throttle act</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="405" />
-        <location filename="OBDPIDS.qml" line="411" />
+        <location filename="../OBDPIDS.qml" line="405"/>
+        <location filename="../OBDPIDS.qml" line="411"/>
         <source>Time run with MIL on</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="417" />
+        <location filename="../OBDPIDS.qml" line="417"/>
         <source>Time since errors cleared</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="429" />
+        <location filename="../OBDPIDS.qml" line="429"/>
         <source>Fuel Type</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="435" />
+        <location filename="../OBDPIDS.qml" line="435"/>
         <source>Ethanol fuel %</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="441" />
+        <location filename="../OBDPIDS.qml" line="441"/>
         <source>Abs Evap sys Vapor Pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="447" />
+        <location filename="../OBDPIDS.qml" line="447"/>
         <source>Evap sys Vapor Pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="477" />
+        <location filename="../OBDPIDS.qml" line="477"/>
         <source>Fuel rail abs pres</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="483" />
+        <location filename="../OBDPIDS.qml" line="483"/>
         <source>Rel accel pedal pos</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="489" />
+        <location filename="../OBDPIDS.qml" line="489"/>
         <source>Hybrid batt remaining life</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="495" />
+        <location filename="../OBDPIDS.qml" line="495"/>
         <source>Engine oil temp</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="501" />
+        <location filename="../OBDPIDS.qml" line="501"/>
         <source>Injection timing</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="507" />
+        <location filename="../OBDPIDS.qml" line="507"/>
         <source>Fuel rate</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="525" />
+        <location filename="../OBDPIDS.qml" line="525"/>
         <source>Demand engine % torque</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="531" />
+        <location filename="../OBDPIDS.qml" line="531"/>
         <source>Act engine % torque</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="537" />
+        <location filename="../OBDPIDS.qml" line="537"/>
         <source>Engine reference torque</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="543" />
+        <location filename="../OBDPIDS.qml" line="543"/>
         <source>Eng percent torque data</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="549" />
+        <location filename="../OBDPIDS.qml" line="549"/>
         <source>Mass air flow sensor</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="555" />
+        <location filename="../OBDPIDS.qml" line="555"/>
         <source>Engine coolant temp (ECT)</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="561" />
+        <location filename="../OBDPIDS.qml" line="561"/>
         <source>Intake air temperature</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="OBDPIDS.qml" line="586" />
+        <location filename="../OBDPIDS.qml" line="586"/>
         <source>EGT</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>Picture</name>
     <message>
-        <location filename="Gauges/Picture.qml" line="110" />
+        <location filename="../Gauges/Picture.qml" line="109"/>
         <source>Delete image</source>
-        <translation type="">&#30011;&#20687;&#28040;&#21435;</translation>
+        <translation>画像消去</translation>
     </message>
     <message>
-        <location filename="Gauges/Picture.qml" line="116" />
+        <location filename="../Gauges/Picture.qml" line="115"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
     <name>RoundGauge</name>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="364" />
+        <location filename="../Gauges/RoundGauge.qml" line="363"/>
         <source>Test sweep</source>
-        <translation type="">&#12486;&#12473;&#12488;&#12473;&#12452;&#12540;&#12503;</translation>
+        <translation>テストスイープ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="371" />
+        <location filename="../Gauges/RoundGauge.qml" line="370"/>
         <source>Datasource</source>
-        <translation type="">&#12487;&#12540;&#12479;&#12477;&#12540;&#12473;</translation>
+        <translation>データソース</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="377" />
+        <location filename="../Gauges/RoundGauge.qml" line="376"/>
         <source>Size and ring</source>
-        <translation type="">&#12469;&#12452;&#12474;&#12392;&#12522;&#12531;&#12464;</translation>
+        <translation>サイズとリング</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="384" />
+        <location filename="../Gauges/RoundGauge.qml" line="383"/>
         <source>Start Stop values</source>
-        <translation type="">&#38283;&#22987;&#20516;&#12392;&#32066;&#20102;&#20516;</translation>
+        <translation>開始値と終了値</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="389" />
+        <location filename="../Gauges/RoundGauge.qml" line="388"/>
         <source>Needle</source>
-        <translation type="">&#37341;</translation>
+        <translation>針</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="398" />
+        <location filename="../Gauges/RoundGauge.qml" line="397"/>
         <source>Needle trail</source>
-        <translation type="">&#37341;&#36321;</translation>
+        <translation>針跡</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="408" />
+        <location filename="../Gauges/RoundGauge.qml" line="407"/>
         <source>Minor ticks</source>
-        <translation type="">&#21103;&#23610;</translation>
+        <translation>副尺</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="417" />
+        <location filename="../Gauges/RoundGauge.qml" line="416"/>
         <source>Major ticks</source>
-        <translation type="">&#20027;&#23610;</translation>
+        <translation>主尺</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="426" />
+        <location filename="../Gauges/RoundGauge.qml" line="425"/>
         <source>Labels</source>
-        <translation type="">&#12521;&#12505;&#12523;</translation>
+        <translation>ラベル</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="436" />
+        <location filename="../Gauges/RoundGauge.qml" line="435"/>
         <source>Warnings</source>
-        <translation type="">&#35686;&#21578;</translation>
+        <translation>警告</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="441" />
+        <location filename="../Gauges/RoundGauge.qml" line="440"/>
         <source>Description text</source>
-        <translation type="">&#35500;&#26126;&#25991;&#23383;</translation>
+        <translation>説明文字</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="449" />
+        <location filename="../Gauges/RoundGauge.qml" line="448"/>
         <source>Delete gauge</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#28040;&#12377;</translation>
+        <translation>メーター消す</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="503" />
-        <location filename="Gauges/RoundGauge.qml" line="623" />
-        <location filename="Gauges/RoundGauge.qml" line="771" />
-        <location filename="Gauges/RoundGauge.qml" line="972" />
-        <location filename="Gauges/RoundGauge.qml" line="1107" />
-        <location filename="Gauges/RoundGauge.qml" line="1308" />
-        <location filename="Gauges/RoundGauge.qml" line="1536" />
-        <location filename="Gauges/RoundGauge.qml" line="1747" />
-        <location filename="Gauges/RoundGauge.qml" line="1924" />
-        <location filename="Gauges/RoundGauge.qml" line="2111" />
+        <location filename="../Gauges/RoundGauge.qml" line="502"/>
+        <location filename="../Gauges/RoundGauge.qml" line="622"/>
+        <location filename="../Gauges/RoundGauge.qml" line="770"/>
+        <location filename="../Gauges/RoundGauge.qml" line="971"/>
+        <location filename="../Gauges/RoundGauge.qml" line="1106"/>
+        <location filename="../Gauges/RoundGauge.qml" line="1307"/>
+        <location filename="../Gauges/RoundGauge.qml" line="1535"/>
+        <location filename="../Gauges/RoundGauge.qml" line="1746"/>
+        <location filename="../Gauges/RoundGauge.qml" line="1923"/>
+        <location filename="../Gauges/RoundGauge.qml" line="2110"/>
         <source>Close menu</source>
-        <translation type="">&#12513;&#12491;&#12517;&#12540;&#12434;&#38281;&#12376;&#12427;</translation>
+        <translation>メニューを閉じる</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="531" />
+        <location filename="../Gauges/RoundGauge.qml" line="530"/>
         <source>Gauge size</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12469;&#12452;&#12474;</translation>
+        <translation>メーターサイズ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="567" />
+        <location filename="../Gauges/RoundGauge.qml" line="566"/>
         <source>Backround color</source>
-        <translation type="">&#32972;&#26223;&#33394;</translation>
+        <translation>背景色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="602" />
+        <location filename="../Gauges/RoundGauge.qml" line="601"/>
         <source>Needle visible</source>
-        <translation type="">&#37341;&#21487;&#35222;</translation>
+        <translation>針可視</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="609" />
+        <location filename="../Gauges/RoundGauge.qml" line="608"/>
         <source>Needle button visible</source>
-        <translation type="">&#37341;&#12398;&#12508;&#12479;&#12531;&#21487;&#35222;</translation>
+        <translation>針のボタン可視</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="616" />
+        <location filename="../Gauges/RoundGauge.qml" line="615"/>
         <source>Outer ring visible</source>
-        <translation type="">&#22806;&#36650;&#21487;&#35222;</translation>
+        <translation>外輪可視</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="647" />
+        <location filename="../Gauges/RoundGauge.qml" line="646"/>
         <source>Start value</source>
-        <translation type="">&#38283;&#22987;&#20516;</translation>
+        <translation>開始値</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="680" />
+        <location filename="../Gauges/RoundGauge.qml" line="679"/>
         <source>End value</source>
-        <translation type="">&#32066;&#20102;&#20516;</translation>
+        <translation>終了値</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="713" />
+        <location filename="../Gauges/RoundGauge.qml" line="712"/>
         <source>Start angle</source>
-        <translation type="">&#38283;&#22987;&#35282;&#24230;</translation>
+        <translation>開始角度</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="743" />
+        <location filename="../Gauges/RoundGauge.qml" line="742"/>
         <source>End angle</source>
-        <translation type="">&#32066;&#20102;&#35282;&#24230;</translation>
+        <translation>終了角度</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="797" />
+        <location filename="../Gauges/RoundGauge.qml" line="796"/>
         <source>Needle color</source>
-        <translation type="">&#37341;&#33394;</translation>
+        <translation>針色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="860" />
+        <location filename="../Gauges/RoundGauge.qml" line="859"/>
         <source>Needle lenght</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="887" />
+        <location filename="../Gauges/RoundGauge.qml" line="886"/>
         <source>Needle base width</source>
-        <translation type="">&#37341;&#12398;&#22522;&#37096;&#24133;</translation>
+        <translation>針の基部幅</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="915" />
+        <location filename="../Gauges/RoundGauge.qml" line="914"/>
         <source>Needle tip width</source>
-        <translation type="">&#37341;&#12398;&#20808;&#31471;&#24133;</translation>
+        <translation>針の先端幅</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="944" />
+        <location filename="../Gauges/RoundGauge.qml" line="943"/>
         <source>Needle offset</source>
-        <translation type="">&#37341;&#35036;&#27491;</translation>
+        <translation>針補正</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="996" />
+        <location filename="../Gauges/RoundGauge.qml" line="995"/>
         <source>Outer needle trail</source>
-        <translation type="">&#22806;&#37341;&#36321;</translation>
+        <translation>外針跡</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1035" />
+        <location filename="../Gauges/RoundGauge.qml" line="1034"/>
         <source>Middle needle trail</source>
-        <translation type="">&#20013;&#37341;&#36321;</translation>
+        <translation>中針跡</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1071" />
+        <location filename="../Gauges/RoundGauge.qml" line="1070"/>
         <source>Lower needle trail</source>
-        <translation type="">&#20869;&#37341;&#36321;</translation>
+        <translation>内針跡</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1130" />
+        <location filename="../Gauges/RoundGauge.qml" line="1129"/>
         <source>Minor tickmark height</source>
-        <translation type="">&#21103;&#23610;&#39640;&#12373;</translation>
+        <translation>副尺高さ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1158" />
+        <location filename="../Gauges/RoundGauge.qml" line="1157"/>
         <source>Minor tickmark width</source>
-        <translation type="">&#21103;&#23610;&#24133;</translation>
+        <translation>副尺幅</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1185" />
+        <location filename="../Gauges/RoundGauge.qml" line="1184"/>
         <source>Minor tickmark steps</source>
-        <translation type="">&#21103;&#23610;</translation>
+        <translation>副尺</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1214" />
+        <location filename="../Gauges/RoundGauge.qml" line="1213"/>
         <source>Minor tickmark inset</source>
-        <translation type="">&#21103;&#23610;&#24046;&#12375;&#36796;&#12415;</translation>
+        <translation>副尺差し込み</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1240" />
+        <location filename="../Gauges/RoundGauge.qml" line="1239"/>
         <source>Minor tick active color</source>
-        <translation type="">&#21103;&#23610;&#20572;&#27490;&#20013;&#12398;&#33394;</translation>
+        <translation>副尺停止中の色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1274" />
+        <location filename="../Gauges/RoundGauge.qml" line="1273"/>
         <source>Minor tick inactive color</source>
-        <translation type="" />
+        <translation></translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1336" />
+        <location filename="../Gauges/RoundGauge.qml" line="1335"/>
         <source>Major tick steps</source>
-        <translation type="">&#20027;&#23610;&#12473;&#12486;&#12483;&#12503;</translation>
+        <translation>主尺ステップ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1375" />
+        <location filename="../Gauges/RoundGauge.qml" line="1374"/>
         <source>Major tickmark height</source>
-        <translation type="">&#20027;&#23610;&#39640;&#12373;</translation>
+        <translation>主尺高さ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1405" />
+        <location filename="../Gauges/RoundGauge.qml" line="1404"/>
         <source>Major tickmark width</source>
-        <translation type="">&#20027;&#23610;&#24133;</translation>
+        <translation>主尺幅</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1436" />
+        <location filename="../Gauges/RoundGauge.qml" line="1435"/>
         <source>Major tickmark inset</source>
-        <translation type="">&#20027;&#23610;&#24046;&#12375;&#36796;&#12415;</translation>
+        <translation>主尺差し込み</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1468" />
+        <location filename="../Gauges/RoundGauge.qml" line="1467"/>
         <source>Tickmark active color</source>
-        <translation type="">&#20027;&#23610;&#20572;&#27490;&#20013;&#12398;&#33394;</translation>
+        <translation>主尺停止中の色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1502" />
+        <location filename="../Gauges/RoundGauge.qml" line="1501"/>
         <source>Tickmark inactive color</source>
-        <translation type="">&#20027;&#23610;&#20572;&#27490;&#20013;&#12398;&#33394;</translation>
+        <translation>主尺停止中の色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1561" />
+        <location filename="../Gauges/RoundGauge.qml" line="1560"/>
         <source>Major label steps</source>
-        <translation type="">&#20027;&#12521;&#12505;&#12523;&#12473;&#12486;&#12483;&#12503;</translation>
+        <translation>主ラベルステップ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1595" />
+        <location filename="../Gauges/RoundGauge.qml" line="1594"/>
         <source>Label size</source>
-        <translation type="">&#12521;&#12505;&#12523;&#12469;&#12452;&#12474;</translation>
+        <translation>ラベルサイズ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1626" />
+        <location filename="../Gauges/RoundGauge.qml" line="1625"/>
         <source>Label inset</source>
-        <translation type="">&#12521;&#12505;&#12523;&#24046;&#12375;&#36796;&#12415;</translation>
+        <translation>ラベル差し込み</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1655" />
+        <location filename="../Gauges/RoundGauge.qml" line="1654"/>
         <source>Label Font</source>
-        <translation type="">&#12521;&#12505;&#12523;&#12501;&#12457;&#12531;&#12488;</translation>
+        <translation>ラベルフォント</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1679" />
+        <location filename="../Gauges/RoundGauge.qml" line="1678"/>
         <source>Label active color</source>
-        <translation type="">&#12521;&#12505;&#12523;&#31292;&#20685;&#20013;&#12398;&#33394;</translation>
+        <translation>ラベル稼働中の色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1713" />
+        <location filename="../Gauges/RoundGauge.qml" line="1712"/>
         <source>Label inactive color</source>
-        <translation type="">&#12521;&#12505;&#12523;&#20572;&#27490;&#20013;&#12398;&#33394;</translation>
+        <translation>ラベル停止中の色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1773" />
+        <location filename="../Gauges/RoundGauge.qml" line="1772"/>
         <source>Low warning trigger</source>
-        <translation type="">&#26368;&#20302;&#20516;&#35686;&#21578;&#12488;&#12522;&#12460;&#12540;</translation>
+        <translation>最低値警告トリガー</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1801" />
+        <location filename="../Gauges/RoundGauge.qml" line="1800"/>
         <source>High warning trigger</source>
-        <translation type="">&#26368;&#39640;&#20516;&#35686;&#21578;&#12488;&#12522;&#12460;&#12540;</translation>
+        <translation>最高値警告トリガー</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1831" />
+        <location filename="../Gauges/RoundGauge.qml" line="1830"/>
         <source>Red area inset</source>
-        <translation type="">&#36196;&#12456;&#12522;&#12450;&#24046;&#12375;&#36796;&#12415;</translation>
+        <translation>赤エリア差し込み</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1862" />
+        <location filename="../Gauges/RoundGauge.qml" line="1861"/>
         <source>Red start</source>
-        <translation type="">&#36196;&#12456;&#12522;&#12450;&#12473;&#12479;&#12540;&#12488;</translation>
+        <translation>赤エリアスタート</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1893" />
+        <location filename="../Gauges/RoundGauge.qml" line="1892"/>
         <source>Red area width</source>
-        <translation type="">&#36196;&#12456;&#12522;&#12450;&#24133;</translation>
+        <translation>赤エリア幅</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1948" />
+        <location filename="../Gauges/RoundGauge.qml" line="1947"/>
         <source>Horizontal position</source>
-        <translation type="">&#27700;&#24179;&#20301;</translation>
+        <translation>水平位</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="1979" />
+        <location filename="../Gauges/RoundGauge.qml" line="1978"/>
         <source>Vertical position</source>
-        <translation type="">&#22402;&#30452;&#20301;&#32622;</translation>
+        <translation>垂直位置</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="2011" />
+        <location filename="../Gauges/RoundGauge.qml" line="2010"/>
         <source>Fontsize</source>
-        <translation type="">&#12501;&#12457;&#12531;&#12488;&#12469;&#12452;&#12474;</translation>
+        <translation>フォントサイズ</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="2042" />
+        <location filename="../Gauges/RoundGauge.qml" line="2041"/>
         <source>Font</source>
-        <translation type="">&#12501;&#12457;&#12531;&#12488;</translation>
+        <translation>フォント</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="2063" />
+        <location filename="../Gauges/RoundGauge.qml" line="2062"/>
         <source>Font color</source>
-        <translation type="">&#12501;&#12457;&#12531;&#12488;&#33394;</translation>
+        <translation>フォント色</translation>
     </message>
     <message>
-        <location filename="Gauges/RoundGauge.qml" line="2097" />
+        <location filename="../Gauges/RoundGauge.qml" line="2096"/>
         <source>Display Text</source>
-        <translation type="">&#25991;&#23383;&#34920;&#31034;</translation>
+        <translation>文字表示</translation>
     </message>
 </context>
 <context>
     <name>Screentoggle</name>
     <message>
-        <location filename="Gauges/Screentoggle.qml" line="37" />
+        <location filename="../Gauges/Screentoggle.qml" line="37"/>
         <source>Press to switch off screen</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
 </context>
 <context>
     <name>SerialSettings</name>
     <message>
-        <location filename="SerialSettings.qml" line="57" />
+        <location filename="../SerialSettings.qml" line="56"/>
         <source>Main</source>
-        <translation type="">&#12513;&#12452;&#12531;</translation>
+        <translation>メイン</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="64" />
+        <location filename="../SerialSettings.qml" line="63"/>
         <source>Dash Sel.</source>
-        <translation type="">&#12480;&#12483;&#12471;&#12517;&#12508;&#12540;&#12489;&#36984;&#25246;</translation>
+        <translation>ダッシュボード選択</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="69" />
+        <location filename="../SerialSettings.qml" line="68"/>
         <source>Sensehat</source>
-        <translation type="">sensehat</translation>
+        <translation>sensehat</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="73" />
+        <location filename="../SerialSettings.qml" line="72"/>
         <source>Warn / Gear</source>
-        <translation type="">&#27880;&#24847;/&#12462;&#12450;</translation>
+        <translation>注意/ギア</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="77" />
+        <location filename="../SerialSettings.qml" line="76"/>
         <source>Speedtab</source>
-        <translation type="">&#36895;&#24230;</translation>
+        <translation>速度</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="88" />
+        <location filename="../SerialSettings.qml" line="87"/>
         <source>RPM2</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="93" />
+        <location filename="../SerialSettings.qml" line="92"/>
         <source>EX Board</source>
-        <translation type="">I/O&#35373;&#23450;</translation>
+        <translation>I/O設定</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="98" />
+        <location filename="../SerialSettings.qml" line="97"/>
         <source>Startup</source>
-        <translation type="">&#36215;&#21205;</translation>
+        <translation>起動</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="103" />
+        <location filename="../SerialSettings.qml" line="102"/>
         <source>Network</source>
-        <translation type="">&#12493;&#12483;&#12488;&#12527;&#12540;&#12463;</translation>
+        <translation>ネットワーク</translation>
     </message>
     <message>
-        <location filename="SerialSettings.qml" line="109" />
-        <location filename="SerialSettings.qml" line="112" />
+        <location filename="../SerialSettings.qml" line="108"/>
+        <location filename="../SerialSettings.qml" line="111"/>
         <source>Analog</source>
-        <translation type="">&#12450;&#12490;&#12525;&#12464;</translation>
+        <translation>アナログ</translation>
     </message>
 </context>
 <context>
     <name>Squaregauge</name>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="376" />
+        <location filename="../Gauges/Squaregauge.qml" line="376"/>
         <source>Change gauge size</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12469;&#12452;&#12474;&#22793;&#21270;</translation>
+        <translation>メーターサイズ変化</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="381" />
+        <location filename="../Gauges/Squaregauge.qml" line="381"/>
         <source>Text font size</source>
-        <translation type="">&#25991;&#23383;&#12501;&#12457;&#12531;&#12488;&#12469;&#12452;&#12474;</translation>
+        <translation>文字フォントサイズ</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="389" />
+        <location filename="../Gauges/Squaregauge.qml" line="389"/>
         <source>Text font style</source>
-        <translation type="">&#25991;&#23383;&#12501;&#12457;&#12531;&#12488;&#12473;&#12479;&#12452;&#12523;</translation>
+        <translation>文字フォントスタイル</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="397" />
+        <location filename="../Gauges/Squaregauge.qml" line="397"/>
         <source>Gauge font size</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12501;&#12457;&#12531;&#12488;&#12469;&#12452;&#12474;</translation>
+        <translation>メーターフォントサイズ</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="406" />
+        <location filename="../Gauges/Squaregauge.qml" line="406"/>
         <source>Gauge font style</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12501;&#12457;&#12531;&#12488;&#12473;&#12479;&#12452;&#12523;</translation>
+        <translation>メーターフォントスタイル</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="414" />
+        <location filename="../Gauges/Squaregauge.qml" line="414"/>
         <source>Change main value</source>
-        <translation type="">&#20027;&#35201;&#20516;&#22793;&#26356;</translation>
+        <translation>主要値変更</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="424" />
+        <location filename="../Gauges/Squaregauge.qml" line="424"/>
         <source>Change sec value</source>
-        <translation type="">&#35036;&#21161;&#20516;&#22793;&#26356;</translation>
+        <translation>補助値変更</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="433" />
+        <location filename="../Gauges/Squaregauge.qml" line="433"/>
         <source>Change title</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#22793;&#26356;</translation>
+        <translation>タイトル変更</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="442" />
+        <location filename="../Gauges/Squaregauge.qml" line="442"/>
         <source>Set decimal</source>
-        <translation type="">&#23567;&#25968;&#28857;&#35373;&#23450;</translation>
+        <translation>小数点設定</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="452" />
+        <location filename="../Gauges/Squaregauge.qml" line="452"/>
         <source>Set bar gauge max</source>
-        <translation type="">&#26834;&#12513;&#12540;&#12479;&#12540;&#26368;&#22823;</translation>
+        <translation>棒メーター最大</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="461" />
+        <location filename="../Gauges/Squaregauge.qml" line="461"/>
         <source>Toggle sec value</source>
-        <translation type="">&#35036;&#21161;&#20516;&#20999;&#12426;&#26367;&#12360;</translation>
+        <translation>補助値切り替え</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="473" />
+        <location filename="../Gauges/Squaregauge.qml" line="473"/>
         <source>Toggle vertical bar gauge</source>
-        <translation type="">&#22402;&#30452;&#26834;&#12513;&#12540;&#12479;&#12540;&#20999;&#12426;&#26367;&#12360;</translation>
+        <translation>垂直棒メーター切り替え</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="488" />
+        <location filename="../Gauges/Squaregauge.qml" line="488"/>
         <source>Toggle horizontal bar gauge</source>
-        <translation type="">&#27700;&#24179;&#26834;&#12513;&#12540;&#12479;&#12540;&#20999;&#12426;&#26367;&#12360;</translation>
+        <translation>水平棒メーター切り替え</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="502" />
+        <location filename="../Gauges/Squaregauge.qml" line="502"/>
         <source>Set min warning</source>
-        <translation type="">&#26368;&#23567;&#38480;&#12398;&#35686;&#21578;&#35373;&#23450;</translation>
+        <translation>最小限の警告設定</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="512" />
+        <location filename="../Gauges/Squaregauge.qml" line="512"/>
         <source>Set max warning</source>
-        <translation type="">&#26368;&#22823;&#35686;&#21578;&#35373;&#23450;</translation>
+        <translation>最大警告設定</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="521" />
+        <location filename="../Gauges/Squaregauge.qml" line="521"/>
         <source>Change unit symbol</source>
-        <translation type="">&#21336;&#20301;&#35352;&#21495;&#22793;&#26356;</translation>
+        <translation>単位記号変更</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="526" />
+        <location filename="../Gauges/Squaregauge.qml" line="526"/>
         <source>remove gauge</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12434;&#25244;&#12363;&#12377;</translation>
+        <translation>メーターを抜かす</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="535" />
+        <location filename="../Gauges/Squaregauge.qml" line="535"/>
         <source>small</source>
-        <translation type="">&#23567;</translation>
+        <translation>小</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="543" />
+        <location filename="../Gauges/Squaregauge.qml" line="543"/>
         <source>medium</source>
-        <translation type="">&#20013;</translation>
+        <translation>中</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="551" />
+        <location filename="../Gauges/Squaregauge.qml" line="551"/>
         <source>large</source>
-        <translation type="">&#22823;</translation>
+        <translation>大</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="559" />
+        <location filename="../Gauges/Squaregauge.qml" line="559"/>
         <source>custom</source>
-        <translation type="">&#12459;&#12473;&#12479;&#12512;</translation>
+        <translation>カスタム</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="573" />
+        <location filename="../Gauges/Squaregauge.qml" line="573"/>
         <source>None</source>
-        <translation type="">&#28961;&#12375;</translation>
+        <translation>無し</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="668" />
-        <location filename="Gauges/Squaregauge.qml" line="699" />
+        <location filename="../Gauges/Squaregauge.qml" line="668"/>
+        <location filename="../Gauges/Squaregauge.qml" line="699"/>
         <source>Apply</source>
-        <translation type="">&#36969;&#29992;</translation>
+        <translation>適用</translation>
     </message>
     <message>
-        <location filename="Gauges/Squaregauge.qml" line="727" />
-        <location filename="Gauges/Squaregauge.qml" line="761" />
-        <location filename="Gauges/Squaregauge.qml" line="809" />
-        <location filename="Gauges/Squaregauge.qml" line="836" />
-        <location filename="Gauges/Squaregauge.qml" line="867" />
-        <location filename="Gauges/Squaregauge.qml" line="899" />
-        <location filename="Gauges/Squaregauge.qml" line="924" />
-        <location filename="Gauges/Squaregauge.qml" line="956" />
-        <location filename="Gauges/Squaregauge.qml" line="984" />
-        <location filename="Gauges/Squaregauge.qml" line="1013" />
+        <location filename="../Gauges/Squaregauge.qml" line="727"/>
+        <location filename="../Gauges/Squaregauge.qml" line="761"/>
+        <location filename="../Gauges/Squaregauge.qml" line="809"/>
+        <location filename="../Gauges/Squaregauge.qml" line="836"/>
+        <location filename="../Gauges/Squaregauge.qml" line="867"/>
+        <location filename="../Gauges/Squaregauge.qml" line="899"/>
+        <location filename="../Gauges/Squaregauge.qml" line="924"/>
+        <location filename="../Gauges/Squaregauge.qml" line="956"/>
+        <location filename="../Gauges/Squaregauge.qml" line="984"/>
+        <location filename="../Gauges/Squaregauge.qml" line="1013"/>
         <source>OK</source>
-        <translation type="">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
     <name>StateGIF</name>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="117" />
-        <location filename="Gauges/StateGIF.qml" line="145" />
+        <location filename="../Gauges/StateGIF.qml" line="116"/>
+        <location filename="../Gauges/StateGIF.qml" line="144"/>
         <source>Image</source>
-        <translation type="">&#30011;&#20687;</translation>
+        <translation>画像</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="117" />
-        <location filename="Gauges/StateGIF.qml" line="200" />
+        <location filename="../Gauges/StateGIF.qml" line="116"/>
+        <location filename="../Gauges/StateGIF.qml" line="199"/>
         <source>OFF</source>
-        <translation type="">&#12458;&#12501;</translation>
+        <translation>オフ</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="145" />
+        <location filename="../Gauges/StateGIF.qml" line="144"/>
         <source>ON</source>
-        <translation type="">&#12458;&#12531;</translation>
+        <translation>オン</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="174" />
+        <location filename="../Gauges/StateGIF.qml" line="173"/>
         <source>Source</source>
-        <translation type="">&#12477;&#12540;&#12473;</translation>
+        <translation>ソース</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="188" />
-        <location filename="Gauges/StateGIF.qml" line="200" />
+        <location filename="../Gauges/StateGIF.qml" line="187"/>
+        <location filename="../Gauges/StateGIF.qml" line="199"/>
         <source>Trigger</source>
-        <translation type="">&#12488;&#12522;&#12460;&#12540;</translation>
+        <translation>トリガー</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="215" />
+        <location filename="../Gauges/StateGIF.qml" line="214"/>
         <source>Delete image</source>
-        <translation type="">&#30011;&#20687;&#28040;&#21435;</translation>
+        <translation>画像消去</translation>
     </message>
     <message>
-        <location filename="Gauges/StateGIF.qml" line="221" />
+        <location filename="../Gauges/StateGIF.qml" line="220"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
     <name>Statepicture</name>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="111" />
+        <location filename="../Gauges/Statepicture.qml" line="111"/>
         <source>Image off</source>
-        <translation type="">&#30011;&#20687;&#12458;&#12501;</translation>
+        <translation>画像オフ</translation>
     </message>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="139" />
+        <location filename="../Gauges/Statepicture.qml" line="139"/>
         <source>Image on</source>
-        <translation type="">&#30011;&#20687;&#12458;&#12531;</translation>
+        <translation>画像オン</translation>
     </message>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="168" />
+        <location filename="../Gauges/Statepicture.qml" line="168"/>
         <source>Source</source>
-        <translation type="">&#12477;&#12540;&#12473;</translation>
+        <translation>ソース</translation>
     </message>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="182" />
+        <location filename="../Gauges/Statepicture.qml" line="182"/>
         <source>Trigger</source>
-        <translation type="">&#12488;&#12522;&#12460;&#12540;</translation>
+        <translation>トリガー</translation>
     </message>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="196" />
+        <location filename="../Gauges/Statepicture.qml" line="196"/>
         <source>Delete image</source>
-        <translation type="">&#30011;&#20687;&#28040;&#21435;</translation>
+        <translation>画像消去</translation>
     </message>
     <message>
-        <location filename="Gauges/Statepicture.qml" line="202" />
+        <location filename="../Gauges/Statepicture.qml" line="202"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
 </context>
 <context>
     <name>Userdash1</name>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="276" />
+        <location filename="../Gauges/Userdash1.qml" line="275"/>
         <source>RPM2</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="276" />
-        <location filename="Gauges/Userdash1.qml" line="285" />
+        <location filename="../Gauges/Userdash1.qml" line="275"/>
+        <location filename="../Gauges/Userdash1.qml" line="284"/>
         <source>Style</source>
-        <translation type="">&#12473;&#12479;&#12452;&#12523;</translation>
+        <translation>スタイル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="285" />
-        <location filename="Gauges/Userdash1.qml" line="378" />
+        <location filename="../Gauges/Userdash1.qml" line="284"/>
+        <location filename="../Gauges/Userdash1.qml" line="377"/>
         <source>None</source>
-        <translation type="">&#28961;&#12375;</translation>
+        <translation>無し</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="298" />
-        <location filename="Gauges/Userdash1.qml" line="327" />
-        <location filename="Gauges/Userdash1.qml" line="739" />
+        <location filename="../Gauges/Userdash1.qml" line="297"/>
+        <location filename="../Gauges/Userdash1.qml" line="326"/>
+        <location filename="../Gauges/Userdash1.qml" line="738"/>
         <source>Backround</source>
-        <translation type="">&#32972;&#26223;</translation>
+        <translation>背景</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="298" />
-        <location filename="Gauges/Userdash1.qml" line="573" />
-        <location filename="Gauges/Userdash1.qml" line="586" />
+        <location filename="../Gauges/Userdash1.qml" line="297"/>
+        <location filename="../Gauges/Userdash1.qml" line="572"/>
+        <location filename="../Gauges/Userdash1.qml" line="585"/>
         <source>Image</source>
-        <translation type="">&#30011;&#20687;</translation>
+        <translation>画像</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="327" />
+        <location filename="../Gauges/Userdash1.qml" line="326"/>
         <source>Color</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="369" />
+        <location filename="../Gauges/Userdash1.qml" line="368"/>
         <source>Extra:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="392" />
-        <location filename="Gauges/Userdash1.qml" line="753" />
+        <location filename="../Gauges/Userdash1.qml" line="391"/>
+        <location filename="../Gauges/Userdash1.qml" line="752"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="520" />
+        <location filename="../Gauges/Userdash1.qml" line="519"/>
         <source>Square</source>
-        <translation type="">&#12473;&#12463;&#12456;&#12450;</translation>
+        <translation>スクエア</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="534" />
+        <location filename="../Gauges/Userdash1.qml" line="533"/>
         <source>Bar</source>
-        <translation type="">&#12521;&#12452;&#12531;</translation>
+        <translation>ライン</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="547" />
+        <location filename="../Gauges/Userdash1.qml" line="546"/>
         <source>Round</source>
-        <translation type="">&#12469;&#12540;&#12463;&#12523;</translation>
+        <translation>サークル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="560" />
+        <location filename="../Gauges/Userdash1.qml" line="559"/>
         <source>Text</source>
-        <translation type="">&#25991;&#23383;</translation>
+        <translation>文字</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="586" />
-        <location filename="Gauges/Userdash1.qml" line="600" />
+        <location filename="../Gauges/Userdash1.qml" line="585"/>
+        <location filename="../Gauges/Userdash1.qml" line="599"/>
         <source>State</source>
-        <translation type="">&#29366;&#24907;</translation>
+        <translation>状態</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="600" />
+        <location filename="../Gauges/Userdash1.qml" line="599"/>
         <source>GIF</source>
-        <translation type="">GIF</translation>
+        <translation>GIF</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="613" />
+        <location filename="../Gauges/Userdash1.qml" line="612"/>
         <source>Save</source>
-        <translation type="">&#20445;&#23384;</translation>
+        <translation>保存</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="626" />
+        <location filename="../Gauges/Userdash1.qml" line="625"/>
         <source>Colors</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="637" />
+        <location filename="../Gauges/Userdash1.qml" line="636"/>
         <source>Clear</source>
-        <translation type="">&#25972;&#29702;</translation>
+        <translation>整理</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="654" />
+        <location filename="../Gauges/Userdash1.qml" line="653"/>
         <source>Import</source>
-        <translation type="">&#12452;&#12531;&#12509;&#12540;&#12488;</translation>
+        <translation>インポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="686" />
+        <location filename="../Gauges/Userdash1.qml" line="685"/>
         <source>Export</source>
-        <translation type="">&#12456;&#12463;&#12473;&#12509;&#12540;&#12488;</translation>
+        <translation>エクスポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="706" />
+        <location filename="../Gauges/Userdash1.qml" line="705"/>
         <source>Load</source>
-        <translation type="">&#12525;&#12540;&#12489;</translation>
+        <translation>ロード</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="723" />
+        <location filename="../Gauges/Userdash1.qml" line="722"/>
         <source>Cancel</source>
-        <translation type="">&#12461;&#12515;&#12531;&#12475;&#12523;</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1221" />
+        <location filename="../Gauges/Userdash1.qml" line="1220"/>
         <source>Frame color</source>
-        <translation type="">&#12501;&#12524;&#12540;&#12512;&#33394;</translation>
+        <translation>フレーム色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1225" />
+        <location filename="../Gauges/Userdash1.qml" line="1224"/>
         <source>Titlebar color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#33394;</translation>
+        <translation>タイトル色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1229" />
+        <location filename="../Gauges/Userdash1.qml" line="1228"/>
         <source>Backround color</source>
-        <translation type="">&#32972;&#26223;&#33394;</translation>
+        <translation>背景色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1334" />
+        <location filename="../Gauges/Userdash1.qml" line="1333"/>
         <source>Bargauge color</source>
-        <translation type="">-&#24125;&#12513;&#12540;&#12479;&#12540;&#33394;</translation>
+        <translation>-帽メーター色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1338" />
+        <location filename="../Gauges/Userdash1.qml" line="1337"/>
         <source>Title text color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#25991;&#23383;&#33394;</translation>
+        <translation>タイトル文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1342" />
+        <location filename="../Gauges/Userdash1.qml" line="1341"/>
         <source>Main text color</source>
-        <translation type="">&#12513;&#12452;&#12531;&#25991;&#23383;&#33394;</translation>
+        <translation>メイン文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash1.qml" line="1456" />
+        <location filename="../Gauges/Userdash1.qml" line="1455"/>
         <source>Close menu</source>
-        <translation type="">&#12513;&#12491;&#12517;&#12540;&#12434;&#38281;&#12376;&#12427;</translation>
+        <translation>メニューを閉じる</translation>
     </message>
 </context>
 <context>
     <name>Userdash2</name>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="269" />
+        <location filename="../Gauges/Userdash2.qml" line="269"/>
         <source>RPM2</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="269" />
-        <location filename="Gauges/Userdash2.qml" line="278" />
+        <location filename="../Gauges/Userdash2.qml" line="269"/>
+        <location filename="../Gauges/Userdash2.qml" line="278"/>
         <source>Style</source>
-        <translation type="">&#12473;&#12479;&#12452;&#12523;</translation>
+        <translation>スタイル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="278" />
-        <location filename="Gauges/Userdash2.qml" line="371" />
+        <location filename="../Gauges/Userdash2.qml" line="278"/>
+        <location filename="../Gauges/Userdash2.qml" line="371"/>
         <source>None</source>
-        <translation type="">&#28961;&#12375;</translation>
+        <translation>無し</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="291" />
-        <location filename="Gauges/Userdash2.qml" line="320" />
-        <location filename="Gauges/Userdash2.qml" line="672" />
+        <location filename="../Gauges/Userdash2.qml" line="291"/>
+        <location filename="../Gauges/Userdash2.qml" line="320"/>
+        <location filename="../Gauges/Userdash2.qml" line="672"/>
         <source>Backround</source>
-        <translation type="">&#32972;&#26223;</translation>
+        <translation>背景</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="291" />
-        <location filename="Gauges/Userdash2.qml" line="507" />
-        <location filename="Gauges/Userdash2.qml" line="520" />
+        <location filename="../Gauges/Userdash2.qml" line="291"/>
+        <location filename="../Gauges/Userdash2.qml" line="507"/>
+        <location filename="../Gauges/Userdash2.qml" line="520"/>
         <source>Image</source>
-        <translation type="">&#30011;&#20687;</translation>
+        <translation>画像</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="320" />
+        <location filename="../Gauges/Userdash2.qml" line="320"/>
         <source>Color</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="362" />
+        <location filename="../Gauges/Userdash2.qml" line="362"/>
         <source>Extra:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="385" />
-        <location filename="Gauges/Userdash2.qml" line="685" />
+        <location filename="../Gauges/Userdash2.qml" line="385"/>
+        <location filename="../Gauges/Userdash2.qml" line="685"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="455" />
+        <location filename="../Gauges/Userdash2.qml" line="455"/>
         <source>Square</source>
-        <translation type="">&#12473;&#12463;&#12456;&#12450;</translation>
+        <translation>スクエア</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="468" />
+        <location filename="../Gauges/Userdash2.qml" line="468"/>
         <source>Bar</source>
-        <translation type="">&#12521;&#12452;&#12531;</translation>
+        <translation>ライン</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="481" />
+        <location filename="../Gauges/Userdash2.qml" line="481"/>
         <source>Round</source>
-        <translation type="">&#12469;&#12540;&#12463;&#12523;</translation>
+        <translation>サークル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="494" />
+        <location filename="../Gauges/Userdash2.qml" line="494"/>
         <source>Text</source>
-        <translation type="">&#25991;&#23383;</translation>
+        <translation>文字</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="520" />
-        <location filename="Gauges/Userdash2.qml" line="534" />
+        <location filename="../Gauges/Userdash2.qml" line="520"/>
+        <location filename="../Gauges/Userdash2.qml" line="534"/>
         <source>State</source>
-        <translation type="">&#29366;&#24907;</translation>
+        <translation>状態</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="534" />
+        <location filename="../Gauges/Userdash2.qml" line="534"/>
         <source>GIF</source>
-        <translation type="">GIF</translation>
+        <translation>GIF</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="547" />
+        <location filename="../Gauges/Userdash2.qml" line="547"/>
         <source>Save</source>
-        <translation type="">&#20445;&#23384;</translation>
+        <translation>保存</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="560" />
+        <location filename="../Gauges/Userdash2.qml" line="560"/>
         <source>Colors</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="571" />
+        <location filename="../Gauges/Userdash2.qml" line="571"/>
         <source>Clear</source>
-        <translation type="">&#25972;&#29702;</translation>
+        <translation>整理</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="588" />
+        <location filename="../Gauges/Userdash2.qml" line="588"/>
         <source>Import</source>
-        <translation type="">&#12452;&#12531;&#12509;&#12540;&#12488;</translation>
+        <translation>インポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="620" />
+        <location filename="../Gauges/Userdash2.qml" line="620"/>
         <source>Export</source>
-        <translation type="">&#12456;&#12463;&#12473;&#12509;&#12540;&#12488;</translation>
+        <translation>エクスポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="639" />
+        <location filename="../Gauges/Userdash2.qml" line="639"/>
         <source>Load</source>
-        <translation type="">&#12525;&#12540;&#12489;</translation>
+        <translation>ロード</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="656" />
+        <location filename="../Gauges/Userdash2.qml" line="656"/>
         <source>Cancel</source>
-        <translation type="">&#12461;&#12515;&#12531;&#12475;&#12523;</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1148" />
+        <location filename="../Gauges/Userdash2.qml" line="1148"/>
         <source>Frame color</source>
-        <translation type="">&#12501;&#12524;&#12540;&#12512;&#33394;</translation>
+        <translation>フレーム色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1152" />
+        <location filename="../Gauges/Userdash2.qml" line="1152"/>
         <source>Titlebar color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#33394;</translation>
+        <translation>タイトル色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1156" />
+        <location filename="../Gauges/Userdash2.qml" line="1156"/>
         <source>Backround color</source>
-        <translation type="">&#32972;&#26223;&#33394;</translation>
+        <translation>背景色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1260" />
+        <location filename="../Gauges/Userdash2.qml" line="1260"/>
         <source>Bargauge color</source>
-        <translation type="">-&#24125;&#12513;&#12540;&#12479;&#12540;&#33394;</translation>
+        <translation>-帽メーター色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1264" />
+        <location filename="../Gauges/Userdash2.qml" line="1264"/>
         <source>Title text color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#25991;&#23383;&#33394;</translation>
+        <translation>タイトル文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1268" />
+        <location filename="../Gauges/Userdash2.qml" line="1268"/>
         <source>Main text color</source>
-        <translation type="">&#12513;&#12452;&#12531;&#25991;&#23383;&#33394;</translation>
+        <translation>メイン文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash2.qml" line="1382" />
+        <location filename="../Gauges/Userdash2.qml" line="1382"/>
         <source>Close menu</source>
-        <translation type="">&#12513;&#12491;&#12517;&#12540;&#12434;&#38281;&#12376;&#12427;</translation>
+        <translation>メニューを閉じる</translation>
     </message>
 </context>
 <context>
     <name>Userdash3</name>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="271" />
+        <location filename="../Gauges/Userdash3.qml" line="271"/>
         <source>RPM2</source>
-        <translation type="">RPM</translation>
+        <translation>RPM</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="271" />
-        <location filename="Gauges/Userdash3.qml" line="280" />
+        <location filename="../Gauges/Userdash3.qml" line="271"/>
+        <location filename="../Gauges/Userdash3.qml" line="280"/>
         <source>Style</source>
-        <translation type="">&#12473;&#12479;&#12452;&#12523;</translation>
+        <translation>スタイル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="280" />
-        <location filename="Gauges/Userdash3.qml" line="373" />
+        <location filename="../Gauges/Userdash3.qml" line="280"/>
+        <location filename="../Gauges/Userdash3.qml" line="373"/>
         <source>None</source>
-        <translation type="">&#28961;&#12375;</translation>
+        <translation>無し</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="293" />
-        <location filename="Gauges/Userdash3.qml" line="322" />
-        <location filename="Gauges/Userdash3.qml" line="675" />
+        <location filename="../Gauges/Userdash3.qml" line="293"/>
+        <location filename="../Gauges/Userdash3.qml" line="322"/>
+        <location filename="../Gauges/Userdash3.qml" line="675"/>
         <source>Backround</source>
-        <translation type="">&#32972;&#26223;</translation>
+        <translation>背景</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="293" />
-        <location filename="Gauges/Userdash3.qml" line="509" />
-        <location filename="Gauges/Userdash3.qml" line="522" />
+        <location filename="../Gauges/Userdash3.qml" line="293"/>
+        <location filename="../Gauges/Userdash3.qml" line="509"/>
+        <location filename="../Gauges/Userdash3.qml" line="522"/>
         <source>Image</source>
-        <translation type="">&#30011;&#20687;</translation>
+        <translation>画像</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="322" />
+        <location filename="../Gauges/Userdash3.qml" line="322"/>
         <source>Color</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="364" />
+        <location filename="../Gauges/Userdash3.qml" line="364"/>
         <source>Extra:</source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="387" />
-        <location filename="Gauges/Userdash3.qml" line="688" />
+        <location filename="../Gauges/Userdash3.qml" line="387"/>
+        <location filename="../Gauges/Userdash3.qml" line="688"/>
         <source>Close</source>
-        <translation type="">&#38281;&#12376;&#12427;</translation>
+        <translation>閉じる</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="457" />
+        <location filename="../Gauges/Userdash3.qml" line="457"/>
         <source>Square</source>
-        <translation type="">&#12473;&#12463;&#12456;&#12450;</translation>
+        <translation>スクエア</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="470" />
+        <location filename="../Gauges/Userdash3.qml" line="470"/>
         <source>Bar</source>
-        <translation type="">&#12521;&#12452;&#12531;</translation>
+        <translation>ライン</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="483" />
+        <location filename="../Gauges/Userdash3.qml" line="483"/>
         <source>Round</source>
-        <translation type="">&#12469;&#12540;&#12463;&#12523;</translation>
+        <translation>サークル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="496" />
+        <location filename="../Gauges/Userdash3.qml" line="496"/>
         <source>Text</source>
-        <translation type="">&#25991;&#23383;</translation>
+        <translation>文字</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="522" />
-        <location filename="Gauges/Userdash3.qml" line="536" />
+        <location filename="../Gauges/Userdash3.qml" line="522"/>
+        <location filename="../Gauges/Userdash3.qml" line="536"/>
         <source>State</source>
-        <translation type="">&#29366;&#24907;</translation>
+        <translation>状態</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="536" />
+        <location filename="../Gauges/Userdash3.qml" line="536"/>
         <source>GIF</source>
-        <translation type="">GIF</translation>
+        <translation>GIF</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="549" />
+        <location filename="../Gauges/Userdash3.qml" line="549"/>
         <source>Save</source>
-        <translation type="">&#20445;&#23384;</translation>
+        <translation>保存</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="562" />
+        <location filename="../Gauges/Userdash3.qml" line="562"/>
         <source>Colors</source>
-        <translation type="">&#33394;</translation>
+        <translation>色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="573" />
+        <location filename="../Gauges/Userdash3.qml" line="573"/>
         <source>Clear</source>
-        <translation type="">&#25972;&#29702;</translation>
+        <translation>整理</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="590" />
+        <location filename="../Gauges/Userdash3.qml" line="590"/>
         <source>Import</source>
-        <translation type="">&#12452;&#12531;&#12509;&#12540;&#12488;</translation>
+        <translation>インポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="622" />
+        <location filename="../Gauges/Userdash3.qml" line="622"/>
         <source>Export</source>
-        <translation type="">&#12456;&#12463;&#12473;&#12509;&#12540;&#12488;</translation>
+        <translation>エクスポート</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="642" />
+        <location filename="../Gauges/Userdash3.qml" line="642"/>
         <source>Load</source>
-        <translation type="">&#12525;&#12540;&#12489;</translation>
+        <translation>ロード</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="659" />
+        <location filename="../Gauges/Userdash3.qml" line="659"/>
         <source>Cancel</source>
-        <translation type="">&#12461;&#12515;&#12531;&#12475;&#12523;</translation>
+        <translation>キャンセル</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1151" />
+        <location filename="../Gauges/Userdash3.qml" line="1151"/>
         <source>Frame color</source>
-        <translation type="">&#12501;&#12524;&#12540;&#12512;&#33394;</translation>
+        <translation>フレーム色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1155" />
+        <location filename="../Gauges/Userdash3.qml" line="1155"/>
         <source>Titlebar color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#33394;</translation>
+        <translation>タイトル色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1159" />
+        <location filename="../Gauges/Userdash3.qml" line="1159"/>
         <source>Backround color</source>
-        <translation type="">&#32972;&#26223;&#33394;</translation>
+        <translation>背景色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1263" />
+        <location filename="../Gauges/Userdash3.qml" line="1263"/>
         <source>Bargauge color</source>
-        <translation type="">-&#24125;&#12513;&#12540;&#12479;&#12540;&#33394;</translation>
+        <translation>-帽メーター色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1267" />
+        <location filename="../Gauges/Userdash3.qml" line="1267"/>
         <source>Title text color</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#25991;&#23383;&#33394;</translation>
+        <translation>タイトル文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1271" />
+        <location filename="../Gauges/Userdash3.qml" line="1271"/>
         <source>Main text color</source>
-        <translation type="">&#12513;&#12452;&#12531;&#25991;&#23383;&#33394;</translation>
+        <translation>メイン文字色</translation>
     </message>
     <message>
-        <location filename="Gauges/Userdash3.qml" line="1385" />
+        <location filename="../Gauges/Userdash3.qml" line="1385"/>
         <source>Close menu</source>
-        <translation type="">&#12513;&#12491;&#12517;&#12540;&#12434;&#38281;&#12376;&#12427;</translation>
+        <translation>メニューを閉じる</translation>
     </message>
 </context>
 <context>
     <name>Verticalbargauge</name>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="82" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="82"/>
         <source>max value</source>
-        <translation type="">&#26368;&#22823;&#20516;</translation>
+        <translation>最大値</translation>
     </message>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="90" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="90"/>
         <source>min value</source>
-        <translation type="">&#26368;&#20302;&#20516;</translation>
+        <translation>最低値</translation>
     </message>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="98" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="98"/>
         <source>Set decimal</source>
-        <translation type="">&#23567;&#25968;&#28857;&#35373;&#23450;</translation>
+        <translation>小数点設定</translation>
     </message>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="124" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="124"/>
         <source>Change title</source>
-        <translation type="">&#12479;&#12452;&#12488;&#12523;&#22793;&#26356;</translation>
+        <translation>タイトル変更</translation>
     </message>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="132" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="132"/>
         <source>remove gauge</source>
-        <translation type="">&#12513;&#12540;&#12479;&#12540;&#12434;&#25244;&#12363;&#12377;</translation>
+        <translation>メーターを抜かす</translation>
     </message>
     <message>
-        <location filename="Gauges/Verticalbargauge.qml" line="156" />
-        <location filename="Gauges/Verticalbargauge.qml" line="182" />
-        <location filename="Gauges/Verticalbargauge.qml" line="205" />
-        <location filename="Gauges/Verticalbargauge.qml" line="232" />
-        <location filename="Gauges/Verticalbargauge.qml" line="259" />
-        <location filename="Gauges/Verticalbargauge.qml" line="286" />
+        <location filename="../Gauges/Verticalbargauge.qml" line="156"/>
+        <location filename="../Gauges/Verticalbargauge.qml" line="182"/>
+        <location filename="../Gauges/Verticalbargauge.qml" line="205"/>
+        <location filename="../Gauges/Verticalbargauge.qml" line="232"/>
+        <location filename="../Gauges/Verticalbargauge.qml" line="259"/>
+        <location filename="../Gauges/Verticalbargauge.qml" line="286"/>
         <source>OK</source>
-        <translation type="">OK</translation>
+        <translation>OK</translation>
     </message>
 </context>
 <context>
     <name>main</name>
     <message>
-        <location filename="main.qml" line="19" />
+        <location filename="../main.qml" line="18"/>
         <source>PowerTune </source>
-        <translation type="unfinished" />
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="120"/>
+        <source>ECU Serial Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="157"/>
+        <source>GPS Port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="183"/>
+        <source>Speed units</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="192"/>
+        <source>Metric</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="192"/>
+        <source>Imperial</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="214"/>
+        <source>Temp units</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="224"/>
+        <source>°C</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="224"/>
+        <source>°F</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="246"/>
+        <source>Pressure units</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="275"/>
+        <source>ECU Selection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="307"/>
+        <source>GoPro Variant</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="329"/>
+        <location filename="../Settings/main.qml" line="338"/>
+        <source>GoPro Pasword</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="347"/>
+        <source>Logfile name</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="353"/>
+        <source>DataLog</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="362"/>
+        <source>Odo</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="371"/>
+        <location filename="../Settings/main.qml" line="704"/>
+        <source>0</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="376"/>
+        <source>Trip</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="404"/>
+        <source>Serial Status</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="429"/>
+        <source>Connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="443"/>
+        <source>Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="458"/>
+        <source>GPS Connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="474"/>
+        <source>GPS Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="488"/>
+        <source>Trip Reset</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="509"/>
+        <source>Quit</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="518"/>
+        <source>Shutdown</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="527"/>
+        <source>Reboot</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="538"/>
+        <source>RPM Smoothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="549"/>
+        <location filename="../Settings/main.qml" line="580"/>
+        <source>OFF</source>
+        <translation type="unfinished">オフ</translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="570"/>
+        <source>Speed Smoothing</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="605"/>
+        <source>Data Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="617"/>
+        <source>GoPro rec</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="627"/>
+        <source>NMEA Logger</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="674"/>
+        <source>9</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="683"/>
+        <source>16</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="691"/>
+        <location filename="../Settings/main.qml" line="720"/>
+        <source>AFR</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="713"/>
+        <source>5</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="742"/>
+        <location filename="../Settings/main.qml" line="777"/>
+        <source>base adress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="747"/>
+        <location filename="../Settings/main.qml" line="782"/>
+        <source>(decimal)</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="762"/>
+        <location filename="../Settings/main.qml" line="797"/>
+        <source>1024</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="808"/>
+        <source>Language</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/main.qml" line="897"/>
+        <location filename="../Settings/main.qml" line="899"/>
+        <source>Weight</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>network</name>
+    <message>
+        <location filename="../Settings/network.qml" line="67"/>
+        <source>Scan WIFI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="79"/>
+        <source>WIFI Country</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="93"/>
+        <source>WIFI 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="118"/>
+        <source>Password 1</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="123"/>
+        <source>Passphrase</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="167"/>
+        <source>Connect WIFI</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="193"/>
+        <source>Update</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="210"/>
+        <source>Restart daemon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="228"/>
+        <source>Update Tracks</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="253"/>
+        <source>Ethernet IP adress</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/network.qml" line="283"/>
+        <source>WLAN IP adress</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>rpm</name>
+    <message>
+        <location filename="../Settings/rpm.qml" line="31"/>
+        <location filename="../Settings/rpm.qml" line="36"/>
+        <location filename="../Settings/rpm.qml" line="41"/>
+        <location filename="../Settings/rpm.qml" line="46"/>
+        <source>Shift Light</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/rpm.qml" line="31"/>
+        <location filename="../Settings/rpm.qml" line="36"/>
+        <location filename="../Settings/rpm.qml" line="41"/>
+        <location filename="../Settings/rpm.qml" line="46"/>
+        <source>Stage</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>sensehat</name>
+    <message>
+        <location filename="../Settings/sensehat.qml" line="30"/>
+        <source>Accelerometer</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/sensehat.qml" line="40"/>
+        <source>Gyro Sensor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/sensehat.qml" line="51"/>
+        <source>Compass</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/sensehat.qml" line="61"/>
+        <source>Pressure Sensor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/sensehat.qml" line="72"/>
+        <source>Temperature Sensor</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>speed</name>
+    <message>
+        <location filename="../Settings/speed.qml" line="27"/>
+        <source>SpeedCorrection</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/speed.qml" line="45"/>
+        <source>USB VR Speed Sensor</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/speed.qml" line="70"/>
+        <source>Pulses per mile</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/speed.qml" line="92"/>
+        <source>External Speed port</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/speed.qml" line="124"/>
+        <source>Connect</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/speed.qml" line="139"/>
+        <source>Disconnect</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>startup</name>
+    <message>
+        <location filename="../Settings/startup.qml" line="28"/>
+        <source>Apply settings</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/startup.qml" line="35"/>
+        <source>Apply</source>
+        <translation type="unfinished">適用</translation>
+    </message>
+    <message>
+        <location filename="../Settings/startup.qml" line="43"/>
+        <source>Startup daemon</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/startup.qml" line="66"/>
+        <source>Can Bitrate</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/startup.qml" line="155"/>
+        <source>Main Speed Source</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/startup.qml" line="182"/>
+        <source>Warningtext</source>
+        <translation type="unfinished"></translation>
+    </message>
+</context>
+<context>
+    <name>warn_gear</name>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="35"/>
+        <source>WaterTemp</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="40"/>
+        <source>Boost</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="45"/>
+        <source>Revs</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="50"/>
+        <source>Knock</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="55"/>
+        <source>Lamdamultiply</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="122"/>
+        <location filename="../Settings/warn_gear.qml" line="165"/>
+        <location filename="../Settings/warn_gear.qml" line="169"/>
+        <location filename="../Settings/warn_gear.qml" line="175"/>
+        <location filename="../Settings/warn_gear.qml" line="179"/>
+        <source>GearCalculation</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="127"/>
+        <location filename="../Settings/warn_gear.qml" line="132"/>
+        <location filename="../Settings/warn_gear.qml" line="137"/>
+        <location filename="../Settings/warn_gear.qml" line="142"/>
+        <location filename="../Settings/warn_gear.qml" line="147"/>
+        <location filename="../Settings/warn_gear.qml" line="152"/>
+        <source>Gear</source>
+        <translation type="unfinished"></translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="165"/>
+        <location filename="../Settings/warn_gear.qml" line="175"/>
+        <source>ON</source>
+        <translation type="unfinished">オン</translation>
+    </message>
+    <message>
+        <location filename="../Settings/warn_gear.qml" line="169"/>
+        <location filename="../Settings/warn_gear.qml" line="179"/>
+        <source>OFF</source>
+        <translation type="unfinished">オフ</translation>
     </message>
 </context>
 </TS>
