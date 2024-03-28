@@ -1155,7 +1155,8 @@ Rectangle {
         ComboBox{
             id: digitalExtender
             model: comboBoxModel
-            width: mainWindow.width * 0.15
+            width: mainWindow.width * 0.18
+            font.pixelSize: 20
 
             Component.onCompleted: {
                 if(mainWindow.width == 800){

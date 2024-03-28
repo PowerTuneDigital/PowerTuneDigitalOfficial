@@ -143,9 +143,10 @@ Rectangle {
         TextField {
             id: txtMaxValue
             //width: 94
-            height: 40
+            //height: 40
             //inputMask: "00000"
             visible: false
+            font.pixelSize: 12
             text: warnvaluehigh
             //inputMethodHints: Qt.ImhDigitsOnly
         }
@@ -172,7 +173,8 @@ Rectangle {
         TextField {
             id: txtBarMinValue
             //width: 94
-            height: 40
+            //height: 40
+            font.pixelSize: 12
             visible: false
             text: minvalue;
         }
@@ -220,8 +222,9 @@ Rectangle {
 
         TextField {
             id: bargaugeMin
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
+            font.pixelSize: 12
             visible: false
             text: minvalue
         }
@@ -247,9 +250,10 @@ Rectangle {
 
         TextField {
             id: bargaugeMax
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
             visible: false
+            font.pixelSize: 12
             text: maxvalue
         }
 
