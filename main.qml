@@ -585,6 +585,27 @@ ApplicationWindow {
         }
     }
 
+    Timer {
+      interval: 1200
+      running: true
+      onTriggered: {
+            if(custom.maxBrightnessOnBoot == 1){
+                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                  console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
+                  Connect.setSreenbrightness(80);
+                  AppSettings.writebrightnessettings(80);
+                } else {
+                  console.log("DDCUTIL Failed max brightness run without ddc")
+                  Connect.setSreenbrightness(250);
+                  AppSettings.writebrightnessettings(250);
+                }
+            }
+        }
+      Component.onCompleted: {
+          console.log("Timer for Max Brightness started")
+
+        }
+    }
 
 
     Loader {
@@ -599,18 +620,6 @@ ApplicationWindow {
                 visible = true
             }
             console.log("Brightness Loaded")
-
-            if(custom.maxBrightnessOnBoot == 1){
-                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                    console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
-                    Connect.setSreenbrightness(80);
-                    AppSettings.writebrightnessettings(80);
-                } else {
-                    console.log("DDCUTIL Failed max brightness run without ddc")
-                    Connect.setSreenbrightness(250);
-                    AppSettings.writebrightnessettings(250);
-                }
-            }
         }
     }
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
@@ -722,4 +731,4 @@ ApplicationWindow {
             }
         }
     }
-}
+

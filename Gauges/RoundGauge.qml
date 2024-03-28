@@ -565,7 +565,7 @@ Rectangle{
             }
 
             Text {
-                text: Translator.translate("Backround color", Dashboard.language)
+                text: Translator.translate("Background color", Dashboard.language)
                 font.bold: true
                 font.pixelSize: 15}
 

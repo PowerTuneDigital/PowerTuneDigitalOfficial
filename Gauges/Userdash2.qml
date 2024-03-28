@@ -295,7 +295,7 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
+                text: Translator.translate("Background", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
                 font.pixelSize: mainwindow.width * 0.025 //20
                 font.bold: true
             }
@@ -324,7 +324,7 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
+                text: Translator.translate("Background", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
                 font.pixelSize: mainwindow.width * 0.025
                 font.bold: true
             }
@@ -738,7 +738,7 @@ Item {
                 id: btnbackround
                 width: mainwindow.width * 0.118
                 height: mainwindow.height * 0.083
-                text: Translator.translate("Backround", Dashboard.language)
+                text: Translator.translate("Background", Dashboard.language)
                 font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     rpmbackroundselector.visible =true;

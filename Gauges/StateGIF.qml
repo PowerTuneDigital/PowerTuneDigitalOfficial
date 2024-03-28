@@ -191,7 +191,16 @@ Item {
                 height: 480 * 0.083 //40
                 font.pixelSize: 800 * (12 / 800)
                 Component.onCompleted: {for(var i = 0; i < cbxMain.model.count; ++i) if (powertunedatasource.get(i).sourcename === mainvaluename)cbxMain.currentIndex = i,bind()}
-                onCurrentIndexChanged: bind();
+                onCurrentIndexChanged: bind();                
+                delegate: ItemDelegate{
+                    width: cbxMain.width
+                    font.pixelSize: cbxMain.font.pixelSize
+                    text: cbxMain.textRole ? (Array.isArray(cbxMain.model) ? modelData[cbxMain.textRole] : model[cbxMain.textRole]) : modelData
+                    font.weight: cbxMain.currentIndex === index ? Font.DemiBold : Font.Normal
+                    font.family: cbxMain.font.family
+                    highlighted: cbxMain.highlightedIndex === index
+                    hoverEnabled: cbxMain.hoverEnabled
+                }
             }
             Text{
                 text: Translator.translate("Trigger", Dashboard.language)

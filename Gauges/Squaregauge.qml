@@ -7,7 +7,7 @@ import "qrc:/Translator.js" as Translator
 Rectangle {
 
     id: gauge
-    width: parent.width * (250 / parent.width)
+    width: parent.width * 0.3125
     height: parent.height * (200 / parent.height)
     property string information: "Square gauge"
     border.color: "#9f9f9f"
@@ -657,7 +657,16 @@ Rectangle {
             visible: false
             textRole: "titlename"
             model: powertunedatasource
-            Component.onCompleted: {for(var i = 0; i < cbxMain.model.count; ++i) if (powertunedatasource.get(i).sourcename === mainvaluename)cbxMain.currentIndex = i}
+            Component.onCompleted: {
+                for(var i = 0; i < cbxMain.model.count; ++i)
+                    if (powertunedatasource.get(i).sourcename === mainvaluename)
+                        cbxMain.currentIndex = i
+
+
+                if(gauge.width > 250){
+                    cbxMain.width = 240
+                }
+            }
         }
         Button {
             id: btnMainSrc
@@ -688,7 +697,14 @@ Rectangle {
             visible: false
             textRole: "titlename"
             model: powertunedatasource
-            Component.onCompleted: {for(var i = 0; i < cbxSecondary.model.count; ++i) if (powertunedatasource.get(i).sourcename === secvaluename)cbxSecondary.currentIndex = i}
+            Component.onCompleted: {
+                for(var i = 0; i < cbxSecondary.model.count; ++i)
+                    if (powertunedatasource.get(i).sourcename === secvaluename)cbxSecondary.currentIndex = i
+
+                if(gauge.width > 250){
+                    cbxSecondary.width = 240
+                }
+            }
         }
         Button {
             id: btnSecSrc
@@ -718,6 +734,11 @@ Rectangle {
             height: 40
             visible: false
             text: warnvaluelow;
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    txtMinValue.width = 180
+                }
+            }
         }
         Button {
             id: btnMinValue
@@ -744,6 +765,11 @@ Rectangle {
             height: 40
             visible: false
             text: gauge.width;
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    txtwidth.width = 180
+                }
+            }
         }
         TextField {
             id: txtheight
@@ -752,6 +778,11 @@ Rectangle {
             height: 40
             visible: false
             text: gauge.height;
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    txtheight.width = 180
+                }
+            }
         }
         Button {
             id: btnSize
@@ -784,6 +815,11 @@ Rectangle {
                     {
                         cbx_decimalplaces.currentIndex = i;
                     }
+
+                    if(gauge.width > 250){
+                        cbx_decimalplaces.width = 150
+                    }
+
             }
         }
 
@@ -798,6 +834,10 @@ Rectangle {
                     if (cbx_decimalplaces2.textAt(i) === decimalpoints2.toString())
                     {
                         cbx_decimalplaces2.currentIndex = i;
+                    }
+
+                    if(gauge.width > 250){
+                        cbx_decimalplaces2.width = 150
                     }
             }
         }
@@ -826,7 +866,7 @@ Rectangle {
         ComboBox {
             id: cbx_titlefontsize
             visible: false
-            model: [10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260]
+            model: [10,12,14,16,18,20,22,24,26,28,30,32,34,36,38,40,42,44,46,48,50,60,70,80,90,100,110,120,130,140,150,160,170,180,190,200,210,220,230,240,250,260]            
         }
         Button {
             id: btntitlefontsize
@@ -850,6 +890,11 @@ Rectangle {
             font.pixelSize: 15
             currentIndex: 1
             onCurrentIndexChanged: {textFonttype = cbx_titlefontstyle.textAt(cbx_titlefontstyle.currentIndex)
+            }
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    cbx_titlefontstyle.width = 180
+                }
             }
             delegate:
                 ItemDelegate {
@@ -882,6 +927,11 @@ Rectangle {
             font.pixelSize: 15
             currentIndex: 1
             onCurrentIndexChanged: {valueFonttype = cbx_valuefontstyle.textAt(cbx_valuefontstyle.currentIndex)
+            }
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    cbx_valuefontstyle.width = 180
+                }
             }
             delegate:
                 ItemDelegate {
@@ -946,6 +996,12 @@ Rectangle {
             visible: false
             text: warnvaluehigh
             //inputMethodHints: Qt.ImhDigitsOnly
+
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    txtMaxValue.width = 180
+                }
+            }
         }
 
         Button {
@@ -973,6 +1029,11 @@ Rectangle {
             height: 40
             visible: false
             text: title
+            Component.onCompleted: {
+                if(gauge.width > 200){
+                    titlenameValue.width = 240
+                }
+            }
         }
 
 
@@ -1003,6 +1064,11 @@ Rectangle {
             height: 40
             visible: false
             text: maxvalue
+            Component.onCompleted: {
+                if(gauge.width > 250){
+                    bargaugeMax.width = 180
+                }
+            }
         }
 
         Button {

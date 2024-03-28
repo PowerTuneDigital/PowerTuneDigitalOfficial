@@ -142,7 +142,7 @@ Rectangle {
         anchors.fill: parent
         TextField {
             id: txtMaxValue
-            width: 94
+            //width: 94
             height: 40
             //inputMask: "00000"
             visible: false
@@ -171,7 +171,7 @@ Rectangle {
 
         TextField {
             id: txtBarMinValue
-            width: 94
+            //width: 94
             height: 40
             visible: false
             text: minvalue;
@@ -274,8 +274,9 @@ Rectangle {
 
         TextField {
             id: txtgaugenamechange
-            width: 94
+            //width: 94
             height: 40
+            font.pixelSize: 12
             visible: false
             text: gaugename
         }
