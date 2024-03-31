@@ -1158,6 +1158,16 @@ Rectangle {
             width: mainWindow.width * 0.18
             font.pixelSize: 20
 
+            delegate: ItemDelegate{
+                width: digitalExtender.width
+                font.pixelSize: digitalExtender.font.pixelSize
+                text: digitalExtender.textRole ? (Array.isArray(digitalExtender.model) ? modelData[digitalExtender.textRole] : model[digitalExtender.textRole]) : modelData
+                font.weight: digitalExtender.currentIndex === index ? Font.DemiBold : Font.Normal
+                font.family: digitalExtender.font.family
+                highlighted: digitalExtender.highlightedIndex === index
+                hoverEnabled: digitalExtender.hoverEnabled
+            }
+
             Component.onCompleted: {
                 if(mainWindow.width == 800){
                     digitalExtender.width = 200

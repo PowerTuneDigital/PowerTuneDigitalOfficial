@@ -279,7 +279,7 @@ Rectangle {
         TextField {
             id: txtgaugenamechange
             //width: 94
-            height: 40
+            //height: 40
             font.pixelSize: 12
             visible: false
             text: gaugename
