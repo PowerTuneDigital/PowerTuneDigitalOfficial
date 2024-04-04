@@ -1170,9 +1170,9 @@ Rectangle {
 
             Component.onCompleted: {
                 if(mainWindow.width == 800){
-                    digitalExtender.width = 200
+                    digitalExtender.width = 170
                     digitalExtender.height = 35
-                    digitalExtender.font.pixelSize = 15
+                    digitalExtender.font.pixelSize = 12
                 }
             }
             onCurrentIndexChanged: {
@@ -1242,10 +1242,6 @@ Rectangle {
                     extenderSwitch.font.pixelSize = 15
                 }else{
                     extenderSwitch.topPadding = 4
-
-
-
-
                 }
             }
         }

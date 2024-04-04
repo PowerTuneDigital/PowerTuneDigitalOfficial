@@ -65,6 +65,7 @@ Item {
         visible: false
         width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
         height : 480 * 0.667//320 Taking the resolution from the 7" and dividing it by (230/screenHeight)
+        z: 500
         Drag.active: true
         MouseArea {
             anchors.fill: parent

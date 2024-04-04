@@ -70,7 +70,7 @@ Item {
         visible: false
         width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
         height : 480 * 0.7//320 Taking the resolution from the 7" and dividing it by (320/screenHeight)
-        z: 250          //ensure the Menu is always in the foreground
+        z: 500          //ensure the Menu is always in the foreground
         Drag.active: true
         onWidthChanged: {
             changesize.width = 800 * 0.2875

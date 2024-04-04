@@ -1330,9 +1330,7 @@ Item {
                 font.pixelSize: mainwindow.width * 0.018//15
                 visible: true
                 onCurrentIndexChanged: changebackroundcolor()
-
                 delegate:
-
                     ItemDelegate {
                     width: backroundcolor.width
                     height: backroundcolor.height

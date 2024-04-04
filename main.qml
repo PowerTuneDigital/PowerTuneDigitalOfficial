@@ -342,8 +342,8 @@ ApplicationWindow {
                      onClicked: {
                          if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                              ddcUtilBrightnessIncrease += 25;  // increase by 10% every time button is pressed
-                             if(ddcUtilBrightnessIncrease > 80){ //if the variable goes above 100 bring it back down
-                                 ddcUtilBrightnessIncrease = 80
+                             if(ddcUtilBrightnessIncrease > 75){ //if the variable goes above 100 bring it back down
+                                 ddcUtilBrightnessIncrease = 75
                              }
 
                              Connect.setSreenbrightness(ddcUtilBrightnessIncrease); // set the brightness with the new value
@@ -522,6 +522,7 @@ ApplicationWindow {
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
+        console.log("Digital Input 1 Channel Changed" + digitalInput1)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -530,6 +531,7 @@ ApplicationWindow {
     }
 
     onDigitalInput2Changed: {
+        console.log("Digital Input 2 Channel Changed" + digitalInput2)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -538,6 +540,7 @@ ApplicationWindow {
     }
 
     onDigitalInput3Changed: {
+        console.log("Digital Input 3 Channel Changed" + digitalInput3)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -546,6 +549,7 @@ ApplicationWindow {
     }
 
     onDigitalInput4Changed: {
+        console.log("Digital Input 4 Channel Changed" + digitalInput4)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -554,6 +558,7 @@ ApplicationWindow {
     }
 
     onDigitalInput5Changed: {
+        console.log("Digital Input 5 Channel Changed" + digitalInput5)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -562,6 +567,7 @@ ApplicationWindow {
     }
 
     onDigitalInput6Changed: {
+        console.log("Digital Input 6 Channel Changed" + digitalInput6)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -570,6 +576,7 @@ ApplicationWindow {
     }
 
     onDigitalInput7Changed: {
+        console.log("Digital Input 7 Channel Changed" + digitalInput7)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -578,6 +585,7 @@ ApplicationWindow {
     }
 
     onDigitalInput8Changed: {
+        console.log("Digital Input 8 Channel Changed" + digitalInput8)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
