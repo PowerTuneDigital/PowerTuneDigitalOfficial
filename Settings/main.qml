@@ -825,6 +825,7 @@ Rectangle {
 			ListElement { name: "Italiano"; code: "it"; flag: "qrc:/graphics/Flags/it.png" }
 			ListElement { name: "Norwegian Bokmål"; code: "nb_NO"; flag: "qrc:/graphics/Flags/no.png" }
 			//ListElement { name: "العربية"; code: "ar"; flag: "qrc:/graphics/Flags/ae.png" } }
+		    }
                     textRole: "name"
                     delegate: ItemDelegate {
                         width: languageComboBox.width
