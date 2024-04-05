@@ -818,12 +818,13 @@ Rectangle {
                     model: ListModel {
                         ListElement { name: "English"; code: "en"; flag: "qrc:/graphics/Flags/us.png" }
                         ListElement { name: "Deutsch"; code: "de"; flag: "qrc:/graphics/Flags/de.png" }
-                        ListElement { name: "日本語"; code: "ja_KANJI"; flag: "qrc:/graphics/Flags/jp.png" }
+                        ListElement { name: "日本語"; code: "ja"; flag: "qrc:/graphics/Flags/jp.png" }
                         ListElement { name: "Español"; code: "es"; flag: "qrc:/graphics/Flags/es.png" }
                         // Uncomment or add more languages as needed
-                        //ListElement { name: "Français"; code: "fr"; flag: "qrc:/graphics/Flags/fr.png" }
-                        //ListElement { name: "العربية"; code: "ar"; flag: "qrc:/graphics/Flags/ae.png" }
-                    }
+                        ListElement { name: "Français"; code: "fr"; flag: "qrc:/graphics/Flags/fr.png" }
+			ListElement { name: "Italiano"; code: "it"; flag: "qrc:/graphics/Flags/it.png" }
+			ListElement { name: "Norwegian Bokmål"; code: "nb_NO"; flag: "qrc:/graphics/Flags/no.png" }
+			//ListElement { name: "العربية"; code: "ar"; flag: "qrc:/graphics/Flags/ae.png" } }
                     textRole: "name"
                     delegate: ItemDelegate {
                         width: languageComboBox.width
