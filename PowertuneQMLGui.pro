@@ -2,16 +2,6 @@ TEMPLATE = app
 
 QT += qml quick serialport serialbus network charts location positioning sensors multimedia widgets
 
-TRANSLATIONS += $$PWD/i18n/t1_de.ts \
-                $$PWD/i18n/t1_es.ts \
-                $$PWD/i18n/t1_fr.ts \
-                $$PWD/i18n/t1_ja_KANJI.ts
-
-
-!isEmpty(TRANSLATIONS) {
-    system(lrelease $$TRANSLATIONS)
-}
-
 CONFIG += c++11
 
 # QMAKE_LFLAGS += -static
@@ -46,7 +36,7 @@ SOURCES += main.cpp \
     LanguageManager.cpp
 
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc i18n/translations.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -85,3 +75,5 @@ DISTFILES += \
     KTracks/Australia/stupid2.txt \
     KTracks/Australia/stupid3.txt \
     KTracks/Australia/stupid4.txt
+
+include('i18n/translations.pri')

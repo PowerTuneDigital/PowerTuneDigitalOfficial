@@ -130,11 +130,5 @@
         <file>graphics/Flags/fr.png</file>
         <file>graphics/Flags/ae.png</file>
         <file>BrightnessPopUp.qml</file>
-
-        <!-- translations -->
-        <file>i18n/t1_de.qm</file>
-        <file>i18n/t1_es.qm</file>
-        <file>i18n/t1_fr.qm</file>
-        <file>i18n/t1_ja_KANJI.qm</file>
     </qresource>
 </RCC>
