@@ -11,12 +11,12 @@
     <message>
         <location filename="../SerialSettings.qml" line="64"/>
         <source>Dash Sel.</source>
-        <translation>Dash Select</translation>
+        <translation>Selección del tablero</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="69"/>
         <source>Sensehat</source>
-        <translation>Sensehat</translation>
+        <translation>Placa Sense HAT</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="73"/>
