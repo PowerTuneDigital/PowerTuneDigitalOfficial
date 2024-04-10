@@ -6,27 +6,27 @@
     <message>
         <location filename="../ExBoardAnalog.qml" line="312"/>
         <source>Damping</source>
-        <translation type="unfinished"></translation>
+        <translation>ダンピング</translation>
     </message>
     <message>
         <location filename="../ExBoardAnalog.qml" line="481"/>
         <source>Version</source>
-        <translation type="unfinished"></translation>
+        <translation>バージョン</translation>
     </message>
     <message>
         <location filename="../ExBoardAnalog.qml" line="505"/>
         <source>Cylinders</source>
-        <translation type="unfinished"></translation>
+        <translation>- シリンダー</translation>
     </message>
     <message>
         <location filename="../ExBoardAnalog.qml" line="552"/>
         <source>Voltage divider jumpers</source>
-        <translation type="unfinished"></translation>
+        <translation>電圧分けジャンパー</translation>
     </message>
     <message>
         <location filename="../ExBoardAnalog.qml" line="563"/>
         <source>Temp In.</source>
-        <translation type="unfinished"></translation>
+        <translation>温度センサー</translation>
     </message>
 </context>
 </TS>

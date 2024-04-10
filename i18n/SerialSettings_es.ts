@@ -6,53 +6,53 @@
     <message>
         <location filename="../SerialSettings.qml" line="57"/>
         <source>Main</source>
-        <translation type="unfinished"></translation>
+        <translation>Principal</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="64"/>
         <source>Dash Sel.</source>
-        <translation type="unfinished"></translation>
+        <translation>Dash Select</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="69"/>
         <source>Sensehat</source>
-        <translation type="unfinished"></translation>
+        <translation>Sensehat</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="73"/>
         <source>Warn / Gear</source>
-        <translation type="unfinished"></translation>
+        <translation>Advertencia / Equipo</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="77"/>
         <source>Speedtab</source>
-        <translation type="unfinished"></translation>
+        <translation>Tabla rápida</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="88"/>
         <source>RPM2</source>
-        <translation type="unfinished"></translation>
+        <translation>RPM2</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="93"/>
         <source>EX Board</source>
-        <translation type="unfinished"></translation>
+        <translation>TableroEX</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="98"/>
         <source>Startup</source>
-        <translation type="unfinished"></translation>
+        <translation>Puesta en marcha</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="103"/>
         <source>Network</source>
-        <translation type="unfinished"></translation>
+        <translation>Red</translation>
     </message>
     <message>
         <location filename="../SerialSettings.qml" line="109"/>
         <location filename="../SerialSettings.qml" line="112"/>
         <source>Analog</source>
-        <translation type="unfinished"></translation>
+        <translation>Cosa análoga</translation>
     </message>
 </context>
 </TS>

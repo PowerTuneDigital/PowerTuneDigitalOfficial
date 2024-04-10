@@ -46,12 +46,12 @@
     <message>
         <location filename="../OBDPIDS.qml" line="89"/>
         <source>RPM</source>
-        <translation type="unfinished"></translation>
+        <translation>RPM</translation>
     </message>
     <message>
         <location filename="../OBDPIDS.qml" line="95"/>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>速度</translation>
     </message>
     <message>
         <location filename="../OBDPIDS.qml" line="101"/>

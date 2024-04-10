@@ -6,7 +6,7 @@
     <message>
         <location filename="../Settings/DashSelector.qml" line="113"/>
         <source>ActiveDashboards</source>
-        <translation type="unfinished"></translation>
+        <translation>実行中ダッシュボード</translation>
     </message>
 </context>
 <context>
@@ -14,68 +14,68 @@
     <message>
         <location filename="../Settings/main.qml" line="120"/>
         <source>ECU Serial Port</source>
-        <translation type="unfinished"></translation>
+        <translation>ECUシリアルポート</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="157"/>
         <source>GPS Port</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS ポート</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="183"/>
         <source>Speed units</source>
-        <translation type="unfinished"></translation>
+        <translation>速度単位 </translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="192"/>
         <source>Metric</source>
-        <translation type="unfinished"></translation>
+        <translation>メトリック</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="192"/>
         <source>Imperial</source>
-        <translation type="unfinished"></translation>
+        <translation>インペリアル</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="214"/>
         <source>Temp units</source>
-        <translation type="unfinished"></translation>
+        <translation>℃ or ℉ </translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°C</source>
-        <translation type="unfinished"></translation>
+        <translation>°C</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°F</source>
-        <translation type="unfinished"></translation>
+        <translation>°F</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="246"/>
         <source>Pressure units</source>
-        <translation type="unfinished"></translation>
+        <translation>圧力単位 </translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="275"/>
         <source>ECU Selection</source>
-        <translation type="unfinished"></translation>
+        <translation>ECU選択</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="307"/>
         <source>GoPro Variant</source>
-        <translation type="unfinished"></translation>
+        <translation>ゴープロモデル</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="329"/>
         <location filename="../Settings/main.qml" line="338"/>
         <source>GoPro Pasword</source>
-        <translation type="unfinished"></translation>
+        <translation>ゴープロパスワード</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="347"/>
         <source>Logfile name</source>
-        <translation type="unfinished"></translation>
+        <translation>- ログファイル名前</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="353"/>
@@ -85,7 +85,7 @@
     <message>
         <location filename="../Settings/main.qml" line="362"/>
         <source>Odo</source>
-        <translation type="unfinished"></translation>
+        <translation>走行距離</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="371"/>
@@ -96,133 +96,133 @@
     <message>
         <location filename="../Settings/main.qml" line="376"/>
         <source>Trip</source>
-        <translation type="unfinished"></translation>
+        <translation>トリップ</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="404"/>
         <source>Serial Status</source>
-        <translation type="unfinished"></translation>
+        <translation>シリアルステータス</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="429"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="443"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="458"/>
         <source>GPS Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="474"/>
         <source>GPS Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="488"/>
         <source>Trip Reset</source>
-        <translation type="unfinished"></translation>
+        <translation>トリップ</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="509"/>
         <source>Quit</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS 接続</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="518"/>
         <source>Shutdown</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS 切断</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="527"/>
         <source>Reboot</source>
-        <translation type="unfinished"></translation>
+        <translation>区間距離リセット</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="538"/>
         <source>RPM Smoothing</source>
-        <translation type="unfinished"></translation>
+        <translation>終了</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="549"/>
         <location filename="../Settings/main.qml" line="580"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="570"/>
         <source>Speed Smoothing</source>
-        <translation type="unfinished"></translation>
+        <translation>再起動</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="605"/>
         <source>Data Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>回転メーター円滑補正</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="617"/>
         <source>GoPro rec</source>
-        <translation type="unfinished"></translation>
+        <translation>オフ</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="627"/>
         <source>NMEA Logger</source>
-        <translation type="unfinished"></translation>
+        <translation>車速メーター円滑補正</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="674"/>
         <source>9</source>
-        <translation type="unfinished"></translation>
+        <translation>記録計</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="683"/>
         <source>16</source>
-        <translation type="unfinished"></translation>
+        <translation>ゴープロ録画</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="691"/>
         <location filename="../Settings/main.qml" line="720"/>
         <source>AFR</source>
-        <translation type="unfinished"></translation>
+        <translation>GPS記録計</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="713"/>
         <source>5</source>
-        <translation type="unfinished"></translation>
+        <translation>空燃比</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="742"/>
         <location filename="../Settings/main.qml" line="777"/>
         <source>base adress</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="747"/>
         <location filename="../Settings/main.qml" line="782"/>
         <source>(decimal)</source>
-        <translation type="unfinished"></translation>
+        <translation>    {    {  (十進法)</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="762"/>
         <location filename="../Settings/main.qml" line="797"/>
         <source>1024</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="808"/>
         <source>Language</source>
-        <translation type="unfinished"></translation>
+        <translation>言語</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="897"/>
         <location filename="../Settings/main.qml" line="899"/>
         <source>Weight</source>
-        <translation type="unfinished"></translation>
+        <translation>重量</translation>
     </message>
 </context>
 <context>
@@ -230,57 +230,57 @@
     <message>
         <location filename="../Settings/network.qml" line="67"/>
         <source>Scan WIFI</source>
-        <translation type="unfinished"></translation>
+        <translation>Wi-Fiスキャン</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="79"/>
         <source>WIFI Country</source>
-        <translation type="unfinished"></translation>
+        <translation>国別選択</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="93"/>
         <source>WIFI 1</source>
-        <translation type="unfinished"></translation>
+        <translation>Wi-Fi1</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="118"/>
         <source>Password 1</source>
-        <translation type="unfinished"></translation>
+        <translation>パスワード1</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="123"/>
         <source>Passphrase</source>
-        <translation type="unfinished"></translation>
+        <translation>オフ</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="167"/>
         <source>Connect WIFI</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="193"/>
         <source>Update</source>
-        <translation type="unfinished"></translation>
+        <translation>Wifi 接続</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="210"/>
         <source>Restart daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>アップデート</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="228"/>
         <source>Update Tracks</source>
-        <translation type="unfinished"></translation>
+        <translation>アップデート</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="253"/>
         <source>Ethernet IP adress</source>
-        <translation type="unfinished"></translation>
+        <translation>再接続</translation>
     </message>
     <message>
         <location filename="../Settings/network.qml" line="283"/>
         <source>WLAN IP adress</source>
-        <translation type="unfinished"></translation>
+        <translation>トラック更新</translation>
     </message>
 </context>
 <context>
@@ -291,7 +291,7 @@
         <location filename="../Settings/rpm.qml" line="41"/>
         <location filename="../Settings/rpm.qml" line="46"/>
         <source>Shift Light</source>
-        <translation type="unfinished"></translation>
+        <translation>イーサネットIPアドレス</translation>
     </message>
     <message>
         <location filename="../Settings/rpm.qml" line="31"/>
@@ -299,7 +299,7 @@
         <location filename="../Settings/rpm.qml" line="41"/>
         <location filename="../Settings/rpm.qml" line="46"/>
         <source>Stage</source>
-        <translation type="unfinished"></translation>
+        <translation>WLAN IPアドレス</translation>
     </message>
 </context>
 <context>
@@ -307,27 +307,27 @@
     <message>
         <location filename="../Settings/sensehat.qml" line="30"/>
         <source>Accelerometer</source>
-        <translation type="unfinished"></translation>
+        <translation>シフトライト</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="40"/>
         <source>Gyro Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>ステージ</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="51"/>
         <source>Compass</source>
-        <translation type="unfinished"></translation>
+        <translation>-加速度計</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="61"/>
         <source>Pressure Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>ジャイロセンサー</translation>
     </message>
     <message>
         <location filename="../Settings/sensehat.qml" line="72"/>
         <source>Temperature Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>方位磁針</translation>
     </message>
 </context>
 <context>
@@ -335,32 +335,32 @@
     <message>
         <location filename="../Settings/speed.qml" line="27"/>
         <source>SpeedCorrection</source>
-        <translation type="unfinished"></translation>
+        <translation>圧力センサー</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="45"/>
         <source>USB VR Speed Sensor</source>
-        <translation type="unfinished"></translation>
+        <translation>温度センサー</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="70"/>
         <source>Pulses per mile</source>
-        <translation type="unfinished"></translation>
+        <translation>速度補正  %</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="92"/>
         <source>External Speed port</source>
-        <translation type="unfinished"></translation>
+        <translation>USB VRスピードセンサー</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="124"/>
         <source>Connect</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/speed.qml" line="139"/>
         <source>Disconnect</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
 </context>
 <context>
@@ -368,32 +368,32 @@
     <message>
         <location filename="../Settings/startup.qml" line="28"/>
         <source>Apply settings</source>
-        <translation type="unfinished"></translation>
+        <translation>パルス/マイル</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="35"/>
         <source>Apply</source>
-        <translation type="unfinished"></translation>
+        <translation>外部車速ポート</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="43"/>
         <source>Startup daemon</source>
-        <translation type="unfinished"></translation>
+        <translation>接続</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="66"/>
         <source>Can Bitrate</source>
-        <translation type="unfinished"></translation>
+        <translation>切断</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="155"/>
         <source>Main Speed Source</source>
-        <translation type="unfinished"></translation>
+        <translation>設定を適用する</translation>
     </message>
     <message>
         <location filename="../Settings/startup.qml" line="182"/>
         <source>Warningtext</source>
-        <translation type="unfinished"></translation>
+        <translation>適用</translation>
     </message>
 </context>
 <context>
@@ -401,27 +401,27 @@
     <message>
         <location filename="../Settings/warn_gear.qml" line="35"/>
         <source>WaterTemp</source>
-        <translation type="unfinished"></translation>
+        <translation>コネクション起動</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="40"/>
         <source>Boost</source>
-        <translation type="unfinished"></translation>
+        <translation>CAN ビットレート</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="45"/>
         <source>Revs</source>
-        <translation type="unfinished"></translation>
+        <translation>主要加速ソース</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="50"/>
         <source>Knock</source>
-        <translation type="unfinished"></translation>
+        <translation>警告: 車両のチューニング中または ECU/PCM の操作中は、OBD/OBD2 を含むスタートアップ デーモンを選択しないでください。PowerTune Digital ユーザーは、ECU/PCM の操作中は OBD ポーリングをオフにする必要があります。デーモンを選択するだけで起動できます。 OBD/OBD2 オプションが含まれていないデータを選択して適用を押すか、車両電子機器の作業中にダッシュボードのプラグを完全に抜きます。PowerTune Digital は、OBD データを同時に使用した場合の車両 / コントロール ユニット / PCM / エンジンへの損傷については責任を負いません。他のデバイスにポーリングされる時間が長くなり、他の理由でドロップアウトや損傷が発生する可能性があります。 https://www.powertunedigital.com/pages/manual で保証規約をお読みください。</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="55"/>
         <source>Lamdamultiply</source>
-        <translation type="unfinished"></translation>
+        <translation>水温</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="122"/>
@@ -430,7 +430,7 @@
         <location filename="../Settings/warn_gear.qml" line="175"/>
         <location filename="../Settings/warn_gear.qml" line="179"/>
         <source>GearCalculation</source>
-        <translation type="unfinished"></translation>
+        <translation>ブースト</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="127"/>
@@ -440,19 +440,19 @@
         <location filename="../Settings/warn_gear.qml" line="147"/>
         <location filename="../Settings/warn_gear.qml" line="152"/>
         <source>Gear</source>
-        <translation type="unfinished"></translation>
+        <translation>回転数</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="165"/>
         <location filename="../Settings/warn_gear.qml" line="175"/>
         <source>ON</source>
-        <translation type="unfinished"></translation>
+        <translation>ノック</translation>
     </message>
     <message>
         <location filename="../Settings/warn_gear.qml" line="169"/>
         <location filename="../Settings/warn_gear.qml" line="179"/>
         <source>OFF</source>
-        <translation type="unfinished"></translation>
+        <translation>オフ</translation>
     </message>
 </context>
 </TS>

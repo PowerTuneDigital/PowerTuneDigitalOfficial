@@ -6,12 +6,12 @@
     <message>
         <location filename="../ConsultRegs.qml" line="41"/>
         <source>RPM</source>
-        <translation type="unfinished"></translation>
+        <translation>RPM</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="47"/>
         <source>RPMREF</source>
-        <translation type="unfinished"></translation>
+        <translation>RPM</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="53"/>
@@ -41,12 +41,12 @@
     <message>
         <location filename="../ConsultRegs.qml" line="83"/>
         <source>Speed</source>
-        <translation type="unfinished"></translation>
+        <translation>速度</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="90"/>
         <source>Battery Voltage</source>
-        <translation type="unfinished"></translation>
+        <translation>バッテリー電圧</translation>
     </message>
     <message>
         <location filename="../ConsultRegs.qml" line="96"/>

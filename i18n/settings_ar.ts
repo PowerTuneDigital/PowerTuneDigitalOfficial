@@ -44,12 +44,12 @@
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°C</source>
-        <translation type="unfinished"></translation>
+        <translation>°C</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="224"/>
         <source>°F</source>
-        <translation type="unfinished"></translation>
+        <translation>°F</translation>
     </message>
     <message>
         <location filename="../Settings/main.qml" line="246"/>

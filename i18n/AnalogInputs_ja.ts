@@ -16,12 +16,12 @@
         <location filename="../AnalogInputs.qml" line="257"/>
         <location filename="../AnalogInputs.qml" line="279"/>
         <source>Analog</source>
-        <translation type="unfinished"></translation>
+        <translation>アナログ</translation>
     </message>
     <message>
         <location filename="../AnalogInputs.qml" line="322"/>
         <source>Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc</source>
-        <translation type="unfinished"></translation>
+        <translation>アナログ</translation>
     </message>
 </context>
 </TS>
