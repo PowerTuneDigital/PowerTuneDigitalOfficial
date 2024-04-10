@@ -188,6 +188,21 @@ ApplicationWindow {
         }
     }
 
+    Loader {
+        id: popUpLoader
+        visible: false
+        enabled: appSettings.sampleActionEnabled
+        anchors.right: parent.right
+        width: window.width * 0.15
+        //anchors.verticalCenter: parent.verticalCenter
+        Component.onCompleted: {
+            if(popUpLoader.enabled){
+                visible = true
+            }
+            console.log("Brightness Loaded")
+        }
+    }
+
     Drawer {
         id: drawerpopup
         width: window.width
@@ -615,21 +630,6 @@ ApplicationWindow {
         }
     }
 
-
-    Loader {
-        id: popUpLoader
-        visible: false
-        enabled: appSettings.sampleActionEnabled
-        anchors.right: parent.right
-        width: window.width * 0.15
-        //anchors.verticalCenter: parent.verticalCenter
-        Component.onCompleted: {
-            if(popUpLoader.enabled){
-                visible = true
-            }
-            console.log("Brightness Loaded")
-        }
-    }
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
             if (0 === custom.digiValue && digitalInput1 == 1) {

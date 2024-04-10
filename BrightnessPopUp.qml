@@ -68,7 +68,7 @@ Rectangle{
                 transformOrigin: Item.Center
                 onClicked: {
                     if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-                        brightnessValue = 80;
+                        brightnessValue = 75;
                     }else{
                         brightnessValue = 255
                     }
