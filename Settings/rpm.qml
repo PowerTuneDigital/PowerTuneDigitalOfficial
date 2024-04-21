@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-
+import "qrc:/Translator.js" as Translator
 Rectangle {
     id: rpmSettings
     anchors.fill: parent
@@ -28,22 +28,22 @@ Rectangle {
             color: "white"
         }
         Text {
-            text: qsTr("Shift Light") + " " + qsTr("Stage") + " 1"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 1"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: qsTr("Shift Light") + " " + qsTr("Stage") + " 2"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 2"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: qsTr("Shift Light") + " " + qsTr("Stage") + " 3"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 3"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }
         Text {
-            text: qsTr("Shift Light") + " " + qsTr("Stage") + " 4"
+            text: Translator.translate("Shift Light", Dashboard.language) + " " + Translator.translate("Stage", Dashboard.language) + " 4"
             font.pixelSize: rpmSettings.width / 55
             color: "white"
         }

@@ -1,6 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 2.1
-
+import "qrc:/Translator.js" as Translator
 Item {
     id: statepicture
     height: pictureheight
@@ -108,7 +108,7 @@ Item {
                 columns: 2
                 spacing :5
             Text{
-                text: qsTr("Image off")
+                text: Translator.translate("Image off", Dashboard.language)
                 font.pixelSize: 12
 
             }
@@ -136,7 +136,7 @@ Item {
                 }
             }
             Text{
-                text: qsTr("Image on")
+                text: Translator.translate("Image on", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -165,7 +165,7 @@ Item {
                 }
             }
             Text{
-                text: qsTr("Source")
+                text: Translator.translate("Source", Dashboard.language)
                 font.pixelSize: 12
             }
             ComboBox {
@@ -179,7 +179,7 @@ Item {
                 onCurrentIndexChanged: bind();
             }
             Text{
-                text: qsTr("Trigger")
+                text: Translator.translate("Trigger", Dashboard.language)
                 font.pixelSize: 12
             }
             TextField {
@@ -193,13 +193,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: qsTr("Delete image")
+                text: Translator.translate("Delete image", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: statepicture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: qsTr("Close")
+                text: Translator.translate("Close", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: {
                     triggervalue = triggeronvalue.text;

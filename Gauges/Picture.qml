@@ -1,5 +1,6 @@
 import QtQuick 2.5
 import QtQuick.Controls 2.1
+import "qrc:/Translator.js" as Translator
 
 Item {
     id: picture
@@ -106,13 +107,13 @@ Item {
             }
             RoundButton{
                 width: parent.width
-                text: qsTr("Delete image")
+                text: Translator.translate("Delete image", Dashboard.language)
                 font.pixelSize: 15
                 onClicked: picture.destroy();
             }
             RoundButton{
                 width: parent.width
-                text: qsTr("Close")
+                text: Translator.translate("Close", Dashboard.language)
                 onClicked: changesize.visible = false;
             }
         }

@@ -6,6 +6,7 @@ import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
 import Qt.labs.settings 1.0
+import "Translator.js" as Translator
 
 
 ApplicationWindow {

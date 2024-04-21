@@ -3,6 +3,7 @@ import QtQuick.Extras 1.4
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import Qt.labs.settings 1.0
+import "Translator.js" as Translator
 
 Rectangle {
     anchors.fill: parent
@@ -56,7 +57,7 @@ Rectangle {
             font.pixelSize: main.width / 55;color:"white"}
         Text { text: "Val. @ 5V"
             font.pixelSize: main.width / 55;color:"white"}
-        Text { text: qsTr("Analog") + " " + "0"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "0"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an00
@@ -78,7 +79,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "1"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "1"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an10
@@ -100,7 +101,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "2"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "2"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an20
@@ -122,7 +123,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "3"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "3"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an30
@@ -144,7 +145,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "4"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "4"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an40
@@ -166,7 +167,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "5"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "5"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an50
@@ -188,7 +189,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "6"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "6"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an60
@@ -210,7 +211,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "7"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "7"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an70
@@ -232,7 +233,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "8"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "8"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an80
@@ -254,7 +255,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "9"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "9"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an90
@@ -276,7 +277,7 @@ Rectangle {
             onEditingFinished: inputs.setInputs()
 
         }
-        Text { text: qsTr("Analog") + " " + "10"
+        Text { text: Translator.translate("Analog", Dashboard.language) + " " + "10"
             font.pixelSize: main.width / 55;color:"white"}
         TextField {
             id: an100
@@ -319,6 +320,6 @@ Rectangle {
         horizontalAlignment: Text.AlignHCenter
         color: "black"
         wrapMode: Text.WordWrap
-        text: qsTr("Enter the Value that should be displayed at 0 V in the field Val.@ 0V and the Value that should be displayed at 5 V in the field Val @5V.The calculated values will be available in the corresponding datasource Analog x Calc")
+        text: Translator.translate("Analogexplanation", Dashboard.language)
     }
 }
