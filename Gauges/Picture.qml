@@ -44,7 +44,7 @@ Item {
         z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         onVisibleChanged: {
-            changesize.x= -mytextlabel.x;
+            changesize.x= 200 //-mytextlabel.x;
             changesize.y= -mytextlabel.y;
         }
         MouseArea {

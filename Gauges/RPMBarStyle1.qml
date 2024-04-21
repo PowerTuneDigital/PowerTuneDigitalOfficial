@@ -60,7 +60,7 @@ color: "darkgrey"
               color: Qt.rgba(gauge.value / gauge.maximumValue, 1.1 - gauge.value / gauge.maximumValue, 0, 1)
               Component.onCompleted: {
                   if(speedUnits.width == 1600){
-                      rpmFill.width = 320
+                      rpmFill.width = 330
                   }
               }
           }

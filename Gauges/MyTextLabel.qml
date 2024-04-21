@@ -20,9 +20,9 @@ Item {
     property string resettextcolor
     Drag.active: true
 
-    Component.onCompleted: {togglemousearea();
+    Component.onCompleted: {
+        togglemousearea();
         checkdatasource();
-
     }
 
     DatasourcesList{id: powertunedatasource}
@@ -81,12 +81,13 @@ Item {
             enabled: true
         }
         onVisibleChanged: {
-            changesize.x= -mytextlabel.x;
-            changesize.y= -mytextlabel.y;
+            changesize.x = 150 //-mytextlabel.x;
+            changesize.y = -mytextlabel.y;
         }
 
 
-        Grid { width: parent.width
+        Grid {
+            width: parent.width
             height:parent.height
             id: popupgrid
             rows: 12

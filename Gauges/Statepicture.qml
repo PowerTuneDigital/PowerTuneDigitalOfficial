@@ -55,7 +55,7 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-            changesize.x= -statepicture.x;
+            changesize.x= 200//-statepicture.x;
             changesize.y= -statepicture.y;
         }
     }

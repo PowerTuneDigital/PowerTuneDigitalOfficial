@@ -59,7 +59,7 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-                changesize.x= -statepicture.x;
+                changesize.x= 200 //-statepicture.x;
                 changesize.y= -statepicture.y;
         }
     }
@@ -125,7 +125,6 @@ Item {
             Text{
                 text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("OFF", Dashboard.language)
                 font.pixelSize: 800 * (12 / 800)
-
             }
 
             ComboBox {

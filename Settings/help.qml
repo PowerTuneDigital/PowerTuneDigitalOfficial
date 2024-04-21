@@ -19,66 +19,91 @@ Rectangle {
                 }
     }
 
-    // Column {
-    //     anchors.fill: parent
-    //     anchors.centerIn: parent
-
-    Grid{
-        rows:1
-        columns: 5
-        leftPadding: helpBackground.width * 0.0225
-
-            id: qrText
-            anchors {
-                left: helpBackground.left
-                right: helpBackground.right
-                bottom: qrImage.top
-            }
-            spacing: parent.width * 0.11
-
         Text {
+            id: contactText
             text: "Contact Page"
             font.family: "Eurostile"
             bottomPadding: 10
             font.bold: true
+            x: 30
+            y: 370
             font.pixelSize: helpBackground.width * 0.018 //36
+            Component.onCompleted: {
+                if(helpBackground.width == 800){
+                    contactText.x = 15
+                    contactText.y = 300
+                }
+            }
         }
         Text {
+            id: facebookText
             text: "Facebook"
             font.family: "Eurostile"
             bottomPadding: 10
             font.bold: true
+            x: 390
+            y: 370
             font.pixelSize: helpBackground.width * 0.018
+            Component.onCompleted: {
+                if(helpBackground.width == 800){
+                    facebookText.x = 195
+                    facebookText.y = 300
+                }
+            }
         }
         Text {
+            id: instagramText
             text: "Instagram"
             font.family: "Eurostile"
             bottomPadding: 10
             font.bold: true
+            x: 720
+            y: 370
             font.pixelSize: helpBackground.width * 0.018
+            Component.onCompleted: {
+                if(helpBackground.width == 800){
+                    instagramText.x = 360
+                    instagramText.y = 300
+                }
+            }
         }
         Text {
+            id: manualText
             text: "Manual"
             font.family: "Eurostile"
             bottomPadding: 10
             font.bold: true
+            x: 1080
+            y: 370
             font.pixelSize: helpBackground.width * 0.018
+            Component.onCompleted: {
+                if(helpBackground.width == 800){
+                    manualText.x = 540
+                    manualText.y = 300
+                }
+            }
         }
         Text {
-            text: "      Warranty"
+            id: warrantyText
+            text: "Warranty"
             font.family: "Eurostile"
             bottomPadding: 10
             font.bold: true
+            x: 1400
+            y: 370
             font.pixelSize: helpBackground.width * 0.018
+            Component.onCompleted: {
+                if(helpBackground.width == 800){
+                    warrantyText.x = 700
+                    warrantyText.y = 300
+                }
+            }
         }
-    }
 
     Grid{
         rows:1
         columns: 5
             id: qrImage
-
-
             anchors {
                 left: parent.left
                 right: parent.right
