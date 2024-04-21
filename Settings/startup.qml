@@ -1,7 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-import "qrc:/Translator.js" as Translator
 
 Rectangle {
     id: daemons
@@ -26,14 +25,14 @@ Rectangle {
         columns: 2
         spacing: parent.width / 150
         Text {
-            text: Translator.translate("Apply settings", Dashboard.language)
+            text: qsTr("Apply settings")
             font.pixelSize: daemons.width / 55
         }
         Button {
             id: apply
             width: daemons.width / 3
             height: daemons.height / 15
-            text: Translator.translate("Apply", Dashboard.language)
+            text: qsTr("Apply")
             onClicked: {
                 Connect.daemonstartup(daemonselect.currentIndex)
                 Connect.canbitratesetup(canbitrateselect.currentIndex)
@@ -41,7 +40,7 @@ Rectangle {
         }
 
         Text {
-            text: Translator.translate("Startup daemon", Dashboard.language)
+            text: qsTr("Startup daemon")
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -64,7 +63,7 @@ Rectangle {
             //Component.onCompleted: tabView.currentIndex = 0;
         }
         Text {
-            text: Translator.translate("Can Bitrate", Dashboard.language)
+            text: qsTr("Can Bitrate")
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -153,7 +152,7 @@ Rectangle {
             }
         }
         Text {
-            text: Translator.translate("Main Speed Source", Dashboard.language)
+            text: qsTr("Main Speed Source")
             font.pixelSize: daemons.width / 55
         }
         ComboBox {
@@ -180,7 +179,7 @@ Rectangle {
     }
     Text {
         id: warningtext
-        text:Translator.translate("Warningtext", Dashboard.language)
+        text:qsTr("Warningtext")
         font.pixelSize: daemons.width / 55
         font.bold: true
         width: parent.width / 1.5

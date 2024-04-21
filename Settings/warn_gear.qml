@@ -1,7 +1,6 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-import "qrc:/Translator.js" as Translator
 
 Rectangle {
 
@@ -33,27 +32,27 @@ Rectangle {
             columns: 5
             spacing: warningsettings.height / 150
             Text {
-                text: Translator.translate("WaterTemp", Dashboard.language)
+                text: qsTr("WaterTemp")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Boost", Dashboard.language)
+                text: qsTr("Boost")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Revs", Dashboard.language)
+                text: qsTr("Revs")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Knock", Dashboard.language)
+                text: qsTr("Knock")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Lamdamultiply", Dashboard.language)
+                text: qsTr("Lamdamultiply")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
@@ -120,37 +119,37 @@ Rectangle {
 
             Text {
                 id: switchtext
-                text: Translator.translate("GearCalculation", Dashboard.language)
+                text: qsTr("GearCalculation")
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 1"
+                text: qsTr("Gear")+" 1"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 2"
+                text: qsTr("Gear")+" 2"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 3"
+                text: qsTr("Gear")+" 3"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 4"
+                text: qsTr("Gear")+" 4"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 5"
+                text: qsTr("Gear")+" 5"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
             Text {
-                text: Translator.translate("Gear", Dashboard.language)+" 6"
+                text: qsTr("Gear")+" 6"
                 font.pixelSize: warningsettings.width / 55
                 color: "white"
             }
@@ -163,21 +162,21 @@ Rectangle {
                 Component.onCompleted: if (gearcalcselect.checked == true) {
                                            gercalactive = 1
                                            applysettings.start()
-                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.language) +" " +Translator.translate("ON", Dashboard.language)
+                                           switchtext.text = qsTr("GearCalculation") +" " +qsTr("ON")
                                        } else {
                                            gercalactive = 0
                                            applysettings.start()
-                                           switchtext.text = Translator.translate("GearCalculation", Dashboard.language) + " " +Translator.translate("OFF", Dashboard.language)
+                                           switchtext.text = qsTr("GearCalculation") + " " +qsTr("OFF")
                                        }
 
                 onCheckedChanged: if (gearcalcselect.checked == true) {
                                       gercalactive = 1
                                       applysettings.start()
-                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.language) +" " +Translator.translate("ON", Dashboard.language)
+                                      switchtext.text = qsTr("GearCalculation") +" " +qsTr("ON")
                                   } else {
                                       gercalactive = 0
                                       applysettings.start()
-                                      switchtext.text = Translator.translate("GearCalculation", Dashboard.language) + " " +Translator.translate("OFF", Dashboard.language)
+                                      switchtext.text = qsTr("GearCalculation") + " " +qsTr("OFF")
                                   }
             }
 

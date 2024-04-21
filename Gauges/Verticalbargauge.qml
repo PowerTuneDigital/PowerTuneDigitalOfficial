@@ -3,7 +3,7 @@ import QtGraphicalEffects 1.0
 import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
-import "qrc:/Translator.js" as Translator
+
 Rectangle {
     id: gauge
     width: 100
@@ -79,7 +79,7 @@ Rectangle {
         Menu {
             id: popupmenu
             MenuItem {
-                text: Translator.translate("max value", Dashboard.language)
+                text: qsTr("max value")
                 font.pixelSize: 15
                 onClicked: {
                     bargaugeMax.visible = true;
@@ -87,7 +87,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("min value", Dashboard.language)
+                text: qsTr("min value")
                 font.pixelSize: 15
                 onClicked:    {
                     txtBarMinValue.visible = true;
@@ -95,7 +95,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("Set decimal", Dashboard.language)
+                text: qsTr("Set decimal")
                 font.pixelSize: 15
                 onClicked:    {
                     cbx_decimalplaces.visible = true;
@@ -121,7 +121,7 @@ Rectangle {
             }
             */
             MenuItem {
-                text: Translator.translate("Change title", Dashboard.language)
+                text: qsTr("Change title")
                 font.pixelSize: 15
                 onClicked:    {
                     txtgaugenamechange.visible = true;
@@ -129,7 +129,7 @@ Rectangle {
                 }
             }
             MenuItem {
-                text: Translator.translate("remove gauge", Dashboard.language)
+                text: qsTr("remove gauge")
                 font.pixelSize: 15
                 onClicked: gauge.destroy()
             }
@@ -153,7 +153,7 @@ Rectangle {
         Button {
             id: btnMaxValue
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -179,7 +179,7 @@ Rectangle {
         Button {
             id: btnBarMinValue
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -202,7 +202,7 @@ Rectangle {
         Button {
             id: btndecimalplaces
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -229,7 +229,7 @@ Rectangle {
         Button {
             id: btnminValue
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -256,7 +256,7 @@ Rectangle {
         Button {
             id: btnmaxValue
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right
@@ -283,7 +283,7 @@ Rectangle {
         Button {
             id: btngaugenamechange
             x: 119
-            text: Translator.translate("OK", Dashboard.language)
+            text: qsTr("OK")
             anchors.top: parent.top
             anchors.topMargin: 0
             anchors.right: parent.right

@@ -1,7 +1,7 @@
 import QtQuick 2.8
 import QtQuick.Controls 2.1
 import Qt.labs.settings 1.0
-import "qrc:/Translator.js" as Translator
+
 Rectangle {
 
     id: senhatselector
@@ -27,7 +27,7 @@ Rectangle {
             anchors.topMargin: parent.height / 20
             Switch {
                 id: accelsens
-                text: Translator.translate("Accelerometer", Dashboard.language)
+                text: qsTr("Accelerometer")
                 onCheckedChanged: {
                     if (accelsens.checked == true) {
                         Sens.Accel()
@@ -37,7 +37,7 @@ Rectangle {
             }
             Switch {
                 id: gyrosense
-                text: Translator.translate("Gyro Sensor", Dashboard.language)
+                text: qsTr("Gyro Sensor")
                 onCheckedChanged: {
 
                     if (gyrosense.checked == true) {
@@ -48,7 +48,7 @@ Rectangle {
             }
             Switch {
                 id: compass
-                text: Translator.translate("Compass", Dashboard.language)
+                text: qsTr("Compass")
                 onCheckedChanged: {
                     if (compass.checked == true) {
                         Sens.Comp()
@@ -58,7 +58,7 @@ Rectangle {
             }
             Switch {
                 id: pressuresens
-                text: Translator.translate("Pressure Sensor", Dashboard.language)
+                text: qsTr("Pressure Sensor")
                 onCheckedChanged: {
 
                     if (pressuresens.checked == true) {
@@ -69,7 +69,7 @@ Rectangle {
             }
             Switch {
                 id: tempsense
-                text: Translator.translate("Temperature Sensor", Dashboard.language)
+                text: qsTr("Temperature Sensor")
                 onCheckedChanged: {
 
                     if (tempsense.checked == true) {

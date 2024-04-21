@@ -15,7 +15,7 @@ import "qrc:/Gauges/createText.js" as CreateTextScript
 import "qrc:/Gauges/createPicture.js" as CreatePictureScript
 import "qrc:/Gauges/createStatePicture.js" as CreateStatePictureScript
 import "qrc:/Gauges/createStateGIF.js" as CreateStateGIFScript
-import "qrc:/Translator.js" as Translator
+
 Item {
     id: mainwindow
     anchors.fill: parent
@@ -266,7 +266,7 @@ Item {
             rowSpacing :5
 
             Text {
-                text: Translator.translate("RPM2", Dashboard.language)+ " " +Translator.translate("Style", Dashboard.language)
+                text: qsTr("RPM2")+ " " +qsTr("Style")
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -275,7 +275,7 @@ Item {
                 width: 200
                 height: 40
                 font.pixelSize: 15
-                 model: [Translator.translate("None", Dashboard.language), Translator.translate("Style", Dashboard.language) + " 1",Translator.translate("Style", Dashboard.language) + " 2", Translator.translate("Style", Dashboard.language) + " 3", Translator.translate("Style", Dashboard.language) + " 4"]
+                 model: [qsTr("None"), qsTr("Style") + " 1",qsTr("Style") + " 2", qsTr("Style") + " 3", qsTr("Style") + " 4"]
                 onCurrentIndexChanged: rpmgauge.selector();
                 delegate: ItemDelegate {
                     width: rpmstyleselector.width
@@ -288,7 +288,7 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
+                text: qsTr("Backround") + " " + qsTr("Image")
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -317,7 +317,7 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
+                text: qsTr("Backround") + " " + qsTr("Color")
                 font.pixelSize: 20
                 font.bold: true
             }
@@ -368,7 +368,7 @@ Item {
                 width: 200
                 height: 40
                 font.pixelSize: 15
-                model: [Translator.translate(Translator.translate("None", Dashboard.language), Dashboard.language), "PFC Sensors"]
+                model: [qsTr(qsTr("None")), "PFC Sensors"]
                 onCurrentIndexChanged: setextra();
                 delegate: ItemDelegate {
                     width: extraSelector.width
@@ -382,7 +382,7 @@ Item {
             }
             Button {
                 id: btncloserpm
-                text: Translator.translate("Close", Dashboard.language)
+                text: qsTr("Close")
                 font.pixelSize: 15
                 width: 200
                 height: 40
@@ -452,7 +452,7 @@ Item {
                 id: btnaddSquare
                 width: 95
                 height: 40
-                text:  Translator.translate("Square", Dashboard.language)
+                text:  qsTr("Square")
                 font.pixelSize: 12
                 onClicked: {
                     CreateSquareGaugeScript.createSquareGauge(266,119,0,240,248,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,powertunedatasource.get(cbx_sources.currentIndex).defaultsymbol,powertunedatasource.get(cbx_sources.currentIndex).titlename,false,true,false,"Dashboard",powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,10000,-20000,"lightsteelblue","black","lightsteelblue","white","white","blue",25,40,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints2,"Lato","Lato");
@@ -465,7 +465,7 @@ Item {
                 id: btnaddBar
                 width: 95
                 height: 40
-                text: Translator.translate("Bar", Dashboard.language)
+                text: qsTr("Bar")
                 font.pixelSize: 12
                 onClicked: {
                     CreateBargaugeScript.createVerticalGauge(320,80,10,0,0,8000,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,powertunedatasource.get(cbx_sources.currentIndex).titlename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,1000,0);
@@ -478,7 +478,7 @@ Item {
                 id: btnaddRound
                 width: 95
                 height: 40
-                text: Translator.translate("Round", Dashboard.language)
+                text: qsTr("Round")
                 font.pixelSize: 12
                 onClicked: {
                     CreateRoundgaugeScript.createRoundGauge(400,20,20,powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,0,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,-1000,-145,90,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,powertunedatasource.get(cbx_sources.currentIndex).divisor,powertunedatasource.get(cbx_sources.currentIndex).stepsize,1,powertunedatasource.get(cbx_sources.currentIndex).stepsize,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,2,38,3,3,8,3,15,5,0.50,0.40,0.33,0.25,20,5,93,8,0,0,"red","darkred","aliceblue","red","grey","darkgrey","darkgrey","black","grey","black","dodgerblue","deepskyblue","lightskyblue","transparent",true,true,true,"Lato",30,50,10,false,"Lato",powertunedatasource.get(cbx_sources.currentIndex).titlename,"red",0,0,0,0,0,0,"false");
@@ -491,7 +491,7 @@ Item {
                 id: btnaddText
                 width: 95
                 height: 40
-                text: Translator.translate("Text", Dashboard.language)
+                text: qsTr("Text")
                 font.pixelSize: 12
                 onClicked: {
                     CreateTextScript.createText(100,50,"Textelement","Lato",15,"red","",true,0)
@@ -504,7 +504,7 @@ Item {
                 id: btnaddPicture
                 width: 95
                 height: 40
-                text: Translator.translate("Image", Dashboard.language)
+                text: qsTr("Image")
                 font.pixelSize: 12
                 onClicked: {
                     CreatePictureScript.createPicture(10,10,100,"qrc:/graphics/slectImage.png")
@@ -517,7 +517,7 @@ Item {
                 id: btnaddStatePicture
                 width: 95
                 height: 40
-                text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
+                text: qsTr("State") + " " + qsTr("Image")
                 font.pixelSize: 12
                 onClicked: {
                     //console.log("create State gauge ");
@@ -531,7 +531,7 @@ Item {
                 id: btnaddStateGIF
                 width: 95
                 height: 40
-                text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("GIF", Dashboard.language)
+                text: qsTr("State") + " " + qsTr("GIF")
                 font.pixelSize: 12
                 onClicked: {
                    // console.log("create State gauge ");
@@ -544,7 +544,7 @@ Item {
             Button {
                 id: btnsave
                 width: 95
-                text: Translator.translate("Save", Dashboard.language)
+                text: qsTr("Save")
                 font.pixelSize: 12
                 onClicked: {
                     squaregaugemenu.visible = false;
@@ -557,7 +557,7 @@ Item {
             Button {
                 id: btnopencolorselect
                 width:95
-                text: Translator.translate("Colors", Dashboard.language)
+                text: qsTr("Colors")
                 font.pixelSize: 12
                 onClicked: {
                     selectcolor.visible =true;
@@ -568,7 +568,7 @@ Item {
             Button {
                 id: btnclear
                 width: 95
-                text: Translator.translate("Clear", Dashboard.language)
+                text: qsTr("Clear")
                 font.pixelSize: 12
                 onClicked:  {
 
@@ -585,7 +585,7 @@ Item {
             Button{
                 id: loadfromfile
                 width: 95
-                text: Translator.translate("Import", Dashboard.language)
+                text: qsTr("Import")
                 font.pixelSize: 12
 
                 onClicked: {
@@ -617,7 +617,7 @@ Item {
             Button{
                 id: savetofile
                 width: 95
-                text: Translator.translate("Export", Dashboard.language)
+                text: qsTr("Export")
                 font.pixelSize: 12
 
                 onClicked: {
@@ -636,7 +636,7 @@ Item {
             Button{
                 id: load
                 width: 95
-                text: Translator.translate("Load", Dashboard.language)
+                text: qsTr("Load")
                 font.pixelSize: 12
                 visible: false
                 onClicked: {
@@ -653,7 +653,7 @@ Item {
             Button{
                 id: btncancelload
                 width: 95
-                text: Translator.translate("Cancel", Dashboard.language)
+                text: qsTr("Cancel")
                 font.pixelSize: 12
                 visible: false
                 onClicked: {
@@ -669,7 +669,7 @@ Item {
             Button{
                 id: btnbackround
                 width: 95
-                text: Translator.translate("Backround", Dashboard.language)
+                text: qsTr("Backround")
                 font.pixelSize: 12
                 onClicked: {
                     rpmbackroundselector.visible =true;
@@ -682,7 +682,7 @@ Item {
             Button {
                 id: btncancel
                 width: 95
-                text: Translator.translate("Close", Dashboard.language)
+                text: qsTr("Close")
                 font.pixelSize: 12
                 onClicked:  {
                     squaregaugemenu.visible = false;
@@ -1145,15 +1145,15 @@ Item {
             spacing:5
             // FrameColor
             Text {
-                text: Translator.translate("Frame color", Dashboard.language)
+                text: qsTr("Frame color")
                 font.pixelSize: 15
             }
             Text {
-                text: Translator.translate("Titlebar color", Dashboard.language)
+                text: qsTr("Titlebar color")
                 font.pixelSize: 15
             }
             Text {
-                text: Translator.translate("Backround color", Dashboard.language)
+                text: qsTr("Backround color")
                 font.pixelSize: 15
             }
             ComboBox {
@@ -1257,15 +1257,15 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Bargauge color", Dashboard.language)
+                text: qsTr("Bargauge color")
                 font.pixelSize: 15
             }
             Text {
-                text: Translator.translate("Title text color", Dashboard.language)
+                text: qsTr("Title text color")
                 font.pixelSize: 15
             }
             Text {
-                text: Translator.translate("Main text color", Dashboard.language)
+                text: qsTr("Main text color")
                 font.pixelSize: 15
             }
             // BargaugeColor
@@ -1379,7 +1379,7 @@ Item {
             Button {
                 id: btnclosecolorselect
                 width:150
-                text: Translator.translate("Close menu", Dashboard.language)
+                text: qsTr("Close menu")
                 font.pixelSize: 15
                 onClicked: {selectcolor.visible = false;}
 

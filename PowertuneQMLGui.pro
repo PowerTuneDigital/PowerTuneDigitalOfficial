@@ -32,10 +32,11 @@ SOURCES += main.cpp \
     textprogressbar.cpp \
     udpreceiver.cpp \
     arduino.cpp \
-    wifiscanner.cpp
+    wifiscanner.cpp \
+    LanguageManager.cpp
 
 
-RESOURCES += qml.qrc
+RESOURCES += qml.qrc i18n/translations.qrc
 
 # Additional import path used to resolve QML modules in Qt Creator's code model
 QML_IMPORT_PATH =
@@ -63,7 +64,8 @@ HEADERS += \
     textprogressbar.h \
     udpreceiver.h \
     arduino.h \
-    wifiscanner.h
+    wifiscanner.h \
+    LanguageManager.h
 
 
 FORMS +=
@@ -74,4 +76,4 @@ DISTFILES += \
     KTracks/Australia/stupid3.txt \
     KTracks/Australia/stupid4.txt
 
-
+include('i18n/translations.pri')
