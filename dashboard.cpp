@@ -478,6 +478,11 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_Userchannel10()
     ,  m_Userchannel11()
     ,  m_Userchannel12()
+
+    ,  m_BitfieldEngineStatus()
+    ,  m_Bank1AFRTarget()
+    ,  m_Bank2AFRTarget()
+
     ,  m_FuelLevel()
     ,  m_SteeringWheelAngle()
     ,  m_Brightness()
@@ -4204,6 +4209,28 @@ void DashBoard::setUserchannel12(const qreal &Userchannel12)
     m_Userchannel12 = Userchannel12;
     emit Userchannel12Changed(Userchannel12);
 }
+// udp 299 300 301
+void DashBoard::setBitfieldEngineStatus(const qreal &BitfieldEngineStatus)
+{
+    if (m_BitfieldEngineStatus == BitfieldEngineStatus)
+        return;
+    m_BitfieldEngineStatus = BitfieldEngineStatus;
+    emit BitfieldEngineStatusChanged(BitfieldEngineStatus);
+}
+void DashBoard::setBank1AFRTarget(const qreal &Bank1AFRTarget)
+{
+    if (m_Bank1AFRTarget == Bank1AFRTarget)
+        return;
+    m_Bank1AFRTarget = Bank1AFRTarget;
+    emit Bank1AFRTargetChanged(Bank1AFRTarget);
+}
+void DashBoard::setBank2AFRTarget(const qreal &Bank2AFRTarget)
+{
+    if (m_Bank2AFRTarget == Bank2AFRTarget)
+        return;
+    m_Bank2AFRTarget = Bank2AFRTarget;
+    emit Bank2AFRTargetChanged(Bank2AFRTarget);
+}
 void DashBoard::setFuelLevel(const qreal &FuelLevel)
 {
     if (m_FuelLevel == FuelLevel)
@@ -5727,6 +5754,12 @@ qreal DashBoard::Userchannel9() const {return m_Userchannel9;}
 qreal DashBoard::Userchannel10() const {return m_Userchannel10;}
 qreal DashBoard::Userchannel11() const {return m_Userchannel11;}
 qreal DashBoard::Userchannel12() const {return m_Userchannel12;}
+
+//udp 299 300 301
+qreal DashBoard::BitfieldEngineStatus() const {return m_BitfieldEngineStatus;}
+qreal DashBoard::Bank1AFRTarget() const {return m_Bank1AFRTarget;}
+qreal DashBoard::Bank2AFRTarget() const {return m_Bank2AFRTarget;}
+
 qreal DashBoard::FuelLevel() const {return m_FuelLevel;}
 qreal DashBoard::SteeringWheelAngle() const {return m_SteeringWheelAngle;}
 int DashBoard::Brightness() const {return m_Brightness;}

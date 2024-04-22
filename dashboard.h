@@ -450,6 +450,12 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal Userchannel10 READ Userchannel10 WRITE setUserchannel10 NOTIFY Userchannel10Changed)
     Q_PROPERTY(qreal Userchannel11 READ Userchannel11 WRITE setUserchannel11 NOTIFY Userchannel11Changed)
     Q_PROPERTY(qreal Userchannel12 READ Userchannel12 WRITE setUserchannel12 NOTIFY Userchannel12Changed)
+
+    //udp 299 300 301 First attempt
+    Q_PROPERTY(qreal BitfieldEngineStatus READ BitfieldEngineStatus WRITE setBitfieldEngineStatus NOTIFY BitfieldEngineStatusChanged)
+    Q_PROPERTY(qreal Bank1AFRTarget READ Bank1AFRTarget WRITE setBank1AFRTarget NOTIFY Bank1AFRTargetChanged)
+    Q_PROPERTY(qreal Bank2AFRTarget READ Bank2AFRTarget WRITE setBank2AFRTarget NOTIFY Bank2AFRTargetChanged)
+
     Q_PROPERTY(qreal FuelLevel READ FuelLevel WRITE setFuelLevel NOTIFY FuelLevelChanged)
     Q_PROPERTY(qreal SteeringWheelAngle READ SteeringWheelAngle WRITE setSteeringWheelAngle NOTIFY SteeringWheelAngleChanged)
     Q_PROPERTY(int Brightness READ Brightness WRITE setBrightness NOTIFY BrightnessChanged)
@@ -608,6 +614,8 @@ class DashBoard : public QObject
     Q_PROPERTY(int language READ language WRITE setlanguage NOTIFY languageChanged)
     Q_PROPERTY(int externalspeedconnectionrequest READ externalspeedconnectionrequest WRITE setexternalspeedconnectionrequest NOTIFY externalspeedconnectionrequestChanged)
     Q_PROPERTY(QString externalspeedport READ externalspeedport WRITE setexternalspeedport NOTIFY externalspeedportChanged)
+
+    Q_PROPERTY(int Seconds_ECU_ON READ Seconds_ECU_ON WRITE setSeconds_ECU_ON NOTIFY Seconds_ECU_ONChanged FINAL)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1128,6 +1136,13 @@ class DashBoard : public QObject
     void setUserchannel10(const qreal &Userchannel10);
     void setUserchannel11(const qreal &Userchannel11);
     void setUserchannel12(const qreal &Userchannel12);
+
+    //udp 299 300 301
+    void setBitfieldEngineStatus(const qreal &BitfieldEngineStatus);
+    void setBank1AFRTarget(const qreal &Bank1AFRTarget);
+    void setBank2AFRTarget(const qreal &Bank2AFRTarget);
+
+
     void setFuelLevel(const qreal &FuelLevel);
     void setSteeringWheelAngle(const qreal &SteeringWheelAngle);
     void setBrightness(const int &Brightness);
@@ -1726,6 +1741,12 @@ class DashBoard : public QObject
     qreal Userchannel10()const;
     qreal Userchannel11()const;
     qreal Userchannel12()const;
+
+    //udp 299 300 301
+    qreal BitfieldEngineStatus() const;
+    qreal Bank1AFRTarget() const;
+    qreal Bank2AFRTarget() const;
+
     qreal FuelLevel()const;
     qreal SteeringWheelAngle()const;
     int Brightness()const;
@@ -2318,6 +2339,12 @@ signals:
     void Userchannel10Changed(qreal Userchannel10);
     void Userchannel11Changed(qreal Userchannel11);
     void Userchannel12Changed(qreal Userchannel12);
+
+    //udp 299 300 301
+    void BitfieldEngineStatusChanged(qreal BitfieldEngineStatus);
+    void Bank1AFRTargetChanged(qreal Bank1AFRTarget);
+    void Bank2AFRTargetChanged(qreal Bank2AFRTarget);
+
     void FuelLevelChanged(qreal FuelLevel);
     void SteeringWheelAngleChanged(qreal SteeringWheelAngle);
     void BrightnessChanged(int Brightness);
@@ -2918,6 +2945,12 @@ private:
     qreal m_Userchannel10;
     qreal m_Userchannel11;
     qreal m_Userchannel12;
+
+    //udp 299 300 301
+    qreal m_BitfieldEngineStatus;
+    qreal m_Bank1AFRTarget;
+    qreal m_Bank2AFRTarget;
+
     qreal m_FuelLevel;
     qreal m_SteeringWheelAngle;
     int m_Brightness;
