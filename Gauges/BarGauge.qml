@@ -26,9 +26,6 @@ Rectangle {
                   property alias gaugetype: gauge.orientation
                   property string information: "Bar gauge"
 
-                 // width: 260
-                 //   height: 85
-
                   //color: (hand.callValue >= hand.handRaiseXBB) ? hand.handFoldColor : hand.handCallColor
 
                   width: (gauge.orientation == Qt.Horizontal) ? 260 : 85
