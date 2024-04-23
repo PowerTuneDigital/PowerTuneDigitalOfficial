@@ -615,7 +615,7 @@ class DashBoard : public QObject
     Q_PROPERTY(int externalspeedconnectionrequest READ externalspeedconnectionrequest WRITE setexternalspeedconnectionrequest NOTIFY externalspeedconnectionrequestChanged)
     Q_PROPERTY(QString externalspeedport READ externalspeedport WRITE setexternalspeedport NOTIFY externalspeedportChanged)
 
-    Q_PROPERTY(int Seconds_ECU_ON READ Seconds_ECU_ON WRITE setSeconds_ECU_ON NOTIFY Seconds_ECU_ONChanged FINAL)
+    //Q_PROPERTY(int Seconds_ECU_ON READ Seconds_ECU_ON WRITE setSeconds_ECU_ON NOTIFY Seconds_ECU_ONChanged FINAL)
 
     public:
     DashBoard(QObject *parent = 0);
