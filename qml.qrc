@@ -140,9 +140,5 @@
         <file>graphics/brightnessIncrease.png</file>
         <file>graphics/brightnessDecrease.png</file>
         <file>Gauges/Keypad.qml</file>
-        <file>graphics/fuelIcon.jpg</file>
-        <file>graphics/headlightIcon.png</file>
-        <file>graphics/windowIcon.png</file>
-        <file>graphics/fanIcon.jpg</file>
     </qresource>
 </RCC>
