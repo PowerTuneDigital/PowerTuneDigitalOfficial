@@ -479,9 +479,8 @@ DashBoard::DashBoard(QObject *parent)
     ,  m_Userchannel11()
     ,  m_Userchannel12()
 
-    ,  m_BitfieldEngineStatus()
-    ,  m_Bank1AFRTarget()
-    ,  m_Bank2AFRTarget()
+
+
 
     ,  m_FuelLevel()
     ,  m_SteeringWheelAngle()
@@ -618,6 +617,50 @@ DashBoard::DashBoard(QObject *parent)
     , m_language(0)
     , m_externalspeedconnectionrequest()
     , m_externalspeedport()
+
+    //Megasquirt Advanced
+    ,m_BitfieldEngineStatus()
+    ,m_BarometricPressure()
+    ,m_IndicationKnockInput()
+    ,m_egocor1()
+    ,m_egocor2()
+    ,m_aircor()
+    ,m_warmcor()
+    ,m_tpsfuelcut()
+    ,m_barocor()
+    ,m_coldAdvDeg()
+    ,m_TPSdot()
+    ,m_MAPdot()
+    ,m_RPMdot()
+    ,m_pwseq1()
+    ,m_pwseq2()
+    ,m_pwseq3()
+    ,m_pwseq4()
+    ,m_nitrous1_duty()
+    ,m_nitrous2_duty()
+    ,m_nitrous_timer_out()
+    ,m_n2o_addfuel()
+    ,m_n2o_retard()
+    ,m_water_duty()
+    ,m_duty_pwm1()
+    ,m_duty_pwm2()
+    ,m_duty_pwm3()
+    ,m_duty_pwm4()
+    ,m_EGOcor1()
+    ,m_EGOcor2()
+    ,m_EGOcor3()
+    ,m_EGOcor4()
+    ,m_vvt_ang1()
+    ,m_vvt_ang2()
+    ,m_vvt_ang3()
+    ,m_vvt_ang4()
+    ,m_inj_timing_pri()
+    ,m_tps_accel()
+    ,m_Knock_cyl1()
+    ,m_Knock_cyl2()
+    ,m_Knock_cyl3()
+    ,m_Knock_cyl4()
+    ,m_ltt_cor()
 
 {
 
@@ -4217,20 +4260,6 @@ void DashBoard::setBitfieldEngineStatus(const qreal &BitfieldEngineStatus)
     m_BitfieldEngineStatus = BitfieldEngineStatus;
     emit BitfieldEngineStatusChanged(BitfieldEngineStatus);
 }
-void DashBoard::setBank1AFRTarget(const qreal &Bank1AFRTarget)
-{
-    if (m_Bank1AFRTarget == Bank1AFRTarget)
-        return;
-    m_Bank1AFRTarget = Bank1AFRTarget;
-    emit Bank1AFRTargetChanged(Bank1AFRTarget);
-}
-void DashBoard::setBank2AFRTarget(const qreal &Bank2AFRTarget)
-{
-    if (m_Bank2AFRTarget == Bank2AFRTarget)
-        return;
-    m_Bank2AFRTarget = Bank2AFRTarget;
-    emit Bank2AFRTargetChanged(Bank2AFRTarget);
-}
 void DashBoard::setFuelLevel(const qreal &FuelLevel)
 {
     if (m_FuelLevel == FuelLevel)
@@ -5324,6 +5353,289 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             emit DI1RPMEnabledChanged(DI1RPMEnabled);
         }
 
+        //Megasquirt Advanced
+        void DashBoard::setBarometricPressure(const qreal &BarometricPressure)
+        {
+            if(m_BarometricPressure == BarometricPressure)
+                return;
+            m_BarometricPressure = BarometricPressure;
+            emit BarometricPressureChanged(BarometricPressure);
+        }
+        void DashBoard::setIndicationKnockInput(const qreal &IndicationKnockInput)
+        {
+            if(m_IndicationKnockInput == IndicationKnockInput)
+                return;
+            m_IndicationKnockInput = IndicationKnockInput;
+            emit IndicationKnockInputChanged(IndicationKnockInput);
+        }
+        void DashBoard::setegocor1(const qreal &egocor1)
+        {
+            if(m_egocor1 == egocor1)
+                return;
+            m_egocor1 = egocor1;
+            emit egocor1Changed(egocor1);
+        }
+        void DashBoard::setegocor2(const qreal &egocor2)
+        {
+            if(m_egocor2 == egocor2)
+                return;
+            m_egocor2 = egocor2;
+            emit egocor2Changed(egocor2);
+        }
+        void DashBoard::setaircor(const qreal &aircor)
+        {
+            if(m_aircor == aircor)
+                return;
+            m_aircor = aircor;
+            emit aircorChanged(aircor);
+        }
+        void DashBoard::setwarmcor(const qreal &warmcor)
+        {
+            if(m_warmcor == warmcor)
+                return;
+            m_warmcor = warmcor;
+            emit warmcorChanged(warmcor);
+        }
+        void DashBoard::settpsfuelcut(const qreal &tpsfuelcut)
+        {
+            if(m_tpsfuelcut == tpsfuelcut)
+                return;
+            m_tpsfuelcut = tpsfuelcut;
+            emit tpsfuelcutChanged(tpsfuelcut);
+        }
+        void DashBoard::setbarocor(const qreal &barocor)
+        {
+            if(m_barocor == barocor)
+                return;
+            m_barocor = barocor;
+            emit barocorChanged(barocor);
+        }
+        void DashBoard::setcoldAdvDeg(const qreal &coldAdvDeg)
+        {
+            if(m_coldAdvDeg == coldAdvDeg)
+                return;
+            m_coldAdvDeg = coldAdvDeg;
+            emit coldAdvDegChanged(coldAdvDeg);
+        }
+        void DashBoard::setTPSdot(const qreal &TPSdot)
+        {
+            if(m_TPSdot == TPSdot)
+                return;
+            m_TPSdot = TPSdot;
+            emit TPSdotChanged(TPSdot);
+        }
+        void DashBoard::setMAPdot(const qreal &MAPdot)
+        {
+            if(m_MAPdot == MAPdot)
+                return;
+            m_MAPdot = MAPdot;
+            emit MAPdotChanged(MAPdot);
+        }
+        void DashBoard::setRPMdot(const qreal &RPMdot)
+        {
+            if(m_RPMdot == RPMdot)
+                return;
+            m_RPMdot = RPMdot;
+            emit RPMdotChanged(RPMdot);
+        }
+        void DashBoard::setpwseq1(const qreal &pwseq1)
+        {
+            if(m_pwseq1 == pwseq1)
+                return;
+            m_pwseq1 = pwseq1;
+            emit pwseq1Changed(pwseq1);
+        }
+        void DashBoard::setpwseq2(const qreal &pwseq2)
+        {
+            if(m_pwseq2 == pwseq2)
+                return;
+            m_pwseq2 = pwseq2;
+            emit pwseq2Changed(pwseq2);
+        }
+        void DashBoard::setpwseq3(const qreal &pwseq3)
+        {
+            if(m_pwseq3 == pwseq3)
+                return;
+            m_pwseq3 = pwseq3;
+            emit pwseq3Changed(pwseq3);
+        }
+        void DashBoard::setpwseq4(const qreal &pwseq4)
+        {
+            if(m_pwseq4 == pwseq4)
+                return;
+            m_pwseq4 = pwseq4;
+            emit pwseq4Changed(pwseq4);
+        }
+        void DashBoard::setnitrous1_duty(const qreal &nitrous1_duty)
+        {
+            if(m_nitrous1_duty == nitrous1_duty)
+                return;
+            m_nitrous1_duty = nitrous1_duty;
+            emit nitrous1_dutyChanged(nitrous1_duty);
+        }
+        void DashBoard::setnitrous2_duty(const qreal &nitrous2_duty)
+        {
+            if(m_nitrous2_duty == nitrous2_duty)
+                return;
+            m_nitrous2_duty = nitrous2_duty;
+            emit nitrous2_dutyChanged(nitrous2_duty);
+        }
+        void DashBoard::setnitrous_timer_out(const qreal &nitrous_timer_out)
+        {
+            if(m_nitrous_timer_out == nitrous_timer_out)
+                return;
+            m_nitrous_timer_out = nitrous_timer_out;
+            emit nitrous_timer_outChanged(nitrous_timer_out);
+        }
+        void DashBoard::setn2o_addfuel(const qreal &n2o_addfuel)
+        {
+            if(m_n2o_addfuel == n2o_addfuel)
+                return;
+            m_n2o_addfuel = n2o_addfuel;
+            emit n2o_addfuelChanged(n2o_addfuel);
+        }
+        //missed n20_retard
+        void DashBoard::setwater_duty(const qreal &water_duty)
+        {
+            if(m_n2o_addfuel == water_duty)
+                return;
+            m_n2o_addfuel = water_duty;
+            emit water_dutyChanged(water_duty);
+        }
+        void DashBoard::setduty_pwm1(const qreal &duty_pwm1)
+        {
+            if(m_duty_pwm1 == duty_pwm1)
+                return;
+            m_duty_pwm1 = duty_pwm1;
+            emit duty_pwm1Changed(duty_pwm1);
+        }
+        void DashBoard::setduty_pwm2(const qreal &duty_pwm2)
+        {
+            if(m_duty_pwm2 == duty_pwm2)
+                return;
+            m_duty_pwm2 = duty_pwm2;
+            emit duty_pwm2Changed(duty_pwm2);
+        }
+        void DashBoard::setduty_pwm3(const qreal &duty_pwm3)
+        {
+            if(m_duty_pwm3 == duty_pwm3)
+                return;
+            m_duty_pwm3 = duty_pwm3;
+            emit duty_pwm3Changed(duty_pwm3);
+        }
+        void DashBoard::setduty_pwm4(const qreal &duty_pwm4)
+        {
+            if(m_duty_pwm4 == duty_pwm4)
+                return;
+            m_duty_pwm4 = duty_pwm4;
+            emit duty_pwm4Changed(duty_pwm4);
+        }
+        void DashBoard::setEGOcor1(const qreal &EGOcor1)
+        {
+            if(m_EGOcor1 == EGOcor1)
+                return;
+            m_EGOcor1 = EGOcor1;
+            emit EGOcor1Changed(EGOcor1);
+        }
+        void DashBoard::setEGOcor2(const qreal &EGOcor2)
+        {
+            if(m_EGOcor2 == EGOcor2)
+                return;
+            m_EGOcor2 = EGOcor2;
+            emit EGOcor2Changed(EGOcor2);
+        }
+        void DashBoard::setEGOcor3(const qreal &EGOcor3)
+        {
+            if(m_EGOcor3 == EGOcor3)
+                return;
+            m_EGOcor3 = EGOcor3;
+            emit EGOcor3Changed(EGOcor3);
+        }
+        void DashBoard::setEGOcor4(const qreal &EGOcor4)
+        {
+            if(m_EGOcor4 == EGOcor4)
+                return;
+            m_EGOcor4 = EGOcor4;
+            emit EGOcor4Changed(EGOcor4);
+        }
+        void DashBoard::setvvt_ang1(const qreal &vvt_ang1)
+        {
+            if(m_vvt_ang1 == vvt_ang1)
+                return;
+            m_vvt_ang1 = vvt_ang1;
+            emit vvt_ang1Changed(vvt_ang1);
+        }
+        void DashBoard::setvvt_ang2(const qreal &vvt_ang2)
+        {
+            if(m_vvt_ang2 == vvt_ang2)
+                return;
+            m_vvt_ang2 = vvt_ang2;
+            emit vvt_ang2Changed(vvt_ang2);
+        }
+        void DashBoard::setvvt_ang3(const qreal &vvt_ang3)
+        {
+            if(m_vvt_ang3 == vvt_ang3)
+                return;
+            m_vvt_ang3 = vvt_ang3;
+            emit vvt_ang3Changed(vvt_ang3);
+        }
+        void DashBoard::setvvt_ang4(const qreal &vvt_ang4)
+        {
+            if(m_vvt_ang4 == vvt_ang4)
+                return;
+            m_vvt_ang4 = vvt_ang4;
+            emit vvt_ang4Changed(vvt_ang4);
+        }
+        void DashBoard::setinj_timing_pri(const qreal &inj_timing_pri)
+        {
+            if(m_inj_timing_pri == inj_timing_pri)
+                return;
+            m_inj_timing_pri = inj_timing_pri;
+            emit inj_timing_priChanged(inj_timing_pri);
+        }
+        void DashBoard::settps_accel(const qreal &tps_accel)
+        {
+            if(m_tps_accel == tps_accel)
+                return;
+            m_tps_accel = tps_accel;
+            emit tps_accelChanged(tps_accel);
+        }
+        void DashBoard::setKnock_cyl1(const qreal &Knock_cyl1)
+        {
+            if(m_Knock_cyl1 == Knock_cyl1)
+                return;
+            m_Knock_cyl1 = Knock_cyl1;
+            emit Knock_cyl1Changed(Knock_cyl1);
+        }
+        void DashBoard::setKnock_cyl2(const qreal &Knock_cyl2)
+        {
+            if(m_Knock_cyl2 == Knock_cyl2)
+                return;
+            m_Knock_cyl2 = Knock_cyl2;
+            emit Knock_cyl2Changed(Knock_cyl2);
+        }
+        void DashBoard::setKnock_cyl3(const qreal &Knock_cyl3)
+        {
+            if(m_Knock_cyl3 == Knock_cyl3)
+                return;
+            m_Knock_cyl3 = Knock_cyl3;
+            emit Knock_cyl3Changed(Knock_cyl3);
+        }
+        void DashBoard::setKnock_cyl4(const qreal &Knock_cyl4)
+        {
+            if(m_Knock_cyl4 == Knock_cyl4)
+                return;
+            m_Knock_cyl4 = Knock_cyl4;
+            emit Knock_cyl4Changed(Knock_cyl4);
+        }
+        void DashBoard::setltt_cor(const qreal &ltt_cor)
+        {
+            if(m_ltt_cor == ltt_cor)
+                return;
+            m_ltt_cor = ltt_cor;
+            emit Knock_cyl4Changed(ltt_cor);
+        }
+
 // Odometer
 qreal DashBoard::Odo() const { return m_Odo; }
 qreal DashBoard::Cylinders() const { return m_Cylinders; }
@@ -5757,8 +6069,7 @@ qreal DashBoard::Userchannel12() const {return m_Userchannel12;}
 
 //udp 299 300 301
 qreal DashBoard::BitfieldEngineStatus() const {return m_BitfieldEngineStatus;}
-qreal DashBoard::Bank1AFRTarget() const {return m_Bank1AFRTarget;}
-qreal DashBoard::Bank2AFRTarget() const {return m_Bank2AFRTarget;}
+
 
 qreal DashBoard::FuelLevel() const {return m_FuelLevel;}
 qreal DashBoard::SteeringWheelAngle() const {return m_SteeringWheelAngle;}
@@ -5915,3 +6226,46 @@ int DashBoard::Externalrpm() const {return m_Externalrpm;}
 int DashBoard::language() const {return m_language;}
 int DashBoard::externalspeedconnectionrequest() const {return m_externalspeedconnectionrequest;}
 QString DashBoard::externalspeedport() const {return m_externalspeedport;}
+
+//Megasquirt Advanced
+qreal DashBoard::BarometricPressure() const {return m_BarometricPressure;}
+qreal DashBoard::IndicationKnockInput() const {return m_IndicationKnockInput;}
+qreal DashBoard::egocor1() const {return m_egocor1;}
+qreal DashBoard::egocor2() const {return m_egocor2;}
+qreal DashBoard::aircor() const {return m_aircor;}
+qreal DashBoard::warmcor() const {return m_warmcor;}
+qreal DashBoard::tpsfuelcut() const {return m_tpsfuelcut;}
+qreal DashBoard::barocor() const {return m_barocor;}
+qreal DashBoard::coldAdvDeg() const {return m_coldAdvDeg;}
+qreal DashBoard::TPSdot() const {return m_TPSdot;}
+qreal DashBoard::MAPdot() const {return m_MAPdot;}
+qreal DashBoard::RPMdot() const {return m_RPMdot;}
+qreal DashBoard::pwseq1() const {return m_pwseq1;}
+qreal DashBoard::pwseq2() const {return m_pwseq2;}
+qreal DashBoard::pwseq3() const {return m_pwseq3;}
+qreal DashBoard::pwseq4() const {return m_pwseq4;}
+qreal DashBoard::nitrous1_duty() const {return m_nitrous1_duty;}
+qreal DashBoard::nitrous2_duty() const {return m_nitrous2_duty;}
+qreal DashBoard::nitrous_timer_out() const {return m_nitrous_timer_out;}
+qreal DashBoard::n2o_addfuel() const {return m_n2o_addfuel;}
+//missed m_n2o_retard
+qreal DashBoard::water_duty() const {return m_water_duty;}
+qreal DashBoard::duty_pwm1() const {return m_duty_pwm1;}
+qreal DashBoard::duty_pwm2() const {return m_duty_pwm2;}
+qreal DashBoard::duty_pwm3() const {return m_duty_pwm3;}
+qreal DashBoard::duty_pwm4() const {return m_duty_pwm4;}
+qreal DashBoard::EGOcor1() const {return m_EGOcor1;}
+qreal DashBoard::EGOcor2() const {return m_EGOcor2;}
+qreal DashBoard::EGOcor3() const {return m_EGOcor3;}
+qreal DashBoard::EGOcor4() const {return m_EGOcor4;}
+qreal DashBoard::vvt_ang1() const {return m_vvt_ang1;}
+qreal DashBoard::vvt_ang2() const {return m_vvt_ang2;}
+qreal DashBoard::vvt_ang3() const {return m_vvt_ang3;}
+qreal DashBoard::vvt_ang4() const {return m_vvt_ang4;}
+qreal DashBoard::inj_timing_pri() const {return m_inj_timing_pri;}
+qreal DashBoard::tps_accel() const {return m_tps_accel;}
+qreal DashBoard::Knock_cyl1() const {return m_Knock_cyl1;}
+qreal DashBoard::Knock_cyl2() const {return m_Knock_cyl2;}
+qreal DashBoard::Knock_cyl3() const {return m_Knock_cyl3;}
+qreal DashBoard::Knock_cyl4() const {return m_Knock_cyl4;}
+qreal DashBoard::ltt_cor() const {return m_ltt_cor;}

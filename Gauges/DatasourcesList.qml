@@ -15,42 +15,6 @@ ListModel {
     ListElement {
         titlename: "Bitfield Engine Status"
         defaultsymbol: ""
-        sourcename:"BitfieldEngineStatus"
-        decimalpoints : "0" // 4 means its treated as a string
-        decimalpoints2 : "0" // 4 means its treated as a string
-        maxvalue : "1000"
-        stepsize : "1"
-        divisor : "1"
-        supportedECUs: ""
-    }
-
-    ListElement {
-        titlename: "Bank 1 AFR Target"
-        defaultsymbol: ""
-        sourcename:"Bank1AFRTarget"
-        decimalpoints : "1" // 4 means its treated as a string
-        decimalpoints2 : "1" // 4 means its treated as a string
-        maxvalue : "100"
-        stepsize : "1"
-        divisor : "10"
-        supportedECUs: ""
-    }
-
-    ListElement {
-        titlename: "Bank 2 AFR Target"
-        defaultsymbol: ""
-        sourcename:"Bank2AFRTarget"
-        decimalpoints : "1" // 4 means its treated as a string
-        decimalpoints2 : "1" // 4 means its treated as a string
-        maxvalue : "100"
-        stepsize : "1"
-        divisor : "10"
-        supportedECUs: ""
-    }
-
-    ListElement {
-        titlename: "Bitfield Engine Status"
-        defaultsymbol: ""
         sourcename:"Bitfield Engine Status"
         decimalpoints : "1" // 4 means its treated as a string
         decimalpoints2 : "1" // 4 means its treated as a string
