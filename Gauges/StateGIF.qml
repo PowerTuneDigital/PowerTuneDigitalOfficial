@@ -6,12 +6,12 @@ import QtQuick.Window 2.10 //compatibility with QT 5.10
 Item {
     id: statepicture
     height: pictureheight
-    width : picturewidth
+    width : pictureheight
     property string information: "State GIF"
     property string statepicturesourceoff
     property string statepicturesourceon
-    property int pictureheight: 480 * 0.25
-    property int picturewidth: 800 * 0.2
+    property int pictureheight//: 480 * 0.25
+    property int picturewidth//: 800 * 0.2
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0

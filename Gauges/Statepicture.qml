@@ -4,12 +4,12 @@ import "qrc:/Translator.js" as Translator
 Item {
     id: statepicture
     height: pictureheight
-    width : picturewidth
+    width : pictureheight
     property string information: "State gauge"
     property string statepicturesourceoff
     property string statepicturesourceon
-    property int pictureheight: 480 * 0.25
-    property int picturewidth: 800 * 0.2
+    property int pictureheight//: 480 * 0.25
+    property int picturewidth//: 800 * 0.2
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
@@ -93,11 +93,11 @@ Item {
                     onClicked: {pictureheight-- && picturewidth--}
                 }
                 Text{id: sizeTxt
-                    text: "Image Size"
+                    text: pictureheight
                     font.pixelSize: 800 * (15 / 800)
                     width: changesize.width /3.2
                     horizontalAlignment: Text.AlignHCenter
-                    onTextChanged: {picturewidth+ "x" + pictureheight == sizeTxt.text}
+                    onTextChanged: {pictureheight = sizeTxt.text}
                 }
                 RoundButton{ text: "+"
                     font.pixelSize: 800 * (15 / 800)
