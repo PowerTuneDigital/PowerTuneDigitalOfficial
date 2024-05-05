@@ -107,14 +107,15 @@ Rectangle {
         Row {
             x: windowbackround.width / 150
             y: windowbackround.width / 150
+            anchors.top:parent.top
             spacing: windowbackround.width / 150
 
             Grid {
                 anchors.top: parent.top
-                anchors.topMargin: parent.height / 20
+                anchors.topMargin: 5
                 rows: 13
                 columns: 2
-                spacing: windowbackround.width / 150
+                spacing: windowbackround.width / 180
                 // [0]
                 Text {
                     text: Translator.translate("ECU Serial Port", Dashboard.language)
@@ -141,6 +142,10 @@ Rectangle {
                         currentIndex = AppSettings.getBaudRate()
                         initialized = true
                         autoconnect.auto()
+
+                        if(windowbackround.width == 1600){
+                            serialName.height = windowbackround / 16
+                        }
                     }
                     delegate: ItemDelegate {
                         width: serialName.width
@@ -163,15 +168,19 @@ Rectangle {
                     id: serialNameGPS
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            serialNameGPS.height = windowbackround.height / 16
+                        }
+                    }
+
                     font.pixelSize: windowbackround.width / 55
                     model: Connect.portsNames
                     // visible: { (gpsswitch.checked == true ) ? true:false; }
                     delegate: ItemDelegate {
                         width: serialNameGPS.width
-                        text: serialNameGPS.textRole ? (Array.isArray(
-                                                            control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
-                        font.weight: serialNameGPS.currentIndex
-                                     == index ? Font.DemiBold : Font.Normal
+                        text: serialNameGPS.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        font.weight: serialNameGPS.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: serialNameGPS.font.family
                         font.pixelSize: serialNameGPS.font.pixelSize
                         highlighted: serialNameGPS.highlightedIndex == index
@@ -194,6 +203,11 @@ Rectangle {
                     Component.onCompleted: {
                         Connect.setSpeedUnits(currentIndex)
                         changeweighttext.changetext()
+
+                        if(windowbackround.width == 1600){
+                            unitSelect1.height = windowbackround.height / 16
+                        }
+
                     }
                     onCurrentIndexChanged: {
                         Connect.setSpeedUnits(currentIndex)
@@ -226,6 +240,10 @@ Rectangle {
                     Component.onCompleted: {
                         Connect.setUnits(currentIndex)
                         changeweighttext.changetext()
+
+                        if(windowbackround.width == 1600){
+                            unitSelect.height = windowbackround.height / 16
+                        }
                     }
                     onCurrentIndexChanged: {
                         Connect.setUnits(currentIndex)
@@ -256,6 +274,10 @@ Rectangle {
                     property bool initialized: false
                     Component.onCompleted: {
                         Connect.setPressUnits(currentIndex)
+
+                        if(windowbackround.width == 1600){
+                            unitSelect2.height = windowbackround.height / 16
+                        }
                     }
                     onCurrentIndexChanged: {
                         Connect.setPressUnits(currentIndex)
@@ -291,6 +313,10 @@ Rectangle {
                     }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
+
+                        if(windowbackround.width == 1600){
+                            ecuSelect.height = windowbackround.height / 16
+                        }
                     }
                     delegate: ItemDelegate {
                         width: ecuSelect.width
@@ -314,6 +340,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     model: ["Hero", "Hero2", "Hero3"]
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            goProSelect.height = windowbackround.height / 16
+                        }
+                    }
                     delegate: ItemDelegate {
                         width: goProSelect.width
                         text: goProSelect.textRole ? (Array.isArray(
@@ -341,6 +372,9 @@ Rectangle {
                                       | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
                     Component.onCompleted: {
                         transferSettings.sendSettings()
+                        if(windowbackround.width == 1600){
+                            goPropass.height = windowbackround.height / 16
+                        }
                     }
                 }
                 Text {
@@ -353,6 +387,11 @@ Rectangle {
                     text: qsTr("DataLog")
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            logfilenameSelect.height = windowbackround.height / 16
+                        }
+                    }
                     font.pixelSize: windowbackround.width / 55
                     inputMethodHints: Qt.ImhNoAutoUppercase | Qt.ImhPreferLowercase
                                       | Qt.ImhSensitiveData | Qt.ImhNoPredictiveText
@@ -371,6 +410,11 @@ Rectangle {
                     text: qsTr("0")
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     //enterKeyAction: EnterKeyAction.Next
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            odometer.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 Text {
                     text: Translator.translate("Trip", Dashboard.language)
@@ -384,7 +428,12 @@ Rectangle {
                     font.pixelSize: windowbackround.width / 55
                     readOnly: true
                     text: "0"
-                    Component.onCompleted: Dashboard.setTrip(tripmeter.text)
+                    Component.onCompleted: {
+                        Dashboard.setTrip(tripmeter.text)
+                        if(windowbackround.width == 1600){
+                            tripmeter.height = windowbackround.height / 16
+                        }
+                    }
                 }
 
                 Text {
@@ -399,6 +448,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            weight.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 Text {
                     text: Translator.translate("Serial Status", Dashboard.language)
@@ -406,10 +460,16 @@ Rectangle {
                     color: "white"
                 }
                 TextField {
+                    id: serialStat
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     text: qsTr(Dashboard.SerialStat)
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            serialStat.height = windowbackround.height / 16
+                        }
+                    }
                 }
 
             }
@@ -417,19 +477,25 @@ Rectangle {
                 rows: 12
                 columns: 1
                 anchors.top: parent.top
-                anchors.topMargin: parent.height / 20
+                anchors.topMargin: 5
             Grid {
-                rows: 8
+                id: middlegrid
+                rows: 9
                 columns: 2
                 spacing: windowbackround.width / 150
 
-                id: middlegrid
+
                 Button {
                     id: connectButton
                     text: Translator.translate("Connect", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            connectButton.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         functconnect.connectfunc()
                         connectButton.enabled = false
@@ -445,6 +511,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     enabled: false
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            disconnectButton.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         connectButton.enabled = true
                         disconnectButton.enabled = false
@@ -459,7 +530,12 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    Component.onCompleted: autoconnectGPS.auto()
+                    Component.onCompleted: {
+                        autoconnectGPS.auto()
+                        if(windowbackround.width == 1600){
+                            connectButtonGPS.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
 
                         //console.log("clicked GPS")
@@ -476,6 +552,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     enabled: false
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            disconnectButtonGPS.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         connectButtonGPS.enabled = true
                         disconnectButtonGPS.enabled = false
@@ -489,6 +570,11 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            resettrip.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         Calculations.resettrip()
                     }
@@ -506,28 +592,46 @@ Rectangle {
         }
 */
                 Button {
+                    id: quitButton
                     text: Translator.translate("Quit", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            quitButton.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         Qt.quit()
                     }
                 }
                 Button {
+                    id: shutdownButton
                     text: Translator.translate("Shutdown", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            shutdownButton.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         Connect.shutdown()
                     }
                 }
                 Button {
+                    id: rebootButton
                     text: Translator.translate("Reboot", Dashboard.language)
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            rebootButton.height = windowbackround.height / 16
+                        }
+                    }
                     onClicked: {
                         //GPS.closeConnection();
                         Connect.reboot()
@@ -553,6 +657,9 @@ Rectangle {
                     }
                     Component.onCompleted: {
                         Dashboard.setsmoothrpm(smoothrpm.currentIndex)
+                        if(windowbackround.width == 1600){
+                            smoothrpm.height = windowbackround.height / 16
+                        }
                     }
                     delegate: ItemDelegate {
                         width: smoothrpm.width
@@ -585,6 +692,9 @@ Rectangle {
                     }
                     Component.onCompleted: {
                         Dashboard.setsmoothspeed(smoothspeed.currentIndex)
+                        if(windowbackround.width == 1600){
+                            smoothspeed.height = windowbackround.height / 16
+                        }
                     }
                     delegate: ItemDelegate {
                         width: smoothspeed.width
@@ -605,6 +715,9 @@ Rectangle {
                     text: Translator.translate("Data Logger", Dashboard.language)
                     Component.onCompleted: {
                         logger.datalogger()
+                        if(windowbackround.width == 1600){
+                            loggerswitch.height = windowbackround.height / 16
+                        }
                     }
                     onCheckedChanged: logger.datalogger()
                 }
@@ -615,6 +728,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     text: Translator.translate("GoPro rec", Dashboard.language)
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            record.height = windowbackround.height / 16
+                        }
+                    }
                     onCheckedChanged: {
                         transferSettings.sendSettings(), goproRec.rec()
                     }
@@ -628,13 +746,20 @@ Rectangle {
                     onCheckedChanged: {
                         Dashboard.setNMEAlog(nmeaLog.checked)
                     }
-                    Component.onCompleted: tabView.currentIndex = 1 // opens the 2nd tab
+                    Component.onCompleted: {
+                        tabView.currentIndex = 1 // opens the 2nd tab
+                        if(windowbackround.width == 1600){
+                            nmeaLog.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 Text {
                     text: " V 1.98l " + Dashboard.Platform
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
+
+
             }
             Grid {
                 visible: {
@@ -672,6 +797,11 @@ Rectangle {
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     placeholderText: qsTr("9")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            an1V0.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 TextField {
                     id: an2V5
@@ -681,6 +811,11 @@ Rectangle {
                     // validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     placeholderText: qsTr("16")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            an2V5.height = windowbackround.height / 16
+                        }
+                    }
                 }
 
                 TextField {
@@ -689,6 +824,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     placeholderText: qsTr("AFR")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            unitaux1.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 Text {
                     text: "AN1-2"
@@ -702,6 +842,11 @@ Rectangle {
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     placeholderText: qsTr("0")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            an3V0.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 TextField {
                     id: an4V5
@@ -711,6 +856,11 @@ Rectangle {
                     //validator: DoubleValidator {bottom: -1000.0; top: 1000.0;notation : DoubleValidator.StandardNotation ; decimals : 1}
                     inputMethodHints: Qt.ImhFormattedNumbersOnly
                     placeholderText: qsTr("5")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            an4V5.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 TextField {
                     id: unitaux2
@@ -718,6 +868,11 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     placeholderText: qsTr("AFR")
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            unitaux2.height = windowbackround.height / 16
+                        }
+                    }
                 }
                 Text {
                     text: "AN3-4"
@@ -731,7 +886,7 @@ Rectangle {
                 columns: 1
                 spacing: windowbackround.width / 150
                 anchors.top: parent.top
-                anchors.topMargin: parent.height / 20
+                anchors.topMargin: 5
 
                 Text {
                     text: "     CAN Extender"
@@ -754,6 +909,11 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            baseadresstext.height = windowbackround.height / 16
+                        }
+                    }
                     validator: IntValidator {
                         bottom: 0
                         top: 4000
@@ -789,6 +949,11 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            shiftlightbaseadresstext.height = windowbackround.height / 16
+                        }
+                    }
                     validator: IntValidator {
                         bottom: 0
                         top: 4000
@@ -816,6 +981,11 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            languageselect.height = windowbackround.height / 16
+                        }
+                    }
 
                     model: [
                         {name: "English", flag: "qrc:/graphics/Flags/us.png"},
@@ -1002,3 +1172,9 @@ Rectangle {
         }
     }
 }
+
+/*##^##
+Designer {
+    D{i:0;autoSize:true;height:480;width:640}
+}
+##^##*/

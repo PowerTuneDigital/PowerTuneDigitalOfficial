@@ -94,6 +94,9 @@ var translations = {
            "Damping": { en: "Damping", de: "Dämpfung",  jp: "ダンピング", es: "Mojadura", fr: "", ar:"" },
            "Version": { en: "Version", de: "Version",  jp: "バージョン", es: "Versión", fr: "", ar:"" },
            "Analog":{ en: "Analog", de: "Analog", jp: "アナログ", es: "Cosa análoga", fr: "", ar:"" },
+           "Support":{ en: "Powertune Digital offers unlimited free tech support! <p>If you are having any issues please reach out using any of the platforms below.</p> <br>Australia: 07 2102 4825</br> <br>USA: 1888 421 2360</br> <br>Worldwide: +61 721 024 825</br> <br>Email Inquiries: info@powertunedigital.com</br>", de: "Powertune Digital offeriert unlimitierten Technischen Support! <p>Bei Problemen wenden Sie sich bitte an uns über eine der unten aufgelistetetn Platformen .</p> <br>Australien: 07 2102 4825</br> <br>USA: 1888 421 2360</br> <br>Worldwide: +61 721 024 825</br> <br>Email Inquiries: info@powertunedigital.com</br>", jp: "", es: "", fr: "", ar:"" },
+
+
        //Popup submenues
 
            "Add": { en: "Add", de: "Einfügen",  jp: "入れる", es: "Agregar", fr: "", ar:"" },
@@ -110,7 +113,7 @@ var translations = {
            "Clear": { en: "Clear", de: "Löschen",  jp: "整理", es: "Claro", fr: "", ar:"" },
            "Import": { en: "Import", de: "Importieren",  jp: "インポート", es: "Importar", fr: "", ar:"" },
            "Export": { en: "Export", de: "Exportieren",  jp: "エクスポート", es: "Exportar", fr: "", ar:"" },
-           "Backround": { en: "Backround", de: "Hintergrund",  jp: "背景", es: "Antecedentes", fr: "", ar:"" },
+           "Background": { en: "Background", de: "Hintergrund",  jp: "背景", es: "Antecedentes", fr: "", ar:"" },
            "Close": { en: "Close", de: "Schliessen",  jp: "閉じる", es: "Cerca", fr: "", ar:"" },
            "Load": { en: "Load", de: "Laden",  jp: "ロード", es: "Carga", fr: "", ar:"" },
            "Cancel": { en: "Cancel", de: "Abbruch",  jp: "キャンセル", es: "Cancelar", fr: "", ar:"" },
@@ -154,7 +157,7 @@ var translations = {
            "Description text": { en: "Description text", de: "Beschreibungs Text",  jp: "説明文字", es: "Texto de descripción", fr: "", ar:"" },
            "Close menu": { en: "Close menu", de: "Menü schliessen",  jp: "メニューを閉じる", es: "Cerrar menú", fr: "", ar:"" },
            "Gauge size": { en: "Gauge size", de: "Anzeigen Größe",  jp: "メーターサイズ", es: "Tamaño del calibre", fr: "", ar:"" },
-           "Backround color": { en: "Backround color", de: "Hintergrund Farbe",  jp: "背景色", es: "Color de fondo", fr: "", ar:"" },
+           "Background color": { en: "Background color", de: "Hintergrund Farbe",  jp: "背景色", es: "Color de fondo", fr: "", ar:"" },
            "Outer ring visible": { en: "Outer ring visible", de: "Ring Sichtbarkeit",  jp: "外輪可視", es: "Anillo exterior visible", fr: "", ar:"" },
            "Needle button visible": { en: "Needle button visible", de: "Knopf Sichtbarkeit",  jp: "針のボタン可視", es: "Botón de aguja visible", fr: "", ar:"" },
            "Needle visible": { en: "Needle visible", de: "Nadel Sichtbarkeit",  jp: "針可視", es: "Aguja visible", fr: "", ar:"" },
@@ -217,9 +220,9 @@ var translations = {
            "max value": { en: "max value", de: "Maximal Wert",  jp: "最大値", es: "valor máximo", fr: "", ar:"" },
        //Color Bar
            "Frame color": { en: "Frame color", de: "Rahmen Farbe",  jp: "フレーム色", es: "Color del marco", fr: "", ar:"" },
-           "Backround color": { en: "Backround color", de: "Hintergrund Farbe",  jp: "背景色", es: "Color de fondo", fr: "", ar:"" },
+           "Background color": { en: "Background color", de: "Hintergrund Farbe",  jp: "背景色", es: "Color de fondo", fr: "", ar:"" },
            "Titlebar color": { en: "Titlebar color", de: "Titel Bar Farbe",  jp: "タイトル色", es: "Color de la barra de título", fr: "", ar:"" },
-           "Bargauge color": { en: "Bargauge colore", de: "Bar Anzeige Farbe",  jp: "-帽メーター色", es: "Color del calibre", fr: "", ar:"" },
+           "Bargauge color": { en: "Bargauge color", de: "Bar Anzeige Farbe",  jp: "-帽メーター色", es: "Color del calibre", fr: "", ar:"" },
            "Title text color": { en: "Title text color", de: "Titel Text Farbe",  jp: "タイトル文字色", es: "Color del texto del título", fr: "", ar:"" },
            "Main text color": { en: "Main text color", de: "Haupt Text Farbe",  jp: "メイン文字色", es: "Color de texto principal", fr: "", ar:"" },
 

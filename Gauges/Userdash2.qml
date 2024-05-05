@@ -16,6 +16,7 @@ import "qrc:/Gauges/createPicture.js" as CreatePictureScript
 import "qrc:/Gauges/createStatePicture.js" as CreateStatePictureScript
 import "qrc:/Gauges/createStateGIF.js" as CreateStateGIFScript
 import "qrc:/Translator.js" as Translator
+
 Item {
     id: mainwindow
     anchors.fill: parent
@@ -60,10 +61,10 @@ Item {
 
     ComboBox{
         id: dashvalue
-        width: 200
+        width: mainwindow.width * 0.25//200
         model: Dashboard.dashsetup2
         visible:false
-        font.pixelSize: 15
+        font.pixelSize: mainwindow.width * 0.018//15
         delegate: ItemDelegate {
             width: dashvalue.width
             text: dashvalue.textRole ? (Array.isArray(dashvalue.model) ? modelData[dashvalue.textRole] : model[dashvalue.textRole]) : modelData
@@ -95,7 +96,6 @@ Item {
 
     }
 
-
     ////////Readout Gauge Elements from file and create dynamically ( only needed for importing a dash)
     Connections{
         target: Dashboard
@@ -105,34 +105,36 @@ Item {
         {
             if (dashvalue.textAt(1) !== "") {
 
-                //console.log("new item " +dashvalue.textAt(0) );
+              //  console.log("new item " +dashvalue.textAt(0) );
+
+
                 if (dashvalue.textAt(0) === "Bar gauge")
                 {
-                    //  //console.log("Create Bar Gauge")
+                    //  console.log("Create Bar Gauge")
                     CreateBargaugeScript.createVerticalGauge(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),dashvalue.textAt(8),dashvalue.textAt(9),dashvalue.textAt(10),dashvalue.textAt(11));
                 }
                 if (dashvalue.textAt(0) === "Round gauge")
                 {
-                    ////console.log("create Round Gauge")
+                    //console.log("create Round Gauge")
                     CreateRoundgaugeScript.createRoundGauge(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),dashvalue.textAt(8),dashvalue.textAt(9),dashvalue.textAt(10),dashvalue.textAt(11),dashvalue.textAt(12),dashvalue.textAt(13),dashvalue.textAt(14),dashvalue.textAt(15),dashvalue.textAt(16),dashvalue.textAt(17),dashvalue.textAt(18),dashvalue.textAt(19),dashvalue.textAt(20),dashvalue.textAt(21),dashvalue.textAt(22),dashvalue.textAt(23),dashvalue.textAt(24),dashvalue.textAt(25),dashvalue.textAt(26),dashvalue.textAt(27),dashvalue.textAt(28),dashvalue.textAt(29),dashvalue.textAt(30),dashvalue.textAt(31),dashvalue.textAt(32),dashvalue.textAt(33),dashvalue.textAt(34),dashvalue.textAt(35),dashvalue.textAt(36),dashvalue.textAt(37),dashvalue.textAt(38),dashvalue.textAt(39),dashvalue.textAt(40),dashvalue.textAt(41),dashvalue.textAt(42),dashvalue.textAt(43),dashvalue.textAt(44),dashvalue.textAt(45),dashvalue.textAt(46),dashvalue.textAt(47),dashvalue.textAt(48),(dashvalue.textAt(49).toLowerCase() === 'true' ? true : false),(dashvalue.textAt(50).toLowerCase() === 'true' ? true : false),(dashvalue.textAt(51).toLowerCase() === 'true' ? true : false),dashvalue.textAt(52),dashvalue.textAt(53),dashvalue.textAt(54),dashvalue.textAt(55),(dashvalue.textAt(56).toLowerCase() === 'true' ? true : false),dashvalue.textAt(57),dashvalue.textAt(58),dashvalue.textAt(59),dashvalue.textAt(60),dashvalue.textAt(61),dashvalue.textAt(62),dashvalue.textAt(63),dashvalue.textAt(64),dashvalue.textAt(65),(dashvalue.textAt(66).toLowerCase() === 'true' ? true : false));
                 }
 
                 if (dashvalue.textAt(0) === "Square gauge")
                 {
-                    ////console.log("create Square Gauge")
+                    //console.log("create Square Gauge")
                     CreateSquareGaugeScript.createSquareGauge(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),dashvalue.textAt(8),(dashvalue.textAt(9).toLowerCase() === 'true' ? true : false),(dashvalue.textAt(10).toLowerCase() === 'true' ? true : false),(dashvalue.textAt(11).toLowerCase() === 'true' ? true : false),dashvalue.textAt(12),dashvalue.textAt(13),dashvalue.textAt(14),dashvalue.textAt(15),dashvalue.textAt(16),dashvalue.textAt(17),dashvalue.textAt(18),dashvalue.textAt(19),dashvalue.textAt(20),dashvalue.textAt(21),dashvalue.textAt(22),dashvalue.textAt(23),dashvalue.textAt(24),dashvalue.textAt(25),dashvalue.textAt(26),dashvalue.textAt(27),dashvalue.textAt(28));
                 }
 
                 if (dashvalue.textAt(0) === "gauge image")
                 {
-                    // //console.log("Create image")
+                    // console.log("Create image")
                     CreatePictureScript.createPicture(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4));
                 }
-               if (dashvalue.textAt(0) === "Text label gauge")
-                    {
-                        //console.log("Create Text label")
-                        CreateTextScript.createText(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),(dashvalue.textAt(8).toLowerCase() === 'true' ? true : false),dashvalue.textAt(9),dashvalue.textAt(10),dashvalue.textAt(11));
-                    }
+                if (dashvalue.textAt(0) === "Text label gauge")
+                {
+                    //console.log("Create Text label")
+                    CreateTextScript.createText(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),(dashvalue.textAt(8).toLowerCase() === 'true' ? true : false),dashvalue.textAt(9),dashvalue.textAt(10),dashvalue.textAt(11));
+                }
                 if (dashvalue.textAt(0) === "State gauge")
                 {
                     // //console.log("Create image")
@@ -143,6 +145,7 @@ Item {
                     // //console.log("Create image")
                     CreateStateGIFScript.createPicture(dashvalue.textAt(1),dashvalue.textAt(2),dashvalue.textAt(3),dashvalue.textAt(4),dashvalue.textAt(5),dashvalue.textAt(6),dashvalue.textAt(7),dashvalue.textAt(8));
                 }
+
             }
 
         }
@@ -195,7 +198,10 @@ Item {
     function updatppiclist()
     {
                     for(var i = 0; i < backroundSelector.count; ++i)
-                    if (backroundpicture2.source == "file:///home/pi/Logo/" + backroundSelector.textAt(i))
+//                    if (backroundpicture2.source == "file:///home/pi/Logo/" + backroundSelector.textAt(i))
+                        if (backroundpicture2.source == "file:"  + backroundSelector.textAt(i))
+
+
                     backroundSelector.currentIndex = i
     }
 
@@ -245,11 +251,12 @@ Item {
             Dashboard.setdraggable(1);
         }
     }
+
     /// RPM STYLE SELECTOR and Backround picture loader
     Rectangle{
         id: rpmbackroundselector
-        width: 200
-        height: 300
+        width: mainwindow.width * 0.25 //200
+        height: mainwindow.height * 0.625 //300
         color : "darkgrey"
         x :590
         y: 0
@@ -267,15 +274,15 @@ Item {
 
             Text {
                 text: Translator.translate("RPM2", Dashboard.language)+ " " +Translator.translate("Style", Dashboard.language)
-                font.pixelSize: 20
+                font.pixelSize: mainwindow.width * 0.025 //20
                 font.bold: true
             }
             ComboBox {
                 id: rpmstyleselector
-                width: 200
-                height: 40
-                font.pixelSize: 15
-                 model: [Translator.translate("None", Dashboard.language), Translator.translate("Style", Dashboard.language) + " 1",Translator.translate("Style", Dashboard.language) + " 2", Translator.translate("Style", Dashboard.language) + " 3", Translator.translate("Style", Dashboard.language) + " 4"]
+                width: mainwindow.width * 0.25 //200
+                height: mainwindow.height * 0.083 //40
+                font.pixelSize: mainwindow.width * 0.018 //15
+                model: [Translator.translate("None", Dashboard.language), Translator.translate("Style", Dashboard.language) + " 1",Translator.translate("Style", Dashboard.language) + " 2", Translator.translate("Style", Dashboard.language) + " 3", Translator.translate("Style", Dashboard.language) + " 4"]
                 onCurrentIndexChanged: rpmgauge.selector();
                 delegate: ItemDelegate {
                     width: rpmstyleselector.width
@@ -288,20 +295,20 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
-                font.pixelSize: 20
+                text: Translator.translate("Background", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.025 //20
                 font.bold: true
             }
             ComboBox {
                 id: backroundSelector
-                width: 200
-                height: 40
-                font.pixelSize: 12
+                width: mainwindow.width * 0.25 //200
+                height: mainwindow.height * 0.083 //40
+                font.pixelSize: mainwindow.width * 0.015
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
 
-                     backroundpicturesource2 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    backroundpicturesource2 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
                     //backroundpicturesource2 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
                     //backroundpicturesource2 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
                     backroundpicture2.source = backroundpicturesource2;
@@ -317,17 +324,17 @@ Item {
                 }
             }
             Text {
-                text: Translator.translate("Backround", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
-                font.pixelSize: 20
+                text: Translator.translate("Background", Dashboard.language) + " " + Translator.translate("Color", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.025
                 font.bold: true
             }
             ComboBox {
                 id: mainbackroundcolorselect
-                width: 200;
-                height:40
+                width: mainwindow.width * 0.25 //200
+                height: mainwindow.height * 0.083 //40
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
 
 
                 delegate:
@@ -335,18 +342,19 @@ Item {
                     ItemDelegate {
                     id:itemDelegate
                     width: mainbackroundcolorselect.width
-                    font.pixelSize: 15
+                    height: mainbackroundcolorselect.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
                         id: backroundcolorcbxcolor
                         width: mainbackroundcolorselect.width
-                        height: 50
+                        height: mainbackroundcolorselect.height //50
                         color:  itemColor
 
                         Text {
 
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -359,15 +367,15 @@ Item {
 
             }
             Text {
-                text: qsTr("Extra:")
-                font.pixelSize: 20
+                text: "Extra "//Translator.translate("Extra: ", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.018
                 font.bold: true
             }
             ComboBox {
                 id: extraSelector
-                width: 200
-                height: 40
-                font.pixelSize: 15
+                width: mainwindow.width * 0.25 //200
+                height: mainwindow.height * 0.083 //40
+                font.pixelSize: mainwindow.width * 0.018//15
                 model: [Translator.translate(Translator.translate("None", Dashboard.language), Dashboard.language), "PFC Sensors"]
                 onCurrentIndexChanged: setextra();
                 delegate: ItemDelegate {
@@ -383,9 +391,9 @@ Item {
             Button {
                 id: btncloserpm
                 text: Translator.translate("Close", Dashboard.language)
-                font.pixelSize: 15
-                width: 200
-                height: 40
+                font.pixelSize: mainwindow.width * 0.018//15
+                width: mainwindow.width * 0.25 //200
+                height: mainwindow.height * 0.083 //40
                 onClicked:{rpmbackroundselector.visible =false;}
             }
         }
@@ -393,8 +401,8 @@ Item {
     /// The Gauge Creation Menu
     Rectangle{
         id: squaregaugemenu
-        width: 200
-        height: 400
+        width: mainwindow.width * 0.24 //200
+        height: mainwindow.height * 0.83 //400
         color : "darkgrey"
         x :590
         y: 0
@@ -405,12 +413,68 @@ Item {
             anchors.fill:parent
             drag.target: squaregaugemenu
         }
+///////////////////
+        /*
+        //Combobox filtered by ECU. Datasources must still be filled with each supported ECU
         ComboBox {
             id: cbx_sources
-            font.pixelSize: 15
-            textRole: "titlename"
             width: 200
-            height: 40
+            model: filteredModel // Use the filtered model as the model for the ComboBox
+            textRole: "titlename" // Set the role for display text
+            onActivated: {
+                console.log("Selected:", cbx_sources.currentText);
+            }
+
+            // Filter the model based on the condition
+            Component.onCompleted: {
+                powertunedatasource.append({supportedECUs: "Microtech"}); // Add a dummy element to trigger filtering
+                powertunedatasource.remove(powertunedatasource.count - 1); // Remove the dummy element
+            }
+
+            // Filter and sort the model alphabetically
+            property ListModel filteredModel: {
+                var filteredModel = Qt.createQmlObject('import QtQuick 2.8; ListModel {}', cbx_sources);
+                // Add a Dynamic Filter via Dashboard String
+                var filterValues = ["Microtech"];
+
+                // Create an array to store the filtered elements
+                var filteredElements = [];
+
+                for (var i = 0; i < powertunedatasource.count; ++i) {
+                    var element = powertunedatasource.get(i);
+                    if (element.supportedECUs !== undefined && element.supportedECUs !== null) {
+                        // Remove trailing commas and split the string into an array
+                        var ecuList = element.supportedECUs.replace(/,+$/, '').split(',');
+
+                        for (var j = 0; j < filterValues.length; ++j) {
+                            if (ecuList.indexOf(filterValues[j]) !== -1) {
+                                filteredElements.push({"titlename": element.titlename});
+                                break; // Break out of the inner loop if a match is found
+                            }
+                        }
+                    }
+                }
+
+                // Sort the filtered elements alphabetically
+                filteredElements.sort(function(a, b) {
+                    return a.titlename.localeCompare(b.titlename);
+                });
+
+                // Add the sorted elements to the filtered model
+                for (var k = 0; k < filteredElements.length; ++k) {
+                    filteredModel.append(filteredElements[k]);
+                }
+
+                return filteredModel;
+            }
+        }
+        */
+        ComboBox {
+            id: cbx_sources
+            font.pixelSize: mainwindow.width * 0.018//15
+            textRole: "titlename"
+            width: parent.width
+            height: parent.height * 0.083
             model: powertunedatasource
             delegate: ItemDelegate {
                 width: cbx_sources.width
@@ -422,12 +486,14 @@ Item {
                 hoverEnabled: cbx_sources.hoverEnabled
             }
         }
+
+
         ComboBox {
             id: loadfileselect
-            font.pixelSize: 15
+            font.pixelSize: mainwindow.width * 0.018//15
             model: Dashboard.dashfiles
-            width: 200
-            height: 40
+            width: parent.width
+            height: parent.height * 0.083
             visible: false
             delegate: ItemDelegate {
                 width: loadfileselect.width
@@ -443,18 +509,24 @@ Item {
         Grid{
             rows:7
             columns: 2
-            //anchors.top : cbx_sources.bottom
-            spacing:10
             x:0
             y:45
+            topPadding: 8
+            width: parent.width
+            height: parent.height
+            layoutDirection: "RightToLeft"
+            rowSpacing: 3
+            //Calculate the total pixels of the parent item and divide it by (6/1280) which is 6 pixel spacing / total screen pixels of 7"
+            spacing: (parent.width + parent.height) * 0.005
 
             Button {
                 id: btnaddSquare
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text:  Translator.translate("Square", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
+                    console.log(powertunedatasource.get(cbx_sources.currentIndex).decimalpoints);
                     CreateSquareGaugeScript.createSquareGauge(266,119,0,240,248,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,powertunedatasource.get(cbx_sources.currentIndex).defaultsymbol,powertunedatasource.get(cbx_sources.currentIndex).titlename,false,true,false,"Dashboard",powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,10000,-20000,"lightsteelblue","black","lightsteelblue","white","white","blue",25,40,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints2,"Lato","Lato");
                     squaregaugemenu.visible = false;
                     selectcolor.visible =false;
@@ -463,10 +535,10 @@ Item {
             }
             Button {
                 id: btnaddBar
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Bar", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     CreateBargaugeScript.createVerticalGauge(320,80,10,0,0,8000,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,powertunedatasource.get(cbx_sources.currentIndex).titlename,powertunedatasource.get(cbx_sources.currentIndex).sourcename,1000,0);
                     squaregaugemenu.visible = false;
@@ -476,10 +548,10 @@ Item {
             }
             Button {
                 id: btnaddRound
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Round", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     CreateRoundgaugeScript.createRoundGauge(400,20,20,powertunedatasource.get(cbx_sources.currentIndex).sourcename,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,0,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,-1000,-145,90,powertunedatasource.get(cbx_sources.currentIndex).maxvalue,powertunedatasource.get(cbx_sources.currentIndex).divisor,powertunedatasource.get(cbx_sources.currentIndex).stepsize,1,powertunedatasource.get(cbx_sources.currentIndex).stepsize,powertunedatasource.get(cbx_sources.currentIndex).decimalpoints,2,38,3,3,8,3,15,5,0.50,0.40,0.33,0.25,20,5,93,8,0,0,"red","darkred","aliceblue","red","grey","darkgrey","darkgrey","black","grey","black","dodgerblue","deepskyblue","lightskyblue","transparent",true,true,true,"Lato",30,50,10,false,"Lato",powertunedatasource.get(cbx_sources.currentIndex).titlename,"red",0,0,0,0,0,0,"false");
                     squaregaugemenu.visible = false;
@@ -489,12 +561,12 @@ Item {
             }
             Button {
                 id: btnaddText
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Text", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
-                    CreateTextScript.createText(100,50,"Textelement","Lato",15,"red","",true,0)
+                    CreateTextScript.createText(100,50,"Textelement","Lato",15,"red","",true,0,20000,-20000)
                     squaregaugemenu.visible = false;
                     selectcolor.visible =false;
                     Dashboard.setdraggable(0);
@@ -502,10 +574,10 @@ Item {
             }
             Button {
                 id: btnaddPicture
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Image", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     CreatePictureScript.createPicture(10,10,100,"qrc:/graphics/slectImage.png")
                     squaregaugemenu.visible = false;
@@ -515,12 +587,12 @@ Item {
             }
             Button {
                 id: btnaddStatePicture
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("Image", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
-                    //console.log("create State gauge ");
+                   // console.log("create State gauge ");
                     CreateStatePictureScript.createPicture(10,10,100,"speed",1,"qrc:/graphics/selectStateImage.png","qrc:/graphics/selectStateImage.png");
                     squaregaugemenu.visible = false;
                     selectcolor.visible =false;
@@ -529,10 +601,10 @@ Item {
             }
             Button {
                 id: btnaddStateGIF
-                width: 95
-                height: 40
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("State", Dashboard.language) + " " + Translator.translate("GIF", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                    // console.log("create State gauge ");
                     CreateStateGIFScript.createPicture(10,10,100,"speed",1,"qrc:/graphics/StateGIF.gif","qrc:/graphics/StateGIF.gif,0");
@@ -541,24 +613,14 @@ Item {
                     Dashboard.setdraggable(0);
                 }
             }
-            Button {
-                id: btnsave
-                width: 95
-                text: Translator.translate("Save", Dashboard.language)
-                font.pixelSize: 12
-                onClicked: {
-                    squaregaugemenu.visible = false;
-                    selectcolor.visible =false;
-                    Dashboard.setdraggable(0);
-                    savedash();
-                }
-            }
+
 
             Button {
                 id: btnopencolorselect
-                width:95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Colors", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     selectcolor.visible =true;
                     squaregaugemenu.visible = false;
@@ -567,9 +629,10 @@ Item {
             }
             Button {
                 id: btnclear
-                width: 95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Clear", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked:  {
 
                     selectcolor.visible =false;
@@ -584,9 +647,10 @@ Item {
 
             Button{
                 id: loadfromfile
-                width: 95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Import", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
 
                 onClicked: {
                     Connect.readavailabledashfiles();
@@ -616,9 +680,10 @@ Item {
             }
             Button{
                 id: savetofile
-                width: 95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Export", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
 
                 onClicked: {
                     squaregaugemenu.visible = false;
@@ -627,6 +692,7 @@ Item {
                     btnaddText.visible = false;
                     btnaddPicture.visible = false;
                     btnaddStatePicture.visible = false;
+                    btnaddStateGIF.visible = false;
                     selectcolor.visible =false;
                     savedash();
                     saveDashtofile();
@@ -634,10 +700,28 @@ Item {
                 }
             }
             Button{
+                id: btncancelload
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
+                text: Translator.translate("Cancel", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.015
+                visible: false
+                onClicked: {
+                    loadfileselect.visible = false;
+                    btncancelload.visible = false;
+                    squaregaugemenu.visible = false;
+                    load.visible = false;
+                    selectcolor.visible =false;
+                    Dashboard.setdraggable(0);
+
+                }
+            }
+            Button{
                 id: load
-                width: 95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Load", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
                 visible: false
                 onClicked: {
                     loadfileselect.visible = false;
@@ -651,26 +735,11 @@ Item {
                 }
             }
             Button{
-                id: btncancelload
-                width: 95
-                text: Translator.translate("Cancel", Dashboard.language)
-                font.pixelSize: 12
-                visible: false
-                onClicked: {
-                    loadfileselect.visible = false;
-                    btncancelload.visible = false;
-                    squaregaugemenu.visible = false;
-                    load.visible = false;
-                    selectcolor.visible =false;
-                    Dashboard.setdraggable(0);
-
-                }
-            }
-            Button{
                 id: btnbackround
-                width: 95
-                text: Translator.translate("Backround", Dashboard.language)
-                font.pixelSize: 12
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
+                text: Translator.translate("Background", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.015
                 onClicked: {
                     rpmbackroundselector.visible =true;
                     squaregaugemenu.visible = false;
@@ -679,11 +748,29 @@ Item {
                     Connect.readavailablebackrounds();
                 }
             }
+
+            Button {
+                id: btnsave
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
+                text: Translator.translate("Save", Dashboard.language)
+                font.pixelSize: mainwindow.width * 0.015
+                highlighted: true
+                onClicked: {
+                    squaregaugemenu.visible = false;
+                    selectcolor.visible =false;
+                    Dashboard.setdraggable(0);
+                    savedash();
+                }
+            }
+
             Button {
                 id: btncancel
-                width: 95
+                width: mainwindow.width * 0.118
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Close", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: mainwindow.width * 0.015
+                highlighted: true
                 onClicked:  {
                     squaregaugemenu.visible = false;
                     selectcolor.visible =false;
@@ -719,7 +806,7 @@ Item {
         {
             if (userDash.children[i].information === "Bar gauge")
             {
-                saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].width+","+userDash.children[i].height+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].minvalue+","+userDash.children[i].maxvalue+","+userDash.children[i].decimalpoints+","+userDash.children[i].gaugename+","+userDash.children[i].mainvaluename+","+userDash.children[i].warnvaluehigh+","+userDash.children[i].warnvaluelow+","+userDash.children[i].decimalpoints2+"\r\n");
+                saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].width+","+userDash.children[i].height+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].minvalue+","+userDash.children[i].maxvalue+","+userDash.children[i].decimalpoints+","+userDash.children[i].gaugename+","+userDash.children[i].mainvaluename+","+userDash.children[i].warnvaluehigh+","+userDash.children[i].warnvaluelow+","+userDash.children[i].decimalpoints2+","+"\r\n");
             }
             if (userDash.children[i].information === "Square gauge")
             {
@@ -807,6 +894,7 @@ Item {
             {
                 saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].pictureheight+","+userDash.children[i].mainvaluename+","+userDash.children[i].triggervalue+","+userDash.children[i].statepicturesourceoff+","+userDash.children[i].statepicturesourceon+"\r\n");
             }
+
             if (userDash.children[i].information === "State GIF")
             {
                 saveDashtofilestring += (userDash.children[i].information+","+userDash.children[i].x+","+userDash.children[i].y+","+userDash.children[i].pictureheight+","+userDash.children[i].mainvaluename+","+userDash.children[i].triggervalue+","+userDash.children[i].statepicturesourceoff+","+userDash.children[i].statepicturesourceon+","+userDash.children[i].triggeroffvalue+"\r\n");
@@ -815,7 +903,7 @@ Item {
     }
     function createDash()
     {
-        ////console.log("create Dashboard")
+        //console.log("create Dashboard")
 
         for (var i=0; i<gaugelist.rowCount(); ++i)
         {
@@ -1004,12 +1092,15 @@ Item {
                 gaugelist.append({"type": userDash.children[i].title,"width":userDash.children[i].width,"height":userDash.children[i].height,"x":userDash.children[i].x,"y":userDash.children[i].y,"maxvalue":userDash.children[i].maxvalue,"decplace":userDash.children[i].decimalpoints,"unit":userDash.children[i].mainunit,"id":userDash.children[i].title,"vertgaugevis":userDash.children[i].vertgaugevisible,"horigaugevis":userDash.children[i].horigaugevisible,"secvaluevis":userDash.children[i].secvaluevisible,"valuepropertymain":userDash.children[i].mainvaluename,"valuepropertysec":userDash.children[i].secvaluename,"warnvaluehigh":userDash.children[i].warnvaluehigh,"warnvaluelow":userDash.children[i].warnvaluelow,"framecolor":userDash.children[i].framecolor,"backroundcolor":userDash.children[i].resetbackroundcolor,"titlecolor":userDash.children[i].resettitlecolor,"titletextcolor":userDash.children[i].titletextcolor,"textcolor":userDash.children[i].textcolor,"barcolor":userDash.children[i].barcolor,"titlefontsize":userDash.children[i].titlefontsize,"mainfontsize":userDash.children[i].mainfontsize,"info":userDash.children[i].information,"decplace2":userDash.children[i].decimalpoints2,"textfont":userDash.children[i].textFonttype,"valuefont":userDash.children[i].valueFonttype})
             }
             if(userDash.children[i].information === "Bar gauge"){
-                ////console.log("Save Bar");
+
+
                 gaugelist.append({"type": userDash.children[i].title,"width":userDash.children[i].width,"height":userDash.children[i].height,"x":userDash.children[i].x,"y":userDash.children[i].y,"maxvalue":userDash.children[i].maxvalue,"decplace":userDash.children[i].decimalpoints,"unit":userDash.children[i].gaugename,"id":userDash.children[i].title,"valuepropertymain":userDash.children[i].mainvaluename,"warnvaluehigh":userDash.children[i].warnvaluehigh,"warnvaluelow":userDash.children[i].warnvaluelow,"info":userDash.children[i].information,"minvalue":userDash.children[i].minvalue})
+
+                ;
 
             }
             if(userDash.children[i].information === "gauge image"){
-                ////console.log("Save Image");
+                //console.log("Save Image");
                 gaugelist.append({"info":userDash.children[i].information,"x":userDash.children[i].x,"y":userDash.children[i].y,"pictureheight":userDash.children[i].pictureheight,"picturesource":userDash.children[i].picturesource})
             }
             if(userDash.children[i].information === "Text label gauge"){
@@ -1020,7 +1111,7 @@ Item {
             }
 
             if(userDash.children[i].information === "Round gauge"){
-                ////console.log("Round gauge");
+                //console.log("Round gauge");
                 //                                                                                              Width,                               setX,                     setY,                         Setmainvalue,                                    Setmaxvalue,                               Setminvalue,                              Setwarnvaluehigh,                                      Setwarnvaluelow,                                 Setredareastart,                                    Setdivider,                              Setneedletipwidth,                                    Setneedlelenght,                                    Setneedlebasewidth,                                     Setstartangle,                                 Setendangle,                               Settickmarksteps,                                     Setminortickmarksteps,                                         Setlabelsteps,                                    Setlabelinset,                                    Setminortickmarkinset,                                            Setmajortickmarkinset,                                           Setredareainset,                                   Settickmarkcolor,                                    Setneedlecolor,                                    Setdecimalpoints,                                  Setouterneedlecolortrail,                                            Setmiddleneedlecortrail,                                            Setlowerneedlecolortrail,                                           Setinnerneedlecolortrail,                                            Setwarningcolor,                                    Setlabelfontsize,                                    Setlabelcolor1,                                 Setlabelcolor2,                                  Setminortickmarkheight,                                          Setminortickmarkwidth,                                          Settickmarkheight,                                     Settickmarkwidth,                                   Setneedlevisible,S                                    etRingvisible,                                   SetBackroundcolor
                 gaugelist.append({  "info":userDash.children[i].information,
                                      "width":userDash.children[i].width,
@@ -1094,7 +1185,7 @@ Item {
             }
 
             if(userDash.children[i].information === "State gauge"){
-                //console.log("Save Image");
+                //console.log("Save Image" ,userDash.children[i].mainvaluename);
                 gaugelist.append({   "info":userDash.children[i].information,
                                      "x":userDash.children[i].x,
                                      "y":userDash.children[i].y,
@@ -1114,7 +1205,8 @@ Item {
                                      "trigger":userDash.children[i].triggervalue,
                                      "pictureoff":userDash.children[i].statepicturesourceoff,
                                      "pictureon":userDash.children[i].statepicturesourceon,
-                                     "triggeroff":userDash.children[i].triggeroffvalue 
+                                     "triggeroff":userDash.children[i].triggeroffvalue,
+
 })
             }
         }
@@ -1127,8 +1219,8 @@ Item {
         id: selectcolor
         x:0
         y:0
-        height :200
-        width: 500
+        height : mainwindow.height * 0.41 //200
+        width: mainwindow.width * 0.625 //500
         color: "darkgrey"
         visible: false
 
@@ -1146,37 +1238,40 @@ Item {
             // FrameColor
             Text {
                 text: Translator.translate("Frame color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
                 text: Translator.translate("Titlebar color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
                 text: Translator.translate("Backround color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
+
             ComboBox {
                 id: colorselect
-                width: 150;
+                width: mainwindow.width * 0.1875 //150
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changeframeclolor()
                 delegate:
 
                     ItemDelegate {
                     id:itemDelegate2
                     width: colorselect.width
-                    font.pixelSize: 15
+                    height: colorselect.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
                         width: colorselect.width
-                        height: 50
+                        height: colorselect.height //50
                         color:  itemColor
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1191,27 +1286,28 @@ Item {
             // Titlebarcolor
             ComboBox {
                 id: colorselecttitlebar
-                width: 150;
+                width: mainwindow.width * 0.1875 //150
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changetitlebarclolor()
                 //Component.onCompleted: {for(var i = 0; i < colorselecttitlebar.model.count; ++i) if (colorselecttitlebar.textAt(i) === "green")colorselecttitlebar.currentIndex = i }
                 delegate:
 
                     ItemDelegate {
-                    font.pixelSize: 15
+                    font.pixelSize: mainwindow.width * 0.018//15
                     width: colorselecttitlebar.width
-
+                    height: colorselecttitlebar.height
                     Rectangle {
                         width: colorselecttitlebar.width
-                        height: 50
+                        height: colorselecttitlebar.height //50
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1226,9 +1322,10 @@ Item {
             ComboBox {
 
                 id: backroundcolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 visible: true
                 onCurrentIndexChanged: changebackroundcolor()
 
@@ -1236,16 +1333,17 @@ Item {
 
                     ItemDelegate {
                     width: backroundcolor.width
-                    font.pixelSize: 15
+                    height: backroundcolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
                         width: backroundcolor.width
-                        height: 50
+                        height: backroundcolor.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1258,22 +1356,23 @@ Item {
             }
             Text {
                 text: Translator.translate("Bargauge color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
                 text: Translator.translate("Title text color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
                 text: Translator.translate("Main text color", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
             }
             // BargaugeColor
             ComboBox {
                 id: bargaugecolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 visible: true
                 onCurrentIndexChanged: changebargaugecolor()
 
@@ -1281,17 +1380,18 @@ Item {
 
                     ItemDelegate {
                     width: bargaugecolor.width
-                    font.pixelSize: 15
+                    height: bargaugecolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: bargaugecolor.width
-                        height: 50
+                        height: bargaugecolor.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1308,27 +1408,29 @@ Item {
             ComboBox {
 
                 id: titlecolor
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changetitlecolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: titlecolor.width
-                    font.pixelSize: 15
+                    height: titlecolor.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: titlecolor.width
-                        height: 50
+                        height: titlecolor.width
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1345,27 +1447,29 @@ Item {
             ComboBox {
 
                 id: valuetext
-                width: 150;
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 model: ColorList{}
                 visible: true
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changevaluetextcolor()
 
                 delegate:
 
                     ItemDelegate {
                     width: valuetext.width
-                    font.pixelSize: 15
+                    height: valuetext.height
+                    font.pixelSize: mainwindow.width * 0.018//15
                     Rectangle {
 
                         width: valuetext.width
-                        height: 50
+                        height: valuetext.height
                         color:  itemColor
 
                         Text {
                             text: itemColor
                             anchors.centerIn: parent
-                            font.pixelSize: 15
+                            font.pixelSize: mainwindow.width * 0.018//15
                         }
                     }
                 }
@@ -1378,9 +1482,10 @@ Item {
             }
             Button {
                 id: btnclosecolorselect
-                width:150
+                width: mainwindow.width * 0.1875
+                height: mainwindow.height * 0.083
                 text: Translator.translate("Close menu", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: mainwindow.width * 0.018//15
                 onClicked: {selectcolor.visible = false;}
 
             }

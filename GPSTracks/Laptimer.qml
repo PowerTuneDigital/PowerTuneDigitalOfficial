@@ -83,8 +83,8 @@ Rectangle {
         Map {
                 id: map
                 copyrightsVisible : false
-                height : 480
-                width : 400
+                height : mapItem.height
+                width : mapItem.width * 0.5
                 //plugin: Plugin { name: "osm" }
                 tilt: 0
         }
@@ -131,11 +131,11 @@ Rectangle {
                 id: marker
                 anchorPoint.x: 10
                 anchorPoint.y: 10
-                width: 15
+                width: mapItem.width * (15 / mapItem.width)
                 coordinate: QtPositioning.coordinate(Dashboard.gpsLatitude,Dashboard.gpsLongitude)
                 sourceItem: Rectangle {
                     id: image
-                    width:20
+                    width: mapItem.width * (20 / mapItem.width)
                     height: width
                     radius: width*0.5
                     color: "red"
@@ -144,10 +144,10 @@ Rectangle {
         }
         ComboBox {
             id: countryselect
-            width: 170
-            height: 30
+            width: mapItem.width * (170 / mapItem.width)
+            height: mapItem.height * (30 / mapItem.height)
             anchors.left: map.right
-            font.pixelSize: 20
+            font.pixelSize: mapItem.width * (20 / mapItem.width)
 
             delegate: ItemDelegate {
                 width: countryselect.width
@@ -181,10 +181,11 @@ Rectangle {
         }
         ComboBox {
             id: trackselect
-            width: 230
-            height: 30
+            width: mapItem.width * (230 / mapItem.width)
+            height: mapItem.height * (30 / mapItem.height)
             anchors.left: countryselect.right
-            font.pixelSize: 20
+            font.pixelSize: mapItem.width * (20 / mapItem.width)
+
             delegate: ItemDelegate {
                 width: trackselect.width
                 text: trackselect.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
@@ -194,6 +195,7 @@ Rectangle {
                 highlighted: trackselect.highlightedIndex == index
                 hoverEnabled: trackselect.hoverEnabled
             }
+
             onCurrentIndexChanged: changetrack.change()
             onModelChanged: {
                             changetrack.change()//needed if when the Country is changed
@@ -222,9 +224,9 @@ Rectangle {
             id: changeview
             //visible: false
             text: "TOP VIEW"
-            width: 170
-            height: 30
-            font.pixelSize: 20
+            width: mapItem.width * (170 / mapItem.width)
+            height: mapItem.height * (30 / mapItem.height)
+            font.pixelSize: mapItem.width * (20 / mapItem.width)
             onClicked: {
                 if (changeview.text == "DRIVER VIEW" )
                 {
@@ -246,9 +248,9 @@ Rectangle {
         Button {
             id: stop
             text: "Reset"
-            width: 170
-            height: 30
-            font.pixelSize: 20
+            width: mapItem.width * (170 / mapItem.width)
+            height: mapItem.height * (30 / mapItem.height)
+            font.pixelSize: mapItem.width * (20 / mapItem.width)
             onClicked: {
                         laptimeModel.clear()
                         elapsedTimer.running = false
@@ -264,38 +266,39 @@ Rectangle {
             columns: 2
             spacing: 5
             anchors.left: map.right
-            anchors.top: countryselect.bottom
+            //anchors.top: countryselect.bottom
+            anchors.top: trackselect.bottom
 
 
             Text { text: "Current : "
-                font.pixelSize: 15
+                font.pixelSize: mapItem.width * (15 / mapItem.width)
                 font.bold: true
                 color : "orangered"
                 font.family: "Eurostile"}
             Text {
                 id: time
                 text: "00:00.000"
-                font.pixelSize: 30
+                font.pixelSize: mapItem.width * (30 / mapItem.width)
                 font.bold: true
                 color : "orangered"
                 font.family: "Eurostile"}
             Text { text: "Best Lap: "
-                font.pixelSize: 15
+                font.pixelSize: mapItem.width * (15 / mapItem.width)
                 font.bold: true
                 color: "#00ff00"
                 font.family: "Eurostile"}
             Text { text: Dashboard.bestlaptime
-                font.pixelSize: 30
+                font.pixelSize: mapItem.width * (30 / mapItem.width)
                 font.bold: true
                 color: "#00ff00"
                 font.family: "Eurostile"}
             Text { text: "GPS FIX type: "
-                font.pixelSize: 15
+                font.pixelSize: mapItem.width * (15 / mapItem.width)
                 font.bold: true
                 color: "#00ff00"
                 font.family: "Eurostile"}
             Text { text: Dashboard.gpsFIXtype
-                font.pixelSize: 15
+                font.pixelSize: mapItem.width * (15 / mapItem.width)
                 font.bold: true
                 color: "#00ff00"
                 font.family: "Eurostile"}
@@ -309,8 +312,8 @@ Rectangle{
     anchors.leftMargin: 5
     anchors.bottom : buttongrid.top
     anchors.bottomMargin: 5
-    width: 400
-    height: 200
+    width: mapItem.width * (400 / mapItem.width)
+    height: mapItem.height * (200 / mapItem.height)
     color: "grey"
     ListModel {
         id: laptimeModel
@@ -321,22 +324,22 @@ Rectangle{
 
         Item {
             id:leftcolum
-            width: 400; height: 40
+            width: mapItem.width * (400 / mapItem.width); height: mapItem.width * (40 / mapItem.width)
             Row {
             Column {
                 Text {
                         text: "LAP " + lap
-                        width: 110
+                        width: mapItem.width * (110 / mapItem.width)
                         color: "white"
-                        font.pixelSize:  15
+                        font.pixelSize:  mapItem.width * (15 / mapItem.width)
                         font.bold: true}
             }
             Column {
                 Text { text: time
                        anchors.right: parent.right
-                       width: 195
+                       width: mapItem.width * (195 / mapItem.width)
                        color: "white"
-                       font.pixelSize:  30
+                       font.pixelSize:  mapItem.width * (30 / mapItem.width)
                        font.bold: true}
             }
         }
@@ -345,8 +348,8 @@ Rectangle{
 
     ListView {
         id: laptimelistview
-        width: 400
-        height: 200
+        width: mapItem.width * (400 / mapItem.width)
+        height: mapItem.width * (200 / mapItem.width)
         anchors.fill: parent
         model: laptimeModel
         delegate: contactDelegate

@@ -45,8 +45,8 @@ Rectangle {
 
         Map {
             id: map
-            height: 480
-            width: 400
+            height: parent.height
+            width: parent.width * 0.55
             plugin: mapPlugin
             zoomLevel: 16
             activeMapType: map.supportedMapTypes[1]
@@ -75,14 +75,15 @@ Rectangle {
         }
         ComboBox {
             id: countryselect
-            width: 170
-            height: 30
+            width: parent.width * 0.21//170
+            height: parent.height * 0.0625//30
             anchors.left: map.right
-            font.pixelSize: 20
+            font.pixelSize: parent.width * 0.025 //20
             //model: [ "Current Position","Australia","Germany","New Zealand","South Africa","United Kingdom","USA"]
             model: ["Current Position", "Australia", "Germany", "New Zealand", "South Africa"]
             delegate: ItemDelegate {
                 width: countryselect.width
+                height: countryselect.height
                 text: countryselect.textRole ? (Array.isArray(
                                                     control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
                 font.weight: countryselect.currentIndex === index ? Font.DemiBold : Font.Normal
@@ -95,13 +96,14 @@ Rectangle {
         }
         ComboBox {
             id: trackselect
-            width: 230
-            height: 30
+            width: parent.width * 0.24//230
+            height: parent.height * 0.0625//30
             anchors.left: countryselect.right
-            font.pixelSize: 20
+            font.pixelSize: parent.width * 0.025//20
             model: ["Wakefield Park"]
             delegate: ItemDelegate {
                 width: trackselect.width
+                height: trackelect.height
                 text: trackselect.textRole ? (Array.isArray(
                                                   control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
                 font.weight: trackselect.currentIndex === index ? Font.DemiBold : Font.Normal
@@ -121,109 +123,113 @@ Rectangle {
 
             Text {
                 text: "Current Time: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025 //20
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
+                id:dateTime
                 text: Dashboard.gpsTime
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
+                Component.onCompleted: {
+                    console.log("Date time 2: " + dateTime.text)
+                }
             }
             Text {
                 text: "GPS Speed: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsSpeed
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "Altitude: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsAltitude
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "Latitude: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsLatitude.toFixed(6)
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "Longitude: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsLongitude.toFixed(6)
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "Visible Satelites: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsVisibleSatelites
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "GPS Bearing: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsbearing
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "GPS HDOP: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: (Dashboard.gpsHDOP).toFixed(2)
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: "GPS FIX type: "
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }
             Text {
                 text: Dashboard.gpsFIXtype
-                font.pixelSize: 20
+                font.pixelSize: mapItem.width * 0.025
                 font.bold: true
                 font.family: "Eurostile"
             }

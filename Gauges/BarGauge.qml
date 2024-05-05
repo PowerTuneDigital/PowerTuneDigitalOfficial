@@ -26,16 +26,11 @@ Rectangle {
                   property alias gaugetype: gauge.orientation
                   property string information: "Bar gauge"
 
-                 // width: 260
-                 //   height: 85
-
                   //color: (hand.callValue >= hand.handRaiseXBB) ? hand.handFoldColor : hand.handCallColor
 
                   width: (gauge.orientation == Qt.Horizontal) ? 260 : 85
                   height: (gauge.orientation == Qt.Vertical) ? 260 : 85
                   color: "transparent"
-
-
 
                   Gauge {
                       id: gauge
@@ -56,7 +51,7 @@ Rectangle {
                       }
                       Text {
                           id: titleText
-                          font.pixelSize: 20
+                          font.pixelSize: parent.width * (20 / parent.width)
                           anchors.top : parent.top
                           font.bold: true
                           font.family: "Eurostile"

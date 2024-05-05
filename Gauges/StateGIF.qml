@@ -1,6 +1,7 @@
 import QtQuick 2.5
 import QtQuick.Controls 2.1
 import "qrc:/Translator.js" as Translator
+import QtQuick.Window 2.10 //compatibility with QT 5.10
 
 Item {
     id: statepicture
@@ -9,7 +10,8 @@ Item {
     property string information: "State GIF"
     property string statepicturesourceoff
     property string statepicturesourceon
-    property int pictureheight
+    property int pictureheight//: 480 * 0.25
+    property int picturewidth//: 800 * 0.2
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
@@ -19,7 +21,6 @@ Item {
     Component.onCompleted: {togglemousearea();
                             bind();
                             }
-
 
     Connections{
         target: Dashboard
@@ -58,7 +59,7 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-                changesize.x= -statepicture.x;
+                changesize.x= 200 //-statepicture.x;
                 changesize.y= -statepicture.y;
         }
     }
@@ -67,10 +68,17 @@ Item {
         id : changesize
         color: "darkgrey"
         visible: false
-        width : 250
-        height :420
-        z: 250          //ensure the Menu is always in the foreground
+        width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
+        height : 480 * 0.7//320 Taking the resolution from the 7" and dividing it by (320/screenHeight)
+        z: 500          //ensure the Menu is always in the foreground
         Drag.active: true
+        onWidthChanged: {
+            changesize.width = 800 * 0.2875
+        }
+        onHeightChanged: {
+            changesize.height = 480 * 0.7
+        }
+
         MouseArea {
             anchors.fill: parent
             drag.target: parent
@@ -87,43 +95,44 @@ Item {
                 rowSpacing :5
                 RoundButton{text: "-"
                     width: changesize.width /3.2
-                    font.pixelSize: 15
+                    font.pixelSize: 800 * (15 / 800)
                     onPressAndHold: {timer.running = true;
                         increasedecreaseident = "decreasePicture"}
                     onReleased: {timer.running = false;}
-                    onClicked: {pictureheight--}
+                    onClicked: {pictureheight-- && picturewidth--}
                 }
                 Text{id: sizeTxt
-                    text: pictureheight
-                    font.pixelSize: 15
+                    text: "Image Size"
+                    font.pixelSize: 800 * (15 / 800)
                     width: changesize.width /3.2
                     horizontalAlignment: Text.AlignHCenter
-                    onTextChanged: {pictureheight = sizeTxt.text}
+                    onTextChanged: {picturewidth+ "x" + pictureheight == sizeTxt.text}
                 }
                 RoundButton{ text: "+"
-                    font.pixelSize: 15
+                    font.pixelSize: 800 * (15 / 800)
                     width: changesize.width /3.2
                     onPressAndHold: {timer.running = true;
                         increasedecreaseident = "increasePicture"}
                     onReleased: {timer.running = false;}
-                    onClicked: {pictureheight++}
+                    onClicked: {pictureheight++ && picturewidth++}
                 }
             }
             Grid {
+                id: valueGrid
                 rows: 5
                 columns: 2
                 rowSpacing :5
             Text{
                 text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("OFF", Dashboard.language)
-                font.pixelSize: 12
-
+                font.pixelSize: 800 * (12 / 800)
             }
 
             ComboBox {
                 id: pictureSelectoroff
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                //anchors.right: valueGrid
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800)
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
@@ -143,13 +152,13 @@ Item {
             }
             Text{
                 text: Translator.translate("Image", Dashboard.language) + " " + Translator.translate("ON", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             ComboBox {
                 id: pictureSelectoron
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800)
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
@@ -157,7 +166,6 @@ Item {
                     //statepicturesourceon = "file:" + pictureSelectoron.textAt(pictureSelectoron.currentIndex); // windows
                     statepictureon.source = statepicturesourceon;
                 }
-
 
 
                 delegate: ItemDelegate {
@@ -172,48 +180,57 @@ Item {
             }
             Text{
                 text: Translator.translate("Source", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             ComboBox {
                 id: cbxMain
                 textRole: "titlename"
                 model: powertunedatasource
-                width: 140
-                height: 40
-                font.pixelSize: 12
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
+                font.pixelSize: 800 * (12 / 800)
                 Component.onCompleted: {for(var i = 0; i < cbxMain.model.count; ++i) if (powertunedatasource.get(i).sourcename === mainvaluename)cbxMain.currentIndex = i,bind()}
-                onCurrentIndexChanged: bind();
+                onCurrentIndexChanged: bind();                
+                delegate: ItemDelegate{
+                    width: cbxMain.width
+                    font.pixelSize: cbxMain.font.pixelSize
+                    text: cbxMain.textRole ? (Array.isArray(cbxMain.model) ? modelData[cbxMain.textRole] : model[cbxMain.textRole]) : modelData
+                    font.weight: cbxMain.currentIndex === index ? Font.DemiBold : Font.Normal
+                    font.family: cbxMain.font.family
+                    highlighted: cbxMain.highlightedIndex === index
+                    hoverEnabled: cbxMain.hoverEnabled
+                }
             }
             Text{
                 text: Translator.translate("Trigger", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             TextField {
                 id: triggeronvalue
-                width: 140
-                height: 40
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
                 text: triggervalue
                 onTextChanged: triggerofffColor();
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
          Text{
                 text: Translator.translate("Trigger", Dashboard.language) +" " +Translator.translate("OFF", Dashboard.language)
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
             TextField {
                 id: triggerofffvalue
-                width: 140
-                height: 40
+                width: 800 * 0.175 //140
+                height: 480 * 0.083 //40
                 text: triggeroffvalue
                 onTextChanged: triggerofffColor();
-                font.pixelSize: 12
+                font.pixelSize: 800 * (12 / 800)
             }
 
             }
             RoundButton{
                 width: parent.width
                 text: Translator.translate("Delete image", Dashboard.language)
-                font.pixelSize: 15
+                font.pixelSize: 800 * (15 / 800)
                 onClicked: statepicture.destroy();
             }
             RoundButton{
@@ -285,10 +302,12 @@ function triggerofffColor()
 
         case "increasePicture": {
             pictureheight++;
+            picturewidth++;
             break;
         }
         case "decreasePicture": {
             pictureheight--;
+            picturewidth--;
             break;
         }
         }

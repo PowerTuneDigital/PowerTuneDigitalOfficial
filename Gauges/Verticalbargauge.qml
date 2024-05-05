@@ -6,8 +6,8 @@ import QtQuick.Extras 1.4
 import "qrc:/Translator.js" as Translator
 Rectangle {
     id: gauge
-    width: 100
-    height: 80
+    width: parent.width * 0.125//100
+    height: parent.height * 0.17//80
     color: "transparent"
     antialiasing: false
     Drag.active: true
@@ -39,7 +39,7 @@ Rectangle {
     }
     Gauge {
         id: gauge1
-        height: 200
+        height: parent.width * 0.42
         anchors.fill: parent
         anchors.margins: 10
         orientation : Qt.Horizontal
@@ -142,10 +142,11 @@ Rectangle {
         anchors.fill: parent
         TextField {
             id: txtMaxValue
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
             //inputMask: "00000"
             visible: false
+            font.pixelSize: 12
             text: warnvaluehigh
             //inputMethodHints: Qt.ImhDigitsOnly
         }
@@ -171,8 +172,9 @@ Rectangle {
 
         TextField {
             id: txtBarMinValue
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
+            font.pixelSize: 12
             visible: false
             text: minvalue;
         }
@@ -220,8 +222,9 @@ Rectangle {
 
         TextField {
             id: bargaugeMin
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
+            font.pixelSize: 12
             visible: false
             text: minvalue
         }
@@ -247,9 +250,10 @@ Rectangle {
 
         TextField {
             id: bargaugeMax
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
             visible: false
+            font.pixelSize: 12
             text: maxvalue
         }
 
@@ -274,8 +278,9 @@ Rectangle {
 
         TextField {
             id: txtgaugenamechange
-            width: 94
-            height: 40
+            //width: 94
+            //height: 40
+            font.pixelSize: 12
             visible: false
             text: gaugename
         }

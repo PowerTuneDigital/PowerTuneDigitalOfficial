@@ -8,6 +8,7 @@ import QtQuick.Extras 1.4
 import com.powertune 1.0
 
 Item {
+  id: speedUnits
   anchors.fill:parent
   property  var unit : Dashboard.speedunits;
   Component.onCompleted: {units.unitadjust();}
@@ -18,7 +19,6 @@ id: gaugebackround
 height: parent.height /2.2
 width: parent.width
 color: "darkgrey"
-
 }
 
   Gauge {
@@ -55,62 +55,109 @@ color: "darkgrey"
               }
           }
           valueBar: Rectangle {
+              id: rpmFill
               width:  210
               color: Qt.rgba(gauge.value / gauge.maximumValue, 1.1 - gauge.value / gauge.maximumValue, 0, 1)
+              Component.onCompleted: {
+                  if(speedUnits.width == 1600){
+                      rpmFill.width = 330
+                  }
+              }
           }
       }
 }
 
 Image
     {
+      id: rpmDash
       source:"qrc:/graphics/Racedash.png"
       anchors.fill: parent
       smooth: true
-
  }
-Text {
-    text:"RPM"
-    font.pixelSize: 20
-    y: 150
-    x: 180
-    font.bold: true
-    font.family: "Eurostile"
-    color: "grey"
 
-}
-Text {
-    text: (Dashboard.rpm)
-    font.pixelSize: 100
-    y: 110
-    x: 220
-font.italic: true
-    font.bold: true
-    font.family: "Eurostile"
-    color: "white"
+Row{
+    spacing: 5
+    //using rpmDash as its the full size of the screen
+    x: rpmDash.width * 0.26
+    y: rpmDash.height * 0.2
+    topPadding: 8
+    Text {
+        id: rpmText
+        text:"RPM"
+        topPadding: 20
+        //font.pixelSize: rpmDash.width * 0.025 //20
+        font.pixelSize: 20
+        font.bold: true
+        font.family: "Eurostile"
+        color: "grey"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                rpmText.font.pixelSize = 20
+            }else{
+                rpmText.font.pixelSize = 40
+            }
+        }
 
-}
-Text {
-    id :speed
-    text: "km/h"
-    font.pixelSize: 20
-    y: 150
-    x: 510
-    font.bold: true
-    font.family: "Eurostile"
-    color: "grey"
 
+    }
+    Text {
+        id: rpmNumber
+        text: (Dashboard.rpm)
+        font.pixelSize: 100
+        font.italic: true
+        font.bold: true
+        font.family: "Eurostile"
+        color: "white"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                rpmNumber.font.pixelSize = 80
+            }else{
+                rpmNumber.font.pixelSize = 130
+            }
+        }
+    }
 }
-Text {
-    text: (Dashboard.speed).toFixed(0);
-    font.pixelSize: 100
-    y: 110
-    x: 570
-font.italic: true
-    font.bold: true
-    font.family: "Eurostile"
-    color: "white"
 
+Row{
+    spacing: 5
+    x: rpmDash.width * 0.67
+    y: rpmDash.height * 0.2
+    topPadding: 8
+    Text {
+        id :speed
+        text: "km/h"
+        topPadding: 20
+        font.pixelSize: 20
+        font.bold: true
+        font.family: "Eurostile"
+        color: "grey"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                speed.font.pixelSize = 20
+            }else{
+                speed.font.pixelSize = 40
+            }
+        }
+    }
+    Text {
+        id: speedNumbers
+        text: (Dashboard.speed).toFixed(0);
+        font.pixelSize: 100
+        font.italic: true
+        font.bold: true
+        font.family: "Eurostile"
+        color: "white"
+        Component.onCompleted: {
+            if(speedUnits.width == 800){
+                speedNumbers.font.pixelSize = 80
+            }else{
+                speedNumbers.font.pixelSize = 130
+            }
+        }
+    }
 }
+
+
         ShiftLights{}
 
 Item {

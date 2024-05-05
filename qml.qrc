@@ -131,5 +131,14 @@
         <file>graphics/Flags/fr.png</file>
         <file>graphics/Flags/ae.png</file>
         <file>BrightnessPopUp.qml</file>
+        <file>Settings/help.qml</file>
+        <file>graphics/contactQR.png</file>
+        <file>graphics/facebookQR.png</file>
+        <file>graphics/instagramQR.png</file>
+        <file>graphics/warrantyQR.png</file>
+        <file>graphics/userManualQR.png</file>
+        <file>graphics/brightnessIncrease.png</file>
+        <file>graphics/brightnessDecrease.png</file>
+        <file>Gauges/Keypad.qml</file>
     </qresource>
 </RCC>

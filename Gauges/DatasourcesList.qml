@@ -13,6 +13,8 @@ ListModel {
     id: datasources
 
 
+
+
     ListElement {
         titlename: "DRIVESHAFT OFFSET"
         defaultsymbol: ""
@@ -3984,6 +3986,193 @@ ListElement {
         stepsize : "10"
         divisor : "1"
         supportedECUs: ""
+    }
+    ListElement {
+        titlename: "Seq Pulsewidth cyl#1"
+        defaultsymbol: ""
+        sourcename:"pwseq1"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Seq Pulsewidth cyl#2"
+        defaultsymbol: ""
+        sourcename:"pwseq2"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Seq Pulsewidth cyl#3"
+        defaultsymbol: ""
+        sourcename:"pwseq3"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Seq Pulsewidth cyl#4"
+        defaultsymbol: ""
+        sourcename:"pwseq4"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Nitrous Duty Cycle 1"
+        defaultsymbol: ""
+        sourcename:"nitrous1_duty"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Nitrous Duty Cycle 2"
+        defaultsymbol: ""
+        sourcename:"nitrous2_duty"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Nitrous Internal Timer"
+        defaultsymbol: ""
+        sourcename:"nitrous_timer_out"
+        decimalpoints : "3" // 4 means its treated as a string
+        decimalpoints2 : "3" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Nitrous Fuel Pulsewidth"
+        defaultsymbol: ""
+        sourcename:"n2o_addfuel"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Nitrous Timing"
+        defaultsymbol: ""
+        sourcename:"n2o_retard"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "EGO correction cyl#1"
+        defaultsymbol: ""
+        sourcename:"EGOcor1"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "EGO correction cyl#2"
+        defaultsymbol: ""
+        sourcename:"EGOcor2"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "EGO correction cyl#3"
+        defaultsymbol: ""
+        sourcename:"EGOcor3"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "EGO correction cyl#4"
+        defaultsymbol: ""
+        sourcename:"EGOcor4"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Knock % cyl#1"
+        defaultsymbol: ""
+        sourcename:"Knock_cyl1"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Knock % cyl#2"
+        defaultsymbol: ""
+        sourcename:"Knock_cyl2"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Knock % cyl#3"
+        defaultsymbol: ""
+        sourcename:"Knock_cyl3"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
+    }
+    ListElement {
+        titlename: "Knock % cyl#4"
+        defaultsymbol: ""
+        sourcename:"Knock_cyl4"
+        decimalpoints : "0" // 4 means its treated as a string
+        decimalpoints2 : "0" // 4 means its treated as a string
+        maxvalue : "1000"
+        stepsize : "1"
+        divisor : "10"
+        supportedECUs: "Megasquirt"
     }
 }
 

@@ -1,11 +1,13 @@
-import QtQuick 2.0
+import QtQuick 2.8
 
 
 
 Item {
     id: shiftlightssetting
-    width:800
-    height:480
+    width:parent.width * 0.75
+    height:parent.height * 0.75
+    //Setting Position to align with the RPM 1 Bar
+    x: parent.width * 0.33
     property  int rpmwarn1: Dashboard.rpmStage1
     property  int rpmwarn2: Dashboard.rpmStage2
     property  int rpmwarn3: Dashboard.rpmStage3
@@ -30,55 +32,54 @@ Item {
     }
 
         Row {
-            anchors.horizontalCenter: parent.horizontalCenter
-
-            spacing: 20
+            spacing: parent.width / 40
+            topPadding: 3
             Image {
                 id : led1
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043 //shiftlightssetting.width/22.85
+                width: shiftlightssetting.width * 0.043 //35
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led2
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led3
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led4
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led5
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led6
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led7
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
             Image {
                 id : led8
-                height: 35
-                width: 35
+                height: shiftlightssetting.width * 0.043
+                width: shiftlightssetting.width * 0.043
                 source: "/graphics/ledoff.png"
             }
 

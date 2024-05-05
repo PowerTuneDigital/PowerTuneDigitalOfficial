@@ -20,9 +20,9 @@ Item {
     property string resettextcolor
     Drag.active: true
 
-    Component.onCompleted: {togglemousearea();
+    Component.onCompleted: {
+        togglemousearea();
         checkdatasource();
-
     }
 
     DatasourcesList{id: powertunedatasource}
@@ -73,7 +73,7 @@ Item {
         visible: false
         width : 200
         height :480
-        z: 250          //ensure the Menu is always in the foreground
+        z: 501          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
             anchors.fill: parent
@@ -81,12 +81,13 @@ Item {
             enabled: true
         }
         onVisibleChanged: {
-            changesize.x= -mytextlabel.x;
-            changesize.y= -mytextlabel.y;
+            changesize.x = 150 //-mytextlabel.x;
+            changesize.y = -mytextlabel.y;
         }
 
 
-        Grid { width: parent.width
+        Grid {
+            width: parent.width
             height:parent.height
             id: popupgrid
             rows: 12
@@ -205,7 +206,7 @@ Item {
             }
         Text{
             text: Translator.translate("Warn value high", Dashboard.language)
-            font.pointSize: 7
+            font.pixelSize: 15
             }
             ////
             Grid {
@@ -223,7 +224,7 @@ Item {
                 TextField{id: warnvaluehightxt
                     text: warnvaluehigh
                     width: popupgrid.width /3.2
-                    font.pointSize: 7
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignHCenter
                     inputMethodHints: Qt.ImhDigitsOnly
                     onTextChanged: warnvaluehigh = warnvaluehightxt.text
@@ -238,7 +239,7 @@ Item {
             }
             Text{
                 text: Translator.translate("Warn value low", Dashboard.language)
-                font.pointSize: 7
+                font.pixelSize: 15 //800 * (7 / 800)
                 }
             Grid {
                 rows: 1
@@ -255,7 +256,7 @@ Item {
                 TextField{id: warnvaluelowxt
                     text: warnvaluelow
                     width: popupgrid.width /3.2
-                    font.pointSize: 7
+                    font.pixelSize: 12
                     horizontalAlignment: Text.AlignHCenter
                     onTextChanged: warnvaluelow = warnvaluelowxt.text
                     inputMethodHints: Qt.ImhDigitsOnly

@@ -7,6 +7,8 @@
 #include "Extender.h"
 #include "iomapdata.h"
 #include "downloadmanager.h"
+#include <QDebug>
+#include <QDateTime>
 #include <cstdio>
     ioMapData mpd;
 
@@ -25,6 +27,11 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("DLM", new DownloadManager(&engine));
     engine.rootContext()->setContextProperty("Connect", new Connect(&engine));
     engine.rootContext()->setContextProperty("Extender2",new Extender(&engine));
+#ifdef HAVE_DDCUTIL
+    engine.rootContext()->setContextProperty("HAVE_DDCUTIL", true);
+#else
+    engine.rootContext()->setContextProperty("HAVE_DDCUTIL", false);
+#endif
     engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
     return app.exec();
 

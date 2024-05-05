@@ -450,6 +450,32 @@ class DashBoard : public QObject
     Q_PROPERTY(qreal Userchannel10 READ Userchannel10 WRITE setUserchannel10 NOTIFY Userchannel10Changed)
     Q_PROPERTY(qreal Userchannel11 READ Userchannel11 WRITE setUserchannel11 NOTIFY Userchannel11Changed)
     Q_PROPERTY(qreal Userchannel12 READ Userchannel12 WRITE setUserchannel12 NOTIFY Userchannel12Changed)
+
+    //First attempt Megasquirt Advanced
+    Q_PROPERTY(qreal pwseq1 READ pwseq1 WRITE setpwseq1 NOTIFY pwseq1Changed)
+    Q_PROPERTY(qreal pwseq2 READ pwseq2 WRITE setpwseq2 NOTIFY pwseq2Changed)
+    Q_PROPERTY(qreal pwseq3 READ pwseq3 WRITE setpwseq3 NOTIFY pwseq3Changed)
+    Q_PROPERTY(qreal pwseq4 READ pwseq4 WRITE setpwseq4 NOTIFY pwseq4Changed)
+    Q_PROPERTY(qreal nitrous1_duty READ nitrous1_duty WRITE setnitrous1_duty NOTIFY nitrous1_dutyChanged)
+    Q_PROPERTY(qreal nitrous2_duty READ nitrous2_duty WRITE setnitrous2_duty NOTIFY nitrous2_dutyChanged)
+    Q_PROPERTY(qreal nitrous_timer_out READ nitrous_timer_out WRITE setnitrous_timer_out NOTIFY nitrous_timer_outChanged)
+    Q_PROPERTY(qreal n2o_addfuel READ n2o_addfuel WRITE setn2o_addfuel NOTIFY n2o_addfuelChanged)
+    Q_PROPERTY(qreal n2o_retard READ n2o_retard WRITE setn2o_retard NOTIFY n2o_retardChanged)
+    Q_PROPERTY(qreal EGOcor1 READ EGOcor1 WRITE setEGOcor1 NOTIFY EGOcor1Changed)
+    Q_PROPERTY(qreal EGOcor2 READ EGOcor2 WRITE setEGOcor2 NOTIFY EGOcor2Changed)
+    Q_PROPERTY(qreal EGOcor3 READ EGOcor3 WRITE setEGOcor3 NOTIFY EGOcor3Changed)
+    Q_PROPERTY(qreal EGOcor4 READ EGOcor4 WRITE setEGOcor4 NOTIFY EGOcor4Changed)
+    Q_PROPERTY(qreal Knock_cyl1 READ Knock_cyl1 WRITE setKnock_cyl1 NOTIFY Knock_cyl1Changed)
+    Q_PROPERTY(qreal Knock_cyl2 READ Knock_cyl2 WRITE setKnock_cyl2 NOTIFY Knock_cyl2Changed)
+    Q_PROPERTY(qreal Knock_cyl3 READ Knock_cyl3 WRITE setKnock_cyl3 NOTIFY Knock_cyl3Changed)
+    Q_PROPERTY(qreal Knock_cyl4 READ Knock_cyl4 WRITE setKnock_cyl4 NOTIFY Knock_cyl4Changed)
+
+
+
+
+
+
+
     Q_PROPERTY(qreal FuelLevel READ FuelLevel WRITE setFuelLevel NOTIFY FuelLevelChanged)
     Q_PROPERTY(qreal SteeringWheelAngle READ SteeringWheelAngle WRITE setSteeringWheelAngle NOTIFY SteeringWheelAngleChanged)
     Q_PROPERTY(int Brightness READ Brightness WRITE setBrightness NOTIFY BrightnessChanged)
@@ -608,6 +634,8 @@ class DashBoard : public QObject
     Q_PROPERTY(int language READ language WRITE setlanguage NOTIFY languageChanged)
     Q_PROPERTY(int externalspeedconnectionrequest READ externalspeedconnectionrequest WRITE setexternalspeedconnectionrequest NOTIFY externalspeedconnectionrequestChanged)
     Q_PROPERTY(QString externalspeedport READ externalspeedport WRITE setexternalspeedport NOTIFY externalspeedportChanged)
+
+    //Q_PROPERTY(int Seconds_ECU_ON READ Seconds_ECU_ON WRITE setSeconds_ECU_ON NOTIFY Seconds_ECU_ONChanged FINAL)
 
     public:
     DashBoard(QObject *parent = 0);
@@ -1128,6 +1156,7 @@ class DashBoard : public QObject
     void setUserchannel10(const qreal &Userchannel10);
     void setUserchannel11(const qreal &Userchannel11);
     void setUserchannel12(const qreal &Userchannel12);
+
     void setFuelLevel(const qreal &FuelLevel);
     void setSteeringWheelAngle(const qreal &SteeringWheelAngle);
     void setBrightness(const int &Brightness);
@@ -1283,6 +1312,28 @@ class DashBoard : public QObject
     void setlanguage(const int &language);
     void setexternalspeedconnectionrequest(const int &externalspeedconnectionrequest);
     void setexternalspeedport(const QString &externalspeedport);
+
+    //Megasquirt Advanced
+    void setpwseq1(const qreal &pwseq1);
+    void setpwseq2(const qreal &pwseq2);
+    void setpwseq3(const qreal &pwseq3);
+    void setpwseq4(const qreal &pwseq4);
+    void setnitrous1_duty(const qreal &nitrous1_duty);
+    void setnitrous2_duty(const qreal &nitrous2_duty);
+    void setnitrous_timer_out(const qreal &nitrous_timer_out);
+    void setn2o_addfuel(const qreal &n2o_addfuel);
+    void setn2o_retard(const qreal &n2o_retard);
+    void setEGOcor1(const qreal &EGOcor1);
+    void setEGOcor2(const qreal &EGOcor2);
+    void setEGOcor3(const qreal &EGOcor3);
+    void setEGOcor4(const qreal &EGOcor4);
+    void setKnock_cyl1(const qreal &Knock_cyl1);
+    void setKnock_cyl2(const qreal &Knock_cyl2);
+    void setKnock_cyl3(const qreal &Knock_cyl3);
+    void setKnock_cyl4(const qreal &Knock_cyl4);
+
+
+
 
 
     qreal Odo() const;
@@ -1726,6 +1777,7 @@ class DashBoard : public QObject
     qreal Userchannel10()const;
     qreal Userchannel11()const;
     qreal Userchannel12()const;
+
     qreal FuelLevel()const;
     qreal SteeringWheelAngle()const;
     int Brightness()const;
@@ -1880,6 +1932,25 @@ class DashBoard : public QObject
     int language()const;
     int externalspeedconnectionrequest()const;
     QString externalspeedport()const;
+
+    //Megasquirt Advanced
+    qreal pwseq1()const;
+    qreal pwseq2()const;
+    qreal pwseq3()const;
+    qreal pwseq4()const;
+    qreal nitrous1_duty()const;
+    qreal nitrous2_duty()const;
+    qreal nitrous_timer_out()const;
+    qreal n2o_addfuel()const;
+    qreal n2o_retard()const;   
+    qreal EGOcor1()const;
+    qreal EGOcor2()const;
+    qreal EGOcor3()const;
+    qreal EGOcor4()const;
+    qreal Knock_cyl1()const;
+    qreal Knock_cyl2()const;
+    qreal Knock_cyl3()const;
+    qreal Knock_cyl4()const;
 
 signals:
 
@@ -2318,6 +2389,10 @@ signals:
     void Userchannel10Changed(qreal Userchannel10);
     void Userchannel11Changed(qreal Userchannel11);
     void Userchannel12Changed(qreal Userchannel12);
+
+    //udp 299 300 301
+    void BitfieldEngineStatusChanged(qreal BitfieldEngineStatus);
+
     void FuelLevelChanged(qreal FuelLevel);
     void SteeringWheelAngleChanged(qreal SteeringWheelAngle);
     void BrightnessChanged(int Brightness);
@@ -2473,6 +2548,25 @@ signals:
     void languageChanged(int language);
     void externalspeedconnectionrequestChanged(int externalspeedconnectionrequest);
     void externalspeedportChanged(QString externalspeedport);
+
+    //Megasquirt Advanced
+    void pwseq1Changed(qreal pwseq1);
+    void pwseq2Changed(qreal pwseq2);
+    void pwseq3Changed(qreal pwseq3);
+    void pwseq4Changed(qreal pwseq4);
+    void nitrous1_dutyChanged(qreal nitrous1_duty);
+    void nitrous2_dutyChanged(qreal nitrous2_duty);
+    void nitrous_timer_outChanged(qreal nitrous_timer_out);
+    void n2o_addfuelChanged(qreal n2o_addfuel);
+    void n2o_retardChanged(qreal n2o_retard);    
+    void EGOcor1Changed(qreal EGOcor1);
+    void EGOcor2Changed(qreal EGOcor2);
+    void EGOcor3Changed(qreal EGOcor3);
+    void EGOcor4Changed(qreal EGOcor4);
+    void Knock_cyl1Changed(qreal Knock_cyl1);
+    void Knock_cyl2Changed(qreal Knock_cyl2);
+    void Knock_cyl3Changed(qreal Knock_cyl3);
+    void Knock_cyl4Changed(qreal Knock_cyl4);
 
 
 private:
@@ -2918,6 +3012,10 @@ private:
     qreal m_Userchannel10;
     qreal m_Userchannel11;
     qreal m_Userchannel12;
+
+    //udp 298 Mega squirt Advanced
+    qreal m_BitfieldEngineStatus;
+
     qreal m_FuelLevel;
     qreal m_SteeringWheelAngle;
     int m_Brightness;
@@ -3072,6 +3170,25 @@ private:
     int m_language;
     int m_externalspeedconnectionrequest;
     QString m_externalspeedport;
+
+    //Megasquirt Advanced
+    qreal m_pwseq1;
+    qreal m_pwseq2;
+    qreal m_pwseq3;
+    qreal m_pwseq4;
+    qreal m_nitrous1_duty;
+    qreal m_nitrous2_duty;
+    qreal m_nitrous_timer_out;
+    qreal m_n2o_addfuel;
+    qreal m_n2o_retard;
+    qreal m_EGOcor1;
+    qreal m_EGOcor2;
+    qreal m_EGOcor3;
+    qreal m_EGOcor4;
+    qreal m_Knock_cyl1;
+    qreal m_Knock_cyl2;
+    qreal m_Knock_cyl3;
+    qreal m_Knock_cyl4;
 };
 
 #endif // DASHBOARD_H

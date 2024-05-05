@@ -9,6 +9,7 @@ Item {
     property string information: "gauge image"
     property string picturesource
     property int pictureheight
+    //property int picturewidth
     property string increasedecreaseident
     Drag.active: true
     Component.onCompleted: togglemousearea();
@@ -39,11 +40,11 @@ Item {
         color: "darkgrey"
         visible: false
         width : 200
-        height :150
+        height : 150
         z: 250          //ensure the Menu is always in the foreground
         Drag.active: true
         onVisibleChanged: {
-            changesize.x= -mytextlabel.x;
+            changesize.x= 200 //-mytextlabel.x;
             changesize.y= -mytextlabel.y;
         }
         MouseArea {
@@ -146,10 +147,12 @@ Item {
 
         case "increasePicture": {
             pictureheight++;
+            //picturewidth++;
             break;
         }
         case "decreasePicture": {
             pictureheight--;
+            //picturewidth--;
             break;
         }
         }
