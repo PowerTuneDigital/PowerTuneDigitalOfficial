@@ -1,23 +1,29 @@
 import QtQuick 2.8
+
 //import QtQuick 2.15
 import QtQuick.Controls 1.4
 import QtQuick.Controls 2.2
+
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Controls 2.3
 import com.powertune 1.0
 import QtQuick.VirtualKeyboard 2.1
+
 import "Translator.js" as Translator
 import QtQuick.Window 2.10 //compatibility with QT 5.10
 import Qt.labs.settings 1.0
 
 
+
 ApplicationWindow {
     id:window
     visible: true
+
     //width: 1600
     //height: 720
     width: Screen.desktopAvailableWidth
     height: Screen.desktopAvailableHeight
+
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
@@ -34,6 +40,9 @@ ApplicationWindow {
     property int digitalInput6: Dashboard.EXDigitalInput6
     property int digitalInput7: Dashboard.EXDigitalInput7
     property int digitalInput8: Dashboard.EXDigitalInput8
+
+    //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
+
 
     Settings{
         id: appSettings
@@ -57,10 +66,12 @@ ApplicationWindow {
 
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
 
+
     Rectangle {
         id: keyboardcontainer
         color: "blue"
         visible: false
+
         width: Screen.desktopAvailableWidth *0.63
         height: Screen.desktopAvailableHeight *0.5
         z: Screen.desktopAvailableHeight *0.5
@@ -115,6 +126,7 @@ ApplicationWindow {
         id: dashView
 
         currentIndex: 0
+
         onCurrentIndexChanged: {
             if (dashView.currentIndex != 0){
                 console.log("Object Closed")
@@ -130,7 +142,6 @@ ApplicationWindow {
             source: "qrc:/Intro.qml"
 
         }
-
 
         Loader {
             id: secondPageLoader
@@ -184,6 +195,7 @@ ApplicationWindow {
         anchors.centerIn: parent
 
         onClicked: {
+
             btnfinaliseupdate.text = "Please wait for reboot..."
         }
     }
@@ -205,6 +217,7 @@ ApplicationWindow {
 
     Drawer {
         id: drawerpopup
+
         width: window.width
         height: 0.5 * window.height
         edge: Qt.TopEdge
@@ -525,6 +538,7 @@ ApplicationWindow {
         }
     }
 
+
     PageIndicator {
         id: indicator
         count: dashView.count
@@ -532,8 +546,6 @@ ApplicationWindow {
         anchors.bottom: dashView.bottom
         anchors.horizontalCenter: parent.horizontalCenter
     }
-
-
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
@@ -739,4 +751,5 @@ ApplicationWindow {
             }
         }
     }
+
 

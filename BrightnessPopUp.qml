@@ -31,13 +31,16 @@ Rectangle{
             visible: true //Dashboard.screen
 
             Button {
+
                 id: brightnessLow                
+
                 text: "✮ Night"
                 font.family: "Eurostile"
                 font.bold: true
                 width: popUp1.width / 1.2
                 height: popUp1.width / 1.2//5.5
                 font.pixelSize: popUp1.width / 7.5
+
                 onClicked: {
                     if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                         brightnessValue = 10;
@@ -47,6 +50,7 @@ Rectangle{
                         Connect.setSreenbrightness(brightnessValue);
                         AppSettings.writebrightnessettings(brightnessValue);
                         console.log("Low Brightness: " + brightnessValue)
+
                 }
                 background: Rectangle {
                     radius: popUp1.width / 1.2
@@ -66,6 +70,7 @@ Rectangle{
                 height: popUp1.width / 1.2
                 font.pixelSize: popUp1.width / 7.5
                 transformOrigin: Item.Center
+
                 onClicked: {
                     if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                         brightnessValue = 75;
@@ -75,6 +80,7 @@ Rectangle{
                         Connect.setSreenbrightness(brightnessValue);
                         AppSettings.writebrightnessettings(brightnessValue);
                         console.log("High Brightness: " + brightnessValue)
+
                 }
                 background: Rectangle {
                             radius: popUp1.width / 1.2
