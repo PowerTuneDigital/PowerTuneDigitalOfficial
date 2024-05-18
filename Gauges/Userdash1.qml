@@ -1294,10 +1294,10 @@ Item {
                 visible: true
                 font.pixelSize: mainwindow.width * 0.018//15
                 onCurrentIndexChanged: changetitlebarclolor()
-                //Component.onCompleted: {for(var i = 0; i < colorselecttitlebar.model.count; ++i) if (colorselecttitlebar.textAt(i) === "green")colorselecttitlebar.currentIndex = i }
                 delegate:
 
                     ItemDelegate {
+                    id:itemDelegate3
                     font.pixelSize: mainwindow.width * 0.018//15
                     width: colorselecttitlebar.width
                     height: colorselecttitlebar.height
@@ -1421,6 +1421,7 @@ Item {
                     width: titlecolor.width
                     height: titlecolor.height
                     font.pixelSize: mainwindow.width * 0.018//15
+                    text: itemColor
                     Rectangle {
 
                         width: titlecolor.width
