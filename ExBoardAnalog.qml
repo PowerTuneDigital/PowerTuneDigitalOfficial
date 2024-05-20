@@ -1129,153 +1129,155 @@ Rectangle {
     }
     */
 
-    // Row{
-    //     id: row1
-    //     anchors.bottom: mainWindow.bottom
-    //     bottomPadding: 15
-    //     leftPadding: 5
-    //     Text{
-    //         id: digitalSwitchText
-    //         text:"Digital input headlight channel:"
-    //         color: "white"
-    //         topPadding: 7
-    //         rightPadding: 5
 
-    //         font.family: "Eurostile"
-    //         font.bold: true
-    //         font.pixelSize: mainWindow.width / 70
-    //         Component.onCompleted: {
-    //             if(mainWindow.width == 800){
-    //                 digitalSwitchText.font.pixelSize = 15
-    //             }
-    //         }
-    //     }
+    Row{
+        id: row1
+        anchors.bottom: mainWindow.bottom
+        bottomPadding: 15
+        leftPadding: 5
+        Text{
+            id: digitalSwitchText
+            text:"Digital input headlight channel:"
+            color: "white"
+            topPadding: 7
+            rightPadding: 5
+
+            font.family: "Eurostile"
+            font.bold: true
+            font.pixelSize: mainWindow.width / 70
+            Component.onCompleted: {
+                if(mainWindow.width == 800){
+                    digitalSwitchText.font.pixelSize = 15
+                }
+            }
+        }
 
 
-    //     ComboBox{
-    //         id: digitalExtender
-    //         model: comboBoxModel
-    //         width: mainWindow.width * 0.18
-    //         font.pixelSize: 20
+        ComboBox{
+            id: digitalExtender
+            model: comboBoxModel
+            width: mainWindow.width * 0.18
+            font.pixelSize: 20
 
-    //         delegate: ItemDelegate{
-    //             width: digitalExtender.width
-    //             font.pixelSize: digitalExtender.font.pixelSize
-    //             text: digitalExtender.textRole ? (Array.isArray(digitalExtender.model) ? modelData[digitalExtender.textRole] : model[digitalExtender.textRole]) : modelData
-    //             font.weight: digitalExtender.currentIndex === index ? Font.DemiBold : Font.Normal
-    //             font.family: digitalExtender.font.family
-    //             highlighted: digitalExtender.highlightedIndex === index
-    //             hoverEnabled: digitalExtender.hoverEnabled
-    //         }
+            delegate: ItemDelegate{
+                width: digitalExtender.width
+                font.pixelSize: digitalExtender.font.pixelSize
+                text: digitalExtender.textRole ? (Array.isArray(digitalExtender.model) ? modelData[digitalExtender.textRole] : model[digitalExtender.textRole]) : modelData
+                font.weight: digitalExtender.currentIndex === index ? Font.DemiBold : Font.Normal
+                font.family: digitalExtender.font.family
+                highlighted: digitalExtender.highlightedIndex === index
+                hoverEnabled: digitalExtender.hoverEnabled
+            }
 
-    //         Component.onCompleted: {
-    //             if(mainWindow.width == 800){
-    //                 digitalExtender.width = 170
-    //                 digitalExtender.height = 35
-    //                 digitalExtender.font.pixelSize = 12
-    //             }
-    //         }
-    //         onCurrentIndexChanged: {
-    //             //see if the index is matching with the text then assign digiValue a pointer for the function digitalLoop()
-    //             if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 1"){
-    //                 digiValue = 0
-    //                 digiStringValue = "Ex Digital Input 1"
-    //                 console.log("digital input 1 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 2"){
-    //                 digiValue = 1
-    //                 digiStringValue = "Ex Digital Input 2"
-    //                 console.log("digital input 2 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 3"){
-    //                 digiValue = 2
-    //                 digiStringValue = "Ex Digital Input 3"
-    //                 console.log("digital input 3 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 4"){
-    //                 digiValue = 3
-    //                 digiStringValue = "Ex Digital Input 4"
-    //                 console.log("digital input 4 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 5"){
-    //                 digiValue = 4
-    //                 digiStringValue = "Ex Digital Input 5"
-    //                 console.log("digital input 5 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 6"){
-    //                 digiValue = 5
-    //                 digiStringValue = "Ex Digital Input 6"
-    //                 console.log("digital input 6 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 7"){
-    //                 digiValue = 6
-    //                 digiStringValue = "Ex Digital Input 7"
-    //                 console.log("digital input 7 read")
-    //                 return;
-    //             }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 8"){
-    //                 digiValue = 7
-    //                 digiStringValue = "Ex Digital Input 8"
-    //                 console.log("digital input 8 read")
-    //                 return;
-    //             }
-    //        }
-    //     }
-    // }
+            Component.onCompleted: {
+                if(mainWindow.width == 800){
+                    digitalExtender.width = 170
+                    digitalExtender.height = 35
+                    digitalExtender.font.pixelSize = 12
+                }
+            }
+            onCurrentIndexChanged: {
+                //see if the index is matching with the text then assign digiValue a pointer for the function digitalLoop()
+                if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 1"){
+                    digiValue = 0
+                    digiStringValue = "Ex Digital Input 1"
+                    console.log("digital input 1 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 2"){
+                    digiValue = 1
+                    digiStringValue = "Ex Digital Input 2"
+                    console.log("digital input 2 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 3"){
+                    digiValue = 2
+                    digiStringValue = "Ex Digital Input 3"
+                    console.log("digital input 3 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 4"){
+                    digiValue = 3
+                    digiStringValue = "Ex Digital Input 4"
+                    console.log("digital input 4 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 5"){
+                    digiValue = 4
+                    digiStringValue = "Ex Digital Input 5"
+                    console.log("digital input 5 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 6"){
+                    digiValue = 5
+                    digiStringValue = "Ex Digital Input 6"
+                    console.log("digital input 6 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 7"){
+                    digiValue = 6
+                    digiStringValue = "Ex Digital Input 7"
+                    console.log("digital input 7 read")
+                    return;
+                }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 8"){
+                    digiValue = 7
+                    digiStringValue = "Ex Digital Input 8"
+                    console.log("digital input 8 read")
+                    return;
+                }
+           }
+        }
+    }
 
-    // Row{
-    //     id: bottomExtenderRow
-    //     anchors.left: row1.right
-    //     anchors.bottom: mainWindow.bottom
-    //     bottomPadding: 10
-    //     leftPadding: 5
-    //     spacing: 5
-    //     Text{
-    //         id: extenderSwitch
-    //         text:"CAN/IO Brightness Function:"
-    //         color: "white"
-    //         font.family: "Eurostile"
-    //         font.bold: true
-    //         topPadding: 8
-    //         font.pixelSize: mainWindow.width / 70
-    //         Component.onCompleted: {
-    //             if(mainWindow.width == 800){
-    //                 extenderSwitch.font.pixelSize = 15
-    //             }else{
-    //                 extenderSwitch.topPadding = 4
-    //             }
-    //         }
-    //     }
+    Row{
+        id: bottomExtenderRow
+        anchors.left: row1.right
+        anchors.bottom: mainWindow.bottom
+        bottomPadding: 10
+        leftPadding: 5
+        spacing: 5
+        Text{
+            id: extenderSwitch
+            text:"CAN/IO Brightness Function:"
+            color: "white"
+            font.family: "Eurostile"
+            font.bold: true
+            topPadding: 8
+            font.pixelSize: mainWindow.width / 70
+            Component.onCompleted: {
+                if(mainWindow.width == 800){
+                    extenderSwitch.font.pixelSize = 15
+                }else{
+                    extenderSwitch.topPadding = 4
+                }
+            }
+        }
 
-    //     Switch{
-    //         id: maxBrightnessBoot
-    //         text:  settings.switchValue ? "On" : "Off"
-    //         checked: settings.value("switchChecked", false)
-    //         width: mainWindow.width / 10
-    //         contentItem: Text {
-    //             id: maxBrightnessBootText
-    //             text: maxBrightnessBoot.text
-    //             topPadding: 4
-    //             color: "white" // Set the text color here
-    //             opacity: enabled ? 1.0 : 0.3
-    //             horizontalAlignment: Text.AlignHCenter
-    //             font.family: "Eurostile"
-    //             font.bold: true
-    //             Component.onCompleted: {
-    //                 if(mainWindow.width == 800){
-    //                     maxBrightnessBootText.font.pixelSize = 15
-    //                     maxBrightnessBootText.leftPadding = 70
-    //                 } else{
-    //                     maxBrightnessBootText.font.pixelSize = 20
-    //                     maxBrightnessBootText.topPadding = 2
-    //                 }
-    //             }
-    //         }
-    //         onCheckedChanged: {
-    //             settings.setValue("switchChecked", checked) // Save the value to settings
-    //             maxBrightnessBoot.text = checked ? "On" : "Off"
-    //         }
-    //     }
-    // }
+        Switch{
+            id: maxBrightnessBoot
+            text:  settings.switchValue ? "On" : "Off"
+            checked: settings.value("switchChecked", false)
+            width: mainWindow.width / 10
+            contentItem: Text {
+                id: maxBrightnessBootText
+                text: maxBrightnessBoot.text
+                topPadding: 4
+                color: "white" // Set the text color here
+                opacity: enabled ? 1.0 : 0.3
+                horizontalAlignment: Text.AlignHCenter
+                font.family: "Eurostile"
+                font.bold: true
+                Component.onCompleted: {
+                    if(mainWindow.width == 800){
+                        maxBrightnessBootText.font.pixelSize = 15
+                        maxBrightnessBootText.leftPadding = 70
+                    } else{
+                        maxBrightnessBootText.font.pixelSize = 20
+                        maxBrightnessBootText.topPadding = 2
+                    }
+                }
+            }
+            onCheckedChanged: {
+                settings.setValue("switchChecked", checked) // Save the value to settings
+                maxBrightnessBoot.text = checked ? "On" : "Off"
+            }
+        }
+    }
+
 
     function executeOnBootAction() {
             if (settings.switchValue) {

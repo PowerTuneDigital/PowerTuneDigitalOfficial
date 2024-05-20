@@ -1245,7 +1245,9 @@ Item {
                 font.pixelSize: mainwindow.width * 0.018//15
             }
             Text {
-                text: Translator.translate("Backround color", Dashboard.language)
+
+                text: Translator.translate("Background color", Dashboard.language)
+
                 font.pixelSize: mainwindow.width * 0.018//15
             }
 
@@ -1421,6 +1423,9 @@ Item {
                     width: titlecolor.width
                     height: titlecolor.height
                     font.pixelSize: mainwindow.width * 0.018//15
+
+                    text: itemColor
+
                     Rectangle {
 
                         width: titlecolor.width

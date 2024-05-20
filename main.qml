@@ -547,100 +547,102 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+
     //Check if any of the EXDigitalInput values have changed and if so run the function.
-    // onDigitalInput1Changed: {
-    //     console.log("Digital Input 1 Channel Changed" + digitalInput1)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput1Changed: {
+        console.log("Digital Input 1 Channel Changed" + digitalInput1)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput2Changed: {
-    //     console.log("Digital Input 2 Channel Changed" + digitalInput2)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput2Changed: {
+        console.log("Digital Input 2 Channel Changed" + digitalInput2)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput3Changed: {
-    //     console.log("Digital Input 3 Channel Changed" + digitalInput3)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput3Changed: {
+        console.log("Digital Input 3 Channel Changed" + digitalInput3)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput4Changed: {
-    //     console.log("Digital Input 4 Channel Changed" + digitalInput4)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput4Changed: {
+        console.log("Digital Input 4 Channel Changed" + digitalInput4)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput5Changed: {
-    //     console.log("Digital Input 5 Channel Changed" + digitalInput5)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput5Changed: {
+        console.log("Digital Input 5 Channel Changed" + digitalInput5)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput6Changed: {
-    //     console.log("Digital Input 6 Channel Changed" + digitalInput6)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput6Changed: {
+        console.log("Digital Input 6 Channel Changed" + digitalInput6)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput7Changed: {
-    //     console.log("Digital Input 7 Channel Changed" + digitalInput7)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput7Changed: {
+        console.log("Digital Input 7 Channel Changed" + digitalInput7)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // onDigitalInput8Changed: {
-    //     console.log("Digital Input 8 Channel Changed" + digitalInput8)
-    //     if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
-    //         ddcutilDigitalLoop()
-    //     }else{
-    //         digitalLoop()
-    //     }
-    // }
+    onDigitalInput8Changed: {
+        console.log("Digital Input 8 Channel Changed" + digitalInput8)
+        if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
+            ddcutilDigitalLoop()
+        }else{
+            digitalLoop()
+        }
+    }
 
-    // Timer {
-    //   interval: 1200
-    //   running: true
-    //   onTriggered: {
-    //         if(custom.maxBrightnessOnBoot == 1){
-    //             if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
-    //               console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
-    //               Connect.setSreenbrightness(80);
-    //               AppSettings.writebrightnessettings(80);
-    //             } else {
-    //               console.log("DDCUTIL Failed max brightness run without ddc")
-    //               Connect.setSreenbrightness(250);
-    //               AppSettings.writebrightnessettings(250);
-    //             }
-    //         }
-    //     }
-    //   Component.onCompleted: {
-    //       console.log("Timer for Max Brightness started")
+    Timer {
+      interval: 1200
+      running: true
+      onTriggered: {
+            if(custom.maxBrightnessOnBoot == 1){
+                if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
+                  console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
+                  Connect.setSreenbrightness(80);
+                  AppSettings.writebrightnessettings(80);
+                } else {
+                  console.log("DDCUTIL Failed max brightness run without ddc")
+                  Connect.setSreenbrightness(250);
+                  AppSettings.writebrightnessettings(250);
+                }
+            }
+        }
+      Component.onCompleted: {
+          console.log("Timer for Max Brightness started")
 
-    //     }
-    // }
+        }
+    }
+
 
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
