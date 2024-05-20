@@ -180,7 +180,7 @@ void datalogger::updateLog()
                 << m_dashboard->EXDigitalInput6()  << ","
                 << m_dashboard->EXDigitalInput7()  << ","
                 << m_dashboard->EXDigitalInput8()  << ","
-                << endl;
+                << Qt::endl;
             mFile.close();
             break;
             case 1: ////Link ECU Generic CAN
@@ -249,7 +249,7 @@ void datalogger::updateLog()
                     << m_dashboard->EXDigitalInput6()  << ","
                     << m_dashboard->EXDigitalInput7()  << ","
                     << m_dashboard->EXDigitalInput8()  << ","
-                    << endl;
+                    << Qt::endl;
             mFile.close();
             break;
             case 2: ////Toyota86 BRZ FRS
@@ -294,7 +294,7 @@ void datalogger::updateLog()
                                    << m_dashboard->EXDigitalInput6()  << ","
                                    << m_dashboard->EXDigitalInput7()  << ","
                                    << m_dashboard->EXDigitalInput8()  << ","
-                                   << endl;
+                                   << Qt::endl;
                 mFile.close();
                 break;
             case 5: ////ECU MASTERS EMU CAN
@@ -355,7 +355,7 @@ void datalogger::updateLog()
                                    << m_dashboard->EXDigitalInput6()  << ","
                                    << m_dashboard->EXDigitalInput7()  << ","
                                    << m_dashboard->EXDigitalInput8()  << ","
-                                   << endl;
+                                   << Qt::endl;
                 mFile.close();
                 break;
             case 6: ////GR YARIS
@@ -405,7 +405,7 @@ void datalogger::updateLog()
                                    << m_dashboard->EXDigitalInput6()  << ","
                                    << m_dashboard->EXDigitalInput7()  << ","
                                    << m_dashboard->EXDigitalInput8()  << ","
-                                   << endl;
+                                   << Qt::endl;
                 mFile.close();
                 break;
         }
@@ -552,7 +552,7 @@ QTextStream out(&mFile);
                     << "EX Digitial 6"  << ","
                     << "EX Digitial 7"  << ","
                     << "EX Digitial 8"  << ","
-                    << endl;
+                    << Qt::endl;
             mFile.close();
                 break;
             case 1: ////Link ECU Generic CAN
@@ -621,7 +621,7 @@ QTextStream out(&mFile);
                     << "EX Digitial 6"  << ","
                     << "EX Digitial 7"  << ","
                     << "EX Digitial 8"  << ","
-                    << endl;
+                    << Qt::endl;
             mFile.close();
                 break;
 
@@ -667,7 +667,7 @@ QTextStream out(&mFile);
                            << "EX Digitial 6"  << ","
                            << "EX Digitial 7"  << ","
                            << "EX Digitial 8"  << ","
-                              << endl;
+                              << Qt::endl;
                               mFile.close();
                                   break;
 
@@ -730,7 +730,7 @@ QTextStream out(&mFile);
                            << "EX Digitial 6"  << ","
                            << "EX Digitial 7"  << ","
                            << "EX Digitial 8"  << ","
-                              << endl;
+                              << Qt::endl;
                               mFile.close();
                                   break;
             case 6: ////GR YARIS
@@ -779,7 +779,7 @@ QTextStream out(&mFile);
                            << "EX Digitial 6"  << ","
                            << "EX Digitial 7"  << ","
                            << "EX Digitial 8"  << ","
-                           << endl;
+                           << Qt::endl;
                 mFile.close();
                 break;
 
@@ -787,5 +787,3 @@ QTextStream out(&mFile);
         }
     }
 }
-
-

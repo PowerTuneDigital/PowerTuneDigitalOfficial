@@ -170,7 +170,7 @@ void Apexi::handleError(QSerialPort::SerialPortError serialPortError)
         if(!mFile.open(QFile::Append | QFile::Text)){
         }
         QTextStream out(&mFile);
-        out << "Serial Error " << (m_serialport->errorString()) <<endl;
+        out << "Serial Error " << (m_serialport->errorString()) <<Qt::endl;
         mFile.close();
         m_dashboard->setSerialStat(m_serialport->errorString());
         
@@ -189,7 +189,7 @@ void Apexi::readyToRead()
     if(!mFile.open(QFile::Append | QFile::Text)){
     }
     QTextStream out(&mFile);
-    out << m_readData.toHex() <<endl;
+    out << m_readData.toHex() <<Qt::endl;
     mFile.close();
     // Test End
   */
@@ -770,7 +770,7 @@ void Apexi::decodeBasic(QByteArray rawmessagedata)
     if(!mFile.open(QFile::Append | QFile::Text)){
     }
     QTextStream out(&mFile);
-    out << rawmessagedata.toHex() <<endl;
+    out << rawmessagedata.toHex() <<Qt::endl;
     mFile.close();
 */    
 }
@@ -870,12 +870,12 @@ void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QStr
 
     {
         QTextStream stream( &file );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
     QString filename2="/home/pi/UserDashboards/UserDashApexi.txt";
@@ -884,12 +884,12 @@ void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QStr
 
     {
         QTextStream stream( &file2 );
-        stream << gauge1 << endl;
-        stream << gauge2 << endl;
-        stream << gauge3 << endl;
-        stream << gauge4 << endl;
-        stream << gauge5 << endl;
-        stream << gauge6 << endl;
+        stream << gauge1 << Qt::endl;
+        stream << gauge2 << Qt::endl;
+        stream << gauge3 << Qt::endl;
+        stream << gauge4 << Qt::endl;
+        stream << gauge5 << Qt::endl;
+        stream << gauge6 << Qt::endl;
     }
 
 
