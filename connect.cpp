@@ -729,10 +729,7 @@ void Connect::LiveReqMsgOBD(const QString &obdpids)
     mFile.close();
 
     //Reboot the PI for settings to take Effect
-    m_dashBoard->setSerialStat("Rebooting ");
-    QProcess *process = new QProcess(this);
-    process->start("sudo reboot");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    reboot();
 }
 
 void Connect::daemonstartup(const int &daemon)
@@ -1074,10 +1071,7 @@ void Connect::canbitratesetup(const int &cansetting)
     mFile.close();
 
     //Reboot the PI for settings to take Effect
-    m_dashBoard->setSerialStat("Rebooting ");
-    QProcess *process = new QProcess(this);
-    process->start("sudo reboot");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    reboot();
 }
 
 
@@ -1191,12 +1185,9 @@ void Connect::LiveReqMsg(const int &val1, const int &val2, const int &val3, cons
     mFile.close();
 
     //Reboot the PI for settings to take Effect
-    m_dashBoard->setSerialStat("Rebooting ");
-    QProcess *process = new QProcess(this);
-    process->start("sudo reboot");
-    process->waitForFinished(100); // 10 minutes time before timeout
-
+    reboot();
 }
+
 void Connect::openConnection(const QString &portName, const int &ecuSelect,const int &canbase,const int &rpmcanbase)
 {
     ecu = ecuSelect;
@@ -1345,37 +1336,56 @@ void Connect::update()
         //connect( p, SIGNAL(readyReadStandardError()), this, SLOT(ReadErr()) );
     }
 }
+
 void Connect::changefolderpermission()
 {
     QProcess *process = new QProcess(this);
-    process->start("sudo chown -R pi:pi /home/pi/KTracks");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    QString program = "sudo";
+    QStringList arguments;
+    arguments << "chown" << "-R" << "pi:pi" << "/home/pi/KTracks";
+
+    process->start(program, arguments);
+    process->waitForFinished(600000); // 10 minutes time before timeout
     reboot();
 }
+
 void Connect::shutdown()
 {
     m_dashBoard->setSerialStat("Shutting Down");
     QProcess *process = new QProcess(this);
-    process->start("sudo shutdown -h now");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    QString program = "sudo";
+    QStringList arguments;
+    arguments << "shutdown" << "-h" << "now";
+
+    process->start(program, arguments);
+    process->waitForFinished(600000); // 10 minutes time before timeout
 }
+
 void Connect::reboot()
 {
     m_dashBoard->setSerialStat("Rebooting");
     QProcess *process = new QProcess(this);
-    process->start("sudo reboot");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    QString program = "sudo";
+    QStringList arguments;
+    arguments << "reboot";
+
+    process->start(program, arguments);
+    process->waitForFinished(600000); // 10 minutes time before timeout
 }
 
 void Connect::turnscreen()
 {
-    m_dashBoard->setSerialStat("turn screen");
+    m_dashBoard->setSerialStat("Turning Screen");
     QProcess *process = new QProcess(this);
-    process->start("sudo cp /home/pi/src/config.txt /boot/config.txt");
-    process->waitForFinished(100); // 10 minutes time before timeout
-    Connect::reboot();
+    QString program = "sudo";
+    QStringList arguments;
+    arguments << "cp" << "/home/pi/src/config.txt" << "/boot/config.txt";
 
+    process->start(program, arguments);
+    process->waitForFinished(600000); // 10 minutes time before timeout
+    reboot();
 }
+
 void Connect::candump()
 {
     QProcess *p = new QProcess( this );
@@ -1440,8 +1450,11 @@ void Connect::updatefinished(int exitCode, QProcess::ExitStatus exitStatus)
 void Connect::RequestLicence()
 {
     QProcess *process = new QProcess(this);
-    process->start("/home/pi/licencerequest");
-    process->waitForFinished(100); // 10 minutes time before timeout
+    QString program = "/home/pi/licencerequest";
+    QStringList arguments; // No arguments needed for this command
+
+    process->start(program, arguments);
+    process->waitForFinished(600000); // 10 minutes time before timeout
 
     QString path = "/home/pi/Licrequest.lic";
     QFile inputFile(path);
@@ -1457,9 +1470,13 @@ void Connect::RequestLicence()
     }
 }
 
+
 void Connect::restartDaemon()
 {
-QProcess *process = new QProcess(this);
-process->start("/home/pi/startdaemon.sh");
-connect( process, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()) );
+    QProcess *process = new QProcess(this);
+    QString program = "/home/pi/startdaemon.sh";
+    QStringList arguments; // Assuming no arguments are needed for this script
+
+    process->start(program, arguments);
+    connect(process, &QProcess::readyReadStandardOutput, this, &Connect::processOutput);
 }
