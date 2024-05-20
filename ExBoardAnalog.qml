@@ -1129,6 +1129,7 @@ Rectangle {
     }
     */
 
+
     Row{
         id: row1
         anchors.bottom: mainWindow.bottom
@@ -1276,6 +1277,7 @@ Rectangle {
             }
         }
     }
+
 
     function executeOnBootAction() {
             if (settings.switchValue) {

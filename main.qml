@@ -547,6 +547,7 @@ ApplicationWindow {
         anchors.horizontalCenter: parent.horizontalCenter
     }
 
+
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
         console.log("Digital Input 1 Channel Changed" + digitalInput1)
@@ -641,6 +642,7 @@ ApplicationWindow {
 
         }
     }
+
 
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
