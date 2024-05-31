@@ -19,17 +19,16 @@ ApplicationWindow {
     id:window
     visible: true
 
-    //width: 1600
-    //height: 720
+    //width: 800
+    //height: 480
     width: Screen.desktopAvailableWidth
     height: Screen.desktopAvailableHeight
-
     minimumWidth: 800
     minimumHeight: 480
     title: qsTr("PowerTune ") + Dashboard.Platform
     color: "black"
 
-    property int brightnessIncrease: 150
+    property int brightnessIncrease: 175
     property int ddcUtilBrightnessIncrease: 50
 
     property int digitalInput1: Dashboard.EXDigitalInput1
@@ -51,12 +50,10 @@ ApplicationWindow {
     }
 
     Component.onCompleted: {
-        console.log("ExBoard digiValue: " + custom.digiValue)
-        //if ddcutil is true change all values to something
-            popUpLoader.source = "qrc:/BrightnessPopUp.qml"
+        //console.log("ExBoard digiValue: " + custom.digiValue)
+        popUpLoader.source = "qrc:/BrightnessPopUp.qml"
         custom.executeOnBootAction()
-        console.log(" Max Brightness on boot test: " + custom.maxBrightnessOnBoot)
-
+        //console.log(" Max Brightness on boot test: " + custom.maxBrightnessOnBoot)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -65,8 +62,6 @@ ApplicationWindow {
     }
 
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
-
-
     Rectangle {
         id: keyboardcontainer
         color: "blue"
@@ -627,8 +622,8 @@ ApplicationWindow {
             if(custom.maxBrightnessOnBoot == 1){
                 if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                   console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
-                  Connect.setSreenbrightness(80);
-                  AppSettings.writebrightnessettings(80);
+                  Connect.setSreenbrightness(250);
+                  AppSettings.writebrightnessettings(250);
                 } else {
                   console.log("DDCUTIL Failed max brightness run without ddc")
                   Connect.setSreenbrightness(250);

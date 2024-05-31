@@ -11,6 +11,7 @@ Item {
     property int pictureheight
     //property int picturewidth
     property string increasedecreaseident
+    z:1
     Drag.active: true
     Component.onCompleted: togglemousearea();
 
@@ -41,11 +42,13 @@ Item {
         visible: false
         width : 200
         height : 150
-        z: 250          //ensure the Menu is always in the foreground
+        x: 0
+        y: 0
+        z: 201         //ensure the Menu is always in the foreground
         Drag.active: true
         onVisibleChanged: {
-            changesize.x= 200 //-mytextlabel.x;
-            changesize.y= -mytextlabel.y;
+            changesize.x= -picture.x;
+            changesize.y= -picture.y;
         }
         MouseArea {
             anchors.fill: parent

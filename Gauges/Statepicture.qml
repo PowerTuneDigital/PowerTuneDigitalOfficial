@@ -13,9 +13,8 @@ Item {
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
+    z:3
     Drag.active: true
-    x: 200
-    y: 200
     DatasourcesList{id: powertunedatasource}
     Component.onCompleted: {togglemousearea();
                             bind();
@@ -57,7 +56,7 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-            changesize.x= 200//-statepicture.x;
+            changesize.x= -statepicture.x;
             changesize.y= -statepicture.y;
         }
     }
@@ -67,7 +66,9 @@ Item {
         visible: false
         width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
         height : 480 * 0.667//320 Taking the resolution from the 7" and dividing it by (230/screenHeight)
-        z: 500
+        x: statepicture.x
+        y: statepicture.y
+        z: 202
         Drag.active: true
         MouseArea {
             anchors.fill: parent

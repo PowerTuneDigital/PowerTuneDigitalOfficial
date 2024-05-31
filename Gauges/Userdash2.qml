@@ -39,6 +39,8 @@ Item {
     property int val13
     property string val14 : "Square Gauge"
     property int parser
+    property int touchCounter: 0
+    property real lastTouchTime: 0
 
     Drag.active: true
     MyTextLabel{x:10
@@ -228,27 +230,48 @@ Item {
     MouseArea {
         id: touchArea
         anchors.fill: parent
-        onDoubleClicked:
+        onPressed:
         {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                btnbackround.visible = true;
+                savetofile.visible = true;
+                squaregaugemenu.visible =true;
+                btnopencolorselect.visible = true;
+                cbx_sources.visible = true;
+                btnaddSquare.visible = true;
+                btncancel.visible = true;
+                btnsave.visible = true;
+                btnclear.visible = true;
+                loadfromfile.visible = true;
+                squaregaugemenu.visible = true;
+                btnaddRound.visible = true;
+                btnaddText.visible = true;
+                btnaddPicture.visible = true;
+                btnaddStatePicture.visible = true;
+                btnaddStateGIF.visible = true;
+                btnaddBar.visible = true;
+                Dashboard.setdraggable(1);
+            }
+        }
+    }
 
-            btnbackround.visible = true;
-            savetofile.visible = true;
-            squaregaugemenu.visible =true;
-            btnopencolorselect.visible = true;
-            cbx_sources.visible = true;
-            btnaddSquare.visible = true;
-            btncancel.visible = true;
-            btnsave.visible = true;
-            btnclear.visible = true;
-            loadfromfile.visible = true;
-            squaregaugemenu.visible = true;
-            btnaddRound.visible = true;
-            btnaddText.visible = true;
-            btnaddPicture.visible = true;
-            btnaddStatePicture.visible = true;
-            btnaddStateGIF.visible = true;
-            btnaddBar.visible = true;
-            Dashboard.setdraggable(1);
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
         }
     }
 

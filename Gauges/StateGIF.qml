@@ -16,6 +16,7 @@ Item {
     property string mainvaluename
     property double triggervalue : 0
     property double triggeroffvalue : 0
+    z: 2
     Drag.active: true
     DatasourcesList{id: powertunedatasource}
     Component.onCompleted: {togglemousearea();
@@ -59,7 +60,7 @@ Item {
         onDoubleClicked: {
             changesize.visible = true;
             Connect.readavailablebackrounds();
-                changesize.x= 200 //-statepicture.x;
+                changesize.x= -statepicture.x;
                 changesize.y= -statepicture.y;
         }
     }
@@ -70,7 +71,9 @@ Item {
         visible: false
         width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
         height : 480 * 0.7//320 Taking the resolution from the 7" and dividing it by (320/screenHeight)
-        z: 500          //ensure the Menu is always in the foreground
+        x: 0
+        y: 0
+        z: 200        //ensure the Menu is always in the foreground
         Drag.active: true
         onWidthChanged: {
             changesize.width = 800 * 0.2875

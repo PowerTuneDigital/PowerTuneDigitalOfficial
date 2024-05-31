@@ -73,7 +73,9 @@ Item {
         visible: false
         width : 200
         height :480
-        z: 501          //ensure the Menu is always in the foreground
+        x: 0
+        y: 0
+        z: 200          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
             anchors.fill: parent
@@ -81,7 +83,7 @@ Item {
             enabled: true
         }
         onVisibleChanged: {
-            changesize.x = 150 //-mytextlabel.x;
+            changesize.x = -mytextlabel.x;
             changesize.y = -mytextlabel.y;
         }
 

@@ -112,8 +112,8 @@ Rectangle {
             property alias r35save : r35.text
             property alias an7dampingfactorsave : an7dampingfactor.text
 
-           //property alias selectedValue: digitalExtender.currentIndex
-           // property alias switchValue: maxBrightnessBoot.checked
+            property alias selectedValue: digitalExtender.currentIndex
+            property alias switchValue: maxBrightnessBoot.checked
         }
     }
     property int rpmCheckboxSaveValue: settings.rpmcheckboxsave
