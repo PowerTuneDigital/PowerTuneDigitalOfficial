@@ -82,7 +82,7 @@ int EXsteinhart4; //Flag to use Steinhart/hart for Analog input 4
 int EXsteinhart5; //Flag to use Steinhart/hart for Analog input 5
 
 qreal lamdamultiplicator = 1;
-//int brightness;
+int brightness;
 
 
 

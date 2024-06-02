@@ -313,11 +313,12 @@ ApplicationWindow {
              height: window.height /15
              stepSize: 5
              topPadding: 10
-             from: 0
-             to: 100
+             from: 20
+             to: 255
              value: Dashboard.Brightness
 
              onValueChanged: {
+                      console.log("Slider Value Changed: " + brightness.value + " Dashboard Brightness: " + Dashboard.Brightness)
                       Connect.setSreenbrightness(brightness.value);
                       AppSettings.writebrightnessettings(brightness.value);
                       }
