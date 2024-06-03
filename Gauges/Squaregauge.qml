@@ -4,6 +4,7 @@ import QtQuick.Controls 2.1
 import QtQuick.Controls.Styles 1.4
 import QtQuick.Extras 1.4
 import "qrc:/Translator.js" as Translator
+import Qt.labs.settings 1.0
 Rectangle {
 
     id: gauge
@@ -12,7 +13,7 @@ Rectangle {
     property string information: "Square gauge"
     border.color: "#9f9f9f"
     border.width: 2
-    Component.onCompleted: {set();
+    Component.onCompleted: {set();        
     }
 
     property string mainvaluename
@@ -41,6 +42,47 @@ Rectangle {
     property string textFonttype
     property string valueFonttype :"Verdana"
     property real peakval: 0
+
+    //Variables for Offset and Scales
+    property double gaugeScaleOffset
+    property double scaleValue: gaugeSettings.scaleValueStored
+    property double offsetValueMultiply: gaugeSettings.offsetValueMultiplyStored
+    property double offsetValueDivide: gaugeSettings.offsetValueDivideStored
+
+    //Settings to store the scales and offsets and keep them persistent through reboots
+    Settings{
+        id: gaugeSettings
+        property double scaleValueStored
+        property double offsetValueMultiplyStored
+        property double offsetValueDivideStored
+    }
+
+    // Everytime the value changes do the maths with the Scale and Offset then change the text to read the new value
+    // onMainvalueChanged: {
+    //     console.log("Main Value Field: " + mainvalue)
+    //     console.log("Gauge Scale Offset: " + gaugeScaleOffset)
+    //     console.log(mainvaluetextfield.text)
+    //     console.log("Scale Value: " + scaleValue)
+    //     if(scaleValue > 0 && offsetValueMultiply > 0){
+    //         gaugeScaleOffset = (mainvalue + scaleValue) * offsetValueMultiply
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }else if(scaleValue > 0 && offsetValueDivide > 0){
+    //         gaugeScaleOffset = (mainvalue + scaleValue) / offsetValueDivide
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }else if(offsetValueMultiply > 0 && scaleValue == 0 && offsetValueDivide == 0){
+    //         gaugeScaleOffset = mainvalue * offsetValueMultiply
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }else if(offsetValueDivide > 0 && scaleValue == 0 && offsetValueMultiply == 0){
+    //         gaugeScaleOffset = mainvalue / offsetValueDivide
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }else if(scaleValue > 0 && offsetValueMultiply == 0 && offsetValueDivide == 0){
+    //         gaugeScaleOffset = mainvalue + scaleValue
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }else{
+    //         gaugeScaleOffset = mainvalue
+    //         mainvaluetextfield.text = gaugeScaleOffset.toFixed(decimalpoints)
+    //     }
+    // }
 
     Drag.active: true
     DatasourcesList{id: powertunedatasource}
@@ -89,20 +131,54 @@ Rectangle {
         //Component.onCompleted: {toggledecimal();}
         visible: false
     }
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+    //     }
+    //     Component.onCompleted: {toggledecimal();
+    //         toggledecimal2();
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+            }
         }
         Component.onCompleted: {toggledecimal();
             toggledecimal2();
         }
     }
 
-
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
+        }
+    }
 
     Rectangle {
         id: titlebar
@@ -173,6 +249,7 @@ Rectangle {
         font.pixelSize: parent.width * (50 / parent.width)
         font.family: valueFonttype
         color: "white"
+        //text: gaugeScaleOffset
         onTextChanged: {
             warningindication.warn();
         }
@@ -213,7 +290,7 @@ Rectangle {
         orientation: Qt.Vertical
         minorTickmarkCount: 0
         tickmarkAlignment: Qt.AlignRight
-        value: parent.mainvalue
+        value: parent.mainvalue //gaugeScaleOffset
         maximumValue: parent.maxvalue
 
         style: GaugeStyle {
@@ -235,6 +312,45 @@ Rectangle {
             valueBar: Rectangle {
                 id: vertbar
                 implicitWidth: vertgauge.width
+                color: barcolor
+            }
+        }
+    }
+
+    Gauge {
+        id: horizgauge
+        height: parent.height * 0.2
+        width: parent.width * 0.9
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: 10
+        anchors.left: parent.left
+        anchors.leftMargin: 0
+        anchors.horizontalCenter: parent.horizontalCenter
+        orientation: Qt.Horizontal
+        minorTickmarkCount: 0
+        tickmarkAlignment: Qt.AlignRight
+        value: parent.mainvalue //gaugeScaleOffset
+        maximumValue: parent.maxvalue
+
+        style: GaugeStyle {
+
+            tickmarkLabel: Text {
+                font.pixelSize: 14
+                color: "transparent"
+            }
+            tickmark: Item {
+                implicitWidth: 18
+                implicitHeight: 1
+
+                Rectangle {
+                    color: "transparent"
+                    anchors.fill: parent
+                    anchors.leftMargin: 3
+                    anchors.rightMargin: 3
+                }
+            }
+            valueBar: Rectangle {
+                implicitWidth: horizgauge.height
                 color: barcolor
             }
         }
@@ -324,47 +440,10 @@ Rectangle {
         btn_titlefontstyle.visible = false;
         btn_valuefontstyle.visible = false;
         cbx_valuefontstyle.visible = false;
+        //scaleMenu.visible = false;
+        //offsetMenu.visible = false;
     }
-    Gauge {
-        id: horizgauge
-        height: parent.height * 0.2
-        width: parent.width * 0.9
-        anchors.bottom: parent.bottom
-        anchors.bottomMargin: 10
-        anchors.left: parent.left
-        anchors.leftMargin: 0
-        anchors.horizontalCenter: parent.horizontalCenter
-        orientation: Qt.Horizontal
-        minorTickmarkCount: 0
-        tickmarkAlignment: Qt.AlignRight
-        value: parent.mainvalue
-        maximumValue: parent.maxvalue
 
-        style: GaugeStyle {
-
-            tickmarkLabel: Text {
-                font.pixelSize: 14
-                color: "transparent"
-            }
-            tickmark: Item {
-                implicitWidth: 18
-                implicitHeight: 1
-
-                Rectangle {
-                    color: "transparent"
-                    anchors.fill: parent
-                    anchors.leftMargin: 3
-                    anchors.rightMargin: 3
-                }
-            }
-            valueBar: Rectangle {
-                implicitWidth: horizgauge.height
-                color: barcolor
-            }
-        }
-
-
-    }
     Item {
         id: menustructure
 
@@ -520,6 +599,20 @@ Rectangle {
                 font.pixelSize: 15
                 onClicked: symbolMenu.popup(touchArea.mouseX, touchArea.mouseY)
             }
+            // MenuItem{
+            //     text: Translator.translate("Scale", Dashboard.language)
+            //     font.pixelSize: 15
+            //     onClicked: {
+            //         scaleMenu.visible = true;
+            //     }
+            // }
+            // MenuItem{
+            //     text: Translator.translate("Offset", Dashboard.language)
+            //     font.pixelSize: 15
+            //     onClicked: {
+            //         offsetMenu.visible = true;
+            //     }
+            // }
             MenuItem {
                 text: Translator.translate("remove gauge", Dashboard.language)
                 font.pixelSize: 15
@@ -1115,4 +1208,100 @@ Rectangle {
             }
         }
     }
+    //Scale and Offset Menus (Removed for now)
+    // Item{
+    //     id: scaleMenu
+    //     anchors.fill: parent
+    //     visible:false
+
+    //     TextField{
+    //         id: scaleNameChange
+    //         font.pixelSize: 12
+    //         text: scaleValue
+    //         validator: DoubleValidator {bottom: 0; top: 999;}
+    //     }
+    //     Button{
+    //         id: scaleNameChangeApply
+    //         text: Translator.translate("Apply", Dashboard.language)
+    //         anchors.top: parent.top
+    //         anchors.topMargin: 0
+    //         anchors.right: parent.right
+    //         onClicked: {
+    //             hidemenues();
+    //             gaugeSettings.scaleValueStored = scaleNameChange.text
+    //             scaleValue = scaleNameChange.text
+    //             //gauge1.value += scaleValue
+    //             console.log("Scale Value: " + scaleValue + " " + gaugeSettings.scaleValueStored)
+    //         }
+    //     }
+    //     Button{
+    //         id: resetScale
+    //         text: Translator.translate("Reset Scale", Dashboard.language)
+    //         anchors.top: scaleNameChangeApply.bottom
+    //         anchors.topMargin: 2
+    //         anchors.right: parent.right
+    //         onClicked: {
+    //             hidemenues();
+    //             scaleValue = 0
+    //             scaleNameChange.text = scaleValue
+    //             //gauge1.value = scaleNameChange.text
+    //             gaugeSettings.scaleValueStored = scaleNameChange.text
+    //             console.log("Reset Scale Value: " + scaleValue)
+    //         }
+    //     }
+    // }
+
+    // Item{
+    //     id: offsetMenu
+    //     anchors.fill: parent
+    //     visible:false
+
+    //     TextField{
+    //         id: offsetNameChange
+    //         font.pixelSize: 12
+    //         validator: DoubleValidator {bottom: 0; top: 999;}
+    //     }
+    //     Button{
+    //         id: offsetNameChangeApplyMultiply
+    //         text: Translator.translate("Multiply", Dashboard.language)
+    //         anchors.top: parent.top
+    //         anchors.topMargin: 0
+    //         anchors.right: parent.right
+    //         onClicked: {
+    //             hidemenues();
+    //             gaugeSettings.offsetValueMultiplyStored = offsetNameChange.text
+    //             offsetValueMultiply = offsetNameChange.text
+    //             console.log("Offset Multiply Value: " + offsetValueMultiply + " " + gaugeSettings.offsetValueDivideStored)
+    //         }
+    //     }
+    //     Button{
+    //         id: offsetNameChangeApplyDivide
+    //         text: Translator.translate("Divide", Dashboard.language)
+    //         anchors.top: offsetNameChangeApplyMultiply.bottom
+    //         anchors.topMargin: 2
+    //         anchors.right: parent.right
+    //         onClicked: {
+    //             hidemenues();
+    //             gaugeSettings.offsetValueDivideStored = offsetNameChange.text
+    //             offsetValueDivide = offsetNameChange.text
+    //             console.log("Offset Divide Value: " + offsetValueDivide + " " + gaugeSettings.offsetValueDivideStored)
+    //         }
+    //     }
+    //     Button{
+    //         id: resetOffset
+    //         text: Translator.translate("Reset Offset", Dashboard.language)
+    //         anchors.top: offsetNameChangeApplyDivide.bottom
+    //         anchors.topMargin: 2
+    //         anchors.right: parent.right
+    //         onClicked: {
+    //             hidemenues();
+    //             offsetNameChange.text = 0
+    //             offsetValueMultiply = offsetNameChange.text
+    //             offsetValueDivide = offsetNameChange.text
+    //             gaugeSettings.offsetValueMultiplyStored = offsetNameChange.text
+    //             gaugeSettings.offsetValueDivideStored = offsetNameChange.text
+    //             console.log("Reset Offset Value: " + offsetValueMultiply + " " + offsetValueDivide)
+    //         }
+    //     }
+    // }
 }

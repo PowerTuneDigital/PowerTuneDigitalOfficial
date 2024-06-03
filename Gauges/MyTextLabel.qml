@@ -31,18 +31,54 @@ Item {
         onDraggableChanged: togglemousearea();
     }
 
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         changesize.visible = true;
+
+    //         for(var i = 0; i < colorselect.model.count; ++i) if (colorselect.textAt(i) === textcolor)colorselect.currentIndex = i ;
+    //         for(var j = 0; j < cbx_sources.model.count; ++j) if (powertunedatasource.get(j).sourcename === datasourcename)cbx_sources.currentIndex = j;
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            changesize.visible = true;
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                changesize.visible = true;
 
-            for(var i = 0; i < colorselect.model.count; ++i) if (colorselect.textAt(i) === textcolor)colorselect.currentIndex = i ;
-            for(var j = 0; j < cbx_sources.model.count; ++j) if (powertunedatasource.get(j).sourcename === datasourcename)cbx_sources.currentIndex = j;
+                for(var i = 0; i < colorselect.model.count; ++i) if (colorselect.textAt(i) === textcolor)colorselect.currentIndex = i ;
+                for(var j = 0; j < cbx_sources.model.count; ++j) if (powertunedatasource.get(j).sourcename === datasourcename)cbx_sources.currentIndex = j;
+            }
         }
     }
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
+        }
+    }
+
 
     Text {
         id: mytext
@@ -73,7 +109,9 @@ Item {
         visible: false
         width : 200
         height :480
-        z: 501          //ensure the Menu is always in the foreground
+        x: 0
+        y: 0
+        z: 200          //ensure the Menu is always in the foreground
         Drag.active: true
         MouseArea {
             anchors.fill: parent
@@ -81,7 +119,7 @@ Item {
             enabled: true
         }
         onVisibleChanged: {
-            changesize.x = 150 //-mytextlabel.x;
+            changesize.x = -mytextlabel.x;
             changesize.y = -mytextlabel.y;
         }
 

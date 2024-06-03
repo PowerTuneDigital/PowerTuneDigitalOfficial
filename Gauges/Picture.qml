@@ -11,6 +11,7 @@ Item {
     property int pictureheight
     //property int picturewidth
     property string increasedecreaseident
+    z:1
     Drag.active: true
     Component.onCompleted: togglemousearea();
 
@@ -25,27 +26,66 @@ Item {
         fillMode: Image.PreserveAspectFit
         source:  picturesource
     }
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         changesize.visible = true;
+    //         Connect.readavailablebackrounds();
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            changesize.visible = true;
-            Connect.readavailablebackrounds();
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                changesize.visible = true;
+                Connect.readavailablebackrounds();
+            }
+        }
+        Component.onCompleted: {toggledecimal();
+            toggledecimal2();
         }
     }
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
+        }
+    }
+
     Rectangle{
         id : changesize
         color: "darkgrey"
         visible: false
         width : 200
         height : 150
-        z: 250          //ensure the Menu is always in the foreground
+        x: 0
+        y: 0
+        z: 201         //ensure the Menu is always in the foreground
         Drag.active: true
         onVisibleChanged: {
-            changesize.x= 200 //-mytextlabel.x;
-            changesize.y= -mytextlabel.y;
+            changesize.x= -picture.x;
+            changesize.y= -picture.y;
         }
         MouseArea {
             anchors.fill: parent

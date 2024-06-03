@@ -125,13 +125,49 @@ Rectangle{
     }
 
 
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                popupmenu.popup(touchArea.mouseX, touchArea.mouseY);
+            }
+        }
+        Component.onCompleted: {toggledecimal();
+            toggledecimal2();
+        }
+    }
+
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
         }
     }
 
