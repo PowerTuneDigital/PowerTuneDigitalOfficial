@@ -26,16 +26,53 @@ Item {
         fillMode: Image.PreserveAspectFit
         source:  picturesource
     }
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         changesize.visible = true;
+    //         Connect.readavailablebackrounds();
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            changesize.visible = true;
-            Connect.readavailablebackrounds();
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                changesize.visible = true;
+                Connect.readavailablebackrounds();
+            }
+        }
+        Component.onCompleted: {toggledecimal();
+            toggledecimal2();
         }
     }
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
+        }
+    }
+
     Rectangle{
         id : changesize
         color: "darkgrey"
