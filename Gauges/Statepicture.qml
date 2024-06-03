@@ -13,6 +13,7 @@ Item {
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
+    z:3
     Drag.active: true
     x: 200
     y: 200
@@ -49,25 +50,65 @@ Item {
             warningindication.warn();
         }
     }
+    // MouseArea {
+    //     id: touchArea
+    //     anchors.fill: parent
+    //     drag.target: parent
+    //     enabled: false
+    //     onDoubleClicked: {
+    //         changesize.visible = true;
+    //         Connect.readavailablebackrounds();
+    //         changesize.x= -statepicture.x;
+    //         changesize.y= -statepicture.y;
+    //     }
+    // }
+
     MouseArea {
         id: touchArea
         anchors.fill: parent
         drag.target: parent
         enabled: false
-        onDoubleClicked: {
-            changesize.visible = true;
-            Connect.readavailablebackrounds();
-            changesize.x= 200//-statepicture.x;
-            changesize.y= -statepicture.y;
+        onPressed:
+        {
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                if (currentTime - lastTouchTime <= 500) { // Double-tap detected within 500 ms
+                    console.log("Double-tap detected at", mouse.x, mouse.y);
+                }
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                changesize.visible = true;
+                Connect.readavailablebackrounds();
+                changesize.x= -statepicture.x;
+                changesize.y= -statepicture.y;
+            }
         }
     }
+
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
+        }
+    }
+
+
     Rectangle{
         id : changesize
         color: "darkgrey"
         visible: false
         width : 800 * 0.2875//230 Taking the resolution from the 7" and dividing it by (230/screenWidth)
         height : 480 * 0.667//320 Taking the resolution from the 7" and dividing it by (230/screenHeight)
-        z: 500
+        x: statepicture.x
+        y: statepicture.y
+        z: 202
         Drag.active: true
         MouseArea {
             anchors.fill: parent

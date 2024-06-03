@@ -601,7 +601,13 @@ var translations = {
        "Total fuel trim":{ en: "", de: "", jp: "トータル燃料トリム", es: "", fr: "", ar:"" },
        "Total ign comp":{ en: "", de: "", jp: "トータルIGN圧縮", es: "", fr: "", ar:"" },
        "Error code count":{ en: "", de: "", jp: "エラーコード数", es: "", fr: "", ar:"" },
-       "Lost sync count":{ en: "", de: "", jp: "非同期化数", es: "", fr: "", ar:"" }
+       "Lost sync count":{ en: "", de: "", jp: "非同期化数", es: "", fr: "", ar:"" },
+       "Scale":{ en: "Scale", de: "", jp: "", es: "", fr: "", ar:"" },
+       "Offset":{ en: "Offset", de: "", jp: "", es: "", fr: "", ar:"" },
+       "Reset Scale":{ en: "Reset Scale", de: "", jp: "", es: "", fr: "", ar:"" },
+       "Reset Offset":{ en: "Reset Offset", de: "", jp: "", es: "", fr: "", ar:"" },
+       "Multiply":{ en: "Multiply", de: "", jp: "", es: "", fr: "", ar:"" },
+       "Divide":{ en: "Divide", de: "", jp: "", es: "", fr: "", ar:"" }
        //Datasources End
 
    };
