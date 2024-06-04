@@ -15,6 +15,8 @@ Item {
     property double triggervalue : 0
     z:3
     Drag.active: true
+    x: 200
+    y: 200
     DatasourcesList{id: powertunedatasource}
     Component.onCompleted: {togglemousearea();
                             bind();
