@@ -13,7 +13,6 @@ Item {
     property string increasedecreaseident
     property string mainvaluename
     property double triggervalue : 0
-    z:3
     Drag.active: true
     x: 200
     y: 200
@@ -108,7 +107,6 @@ Item {
         height : 480 * 0.667//320 Taking the resolution from the 7" and dividing it by (230/screenHeight)
         x: statepicture.x
         y: statepicture.y
-        z: 202
         Drag.active: true
         MouseArea {
             anchors.fill: parent

@@ -53,7 +53,7 @@ ApplicationWindow {
         //console.log("ExBoard digiValue: " + custom.digiValue)
         popUpLoader.source = "qrc:/BrightnessPopUp.qml"
         custom.executeOnBootAction()
-        //console.log(" Max Brightness on boot test: " + custom.maxBrightnessOnBoot)
+        console.log("Max Brightness on Boot Value Check: " + custom.maxBrightnessOnBoot)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
         }else{
@@ -621,70 +621,67 @@ ApplicationWindow {
       running: true
       onTriggered: {
             if(custom.maxBrightnessOnBoot == 1){
+                console.log("Timer for Max Brightness started")
                 if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                   console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
                   Connect.setSreenbrightness(250);
                   AppSettings.writebrightnessettings(250);
                 } else {
-                  console.log("DDCUTIL Failed max brightness run without ddc")
+                  console.log("DDCUTIL Failed max brightness run without ddc " + custom.maxBrightnessOnBoot)
                   Connect.setSreenbrightness(250);
                   AppSettings.writebrightnessettings(250);
                 }
             }
         }
-      Component.onCompleted: {
-          console.log("Timer for Max Brightness started")
-
-        }
     }
 
     //Function to check if the digital value matches the item in the combobox and then checking if the EXDigitalInput is equal to 1 to see if there is power to the digital inputs
     function digitalLoop(){
-            if (0 === custom.digiValue && digitalInput1 == 1) {
+            if (0 === custom.digiValue && digitalInput1 == 1 && custom.maxBrightnessOnBoot == 1) {
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 1")
                 console.log(digiValue)
                 return;
-            }else if(1 === custom.digiValue && digitalInput2 == 1){
+            }else if(1 === custom.digiValue && digitalInput2 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 2")
                 console.log(digiValue)
                 return;
-            }else if(2 === custom.digiValue && digitalInput3 == 1){
+            }else if(2 === custom.digiValue && digitalInput3 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 3")
                 console.log(digiValue)
                 return;
 
-            }else if(3 === custom.digiValue && digitalInput4 == 1){
+            }else if(3 === custom.digiValue && digitalInput4 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 4")
                 console.log(digiValue)
                 return;
 
-            }else if(4 === custom.digiValue && digitalInput5 == 1){
+            }else if(4 === custom.digiValue && digitalInput5 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 5")
                 return;
 
-            }else if(5 === custom.digiValue && digitalInput6 == 1){
+            }else if(5 === custom.digiValue && digitalInput6 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 6")
                 return;
 
-            }else if(6 === custom.digiValue && digitalInput7 == 1){
+            }else if(6 === custom.digiValue && digitalInput7 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 7")
                 return;
 
-            }else if(7 === custom.digiValue && digitalInput8 == 1){
+            }else if(7 === custom.digiValue && digitalInput8 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 8")
@@ -695,51 +692,51 @@ ApplicationWindow {
         }
 
     function ddcutilDigitalLoop(){
-            if (0 === custom.digiValue && digitalInput1 == 1) {
+            if (0 === custom.digiValue && digitalInput1 == 1 && custom.maxBrightnessOnBoot == 1) {
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 1")
                 console.log(digiValue)
                 return;
-            }else if(1 === custom.digiValue && digitalInput2 == 1){
+            }else if(1 === custom.digiValue && digitalInput2 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 2")
                 console.log(digiValue)
                 return;
-            }else if(2 === custom.digiValue && digitalInput3 == 1){
+            }else if(2 === custom.digiValue && digitalInput3 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 3")
                 console.log(digiValue)
                 return;
 
-            }else if(3 === custom.digiValue && digitalInput4 == 1){
+            }else if(3 === custom.digiValue && digitalInput4 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Set to 0 4")
                 console.log(digiValue)
                 return;
 
-            }else if(4 === custom.digiValue && digitalInput5 == 1){
+            }else if(4 === custom.digiValue && digitalInput5 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 5")
                 return;
 
-            }else if(5 === custom.digiValue && digitalInput6 == 1){
+            }else if(5 === custom.digiValue && digitalInput6 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 6")
                 return;
 
-            }else if(6 === custom.digiValue && digitalInput7 == 1){
+            }else if(6 === custom.digiValue && digitalInput7 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 7")
                 return;
 
-            }else if(7 === custom.digiValue && digitalInput8 == 1){
+            }else if(7 === custom.digiValue && digitalInput8 == 1 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 8")

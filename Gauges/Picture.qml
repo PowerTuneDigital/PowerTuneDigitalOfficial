@@ -11,7 +11,6 @@ Item {
     property int pictureheight
     //property int picturewidth
     property string increasedecreaseident
-    z:1
     Drag.active: true
     Component.onCompleted: togglemousearea();
 
