@@ -497,7 +497,7 @@ Item {
         */
         ComboBox {
             id: cbx_sources
-            font.pixelSize: mainwindow.width * 0.018//15
+            font.pixelSize: 14
             textRole: "titlename"
             width: parent.width
             height: parent.height * 0.083
@@ -510,6 +510,11 @@ Item {
                 font.pixelSize: cbx_sources.font.pixelSize
                 highlighted: cbx_sources.highlightedIndex === index
                 hoverEnabled: cbx_sources.hoverEnabled
+            }
+            Component.onCompleted: {
+                if(mainwindow.width == 1600){
+                    cbx_sources.font.pixelSize == 18;
+                }
             }
         }
 

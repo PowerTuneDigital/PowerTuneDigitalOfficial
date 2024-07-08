@@ -19,8 +19,8 @@ ApplicationWindow {
     id:window
     visible: true
 
-    //width: 800
-    //height: 480
+    //width: 1600
+    //height: 720
     width: Screen.desktopAvailableWidth
     height: Screen.desktopAvailableHeight
     minimumWidth: 800
