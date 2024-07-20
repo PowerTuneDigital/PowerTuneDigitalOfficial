@@ -135,9 +135,10 @@ Rectangle {
                         (ecuSelect.currentIndex != "1") ? false : true
                     }
                     property bool initialized: false
-                    onCurrentIndexChanged: if (initialized)
-                                               AppSettings.setBaudRate(
-                                                           currentIndex)
+                    onCurrentIndexChanged:{ if (initialized)
+                                               AppSettings.setBaudRate(currentIndex)
+                        console.log("Index Changed ECU Selection")
+                    }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getBaudRate()
                         initialized = true
@@ -149,13 +150,13 @@ Rectangle {
                     }
                     delegate: ItemDelegate {
                         width: serialName.width
-                        text: serialName.textRole ? (Array.isArray(
-                                                         control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
+                        text: serialName.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
                         font.weight: serialName.currentIndex == index ? Font.DemiBold : Font.Normal
                         font.family: serialName.font.family
                         font.pixelSize: serialName.font.pixelSize
                         highlighted: serialName.highlightedIndex == index
                         hoverEnabled: serialName.hoverEnabled
+
                     }
                 }
                 Text {
@@ -754,7 +755,9 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: " V 1.99C " + Dashboard.Platform
+
+                    text: " V 1.99D " + Dashboard.Platform
+
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
