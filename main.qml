@@ -686,8 +686,56 @@ ApplicationWindow {
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Changed to 20 8")
                 return;
-            }else{
-                console.log("No if Statements Passed")
+            }
+            else if (0 === custom.digiValue && digitalInput1 == 0 && custom.maxBrightnessOnBoot == 1) {
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Set to 20 1")
+                console.log(digiValue)
+                return;
+            }else if(1 === custom.digiValue && digitalInput2 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Set to 20 2")
+                console.log(digiValue)
+                return;
+            }else if(2 === custom.digiValue && digitalInput3 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Set to 20 3")
+                console.log(digiValue)
+                return;
+
+            }else if(3 === custom.digiValue && digitalInput4 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Set to 20 4")
+                console.log(digiValue)
+                return;
+
+            }else if(4 === custom.digiValue && digitalInput5 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Changed to 20 5")
+                return;
+
+            }else if(5 === custom.digiValue && digitalInput6 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Changed to 20 6")
+                return;
+
+            }else if(6 === custom.digiValue && digitalInput7 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Changed to 20 7")
+                return;
+
+            }else if(7 === custom.digiValue && digitalInput8 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(20);
+                AppSettings.writebrightnessettings(20);
+                console.log("Brightness Changed to 20 8")
+                return;
             }
         }
 
@@ -737,6 +785,56 @@ ApplicationWindow {
                 return;
 
             }else if(7 === custom.digiValue && digitalInput8 == 1 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 8")
+                return;
+            }
+            else if (0 === custom.digiValue && digitalInput1 == 0 && custom.maxBrightnessOnBoot == 1) {
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 1")
+                console.log(digiValue)
+                return;
+            }else if(1 === custom.digiValue && digitalInput2 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 2")
+                console.log(digiValue)
+                return;
+            }else if(2 === custom.digiValue && digitalInput3 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 3")
+                console.log(digiValue)
+                return;
+
+            }else if(3 === custom.digiValue && digitalInput4 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Set to 0 4")
+                console.log(digiValue)
+                return;
+
+            }else if(4 === custom.digiValue && digitalInput5 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 5")
+                return;
+
+            }else if(5 === custom.digiValue && digitalInput6 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 6")
+                return;
+
+            }else if(6 === custom.digiValue && digitalInput7 == 0 && custom.maxBrightnessOnBoot == 1){
+                Connect.setSreenbrightness(0);
+                AppSettings.writebrightnessettings(0);
+                console.log("Brightness Changed to 0 7")
+                return;
+
+            }else if(7 === custom.digiValue && digitalInput8 == 0 && custom.maxBrightnessOnBoot == 1){
                 Connect.setSreenbrightness(0);
                 AppSettings.writebrightnessettings(0);
                 console.log("Brightness Changed to 0 8")
