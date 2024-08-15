@@ -62,6 +62,10 @@ cd /home/pi/src
 echo "Install fonts"
 cd /home/pi/src/fonts
 sudo cp *.* /usr/local/share/fonts
+echo "Check Nohup"
+cd /home/pi/src
+./fixnohup.sh
+
 echo "Fetching latest Daemons"
 cd /home/pi/src
 git pull
