@@ -915,6 +915,9 @@ void Connect::daemonstartup(const int &daemon)
     case 58:
         daemonstart = "./Edelbrock";
         break;
+    case 59:
+        daemonstart = "./Boostec";
+        break;
     }
 
 
