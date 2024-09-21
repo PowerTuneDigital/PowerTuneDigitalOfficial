@@ -399,13 +399,13 @@ Rectangle {
                 case 5: //6cyl
                 {
                     AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*4)     //Confirmed
-                    //console.log("6 Cyl")
+                    ////console.log("6 Cyl")
                     break;
                 }
                 case 6: //8cyl
                 {
                     AppSettings.writeCylinderSettings(cylindercomboboxv2.textAt(cylindercomboboxv2.currentIndex)*2)     //Confirmed
-                   // console.log("8 Cyl")
+                   // //console.log("8 Cyl")
                     break;
                 }
                 case 7: //10cyl
@@ -1180,42 +1180,42 @@ Rectangle {
                 if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 1"){
                     digiValue = 0
                     digiStringValue = "Ex Digital Input 1"
-                    console.log("digital input 1 read")
+                    //console.log("digital input 1 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 2"){
                     digiValue = 1
                     digiStringValue = "Ex Digital Input 2"
-                    console.log("digital input 2 read")
+                    //console.log("digital input 2 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 3"){
                     digiValue = 2
                     digiStringValue = "Ex Digital Input 3"
-                    console.log("digital input 3 read")
+                    //console.log("digital input 3 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 4"){
                     digiValue = 3
                     digiStringValue = "Ex Digital Input 4"
-                    console.log("digital input 4 read")
+                    //console.log("digital input 4 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 5"){
                     digiValue = 4
                     digiStringValue = "Ex Digital Input 5"
-                    console.log("digital input 5 read")
+                    //console.log("digital input 5 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 6"){
                     digiValue = 5
                     digiStringValue = "Ex Digital Input 6"
-                    console.log("digital input 6 read")
+                    //console.log("digital input 6 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 7"){
                     digiValue = 6
                     digiStringValue = "Ex Digital Input 7"
-                    console.log("digital input 7 read")
+                    //console.log("digital input 7 read")
                     return;
                 }else if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 8"){
                     digiValue = 7
                     digiStringValue = "Ex Digital Input 8"
-                    console.log("digital input 8 read")
+                    //console.log("digital input 8 read")
                     return;
                 }
            }
@@ -1280,7 +1280,7 @@ Rectangle {
     function executeOnBootAction() {
             if (settings.switchValue) {
                 // Perform action here that should happen on boot if feature is enabled
-                console.log("Brightness on Boot selected on")
+                //console.log("Brightness on Boot selected on")
                 maxBrightnessOnBoot = 1
             }
         }
