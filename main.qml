@@ -318,7 +318,7 @@ ApplicationWindow {
              value: Dashboard.Brightness
 
              onValueChanged: {
-                      console.log("Slider Value Changed: " + brightness.value + " Dashboard Brightness: " + Dashboard.Brightness)
+                      //console.log("Slider Value Changed: " + brightness.value + " Dashboard Brightness: " + Dashboard.Brightness)
                       Connect.setSreenbrightness(brightness.value);
                       AppSettings.writebrightnessettings(brightness.value);
                       }

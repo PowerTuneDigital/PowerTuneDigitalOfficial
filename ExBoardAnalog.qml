@@ -60,7 +60,7 @@ Rectangle {
             property alias checkan1100save  : checkan1100.checkState
             property alias checkan11Ksave   : checkan11k.checkState
             property alias checkan2100save  : checkan2100.checkState
-            property alias checkan21Ksave   : checkan21k.checkState           
+            property alias checkan21Ksave   : checkan21k.checkState
             property alias checkan3100save  : checkan3100.checkState
             property alias checkan31Ksave   : checkan31k.checkState
             property alias checkan4100save  : checkan4100.checkState
@@ -91,7 +91,7 @@ Rectangle {
             property alias t22save : t22.text
             property alias r22save : r22.text
             property alias t32save : t32.text
-            property alias r32save : r32.text     
+            property alias r32save : r32.text
             property alias t13save : t13.text
             property alias r13save : r13.text
             property alias t23save : t23.text
@@ -148,9 +148,7 @@ Rectangle {
             text: "0"
             enabled: checkan0ntc.checked == true ? false : true
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
-            onEditingFinished: {inputs.setInputs();
-                console.log("inputgrid");
-            }
+            onEditingFinished: inputs.setInputs()
 
         }
         TextField {
@@ -326,8 +324,7 @@ Rectangle {
             font.pixelSize: mainWindow.width / 55
             text: "5"
             inputMethodHints: Qt.ImhFormattedNumbersOnly  // this ensures valid inputs are number only
-            onEditingFinished: {inputs.setInputs()
-                console.log("EX75");}
+            onEditingFinished: inputs.setInputs()
 
         }
         Text {
@@ -351,15 +348,13 @@ Rectangle {
             validator: RegExpValidator {
                 regExp: /^(?:[1-9]\d{0,2}|1000)$/
             }
-            onEditingFinished: {inputs.setInputs()
-            console.log("Dampingfactor");}
+            onEditingFinished: inputs.setInputs()
         }
 
         Item {
             id: inputs
             function setInputs()
             {
-            console.log("Setting Inputs")
             AppSettings.writeExternalrpm(rpmcheckbox.checked);
             AppSettings.writeEXAN7dampingSettings(an7dampingfactor.text);
             AppSettings.writeEXBoardSettings(ex00.text,ex05.text,ex10.text,ex15.text,ex20.text,ex25.text,ex30.text,ex35.text,ex40.text,ex45.text,ex50.text,ex55.text,ex60.text,ex65.text,ex70.text,ex75.text,checkan0ntc.checkState,checkan1ntc.checkState,checkan2ntc.checkState,checkan3ntc.checkState,checkan4ntc.checkState,checkan5ntc.checkState,checkan0100.checkState,checkan01k.checkState,checkan1100.checkState,checkan11k.checkState,checkan2100.checkState,checkan21k.checkState,checkan3100.checkState,checkan31k.checkState,checkan4100.checkState,checkan41k.checkState,checkan5100.checkState,checkan51k.checkState)
@@ -483,8 +478,6 @@ Rectangle {
             }
             }
             inputs.setInputs()
-            console.log("Frequencydivider");
-
             }
         }
     }
@@ -506,8 +499,7 @@ Rectangle {
         id: rpmcheckbox
         width: mainWindow.width / 14
         height: mainWindow.height /15
-        onCheckStateChanged: {inputs.setInputs();
-        console.log("RPMCHECK");}
+        onCheckStateChanged: inputs.setInputs();
         }
 
     Text {
@@ -523,9 +515,7 @@ Rectangle {
         height: mainWindow.height /15
         font.pixelSize: mainWindow.width / 75;
         model: ["V1","V2"]
-        onActivated: {inputs.setInputs();
-
-        }
+        onActivated: inputs.setInputs();
         delegate: ItemDelegate {
             width: cylindercombobox.width
             text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
@@ -550,9 +540,7 @@ Rectangle {
         font.pixelSize: mainWindow.width / 75;
         //model: ["2","3","4","5","6","8","12"]
         model: ["0.5","0.6","0.7","0.8","0.9","1","1.1","1.2","1.3","1.4","1.5","1.6","1.7","1.8","1.9","2","2.1","2.2","2.3","2.4","2.5","2.6","2.7","2.8","2.9","3","3.1","3.2","3.3","3.4","3.5","3.6","3.7","3.8","3.9","4","4.1","4.2","4.3","4.4","4.5","4.6","4.7","4.8","4.9","5","5.1","5.2","5.3","5.4","5.5","5.6","5.7","5.8","5.9","6","6.1","6.2","6.3","6.4","6.5","6.6","6.7","6.8","6.9","7","7.1","7.2","7.3","7.4","7.5","7.6","7.7","7.8","7.9","8","8.1","8.2","8.3","8.4","8.5","8.6","8.7","8.8","8.9","9","9.1","9.2","9.3","9.4","9.5","9.6","9.7","9.8","9.9","10","10.1","10.2","10.3","10.4","10.5","10.6","10.7","10.8","10.9","11","11.1","11.2","11.3","11.4","11.5","11.6","11.7","11.8","11.9","12","12.1","12.2","12.3","12.4","12.5","12.6","12.7","12.8","12.9"]
-        onActivated: {inputs.setInputs();
-
-        }
+        onActivated: inputs.setInputs();
         delegate: ItemDelegate {
             width: cylindercombobox.width
             text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
@@ -570,8 +558,7 @@ Rectangle {
         height: mainWindow.height /15
         font.pixelSize: mainWindow.width / 75;
         model: ["1","2","3","4","5","6","8","12"]
-        onActivated: {inputs.setInputs();
-        }
+        onActivated: inputs.setInputs();
         delegate: ItemDelegate {
             width: cylindercombobox.width
             text: cylindercombobox.textRole ? (Array.isArray(control.model) ? modelData[control.textRole] : model[control.textRole]) : modelData
@@ -1188,7 +1175,7 @@ Rectangle {
                     digitalExtender.font.pixelSize = 12
                 }
             }
-            onActivated: {
+            onCurrentIndexChanged: {
                 //see if the index is matching with the text then assign digiValue a pointer for the function digitalLoop()
                 if(digitalExtender.textAt(currentIndex) === "Ex Digital Input 1"){
                     digiValue = 0
@@ -1283,7 +1270,7 @@ Rectangle {
                     }
                 }
             }
-            onCheckedChanged: {
+            onClicked:  {
                 settings.setValue("switchChecked", checked) // Save the value to settings
                 maxBrightnessBoot.text = checked ? "On" : "Off"
             }
@@ -1298,4 +1285,5 @@ Rectangle {
             }
         }
 }
+
 
