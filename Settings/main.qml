@@ -720,7 +720,7 @@ Rectangle {
                             loggerswitch.height = windowbackround.height / 16
                         }
                     }
-                    onClicked: console.log("Datalogger")//logger.datalogger()
+                    onClicked: logger.datalogger()
                 }
 
                 Switch {
