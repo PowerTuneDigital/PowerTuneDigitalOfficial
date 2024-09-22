@@ -18,15 +18,15 @@ Rectangle {
             pageLoader.source = "qrc:/AnalogInputs.qml"
         }
         if (Dashboard.ecu == "1") {
-            console.log("Loadersource changing")
+            //console.log("Loadersource changing")
             pageLoader.source = "qrc:/AnalogInputs.qml"
         }
         if (Dashboard.ecu == "2") {
-            console.log("Loadersource changing")
+            //console.log("Loadersource changing")
             pageLoader.source = "qrc:/ConsultRegs.qml"
         }
         if (Dashboard.ecu == "3") {
-            console.log("Loadersource changing")
+            //console.log("Loadersource changing")
             pageLoader.source = "qrc:/OBDPIDS.qml"
         }
         if (Dashboard.ecu == "4") {
@@ -37,7 +37,7 @@ Rectangle {
     Connections {
         target: Dashboard
         onEcuChanged: {
-            //console.log("Loadersource changing")
+            ////console.log("Loadersource changing")
             loadersource()
 
         }

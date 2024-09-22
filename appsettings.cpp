@@ -308,7 +308,7 @@ void AppSettings::writeCountrySettings(const QString &Country)
 {
     setValue("Country", Country);
     m_dashboard->setCBXCountrysave(Country);
-    qDebug() << "Country" <<getValue("Country").toString();
+   // qDebug() << "Country" <<getValue("Country").toString();
 }
 void AppSettings::writeTrackSettings(const QString &Track)
 {
@@ -411,6 +411,6 @@ void AppSettings::readandApplySettings()
     //getValue("externalspeedconnect")
     m_dashboard->setexternalspeedconnectionrequest(getValue("externalspeedconnect").toInt());
     m_dashboard->setexternalspeedport(getValue("externalspeedport").toString());
-    qDebug() << "current speedsettings" <<m_dashboard->externalspeedconnectionrequest();
+   // qDebug() << "current speedsettings" <<m_dashboard->externalspeedconnectionrequest();
 }
 
