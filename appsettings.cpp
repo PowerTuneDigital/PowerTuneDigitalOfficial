@@ -345,7 +345,7 @@ void AppSettings::writeExternalrpm(const int checked)
 
 void AppSettings::writeLanguage(const int Language)
 {
-    qDebug() << "Language :" <<Language;
+   // qDebug() << "Language :" <<Language;
     setValue("Language", Language);
     m_dashboard->setlanguage(Language);
 }
@@ -354,7 +354,7 @@ void AppSettings::readandApplySettings()
     //Set Analog Input Settings
     m_dashboard->setAnalogVal(getValue("AN00").toReal(),getValue("AN05").toReal(),getValue("AN10").toReal(),getValue("AN15").toReal(),getValue("AN20").toReal(),getValue("AN25").toReal(),getValue("AN30").toReal(),getValue("AN35").toReal(),getValue("AN40").toReal(),getValue("AN45").toReal(),getValue("AN50").toReal(),getValue("AN55").toReal(),getValue("AN60").toReal(),getValue("AN65").toReal(),getValue("AN70").toReal(),getValue("AN75").toReal(),getValue("AN80").toReal(),getValue("AN85").toReal(),getValue("AN90").toReal(),getValue("AN95").toReal(),getValue("AN100").toReal(),getValue("AN105").toReal());
     m_dashboard->setEXAnalogVal(getValue("EXA00").toReal(),getValue("EXA05").toReal(),getValue("EXA10").toReal(),getValue("EXA15").toReal(),getValue("EXA20").toReal(),getValue("EXA25").toReal(),getValue("EXA30").toReal(),getValue("EXA35").toReal(),getValue("EXA40").toReal(),getValue("EXA45").toReal(),getValue("EXA50").toReal(),getValue("EXA55").toReal(),getValue("EXA60").toReal(),getValue("EXA65").toReal(),getValue("EXA70").toReal(),getValue("EXA75").toReal(),getValue("steinhartcalc0on").toInt(),getValue("steinhartcalc1on").toInt(),getValue("steinhartcalc2on").toInt(),getValue("steinhartcalc3on").toInt(),getValue("steinhartcalc4on").toInt(),getValue("steinhartcalc5on").toInt(),getValue("AN0R3VAL").toInt(), getValue("AN0R4VAL").toInt(),getValue("AN1R3VAL").toInt(),getValue("AN1R4VAL").toInt(),getValue("AN2R3VAL").toInt(),getValue("AN2R4VAL").toInt() ,getValue("AN3R3VAL").toInt(), getValue("AN3R4VAL").toInt(),getValue("AN4R3VAL").toInt(),getValue("AN4R4VAL").toInt(),getValue("AN5R3VAL").toInt(),getValue("AN5R4VAL").toInt());
-    qDebug() << "EXA05 :" <<getValue("EXA05").toReal();
+    //qDebug() << "EXA05 :" <<getValue("EXA05").toReal();
     m_dashboard->setmaxRPM(getValue("Max RPM").toInt());
     m_dashboard->setrpmStage1(getValue("Shift Light1").toInt());
     m_dashboard->setrpmStage2(getValue("Shift Light2").toInt());
