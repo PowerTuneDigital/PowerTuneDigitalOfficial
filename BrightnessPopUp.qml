@@ -49,7 +49,7 @@ Rectangle{
                     }
                         Connect.setSreenbrightness(brightnessValue);
                         AppSettings.writebrightnessettings(brightnessValue);
-                        console.log("Low Brightness: " + brightnessValue)
+                        //console.log("Low Brightness: " + brightnessValue)
 
                 }
                 background: Rectangle {
@@ -79,7 +79,7 @@ Rectangle{
                     }
                         Connect.setSreenbrightness(brightnessValue);
                         AppSettings.writebrightnessettings(brightnessValue);
-                        console.log("High Brightness: " + brightnessValue)
+                        //console.log("High Brightness: " + brightnessValue)
 
                 }
                 background: Rectangle {
@@ -97,7 +97,7 @@ Rectangle{
              running: true
              onTriggered: popUp1.visible = false
              Component.onCompleted: {
-                 console.log("Brightness invisible")
+                 //console.log("Brightness invisible")
              }
        }
 
