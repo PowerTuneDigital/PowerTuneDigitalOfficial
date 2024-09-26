@@ -164,7 +164,7 @@ Rectangle {
             font.pixelSize: daemons.width / 55
             model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS", "VR Sensor"]
             onCurrentIndexChanged: AppSettings.writeStartupSettings(
-                                       mainspeedsource.currentIndex) //,console.log("Setting SPeed")
+                                       mainspeedsource.currentIndex) //,//console.log("Setting SPeed")
             property bool initialized: false
             //Component.onCompleted: tabView.currentIndex = 0
             delegate: ItemDelegate {

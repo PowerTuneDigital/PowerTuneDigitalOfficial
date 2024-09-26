@@ -76,29 +76,29 @@ Rectangle {
 
         while (dashView.count > numberofdashes.currentIndex + 2) {
             dashView.takeItem(dashView.count - 2)
-            //console.log("removing", dashView.count -2)
+            ////console.log("removing", dashView.count -2)
         }
 
         //Adding Dashes back
         while (dashView.count < numberofdashes.currentIndex + 2) {
-            // console.log("We have currently ", dashView.count)
+            // //console.log("We have currently ", dashView.count)
             switch (dashView.count) {
             case 2:
             {
                 dashView.insertItem(1, secondPageLoader)
-                // console.log("add second page")
+                // //console.log("add second page")
                 break
             }
             case 3:
             {
                 dashView.insertItem(2, thirdPageLoader)
-                //console.log("add 3rd page", dashView.count)
+                ////console.log("add 3rd page", dashView.count)
                 break
             }
             case 4:
             {
                 dashView.insertItem(3, fourthPageLoader)
-                // console.log("add 4th page", dashView.count)
+                // //console.log("add 4th page", dashView.count)
                 break
             }
             }
