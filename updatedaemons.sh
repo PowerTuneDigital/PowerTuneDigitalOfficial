@@ -42,7 +42,7 @@ else
 fi
 fi
 
-# Ensure libaries are correctly linked 
+# Ensure libaries are correctly linked
 
 library_path="/usr/local/lib/openssl/openssl/lib"
 init_script="/etc/init.d/powertune"
@@ -91,6 +91,7 @@ sudo pkill FordBarraFGMK1CANOBD
 sudo pkill GMCANd
 sudo pkill Haltechd
 sudo pkill Holleyd
+sudo pkill HEFI
 sudo pkill Hondatad
 sudo pkill Linkd
 sudo pkill M800ADLSet1d
@@ -147,6 +148,7 @@ sudo rm /home/pi/daemons/FordBarraFGMK1CAN
 sudo rm /home/pi/daemons/FordBarraFGMK1CANOBD
 sudo rm /home/pi/daemons/Haltechd
 sudo rm /home/pi/daemons/Holleyd
+sudo rm /home/pi/daemons/HEFI
 sudo rm /home/pi/daemons/Hondatad
 sudo rm /home/pi/daemons/Linkd
 sudo rm /home/pi/daemons/M800ADLSet1d

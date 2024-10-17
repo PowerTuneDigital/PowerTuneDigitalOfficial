@@ -3657,6 +3657,13 @@ void DashBoard::setExternalSpeed(const int &ExternalSpeed)
     m_ExternalSpeed = ExternalSpeed;
     emit ExternalSpeedChanged(ExternalSpeed);
 }
+void DashBoard::setdaemonlicense(const QString &daemonlicense)
+{
+    if (m_daemonlicense == daemonlicense)
+        return;
+    m_daemonlicense = daemonlicense;
+    emit daemonlicenseChanged(daemonlicense);
+}
 
 void DashBoard::setcurrentLap(const int &currentLap)
 {
@@ -5320,7 +5327,7 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
             emit DI1RPMEnabledChanged(DI1RPMEnabled);
         }
 
-        //Megasquirt Advanced        
+        //Megasquirt Advanced
         void DashBoard::setpwseq1(const qreal &pwseq1)
         {
             if(m_pwseq1 == pwseq1)
@@ -5411,7 +5418,7 @@ void DashBoard::setlostsynccount(const qreal &lostsynccount)
                 return;
             m_EGOcor4 = EGOcor4;
             emit EGOcor4Changed(EGOcor4);
-        }        
+        }
         void DashBoard::setKnock_cyl1(const qreal &Knock_cyl1)
         {
             if(m_Knock_cyl1 == Knock_cyl1)
@@ -5810,6 +5817,7 @@ int DashBoard::CalibrationSelect() const { return m_CalibrationSelect; }
 
 QString DashBoard::Error() const { return m_Error; }
 QString DashBoard::autogear() const { return m_autogear; }
+QString DashBoard::daemonlicense() const { return m_daemonlicense; }
 
 int DashBoard::ExternalSpeed() const {return m_ExternalSpeed; }
 
