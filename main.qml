@@ -624,8 +624,8 @@ ApplicationWindow {
                 //console.log("Timer for Max Brightness started")
                 if (Qt.platform.os === "linux" && HAVE_DDCUTIL) {
                   //console.log("Max Brightness on Boot Run" + custom.maxBrightnessOnBoot)
-                  Connect.setSreenbrightness(250);
-                  AppSettings.writebrightnessettings(250);
+                  Connect.setSreenbrightness(75);
+                  AppSettings.writebrightnessettings(75);
                 } else {
                   //console.log("DDCUTIL Failed max brightness run without ddc " + custom.maxBrightnessOnBoot)
                   Connect.setSreenbrightness(250);
