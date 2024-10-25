@@ -50,6 +50,8 @@ public:
     Q_INVOKABLE void writeExternalrpm(const int checked);
     Q_INVOKABLE void writeLanguage(const int Language);
     Q_INVOKABLE void writeStartupSettings(const int &ExternalSpeed);
+    Q_INVOKABLE void writeDaemonLicenseKey(const QString &DaemonLicenseKey);
+    Q_INVOKABLE QString getDaemonActivationKey();
     Q_INVOKABLE void readandApplySettings();
 
 private:

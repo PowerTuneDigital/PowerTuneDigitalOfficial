@@ -1,5 +1,6 @@
 #include <QSettings>
 #include <QDebug>
+#include <QNetworkInterface>
 #include "appsettings.h"
 #include "dashboard.h"
 
@@ -275,7 +276,7 @@ void AppSettings::writeSteinhartSettings(const qreal &T01,const qreal &T02,const
     setValue("T23", T23);
     setValue("R21", R21);
     setValue("R22", R22);
-    setValue("R23", R23);    
+    setValue("R23", R23);
     setValue("T31", T31);
     setValue("T32", T32);
     setValue("T33", T33);
@@ -330,6 +331,37 @@ void AppSettings::writeStartupSettings(const int &ExternalSpeed)
     m_dashboard->setExternalSpeed(ExternalSpeed);
 }
 
+void AppSettings::writeDaemonLicenseKey(const QString &DaemonLicenseKey)
+{
+    setValue("DaemonLicenseKey", DaemonLicenseKey);
+    m_dashboard->setdaemonlicense(DaemonLicenseKey);
+}
+
+QString AppSettings::getDaemonActivationKey()
+{
+    QNetworkInterface interface = QNetworkInterface::interfaceFromName("eth0");
+    QString mac = interface.hardwareAddress();
+    QStringList parts = mac.split(":");
+    if (parts.size() == 6)
+    {
+        bool ok;
+        int octet3 = parts[3].toInt(&ok, 16);
+        int octet4 = parts[4].toInt(&ok, 16);
+        int octet5 = parts[5].toInt(&ok, 16);
+
+        if (ok)
+        {
+            QString strOctet3 = QString("%1").arg(octet3, 3, 10, QChar('0'));
+            QString strOctet4 = QString("%1").arg(octet4, 3, 10, QChar('0'));
+            QString strOctet5 = QString("%1").arg(octet5, 3, 10, QChar('0'));
+
+            return strOctet3 + "-" + strOctet4 + "-" + strOctet5;
+        }
+    }
+    return "000-000-000";
+}
+
+
 void AppSettings::writeRPMFrequencySettings(const qreal &Divider,const int &DI1isRPM)
 {
     setValue("RPMFrequencyDivider", Divider);
@@ -359,7 +391,7 @@ void AppSettings::readandApplySettings()
     m_dashboard->setrpmStage1(getValue("Shift Light1").toInt());
     m_dashboard->setrpmStage2(getValue("Shift Light2").toInt());
     m_dashboard->setrpmStage3(getValue("Shift Light3").toInt());
-    m_dashboard->setrpmStage4(getValue("Shift Light4").toInt()); 
+    m_dashboard->setrpmStage4(getValue("Shift Light4").toInt());
     m_dashboard->setsmootexAnalogInput7(getValue("AN7Damping").toInt());
     m_dashboard->setSteinhartcalc(getValue("T01").toReal(),getValue("T02").toReal(),getValue("T03").toReal(),getValue("R01").toReal(),getValue("R02").toReal(),getValue("R03").toReal(),getValue("T11").toReal(),getValue("T12").toReal(),getValue("T13").toReal(),getValue("R11").toReal(),getValue("R12").toReal(),getValue("R13").toReal(),getValue("T21").toReal(),getValue("T22").toReal(),getValue("T23").toReal(),getValue("R21").toReal(),getValue("R22").toReal(),getValue("R23").toReal(),getValue("T31").toReal(),getValue("T32").toReal(),getValue("T33").toReal(),getValue("R31").toReal(),getValue("R32").toReal(),getValue("R33").toReal(),getValue("T41").toReal(),getValue("T42").toReal(),getValue("T43").toReal(),getValue("R41").toReal(),getValue("R42").toReal(),getValue("R43").toReal(),getValue("T51").toReal(),getValue("T52").toReal(),getValue("T53").toReal(),getValue("R51").toReal(),getValue("R52").toReal(),getValue("R53").toReal());
     m_dashboard->setwaterwarn(getValue("waterwarn").toReal());
