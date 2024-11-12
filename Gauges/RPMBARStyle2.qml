@@ -88,7 +88,6 @@ Rectangle {
               rpmNumbers.font.pixelSize = 130
           }
       }
-
   }
   }
 

@@ -97,8 +97,6 @@ Row{
                 rpmText.font.pixelSize = 40
             }
         }
-
-
     }
     Text {
         id: rpmNumber

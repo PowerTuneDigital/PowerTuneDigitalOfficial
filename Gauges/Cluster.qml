@@ -41,6 +41,8 @@ Item {
     property string val11 : "transparent"
     property int val12
     property int val13
+    property int touchCounter: 0
+    property real lastTouchTime: 0
 
 
     Settings {
@@ -411,20 +413,39 @@ Item {
     MouseArea {
         id: touchArea
         anchors.fill: parent
-        onDoubleClicked:
+        onPressed:
         {
-            savetofile.visible = true;
-            squaregaugemenu.visible =true;
-            btnopencolorselect.visible = true;
-            cbx_sources.visible = true;
-            btnadd.visible = true;
-            btncancel.visible = true;
-            btnsave.visible = true;
-            btnclear.visible = true;
-            loadfromfile.visible = true;
-            squaregaugemenu.visible = true;
-            Dashboard.setdraggable(1);
-            //pimenu.popup(touchArea.mouseX,touchArea.mouseY)
+            touchCounter++;
+            if (touchCounter == 1) {
+                lastTouchTime = Date.now();
+                timerDoubleClick.restart();
+            } else if (touchCounter == 2) {
+                var currentTime = Date.now();
+                touchCounter = 0;
+                timerDoubleClick.stop();
+                savetofile.visible = true;
+                squaregaugemenu.visible =true;
+                btnopencolorselect.visible = true;
+                cbx_sources.visible = true;
+                btnadd.visible = true;
+                btncancel.visible = true;
+                btnsave.visible = true;
+                btnclear.visible = true;
+                loadfromfile.visible = true;
+                squaregaugemenu.visible = true;
+                Dashboard.setdraggable(1);
+                //pimenu.popup(touchArea.mouseX,touchArea.mouseY)
+            }
+        }
+    }
+
+    Timer {
+        id: timerDoubleClick
+        interval: 500
+        running: false
+        repeat: false
+        onTriggered: {
+            touchCounter = 0; // Reset counter if time interval exceeds 500 ms
         }
     }
 
