@@ -687,9 +687,10 @@ ApplicationWindow {
                 //console.log("Brightness Changed to 20 8")
                 return;
             }else{
-                //console.log("No if Statements Passed")
+                console.log("No if Statements Passed")
             }
-            else if (0 === custom.digiValue && digitalInput1 == 0 && custom.maxBrightnessOnBoot == 1) {
+
+            if (0 === custom.digiValue && digitalInput1 == 0 && custom.maxBrightnessOnBoot == 1) {
                 Connect.setSreenbrightness(20);
                 AppSettings.writebrightnessettings(20);
                 console.log("Brightness Set to 20 1")
