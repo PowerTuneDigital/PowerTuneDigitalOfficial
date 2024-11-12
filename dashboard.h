@@ -393,6 +393,7 @@ class DashBoard : public QObject
     Q_PROPERTY(QString autogear READ autogear WRITE setautogear NOTIFY autogearChanged)
 
     Q_PROPERTY(int ExternalSpeed READ ExternalSpeed WRITE setExternalSpeed NOTIFY ExternalSpeedChanged)
+    Q_PROPERTY(QString daemonlicense READ daemonlicense WRITE setdaemonlicense NOTIFY daemonlicenseChanged)
 
 
     Q_PROPERTY(QString laptime READ laptime WRITE setlaptime NOTIFY laptimeChanged)
@@ -1071,6 +1072,7 @@ class DashBoard : public QObject
 
     void setError(const QString &Error);
     void setautogear(const QString &autogear);
+    void setdaemonlicense(const QString &daemonlicense);
 
 
     Q_INVOKABLE void setExternalSpeed(const int &ExternalSpeed);
@@ -1717,6 +1719,7 @@ class DashBoard : public QObject
 
     QString Error() const;
     QString autogear() const;
+    QString daemonlicense() const;
 
     int ExternalSpeed() const;
 
@@ -1942,7 +1945,7 @@ class DashBoard : public QObject
     qreal nitrous2_duty()const;
     qreal nitrous_timer_out()const;
     qreal n2o_addfuel()const;
-    qreal n2o_retard()const;   
+    qreal n2o_retard()const;
     qreal EGOcor1()const;
     qreal EGOcor2()const;
     qreal EGOcor3()const;
@@ -2329,6 +2332,7 @@ signals:
 
     void ErrorChanged(QString Error);
     void autogearChanged(QString autogear);
+    void daemonlicenseChanged(QString daemonlicense);
 
     void ExternalSpeedChanged(int ExternalSpeed);
     void externalspeedport(QString externalspeedport);
@@ -2558,7 +2562,7 @@ signals:
     void nitrous2_dutyChanged(qreal nitrous2_duty);
     void nitrous_timer_outChanged(qreal nitrous_timer_out);
     void n2o_addfuelChanged(qreal n2o_addfuel);
-    void n2o_retardChanged(qreal n2o_retard);    
+    void n2o_retardChanged(qreal n2o_retard);
     void EGOcor1Changed(qreal EGOcor1);
     void EGOcor2Changed(qreal EGOcor2);
     void EGOcor3Changed(qreal EGOcor3);
@@ -2952,6 +2956,7 @@ private:
 
     QString m_Error;
     QString m_autogear;
+    QString m_daemonlicense;
 
     int m_ExternalSpeed;
 

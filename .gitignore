@@ -4,3 +4,5 @@ PowertuneQMLGui.pro.user
 appsettings.cpp.autosave
 
 *.autosave
+
+.idea/

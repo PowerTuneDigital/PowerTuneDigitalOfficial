@@ -13,7 +13,7 @@ Rectangle {
         target: Dashboard
         onSerialStatChanged: {
             consoleText.append(Dashboard.SerialStat)
-            //console.log(Dashboard.SerialStat);
+            ////console.log(Dashboard.SerialStat);
             scrollBar.increase()
         }
     }

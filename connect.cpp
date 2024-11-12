@@ -420,8 +420,8 @@ void Connect::clear() const
 {
     // m_Connectport->clear();
 }
-// Reads the file of supported OBD PIDS and makes it available to QML for the User to select which PIDS should be polled 
-void Connect::checkOBDReg() 
+// Reads the file of supported OBD PIDS and makes it available to QML for the User to select which PIDS should be polled
+void Connect::checkOBDReg()
 {
     int i = 0;
     bool ok;
@@ -914,6 +914,12 @@ void Connect::daemonstartup(const int &daemon)
         break;
     case 58:
         daemonstart = "./Edelbrock";
+        break;
+    case 59:
+        daemonstart = "./Boostec";
+        break;
+    case 60:
+        daemonstart = "./HEFI";
         break;
     }
 

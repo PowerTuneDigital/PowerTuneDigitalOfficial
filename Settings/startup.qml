@@ -14,6 +14,7 @@ Rectangle {
             property alias mainspeedsource: mainspeedsource.currentIndex
             property alias daemonselect: daemonselect.currentIndex
             property alias bitrateselect: canbitrateselect.currentIndex
+            property alias daemonlicense: daemonlicense.text
         }
     }
 
@@ -32,7 +33,7 @@ Rectangle {
         Button {
             id: apply
             width: daemons.width / 3
-            height: daemons.height / 15            
+            height: daemons.height / 15
             text: Translator.translate("Apply", Dashboard.language)
             font.pixelSize: daemons.width * 0.0225
             onClicked: {
@@ -50,7 +51,7 @@ Rectangle {
             width: daemons.width / 3
             height: daemons.height / 15
             font.pixelSize: daemons.width / 55
-            model: ["None", "HaltechV2", "Link Generic Dash", "Microtech", "Consult", "M800 Set1", "OBD2", "Hondata 20Hz", "Adaptronic CAN", "Motec M1", "AEM V2", "AUDI B7", "BRZ FRS 86", "ECU Masters", "Audi B8", "Emtron", "Holley", "MaxxECU", "Ford FG MK1", "Ford FG MK1 + OBD Polling", "Ford BA+BF ", "Ford BA+BF + OBD Polling", "Ford FG2x", "Ford FG2x + OBD Polling", "EVO X", "Blackbox M3", "NISSAN 370Z", "GM: LS2-LS7 CAN", "NISSAN 350Z", "Megasquirt CAN Simplified", "EMTECH EMS CAN", "WRX 2008-2015", "Motec Set3 ADL", "Testdaemon", "Ecoboost", "Emerald ECU", "Wolf", "GM OBD-CAN", "Unused", "Hondata 100Hz", "11-Bit CAN", "Motorsport Electronics", "Fueltech", "Delta", "Bigstuff AFR", "Bigstuff Lamda", "R35", "Prado", "WRX 2016", "LifeRacing beta", "DTAFast", "ProEFI", "TeslaSDU", "NeuroBasic" ,"GR Yaris (Beta)","Syvecs S7","RSport","Generic CAN","Edelbrock"]
+            model: ["None", "HaltechV2", "Link Generic Dash", "Microtech", "Consult", "M800 Set1", "OBD2", "Hondata 20Hz", "Adaptronic CAN", "Motec M1", "AEM V2", "AUDI B7", "BRZ FRS 86", "ECU Masters", "Audi B8", "Emtron", "Holley (Racepak)", "MaxxECU", "Ford FG MK1", "Ford FG MK1 + OBD Polling", "Ford BA+BF ", "Ford BA+BF + OBD Polling", "Ford FG2x", "Ford FG2x + OBD Polling", "EVO X", "Blackbox M3", "NISSAN 370Z", "GM: LS2-LS7 CAN", "NISSAN 350Z", "Megasquirt CAN Simplified", "EMTECH EMS CAN", "WRX 2008-2015", "Motec Set3 ADL", "Testdaemon", "Ecoboost", "Emerald ECU", "Wolf", "GM OBD-CAN", "Unused", "Hondata 100Hz", "11-Bit CAN", "Motorsport Electronics", "Fueltech", "Delta", "Bigstuff AFR", "Bigstuff Lamda", "R35", "Prado", "WRX 2016", "LifeRacing beta", "DTAFast", "ProEFI", "TeslaSDU", "NeuroBasic" ,"GR Yaris (Beta)","Syvecs S7","RSport","Generic CAN","Edelbrock", "Boostec", "Holley (Standard)"]
             delegate: ItemDelegate {
                 width: daemonselect.width
                 text: daemonselect.textRole ? (Array.isArray(
@@ -164,7 +165,7 @@ Rectangle {
             font.pixelSize: daemons.width / 55
             model: ["ECU Speed", "LF Wheelspeed", "RF Wheelspeed", "LR Wheelspeed", "RR Wheelspeed", "GPS", "VR Sensor"]
             onCurrentIndexChanged: AppSettings.writeStartupSettings(
-                                       mainspeedsource.currentIndex) //,console.log("Setting SPeed")
+                                       mainspeedsource.currentIndex) //,//console.log("Setting SPeed")
             property bool initialized: false
             //Component.onCompleted: tabView.currentIndex = 0
             delegate: ItemDelegate {
@@ -178,16 +179,57 @@ Rectangle {
                 hoverEnabled: mainspeedsource.hoverEnabled
             }
         }
+        Text {
+            text: Translator.translate("Activation Code", Dashboard.language)
+            font.pixelSize: daemons.width / 55
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+        }
+        Text {
+            text: AppSettings.getDaemonActivationKey()
+            width: daemons.width / 3
+            height: daemons.height / 15
+            font.pixelSize: daemons.width / 55
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+        }
+        Text {
+            text: Translator.translate("Holley License Key", Dashboard.language)
+            font.pixelSize: daemons.width / 55
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+        }
+        TextField {
+            id: daemonlicense
+            inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
+            placeholderText: qsTr("powertunedigital.com/holley")
+            onEditingFinished: AppSettings.writeDaemonLicenseKey(daemonlicense.text)
+            width: daemons.width / 3
+            height: daemons.height / 15
+            font.pixelSize: daemons.width / 55
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+        }
+    }
+    Text {
+        text: Translator.translate("Holleynotice", Dashboard.language)
+        font.pixelSize: daemons.width / 65
+        width: parent.width / 3
+        horizontalAlignment: Text.AlignHCenter
+        anchors.top: parent.top
+        anchors.topMargin: parent.height / 30
+        anchors.leftMargin: parent.width / 30
+        anchors.left: parent.left
+        wrapMode: Text.WordWrap
+        visible: { daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)" || daemonselect.textAt(daemonselect.currentIndex) == "Holley (Racepak)" }
     }
     Text {
         id: warningtext
         text:Translator.translate("Warningtext", Dashboard.language)
         font.pixelSize: daemons.width / 55
         font.bold: true
-        width: parent.width / 1.5
+        width: parent.width * 0.9
         horizontalAlignment: Text.AlignHCenter
         anchors.top: startupgrid.bottom
         anchors.horizontalCenter: daemons.horizontalCenter
+        anchors.leftMargin: parent.width / 20
+        anchors.rightMargin: parent.width / 20
         color: "red"
         wrapMode: Text.WordWrap
         //visible: { (daemonselect.currentIndex == 19 || daemonselect.currentIndex == 21 || daemonselect.currentIndex == 23 ) ? true:false; }

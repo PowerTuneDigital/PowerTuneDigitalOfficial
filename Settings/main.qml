@@ -137,7 +137,7 @@ Rectangle {
                     property bool initialized: false
                     onCurrentIndexChanged:{ if (initialized)
                                                AppSettings.setBaudRate(currentIndex)
-                        console.log("Index Changed ECU Selection")
+                        //console.log("Index Changed ECU Selection")
                     }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getBaudRate()
@@ -310,7 +310,7 @@ Rectangle {
                     onCurrentIndexChanged: {
                         if (initialized)
                             AppSettings.setECU(currentIndex), Dashboard.setecu(ecuSelect.currentIndex)
-                        console.log("setting ecu" +Dashboard.ecu)
+                        //console.log("setting ecu" +Dashboard.ecu)
                     }
                     Component.onCompleted: {
                         currentIndex = AppSettings.getECU(), Dashboard.setecu(ecuSelect.currentIndex), initialized = true
@@ -539,11 +539,11 @@ Rectangle {
                     }
                     onClicked: {
 
-                        //console.log("clicked GPS")
+                        ////console.log("clicked GPS")
                         connectButtonGPS.enabled = false
                         disconnectButtonGPS.enabled = true
                         autoconnectGPS.auto()
-                        //console.log("gps disconnect enabled")
+                        ////console.log("gps disconnect enabled")
                     }
                 }
                 Button {
@@ -720,7 +720,7 @@ Rectangle {
                             loggerswitch.height = windowbackround.height / 16
                         }
                     }
-                    onCheckedChanged: logger.datalogger()
+                    onClicked: logger.datalogger()
                 }
 
                 Switch {
@@ -734,7 +734,7 @@ Rectangle {
                             record.height = windowbackround.height / 16
                         }
                     }
-                    onCheckedChanged: {
+                    onClicked: {
                         transferSettings.sendSettings(), goproRec.rec()
                     }
                 }
@@ -744,7 +744,7 @@ Rectangle {
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
                     text: Translator.translate("NMEA Logger", Dashboard.language)
-                    onCheckedChanged: {
+                    onClicked: {
                         Dashboard.setNMEAlog(nmeaLog.checked)
                     }
                     Component.onCompleted: {
@@ -755,7 +755,9 @@ Rectangle {
                     }
                 }
                 Text {
-                    text: " V 1.99D " + Dashboard.Platform
+
+                    text: " V 1.99E " + Dashboard.Platform
+
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
                 }
@@ -1001,7 +1003,7 @@ Rectangle {
                     onCurrentIndexChanged: {
                         functLanguageselect.languageselectfunct()
                         changeweighttext.changetext()
-                        console.log("Language combobox index")
+                        //console.log("Language combobox index")
                     }
 
                     delegate: Item {
@@ -1074,7 +1076,7 @@ Rectangle {
                 disconnectButtonGPS.enabled = true
             }
             //if (connectButtonGPS.enabled == true)GPS.openConnection(serialNameGPS.currentText,"9600"),disconnectButtonGPS.enabled=false;
-            //if (gpsswitch.checked == false)GPS.closeConnection(),console.log("GPS CLOSED BY QML");
+            //if (gpsswitch.checked == false)GPS.closeConnection(),//console.log("GPS CLOSED BY QML");
         }
     }
 
