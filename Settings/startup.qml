@@ -14,7 +14,7 @@ Rectangle {
             property alias mainspeedsource: mainspeedsource.currentIndex
             property alias daemonselect: daemonselect.currentIndex
             property alias bitrateselect: canbitrateselect.currentIndex
-            property alias daemonlicense: daemonlicense.text
+            //property alias daemonlicense: daemonlicense.text
         }
     }
 
@@ -179,45 +179,6 @@ Rectangle {
                 hoverEnabled: mainspeedsource.hoverEnabled
             }
         }
-        Text {
-            text: Translator.translate("Activation Code", Dashboard.language)
-            font.pixelSize: daemons.width / 55
-            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
-        }
-        Text {
-            text: AppSettings.getDaemonActivationKey()
-            width: daemons.width / 3
-            height: daemons.height / 15
-            font.pixelSize: daemons.width / 55
-            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
-        }
-        Text {
-            text: Translator.translate("Holley License Key", Dashboard.language)
-            font.pixelSize: daemons.width / 55
-            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
-        }
-        TextField {
-            id: daemonlicense
-            inputMethodHints: Qt.ImhFormattedNumbersOnly // this ensures valid inputs are number only
-            placeholderText: qsTr("powertunedigital.com/holley")
-            onEditingFinished: AppSettings.writeDaemonLicenseKey(daemonlicense.text)
-            width: daemons.width / 3
-            height: daemons.height / 15
-            font.pixelSize: daemons.width / 55
-            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
-        }
-    }
-    Text {
-        text: Translator.translate("Holleynotice", Dashboard.language)
-        font.pixelSize: daemons.width / 65
-        width: parent.width / 3
-        horizontalAlignment: Text.AlignHCenter
-        anchors.top: parent.top
-        anchors.topMargin: parent.height / 30
-        anchors.leftMargin: parent.width / 30
-        anchors.left: parent.left
-        wrapMode: Text.WordWrap
-        visible: { daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)" || daemonselect.textAt(daemonselect.currentIndex) == "Holley (Racepak)" }
     }
     Text {
         id: warningtext
