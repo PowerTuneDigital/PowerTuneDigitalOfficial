@@ -337,6 +337,13 @@ void AppSettings::writeDaemonLicenseKey(const QString &DaemonLicenseKey)
     m_dashboard->setdaemonlicense(DaemonLicenseKey);
 }
 
+void AppSettings::writeHolleyProductID(const QString &HolleyProductID)
+{
+    setValue("HolleyProductID", HolleyProductID);
+    m_dashboard->setholleyproductid(HolleyProductID);
+}
+
+
 QString AppSettings::getDaemonActivationKey()
 {
     QNetworkInterface interface = QNetworkInterface::interfaceFromName("eth0");
