@@ -3664,6 +3664,13 @@ void DashBoard::setdaemonlicense(const QString &daemonlicense)
     m_daemonlicense = daemonlicense;
     emit daemonlicenseChanged(daemonlicense);
 }
+void DashBoard::setholleyproductid(const QString &holleyproductid)
+{
+    if (m_holleyproductid == holleyproductid)
+        return;
+    m_holleyproductid = holleyproductid;
+    emit holleyproductidChanged(holleyproductid);
+}
 
 void DashBoard::setcurrentLap(const int &currentLap)
 {
@@ -5818,6 +5825,7 @@ int DashBoard::CalibrationSelect() const { return m_CalibrationSelect; }
 QString DashBoard::Error() const { return m_Error; }
 QString DashBoard::autogear() const { return m_autogear; }
 QString DashBoard::daemonlicense() const { return m_daemonlicense; }
+QString DashBoard::holleyproductid() const { return m_holleyproductid; }
 
 int DashBoard::ExternalSpeed() const {return m_ExternalSpeed; }
 

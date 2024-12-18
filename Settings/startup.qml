@@ -14,7 +14,7 @@ Rectangle {
             property alias mainspeedsource: mainspeedsource.currentIndex
             property alias daemonselect: daemonselect.currentIndex
             property alias bitrateselect: canbitrateselect.currentIndex
-            //property alias daemonlicense: daemonlicense.text
+            property alias holleyproductid: holleyproductid.currentIndex
         }
     }
 
@@ -177,6 +177,39 @@ Rectangle {
                 font.pixelSize: mainspeedsource.font.pixelSize
                 highlighted: mainspeedsource.highlightedIndex == index
                 hoverEnabled: mainspeedsource.hoverEnabled
+            }
+        }
+        Text {
+            text: Translator.translate("Holley ECU", Dashboard.language)
+            font.pixelSize: daemons.width / 55
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+        }
+        ComboBox {
+            id: holleyproductid
+            width: daemons.width / 3
+            height: daemons.height / 15
+            font.pixelSize: daemons.width / 55
+            model: ListModel {
+                ListElement { text: "Terminator X"; value: 11 }
+                ListElement { text: "Dominator"; value: 1 }
+                ListElement { text: "Sniper"; value: 2 }
+                ListElement { text: "Sniper Gen2"; value: 23 }
+                ListElement { text: "HP"; value: 0 }
+            }
+            onCurrentIndexChanged: {
+                var selectedValue = holleyproductid.model.get(holleyproductid.currentIndex).value
+                AppSettings.writeHolleyProductID(selectedValue)
+            }
+            visible: daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)"
+            textRole: "text"
+            delegate: ItemDelegate {
+                width: holleyproductid.width
+                font.weight: holleyproductid.currentIndex == index ? Font.DemiBold : Font.Normal
+                font.family: holleyproductid.font.family
+                font.pixelSize: holleyproductid.font.pixelSize
+                highlighted: holleyproductid.highlightedIndex == index
+                hoverEnabled: holleyproductid.hoverEnabled
+                text: model.text
             }
         }
     }

@@ -394,6 +394,7 @@ class DashBoard : public QObject
 
     Q_PROPERTY(int ExternalSpeed READ ExternalSpeed WRITE setExternalSpeed NOTIFY ExternalSpeedChanged)
     Q_PROPERTY(QString daemonlicense READ daemonlicense WRITE setdaemonlicense NOTIFY daemonlicenseChanged)
+    Q_PROPERTY(QString holleyproductid READ holleyproductid WRITE setholleyproductid NOTIFY holleyproductidChanged)
 
 
     Q_PROPERTY(QString laptime READ laptime WRITE setlaptime NOTIFY laptimeChanged)
@@ -1073,6 +1074,7 @@ class DashBoard : public QObject
     void setError(const QString &Error);
     void setautogear(const QString &autogear);
     void setdaemonlicense(const QString &daemonlicense);
+    void setholleyproductid(const QString &holleyproductid);
 
 
     Q_INVOKABLE void setExternalSpeed(const int &ExternalSpeed);
@@ -1720,6 +1722,7 @@ class DashBoard : public QObject
     QString Error() const;
     QString autogear() const;
     QString daemonlicense() const;
+    QString holleyproductid() const;
 
     int ExternalSpeed() const;
 
@@ -2333,6 +2336,7 @@ signals:
     void ErrorChanged(QString Error);
     void autogearChanged(QString autogear);
     void daemonlicenseChanged(QString daemonlicense);
+    void holleyproductidChanged(QString holleyproductid);
 
     void ExternalSpeedChanged(int ExternalSpeed);
     void externalspeedport(QString externalspeedport);
@@ -2957,6 +2961,7 @@ private:
     QString m_Error;
     QString m_autogear;
     QString m_daemonlicense;
+    QString m_holleyproductid;
 
     int m_ExternalSpeed;
 
