@@ -214,18 +214,6 @@ Rectangle {
         }
     }
     Text {
-        text: Translator.translate("Holleynotice", Dashboard.language)
-        font.pixelSize: daemons.width / 65
-        width: parent.width / 3
-        horizontalAlignment: Text.AlignHCenter
-        anchors.top: parent.top
-        anchors.topMargin: parent.height / 30
-        anchors.leftMargin: parent.width / 30
-        anchors.left: parent.left
-        wrapMode: Text.WordWrap
-        visible: { daemonselect.textAt(daemonselect.currentIndex) == "Holley (Standard)" || daemonselect.textAt(daemonselect.currentIndex) == "Holley (Racepak)" }
-    }
-    Text {
         id: warningtext
         text:Translator.translate("Warningtext", Dashboard.language)
         font.pixelSize: daemons.width / 55
