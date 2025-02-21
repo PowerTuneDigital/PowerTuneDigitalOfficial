@@ -650,12 +650,12 @@ ApplicationWindow {
             // If the input is HIGH, set brightness to OFF
             Connect.setSreenbrightness(BRIGHTNESS_OFF);
             AppSettings.writebrightnessettings(BRIGHTNESS_OFF);
-            console.log(`Brightness Set to 0 for Input ${custom.digiValue + 1}`);
+            //console.log(`Brightness Set to 0 for Input ${custom.digiValue + 1}`);
         } else if (currentInput === 0) {
             // If the input is LOW, set brightness to ON
             Connect.setSreenbrightness(BRIGHTNESS_ON);
             AppSettings.writebrightnessettings(BRIGHTNESS_ON);
-            console.log(`Brightness Set to ${BRIGHTNESS_ON} for Input ${custom.digiValue + 1}`);
+            //console.log(`Brightness Set to ${BRIGHTNESS_ON} for Input ${custom.digiValue + 1}`);
         }
     }
 
@@ -674,12 +674,12 @@ ApplicationWindow {
             // If the input is HIGH, set brightness to OFF
             Connect.setSreenbrightness(BRIGHTNESS_OFF);
             AppSettings.writebrightnessettings(BRIGHTNESS_OFF);
-            console.log(`Brightness Set to 0 for Input ${custom.digiValue + 1}`);
+            //console.log(`Brightness Set to 0 for Input ${custom.digiValue + 1}`);
         } else if (currentInput === 0) {
             // If the input is LOW, set brightness to ON
             Connect.setSreenbrightness(BRIGHTNESS_ON);
             AppSettings.writebrightnessettings(BRIGHTNESS_ON);
-            console.log(`Brightness Set to ${BRIGHTNESS_ON} for Input ${custom.digiValue + 1}`);
+            //console.log(`Brightness Set to ${BRIGHTNESS_ON} for Input ${custom.digiValue + 1}`);
         }
     }
     }
