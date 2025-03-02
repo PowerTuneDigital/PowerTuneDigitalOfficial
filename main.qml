@@ -555,6 +555,10 @@ ApplicationWindow {
 
     //Check if any of the EXDigitalInput values have changed and if so run the function.
     onDigitalInput1Changed: {
+        if(custom.digiValue !== 0){
+            return;
+        }
+
        // //console.log("Digital Input 1 Channel Changed" + digitalInput1)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -564,6 +568,9 @@ ApplicationWindow {
     }
 
     onDigitalInput2Changed: {
+        if(custom.digiValue !== 1){
+            return;
+        }
         ////console.log("Digital Input 2 Channel Changed" + digitalInput2)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -573,6 +580,9 @@ ApplicationWindow {
     }
 
     onDigitalInput3Changed: {
+        if(custom.digiValue !== 2){
+            return;
+        }
         //console.log("Digital Input 3 Channel Changed" + digitalInput3)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -582,6 +592,9 @@ ApplicationWindow {
     }
 
     onDigitalInput4Changed: {
+        if(custom.digiValue !== 3){
+            return;
+        }
         //console.log("Digital Input 4 Channel Changed" + digitalInput4)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -591,6 +604,9 @@ ApplicationWindow {
     }
 
     onDigitalInput5Changed: {
+        if(custom.digiValue !== 4){
+            return;
+        }
         //console.log("Digital Input 5 Channel Changed" + digitalInput5)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -600,6 +616,9 @@ ApplicationWindow {
     }
 
     onDigitalInput6Changed: {
+        if(custom.digiValue !== 5){
+            return;
+        }
         //console.log("Digital Input 6 Channel Changed" + digitalInput6)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -609,6 +628,9 @@ ApplicationWindow {
     }
 
     onDigitalInput7Changed: {
+        if(custom.digiValue !== 6){
+            return;
+        }
         //console.log("Digital Input 7 Channel Changed" + digitalInput7)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -618,6 +640,9 @@ ApplicationWindow {
     }
 
     onDigitalInput8Changed: {
+        if(custom.digiValue !== 7){
+            return;
+        }
         //console.log("Digital Input 8 Channel Changed" + digitalInput8)
         if(Qt.platform.os === "linux" && HAVE_DDCUTIL){
             ddcutilDigitalLoop()
@@ -682,6 +707,10 @@ ApplicationWindow {
         const digitalInputs = [digitalInput1, digitalInput2, digitalInput3, digitalInput4,
                                digitalInput5, digitalInput6, digitalInput7, digitalInput8];
         const currentInput = digitalInputs[custom.digiValue];
+
+        // ✅ Debugging logs to see what's happening
+        console.log("Selected Input Index:", custom.digiValue);
+        console.log("Selected Input State:", currentInput);
 
         // If debounce is active or input hasn't changed, return early
         if (debounceActive || currentInput === lastInputState) return;
