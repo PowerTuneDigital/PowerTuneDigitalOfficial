@@ -45,7 +45,7 @@ ApplicationWindow {
 
     Timer {
         id: debounceTimer
-        interval: 500 // Adjust debounce delay (in ms)
+        interval: 5000 // Adjust debounce delay (in ms)
         repeat: false
         onTriggered: debounceActive = false
     }
