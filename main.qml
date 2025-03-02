@@ -683,6 +683,10 @@ ApplicationWindow {
                                digitalInput5, digitalInput6, digitalInput7, digitalInput8];
         const currentInput = digitalInputs[custom.digiValue];
 
+        // ✅ Debugging logs to see what's happening
+        console.log("Selected Input Index:", custom.digiValue);
+        console.log("Selected Input State:", currentInput);
+
         // If debounce is active or input hasn't changed, return early
         if (debounceActive || currentInput === lastInputState) return;
 
