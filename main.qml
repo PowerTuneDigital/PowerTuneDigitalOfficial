@@ -40,6 +40,16 @@ ApplicationWindow {
     property int digitalInput7: Dashboard.EXDigitalInput7
     property int digitalInput8: Dashboard.EXDigitalInput8
 
+    property int lastInputState: -1 // Store previous state (-1 = undefined)
+    property bool debounceActive: false // Prevent rapid activations
+
+    Timer {
+        id: debounceTimer
+        interval: 500 // Adjust debounce delay (in ms)
+        repeat: false
+        onTriggered: debounceActive = false
+    }
+
     //Screen Keyboard do not change !!! Behaviour between QT5.10 and QT5.15 is different
 
 
@@ -659,9 +669,12 @@ ApplicationWindow {
         }
     }
 
+
+
     function ddcutilDigitalLoop() {
         const BRIGHTNESS_ON = 60;
         const BRIGHTNESS_OFF = 0;
+
 
         if (custom.maxBrightnessOnBoot !== 1) return; // Exit early if maxBrightnessOnBoot is not active.
 
@@ -669,6 +682,13 @@ ApplicationWindow {
         const digitalInputs = [digitalInput1, digitalInput2, digitalInput3, digitalInput4,
                                digitalInput5, digitalInput6, digitalInput7, digitalInput8];
         const currentInput = digitalInputs[custom.digiValue];
+
+        // If debounce is active or input hasn't changed, return early
+        if (debounceActive || currentInput === lastInputState) return;
+
+        lastInputState = currentInput; // Update last known state
+        debounceActive = true; // Activate debounce
+        debounceTimer.restart(); // Start debounce timer
 
         if (currentInput === 1) {
             // If the input is HIGH, set brightness to OFF
