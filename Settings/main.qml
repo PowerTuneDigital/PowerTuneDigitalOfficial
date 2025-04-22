@@ -756,7 +756,7 @@ Rectangle {
                 }
                 Text {
 
-                    text: " V 1.99F " + Dashboard.Platform
+                    text: " V 1.99G " + Dashboard.Platform
 
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
