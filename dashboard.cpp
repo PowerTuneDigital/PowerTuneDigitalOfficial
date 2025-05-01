@@ -2543,9 +2543,9 @@ void DashBoard::setambitemp(const qreal &ambitemp)
 {
     if (m_ambitemp == ambitemp)
         return;
-    if (m_pressureunits == "metric")
+    if (m_units == "metric")
     { m_ambitemp = ambitemp;}
-    if (m_pressureunits == "imperial")
+    if (m_units == "imperial")
     {m_ambitemp = ambitemp * 1.8 + 32;}
     emit ambitempChanged(ambitemp);
 }
