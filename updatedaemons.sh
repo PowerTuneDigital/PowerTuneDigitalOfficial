@@ -78,6 +78,7 @@ sudo pkill AudiB7d
 sudo pkill AudiB8d
 sudo pkill BlackboxM3
 sudo pkill BRZFRS86d
+sudo pkill Boostec
 sudo pkill Consult
 sudo pkill Emtrond
 sudo pkill EMUCANd
@@ -135,6 +136,7 @@ sudo rm /home/pi/daemons/AudiB7d
 sudo rm /home/pi/daemons/AudiB8d
 sudo rm /home/pi/daemons/BlackboxM3
 sudo rm /home/pi/daemons/BRZFRS86d
+sudo rm /home/pi/daemons/Boostec
 sudo rm /home/pi/daemons/Consult
 sudo rm /home/pi/daemons/Emtrond
 sudo rm /home/pi/daemons/EMUCANd
