@@ -756,7 +756,7 @@ Rectangle {
                 }
                 Text {
 
-                    text: " V 1.99G " + Dashboard.Platform
+                    text: " V 1.99H " + Dashboard.Platform
 
                     color: "white"
                     font.pixelSize: windowbackround.width / 55
@@ -1181,3 +1181,4 @@ Designer {
     D{i:0;autoSize:true;height:480;width:640}
 }
 ##^##*/
+
