@@ -63,6 +63,15 @@ if [ -d /home/root ]; then
 		else
 		mkdir /home/pi/build
 		fi
+# Check if the Tracks Folder Exists 
+		if [ -d /home/pi/KTracks ]; then 
+		echo "KTracks folder exists" 
+		else 
+		echo "Create KTracks Folder"
+ 		mkdir /home/pi/KTracks 
+		# Copy KTracks folder and its contents from src to home
+		cp -r /home/pi/src/KTracks/* /home/pi/KTracks/
+		fi
 # Compile PowerTune
 		cd /home/pi/build
 		echo "Compiling PowerTune ... go grab a Coffee"
