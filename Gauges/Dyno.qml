@@ -16,7 +16,7 @@ Item {
         width: parent.width
         height: parent.height
         antialiasing: true
-        legend.font.pixelSize: chart.height / 20
+        legend.font.pixelSize: chart.height / 70
 /*
         title: isMetric()
                ? "Torque (Nm)  / Power (kW)1 "
@@ -44,8 +44,8 @@ Item {
 
     // Max Torque Indicator
     Rectangle {
-        width: chart.height / 20
-        height: chart.height / 20
+        width: chart.height / 70
+        height: chart.height / 70
         color: "blue"
         anchors.verticalCenter: maxTorqueValuesText.verticalCenter
         anchors.right: maxTorqueValuesText.left
@@ -59,7 +59,7 @@ Item {
         anchors.top: chart.top
         anchors.leftMargin: chart.width / 7
         anchors.topMargin: chart.height / 5
-        font.pixelSize: chart.height / 20
+        font.pixelSize: chart.height / 70
         text: isMetric()
               ? "Max Torque: 0 Nm @ 0 RPM"
               : "Max Torque: 0 ft·lb @ 0 RPM"
@@ -68,8 +68,8 @@ Item {
 
     // Max Power Indicator
     Rectangle {
-        width: chart.height / 55
-        height: chart.height / 55
+        width: chart.height / 70
+        height: chart.height / 70
         color: "green"
         anchors.verticalCenter: maxPowerValuesText.verticalCenter
         anchors.right: maxPowerValuesText.left
@@ -83,7 +83,7 @@ Item {
         anchors.top: maxTorqueValuesText.bottom
         anchors.leftMargin: chart.width / 7
         anchors.topMargin: 5
-        font.pixelSize: chart.height / 20
+        font.pixelSize: chart.height / 70
         text: isMetric()
               ? "Max Power:  0 kW @ 0 RPM"
               : "Max Power:  0 HP    @ 0 RPM"
