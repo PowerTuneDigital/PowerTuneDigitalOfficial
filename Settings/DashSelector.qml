@@ -67,6 +67,10 @@ Rectangle {
         {
             return "qrc:/Settings/CanMonitor.qml"
         }
+        case 12:
+        {
+            return "qrc:/Gauges/Dyno.qml"
+        }
         }
     }
 

@@ -19,8 +19,6 @@ ApplicationWindow {
     id:window
     visible: true
 
-    //width: 1600
-    //height: 720
     width: Screen.desktopAvailableWidth
     height: Screen.desktopAvailableHeight
     minimumWidth: 800
@@ -165,12 +163,17 @@ ApplicationWindow {
             active: Dashboard.Visibledashes > 3;
             source: ""
         }
+        Loader {
+            id: testload
+            source: "qrc:/Gauges/Dyno.qml"
 
+        }
         Item {
             id:lastPage
             SerialSettings{}
 
         }
+
 
     }
     // For future use

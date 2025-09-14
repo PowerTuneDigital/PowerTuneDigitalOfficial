@@ -32,6 +32,7 @@
 #include "udpreceiver.h"
 #include "arduino.h"
 #include "wifiscanner.h"
+#include "dynoanalyzer.h""
 #include <QDebug>
 #include <QTime>
 #include <QTimer>
@@ -44,6 +45,7 @@
 #include <QTextStream>
 #include <QByteArrayMatcher>
 #include <QProcess>
+
 
 int ecu; //0=apex, 1=adaptronic;2= OBD; 3= Dicktator ECU
 int logging; // 0 Logging off , 1 Logging to file
@@ -71,7 +73,8 @@ Connect::Connect(QObject *parent) :
     m_calculations(Q_NULLPTR),
     m_arduino(Q_NULLPTR),
     m_wifiscanner(Q_NULLPTR),
-    m_extender(Q_NULLPTR)
+    m_extender(Q_NULLPTR),
+    m_dynoanalyzer(Q_NULLPTR)
 
 {
 
@@ -89,6 +92,8 @@ Connect::Connect(QObject *parent) :
     m_arduino = new Arduino(m_dashBoard, this);
     m_wifiscanner = new WifiScanner(m_dashBoard, this);
     m_extender = new Extender(m_dashBoard, this);
+    m_dynoanalyzer = new DynoAnalyzer(m_dashBoard, this);
+
    // m_wifiscanner = new WifScanner(this);
     QString mPath = "/";
     // DIRECTORIES
@@ -119,6 +124,7 @@ Connect::Connect(QObject *parent) :
     engine->rootContext()->setContextProperty("Apexi", m_apexi);
     engine->rootContext()->setContextProperty("Arduino", m_arduino);
     engine->rootContext()->setContextProperty("Wifiscanner", m_wifiscanner);
+    engine->rootContext()->setContextProperty("DynoAnalyzer", m_dynoanalyzer);
     m_appSettings->readandApplySettings();
 }
 

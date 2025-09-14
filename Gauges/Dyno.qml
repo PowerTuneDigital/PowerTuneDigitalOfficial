@@ -1,133 +1,132 @@
-import QtQuick 2.8
-import QtCharts 2.1
-import QtQuick.Controls 2.1
+import QtQuick 2.15
+import QtQuick.Controls 2.15
+import QtCharts 2.15
 
 Item {
-    anchors.fill: parent
-    property double finalPower
-    property double finalTorque
-    property int finalTorqueRPM
-    property int finalPowerRPM
-    property double previousrpm
-    property var powertext
-    property var torquetext
-    property var unit : Dashboard.units;
-    Component.onCompleted: {units.unitadjust()} // adjusts the Gauges to metric or imperial
+    width: parent.width
+    height: parent.height
+
+    // --- function to check metric/imperial dynamically ---
+    function isMetric() {
+        return Dashboard.speedunits === "metric"
+    }
 
     ChartView {
-        title: "PowerTune Virtual Dyno V1.0"
-        titleColor: "white"
-        titleFont.pixelSize: parent.width /40
-        id: chartView
-        theme: ChartView.ChartThemeDark
-        anchors.fill: parent
-        legend.visible: true
-        legend.font.pixelSize: parent.width /40
+        id: chart
+        width: parent.width
+        height: parent.height
         antialiasing: true
+        title: isMetric()
+               ? "Torque (Nm)  / Power (kW) "
+               : "Torque (ft·lb) / Power (HP)"
 
+        ValueAxis { id: axisX; min: 0; max: 8000; titleText: "RPM" }
+        ValueAxis { id: axisY; min: 0; max: 100; titleText: isMetric() ? "Nm / kW" : "ft·lb / HP" }
 
-        Row {
-            anchors.top :parent.top
-            anchors.topMargin: parent.height / 20
-            spacing: 5
-            Button {
-                id: startButton
-                text: "Start"
-                onClicked: {
-                    if (refreshTimer.running == false) refreshTimer.running = true ,series2.clear(),series1.clear(), previousrpm = Dashboard.rpm, finalPower =0, finalTorque =0, finalTorqueRPM = 0, finalPowerRPM =0,startButton.enabled =false;
+        LineSeries { id: torqueSeries; name: isMetric() ? "Torque (Nm)" : "Torque (ft·lb)"; axisX: axisX; axisY: axisY }
+        LineSeries { id: powerSeries; name: isMetric() ? "Power (kW)" : "Power (HP)"; axisX: axisX; axisY: axisY }
 
-
-                }
+        Button {
+            id: startButton
+            text: "Start Dyno"
+            anchors.centerIn: parent
+            onClicked: {
+                torqueSeries.clear()
+                powerSeries.clear()
+                DynoAnalyzer.prime()
+                startButton.enabled = false
+                startButton.visible = false
             }
-            Button {
-                id: stopButton
-                text: "clear"
-                onClicked: {
-                    series2.clear(),series1.clear(),startButton.enabled =true;
-
-                }
-            }
-        }
-        ValueAxis {
-            id: axisX
-            titleText: "RPM"
-            titleFont.pixelSize: parent.width /50
-            titleFont.bold: true
-            min: 0
-            max: 9000
-            tickCount: 10
-            labelFormat: "%.0f";
-
-        }
-
-        ValueAxis {
-            id: axisY1
-            titleText: "Torque " + "(" + torquetext + ")" + " / Power "+ "(" +powertext + ")"
-            titleFont.pixelSize: parent.width /50
-            min: 0
-            max: 500
-            labelFormat: "%.0f";
-
-        }
-
-
-        SplineSeries {
-            id: series1
-            name: "Power " + finalPower + " " + powertext +" @" + finalPowerRPM + " RPM"
-            axisX: axisX
-            axisY: axisY1
-        }
-
-        SplineSeries {
-            id: series2
-            name: "Torque " + finalTorque + " " + torquetext +" @" + finalTorqueRPM + " RPM"
-            axisX: axisX
-            axisY: axisY1
         }
     }
 
-    //
+    // Max Torque Indicator
+    Rectangle {
+        width: 16
+        height: 16
+        color: "blue"
+        anchors.verticalCenter: maxTorqueValuesText.verticalCenter
+        anchors.right: maxTorqueValuesText.left
+        anchors.rightMargin: 5
+    }
 
+    // Max Torque Text
+    Text {
+        id: maxTorqueValuesText
+        anchors.left: chart.left
+        anchors.top: chart.top
+        anchors.leftMargin: chart.width / 7
+        anchors.topMargin: chart.height / 5
+        font.pixelSize: 16
+        text: isMetric()
+              ? "Max Torque: 0 Nm @ 0 RPM"
+              : "Max Torque: 0 ft·lb @ 0 RPM"
 
-    // Add data dynamically to the series
-    Timer {
+    }
 
-        id: refreshTimer
-        interval: 50
-        running: false
-        repeat: true
-        onTriggered: {
+    // Max Power Indicator
+    Rectangle {
+        width: 16
+        height: 16
+        color: "green"
+        anchors.verticalCenter: maxPowerValuesText.verticalCenter
+        anchors.right: maxPowerValuesText.left
+        anchors.rightMargin: 5
+    }
 
-            if (previousrpm <= Dashboard.rpm)
-            {
+    // Max Power Text
+    Text {
+        id: maxPowerValuesText
+        anchors.left: chart.left
+        anchors.top: maxTorqueValuesText.bottom
+        anchors.leftMargin: chart.width / 7
+        anchors.topMargin: 5
+        font.pixelSize: 16
+        text: isMetric()
+              ? "Max Power:  0 kW @ 0 RPM"
+              : "Max Power:  0 HP    @ 0 RPM"
 
-            previousrpm = Dashboard.rpm
+    }
 
-            if (finalPower < Dashboard.Power)
-            {finalPower = (Dashboard.Power).toFixed(1),finalPowerRPM = Dashboard.rpm}
-            if (finalTorque < Dashboard.Torque)
-            {finalTorque = (Dashboard.Torque).toFixed(1) ,finalTorqueRPM = Dashboard.rpm}
-            series1.append(Dashboard.rpm, Dashboard.Power);
-            series2.append(Dashboard.rpm, Dashboard.Torque);
-            }
-            if (previousrpm > Dashboard.rpm) {refreshTimer.running = false,startButton.enabled =true}
+    // --- DynoAnalyzer Connections ---
+    Connections {
+        target: DynoAnalyzer
+
+        function onNewTorquePoint(rpm, torque) {
+            torqueSeries.append(rpm, torque)
+        }
+        function onNewPowerPoint(rpm, power) {
+            powerSeries.append(rpm, power)
+        }
+        function onYRangeChanged(minY, maxY) {
+            axisY.min = 0
+            axisY.max = maxY
+        }
+        function onRunningChanged(running) {
+            startButton.enabled = !running
+            startButton.text = running ? "Running..." : "Start Dyno Run"
+            startButton.visible = !running
+        }
+        function onFinished() {
+            maxTorqueValuesText.text =
+                isMetric() ? "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(1) + "Nm @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                           : "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(1) + "ft·lb @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+            maxPowerValuesText.text =
+                    isMetric() ? "Max Power: " + DynoAnalyzer.maxPower.toFixed(1) + "kW @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                               : "Max Power: " + DynoAnalyzer.maxPower.toFixed(1) + "HP @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
 
         }
     }
 
-    Item {
-        id: units
-        function unitadjust()
-        {
-            if (unit == "imperial") {powertext = "HP",torquetext = "ft-lbs"};
-            if (unit == "metric") {powertext = "KW",torquetext = "NM"};
+    // --- Dashboard Connections to detect speed unit changes ---
+    Connections {
+        target: Dashboard
+        function onspeedunitsChanged() {
+            console.log("Speed units changed, chart and labels should update dynamically")
+            // Force redraw/update
+            axisY.titleText = isMetric() ? "Nm / kW" : "ft·lb / HP"
+            torqueSeries.name = isMetric() ? "Torque (Nm)" : "Torque (ft·lb)"
+            powerSeries.name = isMetric() ? "Power (kW)" : "Power (HP)"
         }
-
-
-    }
-    Rectangle{
-    anchors.fill: parent
-    color: "transparent"
-    WarningLoader{}
     }
 }

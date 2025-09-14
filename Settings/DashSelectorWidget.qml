@@ -22,7 +22,7 @@ Grid {
         width: dashselector.width / 5
         height: dashselector.height / 15
         font.pixelSize: dashselector.width / 55
-        model: ["Main Dash", "GPS", "Laptimer", "PowerFC Sensors", "User Dash 1", "User Dash 2", "User Dash 3", "G-Force", "Mediaplayer", "Screen Toggle", "Drag Timer","CAN monitor"]
+        model: ["Main Dash", "GPS", "Laptimer", "PowerFC Sensors", "User Dash 1", "User Dash 2", "User Dash 3", "G-Force", "Mediaplayer", "Screen Toggle", "Drag Timer","CAN monitor","Dyno"]
         visible: Dashboard.Visibledashes >= index
         onCurrentIndexChanged: {
             if (visible == true) {

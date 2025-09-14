@@ -19,6 +19,7 @@ SOURCES += main.cpp \
     Extender.cpp \
     dashboard.cpp \
     downloadmanager.cpp \
+    dynoanalyzer.cpp \
     iomapdata.cpp \
     parsegithubdata.cpp \
     serialport.cpp \
@@ -50,6 +51,7 @@ HEADERS += \
     Extender.h \
     dashboard.h \
     downloadmanager.h \
+    dynoanalyzer.h \
     iomapdata.h \
     parsegithubdata.h \
     serialport.h \

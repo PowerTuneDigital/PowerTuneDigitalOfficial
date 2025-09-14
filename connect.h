@@ -43,6 +43,8 @@ class udpreceiver;
 class Arduino;
 class WifiScanner;
 class Extender;
+class DynoAnalyzer;
+
 
 class Connect : public QObject
 {
@@ -115,8 +117,7 @@ private:
     Arduino *m_arduino;
     WifiScanner *m_wifiscanner;
     Extender *m_extender;
-
-
+    DynoAnalyzer *m_dynoanalyzer;
 
 
 signals:
