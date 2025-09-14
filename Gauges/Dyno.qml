@@ -16,14 +16,14 @@ Item {
         width: parent.width
         height: parent.height
         antialiasing: true
-        legend.font.pixelSize: chart.height / 70
+        legend.font.pixelSize: chart.height / 40
 /*
         title: isMetric()
                ? "Torque (Nm)  / Power (kW)1 "
                : "Torque (ft·lb) / Power (HP)"
 */
-        ValueAxis { id: axisX; min: 0; max: 8000; titleText: "RPM" }
-        ValueAxis { id: axisY; min: 0; max: 100; titleText: isMetric() ? "Nm / kW" : "ft·lb / HP" }
+        ValueAxis { id: axisX; min: 0; max: 8000; titleText: "RPM"; labelsFont:Qt.font({pointSize: chart.height / 70}) }
+        ValueAxis { id: axisY; min: 0; max: 100; titleText: isMetric() ? "Nm / kW" : "ft·lb / HP";labelsFont:Qt.font({pointSize: chart.height / 70}) }
 
         LineSeries { id: torqueSeries; name: isMetric() ? "Torque (Nm)" : "Torque (ft·lb)"; axisX: axisX; axisY: axisY }
         LineSeries { id: powerSeries; name: isMetric() ? "Power (kW)" : "Power (HP)"; axisX: axisX; axisY: axisY }
@@ -59,7 +59,7 @@ Item {
         anchors.top: chart.top
         anchors.leftMargin: chart.width / 7
         anchors.topMargin: chart.height / 5
-        font.pixelSize: chart.height / 70
+        font.pixelSize: chart.height / 50
         text: isMetric()
               ? "Max Torque: 0 Nm @ 0 RPM"
               : "Max Torque: 0 ft·lb @ 0 RPM"
@@ -83,7 +83,7 @@ Item {
         anchors.top: maxTorqueValuesText.bottom
         anchors.leftMargin: chart.width / 7
         anchors.topMargin: 5
-        font.pixelSize: chart.height / 70
+        font.pixelSize: chart.height / 50
         text: isMetric()
               ? "Max Power:  0 kW @ 0 RPM"
               : "Max Power:  0 HP    @ 0 RPM"
@@ -111,11 +111,11 @@ Item {
         }
         function onFinished() {
             maxTorqueValuesText.text =
-                isMetric() ? "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(1) + "Nm @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
-                           : "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(1) + "ft·lb @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                isMetric() ? "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(0) + " Nm @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                           : "Max Torque: " + DynoAnalyzer.maxTorque.toFixed(0) + " ft·lb @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
             maxPowerValuesText.text =
-                    isMetric() ? "Max Power: " + DynoAnalyzer.maxPower.toFixed(1) + "kW @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
-                               : "Max Power: " + DynoAnalyzer.maxPower.toFixed(1) + "HP @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                    isMetric() ? "Max Power: " + DynoAnalyzer.maxPower.toFixed(0) + " kW @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
+                               : "Max Power: " + DynoAnalyzer.maxPower.toFixed(0) + " HP @ " + DynoAnalyzer.maxTorqueRpm.toFixed(0) + " RPM"
 
         }
     }
