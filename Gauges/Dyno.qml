@@ -22,8 +22,8 @@ Item {
                ? "Torque (Nm)  / Power (kW)1 "
                : "Torque (ft·lb) / Power (HP)"
 */
-        ValueAxis { id: axisX; min: 0; max: 8000; titleText: "RPM"; labelsFont:Qt.font({pointSize: chart.height / 70}) }
-        ValueAxis { id: axisY; min: 0; max: 100; titleText: isMetric() ? "Nm / kW" : "ft·lb / HP";labelsFont:Qt.font({pointSize: chart.height / 70}) }
+        ValueAxis { id: axisX; min: 0; max: 9000; titleText: "RPM";labelFormat: "%d"; labelsFont:Qt.font({pointSize: chart.height / 70}) }
+        ValueAxis { id: axisY; min: 0; max: 700; titleText: isMetric() ? "Nm / kW" : "ft·lb / HP";labelFormat: "%d";labelsFont:Qt.font({pointSize: chart.height / 70}) }
 
         LineSeries { id: torqueSeries; name: isMetric() ? "Torque (Nm)" : "Torque (ft·lb)"; axisX: axisX; axisY: axisY }
         LineSeries { id: powerSeries; name: isMetric() ? "Power (kW)" : "Power (HP)"; axisX: axisX; axisY: axisY }
@@ -38,6 +38,13 @@ Item {
                 DynoAnalyzer.prime()
                 startButton.enabled = false
                 startButton.visible = false
+                maxTorqueValuesText.text=
+                isMetric() ? "Max Torque: 0 Nm @ 0 RPM"
+                           : "Max Torque: 0 ft·lb @ 0 RPM"
+
+                maxPowerValuesText.text =
+                isMetric() ? "Max Power:  0 kW @ 0 RPM"
+                           : "Max Power:  0 HP    @ 0 RPM"
             }
         }
     }
@@ -46,7 +53,7 @@ Item {
     Rectangle {
         width: chart.height / 70
         height: chart.height / 70
-        color: "blue"
+        color: "steelblue"
         anchors.verticalCenter: maxTorqueValuesText.verticalCenter
         anchors.right: maxTorqueValuesText.left
         anchors.rightMargin: 5
