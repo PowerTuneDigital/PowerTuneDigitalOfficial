@@ -44,7 +44,7 @@ class GPS : public QObject
     void removeNMEAmsg();
     void setGPSBAUD115();
     void setGPS10HZ();
-    void setGPSOnly();
+   // void setGPSOnly();
     void closeConnection();
     void clear();
 
