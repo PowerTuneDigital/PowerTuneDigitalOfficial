@@ -222,6 +222,9 @@ class DashBoard : public QObject
     Q_PROPERTY(QString units READ units WRITE setunits NOTIFY unitsChanged)
     Q_PROPERTY(QString speedunits READ speedunits WRITE setspeedunits NOTIFY speedunitsChanged)
     Q_PROPERTY(QString pressureunits READ pressureunits WRITE setpressureunits NOTIFY pressureunitsChanged)
+
+    Q_PROPERTY(QString engineprotectionreason READ engineprotectionreason WRITE setengineprotectionreason NOTIFY engineprotectionreasonChanged)
+
     //Qsensors
     Q_PROPERTY(qreal accelx READ accelx WRITE setaccelx NOTIFY accelxChanged)
     Q_PROPERTY(qreal accely READ accely WRITE setaccely NOTIFY accelyChanged)
@@ -878,7 +881,7 @@ class DashBoard : public QObject
     void setspeedunits(const QString &speedunits);
     void setpressureunits(const QString &pressureunits);
 
-
+    void setengineprotectionreason(const QString &engineprotectionreason);
 
 
 
@@ -1505,7 +1508,7 @@ class DashBoard : public QObject
     QString speedunits()const;
     QString pressureunits() const;
 
-
+    QString engineprotectionreason() const;
 
     //Adaptronic extra
 
@@ -2126,6 +2129,8 @@ signals:
     void unitsChanged(QString units);
     void speedunitsChanged(QString speedunits);
     void pressureunitsChanged(QString pressureunits);
+    void engineprotectionreasonChanged(QString engineprotectionreason);
+
 
     //Adaptronic extra
 
@@ -2800,6 +2805,8 @@ private:
     QString m_units;
     QString m_speedunits;
     QString m_pressureunits;
+
+    QString m_engineprotectionreason;
 
     //qsensors
 

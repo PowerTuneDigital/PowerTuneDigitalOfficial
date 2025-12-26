@@ -287,6 +287,8 @@ DashBoard::DashBoard(QObject *parent)
     , m_speedunits("unit")
     , m_pressureunits("unit")
 
+    , m_engineprotectionreason("")
+
     //Sensors
     , m_accelx(0)
     , m_accely(0)
@@ -2109,6 +2111,16 @@ void DashBoard::setpressureunits (const QString &pressureunits)
     m_pressureunits = pressureunits;
     emit pressureunitsChanged(pressureunits);
 }
+
+void DashBoard::setengineprotectionreason (const QString &engineprotectionreason)
+{
+    if (m_engineprotectionreason == engineprotectionreason)
+        return;
+    m_engineprotectionreason = engineprotectionreason;
+    emit engineprotectionreasonChanged(engineprotectionreason);
+}
+
+
 //Adaptronic extra
 
 
@@ -5615,6 +5627,9 @@ qreal DashBoard::gpsHDOP() const { return m_gpsHDOP; }
 QString DashBoard::units() const { return m_units; }
 QString DashBoard::speedunits() const { return m_speedunits; }
 QString DashBoard::pressureunits() const { return m_pressureunits; }
+
+QString DashBoard::engineprotectionreason() const { return m_engineprotectionreason; }
+
 
 
 

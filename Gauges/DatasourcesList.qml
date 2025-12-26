@@ -1048,6 +1048,18 @@ ListModel {
         divisor : "1"
         supportedECUs: "ECU Master"
     }
+
+    ListElement {
+        sourcename:"engineprotectionreason"
+        defaultsymbol: ""
+        titlename:"Engine Protection Reason"
+        decimalpoints : "4"
+        maxvalue : "1"
+        stepsize : "1"
+        divisor : "1"
+        supportedECUs: "HaltechV2"
+    }
+
     ListElement {
         sourcename:"egt1"
         defaultsymbol: "°C"

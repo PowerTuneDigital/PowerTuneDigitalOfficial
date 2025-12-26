@@ -1136,6 +1136,11 @@ void udpreceiver::processPendingDatagrams()
         case 871:
             m_dashboard->setTirepresRR(Value);
             break;
+        case 872:
+            m_dashboard->setengineprotectionreason(list[1]);
+            break;
+
+
 //EX Board
         case 900:
             m_dashboard->setEXDigitalInput1(Value);
