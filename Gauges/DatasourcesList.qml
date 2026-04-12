@@ -103,9 +103,9 @@ ListModel {
         supportedECUs: "HaltechV2"
     }
     ListElement {
-        titlename: "activeboosttable"
+        titlename: "Active boost table"
         defaultsymbol: ""
-        sourcename:"Active boost table"
+        sourcename:"activeboosttable"
         supportedECU: ""
         decimalpoints : "0"
         maxvalue : "10"
@@ -114,9 +114,9 @@ ListModel {
         supportedECUs: ""
     }
     ListElement {
-        titlename: "activetunetable"
+        titlename: "Active tune table"
         defaultsymbol: ""
-        sourcename:"Active tune table"
+        sourcename:"activetunetable"
         supportedECU: ""
         decimalpoints : "0"
         maxvalue : "10"
