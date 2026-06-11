@@ -129,8 +129,8 @@ DashBoard::DashBoard(QObject *parent)
     , m_BoostPreskpa(0)
     , m_BoostDuty(0)
     , m_MAFactivity(0)
-    , m_O2volt_2(0)
     , m_Cyl1_O2_Corr(0)
+    , m_O2volt_2(0)
     , m_Cyl2_O2_Corr(0)
     , m_Cyl3_O2_Corr(0)
     , m_Cyl4_O2_Corr(0)
@@ -222,8 +222,8 @@ DashBoard::DashBoard(QObject *parent)
 
     //Adaptronic extra
     , m_MAP(0)
-    , m_MAP2(0)
     , m_PANVAC(0)
+    , m_MAP2(0)
     , m_AUXT(0)
     , m_AFR(0)
     , m_AFRLEFTBANKTARGET(0)
@@ -3679,7 +3679,7 @@ void DashBoard::setCalibrationSelect(const int &CalibrationSelect)
 
 void DashBoard::setError(const QString &Error)
 {
-    if (m_ecu == Error)
+    if (m_Error == Error)
         return;
     m_Error = Error;
     emit ErrorChanged(Error);
