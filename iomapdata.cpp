@@ -34,6 +34,10 @@ QGeoPath ioMapData::loadMapData(QString country, QString trackName) {
             if (line.contains("KML", Qt::CaseInsensitive))
             {
                 spl = line.split(QRegExp("[:]"));
+                if (spl.size() < 2)
+                {
+                    continue;
+                }
                 spl.removeFirst();
                 list = spl[0].split(QRegExp("[,]"));
                 return parseKML(list);
@@ -41,6 +45,7 @@ QGeoPath ioMapData::loadMapData(QString country, QString trackName) {
         }
         inputFile.close();
     }
+    return QGeoPath();
 }
 
 QGeoPath ioMapData::parseKML(QList<QString> list)
@@ -221,8 +226,16 @@ QList<QString> ioMapData::getCenter(QString country, QString trackName)
             if(line.contains("MAPCENTER", Qt::CaseInsensitive))
             {
                 spl = line.split(QRegExp ("[:]"));
+                if (spl.size() < 2)
+                {
+                    continue;
+                }
                 spl.removeFirst();
                 list = spl[0].split(QRegExp ("[,]"));
+                if (list.size() < 2)
+                {
+                    continue;
+                }
 
                 returnList.append(list[0]);
                 returnList.append(list[1]);
@@ -236,6 +249,7 @@ QList<QString> ioMapData::getCenter(QString country, QString trackName)
         inputFile.close();
         return returnList;
     }
+    return returnList;
 }
 
 QList<QString> ioMapData::getStartFinishLine(QString country, QString trackName)
@@ -264,8 +278,16 @@ QList<QString> ioMapData::getStartFinishLine(QString country, QString trackName)
             if(line.contains("STARTFINISH1", Qt::CaseInsensitive))
             {
                 spl = line.split(QRegExp ("[:]"));
+                if (spl.size() < 2)
+                {
+                    continue;
+                }
                 spl.removeFirst();
                 list = spl[0].split(QRegExp ("[,]"));
+                if (list.size() < 4)
+                {
+                    continue;
+                }
 
                 floatList.append(list[0]);
                 floatList.append(list[1]);
@@ -278,6 +300,7 @@ QList<QString> ioMapData::getStartFinishLine(QString country, QString trackName)
         inputFile.close();
         return floatList;
     }
+    return floatList;
 }
 
 QList<QString> ioMapData::getSecondFinishLine(QString country, QString trackName)
@@ -306,8 +329,16 @@ QList<QString> ioMapData::getSecondFinishLine(QString country, QString trackName
             if(line.contains("STARTFINISH2", Qt::CaseInsensitive))
             {
                 spl = line.split(QRegExp ("[:]"));
+                if (spl.size() < 2)
+                {
+                    continue;
+                }
                 spl.removeFirst();
                 list = spl[0].split(QRegExp ("[,]"));
+                if (list.size() < 4)
+                {
+                    continue;
+                }
 
                 floatList.append(list[0]);
                 floatList.append(list[1]);
@@ -320,6 +351,7 @@ QList<QString> ioMapData::getSecondFinishLine(QString country, QString trackName
         inputFile.close();
         return floatList;
     }
+    return floatList;
 }
 
 qreal ioMapData::getZOOMLEVEL(QString country, QString trackName)
@@ -346,15 +378,25 @@ qreal ioMapData::getZOOMLEVEL(QString country, QString trackName)
             //qDebug() << line ;
             if(line.contains("ZOOMLEVEL", Qt::CaseInsensitive))
             {
-                spl = line.split(QRegExp ("[:]"));
-                spl.removeFirst();
+                QList<QString> zoomSpl = line.split(QRegExp ("[:]"));
+                if (zoomSpl.size() < 2)
+                {
+                    continue;
+                }
+                zoomSpl.removeFirst();
+                spl = zoomSpl;
 
             }
 
         }
         inputFile.close();
+        if (spl.isEmpty())
+        {
+            return 0;
+        }
         return spl[0].toFloat();
     }
+    return 0;
 }
 
 
@@ -389,6 +431,7 @@ bool ioMapData::getExistsSecondFinish(QString country, QString trackName)
         inputFile.close();
         return false;
     }
+    return false;
 }
 
 bool ioMapData::getTrackExists(QString country, QString trackName)

@@ -63,12 +63,14 @@ static QString mapFD3S[] ={"InjDuty", "IGL","IGT","Rpm","Speed","Boost","Knock",
 Apexi::Apexi(QObject *parent)
     : QObject(parent)
     , m_dashboard(Q_NULLPTR)
+    , m_serialport(Q_NULLPTR)
 {
 }
 
 Apexi::Apexi(DashBoard *dashboard, QObject *parent)
     : QObject(parent)
     , m_dashboard(dashboard)
+    , m_serialport(Q_NULLPTR)
 {
 }
 
@@ -79,12 +81,10 @@ void Apexi::SetProtocol(const int &protocolselect)
 
 void Apexi::initSerialPort()
 {
-  /*
     if (m_serialport)
     {
         delete m_serialport;
     }
-  */
     m_serialport = new SerialPort(this);
     connect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
     connect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
@@ -131,6 +131,10 @@ void Apexi::openConnection(const QString &portName)
 }
 void Apexi::closeConnection()
 {
+    if (!m_serialport)
+    {
+        return;
+    }
     disconnect(this->m_serialport,SIGNAL(readyRead()),this,SLOT(readyToRead()));
     disconnect(m_serialport, static_cast<void (QSerialPort::*)(QSerialPort::SerialPortError)>(&QSerialPort::error),
                this, &Apexi::handleError);

@@ -88,6 +88,8 @@ void AdaptronicSelect::AdaptronicStartStream()
 {
     auto *reply = modbusDevice->sendReadRequest(QModbusDataUnit(QModbusDataUnit::HoldingRegisters, 4096, 21),1); // read first twenty-one realtime values
     qDebug()<< "send :" <<((QModbusDataUnit::HoldingRegisters, 4096, 21),1);
+    if (!reply)
+        return;
     if (!reply->isFinished())
         connect(reply, &QModbusReply::finished, this,&AdaptronicSelect::readyToRead);
     else
@@ -114,7 +116,7 @@ void AdaptronicSelect::readyToRead()
 void AdaptronicSelect::decodeAdaptronic(QModbusDataUnit unit)
 {
 
-    qreal realBoost;
+    qreal realBoost = 0;
     int Boostconv;
 
     //qDebug()<<"Watertemp: " <<unit.value(3);

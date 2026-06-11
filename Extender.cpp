@@ -15,7 +15,7 @@
 #include "math.h"
 
 
-QVector<int>averagehz1(0);
+QVector<int>averagehz1(10, 0);
 qreal avghz1;
 qreal test1;
 quint32 canstartadress;
@@ -132,7 +132,7 @@ void Extender::readyToRead()
 // This section decodes the recevied Payload according to the frame ID
 
 
-       QByteArray splitpayload = frame.payload();
+       QByteArray splitpayload = frame.payload().leftJustified(8, '\0', true);
         payload* info=reinterpret_cast<payload*>(splitpayload.data());
         pkgpayload[0] = qFromLittleEndian(info->CH1);
         pkgpayload[1] = qFromLittleEndian(info->CH2);
