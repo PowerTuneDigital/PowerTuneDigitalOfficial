@@ -34,6 +34,10 @@ QList<QString> parsegithubData::readTrackData()
             QString line = in.readLine();
             //qDebug() << line;
             QList<QString> splitList = line.split(":");
+            if (splitList.size() < 2)
+            {
+                continue;
+            }
             tempPair.first = splitList[0];
             tempPair.second = splitList[1];
             returnData.append(tempPair);

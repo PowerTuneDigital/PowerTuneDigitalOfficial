@@ -22,6 +22,12 @@ udpreceiver::udpreceiver(DashBoard *dashboard, QObject *parent)
 
 void udpreceiver::startreceiver()
 {
+    if (udpSocket)
+    {
+        udpSocket->close();
+        delete udpSocket;
+        udpSocket = nullptr;
+    }
     udpSocket = new QUdpSocket(this);
     udpSocket->bind(45454, QUdpSocket::ShareAddress);
     connect(udpSocket, SIGNAL(readyRead()),
@@ -31,18 +37,19 @@ void udpreceiver::startreceiver()
 
 void udpreceiver::closeConnection()
 {
-    //qDebug()<< udpSocket->state();
-/*
-    if (udpSocket->isOpen())
+    if (udpSocket)
     {
-        qDebug()<< "UDP is open";
-        //udpSocket->close();
-        //delete udpSocket;
+        udpSocket->close();
+        delete udpSocket;
+        udpSocket = nullptr;
     }
-*/
 }
 void udpreceiver::processPendingDatagrams()
 {
+    if (!udpSocket)
+    {
+        return;
+    }
 
     QByteArray datagram;
 
