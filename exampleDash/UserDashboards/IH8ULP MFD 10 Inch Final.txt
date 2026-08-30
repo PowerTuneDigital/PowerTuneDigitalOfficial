@@ -1,0 +1,29 @@
+State gauge,1182,340,400,Gear,0,file:///home/pi/Logo/MFD Gear N.png,file:///home/pi/Logo/MFD Gear N.png
+State gauge,1182,340,400,Gear,1,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 1.png
+State gauge,1182,340,400,Gear,2,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 2.png
+State gauge,1182,340,400,Gear,3,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 3.png
+State gauge,1182,340,400,Gear,4,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 4.png
+State gauge,1182,340,400,Gear,5,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 5.png
+State gauge,1182,340,400,Gear,6,file:///home/pi/Logo/None,file:///home/pi/Logo/MFD Gear 6.png
+Square gauge,266,119,626,605,248,0, ,speed,false,false,false,Dashboard,speed,speed,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,90,0,Lato,Nissan,
+Square gauge,266,119,627,527,248,0, ,RPM,false,false,false,Dashboard,rpm,rpm,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,90,0,Lato,Nissan,
+State gauge,558,331,225,EXDigitalInput3,1,file:///home/pi/Logo/Indicator_left_off.png,file:///home/pi/Logo/Indicator_left.png
+State gauge,441,390,110,speed,1,file:///home/pi/Logo/low beam off.png,file:///home/pi/Logo/low beam.png
+State gauge,291,375,140,EXDigitalInput6,1,file:///home/pi/Logo/handbrake_off.png,file:///home/pi/Logo/handbrake.png
+State gauge,174,383,115,EXDigitalInput5,1,file:///home/pi/Logo/checkengine_off.png,file:///home/pi/Logo/checkengine.png
+State gauge,8,366,170,EXDigitalInput7,1,file:///home/pi/Logo/OilLight_off.png,file:///home/pi/Logo/OilLight.png
+State gauge,744,331,225,EXDigitalInput2,1,file:///home/pi/Logo/Indicator_right_off.png,file:///home/pi/Logo/Indicator_right.png
+State gauge,1010,387,110,EXDigitalInput6,1,file:///home/pi/Logo/High Beam off.png,file:///home/pi/Logo/High Beam.png
+Square gauge,967,200,342,166,100,2, ,FuelLevel,false,true,false,Dashboard,FuelLevel,FuelLevel,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,964,200,343,108,120,2, ,oiltemp,false,true,false,Dashboard,oiltemp,oiltemp,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,964,200,343,50,130,2, ,Watertemp,false,true,false,Dashboard,Watertemp,Watertemp,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,940,200,355,-9,15,2, ,MAP,false,true,false,Dashboard,MAP,MAP,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,940,200,357,-72,80,2, ,FuelPress,false,true,false,Dashboard,FuelPress,FuelPress,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,964,200,345,-128,120,2, ,oilpres,false,true,false,Dashboard,oilpres,oilpres,10000,-20000,transparent,transparent,transparent,transparent,transparent,lawngreen,25,40,0,Lato,Lato,
+Square gauge,266,119,1241,277,248,0, ,FuelLevel,false,false,false,Dashboard,FuelLevel,FuelLevel,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+Square gauge,266,119,1241,218,248,0, ,oiltemp,false,false,false,Dashboard,oiltemp,oiltemp,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+Square gauge,266,119,1241,159,248,0, ,Watertemp,false,false,false,Dashboard,Watertemp,Watertemp,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+Square gauge,266,119,1241,101,248,0, ,MAP,false,false,false,Dashboard,MAP,MAP,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+Square gauge,266,119,1241,42,248,0, ,FuelPress,false,false,false,Dashboard,FuelPress,FuelPress,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+Square gauge,266,119,1241,-17,248,0, ,oilpres,false,false,false,Dashboard,oilpres,oilpres,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,blue,25,50,0,Lato,Nissan,
+

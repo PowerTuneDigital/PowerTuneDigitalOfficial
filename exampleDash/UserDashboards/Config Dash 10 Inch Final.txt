@@ -1,0 +1,21 @@
+Round gauge,725,438,-6,rpm,9000,0,9000,-1000,-180,90,8000,1000,1000,1,1000,0,-47,22,3,-1,8,3,10,4,0.5,0.4,0.33,0.25,23,1,53,6,1,51,red,darkred,transparent,transparent,grey,darkgrey,ghostwhite,gainsboro,black,floralwhite,darkblue,darkslateblue,cornflowerblue,transparent,true,false,false,Eurostile,30,50,10,false,Eurostile, ,red, ,, ,, ,,
+State gauge,1442,20,160,EXDigitalInput3,1,file:///home/pi/Logo/Indicator_right_off.png,file:///home/pi/Logo/Indicator_right.png
+State gauge,1476,219,100,EXDigitalInput5,1,file:///home/pi/Logo/High Beam off.png,file:///home/pi/Logo/High Beam.png
+State gauge,1469,400,110,EXDigitalInput1,1,file:///home/pi/Logo/TCS_off.png,file:///home/pi/Logo/TCS.png
+State gauge,1445,550,160,EXDigitalInput8,1,file:///home/pi/Logo/OilLight_off.png,file:///home/pi/Logo/OilLight.png
+State gauge,28,225,100,EXDigitalInput4,1,file:///home/pi/Logo/low beam off.png,file:///home/pi/Logo/low beam.png
+State gauge,7,378,140,EXDigitalInput6,1,file:///home/pi/Logo/handbrake_off.png,file:///home/pi/Logo/handbrake.png
+State gauge,18,576,110,EXDigitalInput7,1,file:///home/pi/Logo/checkengine_off.png,file:///home/pi/Logo/checkengine.png
+State gauge,2,20,160,EXDigitalInput2,1,file:///home/pi/Logo/Indicator_left_off.png,file:///home/pi/Logo/Indicator_left.png
+Text label gauge,773,306,0,DejaVu Sans Mono,30,gold,speed,true,0,20000,-20000,
+Square gauge,266,80,822,424,248,1, ,Trip,false,false,false,Dashboard,Trip,Trip,10000,-20000,transparent,transparent,transparent,snow,gold,blue,30,30,0, , ,
+Square gauge,120,80,869,513,248,0, ,Odo,false,false,false,Dashboard,Odo,Odo,10000,-20000,transparent,transparent,transparent,snow,gold,blue,30,30,0, , ,
+Square gauge,250,150,1170,23,248,0, ,ECT,false,true,false,Dashboard,Watertemp,Watertemp,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,1170,199,248,0, ,Oil Temp.,false,true,false,Dashboard,oiltemp,oiltemp,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,1170,379,248,1, ,Oil Pres,false,true,false,Dashboard,oilpres,oilpres,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,1170,555,248,3, , LAMDA,false,true,false,Dashboard,LAMBDA,LAMBDA,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,175,23,248,0, ,MAP,false,true,false,Dashboard,MAP,MAP,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,175,199,248,0, ,IAT,false,true,false,Dashboard,Intaketemp,Intaketemp,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,175,379,248,1, ,BATTERY,false,true,false,Dashboard,BatteryV,BatteryV,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+Square gauge,250,150,175,555,248,0,%,TPS,false,true,false,Dashboard,TPS,TPS,10000,-20000,transparent,transparent,transparent,snow,gold,blue,40,60,0, , ,
+

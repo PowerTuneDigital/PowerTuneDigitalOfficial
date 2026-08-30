@@ -1,0 +1,40 @@
+Round gauge,700,448,9,rpm,9000,0,9000,-1000,-180,92,9000,1,-1,-1,0,0,2,38,0,-1,-1,-1,-1,-1,0.5,0.4,0.33,0.25,0,3,92,4,0,0,red,darkred,transparent,transparent,grey,transparent,transparent,transparent,grey,transparent,crimson,transparent,transparent,transparent,true,false,false,Lato,30,50,10,false,Lato,Alternator Light,transparent, ,, ,, ,,
+State gauge,-202,-253,615,EXDigitalInput2,1,file:///home/pi/Logo/None,file:///home/pi/Logo/left-indicator-gif.gif
+State gauge,1385,-209,615,EXDigitalInput8,1,file:///home/pi/Logo/None,file:///home/pi/Logo/right-indicator-gif.gif
+State gauge,1066,-1,100,file:///home/pi/Logo/High Beam off.png,0, ,
+State gauge,439,0,100,file:///home/pi/Logo/low beam off.png,0, ,
+State gauge,1051,-17,129,highbeam,1,file:///home/pi/Logo/None,file:///home/pi/Logo/High Beam.png
+State gauge,437,-2,105,lowBeam,1,file:///home/pi/Logo/None,file:///home/pi/Logo/low beam.png
+State gauge,1217,-18,140,EXDigitalInput6,1,file:///home/pi/Logo/handbrake_off.png,file:///home/pi/Logo/handbrake.png
+State gauge,247,-10,120,EXDigitalInput7,1,file:///home/pi/Logo/checkengine_off.png,file:///home/pi/Logo/checkengine.png
+State gauge,10,-53,220,EXDigitalInput2,1,file:///home/pi/Logo/Indicator_left_off.png,file:///home/pi/Logo/Indicator_left.png
+State gauge,1372,-55,220,EXDigitalInput3,1,file:///home/pi/Logo/Indicator_right_off.png,file:///home/pi/Logo/Indicator_right.png
+State gauge,435,2,100,EXDigitalInput4,1,file:///home/pi/Logo/low beam off.png,file:///home/pi/Logo/low beam.png
+Text label gauge,991,417,0,Nissan,22,black,speed,true,0,20000,-20000,
+Text label gauge,842,325,0,Nissan,22,seashell,rpm,true,0,20000,-20000,
+Text label gauge,8,136,Fuel pres.,Nissan,22,seashell, ,true,0,20000,-20000,
+Text label gauge,417,136,0,Nissan,22,seashell,FuelPress,true,0,20000,-20000,
+Text label gauge,1153,136,0,Nissan,22,seashell,fuelcomposition,true,0,20000,-20000,
+Text label gauge,1426,133,Ethanol,Nissan,22,seashell, ,true,0,20000,-20000,
+Text label gauge,8,234,IAT,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,383,234,0,Nissan,22,seashell,Intaketemp,true,0,20000,-20000,
+Text label gauge,1184,234,0,Nissan,22,seashell,Watertemp,true,0,20000,-20000,
+Text label gauge,1426,235,WATER,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,8,337,BOOST,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,372,337,0,Nissan,22,seashell,MAP,true,0,20000,-20000,
+Text label gauge,1197,337,0,Nissan,22,seashell,oiltemp,true,0,20000,-20000,
+Text label gauge,1478,337,OIL T,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,8,433,BATTERY,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,359,433,0.0,Nissan,22,seashell,BatteryV,true,1,20000,-20000,
+Text label gauge,1158,433,0.0,Nissan,22,seashell,oilpres,true,1,20000,-20000,
+Text label gauge,1479,433,OIL P,Nissan,22,gold, ,true,0,20000,-20000,
+Text label gauge,8,546,Lambda,Nissan,22,seashell, ,true,0,20000,-20000,
+Text label gauge,339,546,0.000,Nissan,22,seashell,LAMBDA,true,3,20000,-20000,
+Text label gauge,1135,546,0,Nissan,22,seashell,TPS,true,0,20000,-20000,
+Text label gauge,1496,546,TPS,Nissan,22,seashell, ,true,0,20000,-20000,
+Text label gauge,5,650,Trip Meter,Nissan,22,seashell, ,true,0,20000,-20000,
+Text label gauge,486,650,0.0,Nissan,22,seashell,Trip,true,1,20000,-20000,
+Text label gauge,1029,650,588.14,Nissan,22,seashell,Odo,true,2,20000,-20000,
+Text label gauge,1492,650,ODO,Nissan,22,seashell, ,true,0,20000,-20000,
+State gauge,1075,1,100,EXDigitalInput5,1,file:///home/pi/Logo/High Beam off.png,file:///home/pi/Logo/High Beam.png
+

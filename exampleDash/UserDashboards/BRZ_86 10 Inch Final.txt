@@ -1,0 +1,19 @@
+State gauge,1450,-44,150,rightindicator,1,file:///home/pi/Logo/Indicator_right_off.png,file:///home/pi/Logo/Indicator_right.png
+State gauge,-2,-47,150,leftindicator,1,file:///home/pi/Logo/Indicator_left_off.png,file:///home/pi/Logo/Indicator_left.png
+State gauge,3,167,109,tractionControl,1,file:///home/pi/Logo/TCS_off.png,file:///home/pi/Logo/TCS.png
+State gauge,14,57,100,highbeam,1,file:///home/pi/Logo/High Beam off.png,file:///home/pi/Logo/High Beam.png
+State gauge,111,42,130,handbrake,1,file:///home/pi/Logo/handbrake_off.png,file:///home/pi/Logo/handbrake.png
+State gauge,48,212,100,speed,1,file:///home/pi/Logo/None,file:///home/pi/Logo/ledgreen.png
+Square gauge,272,203,531,312,100,0, ,Brake Pres.,false,true,false,Dashboard,brakepress,brakepress,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,265,312,120,0, ,ECT,false,true,false,Dashboard,Watertemp,Watertemp,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,1069,514,18,1, ,Batt. Volt.,false,true,false,Dashboard,BatteryV,BatteryV,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,803,312,120,0, ,Oil Temp.,false,true,false,Dashboard,oiltemp,oiltemp,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,-1,514,100,0, ,Accel Pos.,false,true,false,Dashboard,accelpedpos,accelpedpos,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,1069,312,100,0, ,Fuel,false,true,false,Dashboard,FuelLevel,FuelLevel,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,803,514,60,0, ,Steer. w.,false,false,false,Dashboard,SteeringWheelAngle,SteeringWheelAngle,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,-1,312,1,0, ,Clutch Sw,false,true,false,Dashboard,clutchswitchstate,clutchswitchstate,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,1334,514,25,2, ,Boost,false,true,false,Dashboard,BoostPres,BoostPres,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,1334,312,70,0, ,IAT,false,true,false,Dashboard,Intaketemp,Intaketemp,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,272,203,531,514,100,0, ,Ign. Timing,false,true,false,Dashboard,Ign,SteeringWheelAngle,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+Square gauge,266,203,265,514,100,0, ,TPS,false,true,false,Dashboard,TPS,TPS,10000,-20000,crimson,transparent,crimson,white,white,crimson,40,70,0,Lato,Lato,
+

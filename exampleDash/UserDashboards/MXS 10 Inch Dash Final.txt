@@ -1,0 +1,45 @@
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,0,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,5500,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 1.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,6000,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 2.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,6300,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 3.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,6500,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 4.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,6800,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 5.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,7000,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 6.png
+State gauge,19.999999999999545,-100.93312179643618,1559,rpm,7300,file:///home/pi/Logo/None,file:///home/pi/Logo/Link shift 7.png
+State GIF,19.999999999999545,-100.93312179643618,1559,rpm,7500,file:///home/pi/Logo/Link-shift-limiter.gif,file:///home/pi/Logo/Link-shift-limiter.gif,0
+
+State gauge,581.5335611422992,26.239443495240437,450,Gear,0,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear N.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,1,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 1.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,2,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 2.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,3,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 3.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,4,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 4.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,5,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 5.png
+State gauge,581.5335611422992,26.239443495240437,450,Gear,6,file:///home/pi/Logo/None,file:///home/pi/Logo/Link gear 6.png
+
+Text label gauge,236,118,PSI,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,555,116,C,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,268,287,C,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,546,288,V,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,256,440,%,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,554,443,C,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,1152,117,inHG/PSI,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,1260,285,C,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,1555,283,%,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,1235,442,PSI,Nissan,10,royalblue, ,true,0,20000,-20000,
+Text label gauge,1552,440,%,Nissan,10,royalblue, ,true,0,20000,-20000,
+Square gauge,266,119,1322,482,248,0, ,GPS Speed,false,false,false,Dashboard,gpsSpeed,gpsSpeed,10000,-20000,transparent,transparent,transparent,transparent,antiquewhite,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,-13,488,248,0, ,Odometer,false,false,false,Dashboard,Odo,Odo,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,40,0,Lato,Nissan,
+Square gauge,266,119,676,469,248,0, ,RPM,false,false,false,Dashboard,rpm,rpm,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,100,0,Lato,Nissan,
+Square gauge,266,119,310,-3,248,0, ,EX Analog Calc 3,false,false,false,Dashboard,oiltemp,EXAnalogCalc3,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,15,330,248,0, ,EX Analog Calc 0,false,false,false,Dashboard,fuelcomposition,EXAnalogCalc0,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,310,330,248,0, ,EX Analog Calc 4,false,false,false,Dashboard,transoiltemp,EXAnalogCalc4,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,310,170,248,1, ,Battery Voltage,false,false,false,Dashboard,BatteryV,BatteryV,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,15,-3,248,0, ,Ethanol,false,false,false,Dashboard,oilpres,fuelcomposition,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,15,170,248,0, ,Transmission Oil T.,false,false,false,Dashboard,Watertemp,transoiltemp,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1014,-3,248,0, ,EX Analog Calc 2,false,false,false,Dashboard,BoostPres,EXAnalogCalc2,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1327,-3,248,1, ,AFR,false,false,false,Dashboard,AFR,AFR,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1014.2067366365632,159.41371735416158,248,0, ,IAT,false,false,false,Dashboard,Intaketemp,Intaketemp,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1327,161,248,0, ,Throttle Position,false,false,false,Dashboard,TPS,TPS,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1014,322,248,0, ,EX Analog Calc 5,false,false,false,Dashboard,FuelPress,EXAnalogCalc5,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+Square gauge,266,119,1327,322,248,0, ,EX Analog Calc 7,false,false,false,Dashboard,EXAnalogCalc7,EXAnalogCalc7,10000,-20000,transparent,transparent,transparent,transparent,white,transparent,25,60,0,Lato,Nissan,
+
