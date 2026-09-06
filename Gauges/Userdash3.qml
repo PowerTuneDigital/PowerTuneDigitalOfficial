@@ -20,6 +20,10 @@ import "qrc:/Translator.js" as Translator
 Item {
     id: mainwindow
     anchors.fill: parent
+    // Set by main.qml (see bindEditLock) from the drawer's "Lock Dash Edit"
+    // toggle - while true, double-tapping this page won't open the gauge
+    // editing menu.
+    property bool editLocked: false
     property string datastore3: ""
     property string saveDashtofilestring : ""
     property string gaugeType : ""
@@ -232,6 +236,7 @@ Item {
         anchors.fill: parent
         onPressed:
         {
+            if (editLocked) return;
             touchCounter++;
             if (touchCounter == 1) {
                 lastTouchTime = Date.now();

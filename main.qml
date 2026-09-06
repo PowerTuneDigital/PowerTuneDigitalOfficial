@@ -56,7 +56,21 @@ ApplicationWindow {
     Settings{
         id: appSettings
         property alias sampleActionEnabled: popUpLoader.enabled
+        // "Lock Dash Edit" drawer toggle - see bindEditLock below. Persisted
+        // so the lock survives a restart instead of silently resetting.
+        property bool dashEditLocked: false
 
+    }
+
+    // Only Userdash1/2/3.qml declare editLocked (the double-tap-to-edit
+    // gesture guard) - harmless no-op on any other page (Cluster, GPS
+    // Laptimer, etc.) since those never declare the property this checks
+    // for. Called from each of the 4 SwipeView Loaders' onLoaded below,
+    // since any of them can end up holding a Userdash page depending on
+    // what the user picked in Settings/DashSelector.qml.
+    function bindEditLock(item) {
+        if (item && "editLocked" in item)
+            item.editLocked = Qt.binding(function() { return appSettings.dashEditLocked })
     }
 
     Component.onCompleted: {
@@ -145,6 +159,7 @@ ApplicationWindow {
             id: firstPageLoader
             //active: SwipeView.isCurrentItem || SwipeView.isPreviousItem || firstPageLoader.source == "qrc:/GPSTracks/Laptimer.qml"
             source: "qrc:/Intro.qml"
+            onLoaded: window.bindEditLock(item)
 
         }
 
@@ -152,18 +167,21 @@ ApplicationWindow {
             id: secondPageLoader
             active: Dashboard.Visibledashes > 1
             source: ""
+            onLoaded: window.bindEditLock(item)
 
         }
         Loader {
             id: thirdPageLoader
             active: Dashboard.Visibledashes > 2;
             source: ""
+            onLoaded: window.bindEditLock(item)
         }
-        
+
         Loader {
             id: fourthPageLoader
             active: Dashboard.Visibledashes > 3;
             source: ""
+            onLoaded: window.bindEditLock(item)
         }
 
         Item {
@@ -353,12 +371,39 @@ ApplicationWindow {
 
          Grid{
              id :row4
-             rows: 2
+             rows: 3
              columns: 1
              topPadding: window.width / 40
              spacing: window.width / 30
              anchors.top: drawerpopup.top
              anchors.right: parent.right
+             Row{
+                 Button {
+                     id: btnlockdashedit
+                     width: window.width === 800 ? window.width / 10 : window.width / 13
+                     height: window.width === 800 ? window.width / 10 : window.width / 13
+                     contentItem: Item {
+                         LockIcon {
+                             anchors.centerIn: parent
+                             width: btnlockdashedit.width * 0.5
+                             height: width
+                             locked: appSettings.dashEditLocked
+                         }
+                     }
+                     onClicked: {
+                         appSettings.dashEditLocked = !appSettings.dashEditLocked
+                     }
+                     background: Rectangle {
+                                 radius: width / 2
+                                 opacity: enabled ? 1 : 0.3
+                                 color: appSettings.dashEditLocked
+                                        ? (btnlockdashedit.down ? "darkgreen" : "green")
+                                        : (btnlockdashedit.down ? "darkgrey" : "grey")
+                                 border.color: btnlockdashedit.down ? "grey" : "darkgrey"
+                                 border.width: window.width / 200
+                             }
+                 }
+             }
              Row{
                  Button {
                      id: plusBrightness

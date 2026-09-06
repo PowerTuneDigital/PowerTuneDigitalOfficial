@@ -1,6 +1,7 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>LockIcon.qml</file>
         <file>SerialSettings.qml</file>
         <file>Settings/main.qml</file>
         <file>Settings/DashSelector.qml</file>
