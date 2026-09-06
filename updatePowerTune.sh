@@ -21,18 +21,25 @@ if [ -d /home/root ]; then
     		echo "Error: File $FILE not found."
 		fi
 		echo "Fix rng "
-                rm /etc/init.d/rng-tools
-		if [ -d /home/Recoverysrc ]; then
+                rm -f /etc/init.d/rng-tools
+		if [ -d /home/pi/Recoverysrc/.git ]; then
 	        cd /home/pi/Recoverysrc
 		git pull
                 ./updateRecovery.sh
                 else
+                # -d alone isn't enough: on-device this directory can already
+                # exist as a static (non-git) baseline shipped with the
+                # image, which makes `git clone` refuse to touch it ("destination
+                # path already exists and is not an empty directory"). Wipe
+                # whatever's there and clone fresh - that's what "update to
+                # the latest source" means anyway.
+                rm -rf /home/pi/Recoverysrc
                 mkdir /home/pi/Recoverysrc
                 git clone https://github.com/PowerTuneDigital/PowerTuneDigitalRecovery.git /home/pi/Recoverysrc
                 cd /home/pi/Recoverysrc
                 ./updateRecovery.sh
                 fi
-		if [ -d /home/pi/src ]; then
+		if [ -d /home/pi/src/.git ]; then
 		echo "Updating to latest source "
 		cd /home/pi/src
 		git reset --hard
@@ -42,9 +49,13 @@ if [ -d /home/root ]; then
 		./updateUserDashboards.sh
 		else
 		echo "Create source directory and clone PowerTune Repo"
+		# Same -d-isn't-enough issue as Recoverysrc above - this can exist
+		# as an empty placeholder directory without ever being a real git
+		# checkout, which silently broke every update on this path before.
+		rm -rf /home/pi/src
 		mkdir /home/pi/src
 		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src
-		cd src
+		cd /home/pi/src
 		./updatedaemons.sh
 		./updateUserDashboards.sh
 		fi
@@ -90,7 +101,7 @@ if [ -d /home/root ]; then
 else
 if nc -zw5 www.github.com 443; then
 # Get the latest source
-		if [ -d /home/pi/src ]; then
+		if [ -d /home/pi/src/.git ]; then
 		echo "Updating to latest source "
 		cd /home/pi/src
 		git reset --hard
@@ -101,9 +112,11 @@ if nc -zw5 www.github.com 443; then
 		./updateUserDashboards.sh
 		else
 		echo "Create source directory and clone PowerTune Repo"
+		# Same -d-isn't-enough issue as the Yocto branch above - see there.
+		rm -rf /home/pi/src
 		mkdir /home/pi/src
-		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src  
-		cd src
+		git clone https://github.com/PowerTuneDigital/PowerTuneDigitalOfficial.git /home/pi/src
+		cd /home/pi/src
 		./fixcan.sh
 		./updatedaemons.sh
 		./updateUserDashboards.sh
@@ -116,7 +129,7 @@ if nc -zw5 www.github.com 443; then
 		mkdir /home/pi/Logo
 		fi
 # Check if the maptiles folder exists
-		if [ -d /home/pi/maptiles];then
+		if [ -d /home/pi/maptiles ];then
 		sudo rm -r  /home/pi/maptiles/
                 fi
 # Check if there is a build folder
