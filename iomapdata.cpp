@@ -1,4 +1,5 @@
 #include "iomapdata.h"
+#include "ptpaths.h"
 #include <QtGlobal>
 
 
@@ -10,7 +11,7 @@ QObject(parent)
 QGeoPath ioMapData::loadMapData(QString country, QString trackName) {
     // Automatically determine the platform Windows or Linux to change the paths
     //    #ifdef __linux__
-            QString path("/home/pi/KTracks/"+ country + "/" + trackName);  // Opens the embeded KML file/txt
+            QString path(ptBasePath() + "/KTracks/"+ country + "/" + trackName);  // Opens the embeded KML file/txt
     //    #elif _WIN32
     //        QString path (":/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
     //    #else
@@ -100,7 +101,7 @@ QList<QString> ioMapData::getCountries()
     QList<QString> list;
     //Automatically determine the platform Windows or Linux to change the paths
     //   #ifdef __linux__
-            QString path ("/home/pi/KTracks/");
+            QString path (ptBasePath() + "/KTracks/");
     //    #elif _WIN32
     //        QString path (":/KTracks/");
     //    #else
@@ -137,7 +138,7 @@ QList<QString> ioMapData::getTracks(QString country)
 {
     //Automatically determine the platform Windows or Linux to change the paths
        // #ifdef __linux__
-            QDir directory("/home/pi/KTracks/"+country+"/");
+            QDir directory(ptBasePath() + "/KTracks/"+country+"/");
         //#elif _WIN32
         //    QDir directory(":/KTracks/"+country+"/");
         //#else
@@ -156,7 +157,7 @@ QList<QString> ioMapData::getTracks(QString country)
 int ioMapData::getTrackCount(QString country)
 {
     //#ifdef __linux__
-        QDir directory("/home/pi/KTracks/"+country+"/");
+        QDir directory(ptBasePath() + "/KTracks/"+country+"/");
     //#elif _WIN32
       //  QDir directory(":/KTracks/"+country+"/");
     //#else
@@ -172,7 +173,7 @@ int ioMapData::getCountryCount()
 QList<QString> list;
 //Automatically determine the platform Windows or Linux to change the paths
    // #ifdef __linux__
-        QString path ("/home/pi/KTracks/");
+        QString path (ptBasePath() + "/KTracks/");
    // #elif _WIN32
    //     QString path (":/KTracks/");
    // #else
@@ -205,7 +206,7 @@ QList<QString> ioMapData::getCenter(QString country, QString trackName)
     QList<QString> spl;
     //Automatically determine the platform Windows or Linux to change the paths
        // #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
+            QString path (ptBasePath() + "/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
        // #elif _WIN32
        //     QString path (":/KTracks/"+ country + "/" + trackName); // Opens the embeded KML file/txt
        // #else
@@ -259,7 +260,7 @@ QList<QString> ioMapData::getStartFinishLine(QString country, QString trackName)
     QList<QString> floatList;
     //Automatically determine the platform Windows or Linux to change the paths
      //   #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
+            QString path (ptBasePath() + "/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
      //    #elif _WIN32
      //        QString path (":/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
      //    #else
@@ -310,7 +311,7 @@ QList<QString> ioMapData::getSecondFinishLine(QString country, QString trackName
     QList<QString> floatList;
     //Automatically determine the platform Windows or Linux to change the paths
     //     #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
+            QString path (ptBasePath() + "/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
    //      #elif _WIN32
    //          QString path (":/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
    //      #else
@@ -360,7 +361,7 @@ qreal ioMapData::getZOOMLEVEL(QString country, QString trackName)
     QList<QString> spl;
     //Automatically determine the platform Windows or Linux to change the paths
      //    #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
+            QString path (ptBasePath() + "/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
      //    #elif _WIN32
      //        QString path (":/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
      //    #else
@@ -406,7 +407,7 @@ bool ioMapData::getExistsSecondFinish(QString country, QString trackName)
     QList<QString> spl;
     //Automatically determine the platform Windows or Linux to change the paths
       //   #ifdef __linux__
-            QString path ("/home/pi/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
+            QString path (ptBasePath() + "/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
      //    #elif _WIN32
     //         QString path (":/KTracks/"+country+"/"+trackName); // Opens the embeded KML file/txt
     //     #else
@@ -438,7 +439,7 @@ bool ioMapData::getTrackExists(QString country, QString trackName)
 {
     //Automatically determine the platform Windows or Linux to change the paths
      //    #ifdef __linux__
-            QDir directory("/home/pi/KTracks/"+country+"/");
+            QDir directory(ptBasePath() + "/KTracks/"+country+"/");
      //    #elif _WIN32
      //        QDir directory(":/KTracks/"+country+"/");
     //     #else

@@ -1,4 +1,5 @@
 #include "Apexi.h"
+#include "ptpaths.h"
 #include "dashboard.h"
 #include "connect.h"
 #include <QTime>
@@ -882,7 +883,7 @@ void Apexi::writeDashfile(const QString &gauge1,const QString &gauge2,const QStr
         stream << gauge6 << endl;
     }
 
-    QString filename2="/home/pi/UserDashboards/UserDashApexi.txt";
+    QString filename2=ptBasePath() + "/UserDashboards/UserDashApexi.txt";
     QFile file2( filename2 );
     if ( file2.open(QIODevice::ReadWrite  | QIODevice::Truncate | QIODevice::Text) )
 

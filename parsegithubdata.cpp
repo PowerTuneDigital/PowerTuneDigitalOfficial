@@ -1,4 +1,5 @@
 #include "parsegithubdata.h"
+#include "ptpaths.h"
 #include <QtNetwork>
 
 parsegithubData::parsegithubData()
@@ -68,7 +69,7 @@ void parsegithubData::sortDownloadedFiles()
 
     #ifdef __linux__
         p2String = ("/opt/PowerTune/");
-        destinationString = ("/home/pi/KTracks/");
+        destinationString = (ptBasePath() + "/KTracks/");
     #elif _WIN32
         p2String = pathString.remove("repo.txt");
         destinationString = pathString.remove("repo.txt");

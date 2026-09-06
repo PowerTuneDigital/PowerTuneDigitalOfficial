@@ -131,7 +131,7 @@ Item {
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
-                    picturesource = "file:///home/pi/Logo/" + pictureSelector.textAt(pictureSelector.currentIndex);
+                    picturesource = PTBaseUrl + "/Logo/" + pictureSelector.textAt(pictureSelector.currentIndex);
                     //picturesource = "file:" + pictureSelector.textAt(pictureSelector.currentIndex); // windows
                     mypicture.source = picturesource;
                                        }

@@ -4,6 +4,7 @@
 #include <QTimer>
 
 #include "gps.h"
+#include "ptpaths.h"
 #include "dashboard.h"
 #include "connect.h"
 
@@ -277,7 +278,7 @@ void GPS::ProcessMessage(QByteArray messageline)
 
 void GPS::logNMEA(const QString & line){
     // Check if a log file for today already exists
-    QString logfile = QString("%1/%2.nmea").arg("/home/pi").arg(QDate::currentDate().toString("yyyyMMdd"));
+    QString logfile = QString("%1/%2.nmea").arg(ptBasePath()).arg(QDate::currentDate().toString("yyyyMMdd"));
     QFile file(logfile);
     if (!file.open(QIODevice::Append)) {
         // qDebug() << "Could not open log file" << logfile;

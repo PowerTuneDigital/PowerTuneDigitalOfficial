@@ -200,7 +200,7 @@ Item {
     function updatppiclist()
     {
                     for(var i = 0; i < backroundSelector.count; ++i)
-//                    if (backroundpicture2.source == "file:///home/pi/Logo/" + backroundSelector.textAt(i))
+//                    if (backroundpicture2.source == PTBaseUrl + "/Logo/" + backroundSelector.textAt(i))
                         if (backroundpicture2.source == "file:"  + backroundSelector.textAt(i))
 
 
@@ -331,7 +331,7 @@ Item {
                 currentIndex: 0
                 onCurrentIndexChanged: {
 
-                    backroundpicturesource2 = "file:///home/pi/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
+                    backroundpicturesource2 = PTBaseUrl + "/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
                     //backroundpicturesource2 = "file:///c:/Logo/" + backroundSelector.textAt(backroundSelector.currentIndex);
                     //backroundpicturesource2 = "file:" + backroundSelector.textAt(backroundSelector.currentIndex);
                     backroundpicture2.source = backroundpicturesource2;

@@ -7,6 +7,7 @@
 #include "Extender.h"
 #include "iomapdata.h"
 #include "downloadmanager.h"
+#include "ptpaths.h"
 #include <QDebug>
 #include <QDateTime>
 #include <cstdio>
@@ -29,6 +30,12 @@ int main(int argc, char *argv[])
     engine.rootContext()->setContextProperty("DLM", new DownloadManager(&engine));
     engine.rootContext()->setContextProperty("Connect", new Connect(&engine));
     engine.rootContext()->setContextProperty("Extender2",new Extender(&engine));
+
+    // Base directory for PowerTune data folders (Logo, UserDashboards, maptiles, ...).
+    // Linux -> /home/pi, Windows -> C:/PowerTune. See ptpaths.h.
+    // PTBasePath is a plain filesystem path; PTBaseUrl is the file:// URL form.
+    engine.rootContext()->setContextProperty("PTBasePath", ptBasePath());
+    engine.rootContext()->setContextProperty("PTBaseUrl", ptBaseUrl());
 
 #ifdef HAVE_DDCUTIL
     engine.rootContext()->setContextProperty("HAVE_DDCUTIL", true);

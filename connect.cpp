@@ -19,6 +19,7 @@
 
 #include "datalogger.h"
 #include "connect.h"
+#include "ptpaths.h"
 #include "calculations.h"
 #include "sensors.h"
 #include "AdaptronicSelect.h"
@@ -135,7 +136,7 @@ void Connect::saveDashtoFile(const QString &filename,const QString &dashstring)
     QString fixformat = dashstring;
     fixformat.replace(",,",", ,");
     QStringList fields = fixformat.split(QRegExp("[\r\n]"));
-    QFile file( "/home/pi/UserDashboards/"+filename + ".txt" );
+    QFile file( ptBasePath() + "/UserDashboards/"+filename + ".txt" );
     //QFile file(filename + ".txt" );
     file.remove(); //remove file if it exists to avoid appending of existing file
     if ( file.open(QIODevice::ReadWrite) )
@@ -193,7 +194,7 @@ void Connect::checkifraspberrypi()
 void Connect::readavailabledashfiles()
 {
     //QDir directory(""); //for Windows
-    QDir directory("/home/pi/UserDashboards");
+    QDir directory(ptBasePath() + "/UserDashboards");
     QStringList dashfiles = directory.entryList(QStringList() << "*.txt",QDir::Files);
     m_dashBoard->setdashfiles(dashfiles);
     //qDebug() <<"files" << dashfiles ;
@@ -202,7 +203,7 @@ void Connect::readavailabledashfiles()
 void Connect::readavailablebackrounds()
 {
     //QDir directory(""); //for Windows
-    QDir directory("/home/pi/Logo");
+    QDir directory(ptBasePath() + "/Logo");
     QStringList dashfiles = directory.entryList(QStringList() << "*.png" << "*.gif",QDir::Files);
     dashfiles.prepend("None");
     m_dashBoard->setbackroundpictures(dashfiles);
@@ -212,7 +213,7 @@ void Connect::readMaindashsetup()
 {
 
     //QString path = "MainDash.txt";//for Windows
-    QString path = "/home/pi/UserDashboards/MainDash.txt";
+    QString path = ptBasePath() + "/UserDashboards/MainDash.txt";
     QFile inputFile(path);
     if (inputFile.open(QIODevice::ReadOnly))
     {
@@ -231,7 +232,7 @@ void Connect::readdashsetup3()
 {
 
     //QString path = dashfilename1;//for Windows
-    QString path = "/home/pi/UserDashboards/"+dashfilename3;
+    QString path = ptBasePath() + "/UserDashboards/"+dashfilename3;
     QFile inputFile(path);
     //QStringList list;
     if (inputFile.open(QIODevice::ReadOnly))
@@ -261,7 +262,7 @@ void Connect::readdashsetup2()
 {
 
     //QString path = dashfilename1;//for Windows
-    QString path = "/home/pi/UserDashboards/"+dashfilename2;
+    QString path = ptBasePath() + "/UserDashboards/"+dashfilename2;
     QFile inputFile(path);
     //QStringList list;
     if (inputFile.open(QIODevice::ReadOnly))
@@ -291,7 +292,7 @@ void Connect::readdashsetup1()
 {
 
     //QString path = dashfilename1;//for Windows
-    QString path = "/home/pi/UserDashboards/"+dashfilename1;
+    QString path = ptBasePath() + "/UserDashboards/"+dashfilename1;
     QFile inputFile(path);
     //QStringList list;
     if (inputFile.open(QIODevice::ReadOnly))
@@ -427,7 +428,7 @@ void Connect::checkOBDReg()
     bool ok;
     QStringList list;
 
-    QString path = "/home/pi/daemons/OBDPIDS.txt";
+    QString path = ptBasePath() + "/daemons/OBDPIDS.txt";
     // QString path = "SupportedPIDS.txt";
     QFile inputFile(path);
     if (inputFile.open(QIODevice::ReadOnly))
@@ -456,7 +457,7 @@ void Connect::checkReg()
     bool ok;
     QStringList list;
     //QString path = "Regs.txt";
-    QString path = "/home/pi/daemons/Regs.txt";
+    QString path = ptBasePath() + "/daemons/Regs.txt";
     QFile inputFile(path);
     if (inputFile.open(QIODevice::ReadOnly))
     {
@@ -703,7 +704,7 @@ void Connect::LiveReqMsgOBD(const QString &obdpids)
     QString Message;
     QStringList list = obdpids.split( "," );
     //qDebug()<< "Raw list" <<list;
-    QString fileName = "/home/pi/daemons/OBD.cfg";//This will be the correct path on pi
+    QString fileName = ptBasePath() + "/daemons/OBD.cfg";//This will be the correct path on pi
     //QString fileName = "OBD.cfg";//for testing on windows
     QFile mFile(fileName);
     mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
@@ -925,7 +926,7 @@ void Connect::daemonstartup(const int &daemon)
 
 
 
-    QString fileName = "/home/pi/startdaemon.sh";//This will be the correct path on pi
+    QString fileName = ptBasePath() + "/startdaemon.sh";//This will be the correct path on pi
     //QString fileName = "startdaemon.sh";//for testing on windows
     QFile mFile(fileName);
 
@@ -948,7 +949,7 @@ void Connect::daemonstartup(const int &daemon)
             << endl
             << "sleep 1.5"
             << endl
-            << "cd /home/pi/daemons"
+            << ("cd " + ptBasePath() + "/daemons")
             << endl
             << daemonstart
             << endl;
@@ -965,7 +966,7 @@ void Connect::daemonstartup(const int &daemon)
             << endl
             << "sudo ifup can0"
             << endl
-            << "cd /home/pi/daemons"
+            << ("cd " + ptBasePath() + "/daemons")
             << endl
             << daemonstart
             << endl;
@@ -1181,7 +1182,7 @@ void Connect::LiveReqMsg(const int &val1, const int &val2, const int &val3, cons
     //qDebug()<< "write" <<Message;
 
 
-    QString fileName = "/home/pi/daemons/Consult.cfg";//This will be the correct path on pi
+    QString fileName = ptBasePath() + "/daemons/Consult.cfg";//This will be the correct path on pi
     //QString fileName = "Consult.cfg";//for testing on windows
     QFile mFile(fileName);
     mFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text);
@@ -1239,7 +1240,7 @@ void Connect::openConnection(const QString &portName, const int &ecuSelect,const
     {
         //HaltechV1
         QProcess *process = new QProcess(this);
-        process->start("/home/pi/Haltech/HaltechV1");
+        process->start(ptBasePath() + "/Haltech/HaltechV1");
         m_udpreceiver->startreceiver();
     }
     if (ecuSelect == 6)
@@ -1266,7 +1267,7 @@ void Connect::openConnection(const QString &portName, const int &ecuSelect,const
         //m_dashBoard->setFlagString19("NOS Stage 6");
 
         QProcess *process = new QProcess(this);
-        process->start("/home/pi/Haltech/HaltechV2");
+        process->start(ptBasePath() + "/Haltech/HaltechV2");
         m_udpreceiver->startreceiver();
     }
 
@@ -1335,7 +1336,7 @@ void Connect::update()
     {
         p->setEnvironment( QProcess::systemEnvironment() );
         p->setProcessChannelMode( QProcess::MergedChannels );
-        p->start("/home/pi/src/updatePowerTune.sh", QStringList() << "echo" << "hye" );
+        p->start(ptBasePath() + "/src/updatePowerTune.sh", QStringList() << "echo" << "hye" );
         p->waitForStarted();
 
         connect( p, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()) );
@@ -1348,7 +1349,7 @@ void Connect::changefolderpermission()
     QProcess *process = new QProcess(this);
     QString program = "sudo";
     QStringList arguments;
-    arguments << "chown" << "-R" << "pi:pi" << "/home/pi/KTracks";
+    arguments << "chown" << "-R" << "pi:pi" << ptBasePath() + "/KTracks";
 
     process->start(program, arguments);
     process->waitForFinished(600000); // 10 minutes time before timeout
@@ -1385,7 +1386,7 @@ void Connect::turnscreen()
     QProcess *process = new QProcess(this);
     QString program = "sudo";
     QStringList arguments;
-    arguments << "cp" << "/home/pi/src/config.txt" << "/boot/config.txt";
+    arguments << "cp" << ptBasePath() + "/src/config.txt" << "/boot/config.txt";
 
     process->start(program, arguments);
     process->waitForFinished(600000); // 10 minutes time before timeout
@@ -1400,7 +1401,7 @@ void Connect::candump()
     {
         p->setEnvironment( QProcess::systemEnvironment() );
         p->setProcessChannelMode( QProcess::MergedChannels );
-        p->start( "/home/pi/daemons/OBD /dev/ttyUSB0", QStringList() << "echo" << "hye" );
+        p->start( ptBasePath() + "/daemons/OBD /dev/ttyUSB0", QStringList() << "echo" << "hye" );
         p->waitForStarted();
 
         connect( p, SIGNAL(readyReadStandardOutput()), this, SLOT(processOutput()) );
@@ -1442,7 +1443,7 @@ void Connect::updatefinished(int exitCode, QProcess::ExitStatus exitStatus)
     Q_UNUSED(exitStatus)
     //qDebug() << "code" <<exitCode;
    // qDebug() << "status" <<exitStatus;
-    QString fileName = "/home/pi/build/PowertuneQMLGui";
+    QString fileName = ptBasePath() + "/build/PowertuneQMLGui";
     QFile file(fileName);
     if(QFileInfo::exists(fileName))
     {
@@ -1458,13 +1459,13 @@ void Connect::updatefinished(int exitCode, QProcess::ExitStatus exitStatus)
 void Connect::RequestLicence()
 {
     QProcess *process = new QProcess(this);
-    QString program = "/home/pi/licencerequest";
+    QString program = ptBasePath() + "/licencerequest";
     QStringList arguments; // No arguments needed for this command
 
     process->start(program, arguments);
     process->waitForFinished(600000); // 10 minutes time before timeout
 
-    QString path = "/home/pi/Licrequest.lic";
+    QString path = ptBasePath() + "/Licrequest.lic";
     QFile inputFile(path);
     if (inputFile.open(QIODevice::ReadOnly))
     {
@@ -1482,7 +1483,7 @@ void Connect::RequestLicence()
 void Connect::restartDaemon()
 {
     QProcess *process = new QProcess(this);
-    QString program = "/home/pi/startdaemon.sh";
+    QString program = ptBasePath() + "/startdaemon.sh";
     QStringList arguments; // Assuming no arguments are needed for this script
 
     process->start(program, arguments);

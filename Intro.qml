@@ -8,6 +8,6 @@ Rectangle {
         width: parent.width
         height: parent.height
         fillMode: Image.PreserveAspectFit
-        source: "file:///home/pi/Logo/Logo.png"
+        source: PTBaseUrl + "/Logo/Logo.png"
     }
 }

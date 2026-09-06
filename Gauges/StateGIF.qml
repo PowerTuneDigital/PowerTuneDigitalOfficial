@@ -174,7 +174,7 @@ Item {
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
-                    statepicturesourceoff = "file:///home/pi/Logo/" + pictureSelectoroff.textAt(pictureSelectoroff.currentIndex);
+                    statepicturesourceoff = PTBaseUrl + "/Logo/" + pictureSelectoroff.textAt(pictureSelectoroff.currentIndex);
                     //statepicturesourceoff = "file:" + pictureSelectoroff.textAt(pictureSelectoroff.currentIndex); // windows
                     statepictureoff.source = statepicturesourceoff;
                                        }
@@ -200,7 +200,7 @@ Item {
                 model: Dashboard.backroundpictures
                 currentIndex: 0
                 onCurrentIndexChanged: {
-                    statepicturesourceon = "file:///home/pi/Logo/" + pictureSelectoron.textAt(pictureSelectoron.currentIndex);
+                    statepicturesourceon = PTBaseUrl + "/Logo/" + pictureSelectoron.textAt(pictureSelectoron.currentIndex);
                     //statepicturesourceon = "file:" + pictureSelectoron.textAt(pictureSelectoron.currentIndex); // windows
                     statepictureon.source = statepicturesourceon;
                 }
@@ -359,14 +359,14 @@ function triggerofffColor()
     function updatppiclist()
     {
                     for(var i = 0; i < pictureSelectoron.count; ++i) //
-                    if (statepicturesourceon === "file:///home/pi/Logo/" + pictureSelectoron.textAt(i))
+                    if (statepicturesourceon === PTBaseUrl + "/Logo/" + pictureSelectoron.textAt(i))
                     pictureSelectoron.currentIndex = i
                     updatppiclistoff()
     }
     function updatppiclistoff()
     {
                     for(var i = 0; i < pictureSelectoroff.count; ++i) //
-                    if (statepicturesourceoff === "file:///home/pi/Logo/" + pictureSelectoroff.textAt(i))
+                    if (statepicturesourceoff === PTBaseUrl + "/Logo/" + pictureSelectoroff.textAt(i))
                     pictureSelectoroff.currentIndex = i
     }
 }
