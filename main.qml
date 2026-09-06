@@ -242,7 +242,14 @@ ApplicationWindow {
         id: drawerpopup
 
         width: window.width
-        height: 0.5 * window.height
+        // Was a flat 0.5 * window.height, tuned for row4 having 2 buttons
+        // (the two brightness +/- buttons) - with the lock button added as
+        // a 3rd, that fixed fraction ran out before the content did and
+        // the grey background stopped short of the last button. Size to
+        // whichever column is tallest instead, so it stays correct as
+        // buttons are added/removed (same fix already applied on the Qt6
+        // side for the same reason).
+        height: Math.min(0.75 * window.height, Math.max(row1.implicitHeight, row4.implicitHeight) + window.width / 40)
         edge: Qt.TopEdge
         background: Rectangle {
             color: "grey"
