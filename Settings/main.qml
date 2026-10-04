@@ -295,6 +295,29 @@ Rectangle {
                     }
                 }
                 Text {
+                    text: Translator.translate("Power FC Cable", Dashboard.language)
+                    font.pixelSize: windowbackround.width / 55
+                    color: "white"
+                    visible: ecuSelect.currentIndex == 1
+                }
+                ComboBox {
+                    id: apexiCableSelect
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    model: ["Standard", "FC Commander Pro"]
+                    visible: ecuSelect.currentIndex == 1
+                    property bool initialized: false
+                    onCurrentIndexChanged: {
+                        if (initialized)
+                            AppSettings.setApexiCable(currentIndex)
+                    }
+                    Component.onCompleted: {
+                        currentIndex = AppSettings.getApexiCable()
+                        initialized = true
+                    }
+                }
+                Text {
                     text: Translator.translate("ECU Selection", Dashboard.language)
                     font.pixelSize: windowbackround.width / 55
                     color: "white"
@@ -1127,6 +1150,7 @@ Rectangle {
         function connectfunc() {
             Connect.setOdometer(odometer.text)
             Connect.setWeight(weight.text)
+            Apexi.setCableType(apexiCableSelect.currentIndex)
             Connect.openConnection(serialName.currentText,
                                    ecuSelect.currentIndex, baseadresstext.text,
                                    shiftlightbaseadresstext.text)

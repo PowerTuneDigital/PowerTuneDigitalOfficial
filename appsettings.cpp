@@ -81,6 +81,17 @@ void AppSettings::setECU(const int &arg)
     setValue("serial/ECU", arg);
 }
 
+int AppSettings::getApexiCable()
+{
+    // unset (existing installs) -> 0 = standard cable
+    return getValue("serial/ApexiCable").toInt();
+}
+
+void AppSettings::setApexiCable(const int &arg)
+{
+    setValue("serial/ApexiCable", arg);
+}
+
 int AppSettings::getInterface()
 {
     return getValue("serial/Interface").toInt();

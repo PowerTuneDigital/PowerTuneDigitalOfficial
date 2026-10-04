@@ -26,6 +26,7 @@ var translations = {
            "Speed units": { en: "Speed unit:", de: "Geschw. Einh.:",  jp: "速度単位 ", es: "Unid. de velocidad", fr: "", ar:"" },
            "Temp units": { en: "Temp unit:", de: "Temp. Einheit:",  jp: "℃ or ℉ ", es: "Unid. temporales", fr: "", ar:"" },
            "Pressure units": { en: "Pressure unit:", de: "Druck Einheit:",  jp: "圧力単位 ", es: "Unid. de presión", fr: "", ar:"" },
+           "Power FC Cable": { en: "Power FC Cable:", de: "Power FC Kabel:", jp: "Power FC Cable:", es: "Cable Power FC:", fr: "", ar:"" },
            "ECU Selection": { en: "ECU Selection:", de: "ECU Selektion:",  jp: "ECU選択", es: "Selección de ECU", fr: "", ar:"" },
            "GoPro Variant": { en: "GoPro Variant:", de: "GoPro Variante:",  jp: "ゴープロモデル", es: "Variante GoPro", fr: "", ar:"" },
            "GoPro Pasword": { en: "GoPro Pasword:", de: "GoPro Paswort:",  jp: "ゴープロパスワード", es: "Contraseña GoPro", fr: "", ar:"" },

@@ -80,6 +80,21 @@ void Apexi::SetProtocol(const int &protocolselect)
     Protocol = protocolselect;
 }
 
+void Apexi::applyCableLines()
+{
+    if (m_cableType == 1)
+    {
+        // FC Commander Pro: DTR/RTS de-asserted, as the official software does
+        m_serialport->setDataTerminalReady(false);
+        m_serialport->setRequestToSend(false);
+    }
+}
+
+void Apexi::setCableType(const int &cable)
+{
+    m_cableType = cable;
+}
+
 void Apexi::initSerialPort()
 {
     if (m_serialport)
@@ -110,8 +125,18 @@ void Apexi::openConnection(const QString &portName)
     port = portName;
     initSerialPort();
     m_serialport->setPortName(port);
-    m_serialport->setBaudRate(QSerialPort::Baud57600);
-    m_serialport->setParity(QSerialPort::NoParity);
+    if (m_cableType == 1)
+    {
+        // APEXi FC Commander Pro cable: 19200 baud, 8E1
+        m_serialport->setBaudRate(QSerialPort::Baud19200);
+        // call QSerialPort's version directly, SerialPort::setParity(int) maps 2 to Odd
+        m_serialport->QSerialPort::setParity(QSerialPort::EvenParity);
+    }
+    else
+    {
+        m_serialport->setBaudRate(QSerialPort::Baud57600);
+        m_serialport->setParity(QSerialPort::NoParity);
+    }
     m_serialport->setDataBits(QSerialPort::Data8);
     m_serialport->setStopBits(QSerialPort::OneStop);
     m_serialport->setFlowControl(QSerialPort::NoFlowControl);;
@@ -124,6 +149,7 @@ void Apexi::openConnection(const QString &portName)
     else
     {
         m_dashboard->setSerialStat(QString("Connected to Serialport"));
+        applyCableLines();
         requestIndex = 0;
         Apexi::sendRequest(requestIndex);
     }
@@ -159,6 +185,7 @@ void Apexi::handleTimeout()
     else
     {
         m_dashboard->setSerialStat(QString("Connected to Serialport"));
+        applyCableLines();
     }
     
     requestIndex = 2;

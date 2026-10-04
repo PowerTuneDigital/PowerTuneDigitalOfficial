@@ -27,6 +27,8 @@ public:
     Q_INVOKABLE void setFlowControl(const int &arg);
     Q_INVOKABLE int getECU();
     Q_INVOKABLE void setECU(const int &arg);
+    Q_INVOKABLE int getApexiCable();
+    Q_INVOKABLE void setApexiCable(const int &arg);
     Q_INVOKABLE int getInterface();
     Q_INVOKABLE void setInterface(const int &arg);
     Q_INVOKABLE int getLogging();
