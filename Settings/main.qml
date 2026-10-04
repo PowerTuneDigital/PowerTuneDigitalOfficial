@@ -1057,24 +1057,32 @@ Rectangle {
                         }
                     }
                 }
-                Text {
-                    text: Translator.translate("Serial Status", Dashboard.language)
-                    font.pixelSize: windowbackround.width / 55
-                    color: "white"
-                }
-                TextField {
-                    id: serialStat
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    text: qsTr(Dashboard.SerialStat)
-                    Component.onCompleted: {
-                        if(windowbackround.width == 1600){
-                            serialStat.height = windowbackround.height / 16
-                        }
-                    }
-                }
+            }
+        }
+    }
 
+    // Serial status, bottom right
+    Column {
+        anchors.right: parent.right
+        anchors.rightMargin: windowbackround.width / 150
+        anchors.bottom: parent.bottom
+        anchors.bottomMargin: windowbackround.width / 150
+        spacing: windowbackround.width / 150
+        Text {
+            text: Translator.translate("Serial Status", Dashboard.language)
+            font.pixelSize: windowbackround.width / 55
+            color: "white"
+        }
+        TextField {
+            id: serialStat
+            width: windowbackround.width / 5
+            height: windowbackround.height / 15
+            font.pixelSize: windowbackround.width / 55
+            text: qsTr(Dashboard.SerialStat)
+            Component.onCompleted: {
+                if(windowbackround.width == 1600){
+                    serialStat.height = windowbackround.height / 16
+                }
             }
         }
     }
