@@ -305,7 +305,7 @@ Rectangle {
                     width: windowbackround.width / 5
                     height: windowbackround.height / 15
                     font.pixelSize: windowbackround.width / 55
-                    model: ["Standard", "FC Commander Pro"]
+                    model: ["Datalogit / Hako", "FC Pro"]
                     visible: ecuSelect.currentIndex == 1
                     property bool initialized: false
                     onCurrentIndexChanged: {
@@ -478,23 +478,6 @@ Rectangle {
                         }
                     }
                 }
-                Text {
-                    text: Translator.translate("Serial Status", Dashboard.language)
-                    font.pixelSize: windowbackround.width / 55
-                    color: "white"
-                }
-                TextField {
-                    id: serialStat
-                    width: windowbackround.width / 5
-                    height: windowbackround.height / 15
-                    font.pixelSize: windowbackround.width / 55
-                    text: qsTr(Dashboard.SerialStat)
-                    Component.onCompleted: {
-                        if(windowbackround.width == 1600){
-                            serialStat.height = windowbackround.height / 16
-                        }
-                    }
-                }
 
             }
             Grid {
@@ -524,6 +507,7 @@ Rectangle {
                         functconnect.connectfunc()
                         connectButton.enabled = false
                         ecuSelect.enabled = false
+                        apexiCableSelect.enabled = false
                         disconnectButton.enabled = true
                         //consultset.enabled = false;
                     }
@@ -544,6 +528,7 @@ Rectangle {
                         connectButton.enabled = true
                         disconnectButton.enabled = false
                         ecuSelect.enabled = true
+                        apexiCableSelect.enabled = true
                         // consultset.enabled = true;
                         functdisconnect.disconnectfunc()
                     }
@@ -1072,6 +1057,23 @@ Rectangle {
                         }
                     }
                 }
+                Text {
+                    text: Translator.translate("Serial Status", Dashboard.language)
+                    font.pixelSize: windowbackround.width / 55
+                    color: "white"
+                }
+                TextField {
+                    id: serialStat
+                    width: windowbackround.width / 5
+                    height: windowbackround.height / 15
+                    font.pixelSize: windowbackround.width / 55
+                    text: qsTr(Dashboard.SerialStat)
+                    Component.onCompleted: {
+                        if(windowbackround.width == 1600){
+                            serialStat.height = windowbackround.height / 16
+                        }
+                    }
+                }
 
             }
         }
@@ -1084,7 +1086,7 @@ Rectangle {
         function auto() {
             // if (connectAtStart.checked == true) Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, interfaceSelect.currentIndex, loggerSelect.currentIndex);
             if (connectButton.enabled == false)
-                functconnect.connectfunc(), ecuSelect.enabled = false, disconnectButton.enabled = true
+                functconnect.connectfunc(), ecuSelect.enabled = false, apexiCableSelect.enabled = false, disconnectButton.enabled = true
                 //Connect.openConnection(serialName.currentText, ecuSelect.currentIndex, loggerSelect.currentIndex,logger.datalogger()),
         }
     }
